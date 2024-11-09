@@ -1,14 +1,14 @@
-/datum/xeno_caste/puppet
+/datum/tyranid_caste/puppet
 	caste_name = "Puppet"
 	display_name = "Puppet"
 	upgrade_name = ""
 	caste_desc = "A grotesque puppet of a puppeteer."
 	wound_type = ""
 
-	caste_type_path = /mob/living/carbon/xenomorph/puppet
+	caste_type_path = /mob/living/carbon/tyranid/puppet
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	melee_damage = 12
 	accuracy_malus = 65
 	speed = -0.8
@@ -20,6 +20,6 @@
 	soft_armor = list(MELEE = 14, BULLET = 3, LASER = 5, ENERGY = 3, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/activable/xeno/feed,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/activable/tyranid/feed,
 	)

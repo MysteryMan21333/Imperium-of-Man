@@ -73,10 +73,10 @@
 
 /datum/loadout_item/suit_store/main_gun/engineer/laser_carbine
 	name = "Laser carbine"
-	desc = "Equipped with a red dot sight and gyroscopic stabilizer. The TerraGov laser carbine is the high tech equivilent to the AR-18, with extremely good mobility and handling, and powerful medium range damage. \
+	desc = "Equipped with a red dot sight and gyroscopic stabilizer. The Imperium laser carbine is the high tech equivilent to the AR-18, with extremely good mobility and handling, and powerful medium range damage. \
 	Variable firemodes gives it additional flexibility over its ballistic counterpart. Uses TE power cells that are shared across all TGMC laser weaponry."
 	ui_icon = "tec"
-	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/gyro
+	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/gyro
 
 /datum/loadout_item/suit_store/main_gun/engineer/standard_smg
 	name = "SMG-25"

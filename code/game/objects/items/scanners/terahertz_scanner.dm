@@ -1,15 +1,15 @@
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "t-ray0"
 	var/on = 0
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "electronic"
 

@@ -4,8 +4,8 @@
 	name = "Cloning Data Disk"
 	icon_state = "datadisk0" //Gosh I hope syndies don't mistake them for the nuke disk.
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/id_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/id_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/id_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/id_right.dmi',
 	)
 	worn_icon_state = "card-id"
 	w_class = WEIGHT_CLASS_TINY

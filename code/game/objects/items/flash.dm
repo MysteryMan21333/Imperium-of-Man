@@ -1,7 +1,7 @@
 /obj/item/flash
 	name = "flash"
 	desc = "Used for blinding and being an asshole."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "flash"
 	worn_icon_state = "flashbang"	//looks exactly like a flash (and nothing like a flashbang)
 	throwforce = 5
@@ -40,7 +40,7 @@
 		return
 
 	flash_recharge()
-	if(isxeno(M))
+	if(istyranid(M))
 		to_chat(user, "You can't find any eyes!")
 		return
 

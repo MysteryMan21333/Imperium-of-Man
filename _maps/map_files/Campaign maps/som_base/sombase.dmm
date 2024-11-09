@@ -223,7 +223,7 @@
 /turf/open/floor/mainship/blue,
 /area/rocinante_base/surface/building/security/hub)
 "aqP" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
 	},
@@ -1058,7 +1058,7 @@
 	},
 /area/rocinante_base/ground/underground/caveN)
 "bxa" = (
-/obj/structure/prop/vehicle/som_mech,
+/obj/structure/prop/vehicle/chaos_mech,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "bxv" = (
@@ -1126,7 +1126,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/southern_containers)
 "bBL" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/mainship/red{
@@ -1225,7 +1225,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
 	},
-/turf/open/floor/mainship/som/ne,
+/turf/open/floor/mainship/chaos/ne,
 /area/rocinante_base/surface/building/security/hub)
 "bJb" = (
 /obj/structure/curtain/open/shower,
@@ -1238,7 +1238,7 @@
 /turf/open/floor/mainship/sterile/white,
 /area/rocinante_base/surface/building/living/west_barracks)
 "bJj" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/silver{
 	dir = 5
 	},
@@ -1280,7 +1280,7 @@
 	},
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "bLF" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/sterile/dark,
@@ -1389,7 +1389,7 @@
 /turf/open/floor/plating,
 /area/rocinante_base/surface/building/southern_construction)
 "bUb" = (
-/obj/structure/prop/som_fighter,
+/obj/structure/prop/chaos_fighter,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/train_station)
 "bUo" = (
@@ -1525,7 +1525,7 @@
 	dir = 6
 	},
 /obj/structure/bed/chair/alt,
-/turf/open/floor/mainship/som/sw,
+/turf/open/floor/mainship/chaos/sw,
 /area/rocinante_base/surface/building/living/barracks)
 "ceg" = (
 /obj/structure/cable,
@@ -1678,7 +1678,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/red{
 	dir = 5
 	},
@@ -1891,7 +1891,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/ground/base_nw)
 "cCg" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/rocinante_base/ground/underground/caveS)
 "cCn" = (
@@ -2141,7 +2141,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/rocinante_base/surface/building/science/tele_lab)
 "cUj" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -2211,7 +2211,7 @@
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "cZv" = (
 /obj/effect/turf_decal/siding/dark,
-/turf/open/floor/mainship/som/s,
+/turf/open/floor/mainship/chaos/s,
 /area/rocinante_base/surface/building/science/tele_lab)
 "cZD" = (
 /obj/structure/cable,
@@ -2240,7 +2240,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/rocinante_base/surface/building/science/bio_lab)
 "dbO" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/air_com)
 "dco" = (
@@ -2264,7 +2264,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/north_com)
 "dep" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/south_com)
 "deu" = (
@@ -2351,7 +2351,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/office_n)
 "dlP" = (
@@ -2363,7 +2363,7 @@
 /turf/closed/wall/mainship/gray,
 /area/rocinante_base/surface/building/living/po_quarters)
 "dmi" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/mainship/mono,
@@ -2703,7 +2703,7 @@
 /area/rocinante_base/surface/building/administration)
 "dQc" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/mainship/sterile/dark,
 /area/rocinante_base/surface/building/science/research_lab)
 "dQi" = (
@@ -2762,7 +2762,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/mainship/som,
+/turf/open/floor/mainship/chaos,
 /area/rocinante_base/surface/building/security/hub)
 "dTc" = (
 /turf/open/floor/mainship/silver{
@@ -2846,7 +2846,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
 	},
-/turf/open/floor/mainship/som/nw,
+/turf/open/floor/mainship/chaos/nw,
 /area/rocinante_base/surface/building/administration)
 "dYg" = (
 /obj/structure/window/framed/mainship/gray,
@@ -2865,7 +2865,7 @@
 /area/rocinante_base/ground/base_cent)
 "ebX" = (
 /obj/structure/monorail,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/tram_line)
 "ecp" = (
@@ -2921,7 +2921,7 @@
 /turf/open/floor/mainship/black,
 /area/rocinante_base/surface/building/living/prep)
 "efy" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
@@ -2945,7 +2945,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
-/turf/open/floor/mainship/som/sw,
+/turf/open/floor/mainship/chaos/sw,
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "egL" = (
 /obj/structure/table/black,
@@ -3092,7 +3092,7 @@
 /area/rocinante_base/surface/building/living/barracks)
 "epx" = (
 /obj/effect/turf_decal/siding/dark,
-/turf/open/floor/mainship/som/s,
+/turf/open/floor/mainship/chaos/s,
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "epO" = (
 /obj/structure/toilet/alternate{
@@ -3137,7 +3137,7 @@
 	},
 /area/rocinante_base/ground/base_sw)
 "erz" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating/icefloor/warnplate{
 	dir = 8
 	},
@@ -3192,7 +3192,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/tram_line)
 "evz" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/ground/grass/weedable/patch,
 /area/rocinante_base/ground/firing_range)
 "ewf" = (
@@ -3228,7 +3228,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_w)
 "eyK" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/office_n)
 "eBe" = (
@@ -3348,7 +3348,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
 	},
-/turf/open/floor/mainship/som/nw,
+/turf/open/floor/mainship/chaos/nw,
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "eIm" = (
 /obj/machinery/door/airlock/mainship/secure/free_access,
@@ -3476,7 +3476,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/mainship/som/nw,
+/turf/open/floor/mainship/chaos/nw,
 /area/rocinante_base/surface/building/living/barracks)
 "eRN" = (
 /obj/structure/bed/chair/sofa/corsat/verticaltop,
@@ -3974,7 +3974,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_s)
 "fwq" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/blue{
 	dir = 1
 	},
@@ -4033,7 +4033,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/west_aux)
 "fBM" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -4225,7 +4225,7 @@
 	},
 /area/rocinante_base/surface/building/medical)
 "fOI" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/blue{
@@ -4404,7 +4404,7 @@
 /turf/open/floor/plating/ground/snow,
 /area/rocinante_base/ground/base_e)
 "gaz" = (
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 4
 	},
 /turf/open/floor/mainship/blue{
@@ -4499,7 +4499,7 @@
 	},
 /area/rocinante_base/ground/base_sw)
 "gjz" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/sterile/purple/side{
@@ -4560,7 +4560,7 @@
 	},
 /area/rocinante_base/surface/building/security/medical_sec)
 "gpu" = (
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
@@ -5166,13 +5166,13 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/turf/open/floor/mainship/som/se,
+/turf/open/floor/mainship/chaos/se,
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "hfd" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/south_com)
 "hfy" = (
@@ -5181,7 +5181,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/south_com)
 "hfK" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/tramstation/tramstation_e)
 "hfV" = (
@@ -5249,7 +5249,7 @@
 /turf/open/floor/mainship/sterile/corner,
 /area/rocinante_base/surface/building/medical)
 "hlq" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/mono,
@@ -5384,7 +5384,7 @@
 	},
 /area/rocinante_base/surface/building/living/prep)
 "huC" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine,
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman,
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/living/barracks)
@@ -5438,7 +5438,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_cent)
 "hzd" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/red{
 	dir = 1
 	},
@@ -5475,7 +5475,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/north_com)
 "hBp" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /turf/open/floor/mainship/black{
 	dir = 5
 	},
@@ -5501,7 +5501,7 @@
 	},
 /area/rocinante_base/surface/building/administration/meeting)
 "hBY" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/landing/landing_pad_one)
 "hCQ" = (
@@ -5597,7 +5597,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/mainship/som,
+/turf/open/floor/mainship/chaos,
 /area/rocinante_base/surface/building/administration)
 "hJN" = (
 /obj/structure/bed/chair/alt{
@@ -5645,7 +5645,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/mainship/som,
+/turf/open/floor/mainship/chaos,
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "hNS" = (
 /obj/structure/largecrate/random/barrel/red,
@@ -5847,7 +5847,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/security/hub)
 "iig" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/rocinante_base/surface/building/tramstation/tramstation_e)
@@ -5940,7 +5940,7 @@
 	},
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "inj" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -6123,7 +6123,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/engineering)
 "iza" = (
@@ -6201,7 +6201,7 @@
 	dir = 10
 	},
 /obj/structure/bed/chair/alt,
-/turf/open/floor/mainship/som/se,
+/turf/open/floor/mainship/chaos/se,
 /area/rocinante_base/surface/building/living/barracks)
 "iEz" = (
 /turf/open/floor/mainship/silver/corner{
@@ -6370,7 +6370,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "iMN" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/air_com)
 "iMT" = (
@@ -6466,7 +6466,7 @@
 /turf/open/floor/plating/ground/concrete/edge,
 /area/rocinante_base/ground/base_w)
 "iVI" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_s)
 "iVZ" = (
@@ -6715,7 +6715,7 @@
 /turf/open/ground/grass/weedable/patch,
 /area/rocinante_base/ground/base_nw)
 "jsJ" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/train_station)
 "jsM" = (
@@ -6925,7 +6925,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/train_station)
 "jKg" = (
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 4
 	},
 /turf/open/floor/mainship/blue{
@@ -7753,7 +7753,7 @@
 /area/rocinante_base/surface/building/living/laundromat)
 "kRm" = (
 /obj/effect/turf_decal/siding/dark,
-/turf/open/floor/mainship/som/s,
+/turf/open/floor/mainship/chaos/s,
 /area/rocinante_base/surface/building/administration)
 "kRn" = (
 /obj/effect/turf_decal/warning_stripes/box,
@@ -7763,7 +7763,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/turf/open/floor/mainship/som/se,
+/turf/open/floor/mainship/chaos/se,
 /area/rocinante_base/surface/building/security/hub)
 "kSA" = (
 /obj/effect/turf_decal/warning_stripes/box,
@@ -7866,7 +7866,7 @@
 	},
 /area/rocinante_base/ground/base_nw)
 "lbj" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/mainship/mono,
@@ -7937,7 +7937,7 @@
 	dir = 9
 	},
 /obj/structure/cable,
-/turf/open/floor/mainship/som/ne,
+/turf/open/floor/mainship/chaos/ne,
 /area/rocinante_base/surface/building/living/barracks)
 "liz" = (
 /obj/structure/cable,
@@ -8172,7 +8172,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration)
 "lwN" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/red{
 	dir = 5
 	},
@@ -8316,7 +8316,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/living/barracks)
 "lHs" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/tcomms,
 /area/rocinante_base/surface/building/security/medical_sec)
 "lHw" = (
@@ -8373,7 +8373,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
-/turf/open/floor/mainship/som/sw,
+/turf/open/floor/mainship/chaos/sw,
 /area/rocinante_base/surface/building/science/tele_lab)
 "lMS" = (
 /obj/structure/bed/chair/sofa/corsat/left,
@@ -8531,7 +8531,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
 	},
-/turf/open/floor/mainship/som/ne,
+/turf/open/floor/mainship/chaos/ne,
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "lYD" = (
 /obj/structure/bed/chair/pew{
@@ -8763,7 +8763,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/ground/base_cent)
 "mru" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/mono,
@@ -8879,7 +8879,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/mainship/som,
+/turf/open/floor/mainship/chaos,
 /area/rocinante_base/surface/building/science/tele_lab)
 "mBN" = (
 /obj/structure/largecrate,
@@ -8897,7 +8897,7 @@
 	},
 /area/rocinante_base/surface/building/living/prep)
 "mCC" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/red{
 	dir = 1
 	},
@@ -9160,7 +9160,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
-/turf/open/floor/mainship/som/sw,
+/turf/open/floor/mainship/chaos/sw,
 /area/rocinante_base/surface/building/security/hub)
 "naf" = (
 /obj/effect/landmark/corpsespawner/scientist,
@@ -9184,7 +9184,7 @@
 /turf/open/floor/mainship/white/full,
 /area/rocinante_base/surface/building/living/bar)
 "ncq" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/plating/ground/concrete,
@@ -9413,7 +9413,7 @@
 	},
 /area/rocinante_base/surface/building/living/barracks)
 "nmT" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/mono,
@@ -9455,7 +9455,7 @@
 	},
 /area/rocinante_base/surface/building/science/tele_lab)
 "npJ" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -9471,7 +9471,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_s)
 "nqE" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -9587,7 +9587,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/command_hall)
 "nyG" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/blue{
 	dir = 1
 	},
@@ -9707,7 +9707,7 @@
 /turf/open/ground/grass/weedable/patch,
 /area/rocinante_base/surface/building/science/bio_lab)
 "nHU" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/ground/grass/weedable/patch,
 /area/rocinante_base/ground/base_cent)
 "nIl" = (
@@ -9931,7 +9931,7 @@
 /area/rocinante_base/surface/building/security/medical_sec)
 "oaZ" = (
 /obj/effect/turf_decal/siding/dark,
-/turf/open/floor/mainship/som/s,
+/turf/open/floor/mainship/chaos/s,
 /area/rocinante_base/surface/building/security/hub)
 "obg" = (
 /turf/open/floor/plating/ground/concrete/lines{
@@ -10156,7 +10156,7 @@
 /turf/open/floor/mainship/sterile/white,
 /area/rocinante_base/surface/building/administration/south_com)
 "oor" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/command)
 "ooO" = (
@@ -10170,7 +10170,7 @@
 /area/rocinante_base/surface/building/train_station)
 "oph" = (
 /obj/structure/window/reinforced,
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -10234,7 +10234,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
 	},
-/turf/open/floor/mainship/som/ne,
+/turf/open/floor/mainship/chaos/ne,
 /area/rocinante_base/surface/building/administration)
 "osQ" = (
 /obj/machinery/door/airlock/mainship/generic/glass,
@@ -10267,7 +10267,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_ne)
 "otK" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating/ground/concrete/lines,
 /area/rocinante_base/ground/base_cent)
 "otN" = (
@@ -10656,10 +10656,10 @@
 	dir = 9
 	},
 /obj/effect/landmark/campaign_structure/phoron_stack,
-/turf/open/floor/mainship/som/ne,
+/turf/open/floor/mainship/chaos/ne,
 /area/rocinante_base/surface/building/science/tele_lab)
 "oVZ" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/blue{
 	dir = 9
 	},
@@ -10725,7 +10725,7 @@
 /turf/open/floor/mainship/black/full,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "pbc" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/central_com)
 "pbs" = (
@@ -10748,7 +10748,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/security/medical_sec)
 "pdR" = (
@@ -11003,7 +11003,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/train_station)
 "pxJ" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/red{
 	dir = 1
 	},
@@ -11037,7 +11037,7 @@
 	},
 /area/rocinante_base/surface/building/medical)
 "pAD" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/ground/base_cent)
 "pBj" = (
@@ -11101,7 +11101,7 @@
 /turf/open/floor/mainship/sterile/white,
 /area/rocinante_base/surface/building/living/west_barracks)
 "pDX" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -11272,7 +11272,7 @@
 	},
 /area/rocinante_base/ground/base_nw)
 "pRA" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
@@ -11308,7 +11308,7 @@
 	},
 /area/rocinante_base/surface/building/security/hub)
 "pTY" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/engineering)
 "pUO" = (
@@ -11433,7 +11433,7 @@
 	},
 /area/rocinante_base/ground/base_w)
 "qeT" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/living/prep)
 "qfk" = (
@@ -11519,7 +11519,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/blue{
 	dir = 5
 	},
@@ -11562,7 +11562,7 @@
 /turf/open/floor/mainship/sterile/white,
 /area/rocinante_base/surface/building/living/barracks)
 "qoa" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -11887,7 +11887,7 @@
 /turf/open/floor/mainship/tcomms,
 /area/rocinante_base/surface/building/administration/central_com)
 "qNe" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/north_com)
 "qNt" = (
@@ -11945,7 +11945,7 @@
 	},
 /area/rocinante_base/surface/building/cargo/southern_aux)
 "qPs" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/living/po_quarters)
 "qPV" = (
@@ -12023,7 +12023,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/turf/open/floor/mainship/som/se,
+/turf/open/floor/mainship/chaos/se,
 /area/rocinante_base/surface/building/administration)
 "qVb" = (
 /obj/structure/bed/chair/office/dark{
@@ -12196,7 +12196,7 @@
 /turf/closed/mineral/smooth/indestructible,
 /area/storage/testroom)
 "rgB" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/mainship/mono,
@@ -12330,7 +12330,7 @@
 /turf/open/floor/mainship/black,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "rqE" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /obj/machinery/light,
 /turf/open/floor/mainship/sterile/side,
 /area/rocinante_base/surface/building/medical)
@@ -12575,7 +12575,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/ground/base_s)
 "rMC" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 1
 	},
@@ -12746,7 +12746,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
 	},
-/turf/open/floor/mainship/som/nw,
+/turf/open/floor/mainship/chaos/nw,
 /area/rocinante_base/surface/building/science/tele_lab)
 "sai" = (
 /obj/machinery/newscaster{
@@ -12825,7 +12825,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "sgI" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/blue{
@@ -12911,7 +12911,7 @@
 /turf/open/floor/scorched,
 /area/rocinante_base/surface/building/science/bio_lab)
 "smh" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/mono,
@@ -13018,7 +13018,7 @@
 	},
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "suk" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/landing/landing_pad_two)
 "suS" = (
@@ -13223,7 +13223,7 @@
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/bed/chair/alt,
 /obj/structure/cable,
-/turf/open/floor/mainship/som/s,
+/turf/open/floor/mainship/chaos/s,
 /area/rocinante_base/surface/building/living/barracks)
 "sGY" = (
 /obj/structure/cargo_container/horizontal{
@@ -13402,7 +13402,7 @@
 /turf/open/floor/mainship/white/full,
 /area/rocinante_base/surface/building/living/bar)
 "sSG" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -13704,7 +13704,7 @@
 /turf/open/floor/carpet,
 /area/rocinante_base/surface/building/administration/meeting)
 "toi" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 1
 	},
@@ -13756,7 +13756,7 @@
 /turf/open/floor/plating/dmg1,
 /area/rocinante_base/surface/building/living/west_barracks)
 "tsA" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -13840,7 +13840,7 @@
 	},
 /area/rocinante_base/surface/building/science/tele_lab)
 "tyN" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -14094,10 +14094,10 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/turf/open/floor/mainship/som,
+/turf/open/floor/mainship/chaos,
 /area/rocinante_base/surface/building/living/barracks)
 "tPq" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/north_com)
 "tPs" = (
@@ -14318,7 +14318,7 @@
 /turf/open/floor/mainship/sterile/white,
 /area/rocinante_base/surface/building/living/barracks)
 "uec" = (
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -14826,7 +14826,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/blue{
 	dir = 9
 	},
@@ -14889,7 +14889,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/south_com)
 "uOX" = (
@@ -15208,7 +15208,7 @@
 /turf/open/floor/mainship/black/corner,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "vkp" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/red{
 	dir = 1
 	},
@@ -15337,7 +15337,7 @@
 	},
 /area/rocinante_base/surface/building/security/garage_sec)
 "vrw" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/mainship/blue{
@@ -15405,7 +15405,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/office_n)
 "vwO" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "vxl" = (
@@ -15465,7 +15465,7 @@
 	},
 /area/rocinante_base/surface/landing/landing_pad_one)
 "vBr" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/concrete,
@@ -15492,7 +15492,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
 	},
-/turf/open/floor/mainship/som/nw,
+/turf/open/floor/mainship/chaos/nw,
 /area/rocinante_base/surface/building/security/hub)
 "vDr" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -15756,7 +15756,7 @@
 	},
 /area/rocinante_base/ground/base_s)
 "vVA" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -15808,7 +15808,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
-/turf/open/floor/mainship/som/sw,
+/turf/open/floor/mainship/chaos/sw,
 /area/rocinante_base/surface/building/administration)
 "vYY" = (
 /obj/structure/bed/bunkbed,
@@ -16015,7 +16015,7 @@
 	},
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "woe" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/red{
 	dir = 9
 	},
@@ -16251,7 +16251,7 @@
 /area/rocinante_base/surface/building/living/bar)
 "wzz" = (
 /obj/machinery/light,
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
@@ -16423,7 +16423,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/engineering/north_smes)
 "wIv" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/command)
 "wIz" = (
@@ -16545,7 +16545,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/administration/air_com)
 "wSY" = (
-/obj/machinery/computer/som,
+/obj/machinery/computer/chaos,
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 1
 	},
@@ -16751,7 +16751,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/turf/open/floor/mainship/som/se,
+/turf/open/floor/mainship/chaos/se,
 /area/rocinante_base/surface/building/science/tele_lab)
 "xif" = (
 /turf/open/floor/plating/ground/snow,
@@ -16880,7 +16880,7 @@
 	},
 /area/rocinante_base/surface/building/cargo/vehicle_garage)
 "xox" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
@@ -17029,7 +17029,7 @@
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/science/complex_hall_e)
 "xyk" = (
-/obj/machinery/computer/som_two,
+/obj/machinery/computer/chaos_two,
 /turf/open/floor/plating/ground/concrete,
 /area/rocinante_base/surface/building/train_station)
 "xym" = (
@@ -17217,7 +17217,7 @@
 /turf/open/ground/grass/weedable/patch,
 /area/rocinante_base/ground/base_w)
 "xMx" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine,
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman,
 /turf/open/floor/mainship/mono,
 /area/rocinante_base/surface/building/living/barracks)
 "xMO" = (
@@ -17264,7 +17264,7 @@
 /turf/closed/wall/mainship/gray,
 /area/rocinante_base/ground/southern_containers)
 "xQd" = (
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
@@ -17386,7 +17386,7 @@
 	},
 /area/rocinante_base/surface/building/tramstation/tramstation_cent)
 "ybh" = (
-/obj/machinery/computer/som_two{
+/obj/machinery/computer/chaos_two{
 	dir = 8
 	},
 /turf/open/floor/mainship/sterile/purple/side{

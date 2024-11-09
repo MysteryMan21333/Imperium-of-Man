@@ -1327,7 +1327,7 @@
 /turf/open/floor/mainship/orange/full,
 /area/mainship/living/briefing)
 "bFc" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -1482,8 +1482,8 @@
 /area/mainship/squads/general)
 "bNl" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/item/trash/barcaridine,
 /obj/machinery/firealarm{
 	dir = 8
@@ -1820,7 +1820,7 @@
 	},
 /area/mainship/squads/general)
 "cjl" = (
-/obj/machinery/marine_selector/gear/smartgun,
+/obj/machinery/guardsman_selector/gear/smartgun,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "cjC" = (
@@ -1946,7 +1946,7 @@
 /turf/open/floor/mainship/red/full,
 /area/mainship/shipboard/firing_range)
 "cvV" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/orange{
 	dir = 6
 	},
@@ -2008,7 +2008,7 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 1
 	},
-/obj/machinery/door/airlock/multi_tile/mainship/marine/requisitions{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/requisitions{
 	dir = 1
 	},
 /obj/structure/cable,
@@ -2027,7 +2027,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 8;
 	pixel_x = -17
 	},
@@ -2476,7 +2476,7 @@
 /turf/closed/wall/mainship,
 /area/mainship/engineering/engineering_workshop)
 "der" = (
-/obj/machinery/door/airlock/mainship/marine/general/corps,
+/obj/machinery/door/airlock/mainship/guardsman/general/corps,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
@@ -2541,7 +2541,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
 "dgy" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 6
 	},
@@ -2712,7 +2712,7 @@
 /area/mainship/shipboard/firing_range)
 "dnw" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/effect/landmark/start/job/squadcorpsman,
 /obj/effect/decal/cleanable/pie_smudge,
 /turf/open/floor/wood,
@@ -2837,7 +2837,7 @@
 "dvZ" = (
 /obj/item/attachable/bayonetknife,
 /obj/structure/table/mainship/nometal,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/effect/spawner/random/misc/gnome,
 /turf/open/floor/mainship/floor,
 /area/mainship/shipboard/brig)
@@ -3166,7 +3166,7 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 1
 	},
-/obj/machinery/door/airlock/multi_tile/mainship/marine/requisitions{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/requisitions{
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
@@ -3381,8 +3381,8 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/living/bridgebunks)
 "ehf" = (
-/obj/docking_port/stationary/marine_dropship/hangar/one,
-/obj/docking_port/stationary/marine_dropship/crash_target,
+/obj/docking_port/stationary/guardsman_dropship/hangar/one,
+/obj/docking_port/stationary/guardsman_dropship/crash_target,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "eho" = (
@@ -3549,7 +3549,7 @@
 	dir = 1
 	},
 /obj/machinery/vending/weapon,
-/obj/docking_port/stationary/marine_dropship/crash_target,
+/obj/docking_port/stationary/guardsman_dropship/crash_target,
 /turf/open/floor/mainship/black{
 	dir = 1
 	},
@@ -3788,7 +3788,7 @@
 /area/mainship/engineering/engineering_workshop)
 "eIM" = (
 /obj/machinery/camera/autoname/mainship,
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "eJJ" = (
@@ -3822,7 +3822,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "eLs" = (
-/obj/item/clothing/head/modular/marine,
+/obj/item/clothing/head/modular/guardsman,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass,
 /area/mainship/living/starboard_garden)
@@ -4071,7 +4071,7 @@
 /area/mainship/engineering/ce_room)
 "fbC" = (
 /obj/structure/window/reinforced,
-/obj/item/clothing/shoes/marine/som,
+/obj/item/clothing/shoes/guardsman/chaos,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
 "fbL" = (
@@ -4185,7 +4185,7 @@
 /area/mainship/living/pilotbunks)
 "fgW" = (
 /obj/structure/table/mainship/nometal,
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 8;
 	pixel_x = -17
 	},
@@ -4734,7 +4734,7 @@
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "fLM" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -4926,7 +4926,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/shipboard/weapon_room)
 "gaz" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -5036,7 +5036,7 @@
 	},
 /area/mainship/living/numbertwobunks)
 "gcM" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/orange,
 /area/mainship/hallways/hangar)
 "gdb" = (
@@ -5198,7 +5198,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/command/self_destruct)
 "gmQ" = (
-/obj/docking_port/stationary/marine_dropship/crash_target,
+/obj/docking_port/stationary/guardsman_dropship/crash_target,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
 "gnb" = (
@@ -5366,7 +5366,7 @@
 /turf/open/floor/mainship/floor,
 /area/mainship/living/numbertwobunks)
 "gxL" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "gze" = (
@@ -5383,7 +5383,7 @@
 "gAS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/item/reagent_containers/food/snacks/grown/poppy,
-/obj/item/clothing/head/modular/marine/helljumper,
+/obj/item/clothing/head/modular/guardsman/helljumper,
 /turf/open/floor/grass,
 /area/mainship/living/starboard_garden)
 "gBJ" = (
@@ -5432,7 +5432,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/living/briefing)
 "gFW" = (
-/obj/machinery/marine_selector/gear/engi,
+/obj/machinery/guardsman_selector/gear/engi,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "gGb" = (
@@ -5708,7 +5708,7 @@
 /area/mainship/living/chapel)
 "gYL" = (
 /obj/machinery/door/firedoor/mainship,
-/obj/machinery/door/airlock/mainship/marine/general/sl,
+/obj/machinery/door/airlock/mainship/guardsman/general/sl,
 /obj/structure/sign/goldenplaque,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
@@ -5790,7 +5790,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/starboard_hallway)
 "heL" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /obj/structure/closet/walllocker/hydrant/extinguisher{
 	dir = 8
 	},
@@ -5843,7 +5843,7 @@
 /obj/machinery/light/mainship{
 	dir = 1
 	},
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 4;
 	pixel_x = 17
 	},
@@ -6024,7 +6024,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
 "hua" = (
-/obj/item/clothing/gloves/marine/som,
+/obj/item/clothing/gloves/guardsman/chaos,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -6052,7 +6052,7 @@
 /turf/open/floor/plating/mainship,
 /area/mainship/shipboard/brig)
 "hwU" = (
-/obj/machinery/door/airlock/mainship/marine/general/engi,
+/obj/machinery/door/airlock/mainship/guardsman/general/engi,
 /obj/machinery/door/firedoor/mainship,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
@@ -6132,7 +6132,7 @@
 	},
 /area/mainship/living/numbertwobunks)
 "hGE" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /obj/machinery/light/mainship,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
@@ -6606,7 +6606,7 @@
 "ijM" = (
 /obj/structure/bookcase,
 /obj/item/folder/white,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /turf/open/floor/wood,
 /area/mainship/living/commandbunks)
 "iku" = (
@@ -6905,7 +6905,7 @@
 /turf/open/floor/wood,
 /area/mainship/living/tankerbunks)
 "iFI" = (
-/obj/machinery/marine_selector/clothes/smartgun,
+/obj/machinery/guardsman_selector/clothes/smartgun,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "iHm" = (
@@ -6913,7 +6913,7 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/mainship,
-/obj/machinery/door/airlock/mainship/marine/general/sl,
+/obj/machinery/door/airlock/mainship/guardsman/general/sl,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "iHy" = (
@@ -7510,7 +7510,7 @@
 /turf/open/floor/mainship/cargo,
 /area/mainship/hallways/stern_hallway)
 "jzh" = (
-/obj/machinery/marine_selector/clothes/commander,
+/obj/machinery/guardsman_selector/clothes/commander,
 /turf/open/floor/wood,
 /area/mainship/living/numbertwobunks)
 "jzx" = (
@@ -8032,7 +8032,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "koS" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/black{
 	dir = 8
 	},
@@ -8133,8 +8133,8 @@
 /area/mainship/hull/lower_hull)
 "ktb" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/wood,
 /area/mainship/living/cryo_cells)
 "kte" = (
@@ -8214,7 +8214,7 @@
 /area/mainship/medical/operating_room_two)
 "kxw" = (
 /obj/structure/table/mainship/nometal,
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 4;
 	pixel_x = 17
 	},
@@ -8519,7 +8519,7 @@
 	dir = 8
 	},
 /obj/structure/table/wood/fancy,
-/obj/machinery/computer/security/marinemainship_network,
+/obj/machinery/computer/security/guardsmanmainship_network,
 /turf/open/floor/mainship/blue{
 	dir = 8
 	},
@@ -8539,7 +8539,7 @@
 /area/mainship/hallways/hangar)
 "kPH" = (
 /obj/structure/table/wood/fancy,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/mainship/blue{
 	dir = 8
 	},
@@ -9079,8 +9079,8 @@
 /area/medical/morgue)
 "lsh" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/wood,
 /area/mainship/living/cryo_cells)
@@ -9301,7 +9301,7 @@
 /area/mainship/shipboard/weapon_room)
 "lEe" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/effect/landmark/start/job/squadcorpsman,
 /turf/open/floor/wood,
 /area/mainship/living/cryo_cells)
@@ -9582,7 +9582,7 @@
 /area/mainship/medical/lower_medical)
 "lQN" = (
 /obj/machinery/light/mainship,
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/lower_medical)
 "lRc" = (
@@ -9596,7 +9596,7 @@
 /turf/open/floor/mainship/tcomms,
 /area/mainship/command/telecomms)
 "lRs" = (
-/obj/machinery/marine_selector/gear/medic,
+/obj/machinery/guardsman_selector/gear/medic,
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
@@ -9856,7 +9856,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
 "mgE" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/green{
 	dir = 4
 	},
@@ -10442,7 +10442,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/port_atmos)
 "mTH" = (
-/obj/machinery/marine_selector/gear/commander,
+/obj/machinery/guardsman_selector/gear/commander,
 /turf/open/floor/wood,
 /area/mainship/living/numbertwobunks)
 "mUU" = (
@@ -10930,7 +10930,7 @@
 /area/mainship/medical/lower_medical)
 "nxC" = (
 /obj/structure/table/mainship/nometal,
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 8;
 	pixel_x = -17
 	},
@@ -11556,8 +11556,8 @@
 /obj/machinery/light/mainship/small{
 	dir = 4
 	},
-/obj/item/clothing/head/helmet/marine/som,
-/obj/item/clothing/under/som,
+/obj/item/clothing/head/helmet/guardsman/chaos,
+/obj/item/clothing/under/chaos,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
 "oop" = (
@@ -11587,7 +11587,7 @@
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/lower_medical)
 "oqS" = (
-/obj/machinery/marine_selector/gear/engi,
+/obj/machinery/guardsman_selector/gear/engi,
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
@@ -11599,7 +11599,7 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/mainship,
-/obj/machinery/door/airlock/mainship/marine/general/smart,
+/obj/machinery/door/airlock/mainship/guardsman/general/smart,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "orm" = (
@@ -11901,7 +11901,7 @@
 	},
 /area/mainship/medical/lower_medical)
 "oNs" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /obj/machinery/light/mainship{
 	dir = 1
 	},
@@ -12050,7 +12050,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/living/chapel)
 "oXs" = (
-/obj/machinery/door/airlock/mainship/marine/general/engi,
+/obj/machinery/door/airlock/mainship/guardsman/general/engi,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -12470,7 +12470,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "pqm" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /obj/machinery/light/mainship{
 	dir = 1
 	},
@@ -12662,7 +12662,7 @@
 /area/mainship/hallways/hangar)
 "pCd" = (
 /obj/structure/closet/secure_closet/engineering_personal,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/machinery/firealarm,
 /turf/open/floor/mainship/cargo,
 /area/mainship/engineering/engineering_workshop)
@@ -12740,8 +12740,8 @@
 /area/mainship/living/mechpilotquarters)
 "pHC" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/item/trash/barcaridine,
 /turf/open/floor/wood,
 /area/mainship/living/cryo_cells)
@@ -13185,7 +13185,7 @@
 /turf/closed/wall/mainship,
 /area/mainship/hallways/boxingring)
 "qhf" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "qiy" = (
@@ -13565,8 +13565,8 @@
 /area/mainship/hallways/starboard_hallway)
 "qGH" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/machinery/light/mainship{
 	dir = 8
 	},
@@ -13810,7 +13810,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/structure/window/reinforced,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
@@ -13894,7 +13894,7 @@
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "qXc" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -14185,7 +14185,7 @@
 /obj/item/tool/kitchen/knife/ritual,
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/rune,
-/obj/effect/landmark/corpsespawner/marine/burst,
+/obj/effect/landmark/corpsespawner/guardsman/burst,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/command/corporateliaison)
 "rrZ" = (
@@ -14203,7 +14203,7 @@
 /area/mainship/command/corporateliaison)
 "rsk" = (
 /obj/structure/table/mainship/nometal,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/effect/spawner/random/misc/gnome,
 /turf/open/floor/mainship/floor,
 /area/mainship/shipboard/brig)
@@ -14309,7 +14309,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/starboard_hallway)
 "rAZ" = (
-/obj/docking_port/stationary/marine_dropship/cas,
+/obj/docking_port/stationary/guardsman_dropship/cas,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "rBx" = (
@@ -14587,7 +14587,7 @@
 /turf/closed/wall/mainship,
 /area/mainship/squads/general)
 "rUK" = (
-/obj/machinery/door/airlock/mainship/marine/general/corps,
+/obj/machinery/door/airlock/mainship/guardsman/general/corps,
 /obj/machinery/door/firedoor/mainship,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
@@ -14926,7 +14926,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical)
 "stm" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine/general{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/general{
 	dir = 2
 	},
 /obj/machinery/door/firedoor/multi_tile{
@@ -14980,7 +14980,7 @@
 /turf/open/floor/mainship/hexagon,
 /area/mainship/living/tankerbunks)
 "swY" = (
-/obj/machinery/marine_selector/gear/medic,
+/obj/machinery/guardsman_selector/gear/medic,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "sxa" = (
@@ -15083,7 +15083,7 @@
 /obj/machinery/light/mainship{
 	dir = 1
 	},
-/obj/machinery/marine_selector/clothes/synth,
+/obj/machinery/guardsman_selector/clothes/synth,
 /turf/open/floor/mainship/cargo,
 /area/mainship/command/cic)
 "sDd" = (
@@ -15212,7 +15212,7 @@
 "sOJ" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/food_or_drink/kitchenknife/butcherweighted,
-/obj/item/clothing/head/helmet/marine/som,
+/obj/item/clothing/head/helmet/guardsman/chaos,
 /obj/effect/spawner/random/food_or_drink/burger,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
@@ -15474,7 +15474,7 @@
 /area/mainship/squads/general)
 "tgg" = (
 /obj/structure/table/mainship/nometal,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "tgi" = (
@@ -16147,7 +16147,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/hangar)
 "tTR" = (
-/obj/docking_port/stationary/marine_dropship/minidropship,
+/obj/docking_port/stationary/guardsman_dropship/minidropship,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "tTW" = (
@@ -16451,7 +16451,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/stern_hallway)
 "ukJ" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /obj/machinery/light/mainship,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
@@ -16569,7 +16569,7 @@
 /turf/open/floor/wood,
 /area/mainship/living/grunt_rnr)
 "usa" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -16751,7 +16751,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar)
 "uDd" = (
-/obj/effect/landmark/corpsespawner/marine/burst,
+/obj/effect/landmark/corpsespawner/guardsman/burst,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mainship/research/containment/floor1,
 /area/mainship/medical/medical_science)
@@ -16796,7 +16796,7 @@
 	},
 /area/mainship/medical/upper_medical)
 "uGh" = (
-/obj/machinery/marine_selector/clothes/leader,
+/obj/machinery/guardsman_selector/clothes/leader,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "uGq" = (
@@ -17034,7 +17034,7 @@
 /area/mainship/hull/lower_hull)
 "uVa" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	dir = 2;
 	name = "\improper Requisition's Office"
 	},
@@ -17112,7 +17112,7 @@
 	},
 /area/mainship/medical/upper_medical)
 "vab" = (
-/obj/machinery/door/airlock/mainship/marine/general/corps,
+/obj/machinery/door/airlock/mainship/guardsman/general/corps,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
@@ -17187,8 +17187,8 @@
 /area/mainship/command/corporateliaison)
 "ved" = (
 /obj/structure/bed/bunkbed,
-/obj/effect/landmark/start/job/squadmarine,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/machinery/firealarm{
 	dir = 8
 	},
@@ -17281,7 +17281,7 @@
 /area/mainship/hull/lower_hull)
 "vlB" = (
 /obj/structure/table/wood/fancy,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/carpet/side{
 	dir = 1
 	},
@@ -17484,7 +17484,7 @@
 "vzt" = (
 /obj/structure/bed,
 /obj/item/bedsheet/captain,
-/obj/effect/landmark/corpsespawner/marine/regular,
+/obj/effect/landmark/corpsespawner/guardsman/regular,
 /obj/effect/landmark/start/job/staffofficer,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/bridgebunks)
@@ -17547,7 +17547,7 @@
 /area/mainship/shipboard/weapon_room)
 "vDH" = (
 /obj/structure/closet/secure_closet/engineering_personal,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/machinery/landinglight/tadpole{
 	dir = 4;
@@ -17955,7 +17955,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
 "wkZ" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "wld" = (
@@ -18248,7 +18248,7 @@
 /area/mainship/engineering/engine_core)
 "wBC" = (
 /obj/structure/table/wood/fancy,
-/obj/machinery/computer/security/marinemainship_network,
+/obj/machinery/computer/security/guardsmanmainship_network,
 /turf/open/floor/carpet/side,
 /area/mainship/living/commandbunks)
 "wBE" = (
@@ -18375,7 +18375,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/upper_engineering)
 "wJe" = (
-/obj/machinery/door/airlock/mainship/marine/general,
+/obj/machinery/door/airlock/mainship/guardsman/general,
 /turf/open/floor/mainship/cargo/arrow{
 	dir = 8
 	},
@@ -18469,7 +18469,7 @@
 /area/mainship/command/telecomms)
 "wPw" = (
 /obj/machinery/door/firedoor/mainship,
-/obj/machinery/door/airlock/mainship/marine/general/sl,
+/obj/machinery/door/airlock/mainship/guardsman/general/sl,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "wPV" = (
@@ -18898,7 +18898,7 @@
 /area/mainship/medical/medical_science)
 "xnT" = (
 /obj/structure/closet/secure_closet/engineering_personal,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /turf/open/floor/mainship/orange{
 	dir = 1
 	},
@@ -19426,7 +19426,7 @@
 /area/medical/morgue)
 "xSi" = (
 /obj/structure/toilet,
-/obj/effect/landmark/corpsespawner/marine/burst,
+/obj/effect/landmark/corpsespawner/guardsman/burst,
 /obj/effect/decal/cleanable/blood,
 /obj/item/organ/brain,
 /obj/item/weapon/gun/rifle/standard_autoshotgun,
@@ -19515,7 +19515,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 9
 	},
-/obj/docking_port/stationary/marine_dropship/crash_target,
+/obj/docking_port/stationary/guardsman_dropship/crash_target,
 /obj/structure/closet/secure_closet/freezer,
 /obj/item/reagent_containers/food/drinks/bottle/wine,
 /obj/item/reagent_containers/food/drinks/bottle/sake,
@@ -19567,7 +19567,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
 "xWS" = (
-/obj/machinery/marine_selector/gear/leader,
+/obj/machinery/guardsman_selector/gear/leader,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "xXt" = (
@@ -19812,7 +19812,7 @@
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
 "yiF" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/mainship/research/containment/floor2{
 	dir = 9
 	},

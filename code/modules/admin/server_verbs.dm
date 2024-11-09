@@ -248,7 +248,7 @@
 /datum/admins/proc/toggle_join()
 	set category = "Server"
 	set name = "Toggle Joining"
-	set desc = "Players can still log into the server, but marines won't be able to join the game as a new mob."
+	set desc = "Players can still log into the server, but guardsmans won't be able to join the game as a new mob."
 
 	if(!check_rights(R_SERVER))
 		return

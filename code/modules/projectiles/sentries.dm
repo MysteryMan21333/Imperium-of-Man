@@ -10,9 +10,9 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 	. += typesof(/obj/vehicle/sealed/armored/multitile)
 
 /obj/machinery/deployable/mounted/sentry
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
+	resistance_flags = UNACIDABLE|TYRANID_DAMAGEABLE
 	use_power = 0
-	req_one_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_ENGPREP, ACCESS_MARINE_LEADER)
+	req_one_access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_ENGPREP, ACCESS_GUARDSMAN_LEADER)
 	hud_possible = list(MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
 	allow_pass_flags = PASSABLE
 	///Spark system for making sparks
@@ -67,7 +67,7 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 		camera.network = list("military")
 		camera.c_tag = "[name] ([rand(0, 1000)])"
 
-	GLOB.marine_turrets += src
+	GLOB.guardsman_turrets += src
 	set_on(TRUE)
 
 ///Change minimap icon if its firing or not firing
@@ -78,11 +78,11 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 	var/marker_flags
 	switch(iff_signal)
 		if(TGMC_LOYALIST_IFF)
-			marker_flags = MINIMAP_FLAG_MARINE
-		if(SOM_IFF)
-			marker_flags = MINIMAP_FLAG_MARINE_SOM
+			marker_flags = MINIMAP_FLAG_GUARDSMAN
+		if(CHAOS_IFF)
+			marker_flags = MINIMAP_FLAG_GUARDSMAN_CHAOS
 		else
-			marker_flags = MINIMAP_FLAG_MARINE
+			marker_flags = MINIMAP_FLAG_GUARDSMAN
 	SSminimaps.add_marker(src, marker_flags, image('icons/UI_icons/map_blips.dmi', null, "sentry[firing ? "_firing" : "_passive"]"))
 
 /obj/machinery/deployable/mounted/sentry/update_icon_state()
@@ -105,7 +105,7 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 		var/obj/item/internal_sentry = get_internal_item()
 		if(internal_sentry)
 			UnregisterSignal(internal_sentry, COMSIG_MOB_GUN_FIRED)
-	GLOB.marine_turrets -= src
+	GLOB.guardsman_turrets -= src
 	return ..()
 
 /obj/machinery/deployable/mounted/sentry/deconstruct(disassembled = TRUE, mob/living/blame_mob)
@@ -217,7 +217,7 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 	if(.)
 		return
 	var/obj/item/weapon/gun/gun = get_internal_item()
-	if(isxeno(usr))
+	if(istyranid(usr))
 		return
 	var/mob/living/user = usr
 	if(!istype(user) || CHECK_BITFIELD(gun.turret_flags, TURRET_IMMOBILE) || CHECK_BITFIELD(machine_stat, KNOCKED_DOWN))
@@ -294,7 +294,7 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 	RegisterSignal(gun, COMSIG_MOB_GUN_FIRED, PROC_REF(check_next_shot))
 	update_minimap_icon()
 
-///Bonks the sentry onto its side. This currently is used here, and in /living/carbon/xeno/warrior/mob_abilities in punch
+///Bonks the sentry onto its side. This currently is used here, and in /living/carbon/tyranid/warrior/mob_abilities in punch
 /obj/machinery/deployable/mounted/sentry/proc/knock_down()
 	if(CHECK_BITFIELD(machine_stat, KNOCKED_DOWN))
 		return
@@ -388,10 +388,10 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 		if(nearby_human.stat == DEAD || CHECK_BITFIELD(nearby_human.status_flags, INCORPOREAL)  || (CHECK_BITFIELD(gun.turret_flags, TURRET_SAFETY) || nearby_human.wear_id?.iff_signal & iff_signal))
 			continue
 		potential_targets += nearby_human
-	for(var/mob/living/carbon/xenomorph/nearby_xeno AS in cheap_get_xenos_near(src, range))
-		if(nearby_xeno.stat == DEAD || HAS_TRAIT(nearby_xeno, TRAIT_TURRET_HIDDEN) || CHECK_BITFIELD(nearby_xeno.status_flags, INCORPOREAL) || CHECK_BITFIELD(nearby_xeno.xeno_iff_check(), iff_signal)) //So wraiths wont be shot at when in phase shift
+	for(var/mob/living/carbon/tyranid/nearby_tyranid AS in cheap_get_tyranids_near(src, range))
+		if(nearby_tyranid.stat == DEAD || HAS_TRAIT(nearby_tyranid, TRAIT_TURRET_HIDDEN) || CHECK_BITFIELD(nearby_tyranid.status_flags, INCORPOREAL) || CHECK_BITFIELD(nearby_tyranid.tyranid_iff_check(), iff_signal)) //So wraiths wont be shot at when in phase shift
 			continue
-		potential_targets += nearby_xeno
+		potential_targets += nearby_tyranid
 	for(var/obj/vehicle/sealed/mecha/nearby_mech AS in cheap_get_mechs_near(src, range))
 		var/list/driver_list = nearby_mech.return_drivers()
 		if(!length(driver_list))
@@ -543,7 +543,7 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 	var/obj/item/internal_sentry = get_internal_item()
 	if(internal_sentry)
 		name = "Deployed " + internal_sentry.name
-	icon = 'icons/obj/machines/deployable/sentry/build_a_sentry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/sentry/build_a_sentry.dmi'
 	default_icon_state = "build_a_sentry"
 	update_icon()
 
@@ -551,7 +551,7 @@ GLOBAL_LIST_INIT(sentry_ignore_List, set_sentry_ignore_List())
 	. = ..()
 	var/obj/item/weapon/gun/internal_gun = get_internal_item()
 	if(internal_gun)
-		. += image('icons/obj/machines/deployable/sentry/build_a_sentry.dmi', src, internal_gun.placed_overlay_iconstate, dir = dir)
+		. += image('modular_imperium/master_files/icons/obj/machines/deployable/sentry/build_a_sentry.dmi', src, internal_gun.placed_overlay_iconstate, dir = dir)
 
 //Throwable turret
 /obj/machinery/deployable/mounted/sentry/cope

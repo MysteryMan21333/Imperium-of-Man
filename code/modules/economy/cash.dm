@@ -2,7 +2,7 @@
 	name = "0 dollars"
 	desc = "You have no dollars."
 	gender = PLURAL
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stack_objects.dmi'
 	icon_state = "spacecash1"
 	opacity = FALSE
 	density = FALSE
@@ -13,7 +13,7 @@
 	throw_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	var/access = list()
-	access = ACCESS_MARINE_CAPTAIN
+	access = ACCESS_GUARDSMAN_CAPTAIN
 	var/worth = 0
 
 /obj/item/spacecash/attackby(obj/item/I, mob/user, params)
@@ -59,14 +59,14 @@
 		while(sum >= i && num < 50)
 			sum -= i
 			num++
-			var/image/banknote = image('icons/obj/stack_objects.dmi', "spacecash[i]")
+			var/image/banknote = image('modular_imperium/master_files/icons/obj/stack_objects.dmi', "spacecash[i]")
 			var/matrix/M = matrix()
 			M.Translate(rand(-6, 6), rand(-4, 8))
 			M.Turn(pick(-45, -27.5, 0, 0, 0, 0, 0, 0, 0, 27.5, 45))
 			banknote.transform = M
 			. += banknote
 	if(num == 0) // Less than one thaler, let's just make it look like 1 for ease
-		var/image/banknote = image('icons/obj/stack_objects.dmi', "spacecash1")
+		var/image/banknote = image('modular_imperium/master_files/icons/obj/stack_objects.dmi', "spacecash1")
 		var/matrix/M = matrix()
 		M.Translate(rand(-6, 6), rand(-4, 8))
 		M.Turn(pick(-45, -27.5, 0, 0, 0, 0, 0, 0, 0, 27.5, 45))
@@ -154,7 +154,7 @@
 
 /obj/item/spacecash/ewallet
 	name = "\improper Nanotrasen cash card"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "efundcard"
 	desc = "A Nanotrasen backed cash card that holds an amount of money."
 	var/owner_name = "" //So the ATM can set it so the EFTPOS can put a valid name on transactions.

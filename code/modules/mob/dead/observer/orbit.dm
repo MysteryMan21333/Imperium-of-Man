@@ -53,10 +53,10 @@
 	var/list/data = list()
 
 	var/list/humans = list()
-	var/list/marines = list()
-	var/list/som = list()
+	var/list/guardsmans = list()
+	var/list/chaos = list()
 	var/list/survivors = list()
-	var/list/xenos = list()
+	var/list/tyranids = list()
 	var/list/dead = list()
 	var/list/ghosts = list()
 	var/list/misc = list()
@@ -97,15 +97,15 @@
 		var/mob/living/player = mob_poi
 		serialized["health"] = FLOOR((player.health / player.maxHealth * 100), 1)
 
-		if(isxeno(mob_poi))
-			var/mob/living/carbon/xenomorph/xeno = poi
-			if(xeno.xeno_caste)
-				var/datum/xeno_caste/caste = xeno.xeno_caste
+		if(istyranid(mob_poi))
+			var/mob/living/carbon/tyranid/tyranid = poi
+			if(tyranid.tyranid_caste)
+				var/datum/tyranid_caste/caste = tyranid.tyranid_caste
 				serialized["caste"] = caste.display_name
 				serialized["icon"] = caste.minimap_icon
-			if(!isnum(xeno.nicknumber))
-				serialized["nickname"] = xeno.nicknumber
-			xenos += list(serialized)
+			if(!isnum(tyranid.nicknumber))
+				serialized["nickname"] = tyranid.nicknumber
+			tyranids += list(serialized)
 			continue
 
 		if(isAI(mob_poi))
@@ -118,18 +118,18 @@
 			var/datum/job/job = human.job
 			serialized["nickname"] = human.real_name
 
-			if(ismarinejob(human.job))
+			if(isguardsmanjob(human.job))
 				if(human.assigned_squad)
 					serialized["icon"] = lowertext(human.assigned_squad.name) + "_" + job.minimap_icon
 					serialized["job"] = human.assigned_squad.name + " " + job.title
-				marines += list(serialized)
+				guardsmans += list(serialized)
 				continue
 
 			serialized["icon"] = job.minimap_icon
 			serialized["job"] = job.title
 
-			if(issommarinejob(human.job))
-				som += list(serialized)
+			if(issomguardsmanjob(human.job))
+				chaos += list(serialized)
 				continue
 
 			if(issurvivorjob(human.job))
@@ -144,9 +144,9 @@
 	data["icons"] = GLOB.minimap_icons
 	data["misc"] = misc
 	data["npcs"] = npcs
-	data["marines"] = marines
-	data["som"] = som
+	data["guardsmans"] = guardsmans
+	data["chaos"] = chaos
 	data["survivors"] = survivors
-	data["xenos"] = xenos
+	data["tyranids"] = tyranids
 
 	return data

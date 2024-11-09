@@ -1,13 +1,13 @@
-/datum/xeno_caste/defender
+/datum/tyranid_caste/defender
 	caste_name = "Defender"
 	display_name = "Defender"
 	upgrade_name = ""
 	caste_desc = "An alien with an armored crest. It looks very tough."
 
-	caste_type_path = /mob/living/carbon/xenomorph/defender
+	caste_type_path = /mob/living/carbon/tyranid/defender
 
-	tier = XENO_TIER_ONE
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_ONE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "defender" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -44,33 +44,33 @@
 	fortify_armor = 50
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/toggle_crest_defense,
-		/datum/action/ability/xeno_action/fortify,
-		/datum/action/ability/activable/xeno/charge/forward_charge,
-		/datum/action/ability/xeno_action/tail_sweep,
-		/datum/action/ability/xeno_action/regenerate_skin,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/toggle_crest_defense,
+		/datum/action/ability/tyranid_action/fortify,
+		/datum/action/ability/activable/tyranid/charge/forward_charge,
+		/datum/action/ability/tyranid_action/tail_sweep,
+		/datum/action/ability/tyranid_action/regenerate_skin,
 	)
 
-/datum/xeno_caste/defender/ancient
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/defender/ancient
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/defender/primordial
+/datum/tyranid_caste/defender/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "Alien with an incredibly tough and armored head crest able to endure even the strongest hits."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	primordial_message = "We are the aegis of the hive. Let nothing pierce our guard."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/toggle_crest_defense,
-		/datum/action/ability/xeno_action/fortify,
-		/datum/action/ability/activable/xeno/charge/forward_charge,
-		/datum/action/ability/xeno_action/tail_sweep,
-		/datum/action/ability/xeno_action/regenerate_skin,
-		/datum/action/ability/xeno_action/centrifugal_force,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/toggle_crest_defense,
+		/datum/action/ability/tyranid_action/fortify,
+		/datum/action/ability/activable/tyranid/charge/forward_charge,
+		/datum/action/ability/tyranid_action/tail_sweep,
+		/datum/action/ability/tyranid_action/regenerate_skin,
+		/datum/action/ability/tyranid_action/centrifugal_force,
 	)

@@ -1,5 +1,5 @@
 /datum/job/upp/commando
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/commando
@@ -18,12 +18,12 @@
 	jobtype = /datum/job/upp/commando/standard
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine/upp/full
+	belt = /obj/item/storage/belt/guardsman/upp/full
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/commando
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/uppcap
 	mask = /obj/item/clothing/mask/gas/pmc/upp
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles/upp
@@ -74,10 +74,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/lifesaver/full/upp
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP/medic
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP/medic
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/commando
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/uppcap
 	mask = /obj/item/clothing/mask/gas/pmc/upp
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles/upp
@@ -133,10 +133,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/korovin/tranq
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/commando
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/uppcap/beret
 	mask = /obj/item/clothing/mask/gas/pmc/upp
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles/upp

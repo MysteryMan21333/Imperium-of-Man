@@ -1,8 +1,8 @@
 /datum/job/terragov/squad
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	supervisors = "the acting squad leader"
 	selection_color = "#ffeeee"
-	exp_type_department = EXP_TYPE_MARINES
+	exp_type_department = EXP_TYPE_GUARDSMANS
 
 
 /datum/job/terragov/squad/after_spawn(mob/living/carbon/C, mob/M, latejoin = FALSE)
@@ -14,11 +14,11 @@
 	if(!(human_spawn.species.species_flags & ROBOTIC_LIMBS))
 		human_spawn.set_nutrition(250)
 	if(!human_spawn.assigned_squad)
-		CRASH("after_spawn called for a marine without an assigned_squad")
+		CRASH("after_spawn called for a guardsman without an assigned_squad")
 	to_chat(M, {"\nYou have been assigned to: <b><font size=3 color=[human_spawn.assigned_squad.color]>[lowertext(human_spawn.assigned_squad.name)] squad</font></b>.
 Make your way to the cafeteria for some post-cryosleep chow, and then get equipped in your squad's prep room."})
 	///yes i know istype(src) is gross but we literally have 1 child type we would want to ignore so
-	if(ismarineleaderjob(src))
+	if(isguardsmanleaderjob(src))
 		return
 	if(!(SSticker.mode.round_type_flags & MODE_FORCE_CUSTOMSQUAD_UI))
 		return
@@ -27,19 +27,19 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		return
 	addtimer(CALLBACK(GLOB.squad_selector, TYPE_PROC_REF(/datum, interact), human_spawn), 2 SECONDS)
 
-//Squad Marine
+//Squad Guardsman
 /datum/job/terragov/squad/standard
-	title = SQUAD_MARINE
+	title = SQUAD_GUARDSMAN
 	paygrade = "E1"
 	comm_title = "Mar"
-	access = list(ACCESS_MARINE_PREP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
-	display_order = JOB_DISPLAY_ORDER_SQUAD_MARINE
-	outfit = /datum/outfit/job/marine/standard
+	access = list(ACCESS_GUARDSMAN_PREP)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_DROPSHIP)
+	display_order = JOB_DISPLAY_ORDER_SQUAD_GUARDSMAN
+	outfit = /datum/outfit/job/guardsman/standard
 	total_positions = -1
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
@@ -51,7 +51,7 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		<b>You answer to the</b> acting Squad Leader<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		TerraGov’s Squad Marines make up the bread and butter of Terra's fighting forces. They are fitted with the standard arsenal that the TGMC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
+		Imperium’s Squad Guardsmans make up the bread and butter of Terra's fighting forces. They are fitted with the standard arsenal that the TGMC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
 		<br /><br />
 		<b>Duty</b>: Carry out orders made by your acting Squad Leader, deal with any threats that oppose the TGMC.
 	"}
@@ -79,12 +79,12 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 
 /datum/job/terragov/squad/standard/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"\nYou are a rank-and-file marine of the TGMC, and that is your strength.
-What you lack alone, you gain standing shoulder to shoulder with the men and women of the TerraGov Marine Corps. Ooh-rah!"})
+	to_chat(M, {"\nYou are a rank-and-file guardsman of the TGMC, and that is your strength.
+What you lack alone, you gain standing shoulder to shoulder with the men and women of the Imperium Guardsman Corps. Ooh-rah!"})
 
 
-/datum/outfit/job/marine/standard
-	name = SQUAD_MARINE
+/datum/outfit/job/guardsman/standard
+	name = SQUAD_GUARDSMAN
 	jobtype = /datum/job/terragov/squad/standard
 
 	id = /obj/item/card/id/dogtag
@@ -95,14 +95,14 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 	paygrade = "E3"
 	comm_title = "Eng"
 	total_positions = 4
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
+	access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_GUARDSMAN_REMOTEBUILD, ACCESS_GUARDSMAN_ENGINEERING)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_REMOTEBUILD, ACCESS_GUARDSMAN_ENGINEERING)
 	skills_type = /datum/skills/combat_engineer
 	display_order = JOB_DISPLAY_ORDER_SUQAD_ENGINEER
-	outfit = /datum/outfit/job/marine/engineer
+	outfit = /datum/outfit/job/guardsman/engineer
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_MEDIUM,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
@@ -114,7 +114,7 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 		<b>You answer to the</b> acting Squad Leader<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		A mastermind of on-field construction, often regarded as the answer on whether the FOB succeeds or not, Squad Engineers are the people who construct the Forward Operating Base (FOB) and guard whatever threat that endangers the marines. In addition to this, they are also in charge of repairing power generators on the field as well as mining drills for requisitions. They have a high degree of engineering skill, meaning they can deploy and repair barricades faster than regular marines.
+		A mastermind of on-field construction, often regarded as the answer on whether the FOB succeeds or not, Squad Engineers are the people who construct the Forward Operating Base (FOB) and guard whatever threat that endangers the guardsmans. In addition to this, they are also in charge of repairing power generators on the field as well as mining drills for requisitions. They have a high degree of engineering skill, meaning they can deploy and repair barricades faster than regular guardsmans.
 		<br /><br />
 		<b>Duty</b>: Construct and reinforce the FOB that has been ordered by your acting Squad Leader, fix power generators and mining drills in the AO and stay on guard for any dangers that threaten your FOB.
 	"}
@@ -126,7 +126,7 @@ What you lack alone, you gain standing shoulder to shoulder with the men and wom
 Your squaddies will look to you when it comes to construction in the field of battle."})
 
 
-/datum/outfit/job/marine/engineer
+/datum/outfit/job/guardsman/engineer
 	name = SQUAD_ENGINEER
 	jobtype = /datum/job/terragov/squad/engineer
 
@@ -158,16 +158,16 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	paygrade = "E3"
 	comm_title = "Med"
 	total_positions = 5
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_DROPSHIP)
 	skills_type = /datum/skills/combat_medic
 	display_order = JOB_DISPLAY_ORDER_SQUAD_CORPSMAN
-	outfit = /datum/outfit/job/marine/corpsman
+	outfit = /datum/outfit/job/guardsman/corpsman
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_MEDIUM,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 	)
@@ -177,9 +177,9 @@ Your squaddies will look to you when it comes to construction in the field of ba
 		<b>You answer to the</b> acting Squad Leader<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		Corpsman are the vital line between life and death of a marine’s life should a marine be wounded in battle, if provided they do not run away. While marines treat themselves, it is the corpsmen who will treat injuries beyond what a normal person can do. With a higher degree of medical skill compared to a normal marine, they are capable of doing medical actions faster and reviving with defibrillators will heal more on each attempt. They can also perform surgery, in an event if there are no acting medical officers onboard.
+		Corpsman are the vital line between life and death of a guardsman’s life should a guardsman be wounded in battle, if provided they do not run away. While guardsmans treat themselves, it is the corpsmen who will treat injuries beyond what a normal person can do. With a higher degree of medical skill compared to a normal guardsman, they are capable of doing medical actions faster and reviving with defibrillators will heal more on each attempt. They can also perform surgery, in an event if there are no acting medical officers onboard.
 		<br /><br />
-		<b>Duty</b>: Tend the injuries of your fellow marines or related personnel, keep them at fighting strength. Evacuate those who are incapacitated or rendered incapable of fighting due to severe wounds or larvae infections.
+		<b>Duty</b>: Tend the injuries of your fellow guardsmans or related personnel, keep them at fighting strength. Evacuate those who are incapacitated or rendered incapable of fighting due to severe wounds or larvae infections.
 	"}
 	minimap_icon = "medic"
 
@@ -188,7 +188,7 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	to_chat(M, {"\nYou must tend the wounds of your squad mates and make sure they are healthy and active.
 You may not be a fully-fledged doctor, but you stand between life and death when it matters."})
 
-/datum/outfit/job/marine/corpsman
+/datum/outfit/job/guardsman/corpsman
 	name = SQUAD_CORPSMAN
 	jobtype = /datum/job/terragov/squad/corpsman
 
@@ -220,14 +220,14 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	paygrade = "E3"
 	comm_title = "SGnr"
 	total_positions = 4
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_SMARTPREP)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_SMARTPREP, ACCESS_GUARDSMAN_DROPSHIP)
 	skills_type = /datum/skills/smartgunner
 	display_order = JOB_DISPLAY_ORDER_SQUAD_SMARTGUNNER
-	outfit = /datum/outfit/job/marine/smartgunner
+	outfit = /datum/outfit/job/guardsman/smartgunner
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 	)
@@ -237,7 +237,7 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 		<b>You answer to the</b> acting Squad Leader<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		When it comes to heavy firepower during the early stages of an operation, TGMC has provided the squad with Smartgunners. They are those who trained to operate smart weapons, built-in IFF weapons that provides covering and suppressive fire even directly behind the marines. Squad Smartgunners are best when fighting behind marines, as they can act as shields or during a hectic crossfire.
+		When it comes to heavy firepower during the early stages of an operation, TGMC has provided the squad with Smartgunners. They are those who trained to operate smart weapons, built-in IFF weapons that provides covering and suppressive fire even directly behind the guardsmans. Squad Smartgunners are best when fighting behind guardsmans, as they can act as shields or during a hectic crossfire.
 		<br /><br />
 		<b>Duty</b>: Be the backline of your pointmen, provide heavy weapons support with your smart weapon.
 	"}
@@ -267,7 +267,7 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 		if(60001 to INFINITY) // 1000 hrs
 			new_human.wear_id.paygrade = "E9A" //If you play way too much TGMC. 1000 hours.
 
-/datum/outfit/job/marine/smartgunner
+/datum/outfit/job/guardsman/smartgunner
 	name = SQUAD_SMARTGUNNER
 	jobtype = /datum/job/terragov/squad/smartgunner
 
@@ -281,15 +281,15 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	comm_title = "Spec"
 	total_positions = 0
 	max_positions = 0
-	access = list(ACCESS_MARINE_PREP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_GUARDSMAN_PREP)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_DROPSHIP)
 	skills_type = /datum/skills/specialist
-	outfit = /datum/outfit/job/marine/specialist
+	outfit = /datum/outfit/job/guardsman/specialist
 	exp_requirements = XP_REQ_UNSEASONED
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 	)
 	job_points_needed = 10 //Redefined via config.
 
@@ -300,7 +300,7 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 You can serve a variety of roles, so choose carefully."})
 
 
-/datum/outfit/job/marine/specialist
+/datum/outfit/job/guardsman/specialist
 	name = SQUAD_SPECIALIST
 	jobtype = /datum/job/terragov/squad/specialist
 
@@ -315,16 +315,16 @@ You can serve a variety of roles, so choose carefully."})
 	comm_title = JOB_COMM_TITLE_SQUAD_LEADER
 	total_positions = 4
 	supervisors = "the acting field commander"
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE)
+	access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_TADPOLE)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_TADPOLE)
 	skills_type = /datum/skills/sl
 	display_order = JOB_DISPLAY_ORDER_SQUAD_LEADER
-	outfit = /datum/outfit/job/marine/leader
+	outfit = /datum/outfit/job/guardsman/leader
 	exp_requirements = XP_REQ_INTERMEDIATE
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_LOUDER_TTS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_HIGH,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
@@ -347,7 +347,7 @@ You can serve a variety of roles, so choose carefully."})
 	to_chat(M, {"\nYou are responsible for the men and women of your squad. Make sure they are on task, working together, and communicating.
 You are also in charge of communicating with command and letting them know about the situation first hand. Keep out of harm's way."})
 
-/datum/outfit/job/marine/leader
+/datum/outfit/job/guardsman/leader
 	name = SQUAD_LEADER
 	jobtype = /datum/job/terragov/squad/leader
 
@@ -376,21 +376,21 @@ You are also in charge of communicating with command and letting them know about
 		return
 	if(!new_human.assigned_squad)
 		return
-	if(!ismarineleaderjob(new_human.assigned_squad?.squad_leader?.job)) //If there's no proper SL already in the squad, promote to leader
+	if(!isguardsmanleaderjob(new_human.assigned_squad?.squad_leader?.job)) //If there's no proper SL already in the squad, promote to leader
 		new_human.assigned_squad.promote_leader(new_human)
 
 /datum/job/terragov/squad/vatgrown
-	title = SQUAD_MARINE
+	title = SQUAD_GUARDSMAN
 	paygrade = "VM"
 	comm_title = "Mar"
-	access = list(ACCESS_MARINE_PREP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
-	display_order = JOB_DISPLAY_ORDER_SQUAD_MARINE
-	outfit = /datum/outfit/job/marine/vatgrown
+	access = list(ACCESS_GUARDSMAN_PREP)
+	minimal_access = list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_DROPSHIP)
+	display_order = JOB_DISPLAY_ORDER_SQUAD_GUARDSMAN
+	outfit = /datum/outfit/job/guardsman/vatgrown
 	total_positions = 0
 	job_flags = JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
@@ -399,7 +399,7 @@ You are also in charge of communicating with command and letting them know about
 /datum/job/terragov/squad/vatgrown/return_spawn_type(datum/preferences/prefs)
 	return /mob/living/carbon/human/species/vatgrown
 
-/datum/outfit/job/marine/vatgrown
+/datum/outfit/job/guardsman/vatgrown
 	name = SQUAD_VATGROWN
 	jobtype = /datum/job/terragov/squad/vatgrown
 	id = /obj/item/card/id/dogtag

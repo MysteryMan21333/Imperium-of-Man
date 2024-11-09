@@ -7,14 +7,14 @@
 	var/name = ""
 	var/mob_max = 10
 	var/mob_min = 1
-	var/dispatch_message = "An encrypted signal has been received from a nearby vessel. Stand by." //Message displayed to marines once the signal is finalized.
+	var/dispatch_message = "An encrypted signal has been received from a nearby vessel. Stand by." //Message displayed to guardsmans once the signal is finalized.
 	var/objectives = "" //Objectives to display to the members.
 	var/list/datum/mind/members = list() //Currently-joined members.
 	var/list/datum/mind/candidates = list() //Potential candidates for enlisting.
 	var/mob/living/carbon/leader = null
 	var/shuttle_id = SHUTTLE_DISTRESS
 	var/obj/docking_port/mobile/ert/shuttle
-	var/auto_shuttle_launch = FALSE //Useful for xenos that can't interact with the shuttle console.
+	var/auto_shuttle_launch = FALSE //Useful for tyranids that can't interact with the shuttle console.
 	var/medics = 0
 	var/max_medics = 1
 	var/candidate_timer
@@ -23,9 +23,9 @@
 	///The base probability of that ERT spawning, it is changing with monitor state
 	var/base_probability = 0
 	/**
-	 * How the current_weight change with the monitor state. A big positive number will make the current weight go down drasticly when marines are winning
-	 * A small negative number will make the current weight get smaller when xenos are winning.
-	 * All effects are symetric (if it goes down when marine are winning, it will go up when xeno are winning)
+	 * How the current_weight change with the monitor state. A big positive number will make the current weight go down drasticly when guardsmans are winning
+	 * A small negative number will make the current weight get smaller when tyranids are winning.
+	 * All effects are symetric (if it goes down when guardsman are winning, it will go up when tyranid are winning)
 	 * if the alignement_factor factor is 0, it will proc a specific case
 	 */
 	var/alignement_factor = 0
@@ -47,7 +47,7 @@
 
 //Randomizes and chooses a call datum.
 /datum/game_mode/proc/get_random_call()
-	var/normalised_monitor_state = SSmonitor.current_points / XENOS_LOSING_THRESHOLD
+	var/normalised_monitor_state = SSmonitor.current_points / TYRANIDS_LOSING_THRESHOLD
 	var/list/calls_weighted = list()
 	var/total_weight = 0
 	for(var/datum/emergency_call/E in all_calls) //Loop through all potential candidates
@@ -62,8 +62,8 @@
 
 /**
  * Return a new current_weight using the base probability, the Alignement factor of the ERT and the monitor state
- * monitor_state : the normalised state of the monitor. If it's equal to -1, monitor is barely in its MARINE_LOSING state.
- * A +2.5 value mean we are beyond the XENO_DELAYING state, aka marines have crushed the xenos
+ * monitor_state : the normalised state of the monitor. If it's equal to -1, monitor is barely in its GUARDSMAN_LOSING state.
+ * A +2.5 value mean we are beyond the TYRANID_DELAYING state, aka guardsmans have crushed the tyranids
  */
 /datum/emergency_call/proc/get_actualised_weight(monitor_state)
 	var/probability_direction = (monitor_state * alignement_factor)
@@ -172,9 +172,9 @@
 			if(!isaghost(M.current) && M.current.stat != DEAD) // and not dead or admin ghosting,
 				to_chat(M.current, span_warning("You didn't get selected to join the distress team because you aren't dead."))
 				continue
-		if(name == "Xenomorphs" && is_banned_from(ckey(M.key), ROLE_XENOMORPH))
+		if(name == "Tyranids" && is_banned_from(ckey(M.key), ROLE_TYRANID))
 			if(M.current)
-				to_chat(M, span_warning("You didn't get selected to join the distress team because you are jobbanned from Xenomorph."))
+				to_chat(M, span_warning("You didn't get selected to join the distress team because you are jobbanned from Tyranid."))
 			continue
 		valid_candidates += M
 
@@ -261,7 +261,7 @@
 		return FALSE  //Already there.
 
 	if(M.stat != DEAD)
-		return FALSE  //Alive, could have been drafted into xenos or something else.
+		return FALSE  //Alive, could have been drafted into tyranids or something else.
 
 	if(!M.mind) //They don't have a mind
 		return FALSE

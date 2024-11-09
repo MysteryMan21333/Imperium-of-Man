@@ -4,10 +4,10 @@
 /obj/item/reagent_containers/food/drinks
 	name = "drink"
 	desc = "yummy"
-	icon = 'icons/obj/items/drinks.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/drinks.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/drinks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/drinks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_right.dmi',
 	)
 	icon_state = null
 	reagent_flags = OPENCONTAINER_NOUNIT
@@ -227,7 +227,7 @@
 	volume = 60
 	center_of_mass = list("x"=17, "y"=8)
 
-/obj/item/reagent_containers/food/drinks/flask/marine
+/obj/item/reagent_containers/food/drinks/flask/guardsman
 	name = "\improper Combat Canteen"
 	desc = "A canteen hardened with metal and filled to the brim with water. Stay hydrated!"
 	icon_state = "canteen"

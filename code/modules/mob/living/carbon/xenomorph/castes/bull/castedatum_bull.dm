@@ -1,11 +1,11 @@
-/datum/xeno_caste/bull
+/datum/tyranid_caste/bull
 	caste_name = "Bull"
 	display_name = "Bull"
 	upgrade_name = ""
 	caste_desc = "A well defended hit-and-runner."
-	caste_type_path = /mob/living/carbon/xenomorph/bull
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/bull
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "bull" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -28,7 +28,7 @@
 	evolution_threshold = 225
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/runner
+	deevolves_to = /datum/tyranid_caste/runner
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED
@@ -42,21 +42,21 @@
 	minimap_icon = "bull"
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/ready_charge/bull_charge,
-		/datum/action/ability/activable/xeno/bull_charge,
-		/datum/action/ability/activable/xeno/bull_charge/headbutt,
-		/datum/action/ability/activable/xeno/bull_charge/gore,
-		/datum/action/ability/xeno_action/toggle_long_range/bull,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/ready_charge/bull_charge,
+		/datum/action/ability/activable/tyranid/bull_charge,
+		/datum/action/ability/activable/tyranid/bull_charge/headbutt,
+		/datum/action/ability/activable/tyranid/bull_charge/gore,
+		/datum/action/ability/tyranid_action/toggle_long_range/bull,
 	)
 
-/datum/xeno_caste/bull/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/bull/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/bull/primordial
+/datum/tyranid_caste/bull/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "Bloodthirsty horned devil of the hive. Stay away from its path."
 	primordial_message = "We are the spearhead of the hive. Run them all down."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO

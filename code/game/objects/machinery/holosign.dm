@@ -2,7 +2,7 @@
 /obj/machinery/holosign
 	name = "holosign"
 	desc = "Small wall-mounted holographic projector"
-	icon = 'icons/obj/machines/holosign.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/holosign.dmi'
 	icon_state = "sign_off"
 	layer = MOB_LAYER
 	anchored = TRUE
@@ -36,7 +36,7 @@
 
 /obj/machinery/holosign_switch
 	name = "holosign switch"
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	icon_state = "light1"
 	desc = "A remote control switch for holosign."
 	var/id = null

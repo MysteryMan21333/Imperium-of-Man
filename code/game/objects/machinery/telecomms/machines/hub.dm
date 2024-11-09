@@ -51,8 +51,8 @@
 	"requisitions", "alpha","firesupport", "bravo", "charlie", "delta", "common", "engineering",
 	"receiverA", "receiverB", "broadcasterA", "broadcasterB")
 
-/obj/machinery/telecomms/hub/preset/som
-	id = "Hub som"
+/obj/machinery/telecomms/hub/preset/chaos
+	id = "Hub chaos"
 	autolinkers = list("hub_som", "relay", "s_relay", "command_som", "medical_som", "ert",
 	"zulu", "yankee", "xray", "whiskey", "common_som", "engineering_som",
 	"receiverA_som", "receiverB_som", "broadcasterA_som")

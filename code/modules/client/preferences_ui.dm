@@ -51,7 +51,7 @@
 			data["g_eyes"] = g_eyes
 			data["b_eyes"] = b_eyes
 			data["real_name"] = real_name
-			data["xeno_name"] = xeno_name
+			data["tyranid_name"] = tyranid_name
 			data["synthetic_name"] = synthetic_name
 			data["synthetic_type"] = synthetic_type
 			data["robot_type"] = robot_type
@@ -103,7 +103,7 @@
 			data["ui_style_alpha"] = ui_style_alpha
 			data["windowflashing"] = windowflashing
 			data["auto_fit_viewport"] = auto_fit_viewport
-			data["mute_xeno_health_alert_messages"] = mute_xeno_health_alert_messages
+			data["mute_tyranid_health_alert_messages"] = mute_tyranid_health_alert_messages
 			data["sound_tts"] = sound_tts
 			data["volume_tts"] = volume_tts
 			data["radio_tts_flags"] = radio_tts_flags
@@ -120,7 +120,7 @@
 			data["see_rc_emotes"] = see_rc_emotes
 			data["mute_others_combat_messages"] = mute_others_combat_messages
 			data["mute_self_combat_messages"] = mute_self_combat_messages
-			data["show_xeno_rank"] = show_xeno_rank
+			data["show_tyranid_rank"] = show_tyranid_rank
 			data["show_typing"] = show_typing
 			data["toggle_adminhelp_sound"] = !!(toggles_sound & SOUND_ADMINHELP)
 			data["toggle_admin_music"] = !!(toggles_sound & SOUND_MIDI)
@@ -194,7 +194,7 @@
 				)
 		if(JOB_PREFERENCES)
 			.["squads"] = SELECTABLE_SQUADS
-			.["squads_som"] = SELECTABLE_SQUADS_SOM
+			.["squads_som"] = SELECTABLE_SQUADS_CHAOS
 			.["jobs"] = list()
 			for(var/datum/job/job AS in SSjob.joinable_occupations)
 				var/rank = job.title
@@ -210,8 +210,8 @@
 				)
 			.["overflow_job"] = SSjob?.overflow_role?.title
 			.["special_occupations"] = list(
-				"Latejoin Xenomorph" = BE_ALIEN,
-				"Xenomorph when unrevivable" = BE_ALIEN_UNREVIVABLE,
+				"Latejoin Tyranid" = BE_ALIEN,
+				"Tyranid when unrevivable" = BE_ALIEN_UNREVIVABLE,
 				"End of Round Deathmatch" = BE_DEATHMATCH,
 				"Prefer Squad over Role" = BE_SQUAD_STRICT
 			)
@@ -291,16 +291,16 @@
 			robot_type = choice
 			update_preview_icon()
 
-		if("xeno_name")
+		if("tyranid_name")
 			var/newValue = params["newValue"]
 			if(newValue == "")
-				xeno_name = "Undefined"
+				tyranid_name = "Undefined"
 			else
 				newValue = reject_bad_name(newValue)
 				if(!newValue)
 					tgui_alert(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>", "Invalid name", list("Ok"))
 					return
-				xeno_name = newValue
+				tyranid_name = newValue
 
 		if("ai_name")
 			var/newValue = params["newValue"]
@@ -580,7 +580,7 @@
 
 		if("squad_som")
 			var/new_squad_som = params["newValue"]
-			if(!(new_squad_som in SELECTABLE_SQUADS_SOM))
+			if(!(new_squad_som in SELECTABLE_SQUADS_CHAOS))
 				return
 			preferred_squad_som = new_squad_som
 
@@ -622,8 +622,8 @@
 			if(auto_fit_viewport && parent)
 				parent.fit_viewport()
 
-		if("mute_xeno_health_alert_messages")
-			mute_xeno_health_alert_messages = !mute_xeno_health_alert_messages
+		if("mute_tyranid_health_alert_messages")
+			mute_tyranid_health_alert_messages = !mute_tyranid_health_alert_messages
 
 		if("sound_tts")
 			var/choice = tgui_input_list(ui.user, "What kind of TTS do you want?", "TTS choice", GLOB.all_tts_options)
@@ -708,8 +708,8 @@
 		if("mute_others_combat_messages")
 			mute_others_combat_messages = !mute_others_combat_messages
 
-		if("show_xeno_rank")
-			show_xeno_rank = !show_xeno_rank
+		if("show_tyranid_rank")
+			show_tyranid_rank = !show_tyranid_rank
 
 		if("change_quick_equip")
 			var/editing_slot = params["selection"]

@@ -1,6 +1,6 @@
 /obj/machinery/constructable_frame
 	name = "machine frame"
-	icon = 'icons/obj/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stock_parts.dmi'
 	icon_state = "box_0"
 	density = FALSE
 	anchored = TRUE

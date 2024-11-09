@@ -1,14 +1,14 @@
 // ***************************************
 // *********** Acid spray
 // ***************************************
-/datum/action/ability/activable/xeno/spray_acid/cone
+/datum/action/ability/activable/tyranid/spray_acid/cone
 	name = "Spray Acid Cone"
 	desc = "Spray a cone of dangerous acid at your target."
 	ability_cost = 300
 	cooldown_duration = 40 SECONDS
 
-/datum/action/ability/activable/xeno/spray_acid/cone/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/spray_acid/cone/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/X = owner
 	var/turf/target = get_turf(A)
 
 	if(!istype(target)) //Something went horribly wrong. Clicked off edge of map probably
@@ -26,24 +26,24 @@
 	succeed_activate()
 
 	playsound(X.loc, 'sound/effects/refill.ogg', 25, 1)
-	X.visible_message(span_xenowarning("\The [X] spews forth a wide cone of acid!"), \
-	span_xenowarning("We spew forth a cone of acid!"), null, 5)
+	X.visible_message(span_tyranidwarning("\The [X] spews forth a wide cone of acid!"), \
+	span_tyranidwarning("We spew forth a cone of acid!"), null, 5)
 
 	X.add_movespeed_modifier(type, TRUE, 0, NONE, TRUE, 1)
-	start_acid_spray_cone(target, X.xeno_caste.acid_spray_range)
+	start_acid_spray_cone(target, X.tyranid_caste.acid_spray_range)
 	add_cooldown()
 	addtimer(CALLBACK(src, PROC_REF(reset_speed)), rand(2 SECONDS, 3 SECONDS))
 
-/datum/action/ability/activable/xeno/spray_acid/cone/proc/reset_speed()
-	var/mob/living/carbon/xenomorph/spraying_xeno = owner
-	if(QDELETED(spraying_xeno))
+/datum/action/ability/activable/tyranid/spray_acid/cone/proc/reset_speed()
+	var/mob/living/carbon/tyranid/spraying_tyranid = owner
+	if(QDELETED(spraying_tyranid))
 		return
-	spraying_xeno.remove_movespeed_modifier(type)
+	spraying_tyranid.remove_movespeed_modifier(type)
 
-/datum/action/ability/activable/xeno/spray_acid/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/spray_acid/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/spray_acid/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/spray_acid/ai_should_use(atom/target)
 	if(owner.do_actions) //Chances are we're already spraying acid, don't override it
 		return FALSE
 	if(!iscarbon(target))
@@ -52,7 +52,7 @@
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
@@ -66,7 +66,7 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 #define CONE_PART_MIDDLE_DIAG (1<<5)
 
 ///Start the acid cone spray in the correct direction
-/datum/action/ability/activable/xeno/spray_acid/cone/proc/start_acid_spray_cone(turf/T, range)
+/datum/action/ability/activable/tyranid/spray_acid/cone/proc/start_acid_spray_cone(turf/T, range)
 	var/facing = angle_to_dir(Get_Angle(owner, T))
 	owner.setDir(facing)
 	switch(facing)
@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 			do_acid_cone_spray(owner.loc, range + 1, facing, CONE_PART_DIAG_LEFT|CONE_PART_DIAG_RIGHT, owner, TRUE)
 
 ///Check if it's possible to create a spray, and if yes, check if the spray must continue
-/datum/action/ability/activable/xeno/spray_acid/cone/proc/do_acid_cone_spray(turf/T, distance_left, facing, direction_flag, source_spray, skip_timer = FALSE)
+/datum/action/ability/activable/tyranid/spray_acid/cone/proc/do_acid_cone_spray(turf/T, distance_left, facing, direction_flag, source_spray, skip_timer = FALSE)
 	if(distance_left <= 0)
 		return
 	if(T.density)
@@ -91,13 +91,13 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 	if(is_blocked)
 		return
 
-	var/mob/living/carbon/xenomorph/praetorian/xeno_owner = owner
+	var/mob/living/carbon/tyranid/praetorian/tyranid_owner = owner
 
-	var/obj/effect/xenomorph/spray/spray = new(T, xeno_owner.xeno_caste.acid_spray_duration, xeno_owner.xeno_caste.acid_spray_damage, xeno_owner)
+	var/obj/effect/tyranid/spray/spray = new(T, tyranid_owner.tyranid_caste.acid_spray_duration, tyranid_owner.tyranid_caste.acid_spray_damage, tyranid_owner)
 	var/turf/next_normal_turf = get_step(T, facing)
 	for (var/atom/movable/A AS in T)
 		A.acid_spray_act(owner)
-		if(((A.density && !(A.allow_pass_flags & PASS_PROJECTILE) && !(A.atom_flags & ON_BORDER)) || !A.Exit(source_spray, facing)) && !isxeno(A))
+		if(((A.density && !(A.allow_pass_flags & PASS_PROJECTILE) && !(A.atom_flags & ON_BORDER)) || !A.Exit(source_spray, facing)) && !istyranid(A))
 			is_blocked = TRUE
 	if(!is_blocked)
 		if(!skip_timer)
@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 
 
 ///Call the next steps of the cone spray,
-/datum/action/ability/activable/xeno/spray_acid/cone/proc/continue_acid_cone_spray(turf/current_turf, turf/next_normal_turf, distance_left, facing, direction_flag, spray)
+/datum/action/ability/activable/tyranid/spray_acid/cone/proc/continue_acid_cone_spray(turf/current_turf, turf/next_normal_turf, distance_left, facing, direction_flag, spray)
 	if(CHECK_BITFIELD(direction_flag, CONE_PART_MIDDLE))
 		do_acid_cone_spray(next_normal_turf, distance_left - 1 , facing, CONE_PART_MIDDLE, spray)
 	if(CHECK_BITFIELD(direction_flag, CONE_PART_RIGHT))
@@ -126,15 +126,15 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 // ***************************************
 // *********** Acid dash
 // ***************************************
-/datum/action/ability/activable/xeno/charge/acid_dash
+/datum/action/ability/activable/tyranid/charge/acid_dash
 	name = "Acid Dash"
 	action_icon_state = "pounce"
-	action_icon = 'icons/Xeno/actions/runner.dmi'
-	desc = "Instantly dash, tackling the first marine in your path. If you manage to tackle someone, gain another weaker cast of the ability."
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/runner.dmi'
+	desc = "Instantly dash, tackling the first guardsman in your path. If you manage to tackle someone, gain another weaker cast of the ability."
 	ability_cost = 250
 	cooldown_duration = 30 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_ACID_DASH,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_ACID_DASH,
 	)
 	charge_range = PRAE_CHARGEDISTANCE
 	///Can we use the ability again
@@ -144,41 +144,41 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 	///The last tile we dashed through, used when swapping with a human
 	var/turf/last_turf
 
-/datum/action/ability/activable/xeno/charge/acid_dash/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/charge/acid_dash/use_ability(atom/A)
 	if(!A)
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 
-	RegisterSignal(xeno_owner, COMSIG_XENO_OBJ_THROW_HIT, PROC_REF(obj_hit))
-	RegisterSignal(xeno_owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
-	RegisterSignal(xeno_owner, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
+	RegisterSignal(tyranid_owner, COMSIG_TYRANID_OBJ_THROW_HIT, PROC_REF(obj_hit))
+	RegisterSignal(tyranid_owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
+	RegisterSignal(tyranid_owner, COMSIG_TYRANID_LEAP_BUMP, PROC_REF(mob_hit))
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(acid_steps)) //We drop acid on every tile we pass through
 
-	xeno_owner.visible_message(span_danger("[xeno_owner] slides towards \the [A]!"), \
+	tyranid_owner.visible_message(span_danger("[tyranid_owner] slides towards \the [A]!"), \
 	span_danger("We dash towards \the [A], spraying acid down our path!") )
-	xeno_owner.emote("roar")
-	xeno_owner.xeno_flags |= XENO_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
+	tyranid_owner.emote("roar")
+	tyranid_owner.tyranid_flags |= TYRANID_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
 	succeed_activate()
 
 	last_turf = get_turf(owner)
 	owner.pass_flags = PASS_LOW_STRUCTURE|PASS_DEFENSIVE_STRUCTURE|PASS_FIRE
 	owner.throw_at(A, charge_range, 2, owner)
 
-/datum/action/ability/activable/xeno/charge/acid_dash/mob_hit(datum/source, mob/living/living_target)
+/datum/action/ability/activable/tyranid/charge/acid_dash/mob_hit(datum/source, mob/living/living_target)
 	. = TRUE
-	if(living_target.stat || isxeno(living_target) || !(iscarbon(living_target))) //we leap past xenos
+	if(living_target.stat || istyranid(living_target) || !(iscarbon(living_target))) //we leap past tyranids
 		return
 	recast_available = TRUE
 	var/mob/living/carbon/carbon_victim = living_target
 	carbon_victim.ParalyzeNoChain(0.5 SECONDS)
 
 	to_chat(carbon_victim, span_highdanger("The [owner] tackles us, sending us behind them!"))
-	owner.visible_message(span_xenodanger("\The [owner] tackles [carbon_victim], swapping location with them!"), \
-		span_xenodanger("We push [carbon_victim] in our acid trail!"), visible_message_flags = COMBAT_MESSAGE)
+	owner.visible_message(span_tyraniddanger("\The [owner] tackles [carbon_victim], swapping location with them!"), \
+		span_tyraniddanger("We push [carbon_victim] in our acid trail!"), visible_message_flags = COMBAT_MESSAGE)
 
-/datum/action/ability/activable/xeno/charge/acid_dash/charge_complete()
+/datum/action/ability/activable/tyranid/charge/acid_dash/charge_complete()
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 	if(recast_available)
 		addtimer(CALLBACK(src, PROC_REF(charge_complete)), 2 SECONDS) //Delayed recursive call, this time you won't gain a recast so it will go on cooldown in 2 SECONDS.
 		recast = TRUE
@@ -186,52 +186,52 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 		recast = FALSE
 		add_cooldown()
 	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
-	xeno_owner.pass_flags = initial(xeno_owner.pass_flags)
+	tyranid_owner.pass_flags = initial(tyranid_owner.pass_flags)
 	recast_available = FALSE
 
 ///Drops an acid puddle on the current owner's tile, will do 0 damage if the owner has no acid_spray_damage
-/datum/action/ability/activable/xeno/charge/acid_dash/proc/acid_steps(atom/A, atom/OldLoc, Dir, Forced)
+/datum/action/ability/activable/tyranid/charge/acid_dash/proc/acid_steps(atom/A, atom/OldLoc, Dir, Forced)
 	SIGNAL_HANDLER
 	last_turf = OldLoc
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	new /obj/effect/xenomorph/spray(get_turf(xeno_owner), 5 SECONDS, xeno_owner.xeno_caste.acid_spray_damage) //Add a modifier here to buff the damage if needed
-	for(var/obj/O in get_turf(xeno_owner))
-		O.acid_spray_act(xeno_owner)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	new /obj/effect/tyranid/spray(get_turf(tyranid_owner), 5 SECONDS, tyranid_owner.tyranid_caste.acid_spray_damage) //Add a modifier here to buff the damage if needed
+	for(var/obj/O in get_turf(tyranid_owner))
+		O.acid_spray_act(tyranid_owner)
 
 // ***************************************
 // *********** Dodge
 // ***************************************
-/datum/action/ability/xeno_action/dodge
+/datum/action/ability/tyranid_action/dodge
 	name = "Dodge"
 	action_icon_state = "dodge"
-	action_icon = 'icons/Xeno/actions/praetorian.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/praetorian.dmi'
 	desc = "Gain a speed boost upon activation and the ability to pass through mobs. Enemies automatically receive bump attacks when passed."
 	ability_cost = 100
 	cooldown_duration = 12 SECONDS
 	use_state_flags = ABILITY_USE_BUSY
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_DODGE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_DODGE,
 	)
 	/// The increase of speed when ability is active.
 	var/speed_buff = -0.4
 	/// How long the ability will last?
 	var/duration = 6 SECONDS
 
-/datum/action/ability/xeno_action/dodge/action_activate(atom/A)
+/datum/action/ability/tyranid_action/dodge/action_activate(atom/A)
 	owner.balloon_alert(owner, "Dodge ready!")
 
 	owner.add_movespeed_modifier(MOVESPEED_ID_PRAETORIAN_DANCER_DODGE_SPEED, TRUE, 0, NONE, TRUE, speed_buff)
-	owner.allow_pass_flags |= (PASS_MOB|PASS_XENO)
-	owner.pass_flags |= (PASS_MOB|PASS_XENO)
+	owner.allow_pass_flags |= (PASS_MOB|PASS_TYRANID)
+	owner.pass_flags |= (PASS_MOB|PASS_TYRANID)
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	addtimer(CALLBACK(src, PROC_REF(remove_effects)), duration)
 
 	succeed_activate()
 	add_cooldown()
 
-/// Automatically bumps living non-xenos if bump attacks are on.
-/datum/action/ability/xeno_action/dodge/proc/on_move(datum/source)
+/// Automatically bumps living non-tyranids if bump attacks are on.
+/datum/action/ability/tyranid_action/dodge/proc/on_move(datum/source)
 	if(owner.stat == DEAD)
 		return FALSE
 	var/datum/action/bump_attack_toggle/bump_attack_action = owner.actions_by_path[/datum/action/bump_attack_toggle]
@@ -244,38 +244,38 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 	for(var/mob/living/living_mob in current_turf)
 		if(living_mob.stat == DEAD)
 			continue
-		if(isxeno(living_mob))
-			var/mob/living/carbon/xenomorph/xenomorph_mob = living_mob
-			if(owner.issamexenohive(xenomorph_mob))
+		if(istyranid(living_mob))
+			var/mob/living/carbon/tyranid/tyranid_mob = living_mob
+			if(owner.issametyranidhive(tyranid_mob))
 				continue
 		owner.Bump(living_mob)
 		return
 
 /// Removes the movespeed modifier and various pass_flags that was given by the dodge ability.
-/datum/action/ability/xeno_action/dodge/proc/remove_effects()
+/datum/action/ability/tyranid_action/dodge/proc/remove_effects()
 	owner.balloon_alert(owner, "Dodge inactive!")
 
 	owner.remove_movespeed_modifier(MOVESPEED_ID_PRAETORIAN_DANCER_DODGE_SPEED)
-	owner.allow_pass_flags &= ~(PASS_MOB|PASS_XENO)
-	owner.pass_flags &= ~(PASS_MOB|PASS_XENO)
+	owner.allow_pass_flags &= ~(PASS_MOB|PASS_TYRANID)
+	owner.pass_flags &= ~(PASS_MOB|PASS_TYRANID)
 	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 
 // ***************************************
 // *********** Impale
 // ***************************************
-/datum/action/ability/activable/xeno/impale
+/datum/action/ability/activable/tyranid/impale
 	name = "Impale"
 	action_icon_state = "impale"
-	action_icon = 'icons/Xeno/actions/praetorian.dmi'
-	desc = "Impale a marine next to you with your tail for moderate damage. Marked enemies are impaled twice."
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/praetorian.dmi'
+	desc = "Impale a guardsman next to you with your tail for moderate damage. Marked enemies are impaled twice."
 	ability_cost = 100
 	cooldown_duration = 8 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_IMPALE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_IMPALE,
 	)
 	target_flags = ABILITY_MOB_TARGET
 
-/datum/action/ability/activable/xeno/impale/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/impale/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -283,9 +283,9 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 		if(!silent)
 			A.balloon_alert(owner, "cannot impale")
 		return FALSE
-	if(isxeno(A))
-		var/mob/living/carbon/xenomorph/xenomorph_target = A
-		if(owner.issamexenohive(xenomorph_target))
+	if(istyranid(A))
+		var/mob/living/carbon/tyranid/tyranid_target = A
+		if(owner.issametyranidhive(tyranid_target))
 			A.balloon_alert(owner, "cannot impale ally")
 			return FALSE
 	var/mob/living/carbon/carbon_target = A
@@ -296,32 +296,32 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 		carbon_target.balloon_alert(owner, "already dead")
 		return FALSE
 
-/datum/action/ability/activable/xeno/impale/use_ability(atom/target_atom)
+/datum/action/ability/activable/tyranid/impale/use_ability(atom/target_atom)
 	. = ..()
 
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 	if(!iscarbon(target_atom))
 		return
 	var/mob/living/carbon/living_target = target_atom
 	var/buffed = living_target.has_status_effect(STATUS_EFFECT_DANCER_TAGGED)
-	xeno_owner.visible_message(span_danger("\The [xeno_owner] violently slices [living_target] with its tail [buffed ? "twice" : ""]!"), \
+	tyranid_owner.visible_message(span_danger("\The [tyranid_owner] violently slices [living_target] with its tail [buffed ? "twice" : ""]!"), \
 		span_danger("We slice [living_target] with our tail[buffed ? " twice" : ""]!"))
 
 	try_impale(living_target)
 	if(buffed)
-		xeno_owner.emote("roar")
+		tyranid_owner.emote("roar")
 		addtimer(CALLBACK(src, PROC_REF(try_impale), living_target), 0.1 SECONDS) // A short delay for animation coolness (and also if they're dead).
 
 	succeed_activate()
 	add_cooldown()
 
 /// Performs the main effect of impale ability like animating and attacking.
-/datum/action/ability/activable/xeno/impale/proc/try_impale(mob/living/carbon/living_target)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/damage = (xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier)
-	xeno_owner.face_atom(living_target)
-	xeno_owner.do_attack_animation(living_target, ATTACK_EFFECT_REDSLASH)
-	xeno_owner.spin(4, 1)
+/datum/action/ability/activable/tyranid/impale/proc/try_impale(mob/living/carbon/living_target)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/damage = (tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier)
+	tyranid_owner.face_atom(living_target)
+	tyranid_owner.do_attack_animation(living_target, ATTACK_EFFECT_REDSLASH)
+	tyranid_owner.spin(4, 1)
 	playsound(living_target, get_sfx(SFX_ALIEN_TAIL_ATTACK), 30, TRUE)
 	if(living_target.stat != DEAD) // If they drop dead from the first impale, keep the effects but do no damage.
 		living_target.apply_damage(damage, BRUTE, blocked = MELEE)
@@ -329,19 +329,19 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 // ***************************************
 // *********** Tail Trip
 // ***************************************
-/datum/action/ability/activable/xeno/tail_trip
+/datum/action/ability/activable/tyranid/tail_trip
 	name = "Tail Trip"
 	action_icon_state = "tail_trip"
-	action_icon = 'icons/Xeno/actions/praetorian.dmi'
-	desc = "Target a marine within two tiles of you to disorient and slows them. Marked enemies receive stronger debuffs and are stunned for a second."
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/praetorian.dmi'
+	desc = "Target a guardsman within two tiles of you to disorient and slows them. Marked enemies receive stronger debuffs and are stunned for a second."
 	ability_cost = 50
 	cooldown_duration = 8 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TAIL_TRIP,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_TAIL_TRIP,
 	)
 	target_flags = ABILITY_MOB_TARGET
 
-/datum/action/ability/activable/xeno/tail_trip/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/tail_trip/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -349,9 +349,9 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 		if(!silent)
 			A.balloon_alert(owner, "cannot tail trip")
 		return FALSE
-	if(isxeno(A))
-		var/mob/living/carbon/xenomorph/xenomorph_target = A
-		if(owner.issamexenohive(xenomorph_target))
+	if(istyranid(A))
+		var/mob/living/carbon/tyranid/tyranid_target = A
+		if(owner.issametyranidhive(tyranid_target))
 			A.balloon_alert(owner, "cannot tail trip ally")
 			return FALSE
 	var/mob/living/carbon/carbon_target = A
@@ -370,24 +370,24 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 		carbon_target.balloon_alert(owner, "not standing")
 		return FALSE
 
-/datum/action/ability/activable/xeno/tail_trip/use_ability(atom/target_atom)
+/datum/action/ability/activable/tyranid/tail_trip/use_ability(atom/target_atom)
 	. = ..()
 
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 	if(!iscarbon(target_atom))
 		return
 
 	var/mob/living/carbon/living_target = target_atom
 
-	var/damage = (xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier)
+	var/damage = (tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier)
 	var/buffed = living_target.has_status_effect(STATUS_EFFECT_DANCER_TAGGED)
 
-	xeno_owner.visible_message(span_danger("\The [xeno_owner] sweeps [living_target]'s legs with its tail!"), \
+	tyranid_owner.visible_message(span_danger("\The [tyranid_owner] sweeps [living_target]'s legs with its tail!"), \
 		span_danger("We trip [living_target] with our tail!"))
 	shake_camera(living_target, 2, 1)
-	xeno_owner.face_atom(living_target)
-	xeno_owner.spin(4, 1)
-	xeno_owner.emote("tail")
+	tyranid_owner.face_atom(living_target)
+	tyranid_owner.spin(4, 1)
+	tyranid_owner.emote("tail")
 	playsound(living_target,'sound/weapons/alien_claw_block.ogg', 50, 1)
 
 	living_target.Paralyze(buffed ? 1 SECONDS : 0.1 SECONDS)

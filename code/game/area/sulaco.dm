@@ -198,17 +198,17 @@
 	icon_state = "yellow"
 	ambience = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 
-/area/sulaco/marine
-	name = "Sulaco Marine Prep"
+/area/sulaco/guardsman
+	name = "Sulaco Guardsman Prep"
 	icon_state = "storage"
 	minimap_color = MINIMAP_AREA_PREP
 
-/area/sulaco/marine/chapel
+/area/sulaco/guardsman/chapel
 	name = "Sulaco Chapel"
 	icon_state = "chapel"
 	minimap_color = MINIMAP_AREA_LIVING
 
-/area/sulaco/marine/chapel/chapel_office
+/area/sulaco/guardsman/chapel/chapel_office
 	name = "Sulaco Chapel Office"
 	icon_state = "chapeloffice"
 

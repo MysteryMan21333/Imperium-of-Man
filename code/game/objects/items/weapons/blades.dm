@@ -1,6 +1,6 @@
 /obj/item/tool/kitchen/knife/shiv
 	name = "glass shiv"
-	icon = 'icons/obj/items/weapons/knives.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/knives.dmi'
 	icon_state = "shiv"
 	desc = "A makeshift glass shiv."
 	attack_verb = list("shanked", "shived")
@@ -22,7 +22,7 @@
 	name = "\improper M5 survival knife"
 	icon_state = "combat_knife"
 	worn_icon_state = "combat_knife"
-	icon = 'icons/obj/items/weapons/knives.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/knives.dmi'
 	desc = "A standard survival knife of high quality. You can slide this knife into your boots, and can be field-modified to attach to the end of a rifle with cable coil."
 	atom_flags = CONDUCT
 	sharp = IS_SHARP_ITEM_ACCURATE
@@ -73,7 +73,7 @@
 
 /obj/item/weapon/karambit
 	name = "karambit"
-	icon = 'icons/obj/items/weapons/knives.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/knives.dmi'
 	icon_state = "karambit"
 	worn_icon_state = "karambit"
 	desc = "A small high quality knife with a curved blade, good for slashing and hooking. This one has a mottled red finish."
@@ -113,7 +113,7 @@
 
 /obj/item/stack/throwing_knife
 	name ="\improper M11 throwing knife"
-	icon='icons/obj/items/weapons/throwing.dmi'
+	icon='modular_imperium/master_files/icons/obj/items/weapons/throwing.dmi'
 	icon_state = "throwing_knife"
 	desc="A military knife designed to be thrown at the enemy. Much quieter than a firearm, but requires a steady hand to be used effectively."
 	stack_name = "pile"

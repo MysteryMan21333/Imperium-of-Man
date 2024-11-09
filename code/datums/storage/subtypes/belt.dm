@@ -144,12 +144,12 @@
 /datum/storage/belt/security/tactical
 	storage_slots = 9
 
-/datum/storage/belt/marine
+/datum/storage/belt/guardsman
 	storage_slots = 6
 	max_w_class = WEIGHT_CLASS_NORMAL
 	max_storage_space = 18
 
-/datum/storage/belt/marine/New(atom/parent)
+/datum/storage/belt/guardsman/New(atom/parent)
 	. = ..()
 	set_holdable(list(
 		/obj/item/weapon/combat_knife,
@@ -169,7 +169,7 @@
 		/obj/item/reagent_containers/food/snacks,
 	))
 
-/datum/storage/belt/marine/sectoid/New(atom/parent)
+/datum/storage/belt/guardsman/sectoid/New(atom/parent)
 	. = ..()
 	set_holdable(list(
 		/obj/item/weapon/combat_knife,

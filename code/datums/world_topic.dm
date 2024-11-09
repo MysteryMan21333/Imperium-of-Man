@@ -64,7 +64,7 @@
 
 	.["map_name"] = length(SSmapping.configs) ? "[SSmapping.configs[GROUND_MAP].map_name] ([SSmapping.configs[SHIP_MAP].map_name])" : "Loading..."
 
-	.["security_level"] = GLOB.marine_main_ship?.get_security_level()
+	.["security_level"] = GLOB.guardsman_main_ship?.get_security_level()
 	.["round_duration"] = SSticker ? round((world.time - SSticker.round_start_time) / 10) : 0
 
 	.["time_dilation_current"] = SStime_track.time_dilation_current

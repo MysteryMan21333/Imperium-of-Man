@@ -214,10 +214,10 @@
 	siemens_coefficient = 2
 	armor_protection_flags = HEAD|FACE|EYES
 
-/obj/item/clothing/head/xenos
-	name = "xenos helmet"
-	icon_state = "xenos"
-	worn_icon_state = "xenos_helm"
+/obj/item/clothing/head/tyranids
+	name = "tyranids helmet"
+	icon_state = "tyranids"
+	worn_icon_state = "tyranids_helm"
 	desc = "A helmet made out of chitinous alien hide."
 	inventory_flags = COVERMOUTH|COVEREYES|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEALLHAIR

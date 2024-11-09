@@ -1,7 +1,7 @@
 /obj/machinery/igniter
 	name = "igniter"
 	desc = "It's useful for igniting flammable items."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "igniter1"
 	plane = FLOOR_PLANE
 	var/id = null
@@ -42,7 +42,7 @@
 /obj/machinery/sparker
 	name = "Mounted igniter"
 	desc = "A wall-mounted ignition device."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "migniter"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4

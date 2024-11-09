@@ -169,14 +169,14 @@
 /obj/item/toy/crossbow_ammo
 	name = "foam dart"
 	desc = "It's nerf or nothing! Ages 8 and up."
-	icon = 'icons/obj/items/toy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/toy.dmi'
 	icon_state = "foamdart"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/effect/foam_dart_dummy
 	name = ""
 	desc = ""
-	icon = 'icons/obj/items/toy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/toy.dmi'
 	icon_state = "null"
 	anchored = TRUE
 	density = FALSE
@@ -188,7 +188,7 @@
 /obj/item/toy/sword
 	name = "toy sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
-	icon = 'icons/obj/items/weapons/energy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/energy.dmi'
 	icon_state = "sword"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "struck", "hit")
@@ -217,7 +217,7 @@
 /obj/item/toy/katana
 	name = "replica katana"
 	desc = "Woefully underpowered in D20."
-	icon = 'icons/obj/items/weapons/swords.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/swords.dmi'
 	icon_state = "katana"
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_BACK

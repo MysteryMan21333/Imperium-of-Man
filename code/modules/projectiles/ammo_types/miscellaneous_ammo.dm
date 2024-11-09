@@ -55,16 +55,16 @@
 	damage = 70
 	penetration = 0
 	shrapnel_chance = 0
-	///percentage of xenos total plasma to drain when hit by a pepperball
+	///percentage of tyranids total plasma to drain when hit by a pepperball
 	var/drain_multiplier = 0.05
 	///Flat plasma to drain, unaffected by caste plasma amount.
 	var/plasma_drain = 25
 
 /datum/ammo/bullet/pepperball/on_hit_mob(mob/target_mob, obj/projectile/proj)
-	if(isxeno(target_mob))
-		var/mob/living/carbon/xenomorph/X = target_mob
-		if(!(X.xeno_caste.caste_flags & CASTE_PLASMADRAIN_IMMUNE))
-			X.use_plasma(drain_multiplier * X.xeno_caste.plasma_max * X.xeno_caste.plasma_regen_limit)
+	if(istyranid(target_mob))
+		var/mob/living/carbon/tyranid/X = target_mob
+		if(!(X.tyranid_caste.caste_flags & CASTE_PLASMADRAIN_IMMUNE))
+			X.use_plasma(drain_multiplier * X.tyranid_caste.plasma_max * X.tyranid_caste.plasma_regen_limit)
 			X.use_plasma(plasma_drain)
 
 /datum/ammo/bullet/pepperball/pepperball_mini

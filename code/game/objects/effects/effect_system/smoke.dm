@@ -313,7 +313,7 @@
 	icon_state = "sparks"
 	icon = 'icons/effects/effects.dmi'
 
-//SOM nerve agent smoke
+//CHAOS nerve agent smoke
 /obj/effect/particle_effect/smoke/satrapine
 	color = "#b02828"
 	lifetime = 6
@@ -328,7 +328,7 @@
 	lifetime = 6
 	expansion_speed = 3
 	strength = 2
-	smoke_traits = SMOKE_BLISTERING|SMOKE_XENO_NEURO|SMOKE_OXYLOSS|SMOKE_GASP|SMOKE_COUGH
+	smoke_traits = SMOKE_BLISTERING|SMOKE_TYRANID_NEURO|SMOKE_OXYLOSS|SMOKE_GASP|SMOKE_COUGH
 
 /obj/effect/particle_effect/smoke/satrapine/effect_smoke(obj/effect/particle_effect/smoke/S)
 	. = ..()
@@ -341,13 +341,13 @@
 // BOILER SMOKES
 /////////////////////////////////////////
 
-//Xeno acid smoke.
-/obj/effect/particle_effect/smoke/xeno
+//Tyranid acid smoke.
+/obj/effect/particle_effect/smoke/tyranid
 	lifetime = 6
 	expansion_speed = 3
-	smoke_traits = SMOKE_XENO
+	smoke_traits = SMOKE_TYRANID
 
-/obj/effect/particle_effect/smoke/xeno/effect_smoke(obj/effect/particle_effect/smoke/S)
+/obj/effect/particle_effect/smoke/tyranid/effect_smoke(obj/effect/particle_effect/smoke/S)
 	. = ..()
 	if(!.)
 		return
@@ -356,73 +356,73 @@
 	if(S.smoke_traits & SMOKE_PURGER)
 		lifetime -= 4
 
-//Xeno acid smoke.
-/obj/effect/particle_effect/smoke/xeno/burn
+//Tyranid acid smoke.
+/obj/effect/particle_effect/smoke/tyranid/burn
 	lifetime = 6
 	alpha = 120
 	opacity = FALSE
 	color = "#86B028" //Mostly green?
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_ACID|SMOKE_GASP|SMOKE_COUGH
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_ACID|SMOKE_GASP|SMOKE_COUGH
 
 //Used for smokebomb nades.
-/obj/effect/particle_effect/smoke/xeno/burn/opaque
+/obj/effect/particle_effect/smoke/tyranid/burn/opaque
 	alpha = 255
 	opacity = TRUE
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_ACID|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_ACID|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
 
-//Xeno light acid smoke.for acid huggers
-/obj/effect/particle_effect/smoke/xeno/burn/light
+//Tyranid light acid smoke.for acid huggers
+/obj/effect/particle_effect/smoke/tyranid/burn/light
 	lifetime = 4 //Lasts for less time
 
-//Xeno neurotox smoke.
-/obj/effect/particle_effect/smoke/xeno/neuro
+//Tyranid neurotox smoke.
+/obj/effect/particle_effect/smoke/tyranid/neuro
 	alpha = 255
 	opacity = TRUE
 	color = "#ffbf58" //Mustard orange?
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_NEURO|SMOKE_GASP|SMOKE_COUGH|SMOKE_EXTINGUISH
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_NEURO|SMOKE_GASP|SMOKE_COUGH|SMOKE_EXTINGUISH
 
-///Xeno neurotox smoke for Defilers; doesn't extinguish
-/obj/effect/particle_effect/smoke/xeno/neuro/medium
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_NEURO|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
+///Tyranid neurotox smoke for Defilers; doesn't extinguish
+/obj/effect/particle_effect/smoke/tyranid/neuro/medium
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_NEURO|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
 
-///Xeno neurotox smoke for neurospit; doesn't extinguish or blind
-/obj/effect/particle_effect/smoke/xeno/neuro/light
+///Tyranid neurotox smoke for neurospit; doesn't extinguish or blind
+/obj/effect/particle_effect/smoke/tyranid/neuro/light
 	alpha = 120
 	opacity = FALSE
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_NEURO|SMOKE_GASP|SMOKE_COUGH|SMOKE_NEURO_LIGHT //Light neuro smoke doesn't extinguish
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_NEURO|SMOKE_GASP|SMOKE_COUGH|SMOKE_NEURO_LIGHT //Light neuro smoke doesn't extinguish
 
-/obj/effect/particle_effect/smoke/xeno/toxic
+/obj/effect/particle_effect/smoke/tyranid/toxic
 	lifetime = 2
 	alpha = 60
 	opacity = FALSE
 	color = "#00B22C"
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_TOXIC|SMOKE_GASP|SMOKE_COUGH|SMOKE_EXTINGUISH
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_TOXIC|SMOKE_GASP|SMOKE_COUGH|SMOKE_EXTINGUISH
 
-/obj/effect/particle_effect/smoke/xeno/hemodile
+/obj/effect/particle_effect/smoke/tyranid/hemodile
 	color = "#0287A1"
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_HEMODILE|SMOKE_GASP|SMOKE_HUGGER_PACIFY
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_HEMODILE|SMOKE_GASP|SMOKE_HUGGER_PACIFY
 
-/obj/effect/particle_effect/smoke/xeno/transvitox
+/obj/effect/particle_effect/smoke/tyranid/transvitox
 	color = "#abf775"
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_TRANSVITOX|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_TRANSVITOX|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
 
 //Toxic smoke when the Defiler successfully uses Defile
-/obj/effect/particle_effect/smoke/xeno/sanguinal
+/obj/effect/particle_effect/smoke/tyranid/sanguinal
 	color = "#bb0a1e" //Blood red
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_SANGUINAL|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_SANGUINAL|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
 
-///Xeno ozelomelyn in smoke form for Defiler.
-/obj/effect/particle_effect/smoke/xeno/ozelomelyn
+///Tyranid ozelomelyn in smoke form for Defiler.
+/obj/effect/particle_effect/smoke/tyranid/ozelomelyn
 	color = "#f1ddcf" //A pinkish for now.
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_OZELOMELYN|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_OZELOMELYN|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
 
 
 /// Smoke that constantly makes pyrogen fire.
-/obj/effect/particle_effect/smoke/xeno/pyrogen_fire
+/obj/effect/particle_effect/smoke/tyranid/pyrogen_fire
 	alpha = 120
 	opacity = FALSE
 	color = "#cff1ee" // Blueish.
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_PYROGEN|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
+	smoke_traits = SMOKE_TYRANID|SMOKE_TYRANID_PYROGEN|SMOKE_GASP|SMOKE_COUGH|SMOKE_HUGGER_PACIFY
 
 /////////////////////////////////////////////
 // Smoke spreads
@@ -455,54 +455,54 @@
 /datum/effect_system/smoke_spread/antigas
 	smoke_type = /obj/effect/particle_effect/smoke/antigas
 
-/datum/effect_system/smoke_spread/xeno
-	smoke_type = /obj/effect/particle_effect/smoke/xeno
+/datum/effect_system/smoke_spread/tyranid
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid
 	var/strength = 1
 
-/datum/effect_system/smoke_spread/xeno/start()
+/datum/effect_system/smoke_spread/tyranid/start()
 	var/atom/_holder = get_holder()
 	var/turf/_location = location?.resolve()
 	if(QDELETED(_location) && !QDELETED(_holder))
 		location = WEAKREF(get_turf(get_holder()))
-	var/obj/effect/particle_effect/smoke/xeno/S = new smoke_type(_location, range, lifetime, src)
+	var/obj/effect/particle_effect/smoke/tyranid/S = new smoke_type(_location, range, lifetime, src)
 	S.strength = strength
 
-/datum/effect_system/smoke_spread/xeno/acid
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/burn
+/datum/effect_system/smoke_spread/tyranid/acid
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/burn
 
-/datum/effect_system/smoke_spread/xeno/acid/opaque
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/burn/opaque
+/datum/effect_system/smoke_spread/tyranid/acid/opaque
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/burn/opaque
 
-/datum/effect_system/smoke_spread/xeno/acid/light
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/burn/light
+/datum/effect_system/smoke_spread/tyranid/acid/light
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/burn/light
 
-/datum/effect_system/smoke_spread/xeno/neuro
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/neuro
+/datum/effect_system/smoke_spread/tyranid/neuro
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/neuro
 
-/datum/effect_system/smoke_spread/xeno/neuro/medium
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/neuro/medium
+/datum/effect_system/smoke_spread/tyranid/neuro/medium
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/neuro/medium
 
-/datum/effect_system/smoke_spread/xeno/neuro/light
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/neuro/light
+/datum/effect_system/smoke_spread/tyranid/neuro/light
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/neuro/light
 
-/datum/effect_system/smoke_spread/xeno/toxic
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/toxic
+/datum/effect_system/smoke_spread/tyranid/toxic
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/toxic
 
-/datum/effect_system/smoke_spread/xeno/hemodile
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/hemodile
+/datum/effect_system/smoke_spread/tyranid/hemodile
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/hemodile
 
-/datum/effect_system/smoke_spread/xeno/transvitox
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/transvitox
+/datum/effect_system/smoke_spread/tyranid/transvitox
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/transvitox
 
-/datum/effect_system/smoke_spread/xeno/sanguinal
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/sanguinal
+/datum/effect_system/smoke_spread/tyranid/sanguinal
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/sanguinal
 
-/datum/effect_system/smoke_spread/xeno/ozelomelyn
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/ozelomelyn
+/datum/effect_system/smoke_spread/tyranid/ozelomelyn
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/ozelomelyn
 
 
-/datum/effect_system/smoke_spread/xeno/pyrogen_fire
-	smoke_type = /obj/effect/particle_effect/smoke/xeno/pyrogen_fire
+/datum/effect_system/smoke_spread/tyranid/pyrogen_fire
+	smoke_type = /obj/effect/particle_effect/smoke/tyranid/pyrogen_fire
 
 
 /////////////////////////////////////////////

@@ -33,7 +33,7 @@
 
 /datum/action/innate/remote_fob/metal_cade
 	name = "Place Metal Barricade"
-	action_icon = 'icons/obj/structures/barricades/metal.dmi'
+	action_icon = 'modular_imperium/master_files/icons/obj/structures/barricades/metal.dmi'
 	action_icon_state = "metal_0"
 
 /datum/action/innate/remote_fob/metal_cade/Activate()
@@ -74,7 +74,7 @@
 
 /datum/action/innate/remote_fob/plast_cade
 	name = "Place Plasteel Barricade"
-	action_icon = 'icons/obj/structures/barricades/plasteel.dmi'
+	action_icon = 'modular_imperium/master_files/icons/obj/structures/barricades/plasteel.dmi'
 	action_icon_state = "plasteel_0"
 
 /datum/action/innate/remote_fob/plast_cade/Activate()
@@ -118,7 +118,7 @@
 
 /datum/action/innate/remote_fob/toggle_wiring
 	name = "Toggle Razorwire"
-	action_icon = 'icons/obj/stack_objects.dmi'
+	action_icon = 'modular_imperium/master_files/icons/obj/stack_objects.dmi'
 	action_icon_state = "barbed_wire"
 
 /datum/action/innate/remote_fob/toggle_wiring/Activate()

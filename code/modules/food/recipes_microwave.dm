@@ -68,12 +68,12 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/brain
 
-/datum/recipe/xenoburger
+/datum/recipe/tyranidburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/burger/bun,
-		/obj/item/reagent_containers/food/snacks/meat/xeno,
+		/obj/item/reagent_containers/food/snacks/meat/tyranid,
 	)
-	result = /obj/item/reagent_containers/food/snacks/burger/xeno
+	result = /obj/item/reagent_containers/food/snacks/burger/tyranid
 
 /datum/recipe/fishburger
 	items = list(
@@ -186,19 +186,19 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/sliceable/sandwiches/meatbread
 
-/datum/recipe/xenomeatbread
+/datum/recipe/tyranidmeatbread
 	items = list(
 		/obj/item/reagent_containers/food/snacks/dough,
 		/obj/item/reagent_containers/food/snacks/dough,
 		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/meat/xeno,
-		/obj/item/reagent_containers/food/snacks/meat/xeno,
-		/obj/item/reagent_containers/food/snacks/meat/xeno,
+		/obj/item/reagent_containers/food/snacks/meat/tyranid,
+		/obj/item/reagent_containers/food/snacks/meat/tyranid,
+		/obj/item/reagent_containers/food/snacks/meat/tyranid,
 		/obj/item/reagent_containers/food/snacks/cheesewedge,
 		/obj/item/reagent_containers/food/snacks/cheesewedge,
 		/obj/item/reagent_containers/food/snacks/cheesewedge,
 	)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/sandwiches/xenomeatbread
+	result = /obj/item/reagent_containers/food/snacks/sliceable/sandwiches/tyranidmeatbread
 
 /datum/recipe/bananabread
 	reagents = list(/datum/reagent/consumable/milk = 5, /datum/reagent/consumable/sugar = 15)
@@ -302,7 +302,7 @@
 /datum/recipe/xemeatpie
 	items = list(
 		/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
-		/obj/item/reagent_containers/food/snacks/meat/xeno,
+		/obj/item/reagent_containers/food/snacks/meat/tyranid,
 	)
 	result = /obj/item/reagent_containers/food/snacks/pastries/xemeatpie
 
@@ -332,7 +332,7 @@
 /datum/recipe/wingfangchu
 	reagents = list(/datum/reagent/consumable/soysauce = 5)
 	items = list(
-		/obj/item/reagent_containers/food/snacks/meat/xeno,
+		/obj/item/reagent_containers/food/snacks/meat/tyranid,
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/wingfangchu
 

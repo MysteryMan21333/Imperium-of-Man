@@ -7,7 +7,7 @@
 	ghost_medhud = client.prefs.ghost_hud & GHOST_HUD_MED
 	ghost_sechud = client.prefs.ghost_hud & GHOST_HUD_SEC
 	ghost_squadhud = client.prefs.ghost_hud & GHOST_HUD_SQUAD
-	ghost_xenohud = client.prefs.ghost_hud & GHOST_HUD_XENO
+	ghost_tyranidhud = client.prefs.ghost_hud & GHOST_HUD_TYRANID
 	ghost_orderhud = client.prefs.ghost_hud & GHOST_HUD_ORDER
 	var/datum/atom_hud/H
 	if(ghost_medhud)
@@ -17,12 +17,12 @@
 		H = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
 		H.add_hud_to(src)
 	if(ghost_squadhud)
-		H = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+		H = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 		H.add_hud_to(src)
-		H = GLOB.huds[DATA_HUD_SQUAD_SOM]
+		H = GLOB.huds[DATA_HUD_SQUAD_CHAOS]
 		H.add_hud_to(src)
-	if(ghost_xenohud)
-		H = GLOB.huds[DATA_HUD_XENO_STATUS]
+	if(ghost_tyranidhud)
+		H = GLOB.huds[DATA_HUD_TYRANID_STATUS]
 		H.add_hud_to(src)
 	if(ghost_orderhud)
 		H = GLOB.huds[DATA_HUD_ORDER]

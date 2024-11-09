@@ -1,63 +1,63 @@
 // ***************************************
 // *********** Fire Charge
 // ***************************************
-/datum/action/ability/activable/xeno/charge/fire_charge
+/datum/action/ability/activable/tyranid/charge/fire_charge
 	name = "Fire Charge"
 	action_icon_state = "fireslash"
-	action_icon = 'icons/Xeno/actions/pyrogen.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/pyrogen.dmi'
 	desc = "Charge up to 3 tiles, attacking any organic you come across. Extinguishes the target if they were set on fire, but deals extra damage depending on how many fire stacks they have."
 	cooldown_duration = 4 SECONDS
 	ability_cost = 30
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_FIRECHARGE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_FIRECHARGE,
 	)
 
-/datum/action/ability/activable/xeno/charge/fire_charge/use_ability(atom/target)
+/datum/action/ability/activable/tyranid/charge/fire_charge/use_ability(atom/target)
 	if(!target)
 		return
-	var/mob/living/carbon/xenomorph/pyrogen/xeno = owner
+	var/mob/living/carbon/tyranid/pyrogen/tyranid = owner
 
-	RegisterSignal(xeno, COMSIG_XENO_OBJ_THROW_HIT, PROC_REF(obj_hit))
-	RegisterSignal(xeno, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
-	RegisterSignal(xeno, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
-	xeno.emote("roar")
-	xeno.xeno_flags |= XENO_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
+	RegisterSignal(tyranid, COMSIG_TYRANID_OBJ_THROW_HIT, PROC_REF(obj_hit))
+	RegisterSignal(tyranid, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
+	RegisterSignal(tyranid, COMSIG_TYRANID_LEAP_BUMP, PROC_REF(mob_hit))
+	tyranid.emote("roar")
+	tyranid.tyranid_flags |= TYRANID_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
 	succeed_activate()
 
-	xeno.throw_at(target, PYROGEN_CHARGEDISTANCE, PYROGEN_CHARGESPEED, xeno)
+	tyranid.throw_at(target, PYROGEN_CHARGEDISTANCE, PYROGEN_CHARGESPEED, tyranid)
 
 	add_cooldown()
 
-/datum/action/ability/activable/xeno/charge/fire_charge/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("Our exoskeleton quivers as we are ready to schorch using [name] again."))
+/datum/action/ability/activable/tyranid/charge/fire_charge/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("Our exoskeleton quivers as we are ready to schorch using [name] again."))
 	return ..()
 
-/datum/action/ability/activable/xeno/charge/fire_charge/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/charge/fire_charge/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/charge/fire_charge/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/charge/fire_charge/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(!line_of_sight(owner, target, PYROGEN_CHARGEDISTANCE))
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
 ///Deals with hitting objects
-/datum/action/ability/activable/xeno/charge/fire_charge/obj_hit(datum/source, obj/target, speed)
+/datum/action/ability/activable/tyranid/charge/fire_charge/obj_hit(datum/source, obj/target, speed)
 	target.hitby(owner, speed) //This resets throwing.
 	charge_complete()
 
 ///Deals with hitting mobs. Triggered by bump instead of throw impact as we want to plow past mobs
-/datum/action/ability/activable/xeno/charge/fire_charge/mob_hit(datum/source, mob/living/living_target)
+/datum/action/ability/activable/tyranid/charge/fire_charge/mob_hit(datum/source, mob/living/living_target)
 	. = TRUE
-	if(living_target.stat || isxeno(living_target) || living_target.status_flags & GODMODE) //we leap past xenos
+	if(living_target.stat || istyranid(living_target) || living_target.status_flags & GODMODE) //we leap past tyranids
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	living_target.attack_alien_harm(xeno_owner, xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier, FALSE, TRUE, FALSE, TRUE, INTENT_HARM) //Location is always random, cannot crit, harm only
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	living_target.attack_alien_harm(tyranid_owner, tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier, FALSE, TRUE, FALSE, TRUE, INTENT_HARM) //Location is always random, cannot crit, harm only
 	var/fire_damage = PYROGEN_FIRECHARGE_DAMAGE
 	if(living_target.has_status_effect(STATUS_EFFECT_MELTING_FIRE))
 		var/datum/status_effect/stacking/melting_fire/debuff = living_target.has_status_effect(STATUS_EFFECT_MELTING_FIRE)
@@ -68,57 +68,57 @@
 
 
 ///Cleans up after charge is finished
-/datum/action/ability/activable/xeno/charge/fire_charge/charge_complete()
-	UnregisterSignal(owner, list(COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENOMORPH_LEAP_BUMP))
-	var/mob/living/carbon/xenomorph/pyrogen/xeno_owner = owner
-	xeno_owner.xeno_flags &= ~XENO_LEAPING
+/datum/action/ability/activable/tyranid/charge/fire_charge/charge_complete()
+	UnregisterSignal(owner, list(COMSIG_TYRANID_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_TYRANID_LEAP_BUMP))
+	var/mob/living/carbon/tyranid/pyrogen/tyranid_owner = owner
+	tyranid_owner.tyranid_flags &= ~TYRANID_LEAPING
 
 // ***************************************
 // *********** Fireball
 // ***************************************
-/datum/action/ability/activable/xeno/fireball
+/datum/action/ability/activable/tyranid/fireball
 	name = "Fireball"
 	action_icon_state = "fireball"
-	action_icon = 'icons/Xeno/actions/pyrogen.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/pyrogen.dmi'
 	desc = "Release a fireball that explodes on contact."
 	ability_cost = 50
 	cooldown_duration = 15 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_FIREBALL,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_FIREBALL,
 	)
 
-/datum/action/ability/activable/xeno/fireball/use_ability(atom/target)
-	var/mob/living/carbon/xenomorph/pyrogen/xeno = owner
-	playsound(get_turf(xeno), 'sound/effects/wind.ogg', 50)
-	if(!do_after(xeno, 0.6 SECONDS, IGNORE_HELD_ITEM, target, BUSY_ICON_DANGER))
+/datum/action/ability/activable/tyranid/fireball/use_ability(atom/target)
+	var/mob/living/carbon/tyranid/pyrogen/tyranid = owner
+	playsound(get_turf(tyranid), 'sound/effects/wind.ogg', 50)
+	if(!do_after(tyranid, 0.6 SECONDS, IGNORE_HELD_ITEM, target, BUSY_ICON_DANGER))
 		return fail_activate()
 
 	if(!can_use_ability(target, FALSE, ABILITY_IGNORE_PLASMA))
 		return fail_activate()
 
-	playsound(get_turf(xeno), 'sound/effects/alien/fireball.ogg', 50)
+	playsound(get_turf(tyranid), 'sound/effects/alien/fireball.ogg', 50)
 
 	var/obj/projectile/magic_bullshit = new(get_turf(src))
-	magic_bullshit.generate_bullet(/datum/ammo/xeno/fireball)
-	magic_bullshit.fire_at(target, xeno, xeno, PYROGEN_FIREBALL_MAXDIST, PYROGEN_FIREBALL_SPEED)
+	magic_bullshit.generate_bullet(/datum/ammo/tyranid/fireball)
+	magic_bullshit.fire_at(target, tyranid, tyranid, PYROGEN_FIREBALL_MAXDIST, PYROGEN_FIREBALL_SPEED)
 	succeed_activate()
 	add_cooldown()
 
-/datum/action/ability/activable/xeno/fireball/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/fireball/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/fireball/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/fireball/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(!line_of_sight(src, target, 5))
 		return FALSE
 	if(!can_use_ability(target))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
-/obj/effect/temp_visual/xeno_fireball_explosion
+/obj/effect/temp_visual/tyranid_fireball_explosion
 	name = "bang"
 	icon = 'icons/effects/64x64.dmi'
 	icon_state = "empty"
@@ -126,26 +126,26 @@
 	duration = 1.5 SECONDS
 
 // Flick() for perfectly smooth animation
-/obj/effect/temp_visual/xeno_fireball_explosion/Initialize(mapload)
+/obj/effect/temp_visual/tyranid_fireball_explosion/Initialize(mapload)
 	. = ..()
 	flick("fireball_explosion", src)
 
 // ***************************************
 // *********** Firenado
 // ***************************************
-/datum/action/ability/activable/xeno/firestorm
+/datum/action/ability/activable/tyranid/firestorm
 	name = "Fire Storm"
 	action_icon_state = "whirlwind"
-	action_icon = 'icons/Xeno/actions/pyrogen.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/pyrogen.dmi'
 	desc = "Unleash 3 fiery tornados. They will try to close on your target tile"
 	target_flags = ABILITY_TURF_TARGET
 	ability_cost = 50
 	cooldown_duration = 14 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_FIRENADO,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_FIRENADO,
 	)
 
-/datum/action/ability/activable/xeno/firestorm/can_use_ability(atom/A, silent, override_flags)
+/datum/action/ability/activable/tyranid/firestorm/can_use_ability(atom/A, silent, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -159,7 +159,7 @@
 			return
 	return TRUE
 
-/datum/action/ability/activable/xeno/firestorm/use_ability(atom/target)
+/datum/action/ability/activable/tyranid/firestorm/use_ability(atom/target)
 	if(!do_after(owner, 0.6 SECONDS, IGNORE_HELD_ITEM, target, BUSY_ICON_DANGER))
 		return fail_activate()
 
@@ -169,15 +169,15 @@
 	var/turf/owner_turf = get_turf(owner)
 	playsound(owner_turf, 'sound/effects/alien/prepare.ogg', 50)
 	for(var/amount in 1 to PYROGEN_FIRESTORM_TORNADE_COUNT)
-		new /obj/effect/xenomorph/firenado(owner_turf, get_dir(owner, target))
+		new /obj/effect/tyranid/firenado(owner_turf, get_dir(owner, target))
 
 	succeed_activate()
 	add_cooldown()
 
-/datum/action/ability/activable/xeno/firestorm/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/firestorm/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/firestorm/ai_should_use(target)
+/datum/action/ability/activable/tyranid/firestorm/ai_should_use(target)
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > 6) // If we can be seen.
@@ -186,16 +186,16 @@
 		return FALSE
 	return TRUE
 
-/datum/action/ability/xeno_action/heatray
+/datum/action/ability/tyranid_action/heatray
 	name = "Heat Ray"
 	action_icon_state = "heatray"
-	action_icon = 'icons/Xeno/actions/pyrogen.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/pyrogen.dmi'
 	desc = "Microwave any target infront of you in a range of 7 tiles"
 	target_flags = ABILITY_TURF_TARGET
 	ability_cost = 150
 	cooldown_duration = 15 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_HEATRAY,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_HEATRAY,
 	)
 	///list of turfs we are hitting while shooting our beam
 	var/list/turf/targets
@@ -208,7 +208,7 @@
 	/// world time of the moment we started firing
 	var/started_firing
 
-/datum/action/ability/xeno_action/heatray/can_use_action(silent, override_flags)
+/datum/action/ability/tyranid_action/heatray/can_use_action(silent, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -217,7 +217,7 @@
 			owner.balloon_alert(owner, "too early")
 		return FALSE
 
-/datum/action/ability/xeno_action/heatray/action_activate()
+/datum/action/ability/tyranid_action/heatray/action_activate()
 	if(timer_ref)
 		stop_beaming()
 		return
@@ -247,7 +247,7 @@
 	execute_attack()
 
 /// recursive proc for firing the actual beam
-/datum/action/ability/xeno_action/heatray/proc/execute_attack()
+/datum/action/ability/tyranid_action/heatray/proc/execute_attack()
 	if(!can_use_action(TRUE))
 		stop_beaming()
 		return
@@ -279,7 +279,7 @@
 	timer_ref = addtimer(CALLBACK(src, PROC_REF(execute_attack)), PYROGEN_HEATRAY_REFIRE_TIME, TIMER_STOPPABLE)
 
 /// Gets rid of the beam.
-/datum/action/ability/xeno_action/heatray/proc/stop_beaming()
+/datum/action/ability/tyranid_action/heatray/proc/stop_beaming()
 	SIGNAL_HANDLER
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_ATOM_DIR_CHANGE))
 	QDEL_NULL(beam)
@@ -292,7 +292,7 @@
 
 
 //firenade
-/obj/effect/xenomorph/firenado
+/obj/effect/tyranid/firenado
 	name = "Plasma Whirlwind"
 	desc = "A glowing whirlwind of... cold plasma? Seems to \"burn\" "
 	icon = 'icons/effects/64x64.dmi'
@@ -303,7 +303,7 @@
 	/// Target turf to bias going towards
 	var/target_dir
 
-/obj/effect/xenomorph/firenado/Initialize(mapload, new_target_dir)
+/obj/effect/tyranid/firenado/Initialize(mapload, new_target_dir)
 	. = ..()
 	START_PROCESSING(SSfastprocess, src)
 	var/static/list/connections = list(
@@ -315,7 +315,7 @@
 	for(var/mob/living/living_victim in loc)
 		mob_act(living_victim)
 
-/obj/effect/xenomorph/firenado/Bump(atom/target)
+/obj/effect/tyranid/firenado/Bump(atom/target)
 	. = ..()
 	if(isliving(target))
 		mob_act(target)
@@ -329,13 +329,13 @@
 		return
 	if(!isobj(target))
 		return
-	if(istype(target, /obj/structure/mineral_door/resin) || istype(target, /obj/structure/xeno))
+	if(istype(target, /obj/structure/mineral_door/resin) || istype(target, /obj/structure/tyranid))
 		return
 	var/obj/object = target
 	object.take_damage(PYROGEN_TORNADE_HIT_DAMAGE, BURN)
 	qdel(src)
 
-/obj/effect/xenomorph/firenado/process()
+/obj/effect/tyranid/firenado/process()
 	var/turf/current_location = loc
 	if(!istype(current_location))
 		qdel(src)
@@ -348,7 +348,7 @@
 
 	Move(get_step(src, next_step_dir))
 
-/obj/effect/xenomorph/firenado/Moved(atom/old_loc, movement_dir, forced, list/old_locs)
+/obj/effect/tyranid/firenado/Moved(atom/old_loc, movement_dir, forced, list/old_locs)
 	. = ..()
 	if(!isturf(loc))
 		return
@@ -357,8 +357,8 @@
 	new /obj/fire/melting_fire(loc)
 
 /// called when attacking a mob
-/obj/effect/xenomorph/firenado/proc/mob_act(mob/living/target)
-	if(isxeno(target))
+/obj/effect/tyranid/firenado/proc/mob_act(mob/living/target)
+	if(istyranid(target))
 		return
 	if(target.status_flags & GODMODE || target.stat == DEAD)
 		return
@@ -371,7 +371,7 @@
 	qdel(src)
 
 ///Effects applied to a mob that crosses a burning turf
-/obj/effect/xenomorph/firenado/proc/on_cross(datum/source, atom/arrived, oldloc, oldlocs)
+/obj/effect/tyranid/firenado/proc/on_cross(datum/source, atom/arrived, oldloc, oldlocs)
 	SIGNAL_HANDLER
 	if(!ishuman(arrived))
 		return

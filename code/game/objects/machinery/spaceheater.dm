@@ -1,7 +1,7 @@
 /obj/machinery/space_heater
 	anchored = FALSE
 	density = TRUE
-	icon = 'icons/obj/machines/atmos.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/atmos.dmi'
 	icon_state = "sheater"
 	name = "space heater"
 	desc = "Made by Space Amish using traditional space techniques, this heater is guaranteed not to set the station on fire."

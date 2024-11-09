@@ -11,11 +11,11 @@
 /obj/alien/weeds
 	name = "weeds"
 	desc = "A layer of oozy slime, it feels slick, but not as slick for you to slip."
-	icon = 'icons/Xeno/weeds.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/weeds.dmi'
 	icon_state = "base"
 	anchored = TRUE
 	density = FALSE
-	layer = XENO_WEEDS_LAYER
+	layer = TYRANID_WEEDS_LAYER
 	plane = FLOOR_PLANE
 	max_integrity = 25
 	ignore_weed_destruction = TRUE
@@ -150,9 +150,9 @@
 		vehicle.last_move_time += WEED_SLOWDOWN
 		return
 
-	if(isxeno(crosser))
-		var/mob/living/carbon/xenomorph/X = crosser
-		X.next_move_slowdown += X.xeno_caste.weeds_speed_mod
+	if(istyranid(crosser))
+		var/mob/living/carbon/tyranid/X = crosser
+		X.next_move_slowdown += X.tyranid_caste.weeds_speed_mod
 		return
 
 	if(!ishuman(crosser))
@@ -180,7 +180,7 @@
 /obj/alien/weeds/weedwall
 	layer = RESIN_STRUCTURE_LAYER
 	plane = GAME_PLANE
-	icon = 'icons/obj/smooth_objects/weedwall.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/weedwall.dmi'
 	icon_state = "weedwall"
 
 /obj/alien/weeds/weedwall/update_icon_state()
@@ -191,9 +191,9 @@
 	else
 		icon_state = W.smoothing_junction ? "weedwall-[W.smoothing_junction]" : initial(icon_state)
 	if(color_variant == STICKY_COLOR)
-		icon = 'icons/obj/smooth_objects/weedwallsticky.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/smooth_objects/weedwallsticky.dmi'
 	else if(color_variant == RESTING_COLOR)
-		icon = 'icons/obj/smooth_objects/weedwallrest.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/smooth_objects/weedwallrest.dmi'
 
 // =================
 // windowed weed wall
@@ -207,9 +207,9 @@
 	var/obj/structure/window/framed/F = locate() in loc
 	icon_state = F?.smoothing_junction ? "weedwall-[F.smoothing_junction]" : initial(icon_state)
 	if(color_variant == STICKY_COLOR)
-		icon = 'icons/obj/smooth_objects/weedwallsticky.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/smooth_objects/weedwallsticky.dmi'
 	if(color_variant == RESTING_COLOR)
-		icon = 'icons/obj/smooth_objects/weedwallrest.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/smooth_objects/weedwallrest.dmi'
 
 /obj/alien/weeds/weedwall/window/MouseDrop_T(atom/dropping, mob/user)
 	var/obj/structure/window = locate(window_type) in loc
@@ -229,11 +229,11 @@
 		return ..()
 	return window.attackby(I, user, params)
 
-/obj/alien/weeds/weedwall/window/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/alien/weeds/weedwall/window/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	var/obj/structure/window = locate(window_type) in loc
 	if(!window)
 		return ..()
-	return window.attack_alien(xeno_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration, isrightclick)
+	return window.attack_alien(tyranid_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration, isrightclick)
 
 /obj/alien/weeds/weedwall/window/frame
 	window_type = /obj/structure/window_frame

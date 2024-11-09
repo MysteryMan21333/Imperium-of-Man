@@ -1,5 +1,5 @@
 /obj/item/vehicle_module/mounted_gun
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = ""
 	slot = ATTACHMENT_SLOT_WEAPON
 	w_class = WEIGHT_CLASS_BULKY
@@ -45,8 +45,8 @@
 
 /obj/item/vehicle_module/mounted_gun/volkite
 	name = "mounted Demi-Culverin"
-	desc = "A paired set of volkite weapons mounted into light vehicles such as SOM hover bikes. While they lack the raw power of some other volkite weapons, they make up for this through sheer volume of fire and integrate recharging power source."
-	icon = 'icons/obj/vehicles/hover_bike.dmi'
+	desc = "A paired set of volkite weapons mounted into light vehicles such as CHAOS hover bikes. While they lack the raw power of some other volkite weapons, they make up for this through sheer volume of fire and integrate recharging power source."
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/hover_bike.dmi'
 	icon_state = "bike_volkite"
 	should_use_obj_appeareance = FALSE
 	mounted_gun = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/demi_culverin
@@ -59,8 +59,8 @@
 ///bike volkite
 /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/demi_culverin
 	name = "\improper VX-42b Demi-Culverin"
-	desc = "A paired set of volkite weapons mounted into light vehicles such as SOM hover bikes. While they lack the raw power of some other volkite weapons, they make up for this through sheer volume of fire and integrate recharging power source."
-	icon = 'icons/obj/vehicles/vehicle_weapons.dmi'
+	desc = "A paired set of volkite weapons mounted into light vehicles such as CHAOS hover bikes. While they lack the raw power of some other volkite weapons, they make up for this through sheer volume of fire and integrate recharging power source."
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/vehicle_weapons.dmi'
 	icon_state = "bike_volkite"
 	worn_icon_state = null
 	allowed_ammo_types = list(/obj/item/cell/lasgun/volkite/turret/hover_bike)
@@ -83,8 +83,8 @@
 
 /obj/item/vehicle_module/mounted_gun/minigun
 	name = "dual V-44 light gatling guns"
-	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as SOM hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
-	icon = 'icons/obj/vehicles/hover_bike.dmi'
+	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as CHAOS hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/hover_bike.dmi'
 	icon_state = "bike_minigun"
 	should_use_obj_appeareance = FALSE
 	mounted_gun = /obj/item/weapon/gun/bike_minigun
@@ -96,8 +96,8 @@
 
 /obj/item/weapon/gun/bike_minigun
 	name = "dual V-44 light gatling guns"
-	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as SOM hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
-	icon = 'icons/obj/vehicles/vehicle_weapons.dmi'
+	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as CHAOS hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/vehicle_weapons.dmi'
 	icon_state = "bike_minigun"
 	worn_icon_state = null
 	fire_animation = "minigun_fire"

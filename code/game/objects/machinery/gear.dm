@@ -16,7 +16,7 @@
 
 /obj/machinery/elevator_strut
 	name = "\improper strut"
-	icon = 'icons/obj/elevator_strut.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/elevator_strut.dmi'
 	anchored = TRUE
 	resistance_flags = UNACIDABLE
 	density = FALSE

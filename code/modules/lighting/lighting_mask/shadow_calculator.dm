@@ -27,10 +27,10 @@
 
 //For debugging use when we want to know if a turf is being affected multiple times
 //#define DEBUG_HIGHLIGHT(x, y, colour) do{var/turf/T=locate(x,y,2);if(T){switch(T.color){if("#ff0000"){T.color = "#00ff00"}if("#00ff00"){T.color="#0000ff"}else{T.color="#ff0000"}}}}while(0)
-#define DO_SOMETHING_IF_DEBUGGING_SHADOWS(something) something
+#define DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(something) something
 #else
 #define DEBUG_HIGHLIGHT(x, y, colour)
-#define DO_SOMETHING_IF_DEBUGGING_SHADOWS(something)
+#define DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(something)
 #endif
 
 /atom/movable/lighting_mask
@@ -96,7 +96,7 @@
 
 	//Ceiling the range since we need it in integer form
 	var/range = CEILING(radius, 1)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/timer = TICK_USAGE)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/timer = TICK_USAGE)
 
 	//Work out our position
 	//Calculate shadow origin offset
@@ -154,62 +154,62 @@
 	if(radius < 2)
 		return
 
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("[TICK_USAGE_TO_MS(timer)]ms to process view([range], src)."))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/temp_timer = TICK_USAGE)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("[TICK_USAGE_TO_MS(timer)]ms to process view([range], src)."))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/temp_timer = TICK_USAGE)
 
 	//Group atoms together for optimisation
 	var/list/grouped_atoms = group_atoms(opaque_atoms_in_view)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("[TICK_USAGE_TO_MS(temp_timer)]ms to process group_atoms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/total_coordgroup_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/total_cornergroup_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/triangle_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/culling_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/triangle_to_matrix_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/matrix_division_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/MA_new_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/MA_vars_time = 0)
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/overlays_add_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("[TICK_USAGE_TO_MS(temp_timer)]ms to process group_atoms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/total_coordgroup_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/total_cornergroup_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/triangle_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/culling_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/triangle_to_matrix_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/matrix_division_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/MA_new_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/MA_vars_time = 0)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/overlays_add_time = 0)
 
 	var/list/overlays_to_add = list()
 	for(var/group in grouped_atoms)
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 		var/list/coordgroup = calculate_corners_in_group(group)
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(total_coordgroup_time += TICK_USAGE_TO_MS(temp_timer))
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(total_coordgroup_time += TICK_USAGE_TO_MS(temp_timer))
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 		//This is where the lines are made
 		var/list/cornergroup = get_corners_from_coords(coordgroup)
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(total_cornergroup_time += TICK_USAGE_TO_MS(temp_timer))
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(total_cornergroup_time += TICK_USAGE_TO_MS(temp_timer))
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 		var/list/culledlinegroup = cull_blocked_in_group(cornergroup, opaque_atoms_in_view)
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(culling_time += TICK_USAGE_TO_MS(temp_timer))
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(culling_time += TICK_USAGE_TO_MS(temp_timer))
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 		if(!LAZYLEN(culledlinegroup))
 			continue
 
 		var/list/triangles = calculate_triangle_vertices(culledlinegroup)
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(triangle_time += TICK_USAGE_TO_MS(temp_timer))
-		DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(triangle_time += TICK_USAGE_TO_MS(temp_timer))
+		DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 		for(var/triangle in triangles)
 			var/matrix/triangle_matrix = triangle_to_matrix(triangle)
 
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(triangle_to_matrix_time += TICK_USAGE_TO_MS(temp_timer))
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(triangle_to_matrix_time += TICK_USAGE_TO_MS(temp_timer))
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 			triangle_matrix /= transform
 
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(matrix_division_time += TICK_USAGE_TO_MS(temp_timer))
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(matrix_division_time += TICK_USAGE_TO_MS(temp_timer))
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 			var/mutable_appearance/shadow = new()
 
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(MA_new_time += TICK_USAGE_TO_MS(temp_timer))
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(MA_new_time += TICK_USAGE_TO_MS(temp_timer))
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 			shadow.icon = LIGHTING_ICON_BIG
 			shadow.icon_state = "triangle"
@@ -218,31 +218,31 @@
 			shadow.render_target = SHADOW_RENDER_TARGET
 			shadow.blend_mode = BLEND_OVERLAY
 
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(MA_vars_time += TICK_USAGE_TO_MS(temp_timer))
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(MA_vars_time += TICK_USAGE_TO_MS(temp_timer))
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
 			LAZYADD(shadows, shadow)
 			overlays_to_add += shadow
 
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(overlays_add_time += TICK_USAGE_TO_MS(temp_timer))
-			DO_SOMETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(overlays_add_time += TICK_USAGE_TO_MS(temp_timer))
+			DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(temp_timer = TICK_USAGE)
 
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(var/overlay_apply_time = TICK_USAGE)
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(var/overlay_apply_time = TICK_USAGE)
 
 	overlays += overlays_to_add //batch appearance generation for free lag(tm)
 
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(overlay_apply_time = TICK_USAGE_TO_MS(overlay_apply_time))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("total_coordgroup_time: [total_coordgroup_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("total_cornergroup_time: [total_cornergroup_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("triangle_time calculation: [triangle_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("triangle_to_matrix_time: [triangle_to_matrix_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("Culling Time: [culling_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("matrix_division_time: [matrix_division_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("MA_new_time: [MA_new_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("MA_vars_time: [MA_vars_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("overlays_add_time: [overlays_add_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("overlay_apply_time: [overlay_apply_time]ms"))
-	DO_SOMETHING_IF_DEBUGGING_SHADOWS(log_game("[TICK_USAGE_TO_MS(timer)]ms to process total."))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(overlay_apply_time = TICK_USAGE_TO_MS(overlay_apply_time))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("total_coordgroup_time: [total_coordgroup_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("total_cornergroup_time: [total_cornergroup_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("triangle_time calculation: [triangle_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("triangle_to_matrix_time: [triangle_to_matrix_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("Culling Time: [culling_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("matrix_division_time: [matrix_division_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("MA_new_time: [MA_new_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("MA_vars_time: [MA_vars_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("overlays_add_time: [overlays_add_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("overlay_apply_time: [overlay_apply_time]ms"))
+	DO_CHAOSETHING_IF_DEBUGGING_SHADOWS(log_game("[TICK_USAGE_TO_MS(timer)]ms to process total."))
 
 
 /**
@@ -683,4 +683,4 @@
 #undef LIGHTING_SHADOW_TEX_SIZE
 #undef COORD_LIST_ADD
 #undef DEBUG_HIGHLIGHT
-#undef DO_SOMETHING_IF_DEBUGGING_SHADOWS
+#undef DO_CHAOSETHING_IF_DEBUGGING_SHADOWS

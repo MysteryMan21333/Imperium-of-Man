@@ -362,7 +362,7 @@
 	return TRUE
 
 /obj/grab_interact(obj/item/grab/grab, mob/user, base_damage = BASE_OBJ_SLAM_DAMAGE, is_sharp = FALSE)
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(user.a_intent != INTENT_HARM)
 		return

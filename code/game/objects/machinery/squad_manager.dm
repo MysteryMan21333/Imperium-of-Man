@@ -38,7 +38,7 @@ GLOBAL_DATUM_INIT(squad_manager, /datum/squad_manager, new)
 	if(.)
 		return
 	var/mob/living/carbon/human/user = usr
-	if(!ismarineleaderjob(user.job)  && !issommarineleaderjob(user.job))
+	if(!isguardsmanleaderjob(user.job)  && !issomguardsmanleaderjob(user.job))
 		to_chat(user, span_danger("You must be a squad leader to edit squads."))
 		return
 

@@ -1,6 +1,6 @@
 ///Default assets a faction starts with
 GLOBAL_LIST_INIT(campaign_default_assets, list(
-	FACTION_TERRAGOV = list(
+	FACTION_IMPERIUM = list(
 		/datum/campaign_asset/mech/light,
 		/datum/campaign_asset/bonus_job/freelancer,
 		/datum/campaign_asset/bonus_job/pmc,
@@ -8,18 +8,18 @@ GLOBAL_LIST_INIT(campaign_default_assets, list(
 		/datum/campaign_asset/fire_support/mortar,
 		/datum/campaign_asset/droppod_enabled,
 	),
-	FACTION_SOM = list(
-		/datum/campaign_asset/mech/light/som,
+	FACTION_CHAOS = list(
+		/datum/campaign_asset/mech/light/chaos,
 		/datum/campaign_asset/bonus_job/colonial_militia,
 		/datum/campaign_asset/bonus_job/icc,
 		/datum/campaign_asset/bonus_job/vsd,
-		/datum/campaign_asset/fire_support/som_mortar,
+		/datum/campaign_asset/fire_support/chaos_mortar,
 		/datum/campaign_asset/teleporter_enabled,
 	),
 ))
 ///Default assets a faction can purchase
 GLOBAL_LIST_INIT(campaign_default_purchasable_assets, list(
-	FACTION_TERRAGOV = list(
+	FACTION_IMPERIUM = list(
 		/datum/campaign_asset/fire_support,
 		/datum/campaign_asset/fire_support/mortar,
 		/datum/campaign_asset/droppod_refresh,
@@ -38,27 +38,27 @@ GLOBAL_LIST_INIT(campaign_default_purchasable_assets, list(
 		/datum/campaign_asset/equipment/tac_bino_tgmc,
 		/datum/campaign_asset/tactical_reserves,
 	),
-	FACTION_SOM = list(
-		/datum/campaign_asset/fire_support/som_cas,
-		/datum/campaign_asset/fire_support/som_mortar,
+	FACTION_CHAOS = list(
+		/datum/campaign_asset/fire_support/chaos_cas,
+		/datum/campaign_asset/fire_support/chaos_mortar,
 		/datum/campaign_asset/teleporter_charges,
 		/datum/campaign_asset/teleporter_enabled,
-		/datum/campaign_asset/equipment/medkit_basic/som,
-		/datum/campaign_asset/equipment/materials_pack/som,
+		/datum/campaign_asset/equipment/medkit_basic/chaos,
+		/datum/campaign_asset/equipment/materials_pack/chaos,
 		/datum/campaign_asset/equipment/ballistic_som,
 		/datum/campaign_asset/equipment/shotguns_som,
 		/datum/campaign_asset/equipment/volkite,
 		/datum/campaign_asset/equipment/heavy_armour_som,
 		/datum/campaign_asset/equipment/shields_som,
 		/datum/campaign_asset/equipment/grenades_som,
-		/datum/campaign_asset/equipment/at_mines/som,
+		/datum/campaign_asset/equipment/at_mines/chaos,
 		/datum/campaign_asset/equipment/tac_bino_som,
 		/datum/campaign_asset/tactical_reserves,
 	),
 ))
 ///The weighted potential mission pool by faction
 GLOBAL_LIST_INIT(campaign_mission_pool, list(
-	FACTION_TERRAGOV = list(
+	FACTION_IMPERIUM = list(
 		/datum/campaign_mission/tdm = 10,
 		/datum/campaign_mission/destroy_mission/fire_support_raid = 15,
 		/datum/campaign_mission/capture_mission/phoron_capture = 15,
@@ -67,13 +67,13 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 		/datum/campaign_mission/destroy_mission/base_rescue = 12,
 		/datum/campaign_mission/raiding_base = 6,
 	),
-	FACTION_SOM = list(
+	FACTION_CHAOS = list(
 		/datum/campaign_mission/tdm/orion = 10,
-		/datum/campaign_mission/destroy_mission/fire_support_raid/som = 15,
-		/datum/campaign_mission/tdm/mech_wars/som = 12,
-		/datum/campaign_mission/destroy_mission/supply_raid/som = 15,
+		/datum/campaign_mission/destroy_mission/fire_support_raid/chaos = 15,
+		/datum/campaign_mission/tdm/mech_wars/chaos = 12,
+		/datum/campaign_mission/destroy_mission/supply_raid/chaos = 15,
 		/datum/campaign_mission/capture_mission/asat = 12,
-		/datum/campaign_mission/raiding_base/som = 6,
+		/datum/campaign_mission/raiding_base/chaos = 6,
 	),
 ))
 
@@ -332,7 +332,7 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 /datum/faction_stats/proc/is_leadership_role(mob/living/user)
 	if(user == faction_leader)
 		return TRUE
-	if(ismarinecommandjob(user.job) || issommarinecommandjob(user.job))
+	if(isguardsmancommandjob(user.job) || issomguardsmancommandjob(user.job))
 		return TRUE
 
 ///force updates static data when something changes externally
@@ -365,8 +365,8 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 	var/list/data = list()
 	var/ui_theme
 	switch(faction)
-		if(FACTION_SOM)
-			ui_theme = "som"
+		if(FACTION_CHAOS)
+			ui_theme = "chaos"
 		else
 			ui_theme = "ntos"
 	data["ui_theme"] = ui_theme
@@ -526,7 +526,7 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 				if(!(choice.asset_flags & ASSET_SL_AVAILABLE))
 					to_chat(user, span_warning("Only leadership roles can do this."))
 					return
-				if(!(ismarineleaderjob(user.job) || issommarineleaderjob(user.job)))
+				if(!(isguardsmanleaderjob(user.job) || issomguardsmanleaderjob(user.job)))
 					to_chat(user, span_warning("Only squad leaders and above can do this."))
 					return
 			if(!choice.attempt_activatation(user))

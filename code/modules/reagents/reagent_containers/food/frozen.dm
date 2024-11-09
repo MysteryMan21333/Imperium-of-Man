@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/frozen/
-	icon = 'icons/obj/items/food/frozen_treats.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/frozen_treats.dmi'
 
 /obj/item/reagent_containers/food/snacks/frozen/icecreamsandwich
 	name = "icecream sandwich"
@@ -196,7 +196,7 @@
 
 /obj/item/popsicle_stick
 	name = "popsicle stick"
-	icon = 'icons/obj/items/food/frozen_treats.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/frozen_treats.dmi'
 	icon_state = "popsicle_stick"
 	desc = "This humble little stick usually carries a frozen treat, at the moment it seems freed from this Atlassian burden."
 

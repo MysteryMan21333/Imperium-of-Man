@@ -325,7 +325,7 @@ GLOBAL_LIST_INIT(organ_rel_size, list(
 	var/obj/structure/table/T = locate(/obj/structure/table, loc)
 	if(T && !T.flipped) return TRUE
 
-/mob/living/carbon/xenomorph/can_be_operated_on()
+/mob/living/carbon/tyranid/can_be_operated_on()
 	return FALSE
 
 

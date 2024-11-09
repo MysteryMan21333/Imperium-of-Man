@@ -19,7 +19,7 @@
 /obj/item/reagent_containers/cup/glass/bottle
 	name = "glass bottle"
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
-	icon = 'icons/obj/drinks/bottles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/bottles.dmi'
 	icon_state = "glassbottle"
 	worn_icon_state = "beer" //Generic held-item sprite until unique ones are made.
 	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
@@ -28,8 +28,8 @@
 	force = 15 //Smashing bottles over someone's head hurts.
 	throwforce = 15
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/drinks_lefthand.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/drinks_righthand.dmi'
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_lefthand.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_righthand.dmi'
 		)
 	drink_type = ALCOHOL
 	toolspeed = 1.3 //it's a little awkward to use, but it's a cylinder alright.
@@ -76,7 +76,7 @@
 		if(3)
 			intensity_state = "high"
 	///The froth fountain that we are sticking onto the bottle
-	var/mutable_appearance/froth = mutable_appearance('icons/obj/drinks/drink_effects.dmi', "froth_bottle_[intensity_state]")
+	var/mutable_appearance/froth = mutable_appearance('modular_imperium/master_files/icons/obj/drinks/drink_effects.dmi', "froth_bottle_[intensity_state]")
 	froth.pixel_x = offset_x
 	froth.pixel_y = offset_y
 	add_overlay(froth)
@@ -91,7 +91,7 @@
 /obj/item/broken_bottle
 	name = "broken bottle"
 	desc = "A bottle with a sharp broken bottom."
-	icon = 'icons/obj/drinks/drink_effects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/drink_effects.dmi'
 	icon_state = "broken_bottle"
 	force = 9
 	throwforce = 5
@@ -100,15 +100,15 @@
 	w_class = WEIGHT_CLASS_TINY
 	worn_icon_state = "broken_beer"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/drinks_lefthand.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/drinks_righthand.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_lefthand.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_righthand.dmi',
 		)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabs", "slashes", "attacks")
 	///The mask image for mimicking a broken-off bottom of the bottle
-	var/static/icon/broken_outline = icon('icons/obj/drinks/drink_effects.dmi', "broken")
+	var/static/icon/broken_outline = icon('modular_imperium/master_files/icons/obj/drinks/drink_effects.dmi', "broken")
 	///The mask image for mimicking a broken-off neck of the bottle
-	var/static/icon/flipped_broken_outline = icon('icons/obj/drinks/drink_effects.dmi', "broken-flipped")
+	var/static/icon/flipped_broken_outline = icon('modular_imperium/master_files/icons/obj/drinks/drink_effects.dmi', "broken-flipped")
 
 /// Mimics the appearance and properties of the passed in bottle.
 /// Takes the broken bottle to mimic, and the thing the bottle was broken agaisnt as args
@@ -235,7 +235,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/holywater
 	name = "flask of holy water"
 	desc = "A flask of the chaplain's holy water."
-	icon = 'icons/obj/drinks/bottles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/bottles.dmi'
 	icon_state = "holyflask"
 	worn_icon_state = "holyflask"
 	broken_worn_icon_state = "broken_holyflask"
@@ -456,7 +456,7 @@
 
 /obj/item/trash/champagne_cork
 	name = "champagne cork"
-	icon = 'icons/obj/drinks/drink_effects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/drink_effects.dmi'
 	icon_state = "champagne_cork"
 
 /obj/item/reagent_containers/cup/glass/bottle/blazaam
@@ -524,15 +524,15 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice
 	worn_icon_state = "carton"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/drinks_lefthand.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/drinks_righthand.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_lefthand.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_righthand.dmi',
 		)
 	can_shatter = FALSE
 
 /obj/item/reagent_containers/cup/glass/bottle/juice/orangejuice
 	name = "orange juice"
 	desc = "Full of vitamins and deliciousness!"
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "orangejuice"
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 	drink_type = FRUIT | BREAKFAST
@@ -540,7 +540,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/cream
 	name = "milk cream"
 	desc = "It's cream. Made from milk. What else did you think you'd find in there?"
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "cream"
 	list_reagents = list(/datum/reagent/consumable/cream = 100)
 	drink_type = DAIRY
@@ -548,7 +548,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/eggnog
 	name = "eggnog"
 	desc = "For enjoying the most wonderful time of the year."
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "nog2"
 	list_reagents = list(/datum/reagent/consumable/ethanol/eggnog = 100)
 	drink_type = FRUIT
@@ -556,7 +556,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/dreadnog
 	name = "eggnog"
 	desc = "For when you want some nondescript soda inside of your eggnog!"
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "dreadnog"
 	list_reagents = list(/datum/reagent/consumable/ethanol/dreadnog = 100)
 	drink_type = FRUIT | GROSS
@@ -564,7 +564,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/tomatojuice
 	name = "tomato juice"
 	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "tomatojuice"
 	list_reagents = list(/datum/reagent/consumable/tomatojuice = 100)
 	drink_type = VEGETABLES
@@ -572,7 +572,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/limejuice
 	name = "lime juice"
 	desc = "Sweet-sour goodness."
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "limejuice"
 	list_reagents = list(/datum/reagent/consumable/limejuice = 100)
 	drink_type = FRUIT
@@ -580,7 +580,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/pineapplejuice
 	name = "pineapple juice"
 	desc = "Extremely tart, yellow juice."
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "pineapplejuice"
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 100)
 	drink_type = FRUIT | PINEAPPLE

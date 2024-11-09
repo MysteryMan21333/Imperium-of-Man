@@ -2,7 +2,7 @@
 /obj/effect/landmark/campaign_structure
 	name = "GENERIC CAMPAIGN STRUCTURE"
 	desc = "THIS SHOULDN'T BE VISIBLE"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign_structures.dmi'
 	atom_flags = CRITICAL_ATOM
 	///Missions that trigger this landmark to spawn an objective
 	var/list/mission_types
@@ -28,7 +28,7 @@
 	anchored = TRUE
 	allow_pass_flags = PASSABLE
 	destroy_sound = 'sound/effects/meteorimpact.ogg'
-	icon = 'icons/obj/structures/campaign_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign_structures.dmi'
 
 	///overhead timer
 	var/obj/effect/countdown/campaign_objective/countdown

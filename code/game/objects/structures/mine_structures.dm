@@ -2,7 +2,7 @@
 /obj/structure/mine_structure
 	name = "misc mine structure"
 	desc = "You shouldn't see this."
-	icon = 'icons/obj/structures/cave_decor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/cave_decor.dmi'
 	icon_state = ""
 	max_integrity = 200
 	anchored = TRUE

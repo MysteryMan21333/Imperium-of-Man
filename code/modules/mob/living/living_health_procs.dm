@@ -262,11 +262,11 @@
 
 	hud_list[HEART_STATUS_HUD].icon_state = ""
 
-/mob/living/carbon/xenomorph/on_revive()
+/mob/living/carbon/tyranid/on_revive()
 	. = ..()
-	GLOB.alive_xeno_list += src
-	LAZYADD(GLOB.alive_xeno_list_hive[hivenumber], src)
-	GLOB.dead_xeno_list -= src
+	GLOB.alive_tyranid_list += src
+	LAZYADD(GLOB.alive_tyranid_list_hive[hivenumber], src)
+	GLOB.dead_tyranid_list -= src
 
 /mob/living/proc/revive(admin_revive = FALSE)
 	for(var/obj/item/embedded AS in embedded_objects)
@@ -301,12 +301,12 @@
 
 	//remove larva
 	var/obj/item/alien_embryo/A = locate() in src
-	var/mob/living/carbon/xenomorph/larva/L = locate() in src //the larva was fully grown, ready to burst.
+	var/mob/living/carbon/tyranid/larva/L = locate() in src //the larva was fully grown, ready to burst.
 	if(A)
 		qdel(A)
 	if(L)
 		qdel(L)
-	DISABLE_BITFIELD(status_flags, XENO_HOST)
+	DISABLE_BITFIELD(status_flags, TYRANID_HOST)
 
 	// restore us to conciousness
 	set_stat(CONSCIOUS)
@@ -373,11 +373,11 @@
 	return ..()
 
 
-/mob/living/carbon/xenomorph/revive(admin_revive = FALSE)
-	set_plasma(xeno_caste.plasma_max)
+/mob/living/carbon/tyranid/revive(admin_revive = FALSE)
+	set_plasma(tyranid_caste.plasma_max)
 	sunder = 0
 	if(stat == DEAD)
-		hive?.on_xeno_revive(src)
+		hive?.on_tyranid_revive(src)
 	return ..()
 
 ///Revive the huamn up to X health points
@@ -417,7 +417,7 @@
 			return
 		REMOVE_TRAIT(src, TRAIT_IS_RESURRECTING, REVIVE_TO_CRIT_TRAIT)
 		if(should_zombify || istype(species, /datum/species/zombie))
-			AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/zombie/patrolling, src) //Zombie patrol
+			AddComponent(/datum/component/ai_controller, /datum/ai_behavior/tyranid/zombie/patrolling, src) //Zombie patrol
 			a_intent = INTENT_HARM
 	if(should_zombify)
 		set_species("Strong zombie")

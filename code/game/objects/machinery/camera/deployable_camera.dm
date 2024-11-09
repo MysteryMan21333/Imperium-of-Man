@@ -3,7 +3,7 @@ GLOBAL_VAR_INIT(deployed_cameras, 0)
 /obj/machinery/camera/deployable
 	name = "\"Huginn\" ROC-58 Observer"
 	desc = "The ROC-58 deployable camera, designed for use in the field to increase the tactical utility of overwatch."
-	network = list("marinesl", "marine")
+	network = list("guardsmansl", "guardsman")
 	icon_state = "deployable"
 	layer = ABOVE_ALL_MOB_LAYER//it flies after all
 
@@ -26,7 +26,7 @@ GLOBAL_VAR_INIT(deployed_cameras, 0)
 /obj/item/deployable_camera
 	name = "Undeployed \"Huginn\" ROC-58 Observer"
 	desc = "A deployable camera for use with overwatch systems."
-	icon = 'icons/obj/machines/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/monitors.dmi'
 	icon_state = "deployableitem"
 	w_class = WEIGHT_CLASS_SMALL
 

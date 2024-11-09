@@ -90,9 +90,9 @@
 	sundering = 0.5
 
 /datum/ammo/bullet/spottingrifle/plasmaloss/on_hit_mob(mob/target_mob, obj/projectile/proj)
-	if(isxeno(target_mob))
-		var/mob/living/carbon/xenomorph/target_xeno = target_mob
-		target_xeno.use_plasma(20 + 0.2 * target_xeno.xeno_caste.plasma_max * target_xeno.xeno_caste.plasma_regen_limit) // This is draining 20%+20 flat per hit.
+	if(istyranid(target_mob))
+		var/mob/living/carbon/tyranid/target_tyranid = target_mob
+		target_tyranid.use_plasma(20 + 0.2 * target_tyranid.tyranid_caste.plasma_max * target_tyranid.tyranid_caste.plasma_regen_limit) // This is draining 20%+20 flat per hit.
 
 /datum/ammo/bullet/spottingrifle/tungsten
 	name = "smart tungsten spotting bullet"

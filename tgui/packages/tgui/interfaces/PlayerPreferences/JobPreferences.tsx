@@ -54,14 +54,14 @@ export const JobPreferences = (props) => {
     'Squad Leader',
   ];
   const somJobs = [
-    'SOM Squad Standard',
-    'SOM Squad Engineer',
-    'SOM Squad Medic',
-    'SOM Squad Veteran',
-    'SOM Squad Leader',
-    'SOM Field Commander',
-    'SOM Staff Officer',
-    'SOM Commander',
+    'CHAOS Squad Standard',
+    'CHAOS Squad Engineer',
+    'CHAOS Squad Medic',
+    'CHAOS Squad Veteran',
+    'CHAOS Squad Leader',
+    'CHAOS Field Commander',
+    'CHAOS Staff Officer',
+    'CHAOS Commander',
   ];
   const flavourJobs = ['Corporate Liaison'];
 
@@ -155,7 +155,7 @@ export const JobPreferences = (props) => {
                 ))}
               </Flex.Item>
               <Flex.Item>
-                <h4>Preferred Squad - SOM</h4>
+                <h4>Preferred Squad - CHAOS</h4>
                 {Object.values(squads_som).map((squad_som) => (
                   <Button.Checkbox
                     key={squad_som}
@@ -193,7 +193,7 @@ export const JobPreferences = (props) => {
       </Stack>
       <Stack>
         <Stack.Item grow>
-          <JobList name="SOM Jobs" jobs={somJobs} />
+          <JobList name="CHAOS Jobs" jobs={somJobs} />
         </Stack.Item>
       </Stack>
     </Section>

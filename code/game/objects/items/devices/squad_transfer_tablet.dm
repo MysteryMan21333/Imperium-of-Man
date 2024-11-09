@@ -5,7 +5,7 @@
 	equip_slot_flags = ITEM_SLOT_POCKET
 	w_class = WEIGHT_CLASS_SMALL
 	interaction_flags = INTERACT_MACHINE_TGUI
-	/// REF()s for all currently active transfering marines
+	/// REF()s for all currently active transfering guardsmans
 	var/list/active_requests = list()
 
 /obj/item/squad_transfer_tablet/ui_interact(mob/user, datum/tgui/ui)
@@ -33,7 +33,7 @@
 	if(!ishuman(usr))
 		return
 	var/mob/living/carbon/human/human_user = usr
-	if(!ismarineleaderjob(human_user.job) && !issommarineleaderjob(human_user.job) && !ismarinecommandjob(human_user.job) && !issommarinecommandjob(human_user.job))
+	if(!isguardsmanleaderjob(human_user.job) && !issomguardsmanleaderjob(human_user.job) && !isguardsmancommandjob(human_user.job) && !issomguardsmancommandjob(human_user.job))
 		to_chat(human_user, span_notice("Only command roles my request squad changes!"))
 		return FALSE
 	if(action != "transfer")

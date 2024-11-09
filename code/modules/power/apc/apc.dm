@@ -9,7 +9,7 @@
 /obj/machinery/power/apc
 	name = "area power controller"
 	desc = "A control terminal for the area electrical systems."
-	icon = 'icons/obj/machines/apc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/apc.dmi'
 	icon_state = "apc0"
 	anchored = TRUE
 	use_power = NO_POWER_USE
@@ -642,10 +642,10 @@
 /obj/machinery/power/apc/hyper
 	cell_type = /obj/item/cell/hyper
 
-//------Marine ship APCs ------//
+//------Guardsman ship APCs ------//
 
 /obj/machinery/power/apc/mainship
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 	cell_type = /obj/item/cell/high
 
 /obj/machinery/power/apc/mainship/hardened

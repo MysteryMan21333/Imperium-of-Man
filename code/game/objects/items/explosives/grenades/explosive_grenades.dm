@@ -34,9 +34,9 @@
 	throw_speed = 2
 	throw_range = 6
 
-/obj/item/explosive/grenade/som
+/obj/item/explosive/grenade/chaos
 	name = "\improper S30 HE grenade"
-	desc = "A reliable high explosive grenade utilised by SOM forces. Designed for hand or grenade launcher use."
+	desc = "A reliable high explosive grenade utilised by CHAOS forces. Designed for hand or grenade launcher use."
 	icon_state = "grenade_som"
 	worn_icon_state = "grenade_som"
 
@@ -58,7 +58,7 @@
 	name = "\improper AGLS-37 HEDP grenade"
 	desc = "A small tiny smart grenade, it is about to blow up in your face, unless you found it inert. Otherwise a pretty normal grenade, other than it is somehow in a primeable state."
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/items/grenade.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/grenade.dmi'
 	icon_state = "ags_grenade"
 	worn_icon_state = "ags_grenade"
 	det_time = 2 SECONDS
@@ -87,5 +87,5 @@
 /obj/item/explosive/grenade/creampie
 	name = "\improper ERP4 HE Banana Cream Pie grenade"
 	desc = "A high explosive munition, hidden in the form of a tasty cream pie!"
-	icon = 'icons/obj/items/food/piecake.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/piecake.dmi'
 	icon_state = "pie"

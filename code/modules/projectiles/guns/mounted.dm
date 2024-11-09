@@ -2,7 +2,7 @@
 /obj/item/storage/box/hsg_102
 	name = "\improper HSG-102 crate"
 	desc = "A large and rusted metal case. It has not seen much use. Written in faded letters on its top, it says, \"This is a HSG-102 heavy smartgun\". There are many other warning labels atop that are too faded to read."
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state = "hsg102_crate"
 	w_class = WEIGHT_CLASS_HUGE
 
@@ -25,11 +25,11 @@
 
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/machines/deployable/heavy_smartgun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/heavy_smartgun.dmi'
 	icon_state = "turret"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/misc_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/misc_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_right_1.dmi',
 	)
 
 	fire_sound = 'sound/weapons/guns/fire/hmg2.ogg'
@@ -99,11 +99,11 @@
 
 /obj/item/weapon/gun/standard_minigun
 	name = "\improper MG-2005 mounted minigun"
-	desc = "The MG-2005 mounted minigun is a gun simple in principle, it will shoot a lot of bullets really fast and will rip through xeno hordes."
+	desc = "The MG-2005 mounted minigun is a gun simple in principle, it will shoot a lot of bullets really fast and will rip through tyranid hordes."
 
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/machines/deployable/minigun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/minigun.dmi'
 	icon_state = "minigun"
 	caliber = CALIBER_762X51
 
@@ -141,7 +141,7 @@
 /obj/item/weapon/gun/standard_minigun/nest
 	name = "\improper MG-2005 mounted minigun nest"
 	desc = "A MG-2005 mounted minigun mounted upon a small reinforced post with sandbags."
-	icon = 'icons/obj/machines/deployable/minigun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/minigun.dmi'
 	icon_state = "minigun_nest"
 
 	item_flags = IS_DEPLOYABLE|TWOHANDED|DEPLOYED_NO_PICKUP|DEPLOY_ON_INITIALIZE
@@ -160,11 +160,11 @@
 	desc = "The ATR-22 is a recoiling barrel 20mm autocannon, created to be used against low flying targets, it is however able to engage ground targets at medium ranges with extreme efficency even if the recoil makes it near impossible to hit anything close by, its bullets will shred hard targets such as armored foes or walls. Both barrels can be fired at the same time rather than in sequence, but will incur large scatter penalties do so."
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/machines/deployable/atr22.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/atr22.dmi'
 	icon_state = "atr22"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/misc_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/misc_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_right_1.dmi',
 	)
 	fire_sound = SFX_AC_FIRE
 	reload_sound = 'sound/weapons/guns/interact/minigun_cocked.ogg'
@@ -199,7 +199,7 @@
 	soft_armor = list(MELEE = 60, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 100, FIRE = 0, ACID = 0)
 
 /obj/machinery/deployable/mounted/moveable/auto_cannon
-	resistance_flags = XENO_DAMAGEABLE|UNACIDABLE
+	resistance_flags = TYRANID_DAMAGEABLE|UNACIDABLE
 	coverage = 85 //has a shield
 
 //-------------------------------------------------------
@@ -211,14 +211,14 @@
 
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/machines/deployable/heavy_laser.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/heavy_laser.dmi'
 	icon_state = "heavylaser"
 
 	fire_sound = 'sound/weapons/guns/fire/tank_flamethrower.ogg'
 	reload_sound = 'sound/weapons/guns/interact/minigun_cocked.ogg'
 
 	default_ammo_type = /obj/item/cell/lasgun/heavy_laser
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/heavy_laser
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/heavy_laser
 
 	scatter = 10
 	deployed_scatter_change = -10
@@ -249,7 +249,7 @@
 
 /datum/lasrifle/heavy_laser/standard
 	rounds_per_shot = 15
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/heavy_laser
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/heavy_laser
 	fire_delay = 0.7 SECONDS
 	burst_amount = 1
 	fire_sound = 'sound/weapons/guns/fire/tank_flamethrower.ogg'
@@ -260,7 +260,7 @@
 
 /datum/lasrifle/heavy_laser/burst
 	rounds_per_shot = 5
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/shatter/heavy_laser
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/shatter/heavy_laser
 	fire_delay = 1 SECONDS
 	burst_amount = 3
 	fire_sound = 'sound/weapons/guns/fire/Laser Rifle Standard.ogg'
@@ -272,7 +272,7 @@
 /datum/lasrifle/heavy_laser/ricochet
 	rounds_per_shot = 15
 	fire_delay = 0.5 SECONDS
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/ricochet/four
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/ricochet/four
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
 	message_to_user = "You set the heavy laser to ricochet mode."
 	fire_mode = GUN_FIREMODE_SEMIAUTO
@@ -293,7 +293,7 @@
 
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/machines/deployable/fk88.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/fk88.dmi'
 	icon_state = "isg"
 	fire_sound = 'sound/weapons/guns/fire/tank_cannon1.ogg'
 	reload_sound = 'sound/weapons/guns/interact/tat36_reload.ogg'
@@ -359,11 +359,11 @@
 	desc = "An absolute monster of a weapon, this is a watercooled heavy machinegun modernized by some crazy armorer with a wheeling kit included. Considering the mish mash of parts for the wheeling kit, you think its from another model of the gun. The pinnacle at holding a chokepoint. Holds 500 rounds of 10x28mm caseless in a box case. IS NOT IFF CAPABLE. Aiming carefully recommended. Can be repaired with a blowtorch once deployed. Alt Right click to unanchor and reanchor it."
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/machines/deployable/mg08.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/mg08.dmi'
 	icon_state = "mg08"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/misc_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/misc_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_right_1.dmi',
 	)
 
 	fire_sound = 'sound/weapons/guns/fire/mg08.ogg'
@@ -409,12 +409,12 @@
 	desc = "The MG-27 is the SG-29s aging IFF-less cousin, made for rapid accurate machinegun fire in a short amount of time, you could use it while standing, not a great idea. Use the tripod for actual combat. It uses 10x27mm boxes."
 	equip_slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	icon = 'icons/obj/machines/deployable/mounted_machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/mounted_machinegun.dmi'
 	icon_state = "t27"
 	worn_icon_state = "t27"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/machineguns_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/machineguns_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/machineguns_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/machineguns_right_1.dmi',
 	)
 	caliber = CALIBER_10x27_CASELESS // codex
 	max_shells = 150 //codex
@@ -437,7 +437,7 @@
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/scope/mini,
 		/obj/item/attachable/scope/unremovable/mmg,
 		/obj/item/attachable/stock/t27,
@@ -475,12 +475,12 @@
 	name = "\improper PTR-41/1785 anti-mech gun"
 	desc = "The PTR-41/1785 is a bottom shelf solution modernized for dealing with armor, while one could use it while standing it is obviously not a great idea. It is recommended to be used while the bipod is deployed. It uses 14.5mm high velocity rounds that will certainly leave a hole in whatever unfortunate soul is hit by it."
 	w_class = WEIGHT_CLASS_BULKY
-	icon = 'icons/obj/machines/deployable/clf_heavyrifle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/clf_heavyrifle.dmi'
 	icon_state = "ptrs"
 	worn_icon_state = "ptrs"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_64.dmi',
 	)
 	inhand_x_dimension = 64
 	inhand_y_dimension = 32
@@ -537,7 +537,7 @@
 	name = "\improper AT-36 anti tank gun"
 	desc = "The AT-36 is a light dual purpose anti tank and anti personnel weapon used by the TGMC. Used for light vehicle or bunker busting on a short notice. Best used by two people. It can move around with wheels, and has an ammo rack intergral to the weapon. CANNOT BE UNDEPLOYED ONCE DEPLOYED! It uses several types of 37mm shells boxes. Alt-right click on it to anchor it so that it cannot be moved by anyone, then alt-right click again to move it."
 	w_class = WEIGHT_CLASS_BULKY
-	icon = 'icons/obj/machines/deployable/at36.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/at36.dmi'
 	icon_state = "at36"
 	worn_icon_state = "at36"
 	caliber = CALIBER_37MM // codex
@@ -573,7 +573,7 @@
 	deployable_item = /obj/machinery/deployable/mounted/moveable/atgun
 
 /obj/machinery/deployable/mounted/moveable/atgun
-	resistance_flags = XENO_DAMAGEABLE|UNACIDABLE
+	resistance_flags = TYRANID_DAMAGEABLE|UNACIDABLE
 	coverage = 85 //has a shield
 	anchor_time = 1 SECONDS
 	///The internal storage of our atgun
@@ -638,7 +638,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	equip_slot_flags = ITEM_SLOT_BACK
 	caliber = CALIBER_40MM
-	icon = 'icons/obj/machines/deployable/agls.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/agls.dmi'
 	icon_state = "agls"
 	fire_sound = 'sound/weapons/guns/fire/agls.ogg'
 	reload_sound = 'sound/weapons/guns/interact/minigun_cocked.ogg'
@@ -687,11 +687,11 @@
 /obj/item/weapon/gun/icc_hmg
 	name = "\improper KRD-61ES mounted heavy machinegun"
 	desc = "The KRD-61ES machinegun is the export variant of the ML-91 HMG. It's too heavy to be wielded or operated without the tripod. No extra work required, just deploy it with Ctrl-Click. Can be repaired with a blowtorch once deployed."
-	icon = 'icons/obj/machines/deployable/mounted_machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/mounted_machinegun.dmi'
 	icon_state = "kord"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/misc_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/misc_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/misc_right_1.dmi',
 	)
 
 	fire_sound = 'sound/weapons/guns/fire/hmg2.ogg'

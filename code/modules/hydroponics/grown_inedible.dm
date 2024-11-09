@@ -4,7 +4,7 @@
 
 /obj/item/grown // Grown things that are not edible
 	name = "grown_weapon"
-	icon = 'icons/obj/items/harvest.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/harvest.dmi'
 	var/plantname
 	var/potency = 1
 
@@ -163,7 +163,7 @@
 /obj/item/corncob
 	name = "corn cob"
 	desc = "A reminder of meals gone by."
-	icon = 'icons/obj/items/harvest.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/harvest.dmi'
 	icon_state = "corncob"
 	worn_icon_state = "corncob"
 	w_class = WEIGHT_CLASS_SMALL

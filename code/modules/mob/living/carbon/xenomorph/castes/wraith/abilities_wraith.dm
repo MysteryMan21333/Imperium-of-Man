@@ -6,33 +6,33 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 // ***************************************
 // *********** Blink
 // ***************************************
-/datum/action/ability/activable/xeno/blink
+/datum/action/ability/activable/tyranid/blink
 	name = "Blink"
 	action_icon_state = "blink"
-	action_icon = 'icons/Xeno/actions/wraith.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/wraith.dmi'
 	desc = "We teleport ourselves a short distance to a location within line of sight."
 	use_state_flags = ABILITY_TURF_TARGET
 	ability_cost = 30
 	cooldown_duration = 0.5 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BLINK,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_BLINK,
 	)
 
 ///Check target Blink turf to see if it can be blinked to
-/datum/action/ability/activable/xeno/blink/proc/check_blink_tile(turf/T, ignore_blocker = FALSE, silent = FALSE)
+/datum/action/ability/activable/tyranid/blink/proc/check_blink_tile(turf/T, ignore_blocker = FALSE, silent = FALSE)
 	if(isclosedturf(T) || isspaceturf(T) || isspacearea(T))
 		if(!silent)
-			to_chat(owner, span_xenowarning("We cannot blink here!"))
+			to_chat(owner, span_tyranidwarning("We cannot blink here!"))
 		return FALSE
 
 	if(!line_of_sight(owner, T)) //Needs to be in line of sight.
 		if(!silent)
-			to_chat(owner, span_xenowarning("We can't blink without line of sight to our destination!"))
+			to_chat(owner, span_tyranidwarning("We can't blink without line of sight to our destination!"))
 		return FALSE
 
 	if(IS_OPAQUE_TURF(T))
 		if(!silent)
-			to_chat(owner, span_xenowarning("We can't blink into this space without vision!"))
+			to_chat(owner, span_tyranidwarning("We can't blink into this space without vision!"))
 		return FALSE
 
 	if(ignore_blocker) //If we don't care about objects occupying the target square, return TRUE; used for checking pathing through transparents
@@ -40,34 +40,34 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 
 	if(turf_block_check(owner, T, FALSE, TRUE, TRUE, TRUE, TRUE)) //Check if there's anything that blocks us; we only care about Canpass here
 		if(!silent)
-			to_chat(owner, span_xenowarning("We can't blink here!"))
+			to_chat(owner, span_tyranidwarning("We can't blink here!"))
 		return FALSE
 
 	var/area/A = get_area(src)
 	if(isspacearea(A))
 		if(!silent)
-			to_chat(owner, span_xenowarning("We cannot blink here!"))
+			to_chat(owner, span_tyranidwarning("We cannot blink here!"))
 		return FALSE
 
 
 	return TRUE
 
 ///Check for whether the target turf has dense objects inside
-/datum/action/ability/activable/xeno/blink/proc/check_blink_target_turf_density(turf/T, silent = FALSE)
+/datum/action/ability/activable/tyranid/blink/proc/check_blink_target_turf_density(turf/T, silent = FALSE)
 	for(var/atom/blocker AS in T)
 		if(!blocker.CanPass(owner, T))
 			if(!silent)
-				to_chat(owner, span_xenowarning("We can't blink into a solid object!"))
+				to_chat(owner, span_tyranidwarning("We can't blink into a solid object!"))
 			return FALSE
 
 	return TRUE
 
-/datum/action/ability/activable/xeno/blink/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/blink/use_ability(atom/A)
 	. = ..()
-	var/mob/living/carbon/xenomorph/wraith/X = owner
+	var/mob/living/carbon/tyranid/wraith/X = owner
 	var/turf/T = X.loc
 	var/turf/temp_turf = X.loc
-	var/check_distance = min(X.xeno_caste.wraith_blink_range, get_dist(X,A))
+	var/check_distance = min(X.tyranid_caste.wraith_blink_range, get_dist(X,A))
 	var/list/fully_legal_turfs = list()
 
 	for (var/x = 1 to check_distance)
@@ -91,12 +91,12 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	var/mob/pulled_target = owner.pulling
 	if(pulled_target) //bring the pulled target with us if applicable but at the cost of sharply increasing the next cooldown
 
-		if(pulled_target.issamexenohive(X))
-			cooldown_mod = X.xeno_caste.wraith_blink_drag_friendly_multiplier
+		if(pulled_target.issametyranidhive(X))
+			cooldown_mod = X.tyranid_caste.wraith_blink_drag_friendly_multiplier
 		else
 			if(!do_after(owner, 0.5 SECONDS, NONE, owner, BUSY_ICON_HOSTILE)) //Grap-porting hostiles has a slight wind up
 				return fail_activate()
-			cooldown_mod = X.xeno_caste.wraith_blink_drag_nonfriendly_living_multiplier
+			cooldown_mod = X.tyranid_caste.wraith_blink_drag_nonfriendly_living_multiplier
 			if(ishuman(pulled_target))
 				var/mob/living/carbon/human/H = pulled_target
 				if(H.stat == UNCONSCIOUS) //Apply critdrag damage as if they were quickly pulled the same distance
@@ -104,7 +104,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 					if(!H.adjustOxyLoss(critdamage))
 						H.adjustBruteLoss(critdamage)
 
-		to_chat(X, span_xenodanger("We bring [pulled_target] with us. We won't be ready to blink again for [cooldown_duration * cooldown_mod * 0.1] seconds due to the strain of doing so."))
+		to_chat(X, span_tyraniddanger("We bring [pulled_target] with us. We won't be ready to blink again for [cooldown_duration * cooldown_mod * 0.1] seconds due to the strain of doing so."))
 
 	teleport_debuff_aoe(X) //Debuff when we vanish
 
@@ -121,8 +121,8 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "wraith_blinks") //Statistics
 
 ///Called by many of the Wraith's teleportation effects
-/datum/action/ability/activable/xeno/proc/teleport_debuff_aoe(atom/movable/teleporter, silent = FALSE)
-	var/mob/living/carbon/xenomorph/ghost = owner
+/datum/action/ability/activable/tyranid/proc/teleport_debuff_aoe(atom/movable/teleporter, silent = FALSE)
+	var/mob/living/carbon/tyranid/ghost = owner
 
 	if(!silent) //Sound effects
 		playsound(teleporter, 'sound/effects/EMPulse.ogg', 25, 1) //Sound at the location we are arriving at
@@ -136,33 +136,33 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 		if(living_target.stat == DEAD)
 			continue
 
-		if(isxeno(living_target))
-			var/mob/living/carbon/xenomorph/X = living_target
-			if(X.issamexenohive(ghost)) //No friendly fire
+		if(istyranid(living_target))
+			var/mob/living/carbon/tyranid/X = living_target
+			if(X.issametyranidhive(ghost)) //No friendly fire
 				continue
 
 		living_target.adjust_stagger(WRAITH_TELEPORT_DEBUFF_STAGGER_STACKS)
 		living_target.add_slowdown(WRAITH_TELEPORT_DEBUFF_SLOWDOWN_STACKS)
 		to_chat(living_target, span_warning("You feel nauseous as reality warps around you!"))
 
-/datum/action/ability/activable/xeno/blink/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We are able to blink again."))
+/datum/action/ability/activable/tyranid/blink/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("We are able to blink again."))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
 // ***************************************
 // *********** Banish
 // ***************************************
-/datum/action/ability/activable/xeno/banish
+/datum/action/ability/activable/tyranid/banish
 	name = "Banish"
 	action_icon_state = "Banish"
-	action_icon = 'icons/Xeno/actions/wraith.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/wraith.dmi'
 	desc = "We banish a target object or creature within line of sight to nullspace for a short duration. Can target onself and allies. Non-friendlies are banished for half as long."
 	use_state_flags = ABILITY_TARGET_SELF
 	ability_cost = 50
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BANISH,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_BANISH,
 	)
 	///Target we've banished
 	var/atom/movable/banishment_target = null
@@ -179,37 +179,37 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	/// How far can you banish
 	var/range = 3
 
-/datum/action/ability/activable/xeno/banish/Destroy()
+/datum/action/ability/activable/tyranid/banish/Destroy()
 	QDEL_NULL(reserved_area) //clean up
 	return ..()
 
-/datum/action/ability/activable/xeno/banish/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/banish/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 
 	if(!ismovableatom(A) || iseffect(A) || istype(A, /obj/alien) || CHECK_BITFIELD(A.resistance_flags, INDESTRUCTIBLE) || CHECK_BITFIELD(A.resistance_flags, BANISH_IMMUNE)) //Cannot banish non-movables/things that are supposed to be invul; also we ignore effects
 		if(!silent)
-			to_chat(owner, span_xenowarning("We cannot banish this!"))
+			to_chat(owner, span_tyranidwarning("We cannot banish this!"))
 		return FALSE
 
 	if(HAS_TRAIT(A, TRAIT_TIME_SHIFTED))
-		to_chat(owner, span_xenowarning("That target is already affected by a time manipulation effect!"))
+		to_chat(owner, span_tyranidwarning("That target is already affected by a time manipulation effect!"))
 		return
 
 	var/distance = get_dist(owner, A)
 	if(distance > range) //Needs to be in range.
 		if(!silent)
-			to_chat(owner, span_xenowarning("Our target is too far away! It must be [distance - range] tiles closer!"))
+			to_chat(owner, span_tyranidwarning("Our target is too far away! It must be [distance - range] tiles closer!"))
 		return FALSE
 
 	if(!line_of_sight(owner, A, ignore_target_opacity = TRUE)) //Needs to be in line of sight.
 		if(!silent)
-			to_chat(owner, span_xenowarning("We can't banish without line of sight to our target!"))
+			to_chat(owner, span_tyranidwarning("We can't banish without line of sight to our target!"))
 		return FALSE
 
 
-/datum/action/ability/activable/xeno/banish/use_ability(atom/movable/A)
+/datum/action/ability/activable/tyranid/banish/use_ability(atom/movable/A)
 	. = ..()
-	var/mob/living/carbon/xenomorph/wraith/ghost = owner
+	var/mob/living/carbon/tyranid/wraith/ghost = owner
 	var/banished_turf = get_turf(A) //Set the banishment turf.
 	banishment_target = A //Set the banishment target
 	backup_coordinates[1] = banishment_target.x //Set up backup coordinates in case banish portal gets destroyed
@@ -236,9 +236,9 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	var/turf/target_turf = reserved_area.reserved_turfs[5]
 	new /area/arrival(target_turf) //So we don't get instagibbed from the space area
 
-	if(isxeno(banishment_target)) //If we're a xeno, disgorge all vored contents
-		var/mob/living/carbon/xenomorph/xeno_target = banishment_target
-		xeno_target.eject_victim()
+	if(istyranid(banishment_target)) //If we're a tyranid, disgorge all vored contents
+		var/mob/living/carbon/tyranid/tyranid_target = banishment_target
+		tyranid_target.eject_victim()
 
 	for(var/mob/living/living_contents in banishment_target.GetAllContents()) //Safety measure so living mobs inside the target don't get lost in Brazilspace forever
 		contained_living += living_contents
@@ -248,7 +248,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 
 	banishment_target.forceMove(target_turf)
 
-	var/duration = ghost.xeno_caste.wraith_banish_base_duration //Set the duration
+	var/duration = ghost.tyranid_caste.wraith_banish_base_duration //Set the duration
 
 	portal.add_filter("banish_portal_1", 3, list("type" = "motion_blur", 0, 0)) //Cool filter appear
 	portal.add_filter("banish_portal_2", 3, list("type" = "motion_blur", 0, 0)) //Cool filter appear
@@ -257,9 +257,9 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 
 	var/cooldown_mod = 1
 	var/plasma_mod = 1
-	if(isliving(banishment_target) && !(banishment_target.issamexenohive(ghost))) //We halve the max duration for living non-allies
+	if(isliving(banishment_target) && !(banishment_target.issametyranidhive(ghost))) //We halve the max duration for living non-allies
 		duration *= WRAITH_BANISH_NONFRIENDLY_LIVING_MULTIPLIER
-	else if(is_type_in_typecache(banishment_target, GLOB.wraith_banish_very_short_duration_list)) //Barricades should only be gone long enough to admit an infiltrator xeno or two; one way.
+	else if(is_type_in_typecache(banishment_target, GLOB.wraith_banish_very_short_duration_list)) //Barricades should only be gone long enough to admit an infiltrator tyranid or two; one way.
 		duration *= WRAITH_BANISH_VERY_SHORT_MULTIPLIER
 	else
 		cooldown_mod = 0.6 //40% cooldown reduction if used on non-hostile, non-blacklisted targets.
@@ -269,7 +269,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	span_highdanger("The world around you reels, reality seeming to twist and tear until you find yourself trapped in a forsaken void beyond space and time."))
 	playsound(banished_turf, 'sound/weapons/emitter2.ogg', 50, 1) //this isn't quiet
 
-	to_chat(ghost,span_xenodanger("We have banished [banishment_target] to nullspace for [duration * 0.1] seconds."))
+	to_chat(ghost,span_tyraniddanger("We have banished [banishment_target] to nullspace for [duration * 0.1] seconds."))
 	log_attack("[key_name(ghost)] has banished [key_name(banishment_target)] for [duration * 0.1] seconds at [AREACOORD(banishment_target)]")
 
 	addtimer(CALLBACK(src, PROC_REF(banish_warning)), duration * 0.7) //Warn when Banish is about to end
@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "wraith_banishes") //Statistics
 
 ///Warns the user when Banish's duration is about to lapse.
-/datum/action/ability/activable/xeno/banish/proc/banish_warning()
+/datum/action/ability/activable/tyranid/banish/proc/banish_warning()
 
 	if(!banishment_target)
 		return
@@ -291,7 +291,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 50, 0, 1)
 
 ///Ends the effect of the Banish ability
-/datum/action/ability/activable/xeno/banish/proc/banish_deactivate()
+/datum/action/ability/activable/tyranid/banish/proc/banish_deactivate()
 	SIGNAL_HANDLER
 	if(QDELETED(banishment_target))
 		return
@@ -347,41 +347,41 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 
 	return TRUE //For the recall sub-ability
 
-/datum/action/ability/activable/xeno/banish/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We are able to banish again."))
+/datum/action/ability/activable/tyranid/banish/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("We are able to banish again."))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
 // ***************************************
 // *********** Recall
 // ***************************************
-/datum/action/ability/xeno_action/recall
+/datum/action/ability/tyranid_action/recall
 	name = "Recall"
 	action_icon_state = "Recall"
-	action_icon = 'icons/Xeno/actions/wraith.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/wraith.dmi'
 	desc = "We recall a target we've banished back from the depths of nullspace."
 	use_state_flags = ABILITY_USE_NOTTURF|ABILITY_USE_SOLIDOBJECT|ABILITY_USE_STAGGERED|ABILITY_USE_INCAP|ABILITY_USE_LYING //So we can recall ourselves from nether Brazil
 	cooldown_duration = 1 SECONDS //Token for anti-spam
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RECALL,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_RECALL,
 	)
 
-/datum/action/ability/xeno_action/recall/can_use_action(silent = FALSE, override_flags)
+/datum/action/ability/tyranid_action/recall/can_use_action(silent = FALSE, override_flags)
 	. = ..()
 
-	var/datum/action/ability/activable/xeno/banish/banish_check = owner.actions_by_path[/datum/action/ability/activable/xeno/banish]
+	var/datum/action/ability/activable/tyranid/banish/banish_check = owner.actions_by_path[/datum/action/ability/activable/tyranid/banish]
 	if(!banish_check) //Mainly for when we transition on upgrading
 		return FALSE
 
 	if(!banish_check.banishment_target)
 		if(!silent)
-			to_chat(owner,span_xenodanger("We have no targets banished!"))
+			to_chat(owner,span_tyraniddanger("We have no targets banished!"))
 		return FALSE
 
 
-/datum/action/ability/xeno_action/recall/action_activate()
+/datum/action/ability/tyranid_action/recall/action_activate()
 	. = ..()
-	var/datum/action/ability/activable/xeno/banish/banish_check = owner.actions_by_path[/datum/action/ability/activable/xeno/banish]
+	var/datum/action/ability/activable/tyranid/banish/banish_check = owner.actions_by_path[/datum/action/ability/activable/tyranid/banish]
 	banish_check.banish_deactivate()
 	succeed_activate()
 	add_cooldown()
@@ -416,22 +416,22 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 
 	return FALSE
 
-/datum/action/ability/xeno_action/timestop
+/datum/action/ability/tyranid_action/timestop
 	name = "Time stop"
 	action_icon_state = "time_stop"
-	action_icon = 'icons/Xeno/actions/wraith.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/wraith.dmi'
 	desc = "Freezes bullets in their course, and they will start to move again only after a certain time"
 	ability_cost = 100
 	cooldown_duration = 1 MINUTES
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TIMESTOP,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_TIMESTOP,
 	)
 	///The range of the ability
 	var/range = 1
 	///How long is the bullet freeze staying
 	var/duration = 7 SECONDS
 
-/datum/action/ability/xeno_action/timestop/action_activate()
+/datum/action/ability/tyranid_action/timestop/action_activate()
 	. = ..()
 	var/list/turf/turfs_affected = list()
 	var/turf/central_turf = get_turf(owner)
@@ -447,7 +447,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	addtimer(CALLBACK(src, PROC_REF(play_sound_stop)), duration - 3 SECONDS)
 
 ///Remove the bullet freeze effect on affected turfs
-/datum/action/ability/xeno_action/timestop/proc/remove_bullet_freeze(list/turf/turfs_affected, turf/central_turfA)
+/datum/action/ability/tyranid_action/timestop/proc/remove_bullet_freeze(list/turf/turfs_affected, turf/central_turfA)
 	for(var/turf/affected_turf AS in turfs_affected)
 		REMOVE_TRAIT(affected_turf, TRAIT_TURF_BULLET_MANIPULATION, REF(src))
 		if(HAS_TRAIT(affected_turf, TRAIT_TURF_BULLET_MANIPULATION))
@@ -456,19 +456,19 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 		affected_turf.remove_filter("wraith_magic")
 
 ///Play the end ability sound
-/datum/action/ability/xeno_action/timestop/proc/play_sound_stop()
+/datum/action/ability/tyranid_action/timestop/proc/play_sound_stop()
 	playsound(owner, 'sound/magic/timeparadox2.ogg', 50, TRUE, frequency = -1)
 
-/datum/action/ability/xeno_action/portal
+/datum/action/ability/tyranid_action/portal
 	name = "Portal"
 	action_icon_state = "portal"
-	action_icon = 'icons/Xeno/actions/wraith.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/wraith.dmi'
 	desc = "Place a portal on your location. You can travel from portal to portal. Left click to create portal one, right click to create portal two"
 	ability_cost = 50
 	cooldown_duration = 5 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PORTAL,
-		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_PORTAL_ALTERNATE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_PORTAL,
+		KEYBINDING_ALTERNATE = COMSIG_TYRANIDABILITY_PORTAL_ALTERNATE,
 	)
 	/// How far can you link two portals
 	var/range = 20
@@ -477,34 +477,34 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	/// The second portal
 	var/obj/effect/wraith_portal/portal_two
 
-/datum/action/ability/xeno_action/portal/remove_action(mob/M)
+/datum/action/ability/tyranid_action/portal/remove_action(mob/M)
 	clean_portals()
 	return ..()
 
 /// Destroy the portals when the wraith is no longer supporting them
-/datum/action/ability/xeno_action/portal/proc/clean_portals()
+/datum/action/ability/tyranid_action/portal/proc/clean_portals()
 	SIGNAL_HANDLER
 
 	QDEL_NULL(portal_one)
 	QDEL_NULL(portal_two)
 
-/datum/action/ability/xeno_action/portal/give_action(mob/M)
+/datum/action/ability/tyranid_action/portal/give_action(mob/M)
 	. = ..()
 	RegisterSignal(M, COMSIG_MOB_DEATH, PROC_REF(clean_portals))
 
-/datum/action/ability/xeno_action/portal/can_use_action(silent, override_flags)
+/datum/action/ability/tyranid_action/portal/can_use_action(silent, override_flags)
 	if(locate(/obj/effect/wraith_portal) in get_turf(owner))
 		if(!silent)
-			to_chat(owner, span_xenowarning("There is already a portal here!"))
+			to_chat(owner, span_tyranidwarning("There is already a portal here!"))
 		return FALSE
 	var/area/area = get_area(owner)
-	if(area.area_flags & MARINE_BASE)
+	if(area.area_flags & GUARDSMAN_BASE)
 		if(!silent)
-			to_chat(owner, span_xenowarning("You cannot portal here!"))
+			to_chat(owner, span_tyranidwarning("You cannot portal here!"))
 		return FALSE
 	return ..()
 
-/datum/action/ability/xeno_action/portal/action_activate()
+/datum/action/ability/tyranid_action/portal/action_activate()
 	. = ..()
 	qdel(portal_one)
 	portal_one = new(get_turf(owner))
@@ -514,7 +514,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	if(portal_two)
 		link_portals()
 
-/datum/action/ability/xeno_action/portal/alternate_action_activate()
+/datum/action/ability/tyranid_action/portal/alternate_action_activate()
 	if(!can_use_action())
 		return
 	qdel(portal_two)
@@ -526,9 +526,9 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 		link_portals()
 
 /// Link the two portals if possible
-/datum/action/ability/xeno_action/portal/proc/link_portals()
+/datum/action/ability/tyranid_action/portal/proc/link_portals()
 	if(get_dist(portal_one, portal_two) > range || portal_one.z != portal_two.z)
-		to_chat(owner, span_xenowarning("The other portal is too far away, they cannot link!"))
+		to_chat(owner, span_tyranidwarning("The other portal is too far away, they cannot link!"))
 		return
 	portal_two.link_portal(portal_one)
 	portal_one.link_portal(portal_two)
@@ -596,9 +596,9 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	SIGNAL_HANDLER
 	if(!linked_portal || !COOLDOWN_CHECK(src, portal_cooldown) || crosser.anchored || (crosser.resistance_flags & PORTAL_IMMUNE))
 		return
-	if(isxeno(crosser))
-		var/mob/living/carbon/xenomorph/xeno_crosser = crosser
-		if(xeno_crosser.m_intent == MOVE_INTENT_WALK)
+	if(istyranid(crosser))
+		var/mob/living/carbon/tyranid/tyranid_crosser = crosser
+		if(tyranid_crosser.m_intent == MOVE_INTENT_WALK)
 			return
 	COOLDOWN_START(linked_portal, portal_cooldown, 1)
 	crosser.pass_flags &= ~PASS_MOB
@@ -661,15 +661,15 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 
 	vis_contents += our_destination
 
-/datum/action/ability/activable/xeno/rewind
+/datum/action/ability/activable/tyranid/rewind
 	name = "Time Shift"
 	action_icon_state = "rewind"
-	action_icon = 'icons/Xeno/actions/wraith.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/wraith.dmi'
 	desc = "Save the location and status of the target. When the time is up, the target location and status are restored, unless the target is dead, unconscious, or changed z-levels."
 	ability_cost = 100
 	cooldown_duration = 30 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_REWIND,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_REWIND,
 	)
 	use_state_flags = ABILITY_TARGET_SELF
 	/// How long till the time rewinds
@@ -693,64 +693,64 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	///Holder for the rewind timer
 	var/rewind_timer
 
-/datum/action/ability/activable/xeno/rewind/Destroy()
+/datum/action/ability/activable/tyranid/rewind/Destroy()
 	cancel_timeshift()
 	return ..()
 
-/datum/action/ability/activable/xeno/rewind/can_use_ability(atom/A, silent, override_flags)
+/datum/action/ability/activable/tyranid/rewind/can_use_ability(atom/A, silent, override_flags)
 	. = ..()
 
 	var/distance = get_dist(owner, A)
 	if(distance > range) //Needs to be in range.
 		if(!silent)
-			to_chat(owner, span_xenowarning("Our target is too far away! It must be [distance - range] tiles closer!"))
+			to_chat(owner, span_tyranidwarning("Our target is too far away! It must be [distance - range] tiles closer!"))
 		return FALSE
 
 	if(HAS_TRAIT(A, TRAIT_TIME_SHIFTED))
-		to_chat(owner, span_xenowarning("That target is already affected by a time manipulation effect!"))
+		to_chat(owner, span_tyranidwarning("That target is already affected by a time manipulation effect!"))
 		return FALSE
 
 	if(!isliving(A))
-		to_chat(owner, span_xenowarning("We cannot target that!"))
+		to_chat(owner, span_tyranidwarning("We cannot target that!"))
 		return FALSE
 
 
 	var/mob/living/living_target = A
 	if(living_target.stat != CONSCIOUS)
-		to_chat(owner, span_xenowarning("The target is not in good enough shape!"))
+		to_chat(owner, span_tyranidwarning("The target is not in good enough shape!"))
 
-/datum/action/ability/activable/xeno/rewind/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/rewind/use_ability(atom/A)
 	targeted = A
 	last_target_locs_list = list(get_turf(A))
 	target_initial_brute_damage = targeted.getBruteLoss()
 	target_initial_burn_damage = targeted.getFireLoss()
 	target_initial_fire_stacks = targeted.fire_stacks
 	target_initial_on_fire = targeted.on_fire
-	if(isxeno(A))
-		var/mob/living/carbon/xenomorph/xeno_target = targeted
-		target_initial_sunder = xeno_target.sunder
+	if(istyranid(A))
+		var/mob/living/carbon/tyranid/tyranid_target = targeted
+		target_initial_sunder = tyranid_target.sunder
 	rewind_timer = addtimer(CALLBACK(src, PROC_REF(start_rewinding)), start_rewinding, TIMER_STOPPABLE)
 	RegisterSignal(targeted, COMSIG_MOVABLE_MOVED, PROC_REF(save_move))
 	RegisterSignal(targeted, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(cancel_timeshift))
 	targeted.add_filter("prerewind_blur", 1, radial_blur_filter(0.04))
 	targeted.balloon_alert(targeted, "You feel anchored to the past!")
-	ADD_TRAIT(targeted, TRAIT_TIME_SHIFTED, XENO_TRAIT)
+	ADD_TRAIT(targeted, TRAIT_TIME_SHIFTED, TYRANID_TRAIT)
 	add_cooldown()
 	succeed_activate()
 	return
 
 /// Signal handler
-/datum/action/ability/activable/xeno/rewind/proc/save_move(atom/movable/source, oldloc)
+/datum/action/ability/activable/tyranid/rewind/proc/save_move(atom/movable/source, oldloc)
 	SIGNAL_HANDLER
 	last_target_locs_list += get_turf(oldloc)
 
 /// Start the reset process
-/datum/action/ability/activable/xeno/rewind/proc/start_rewinding()
+/datum/action/ability/activable/tyranid/rewind/proc/start_rewinding()
 	targeted.remove_filter("prerewind_blur")
 	UnregisterSignal(targeted, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(targeted, COMSIG_MOVABLE_Z_CHANGED)
 	if(QDELETED(targeted) || targeted.stat != CONSCIOUS)
-		REMOVE_TRAIT(targeted, TRAIT_TIME_SHIFTED, XENO_TRAIT)
+		REMOVE_TRAIT(targeted, TRAIT_TIME_SHIFTED, TYRANID_TRAIT)
 		targeted = null
 		return
 	targeted.add_filter("rewind_blur", 1, radial_blur_filter(0.3))
@@ -760,7 +760,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	playsound(targeted, 'sound/effects/woosh_swoosh.ogg', 50)
 
 /// Move the target two tiles per tick
-/datum/action/ability/activable/xeno/rewind/proc/rewind()
+/datum/action/ability/activable/tyranid/rewind/proc/rewind()
 	var/turf/loc_a = pop(last_target_locs_list)
 	if(loc_a)
 		new /obj/effect/temp_visual/after_image(targeted.loc, targeted)
@@ -775,11 +775,11 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 			targeted.IgniteMob()
 		else
 			targeted.ExtinguishMob()
-		if(isxeno(targeted))
-			var/mob/living/carbon/xenomorph/xeno_target = targeted
-			xeno_target.sunder = target_initial_sunder
+		if(istyranid(targeted))
+			var/mob/living/carbon/tyranid/tyranid_target = targeted
+			tyranid_target.sunder = target_initial_sunder
 		targeted.remove_filter("rewind_blur")
-		REMOVE_TRAIT(targeted, TRAIT_TIME_SHIFTED, XENO_TRAIT)
+		REMOVE_TRAIT(targeted, TRAIT_TIME_SHIFTED, TYRANID_TRAIT)
 		targeted = null
 		rewind_timer = null
 		return
@@ -789,7 +789,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	INVOKE_NEXT_TICK(src, PROC_REF(rewind))
 
 // Removes all things associated while someone is being timeshifted, effectively stopping it from happening/continuing.
-/datum/action/ability/activable/xeno/rewind/proc/cancel_timeshift()
+/datum/action/ability/activable/tyranid/rewind/proc/cancel_timeshift()
 	SIGNAL_HANDLER
 	last_target_locs_list = null
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILE, TIMESHIFT_TRAIT)
@@ -801,5 +801,5 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 		targeted.status_flags &= ~(INCORPOREAL|GODMODE)
 		UnregisterSignal(targeted, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(targeted, COMSIG_MOVABLE_Z_CHANGED)
-		REMOVE_TRAIT(targeted, TRAIT_TIME_SHIFTED, XENO_TRAIT)
+		REMOVE_TRAIT(targeted, TRAIT_TIME_SHIFTED, TYRANID_TRAIT)
 		targeted = null

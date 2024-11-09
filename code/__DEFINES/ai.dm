@@ -33,21 +33,21 @@
 
 /**
  * Identifier tags
- * Ultilized for having AI look at weights based on if they're a "marine human" or a "xenomorph" or something else
+ * Ultilized for having AI look at weights based on if they're a "guardsman human" or a "tyranid" or something else
  * This is mainly used for deciding what weights are to be looked at when determing a node waypoint of going towards
  */
-#define IDENTIFIER_XENO "identifies_xeno"
+#define IDENTIFIER_TYRANID "identifies_tyranid"
 #define IDENTIFIER_ZOMBIE "identifies_zombie"
 
 
 //Flags for the get_nearest_target
 #define TARGET_HUMAN_TURRETS (1<<0)
-#define TARGET_XENO_TURRETS (1<<1)
+#define TARGET_TYRANID_TURRETS (1<<1)
 #define TARGET_HUMAN (1<<2)
-#define TARGET_XENO (1<<3)
+#define TARGET_TYRANID (1<<3)
 #define TARGET_UNMANNED_VEHICLE (1<<4)
-#define TARGET_FRIENDLY_XENO (1<<5)
-#define TARGET_HOSTILE (ALL &~ TARGET_FRIENDLY_XENO)
+#define TARGET_FRIENDLY_TYRANID (1<<5)
+#define TARGET_HOSTILE (ALL &~ TARGET_FRIENDLY_TYRANID)
 
 #define MAX_NODE_RANGE 15
 #define PATHFINDER_MAX_TRIES 200

@@ -122,7 +122,7 @@
 /area/corsat/sigma/hangar/security)
 "aeA" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/corsat/omega/biodome/four)
 "aeH" = (
@@ -274,7 +274,7 @@
 /area/corsat/sigma/dorms)
 "ahT" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "ahU" = (
@@ -456,7 +456,7 @@
 "amF" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "amN" = (
@@ -825,7 +825,7 @@
 /area/corsat/gamma/residential/east)
 "auS" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/corsat/omega/biodome/four)
 "auT" = (
@@ -858,7 +858,7 @@
 /area/corsat/gamma/residential/researcher)
 "avs" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/two)
 "avw" = (
@@ -1085,7 +1085,7 @@
 /area/space)
 "azK" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
@@ -1429,7 +1429,7 @@
 /area/corsat/sigma/southeast/datalab)
 "aIk" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "aIE" = (
@@ -1645,7 +1645,7 @@
 /turf/open/floor/tile/white,
 /area/corsat/sigma/dorms)
 "aNx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/control)
 "aNy" = (
@@ -2407,7 +2407,7 @@
 /area/corsat/sigma/airlock/south)
 "bgC" = (
 /obj/machinery/door/airlock/mainship/research{
-	name = "\improper Xeno Autopsy"
+	name = "\improper Tyranid Autopsy"
 	},
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/complex)
@@ -2480,7 +2480,7 @@
 /turf/closed/wall/r_wall,
 /area/corsat/sigma/cargo)
 "biv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/biodome)
 "biK" = (
@@ -2716,7 +2716,7 @@
 /area/corsat/dropzone/landingzonethree)
 "boj" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
@@ -3053,7 +3053,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/sigma/north)
 "bwN" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/power/apc/drained,
 /obj/structure/cable,
 /turf/open/floor/dark2,
@@ -3138,7 +3138,7 @@
 /turf/open/floor/grayscale/darkgray,
 /area/corsat/gamma/hangar/flightcontrol)
 "byz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/gamma/sigmaremote)
 "byG" = (
@@ -3277,7 +3277,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/gamma/sigmaremote)
 "bBb" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/gamma/sigmaremote)
 "bBm" = (
@@ -3713,7 +3713,7 @@
 /area/corsat/gamma/hangar/flightcontrol)
 "bLl" = (
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
 "bLr" = (
@@ -3994,7 +3994,7 @@
 /area/corsat/gamma/sigmaremote)
 "bQE" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "bQK" = (
@@ -4479,7 +4479,7 @@
 "cca" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "ccc" = (
@@ -4592,8 +4592,8 @@
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/gamma/engineering/atmos)
 "cfb" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/two)
 "cfg" = (
@@ -4787,7 +4787,7 @@
 /area/corsat/sigma/south/complex)
 "ciD" = (
 /obj/effect/turf_decal/tile/corsatstraight/red,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "ciS" = (
@@ -5128,7 +5128,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/hangar/office)
 "cqp" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	dir = 1;
 	name = "Cargo Bay"
 	},
@@ -5566,7 +5566,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/north)
 "czh" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
@@ -5781,7 +5781,7 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/control)
 "cFH" = (
@@ -6302,7 +6302,7 @@
 	dir = 2;
 	name = "Omega Dome Control"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/control)
@@ -6476,7 +6476,7 @@
 "cSZ" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "cTj" = (
@@ -6702,7 +6702,7 @@
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	dir = 1;
 	id = "OmegaA";
-	name = "Xenobiology"
+	name = "Tyranidbiology"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -6711,7 +6711,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/complex)
 "cYs" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	dir = 1;
 	name = "Cargo Bay"
 	},
@@ -6744,7 +6744,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/hallways)
 "cYZ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /obj/effect/turf_decal/tile/full/black,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/sigmaremote/teleporter)
@@ -6991,7 +6991,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/hangar)
 "deQ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
@@ -7770,7 +7770,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/grayscale/round/black,
 /area/corsat/sigma/south/security)
 "dxv" = (
@@ -8203,7 +8203,7 @@
 	name = "Teleporter Power Room"
 	},
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/sigmaremote)
 "dGg" = (
@@ -8267,7 +8267,7 @@
 /area/corsat/gamma/medbay/morgue)
 "dHJ" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
@@ -8360,7 +8360,7 @@
 /area/corsat/sigma/southeast/dataoffice)
 "dJW" = (
 /obj/structure/table/reinforced,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /obj/structure/prop/computer/broken/thirteen,
 /obj/effect/turf_decal/tile/corsatsemi/red{
 	dir = 8
@@ -8495,7 +8495,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/hallways)
 "dMU" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/wood,
 /area/corsat/gamma/residential/lounge)
 "dNf" = (
@@ -8540,7 +8540,7 @@
 /area/corsat/gamma/sigmaremote)
 "dNU" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/four)
 "dNW" = (
@@ -8582,7 +8582,7 @@
 /turf/open/floor/tile/white/hall/full,
 /area/corsat/gamma/kitchen)
 "dOX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
@@ -8673,7 +8673,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/residential)
 "dQY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/biodome/four)
 "dRe" = (
@@ -8736,7 +8736,7 @@
 "dSn" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "dSC" = (
@@ -8804,7 +8804,7 @@
 	},
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	dir = 1;
-	name = "Xenobiology"
+	name = "Tyranidbiology"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -9332,7 +9332,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/corsat/dropzone/landingzonethree)
 "egX" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/omega/containment)
@@ -9740,7 +9740,7 @@
 	use_power = 0
 	},
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/sigmaremote)
 "eqz" = (
@@ -10410,8 +10410,8 @@
 /area/corsat/omega/control)
 "eGe" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "eGj" = (
@@ -10420,7 +10420,7 @@
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/two)
 "eGl" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/corsat/dropzone/landingzoneone)
 "eGm" = (
@@ -10486,7 +10486,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "eHt" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/landmark/corpsespawner/security,
 /obj/effect/turf_decal/tile/corsatstraight/red,
 /turf/open/floor/grayscale/black,
@@ -10633,7 +10633,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/gamma/sigmaremote)
 "eLz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome)
 "eLX" = (
@@ -10804,7 +10804,7 @@
 /area/corsat/gamma/hangar/security)
 "ePo" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/one)
 "ePt" = (
@@ -11132,7 +11132,7 @@
 /turf/open/floor/tile/blue/whitebluefull,
 /area/corsat/gamma/residential/lavatory)
 "eYb" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/three)
@@ -11468,7 +11468,7 @@
 /turf/open/floor/grayscale/round,
 /area/corsat/gamma/sigmaremote)
 "feT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "feU" = (
@@ -12595,7 +12595,7 @@
 /area/corsat/sigma/hangar/office)
 "fFI" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/three)
@@ -12908,7 +12908,7 @@
 /turf/open/floor/dark2,
 /area/corsat/gamma/sigmaremote)
 "fNa" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/biodome/three)
 "fNn" = (
@@ -13213,7 +13213,7 @@
 /area/corsat/dropzone/landingzonethree)
 "fUl" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/gamma/hallwaysouth)
 "fUs" = (
@@ -13492,7 +13492,7 @@
 /area/corsat/sigma/south/robotics)
 "gbP" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "gbS" = (
@@ -13506,7 +13506,7 @@
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/two)
 "gce" = (
@@ -13565,7 +13565,7 @@
 "gcW" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "gdi" = (
@@ -14178,7 +14178,7 @@
 "goV" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "gpm" = (
@@ -14422,7 +14422,7 @@
 /turf/open/floor/grayscale/darkgray,
 /area/corsat/gamma/hangar/office)
 "gvr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/emergency_access)
 "gvv" = (
@@ -14932,7 +14932,7 @@
 /turf/open/floor/grayscale/round/darkgray,
 /area/corsat/omega/offices)
 "gHI" = (
-/obj/item/organ/xenos/resinspinner,
+/obj/item/organ/tyranids/resinspinner,
 /obj/structure/closet/crate/science{
 	opened = 1
 	},
@@ -15300,7 +15300,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hangar/checkpoint)
 "gQA" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "gQI" = (
@@ -15602,7 +15602,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hangar/monorail/control)
 "gXp" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
@@ -15752,7 +15752,7 @@
 /area/corsat/omega/hallways)
 "hab" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
@@ -15840,7 +15840,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/sigma/cargo)
 "hcS" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/control)
 "hdb" = (
@@ -15865,7 +15865,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "hdy" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/corsat/omega/biodome/four)
 "hdz" = (
@@ -16020,7 +16020,7 @@
 /obj/effect/turf_decal/tile/corsatstraight/red{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "hiu" = (
@@ -16105,7 +16105,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/gamma/hangar/checkpoint)
 "hjP" = (
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /turf/open/floor/dark2,
 /area/corsat/omega/complex)
 "hjZ" = (
@@ -17363,7 +17363,7 @@
 /area/corsat/sigma/dorms)
 "hQC" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
@@ -17733,7 +17733,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/checkpoint)
 "hXG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/gamma/airlock/north/id)
 "hXM" = (
@@ -18418,7 +18418,7 @@
 "imD" = (
 /obj/effect/turf_decal/warning_stripes/box,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "imE" = (
@@ -18539,7 +18539,7 @@
 "iqA" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "irr" = (
@@ -18798,7 +18798,7 @@
 /obj/structure/closet/crate/science{
 	opened = 1
 	},
-/obj/item/organ/xenos/resinspinner,
+/obj/item/organ/tyranids/resinspinner,
 /obj/effect/turf_decal/tile/full/black,
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/complex)
@@ -19152,7 +19152,7 @@
 /area/corsat/sigma/airlock/south/id)
 "iGQ" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
@@ -19505,8 +19505,8 @@
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/sigma/dorms)
 "iPz" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "iQf" = (
@@ -19524,7 +19524,7 @@
 /turf/open/floor/tile/bar,
 /area/corsat/gamma/residential/west)
 "iQz" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Cargo Bay"
 	},
 /turf/open/floor/grayscale/white,
@@ -19960,7 +19960,7 @@
 /area/corsat/sigma/south/complex)
 "iZM" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "iZN" = (
@@ -20571,7 +20571,7 @@
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/sigma/south)
 "jom" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
@@ -20697,7 +20697,7 @@
 /area/corsat/gamma/residential/lounge)
 "jrl" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "jro" = (
@@ -21222,11 +21222,11 @@
 /obj/effect/turf_decal/tile/corsatstraight/red{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "jCq" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
 "jCw" = (
@@ -21438,7 +21438,7 @@
 /turf/open/floor/tile/bar,
 /area/corsat/gamma/residential/west)
 "jGx" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/two)
 "jGy" = (
@@ -21634,7 +21634,7 @@
 "jKD" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "jKE" = (
@@ -21668,7 +21668,7 @@
 /area/corsat/gamma/cargo)
 "jKV" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "jLi" = (
@@ -21739,7 +21739,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/maint)
 "jMZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "jNc" = (
@@ -21842,7 +21842,7 @@
 /obj/effect/turf_decal/tile/corsatstraight/red{
 	dir = 4
 	},
-/obj/item/paper/xenofinance,
+/obj/item/paper/tyranidfinance,
 /turf/open/floor/grayscale/round/black,
 /area/corsat/omega/hangar/office)
 "jPl" = (
@@ -22468,7 +22468,7 @@
 /area/corsat/gamma/canteen)
 "kdh" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "kdk" = (
@@ -22497,8 +22497,8 @@
 /area/corsat/omega/biodome/three)
 "kdE" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "kdN" = (
@@ -22826,7 +22826,7 @@
 /turf/open/floor/dark2,
 /area/corsat/dropzone/landingzonethree)
 "klO" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/four)
@@ -22863,7 +22863,7 @@
 /turf/open/floor/tile/bar,
 /area/corsat/gamma/residential/west)
 "kmG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/door/airlock/mainship/maint{
 	locked = 1;
 	name = "\improper Emergency Access"
@@ -22875,7 +22875,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/corsat/dropzone/landingzonethree)
 "kmR" = (
@@ -22890,7 +22890,7 @@
 /area/corsat/sigma/dorms)
 "kmS" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/emergency_access)
 "kmU" = (
@@ -23027,7 +23027,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/cargo)
 "kpw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/two)
 "kpz" = (
@@ -23300,7 +23300,7 @@
 /area/corsat/omega/complex)
 "kuL" = (
 /obj/effect/landmark/corpsespawner/scientist,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/three)
 "kuV" = (
@@ -23814,7 +23814,7 @@
 /turf/open/floor/plating,
 /area/corsat/omega/checkpoint)
 "kHt" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/complex)
@@ -23904,7 +23904,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/maint)
 "kIP" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/grayscale/round/black,
 /area/corsat/sigma/south/engineering)
 "kIT" = (
@@ -23918,12 +23918,12 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "kJa" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "kJf" = (
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/corsat/gamma/sigmaremote)
 "kJg" = (
@@ -23991,7 +23991,7 @@
 /turf/open/floor/plating,
 /area/corsat/sigma/southeast/dataoffice)
 "kKD" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/gamma/hallwaysouth)
 "kKF" = (
@@ -24378,7 +24378,7 @@
 /turf/open/floor/grayscale/darkred,
 /area/corsat/gamma/rnr/library)
 "kTj" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	dir = 1;
 	name = "Cargo Bay"
 	},
@@ -24464,7 +24464,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/hangar/office)
 "kUt" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "kUy" = (
@@ -25259,7 +25259,7 @@
 "lmX" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "lnj" = (
@@ -26022,7 +26022,7 @@
 "lCO" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "lCU" = (
@@ -26566,7 +26566,7 @@
 /obj/structure/rack{
 	name = "Acid Resistant Rack"
 	},
-/obj/item/xenos_claw,
+/obj/item/tyranids_claw,
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/omega/complex)
 "lOh" = (
@@ -26652,7 +26652,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/gamma/security)
 "lQe" = (
-/obj/item/organ/xenos/plasmavessel,
+/obj/item/organ/tyranids/plasmavessel,
 /obj/structure/closet/crate/science{
 	opened = 1
 	},
@@ -27062,7 +27062,7 @@
 /area/corsat/sigma/south/complex)
 "lZW" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/corsat/omega/biodome/four)
 "mad" = (
@@ -27184,7 +27184,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/gamma/foyer)
 "mcp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/biodome/three)
 "mct" = (
@@ -27336,7 +27336,7 @@
 /turf/open/floor/dark2,
 /area/corsat/sigma/hangar)
 "mfO" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -27627,7 +27627,7 @@
 /area/corsat/omega/cargo)
 "mlP" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
@@ -27658,7 +27658,7 @@
 /obj/structure/closet/crate/science{
 	opened = 1
 	},
-/obj/item/organ/xenos/plasmavessel,
+/obj/item/organ/tyranids/plasmavessel,
 /obj/effect/turf_decal/tile/full/black,
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/complex)
@@ -28090,7 +28090,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/security)
 "muV" = (
-/obj/item/organ/xenos/eggsac,
+/obj/item/organ/tyranids/eggsac,
 /obj/structure/closet/crate/science{
 	opened = 1
 	},
@@ -28176,7 +28176,7 @@
 /area/corsat/gamma/residential/researcher)
 "mxr" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
 "mxz" = (
@@ -28547,7 +28547,7 @@
 "mFx" = (
 /obj/effect/turf_decal/warning_stripes/box,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
 "mFR" = (
@@ -28764,7 +28764,7 @@
 /obj/effect/turf_decal/tile/corsatstraight/red{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "mKH" = (
@@ -29493,7 +29493,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/gamma/hangar/monorail)
 "mXV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/four)
 "mYs" = (
@@ -29687,7 +29687,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/engineering)
 "ncq" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/gamma/hallwaysouth)
 "ncz" = (
@@ -29753,7 +29753,7 @@
 /turf/open/floor/plating,
 /area/corsat/dropzone/landingzonethree)
 "ndT" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
 "nel" = (
@@ -30091,7 +30091,7 @@
 /turf/open/floor/dark2,
 /area/corsat/gamma/hallwaysouth)
 "nmv" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/three)
 "nmy" = (
@@ -30481,7 +30481,7 @@
 "num" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "nuz" = (
@@ -30805,7 +30805,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/hangar/monorail)
 "nBz" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	dir = 1;
 	name = "Quartermaster's Office"
 	},
@@ -31899,7 +31899,7 @@
 /area/corsat/sigma/south/engineering)
 "obU" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "obV" = (
@@ -32403,7 +32403,7 @@
 /turf/open/floor/tile/white/hall/full,
 /area/corsat/gamma/kitchen)
 "onH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/biodome/two)
 "onJ" = (
@@ -32616,7 +32616,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/airlock/south/id)
 "otG" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "otW" = (
@@ -33071,7 +33071,7 @@
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/omega/complex)
 "oDU" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/control)
 "oEB" = (
@@ -33156,7 +33156,7 @@
 "oFU" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/two)
 "oFY" = (
@@ -33632,11 +33632,11 @@
 /turf/open/floor/tile/white/hall/full,
 /area/corsat/gamma/kitchen)
 "oRG" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "oRJ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/gamma/airlock/north/id)
 "oRR" = (
@@ -34079,7 +34079,7 @@
 /turf/open/floor/grayscale/darkgray,
 /area/corsat/sigma/southeast/dataoffice)
 "pbl" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/dark2,
 /area/corsat/omega/complex)
 "pbo" = (
@@ -34268,7 +34268,7 @@
 /turf/open/floor/tile/white,
 /area/corsat/sigma/dorms)
 "peX" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -34950,7 +34950,7 @@
 /area/corsat/omega/control)
 "ptk" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "ptp" = (
@@ -34960,7 +34960,7 @@
 /obj/effect/turf_decal/tile/corsatstraight/white{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hallwaysouth)
 "pty" = (
@@ -35255,7 +35255,7 @@
 "pyo" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "pyr" = (
@@ -35397,7 +35397,7 @@
 /area/corsat/gamma/hangar/security)
 "pCW" = (
 /obj/structure/window/framed/colony/reinforced/hull,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/corsat/gamma/hallwaysouth)
 "pDj" = (
@@ -35441,7 +35441,7 @@
 /turf/open/floor/grayscale/round,
 /area/corsat/sigma/airlock/east)
 "pEi" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "pEt" = (
@@ -35592,7 +35592,7 @@
 /turf/closed/wall/r_wall,
 /area/corsat/omega/airlocknorth)
 "pHG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "pHN" = (
@@ -36008,7 +36008,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/maint)
 "pPB" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/dark2,
 /area/corsat/omega/complex)
 "pPJ" = (
@@ -36046,7 +36046,7 @@
 	locked = 1;
 	name = "\improper Emergency Access"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "pQB" = (
@@ -36197,7 +36197,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "pUi" = (
@@ -36302,7 +36302,7 @@
 /area/corsat/sigma/cargo)
 "pXP" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "pYj" = (
@@ -36347,7 +36347,7 @@
 /turf/open/ground/grass/weedable,
 /area/corsat/dropzone/landingzonethree)
 "pZk" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hallwaysouth)
 "pZx" = (
@@ -36362,7 +36362,7 @@
 /area/corsat/theta/airlock/east)
 "pZD" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
@@ -36462,7 +36462,7 @@
 "qbX" = (
 /obj/machinery/door/airlock/mainship/research/glass{
 	dir = 1;
-	name = "Xenobiology Reception Desk"
+	name = "Tyranidbiology Reception Desk"
 	},
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/complex)
@@ -36491,7 +36491,7 @@
 "qcC" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/emergency_access)
 "qcG" = (
@@ -36978,7 +36978,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/corsatcorner/white,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hallwaysouth)
 "qmU" = (
@@ -37092,7 +37092,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/medbay/morgue)
 "qpN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "qpR" = (
@@ -37419,7 +37419,7 @@
 /area/corsat/sigma/south/complex)
 "qxe" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/grayscale/round/black,
 /area/corsat/sigma/checkpoint)
@@ -37681,8 +37681,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/emergency_access)
 "qBY" = (
@@ -37963,7 +37963,7 @@
 /obj/effect/turf_decal/tile/corsatstraight/white{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hallwaysouth)
 "qHm" = (
@@ -38698,7 +38698,7 @@
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/hangar_storage/research)
 "qXS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/control)
 "qYa" = (
@@ -38736,7 +38736,7 @@
 /area/corsat/gamma/engineering)
 "qYw" = (
 /obj/effect/turf_decal/tile/full/graylarge,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/grayscale/round,
 /area/corsat/gamma/medbay)
 "qYA" = (
@@ -39053,7 +39053,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/hangar/id)
 "rgo" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "rgw" = (
@@ -39106,7 +39106,7 @@
 "rhi" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
@@ -39282,7 +39282,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/hangar/security)
 "rnA" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "rnB" = (
@@ -40439,7 +40439,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/hangar/security)
 "rOt" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	dir = 1;
 	name = "Cargo Bay"
 	},
@@ -40605,8 +40605,8 @@
 /turf/open/floor/plating,
 /area/corsat/gamma/airlock/south/id)
 "rRa" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "rRd" = (
@@ -40965,7 +40965,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/white,
 /area/corsat/omega/biodome/three)
 "rZQ" = (
@@ -41570,7 +41570,7 @@
 	dir = 2;
 	name = "Omega Dome Control"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
@@ -41924,7 +41924,7 @@
 /area/corsat/omega/hangar/office)
 "stX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "suc" = (
@@ -42944,7 +42944,7 @@
 /area/corsat/sigma/airlock/south)
 "sQX" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "sQY" = (
@@ -43009,7 +43009,7 @@
 /area/corsat/sigma/hangar/monorail)
 "sSr" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/four)
 "sSD" = (
@@ -43283,7 +43283,7 @@
 /area/corsat/gamma/residential/east)
 "sWH" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "sXg" = (
@@ -43477,7 +43477,7 @@
 	},
 /area/corsat/gamma/hangar)
 "tbq" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/dirt,
 /area/corsat/dropzone/landingzonethree)
 "tbr" = (
@@ -43512,7 +43512,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/gamma/residential/maint)
 "tce" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/three)
 "tcg" = (
@@ -43644,7 +43644,7 @@
 "tev" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/four)
 "tew" = (
@@ -43782,7 +43782,7 @@
 /area/corsat/gamma/hangar/arrivals)
 "tgD" = (
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "tgG" = (
@@ -43849,7 +43849,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/hangar/security)
 "tit" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/three)
 "tiy" = (
@@ -43963,7 +43963,7 @@
 "tlg" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "tln" = (
@@ -44188,7 +44188,7 @@
 /area/corsat/gamma/hallwaysouth)
 "tqa" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "tqd" = (
@@ -44332,7 +44332,7 @@
 /area/corsat/gamma/medbay/chemistry)
 "ttf" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "tti" = (
@@ -44376,7 +44376,7 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "ttP" = (
@@ -44397,7 +44397,7 @@
 /area/corsat/gamma/residential/showers)
 "tui" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "tum" = (
@@ -44448,7 +44448,7 @@
 /obj/effect/turf_decal/tile/corsatcorner/red{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "tvk" = (
@@ -44759,7 +44759,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/omega/hangar/office)
 "tBC" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/power/apc/drained,
 /obj/structure/cable,
 /turf/open/floor/dark2,
@@ -45027,7 +45027,7 @@
 "tGz" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/one)
 "tGB" = (
@@ -45299,7 +45299,7 @@
 /area/corsat/omega/checkpoint)
 "tMh" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/door/airlock/mainship/maint{
 	dir = 2
 	},
@@ -45564,7 +45564,7 @@
 /area/corsat/sigma/hangar/id)
 "tQz" = (
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/corsat/dropzone/landingzonethree)
 "tQC" = (
@@ -45844,7 +45844,7 @@
 /obj/effect/turf_decal/tile/corsatsemi/red{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "tWw" = (
@@ -46533,7 +46533,7 @@
 "ulg" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "ulp" = (
@@ -47245,7 +47245,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/checkpoint)
 "uyV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/three)
 "uyW" = (
@@ -47340,7 +47340,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hallwaysouth)
 "uAH" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -47525,8 +47525,8 @@
 /turf/open/floor/tile/blue/whitebluefull,
 /area/corsat/sigma/lavatory)
 "uEz" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/corsat/omega/biodome/four)
 "uEM" = (
@@ -48399,7 +48399,7 @@
 /obj/effect/turf_decal/tile/corsatsemi/red{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "uVA" = (
@@ -48446,7 +48446,7 @@
 "uWl" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "uWq" = (
@@ -48618,7 +48618,7 @@
 /obj/effect/turf_decal/tile/corsatsemi/red{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "vaT" = (
@@ -48736,7 +48736,7 @@
 /turf/open/floor/dark2,
 /area/corsat/inaccessible)
 "vew" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "vey" = (
@@ -49174,7 +49174,7 @@
 /area/corsat/sigma/hangar/checkpoint)
 "voV" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "vpb" = (
@@ -49356,7 +49356,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/hangar/checkpoint)
 "vst" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/two)
 "vsU" = (
@@ -49684,7 +49684,7 @@
 "vzq" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/warning_stripes/box,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/one)
@@ -49756,11 +49756,11 @@
 /turf/closed/wall/r_wall,
 /area/corsat/omega/complex)
 "vBj" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/dark2,
 /area/corsat/omega/complex)
 "vBm" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/hallwaysouth)
 "vBu" = (
@@ -49996,12 +49996,12 @@
 /area/corsat/sigma/southeast/datamaint)
 "vGs" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/lightred,
 /area/corsat/omega/biodome/one)
 "vGv" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "vGL" = (
@@ -50359,7 +50359,7 @@
 /turf/open/floor/grayscale/round/darkgray,
 /area/corsat/omega/offices)
 "vOe" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/dark2,
 /area/corsat/omega/biodome/four)
 "vOE" = (
@@ -50396,7 +50396,7 @@
 /area/corsat/sigma/south/engineering)
 "vPC" = (
 /obj/effect/turf_decal/tile/corsatsemi/red,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "vPG" = (
@@ -50463,7 +50463,7 @@
 /area/corsat/gamma/medbay/chemistry)
 "vRj" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/two)
 "vRF" = (
@@ -50754,7 +50754,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/south)
 "vZK" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/gamma/hallwaysouth)
 "wao" = (
@@ -50779,7 +50779,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/gamma/hangar/checkpoint)
 "waQ" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/dark2,
 /area/corsat/omega/complex)
 "waY" = (
@@ -50850,7 +50850,7 @@
 /turf/open/floor/tile/bar,
 /area/corsat/gamma/canteen)
 "wcj" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/corsat/omega/biodome/four)
 "wcl" = (
@@ -51175,7 +51175,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "wjq" = (
@@ -51655,7 +51655,7 @@
 "wuI" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/three)
 "wuJ" = (
@@ -51882,7 +51882,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/sigma/cargo)
 "wzP" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/power/apc/drained,
 /obj/structure/cable,
 /turf/open/floor/dark2,
@@ -52255,7 +52255,7 @@
 /turf/open/floor/grayscale/round/darkgray,
 /area/corsat/omega/offices)
 "wIA" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -52312,7 +52312,7 @@
 "wJs" = (
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/emergency_access)
 "wJt" = (
@@ -53424,7 +53424,7 @@
 /turf/open/floor/grayscale/darkgray,
 /area/corsat/sigma/airlock/east)
 "xfn" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -53610,7 +53610,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/theta/airlock/east/id)
 "xiJ" = (
-/obj/machinery/door/airlock/mainship/marine/requisitions{
+/obj/machinery/door/airlock/mainship/guardsman/requisitions{
 	name = "Reception Desk"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -53828,7 +53828,7 @@
 /area/corsat/sigma/south/engineering)
 "xmS" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/biodome/four)
 "xmT" = (
@@ -54350,7 +54350,7 @@
 /turf/open/floor/grayscale/round/darkgray,
 /area/corsat/omega/offices)
 "xwH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/complex)
 "xwK" = (
@@ -54705,7 +54705,7 @@
 /area/corsat/gamma/rnr/arcade)
 "xEl" = (
 /obj/effect/turf_decal/tile/corsatcorner/red,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/north/id)
 "xEy" = (
@@ -55285,7 +55285,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/sigma/hangar/checkpoint)
 "xPI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/biodome/one)
 "xPJ" = (
@@ -55631,7 +55631,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/sigma/hangar/checkpoint)
 "xVr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/corsat/omega/control)
 "xVu" = (
@@ -55839,7 +55839,7 @@
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "xYx" = (
@@ -55945,7 +55945,7 @@
 /turf/open/floor/grayscale/round/darkgray,
 /area/corsat/omega/offices)
 "yap" = (
-/obj/item/organ/xenos/acidgland,
+/obj/item/organ/tyranids/acidgland,
 /obj/structure/closet/crate/science{
 	opened = 1
 	},
@@ -55959,7 +55959,7 @@
 /turf/open/floor/grayscale/round/darkgray,
 /area/corsat/omega/offices)
 "yaE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/unmeltable,
 /area/corsat/omega/biodome/one)
 "yaK" = (
@@ -56010,7 +56010,7 @@
 /area/corsat/omega/security)
 "ybt" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/one)
 "ybz" = (
@@ -56066,7 +56066,7 @@
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/tile/full/black,
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/grayscale/black,
 /area/corsat/omega/biodome/four)
 "ycv" = (

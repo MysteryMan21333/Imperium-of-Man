@@ -1,13 +1,13 @@
-/datum/xeno_caste/hunter
+/datum/tyranid_caste/hunter
 	caste_name = "Hunter"
 	display_name = "Hunter"
 	upgrade_name = ""
 	caste_desc = "A fast, powerful front line combatant."
 
-	caste_type_path = /mob/living/carbon/xenomorph/hunter
+	caste_type_path = /mob/living/carbon/tyranid/hunter
 
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "hunter" //used to match appropriate wound overlays
 	gib_anim = "Hunter Gibs"
 	gib_flick = "Hunter Gibbed"
@@ -32,7 +32,7 @@
 	evolution_threshold = 225
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/runner
+	deevolves_to = /datum/tyranid_caste/runner
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED
@@ -50,15 +50,15 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/silence,
-		/datum/action/ability/activable/xeno/pounce,
-		/datum/action/ability/xeno_action/stealth,
-		/datum/action/ability/activable/xeno/hunter_mark,
-		/datum/action/ability/xeno_action/psychic_trace,
-		/datum/action/ability/xeno_action/mirage,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/silence,
+		/datum/action/ability/activable/tyranid/pounce,
+		/datum/action/ability/tyranid_action/stealth,
+		/datum/action/ability/activable/tyranid/hunter_mark,
+		/datum/action/ability/tyranid_action/psychic_trace,
+		/datum/action/ability/tyranid_action/mirage,
 	)
 
 	// *** Vent Crawl Parameters *** //
@@ -66,37 +66,37 @@
 	vent_exit_speed = HUNTER_VENT_CRAWL_TIME
 	silent_vent_crawl = TRUE
 
-/datum/xeno_caste/hunter/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/hunter/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/hunter/primordial
+/datum/tyranid_caste/hunter/primordial
 	upgrade_name = "Primordial"
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	caste_desc = "A silent but deadly killing machine. It looks frighteningly powerful."
 	primordial_message = "We are the ultimate predator. Let the hunt begin."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/silence,
-		/datum/action/ability/activable/xeno/pounce,
-		/datum/action/ability/xeno_action/stealth,
-		/datum/action/ability/xeno_action/stealth/disguise,
-		/datum/action/ability/activable/xeno/hunter_mark,
-		/datum/action/ability/xeno_action/psychic_trace,
-		/datum/action/ability/xeno_action/mirage,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/silence,
+		/datum/action/ability/activable/tyranid/pounce,
+		/datum/action/ability/tyranid_action/stealth,
+		/datum/action/ability/tyranid_action/stealth/disguise,
+		/datum/action/ability/activable/tyranid/hunter_mark,
+		/datum/action/ability/tyranid_action/psychic_trace,
+		/datum/action/ability/tyranid_action/mirage,
 	)
 
 
 /////
 
-/datum/xeno_caste/hunter/weapon_x
+/datum/tyranid_caste/hunter/weapon_x
 	display_name = "Weapon X"
 	upgrade_name = ""
 	caste_desc = "A fast, powerful creature. It has some kind of machinery attached to its head."
-	caste_type_path = /mob/living/carbon/xenomorph/hunter/weapon_x
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/hunter/weapon_x
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	// *** Melee Attacks *** //
 	melee_damage = 26
@@ -117,24 +117,24 @@
 	// *** Defense *** //
 	soft_armor = list(MELEE = 65, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 30, FIRE = 50, ACID = 30)
 
-/datum/xeno_caste/hunter/weapon_x/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/hunter/weapon_x/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/hunter/weapon_x/primordial
+/datum/tyranid_caste/hunter/weapon_x/primordial
 	upgrade_name = "Primordial"
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	caste_desc = "A silent but deadly killing machine. It looks frighteningly powerful."
 	primordial_message = "We are the ultimate predator. Let the hunt begin."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/silence,
-		/datum/action/ability/activable/xeno/pounce,
-		/datum/action/ability/xeno_action/stealth,
-		/datum/action/ability/xeno_action/stealth/disguise,
-		/datum/action/ability/activable/xeno/hunter_mark,
-		/datum/action/ability/xeno_action/psychic_trace,
-		/datum/action/ability/xeno_action/mirage,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/silence,
+		/datum/action/ability/activable/tyranid/pounce,
+		/datum/action/ability/tyranid_action/stealth,
+		/datum/action/ability/tyranid_action/stealth/disguise,
+		/datum/action/ability/activable/tyranid/hunter_mark,
+		/datum/action/ability/tyranid_action/psychic_trace,
+		/datum/action/ability/tyranid_action/mirage,
 	)

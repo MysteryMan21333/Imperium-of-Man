@@ -9,7 +9,7 @@
 	desc = "Base for redcoat and bluecoat loadouts."
 	require_job = FALSE
 
-	shoes = /obj/item/clothing/shoes/marinechief
+	shoes = /obj/item/clothing/shoes/guardsmanchief
 	head = /obj/item/clothing/head/redcoat
 	belt = /obj/item/storage/belt/shotgun/martini/full
 	back = /obj/item/weapon/gun/shotgun/double/martini
@@ -30,7 +30,7 @@
 	jobtype = "Bluecoat"
 	desc = "Tally Ho! Show those redcoats a piece of your independence!"
 
-	w_uniform = /obj/item/clothing/under/marine/striped
+	w_uniform = /obj/item/clothing/under/guardsman/striped
 	mask = /obj/item/clothing/mask/bandanna/delta
 
 /datum/outfit/quick/civil_war/redcoat

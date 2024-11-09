@@ -1,6 +1,6 @@
 /obj/item/weapon/energy
 	atom_flags = NOBLOODY
-	icon = 'icons/obj/items/weapons/energy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/energy.dmi'
 
 /obj/item/weapon/energy/suicide_act(mob/user)
 	user.visible_message(pick(span_danger("[user] is slitting [user.p_their()] stomach open with the [name]! It looks like [user.p_theyre()] trying to commit seppuku."), \
@@ -135,26 +135,26 @@
 	sword_color = "blue"
 	active_force = 55
 
-/obj/item/weapon/energy/sword/som
-	icon_state = "som_sword"
-	desc = "A SOM energy sword. Designed to cut through armored plate."
+/obj/item/weapon/energy/sword/chaos
+	icon_state = "chaos_sword"
+	desc = "A CHAOS energy sword. Designed to cut through armored plate."
 	active_force = 50
 	sword_color = "on"
 
-/obj/item/weapon/energy/sword/som/Initialize(mapload)
+/obj/item/weapon/energy/sword/chaos/Initialize(mapload)
 	. = ..()
 	set_light_range_power_color(2, 1, COLOR_ORANGE)
 
-/obj/item/weapon/energy/sword/som/switch_state(datum/source, mob/living/user)
+/obj/item/weapon/energy/sword/chaos/switch_state(datum/source, mob/living/user)
 	. = ..()
 	if(active)
-		flick("som_sword_open", src)
+		flick("chaos_sword_open", src)
 		set_light_on(TRUE)
 	else
-		flick("som_sword_close", src)
+		flick("chaos_sword_close", src)
 		set_light_on(FALSE)
 
-/obj/item/weapon/energy/sword/som/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
+/obj/item/weapon/energy/sword/chaos/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
 	. = ..()
 	var/mutable_appearance/emissive_overlay = emissive_appearance(icon_used, "[state_used]_emissive")
 	standing.overlays.Add(emissive_overlay)

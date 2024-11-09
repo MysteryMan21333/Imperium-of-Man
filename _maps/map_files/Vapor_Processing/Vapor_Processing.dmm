@@ -26,7 +26,7 @@
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
 "as" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
@@ -270,7 +270,7 @@
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "cb" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
@@ -608,7 +608,7 @@
 /turf/open/floor/tile/bar,
 /area/medical/medbay2)
 "eg" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/ground,
 /area/space)
 "ei" = (
@@ -980,7 +980,7 @@
 /turf/open/floor/prison/yellow,
 /area/lv624/lazarus/engineering)
 "ga" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/blue/whitebluecorner,
 /area/lv624/lazarus/medbay)
 "gd" = (
@@ -2337,7 +2337,7 @@
 /turf/open/floor,
 /area/maintenance/substation)
 "nA" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/ground,
 /area/lv624/ground/caves/central1)
 "nB" = (
@@ -3680,7 +3680,7 @@
 /turf/open/floor/wood,
 /area/crew_quarters/sleep_male)
 "uM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/lv624/ground/caves/central1)
 "uU" = (
@@ -3757,8 +3757,8 @@
 /turf/open/ground,
 /area/lv624/lazarus/quart)
 "vV" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/space)
 "wa" = (
@@ -3786,7 +3786,7 @@
 /turf/open/floor,
 /area/storage/tools)
 "wk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/lv624/ground/caves/east1)
 "wp" = (
@@ -3830,9 +3830,9 @@
 /turf/open/floor/prison/yellow,
 /area/lv624/lazarus/engineering)
 "wZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/space)
 "xc" = (
@@ -3902,7 +3902,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/quartstorage)
 "yF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/west1)
 "yH" = (
@@ -3930,7 +3930,7 @@
 /turf/open/floor/scorched/two,
 /area/lv624/lazarus/research)
 "yT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/lv624/ground/caves/east1)
 "yZ" = (
@@ -4241,8 +4241,8 @@
 /turf/open/floor,
 /area/lv624/lazarus/research)
 "DN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground,
 /area/space)
 "DP" = (
@@ -4251,8 +4251,8 @@
 /turf/open/floor/plating,
 /area/vapor_processing/cargo_maint_s)
 "DQ" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/vapor_processing/caves/se)
 "DS" = (
@@ -4318,7 +4318,7 @@
 /turf/open/floor/grimy,
 /area/lv624/lazarus/internal_affairs)
 "EQ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/vapor_processing/caves/se)
 "ER" = (
@@ -4358,7 +4358,7 @@
 /turf/open/floor/prison/yellow/full,
 /area/lv624/lazarus/engineering)
 "Fq" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/central2)
 "Fu" = (
@@ -4397,7 +4397,7 @@
 /turf/open/ground,
 /area/vapor_processing/west_compound)
 "FX" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground,
 /area/space)
 "FY" = (
@@ -4405,7 +4405,7 @@
 /turf/open/floor/wood,
 /area/crew_quarters/sleep_male)
 "FZ" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/ground,
 /area/space)
 "Gh" = (
@@ -4443,7 +4443,7 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/lv624/lazarus/quart)
 "GI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/lv624/ground/caves/central1)
 "GM" = (
@@ -4677,7 +4677,7 @@
 /turf/open/ground,
 /area/lv624/ground/compound/c)
 "KV" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground,
 /area/space)
 "Lj" = (
@@ -4708,7 +4708,7 @@
 /turf/open/floor/prison/yellow,
 /area/lv624/lazarus/engineering)
 "Lu" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/east1)
 "Lv" = (
@@ -4736,7 +4736,7 @@
 /turf/closed/mineral/smooth/indestructible,
 /area/lv624/lazarus/fitness)
 "LJ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/central1)
 "LO" = (
@@ -4828,9 +4828,9 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/medbay)
 "MP" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/vapor_processing/caves/se)
 "Nd" = (
@@ -4893,7 +4893,7 @@
 /turf/open/floor/prison/yellow,
 /area/lv624/lazarus/engineering)
 "NP" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor,
 /area/maintenance/substation)
 "Oa" = (
@@ -4942,7 +4942,7 @@
 /area/maintenance/substation)
 "OB" = (
 /obj/machinery/light,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/dmg1,
 /area/lv624/lazarus/research)
 "OC" = (
@@ -4987,7 +4987,7 @@
 /turf/open/floor,
 /area/shuttle/drop1/lz1)
 "Pl" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/dmg2,
 /area/lv624/lazarus/research)
 "Pr" = (
@@ -5039,7 +5039,7 @@
 /turf/open/floor/grass,
 /area/lv624/ground/compound/c)
 "PN" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "PR" = (
@@ -5068,7 +5068,7 @@
 /turf/open/ground/grass/grass2,
 /area/lv624/ground/compound/n)
 "Qm" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/ground,
 /area/vapor_processing/caves/se)
 "Qp" = (
@@ -5105,7 +5105,7 @@
 /turf/open/floor,
 /area/storage/tools)
 "Rg" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground,
 /area/vapor_processing/caves/se)
 "Rj" = (
@@ -5123,7 +5123,7 @@
 /turf/open/ground,
 /area/lv624/ground/caves/central2)
 "Rm" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/ground,
 /area/space)
 "Ry" = (
@@ -5211,7 +5211,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor,
 /area/lv624/lazarus/research)
@@ -5281,8 +5281,8 @@
 /area/vapor_processing/cargo3)
 "Tt" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground,
 /area/space)
 "Tu" = (
@@ -5343,8 +5343,8 @@
 /area/lv624/lazarus/engineering)
 "UC" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground,
 /area/vapor_processing/caves/se)
 "UD" = (
@@ -5564,8 +5564,8 @@
 /turf/open/floor/prison/yellow/full,
 /area/lv624/lazarus/engineering)
 "Xa" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground,
 /area/vapor_processing/caves/se)
 "Xd" = (
@@ -5759,8 +5759,8 @@
 /turf/open/ground,
 /area/lv624/ground/compound/n)
 "ZX" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/ground,
 /area/space)

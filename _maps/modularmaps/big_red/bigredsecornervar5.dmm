@@ -3,11 +3,11 @@
 /turf/open/space/basic,
 /area/space)
 "b" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "d" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "e" = (
@@ -22,7 +22,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "i" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "j" = (
@@ -30,7 +30,7 @@
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "k" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "p" = (
@@ -42,7 +42,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "t" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "u" = (
@@ -74,7 +74,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "L" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "N" = (
@@ -90,12 +90,12 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "R" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "S" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "X" = (

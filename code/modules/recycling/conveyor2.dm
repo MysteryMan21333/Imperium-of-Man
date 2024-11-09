@@ -21,13 +21,13 @@
 GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 /obj/machinery/conveyor
-	icon = 'icons/obj/recycling.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/recycling.dmi'
 	icon_state = "conveyor_map"
 	name = "conveyor belt"
 	desc = "A conveyor belt. It can be rotated with a <b>wrench</b>. It can be reversed with a <b>screwdriver</b>."
 	layer = FIREDOOR_OPEN_LAYER
 	max_integrity = 50
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	///Conveyor specific flags
 	var/conveyor_flags = CONVEYOR_OPERABLE
 	///Operating direction
@@ -241,7 +241,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/machinery/conveyor_switch
 	name = "conveyor switch"
 	desc = "A conveyor control switch."
-	icon = 'icons/obj/recycling.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/recycling.dmi'
 	icon_state = "switch-off"
 	///switch position
 	var/position = CONVEYOR_OFF
@@ -352,7 +352,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/item/conveyor_switch_construct
 	name = "conveyor switch assembly"
 	desc = "A conveyor control switch assembly."
-	icon = 'icons/obj/recycling.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/recycling.dmi'
 	icon_state = "switch-off"
 	w_class = WEIGHT_CLASS_BULKY
 	var/id = "" //inherited by the switch
@@ -384,7 +384,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/item/stack/conveyor
 	name = "conveyor belt assembly"
 	desc = "A conveyor belt assembly."
-	icon = 'icons/obj/recycling.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/recycling.dmi'
 	icon_state = "conveyor_construct"
 	max_amount = 30
 	singular_name = "conveyor belt"

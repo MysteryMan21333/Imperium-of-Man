@@ -1,5 +1,5 @@
 /obj/machinery/scoreboard
-	icon = 'icons/obj/machines/scoreboard.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/scoreboard.dmi'
 	icon_state = "scoreboard"
 	name = "basketball scoreboard"
 	anchored = TRUE
@@ -20,13 +20,13 @@
 		overlays.Cut()
 
 	var/score_state = "s[( round(scoreleft/10) > scoreleft/10 ? round(scoreleft/10)-1 : round(scoreleft/10) )]a"
-	overlays += image('icons/obj/machines/scoreboard.dmi', icon_state=score_state)
+	overlays += image('modular_imperium/master_files/icons/obj/machines/scoreboard.dmi', icon_state=score_state)
 	score_state = "s[scoreleft%10]b"
-	overlays += image('icons/obj/machines/scoreboard.dmi', icon_state=score_state)
+	overlays += image('modular_imperium/master_files/icons/obj/machines/scoreboard.dmi', icon_state=score_state)
 	score_state = "s[( round(scoreright/10) > scoreright/10 ? round(scoreright/10)-1 : round(scoreright/10) )]c"
-	overlays += image('icons/obj/machines/scoreboard.dmi', icon_state=score_state)
+	overlays += image('modular_imperium/master_files/icons/obj/machines/scoreboard.dmi', icon_state=score_state)
 	score_state = "s[scoreright%10]d"
-	overlays += image('icons/obj/machines/scoreboard.dmi', icon_state=score_state)
+	overlays += image('modular_imperium/master_files/icons/obj/machines/scoreboard.dmi', icon_state=score_state)
 
 /obj/machinery/scoreboard/proc/score(side, points=2)
 	switch(side)
@@ -48,7 +48,7 @@
 /obj/machinery/scoreboard_button
 	name = "scoreboard button"
 	desc = "A remote control button to reset a scoreboard."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "launcherbtt"
 	var/id = null
 	var/active = 0

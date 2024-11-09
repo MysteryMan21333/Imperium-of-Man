@@ -1,14 +1,14 @@
-/datum/xeno_caste/mantis
+/datum/tyranid_caste/mantis
 	caste_name = "Mantis"
 	display_name = "Mantis"
 	upgrade_name = ""
 	caste_desc = ""
 	wound_type = ""
 
-	caste_type_path = /mob/living/carbon/xenomorph/mantis
+	caste_type_path = /mob/living/carbon/tyranid/mantis
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	// *** Melee Attacks *** //
 	melee_damage = 20
@@ -32,9 +32,9 @@
 	// *** Defense *** //
 	soft_armor = list(MELEE = 15, BULLET = 5, LASER = 5, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 0)
 
-	minimap_icon = "xenominion"
+	minimap_icon = "tyranidminion"
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/activable/xeno/ravage/slow,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/activable/tyranid/ravage/slow,
 	)

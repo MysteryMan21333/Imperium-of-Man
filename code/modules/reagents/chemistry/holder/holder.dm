@@ -710,7 +710,7 @@
 
 
 
-//two helper functions to preserve data across reactions (needed for xenoarch)
+//two helper functions to preserve data across reactions (needed for tyranidarch)
 /datum/reagents/proc/get_data(reagent_id)
 	var/list/cached_reagents = reagent_list
 	for(var/reagent in cached_reagents)

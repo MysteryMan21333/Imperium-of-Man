@@ -1033,7 +1033,7 @@
 
 /datum/reagent/medicine/larvaway
 	name = "Larvaway"
-	description = "A proprietary blend of antibiotics and antifungal agents designed to inhibit the growth of xenomorph embryos. Builds up toxicity over time."
+	description = "A proprietary blend of antibiotics and antifungal agents designed to inhibit the growth of tyranid embryos. Builds up toxicity over time."
 	color = COLOR_REAGENT_LARVAWAY
 	custom_metabolism = REAGENTS_METABOLISM * 0.5
 	overdose_threshold = REAGENTS_OVERDOSE * 0.5
@@ -1213,7 +1213,7 @@
 /datum/reagent/medicine/research/somolent
 	name = "Somolent"
 	description = "This is a highly potent regenerative drug, designed to heal critically injured personnel. Only functions on unconscious or sleeping people."
-	color = COLOR_REAGENT_SOMOLENT
+	color = COLOR_REAGENT_CHAOSOLENT
 	overdose_threshold = REAGENTS_OVERDOSE
 	taste_description = "naptime"
 

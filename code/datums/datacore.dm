@@ -70,7 +70,7 @@ GLOBAL_DATUM_INIT(datacore, /datum/datacore, new)
 		if(rank in GLOB.jobs_medical)
 			med[name] = rank
 			department = 1
-		if(rank in GLOB.jobs_marines)
+		if(rank in GLOB.jobs_guardsmans)
 			squads[name] = squad_name
 			mar[name] = rank
 			department = 1
@@ -87,8 +87,8 @@ GLOBAL_DATUM_INIT(datacore, /datum/datacore, new)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[support[name]]</td><td>[name]</td><td>[isactive[name]]</td></tr>"
 			even = !even
 	if(length(mar) > 0)
-		dat += "<tr><th colspan=3>Marine Personnel</th></tr>"
-		for(var/j in LAZYACCESS(SSjob.squads_by_name, FACTION_TERRAGOV))
+		dat += "<tr><th colspan=3>Guardsman Personnel</th></tr>"
+		for(var/j in LAZYACCESS(SSjob.squads_by_name, FACTION_IMPERIUM))
 			if(length(squads[j]))
 				dat += "<tr><th colspan=3>[j]</th></tr>"
 			for(var/name in mar)
@@ -119,7 +119,7 @@ GLOBAL_DATUM_INIT(datacore, /datum/datacore, new)
 	return dat
 
 /// Gathers the information necessary to display the hive's leader/queen status to lobby.
-/datum/datacore/proc/get_xeno_manifest(monochrome)
+/datum/datacore/proc/get_tyranid_manifest(monochrome)
 	var/even = 0
 
 	var/dat = {"
@@ -135,17 +135,17 @@ GLOBAL_DATUM_INIT(datacore, /datum/datacore, new)
 	<tr class='head'><th>Caste</th><th>Name</th></tr>
 	"}
 
-	var/datum/hive_status/normal/HN = GLOB.hive_datums[XENO_HIVE_NORMAL]
-	if(HN.living_xeno_ruler)
+	var/datum/hive_status/normal/HN = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
+	if(HN.living_tyranid_ruler)
 		dat += "<tr><th colspan=3>Hive Ruler</th></tr>"
-		dat += "<tr[even ? " class='alt'" : ""]><td>[HN.living_xeno_ruler.xeno_caste.display_name]</td><td>[HN.living_xeno_ruler.name]</td></tr>"
+		dat += "<tr[even ? " class='alt'" : ""]><td>[HN.living_tyranid_ruler.tyranid_caste.display_name]</td><td>[HN.living_tyranid_ruler.name]</td></tr>"
 		even = !even
 
-	if(length(HN.xeno_leader_list) > 0)
+	if(length(HN.tyranid_leader_list) > 0)
 		dat += "<tr><th colspan=3>Hive Leaders</th></tr>"
-		for(var/x in HN.xeno_leader_list)
-			var/mob/living/carbon/xenomorph/leader = x
-			dat += "<tr[even ? " class='alt'" : ""]><td>[leader.xeno_caste.display_name]</td><td>[leader.name]</td></tr>"
+		for(var/x in HN.tyranid_leader_list)
+			var/mob/living/carbon/tyranid/leader = x
+			dat += "<tr[even ? " class='alt'" : ""]><td>[leader.tyranid_caste.display_name]</td><td>[leader.name]</td></tr>"
 			even = !even
 
 	dat += "</table>"

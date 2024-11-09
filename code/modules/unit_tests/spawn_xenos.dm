@@ -1,13 +1,13 @@
-/datum/unit_test/spawn_xenos/Run()
-	var/list/mob/living/carbon/xenomorph/xenos = list()
-	GLOB.xeno_stat_multiplicator_buff = 1
-	for(var/castetype in GLOB.xeno_caste_datums)
-		var/xeno_type = GLOB.xeno_caste_datums[castetype][XENO_UPGRADE_BASETYPE].caste_type_path
-		xenos += allocate(xeno_type)
+/datum/unit_test/spawn_tyranids/Run()
+	var/list/mob/living/carbon/tyranid/tyranids = list()
+	GLOB.tyranid_stat_multiplicator_buff = 1
+	for(var/castetype in GLOB.tyranid_caste_datums)
+		var/tyranid_type = GLOB.tyranid_caste_datums[castetype][TYRANID_UPGRADE_BASETYPE].caste_type_path
+		tyranids += allocate(tyranid_type)
 
 	sleep(1 SECONDS)
 
-	for(var/mob/living/carbon/xenomorph/X AS in xenos)
-		X.upgrade_xeno(X.upgrade_next())
+	for(var/mob/living/carbon/tyranid/X AS in tyranids)
+		X.upgrade_tyranid(X.upgrade_next())
 
 	sleep(1 SECONDS)

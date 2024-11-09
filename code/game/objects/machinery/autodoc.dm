@@ -2,7 +2,7 @@
 #define AUTODOC_NOTICE_DEATH 2
 #define AUTODOC_NOTICE_NO_RECORD 3
 #define AUTODOC_NOTICE_NO_POWER 4
-#define AUTODOC_NOTICE_XENO_FUCKERY 5
+#define AUTODOC_NOTICE_TYRANID_FUCKERY 5
 #define AUTODOC_NOTICE_IDIOT_EJECT 6
 #define AUTODOC_NOTICE_FORCE_EJECT 7
 
@@ -29,12 +29,12 @@
 /obj/machinery/autodoc
 	name = "\improper autodoc medical system"
 	desc = "A fancy machine developed to be capable of operating on people with minimal human intervention. However, the interface is rather complex and most of it would only be useful to trained medical personnel."
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "autodoc_open"
 	density = TRUE
 	anchored = TRUE
 	coverage = 20
-	req_one_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_MEDPREP)
+	req_one_access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_MEDPREP)
 	light_range = 1
 	light_power = 0.5
 	light_color = LIGHT_COLOR_BLUE
@@ -194,15 +194,15 @@
 	if(updating_health)
 		occupant.updatehealth()
 
-/obj/machinery/autodoc/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/autodoc/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(tyranid_attacker, span_tyranidwarning("There is nothing of interest in there."))
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+	if(tyranid_attacker.status_flags & INCORPOREAL || tyranid_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[tyranid_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
-	if(!do_after(xeno_attacker, 2 SECONDS))
+	if(!do_after(tyranid_attacker, 2 SECONDS))
 		return
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
 	go_out()
@@ -565,12 +565,12 @@
 								for(A in occupant)
 									sleep(HEMOSTAT_REMOVE_MAX_DURATION*surgery_mod)
 									occupant.visible_message(span_warning(" [src] defty extracts a wriggling parasite from [occupant]'s ribcage!"))
-									var/mob/living/carbon/xenomorph/larva/L = locate() in occupant //the larva was fully grown, ready to burst.
+									var/mob/living/carbon/tyranid/larva/L = locate() in occupant //the larva was fully grown, ready to burst.
 									if(L)
 										L.forceMove(get_turf(src))
 									else
 										A.forceMove(occupant.loc)
-										occupant.status_flags &= ~XENO_HOST
+										occupant.status_flags &= ~TYRANID_HOST
 									qdel(A)
 						if(length(S.limb_ref.implants))
 							for(var/obj/item/embedded AS in S.limb_ref.implants)
@@ -728,8 +728,8 @@
 			occupant.take_limb_damage(rand(30,50),rand(30,50))
 		go_out(AUTODOC_NOTICE_FORCE_EJECT)
 		return
-	if(isxeno(usr) && !surgery) // let xenos eject people hiding inside; a xeno ejecting someone during surgery does so like someone untrained
-		go_out(AUTODOC_NOTICE_XENO_FUCKERY)
+	if(istyranid(usr) && !surgery) // let tyranids eject people hiding inside; a tyranid ejecting someone during surgery does so like someone untrained
+		go_out(AUTODOC_NOTICE_TYRANID_FUCKERY)
 		return
 	if(!ishuman(usr))
 		return
@@ -837,7 +837,7 @@
 			if(AUTODOC_NOTICE_NO_POWER)
 				playsound(src.loc, 'sound/machines/warning-buzzer.ogg', 50, FALSE)
 				reason = "Reason for discharge: Power failure."
-			if(AUTODOC_NOTICE_XENO_FUCKERY)
+			if(AUTODOC_NOTICE_TYRANID_FUCKERY)
 				playsound(src.loc, 'sound/machines/warning-buzzer.ogg', 50, FALSE)
 				reason = "Reason for discharge: Unauthorized manual release. Alerting security advised."
 			if(AUTODOC_NOTICE_IDIOT_EJECT)
@@ -949,11 +949,11 @@
 //Auto Doc console that links up to it.
 /obj/machinery/computer/autodoc_console
 	name = "autodoc medical system control console"
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "sleeperconsole"
 	screen_overlay = "sleeperconsole_emissive"
 	light_color = LIGHT_COLOR_EMISSIVE_RED
-	req_one_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_MEDPREP) //Valid access while locked
+	req_one_access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_MEDPREP) //Valid access while locked
 	density = FALSE
 	idle_power_usage = 40
 	dir = EAST

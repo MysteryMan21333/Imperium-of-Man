@@ -1,7 +1,7 @@
 // Please note this is cosmetic only and not buildable by players.
 /obj/machinery/air_alarm
 	name = "air alarm"
-	icon = 'icons/obj/machines/air_alarm.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/air_alarm.dmi'
 	icon_state = "alarm_powered"
 	power_channel = ENVIRON
 	light_range = 1

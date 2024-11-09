@@ -1,11 +1,11 @@
-/datum/xeno_caste/hivemind
+/datum/tyranid_caste/hivemind
 	caste_name = "Hivemind"
 	display_name = "Hivemind"
 	upgrade_name = ""
 	caste_desc = "The mind of the hive"
-	caste_type_path = /mob/living/carbon/xenomorph/hivemind
-	tier = XENO_TIER_ZERO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/hivemind
+	tier = TYRANID_TIER_ZERO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = ""
 	// *** Melee Attacks *** //
 	melee_damage = 0
@@ -43,35 +43,35 @@
 	resin_max_range = 4 //Hivemind can place resin structures from 4 tiles away
 
 	actions = list(
-		/datum/action/ability/xeno_action/watch_xeno/hivemind,
-		/datum/action/ability/xeno_action/change_form,
-		/datum/action/ability/xeno_action/return_to_core,
-		/datum/action/ability/xeno_action/teleport,
-		/datum/action/ability/xeno_action/rally_hive/hivemind,
-		/datum/action/ability/activable/xeno/command_minions,
-		/datum/action/ability/xeno_action/psychic_whisper,
-		/datum/action/ability/activable/xeno/plant_weeds/ranged,
-		/datum/action/ability/activable/xeno/psychic_cure/queen_give_heal/hivemind,
-		/datum/action/ability/activable/xeno/transfer_plasma/hivemind,
-		/datum/action/ability/xeno_action/pheromones/hivemind,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/activable/xeno/secrete_resin/hivemind,
-		/datum/action/ability/activable/xeno/secrete_special_resin/hivemind,
+		/datum/action/ability/tyranid_action/watch_tyranid/hivemind,
+		/datum/action/ability/tyranid_action/change_form,
+		/datum/action/ability/tyranid_action/return_to_core,
+		/datum/action/ability/tyranid_action/teleport,
+		/datum/action/ability/tyranid_action/rally_hive/hivemind,
+		/datum/action/ability/activable/tyranid/command_minions,
+		/datum/action/ability/tyranid_action/psychic_whisper,
+		/datum/action/ability/activable/tyranid/plant_weeds/ranged,
+		/datum/action/ability/activable/tyranid/psychic_cure/queen_give_heal/hivemind,
+		/datum/action/ability/activable/tyranid/transfer_plasma/hivemind,
+		/datum/action/ability/tyranid_action/pheromones/hivemind,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/activable/tyranid/secrete_resin/hivemind,
+		/datum/action/ability/activable/tyranid/secrete_special_resin/hivemind,
 	)
 
-/datum/xeno_caste/hivemind/on_caste_applied(mob/xenomorph)
+/datum/tyranid_caste/hivemind/on_caste_applied(mob/tyranid)
 	return
 
-/datum/xeno_caste/hivemind/on_caste_removed(mob/xenomorph)
+/datum/tyranid_caste/hivemind/on_caste_removed(mob/tyranid)
 	return
 
-/datum/xeno_caste/hivemind/hivemind_manifestation
+/datum/tyranid_caste/hivemind/hivemind_manifestation
 	caste_desc = "The manifestation of the hivemind"
 	wound_type = "hivemind"
 
-	upgrade = XENO_UPGRADE_MANIFESTATION
+	upgrade = TYRANID_UPGRADE_MANIFESTATION
 
 	// *** Flags *** //
 	caste_flags = CASTE_IS_BUILDER|CASTE_FIRE_IMMUNE

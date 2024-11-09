@@ -1,7 +1,7 @@
 /obj/structure/closet/walllocker
 	name = "wall locker"
 	desc = "A wall mounted storage locker."
-	icon = 'icons/obj/wallframes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/wallframes.dmi'
 	icon_state = "walllocker"
 	pixel_x = -16
 	pixel_y = -16
@@ -87,7 +87,7 @@
 /obj/structure/closet/secure_closet/walllocker
 	name = "secure wall locker"
 	desc = "It's an immobile card-locked storage unit."
-	icon = 'icons/obj/wallframes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/wallframes.dmi'
 	pixel_x = -16
 	pixel_y = -16
 	icon_state = "sec_locker1"
@@ -128,7 +128,7 @@
 	icon_broken = "medical_wall_sec_broken"
 	icon_off = "medical_wall_sec_off"
 	overlay_welded = "hydrant-medical_welded"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/structure/closet/secure_closet/walllocker/medical/full // spawners
 
@@ -145,7 +145,7 @@
 /obj/structure/closet/secure_closet/personal/walllocker // different path.
 	name = "personal wall locker"
 	desc = "It's a secure wall locker for personnel. The first card swiped gains control."
-	icon = 'icons/obj/wallframes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/wallframes.dmi'
 	icon_state = "sec_locker1"
 	pixel_x = -16
 	pixel_y = -16

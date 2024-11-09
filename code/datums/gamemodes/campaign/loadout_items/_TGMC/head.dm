@@ -12,7 +12,7 @@
 	ui_icon = "empty"
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 	jobs_supported = list(
-		SQUAD_MARINE,
+		SQUAD_GUARDSMAN,
 		SQUAD_CORPSMAN,
 		SQUAD_ENGINEER,
 		SQUAD_SMARTGUNNER,
@@ -20,14 +20,14 @@
 		FIELD_COMMANDER,
 		STAFF_OFFICER,
 		CAPTAIN,
-		SOM_SQUAD_MARINE,
-		SOM_SQUAD_CORPSMAN,
-		SOM_SQUAD_ENGINEER,
-		SOM_SQUAD_VETERAN,
-		SOM_SQUAD_LEADER,
-		SOM_FIELD_COMMANDER,
-		SOM_STAFF_OFFICER,
-		SOM_COMMANDER,
+		CHAOS_SQUAD_GUARDSMAN,
+		CHAOS_SQUAD_CORPSMAN,
+		CHAOS_SQUAD_ENGINEER,
+		CHAOS_SQUAD_VETERAN,
+		CHAOS_SQUAD_LEADER,
+		CHAOS_FIELD_COMMANDER,
+		CHAOS_STAFF_OFFICER,
+		CHAOS_COMMANDER,
 	)
 
 
@@ -36,7 +36,7 @@
 	desc = "A standard TDF combat helmet. Apply to head for best results."
 	req_desc = "Requires a light armor suit."
 	item_typepath = /obj/item/clothing/head/modular/tdf
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 	item_whitelist = list(
 		/obj/item/clothing/suit/modular/tdf/light/shield = ITEM_SLOT_OCLOTHING,
@@ -48,7 +48,7 @@
 	desc = "A standard TDF combat helmet. Apply to head for best results."
 	req_desc = "Requires a medium armor suit."
 	item_typepath = /obj/item/clothing/head/modular/tdf/medium
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION
 	item_whitelist = list(
 		/obj/item/clothing/suit/modular/tdf/shield = ITEM_SLOT_OCLOTHING,
@@ -60,7 +60,7 @@
 	desc = "A heavy TDF combat helmet. Apply to head for best results."
 	req_desc = "Requires a heavy armor suit."
 	item_typepath = /obj/item/clothing/head/modular/tdf/heavy
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 	item_whitelist = list(
 		/obj/item/clothing/suit/modular/tdf/heavy/shield = ITEM_SLOT_OCLOTHING,
@@ -86,7 +86,7 @@
 	desc = "A standard combat helmet with a Surt fireproof module."
 	req_desc = "Requires a suit with a Surt module."
 	item_typepath = /obj/item/clothing/head/modular/tdf/pyro
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	item_whitelist = list(/obj/item/clothing/suit/modular/tdf/heavy/surt = ITEM_SLOT_OCLOTHING)
 
 /datum/loadout_item/helmet/smartgunner
@@ -102,7 +102,7 @@
 	req_desc = "Requires a suit with a Tyr module."
 	ui_icon = "tyr"
 	item_typepath = /obj/item/clothing/head/modular/tdf/heavy/tyr
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	item_whitelist = list(
 		/obj/item/clothing/suit/modular/tdf/heavy/tyr_two = ITEM_SLOT_OCLOTHING,
 		/obj/item/clothing/suit/modular/tdf/heavy/tyr_two/corpsman = ITEM_SLOT_OCLOTHING,
@@ -131,14 +131,14 @@
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/plastique, SLOT_IN_HEAD)
 
 /datum/loadout_item/helmet/tyr/universal
-	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 	loadout_item_flags = NONE
 
 /datum/loadout_item/helmet/white_dress
 	name = "Dress Cap"
 	desc = "The dress white cap for your dress uniform. Pride is your shield, because this isn't."
 	item_typepath = /obj/item/clothing/head/white_dress
-	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 
 /datum/loadout_item/helmet/mimir
 	name = "Mimir helmet"

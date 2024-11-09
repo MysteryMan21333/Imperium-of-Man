@@ -1,7 +1,7 @@
 /obj/item/tool/rcd
 	name = "rapid-construction-device (RCD)"
 	desc = "A device used to rapidly build walls/floor."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "rcd"
 	opacity = FALSE
 	density = FALSE
@@ -16,11 +16,11 @@
 /obj/item/ammo_rcd
 	name = "compressed matter cartridge"
 	desc = "Highly compressed matter for the RCD."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "rcd_ammo"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	worn_icon_state = "rcdammo"
 	opacity = FALSE

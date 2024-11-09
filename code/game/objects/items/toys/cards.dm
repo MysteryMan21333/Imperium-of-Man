@@ -5,7 +5,7 @@
 /obj/item/toy/deck
 	name = "deck of cards"
 	desc = "A simple deck of playing cards."
-	icon = 'icons/obj/items/playing_cards.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/playing_cards.dmi'
 	icon_state = "deck"
 	w_class = WEIGHT_CLASS_TINY
 
@@ -172,9 +172,9 @@
 	. = ..()
 	switch(card_type)
 		if("normal")
-			icon = 'icons/obj/items/playing_cards.dmi'
+			icon = 'modular_imperium/master_files/icons/obj/items/playing_cards.dmi'
 		if("kotahi")
-			icon = 'icons/obj/items/kotahi_cards.dmi'
+			icon = 'modular_imperium/master_files/icons/obj/items/kotahi_cards.dmi'
 
 /obj/item/toy/handcard/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -324,7 +324,7 @@
 /obj/item/toy/deck/kotahi
 	name = "KOTAHI deck"
 	desc = "A flashy deck of Nanotrasen KOTAHI playing cards. Usually sold alongside crayon packages."
-	icon = 'icons/obj/items/kotahi_cards.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/kotahi_cards.dmi'
 	icon_state = "deck"
 	card_type = "kotahi"
 
@@ -383,7 +383,7 @@
 /obj/item/toy/card/ace/hearts
 	name = "Ancient Ace of Hearts card"
 	desc = "An ancient copy of an Ace of Hearts from a deck of playing cards."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "ace_of_hearts"
 	worn_icon_state = "ace_of_hearts"
 	w_class = WEIGHT_CLASS_TINY
@@ -391,7 +391,7 @@
 /obj/item/toy/card/ace/spades
 	name = "Ancient Ace of Spades card"
 	desc = "An ancient copy of an Ace of Spades from a deck of playing cards."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "ace_of_spades"
 	worn_icon_state = "ace_of_spades"
 	w_class = WEIGHT_CLASS_TINY

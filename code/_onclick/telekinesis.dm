@@ -82,7 +82,7 @@ Redefine as needed.
 /obj/item/tk_grab
 	name = "Telekinetic Grab"
 	desc = "Magic"
-	icon = 'icons/obj/magic.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/magic.dmi'
 	icon_state = "2"
 	item_flags = NOBLUDGEON | ITEM_ABSTRACT | DELONDROP
 	w_class = WEIGHT_CLASS_GIGANTIC

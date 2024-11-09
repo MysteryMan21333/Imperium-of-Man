@@ -1,12 +1,12 @@
-/datum/xeno_caste/king
+/datum/tyranid_caste/king
 	caste_name = "King"
 	display_name = "King"
 	upgrade_name = ""
-	caste_type_path = /mob/living/carbon/xenomorph/king
+	caste_type_path = /mob/living/carbon/tyranid/king
 	caste_desc = "A primordial creature, evolved to smash the hardiest of defences and hunt the hardiest of prey."
 
-	tier = XENO_TIER_FOUR
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_FOUR
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "king" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -28,7 +28,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 	maximum_active_caste = 1
-	evolve_min_xenos = 12
+	evolve_min_tyranids = 12
 	death_evolution_delay = 7 MINUTES
 
 	// *** Flags *** //
@@ -42,61 +42,61 @@
 	// *** Pheromones *** //
 	aura_strength = 4.5
 
-	minimap_icon = "xenoking"
+	minimap_icon = "tyranidking"
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/cocoon,
-		/datum/action/ability/activable/xeno/plant_weeds,
-		/datum/action/ability/xeno_action/call_of_the_burrowed,
-		/datum/action/ability/activable/xeno/corrosive_acid/strong,
-		/datum/action/ability/activable/xeno/nightfall,
-		/datum/action/ability/xeno_action/petrify,
-		/datum/action/ability/activable/xeno/off_guard,
-		/datum/action/ability/activable/xeno/shattering_roar,
-		/datum/action/ability/xeno_action/psychic_summon,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/xeno_action/hive_message,
-		/datum/action/ability/xeno_action/rally_hive,
-		/datum/action/ability/xeno_action/rally_minion,
-		/datum/action/ability/xeno_action/blessing_menu,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/cocoon,
+		/datum/action/ability/activable/tyranid/plant_weeds,
+		/datum/action/ability/tyranid_action/call_of_the_burrowed,
+		/datum/action/ability/activable/tyranid/corrosive_acid/strong,
+		/datum/action/ability/activable/tyranid/nightfall,
+		/datum/action/ability/tyranid_action/petrify,
+		/datum/action/ability/activable/tyranid/off_guard,
+		/datum/action/ability/activable/tyranid/shattering_roar,
+		/datum/action/ability/tyranid_action/psychic_summon,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/hive_message,
+		/datum/action/ability/tyranid_action/rally_hive,
+		/datum/action/ability/tyranid_action/rally_minion,
+		/datum/action/ability/tyranid_action/blessing_menu,
 	)
 
 
-/datum/xeno_caste/king/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/king/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/king/primordial
+/datum/tyranid_caste/king/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "An avatar of death. Running won't help you now."
 	primordial_message = "Death cannot create, but you definitely know how to destroy."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/cocoon,
-		/datum/action/ability/activable/xeno/plant_weeds,
-		/datum/action/ability/xeno_action/call_of_the_burrowed,
-		/datum/action/ability/activable/xeno/corrosive_acid/strong,
-		/datum/action/ability/activable/xeno/nightfall,
-		/datum/action/ability/xeno_action/petrify,
-		/datum/action/ability/activable/xeno/off_guard,
-		/datum/action/ability/activable/xeno/shattering_roar,
-		/datum/action/ability/xeno_action/zero_form_beam,
-		/datum/action/ability/xeno_action/psychic_summon,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/xeno_action/hive_message,
-		/datum/action/ability/xeno_action/rally_hive,
-		/datum/action/ability/xeno_action/rally_minion,
-		/datum/action/ability/xeno_action/blessing_menu,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/cocoon,
+		/datum/action/ability/activable/tyranid/plant_weeds,
+		/datum/action/ability/tyranid_action/call_of_the_burrowed,
+		/datum/action/ability/activable/tyranid/corrosive_acid/strong,
+		/datum/action/ability/activable/tyranid/nightfall,
+		/datum/action/ability/tyranid_action/petrify,
+		/datum/action/ability/activable/tyranid/off_guard,
+		/datum/action/ability/activable/tyranid/shattering_roar,
+		/datum/action/ability/tyranid_action/zero_form_beam,
+		/datum/action/ability/tyranid_action/psychic_summon,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/hive_message,
+		/datum/action/ability/tyranid_action/rally_hive,
+		/datum/action/ability/tyranid_action/rally_minion,
+		/datum/action/ability/tyranid_action/blessing_menu,
 	)

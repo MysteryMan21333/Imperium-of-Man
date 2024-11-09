@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/scientist
 	name = "Scientist's Locker"
-	req_access = list(ACCESS_MARINE_RESEARCH)
+	req_access = list(ACCESS_GUARDSMAN_RESEARCH)
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"
@@ -10,8 +10,8 @@
 
 /obj/structure/closet/secure_closet/scientist/Initialize(mapload, ...)
 	. = ..()
-	new /obj/item/clothing/under/marine/officer/researcher(src)
-	new /obj/item/clothing/under/marine/officer/researcher(src)
+	new /obj/item/clothing/under/guardsman/officer/researcher(src)
+	new /obj/item/clothing/under/guardsman/officer/researcher(src)
 	new /obj/item/clothing/suit/storage/labcoat(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/tank/air(src)

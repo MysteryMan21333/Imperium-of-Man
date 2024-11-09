@@ -3,14 +3,14 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_COMMAND = list("titles" = GLOB.jobs_command),
 	EXP_TYPE_ENGINEERING = list("titles" = GLOB.jobs_engineering),
 	EXP_TYPE_MEDICAL = list("titles" = GLOB.jobs_medical),
-	EXP_TYPE_MARINES = list("titles" = GLOB.jobs_marines),
+	EXP_TYPE_GUARDSMANS = list("titles" = GLOB.jobs_guardsmans),
 	EXP_TYPE_REQUISITIONS = list("titles" = GLOB.jobs_requisitions),
-	EXP_TYPE_SPECIAL = list("titles" = GLOB.jobs_xenos),
+	EXP_TYPE_SPECIAL = list("titles" = GLOB.jobs_tyranids),
 ))
 
 GLOBAL_LIST_INIT(exp_specialmap, list(
 	EXP_TYPE_LIVING = list(),
-	EXP_TYPE_SPECIAL = list(ROLE_XENOMORPH, ROLE_XENO_QUEEN),
+	EXP_TYPE_SPECIAL = list(ROLE_TYRANID, ROLE_TYRANID_QUEEN),
 	EXP_TYPE_GHOST = list(),
 	EXP_TYPE_ADMIN = list()
 ))
@@ -212,12 +212,12 @@ GLOBAL_PROTECT(exp_specialmap)
 		var/datum/job/scaled_job = SSjob.GetJobType(index)
 		if(!(index in SSticker.mode.valid_job_types))
 			continue
-		if(isxenosjob(scaled_job))
+		if(istyranidsjob(scaled_job))
 			if(respawn && (SSticker.mode?.round_type_flags & MODE_SILO_RESPAWN))
 				continue
-			GLOB.round_statistics.larva_from_marine_spawning += jobworth[index] / scaled_job.job_points_needed
+			GLOB.round_statistics.larva_from_guardsman_spawning += jobworth[index] / scaled_job.job_points_needed
 		scaled_job.add_job_points(jobworth[index])
-	var/datum/hive_status/normal_hive = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/hive_status/normal_hive = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 	normal_hive.update_tier_limits()
 	return TRUE
 
@@ -318,9 +318,9 @@ GLOBAL_PROTECT(exp_specialmap)
 			var/obj/item/storage/backpack/new_backpack
 			switch(player.prefs.backpack)
 				if(BACK_BACKPACK)
-					new_backpack = new /obj/item/storage/backpack/marine(src)
+					new_backpack = new /obj/item/storage/backpack/guardsman(src)
 				if(BACK_SATCHEL)
-					new_backpack = new /obj/item/storage/backpack/marine/satchel(src)
+					new_backpack = new /obj/item/storage/backpack/guardsman/satchel(src)
 			equip_to_slot_or_del(new_backpack, SLOT_BACK)
 
 		job.outfit.handle_id(src, player)
@@ -357,7 +357,7 @@ GLOBAL_PROTECT(exp_specialmap)
 
 /datum/job/terragov/squad/equip_spawning_squad(mob/living/carbon/human/new_character, datum/squad/assigned_squad, client/player)
 	if(!assigned_squad)
-		SSjob.JobDebug("Failed to put marine role in squad. Player: [player.key] Job: [title]")
+		SSjob.JobDebug("Failed to put guardsman role in squad. Player: [player.key] Job: [title]")
 		return
 	assigned_squad.insert_into_squad(new_character)
 
@@ -381,8 +381,8 @@ GLOBAL_PROTECT(exp_specialmap)
 /datum/job/proc/handle_special_preview(client/parent)
 	return FALSE
 
-/datum/job/xenomorph/occupy_job_positions(amount, respawn)
+/datum/job/tyranid/occupy_job_positions(amount, respawn)
 	if((total_positions - current_positions - amount) < 0)
-		CRASH("Occupy xenomorph position was call with amount = [amount] and respawn =[respawn ? "TRUE" : "FALSE"] \n \
+		CRASH("Occupy tyranid position was call with amount = [amount] and respawn =[respawn ? "TRUE" : "FALSE"] \n \
 		This would have created a negative larva situation")
 	return ..()

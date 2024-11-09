@@ -363,7 +363,7 @@
 /area/campaign/tgmc_raiding/underground/tunnel/station)
 "by" = (
 /obj/structure/table/mainship,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /turf/open/floor/mainship/red{
 	dir = 9
 	},
@@ -595,7 +595,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/campaign/tgmc_raiding/underground/tunnel/west)
 "cs" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /turf/open/floor/mainship/floor,
 /area/campaign/tgmc_raiding/underground/general/prep)
 "cu" = (
@@ -2319,7 +2319,7 @@
 /turf/open/floor/prison,
 /area/campaign/tgmc_raiding/colony/indoor/housing/southeast)
 "jg" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/floor,
@@ -2434,7 +2434,7 @@
 /area/campaign/tgmc_raiding/underground/maintenance/prep)
 "jB" = (
 /obj/structure/table/mainship,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /turf/open/floor/mainship/red{
 	dir = 9
 	},
@@ -4084,7 +4084,7 @@
 /area/campaign/tgmc_raiding/underground/command/captain)
 "qD" = (
 /obj/structure/rock/basalt/pile/alt,
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/campaign/tgmc_raiding/colony/outdoor/southeast)
 "qF" = (
@@ -4156,7 +4156,7 @@
 	},
 /area/campaign/tgmc_raiding/underground/security/central_outpost)
 "qQ" = (
-/obj/item/stack/sheet/animalhide/xeno,
+/obj/item/stack/sheet/animalhide/tyranid,
 /turf/open/floor/carpet/purple,
 /area/campaign/tgmc_raiding/colony/indoor/housing/southeast)
 "qR" = (
@@ -6180,7 +6180,7 @@
 	},
 /area/campaign/tgmc_raiding/underground/command/east)
 "yK" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/mainship/floor,
 /area/campaign/tgmc_raiding/underground/general/prep)
 "yL" = (
@@ -7946,7 +7946,7 @@
 	},
 /area/campaign/tgmc_raiding/underground/security)
 "FV" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -8027,7 +8027,7 @@
 /turf/open/floor/plating,
 /area/campaign/tgmc_raiding/underground/tunnel/south)
 "Gn" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/machinery/light,
 /turf/open/floor/mainship/sterile/side,
 /area/campaign/tgmc_raiding/underground/medbay)
@@ -9504,7 +9504,7 @@
 /turf/open/floor/prison,
 /area/campaign/tgmc_raiding/colony/indoor/bathroom)
 "LX" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/campaign/tgmc_raiding/colony/outdoor/southeast)
 "LY" = (
@@ -10153,7 +10153,7 @@
 /area/campaign/tgmc_raiding/colony/indoor/laundry)
 "OD" = (
 /obj/structure/table,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/prison,
 /area/campaign/tgmc_raiding/colony/indoor/housing/southeast)
 "OE" = (
@@ -10245,7 +10245,7 @@
 /area/campaign/tgmc_raiding/underground/engineering)
 "OZ" = (
 /obj/structure/table/mainship,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /turf/open/floor/prison/darkred{
 	dir = 8
 	},
@@ -11185,7 +11185,7 @@
 	},
 /area/campaign/tgmc_raiding/colony/outdoor/southwest)
 "SU" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/floor,
 /area/campaign/tgmc_raiding/underground/general/prep)
 "SV" = (
@@ -11333,7 +11333,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/campaign/tgmc_raiding/colony/outdoor/east)
 "Ty" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/corner{
 	dir = 4
 	},
@@ -11859,7 +11859,7 @@
 /area/campaign/tgmc_raiding/colony/indoor/dome)
 "VC" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/sliceable/sandwiches/xenomeatbread,
+/obj/item/reagent_containers/food/snacks/sliceable/sandwiches/tyranidmeatbread,
 /turf/open/floor/prison,
 /area/campaign/tgmc_raiding/colony/indoor/housing/southeast)
 "VD" = (

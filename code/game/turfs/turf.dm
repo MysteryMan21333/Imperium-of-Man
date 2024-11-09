@@ -523,7 +523,7 @@
 	return TRUE
 
 /**
- * Checks for whether we can build advanced xeno structures here
+ * Checks for whether we can build advanced tyranid structures here
  * Returns TRUE if present, FALSE otherwise
  */
 /turf/proc/check_disallow_alien_fortification(mob/living/builder, silent = FALSE)
@@ -551,11 +551,11 @@
 			if(!silent)
 				to_chat(builder, span_warning("There's already an egg here."))
 			return FALSE
-		if(istype(O, /obj/structure/xeno))
+		if(istype(O, /obj/structure/tyranid))
 			if(!silent)
 				to_chat(builder, span_warning("There's already a resin structure here!"))
 			return FALSE
-		if(istype(O, /obj/structure/xeno/plant))
+		if(istype(O, /obj/structure/tyranid/plant))
 			if(!silent)
 				to_chat(builder, span_warning("There is a plant growing here, destroying it would be a waste to the hive."))
 			return FALSE
@@ -574,7 +574,7 @@
 			else if(istype(O, /obj/structure/bed/nest)) //We don't care about other beds/chairs/whatever the fuck.
 				has_obstacle = TRUE
 				break
-		if(istype(O, /obj/structure/xeno/hivemindcore))
+		if(istype(O, /obj/structure/tyranid/hivemindcore))
 			has_obstacle = TRUE
 			break
 
@@ -597,43 +597,43 @@
 		to_chat(builder, span_warning("There's something built here already."))
 	return FALSE
 
-/turf/proc/can_dig_xeno_tunnel()
+/turf/proc/can_dig_tyranid_tunnel()
 	return FALSE
 
-/turf/open/ground/can_dig_xeno_tunnel()
+/turf/open/ground/can_dig_tyranid_tunnel()
 	return TRUE
 
-/turf/open/liquid/water/can_dig_xeno_tunnel()
+/turf/open/liquid/water/can_dig_tyranid_tunnel()
 	return FALSE
 
-/turf/open/floor/plating/ground/snow/can_dig_xeno_tunnel()
+/turf/open/floor/plating/ground/snow/can_dig_tyranid_tunnel()
 	return TRUE
 
-/turf/open/floor/plating/ground/ice/can_dig_xeno_tunnel()
+/turf/open/floor/plating/ground/ice/can_dig_tyranid_tunnel()
 	return TRUE
 
-/turf/open/floor/can_dig_xeno_tunnel()
+/turf/open/floor/can_dig_tyranid_tunnel()
 	return TRUE
 
-/turf/open/floor/plating/catwalk/can_dig_xeno_tunnel()
+/turf/open/floor/plating/catwalk/can_dig_tyranid_tunnel()
 	return FALSE
 
-/turf/open/floor/mainship/research/containment/can_dig_xeno_tunnel()
+/turf/open/floor/mainship/research/containment/can_dig_tyranid_tunnel()
 	return FALSE
 
-/turf/open/ground/jungle/can_dig_xeno_tunnel()
+/turf/open/ground/jungle/can_dig_tyranid_tunnel()
 	return TRUE
 
-/turf/open/ground/jungle/impenetrable/can_dig_xeno_tunnel()
+/turf/open/ground/jungle/impenetrable/can_dig_tyranid_tunnel()
 	return FALSE
 
-/turf/open/ground/jungle/water/can_dig_xeno_tunnel()
+/turf/open/ground/jungle/water/can_dig_tyranid_tunnel()
 	return FALSE
 
-/turf/open/floor/prison/can_dig_xeno_tunnel()
+/turf/open/floor/prison/can_dig_tyranid_tunnel()
 	return TRUE
 
-/turf/open/lavaland/basalt/can_dig_xeno_tunnel()
+/turf/open/lavaland/basalt/can_dig_tyranid_tunnel()
 	return TRUE
 
 
@@ -871,7 +871,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 
 /turf/proc/visibilityChanged()
-	for(var/datum/cameranet/net AS in list(GLOB.cameranet, GLOB.som_cameranet))
+	for(var/datum/cameranet/net AS in list(GLOB.cameranet, GLOB.chaos_cameranet))
 
 		net.updateVisibility(src)
 		// The cameranet usually handles this for us, but if we've just been

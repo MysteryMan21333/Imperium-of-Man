@@ -373,7 +373,7 @@
 		return
 	return ..()
 
-/mob/living/carbon/xenomorph/hivemind/toggle_move_intent(new_intent)
+/mob/living/carbon/tyranid/hivemind/toggle_move_intent(new_intent)
 	return
 
 /mob/living/proc/update_move_intent_effects()

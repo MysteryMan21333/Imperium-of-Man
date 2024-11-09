@@ -73,7 +73,7 @@
 
 
 /atom/movable/screen/fullscreen
-	icon = 'icons/mob/screen/full/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/misc.dmi'
 	icon_state = "default"
 	screen_loc = "CENTER-7,CENTER-7"
 	layer = FULLSCREEN_LAYER
@@ -111,7 +111,7 @@
 	layer = FULLSCREEN_BLIND_LAYER
 
 /atom/movable/screen/fullscreen/damage
-	icon = 'icons/mob/screen/full/damage.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/damage.dmi'
 
 /atom/movable/screen/fullscreen/damage/brute
 	icon_state = "brutedamageoverlay"
@@ -122,7 +122,7 @@
 	layer = FULLSCREEN_DAMAGE_LAYER
 
 /atom/movable/screen/fullscreen/impaired
-	icon = 'icons/mob/screen/full/impaired.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/impaired.dmi'
 	icon_state = "impairedoverlay"
 	layer = FULLSCREEN_IMPAIRED_LAYER
 
@@ -131,34 +131,34 @@
 	layer = FULLSCREEN_CRIT_LAYER
 
 /atom/movable/screen/fullscreen/flash
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "flash"
 	layer = FULLSCREEN_FLASH_LAYER
 
 /atom/movable/screen/fullscreen/flash/noise
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "noise"
 
 /atom/movable/screen/fullscreen/high
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "druggy"
 	layer = FULLSCREEN_DRUGGY_LAYER
 
 /atom/movable/screen/fullscreen/pain
-	icon = 'icons/mob/screen/full/pain.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/pain.dmi'
 	icon_state = "painoverlay"
 	layer = FULLSCREEN_PAIN_LAYER
 
 /atom/movable/screen/fullscreen/particle_flash
-	icon = 'icons/mob/screen/full/particle_flash.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/particle_flash.dmi'
 	icon_state = "particle_flash"
 	layer = FULLSCREEN_FLASH_LAYER
 
 /atom/movable/screen/fullscreen/animated
-	icon = 'icons/mob/screen/full/animated.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/animated.dmi'
 
 /atom/movable/screen/fullscreen/animated/bloodlust
 	icon_state = "bloodlust"
@@ -169,7 +169,7 @@
 	layer = FULLSCREEN_INFECTION_LAYER
 
 /atom/movable/screen/fullscreen/machine
-	icon = 'icons/mob/screen/full/machine.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/full/machine.dmi'
 	icon_state = "machine"
 	alpha = 120
 	layer = FULLSCREEN_DRUGGY_LAYER
@@ -192,7 +192,7 @@
 	alpha = 180
 
 /atom/movable/screen/fullscreen/lighting_backdrop
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	icon_state = "flash"
 	transform = matrix(200, 0, 0, 0, 200, 0)
 	plane = LIGHTING_PLANE

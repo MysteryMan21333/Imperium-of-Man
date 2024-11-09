@@ -1,8 +1,8 @@
-#define CRYOMOBS 'icons/obj/cryo_mobs.dmi'
+#define CRYOMOBS 'modular_imperium/master_files/icons/obj/cryo_mobs.dmi'
 
 /obj/machinery/atmospherics/components/unary/cryo_cell
 	name = "cryo cell"
-	icon = 'icons/obj/machines/cryogenics2.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics2.dmi'
 	icon_state = "cell_mapper"
 	density = TRUE
 	max_integrity = 350
@@ -262,7 +262,7 @@
 	. = ..()
 	if(.)
 		return
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
 		to_chat(user, span_notice("\ [src] is non-functional!"))
@@ -444,15 +444,15 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/can_crawl_through()
 	return // can't ventcrawl in or out of cryo.
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/atmospherics/components/unary/cryo_cell/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(tyranid_attacker, span_tyranidwarning("There is nothing of interest in there."))
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+	if(tyranid_attacker.status_flags & INCORPOREAL || tyranid_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[tyranid_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
-	if(!do_after(xeno_attacker, 2 SECONDS))
+	if(!do_after(tyranid_attacker, 2 SECONDS))
 		return
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
 	go_out()

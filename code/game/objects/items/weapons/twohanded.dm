@@ -1,8 +1,8 @@
 /obj/item/weapon/twohanded
-	icon = 'icons/obj/items/weapons/twohanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/twohanded.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/twohanded_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/twohanded_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/twohanded_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/twohanded_right.dmi',
 	)
 	var/force_wielded = 0
 	var/wieldsound
@@ -182,18 +182,18 @@
 		return
 	pry_capable = 0
 
-/obj/item/weapon/twohanded/fireaxe/som
+/obj/item/weapon/twohanded/fireaxe/chaos
 	name = "boarding axe"
-	desc = "A SOM boarding axe, effective at breaching doors as well as skulls. When wielded it can be used to block as well as attack."
-	icon = 'icons/obj/items/weapons/64x64.dmi'
-	icon_state = "som_axe"
+	desc = "A CHAOS boarding axe, effective at breaching doors as well as skulls. When wielded it can be used to block as well as attack."
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/64x64.dmi'
+	icon_state = "chaos_axe"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/weapon64_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/weapon64_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/weapon64_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/weapon64_right.dmi',
 	)
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	worn_icon_state = "som_axe"
+	worn_icon_state = "chaos_axe"
 	force = 40
 	force_wielded = 80
 	penetration = 35
@@ -202,18 +202,18 @@
 	///Special attack action granted to users with the right trait
 	var/datum/action/ability/activable/weapon_skill/axe_sweep/special_attack
 
-/obj/item/weapon/twohanded/fireaxe/som/Initialize(mapload)
+/obj/item/weapon/twohanded/fireaxe/chaos/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/shield, SHIELD_TOGGLE|SHIELD_PURE_BLOCKING, list(MELEE = 45, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0))
 	AddComponent(/datum/component/stun_mitigation, SHIELD_TOGGLE, shield_cover = list(MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 60, BIO = 60, FIRE = 60, ACID = 60))
 	AddElement(/datum/element/strappable)
 	special_attack = new(src, force_wielded, penetration)
 
-/obj/item/weapon/twohanded/fireaxe/som/Destroy()
+/obj/item/weapon/twohanded/fireaxe/chaos/Destroy()
 	QDEL_NULL(special_attack)
 	return ..()
 
-/obj/item/weapon/twohanded/fireaxe/som/wield(mob/user)
+/obj/item/weapon/twohanded/fireaxe/chaos/wield(mob/user)
 	. = ..()
 	if(!.)
 		return
@@ -221,7 +221,7 @@
 	if(HAS_TRAIT(user, TRAIT_AXE_EXPERT))
 		special_attack.give_action(user)
 
-/obj/item/weapon/twohanded/fireaxe/som/unwield(mob/user)
+/obj/item/weapon/twohanded/fireaxe/chaos/unwield(mob/user)
 	. = ..()
 	if(!.)
 		return
@@ -296,7 +296,7 @@
 /obj/item/weapon/twohanded/dualsaber
 	name = "double-bladed energy sword"
 	desc = "Handle with care."
-	icon = 'icons/obj/items/weapons/energy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/energy.dmi'
 	icon_state = "dualsaber"
 	worn_icon_state = "dualsaber"
 	force = 3
@@ -369,7 +369,7 @@
 
 /obj/item/weapon/twohanded/spear/tactical/tacticool
 	name = "M-23 TACTICOOL spear"
-	icon = 'icons/obj/items/weapons/64x64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/64x64.dmi'
 	desc = "A TACTICOOL spear. Used for TACTICOOLNESS in combat."
 
 /obj/item/weapon/twohanded/spear/tactical/tacticool/Initialize(mapload)
@@ -390,11 +390,11 @@
 		/obj/item/attachable/suppressor,
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/compensator,
 		/obj/item/attachable/scope,
 		/obj/item/attachable/scope/mini,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/angledgrip,
 		/obj/item/weapon/gun/pistol/plasma_pistol,
 		/obj/item/weapon/gun/shotgun/combat/masterkey,
@@ -569,17 +569,17 @@
 		var/throw_distance = knockback * LERP(5 , 2, M.mob_size / MOB_SIZE_BIG)
 		M.throw_at(throw_target, throw_distance, 0.5 + (knockback * 0.5))
 
-	if(isxeno(M))
-		var/mob/living/carbon/xenomorph/xeno_victim = M
-		if(xeno_victim.fortify || xeno_victim.endure || HAS_TRAIT_FROM(xeno_victim, TRAIT_IMMOBILE, BOILER_ROOTED_TRAIT)) //If we're fortified or use endure we don't give a shit about staggerstun.
+	if(istyranid(M))
+		var/mob/living/carbon/tyranid/tyranid_victim = M
+		if(tyranid_victim.fortify || tyranid_victim.endure || HAS_TRAIT_FROM(tyranid_victim, TRAIT_IMMOBILE, BOILER_ROOTED_TRAIT)) //If we're fortified or use endure we don't give a shit about staggerstun.
 			return
 
-		if(xeno_victim.crest_defense) //Crest defense protects us from the stun.
+		if(tyranid_victim.crest_defense) //Crest defense protects us from the stun.
 			stun = 0
 		else
 			stun = knockback ? knockback_stun_amount : crush_stun_amount
 
-	if(!M.IsStun() && !M.IsParalyzed() && !isxenoqueen(M) && !isxenoking(M)) //Prevent chain stunning. Queen and King are protected.
+	if(!M.IsStun() && !M.IsParalyzed() && !istyranidqueen(M) && !istyranidking(M)) //Prevent chain stunning. Queen and King are protected.
 		M.apply_effects(stun,weaken)
 
 	return ..()
@@ -614,10 +614,10 @@
 /obj/item/weapon/twohanded/chainsaw
 	name = "chainsaw"
 	desc = "A chainsaw. Good for turning big things into little things."
-	icon = 'icons/obj/items/weapons/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/misc.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/melee_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/melee_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/melee_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/melee_right.dmi',
 	)
 	icon_state = "chainsaw_off"
 	worn_icon_state = "chainsaw"
@@ -784,7 +784,7 @@
 
 /obj/item/weapon/twohanded/chainsaw/sword
 	name = "chainsword"
-	desc = "Cutting heretic and xenos never been easier"
+	desc = "Cutting heretic and tyranids never been easier"
 	icon_state = "chainsword_off"
 	icon_state_on = "chainsword_on"
 	worn_icon_state = "chainsword"

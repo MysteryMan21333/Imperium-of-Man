@@ -6,7 +6,7 @@ Code shamelessly copied from apc_frame
 /obj/item/frame/fire_alarm
 	name = "fire alarm frame"
 	desc = "Used for building Fire Alarms"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "fire_bitem"
 	atom_flags = CONDUCT
 

@@ -477,7 +477,7 @@
 
 /area/prison/research/secret/containment
 	name = "Test Subject Containment"
-	icon_state = "xeno_f_store"
+	icon_state = "tyranid_f_store"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/prison/research/secret/biolab

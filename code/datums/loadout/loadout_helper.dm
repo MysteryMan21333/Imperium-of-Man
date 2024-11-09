@@ -1,5 +1,5 @@
 ///Return a new empty loayout
-/proc/create_empty_loadout(name = "Default", job = SQUAD_MARINE)
+/proc/create_empty_loadout(name = "Default", job = SQUAD_GUARDSMAN)
 	var/datum/loadout/empty = new
 	empty.name = name
 	empty.job = job
@@ -104,7 +104,7 @@
 		return /datum/item_representation/stack
 	if(ispath(item_type, /obj/item/card/id))
 		return /datum/item_representation/id
-	if(ispath(item_type, /obj/item/clothing/shoes/marine))
+	if(ispath(item_type, /obj/item/clothing/shoes/guardsman))
 		return /datum/item_representation/boot
 	return /datum/item_representation
 
@@ -128,15 +128,15 @@
 		return
 	if(!user.assigned_squad)
 		return
-	user.equip_to_slot_or_del(new /obj/item/radio/headset/mainship/marine(null, user.assigned_squad, user.job.type), SLOT_EARS, override_nodrop = TRUE)
+	user.equip_to_slot_or_del(new /obj/item/radio/headset/mainship/guardsman(null, user.assigned_squad, user.job.type), SLOT_EARS, override_nodrop = TRUE)
 
 /// Will check if the selected category can be bought according to the category choices left
 /proc/can_buy_category(category, category_choices)
-	return category_choices && GLOB.marine_selector_cats[category]
+	return category_choices && GLOB.guardsman_selector_cats[category]
 
 /// Return true if you can buy this category, and also change the loadout seller buying bitfield
 /proc/buy_category(category, datum/loadout_seller/seller)
-	if(!(seller.buying_choices_left[category] && GLOB.marine_selector_cats[category]))
+	if(!(seller.buying_choices_left[category] && GLOB.guardsman_selector_cats[category]))
 		return FALSE
 	seller.buying_choices_left[category]-= 1
 	return TRUE

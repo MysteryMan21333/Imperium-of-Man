@@ -9,8 +9,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	fire_sound = SFX_GUN_FLAMETHROWER
 	dry_fire_sound = 'sound/weapons/guns/fire/flamethrower_empty.ogg'
@@ -174,7 +174,7 @@
 		if(FLAMER_STREAM_CONE)
 			//direction in degrees
 			var/dir_to_target = Get_Angle(src, target)
-			var/list/turf/turfs_to_ignite = generate_true_cone(get_turf(src), range, 1, cone_angle, dir_to_target, bypass_xeno = TRUE, air_pass = TRUE)
+			var/list/turf/turfs_to_ignite = generate_true_cone(get_turf(src), range, 1, cone_angle, dir_to_target, bypass_tyranid = TRUE, air_pass = TRUE)
 			recursive_flame_cone(1, turfs_to_ignite, dir_to_target, range, current_target, get_turf(src), flame_max_wall_pen_wide)
 		if(FLAMER_STREAM_RANGED)
 			return ..()
@@ -195,7 +195,7 @@
 	var/turf/turf_to_check = get_turf(src)
 	if(iteration > 1)
 		turf_to_check = path_to_target[iteration - 1]
-	if(LinkBlocked(turf_to_check, path_to_target[iteration], bypass_xeno = TRUE, air_pass = TRUE)) //checks if it's actually possible to get to the next tile in the line
+	if(LinkBlocked(turf_to_check, path_to_target[iteration], bypass_tyranid = TRUE, air_pass = TRUE)) //checks if it's actually possible to get to the next tile in the line
 		return
 	if(turf_to_check.density && istype(turf_to_check, /turf/closed/wall/resin))
 		walls_penetrated -= 1
@@ -264,9 +264,9 @@
 		if(mob_caught.stat == DEAD)
 			continue
 
-		if(isxeno(mob_caught))
-			var/mob/living/carbon/xenomorph/xeno_caught = mob_caught
-			if(CHECK_BITFIELD(xeno_caught.xeno_caste.caste_flags, CASTE_FIRE_IMMUNE))
+		if(istyranid(mob_caught))
+			var/mob/living/carbon/tyranid/tyranid_caught = mob_caught
+			if(CHECK_BITFIELD(tyranid_caught.tyranid_caste.caste_flags, CASTE_FIRE_IMMUNE))
 				continue
 
 		else if(ishuman(mob_caught))
@@ -285,54 +285,54 @@
 		mob_caught.IgniteMob()
 
 		var/burn_message = "Augh! You are roasted by the flames!"
-		to_chat(mob_caught, isxeno(mob_caught) ? span_xenodanger(burn_message) : span_highdanger(burn_message))
+		to_chat(mob_caught, istyranid(mob_caught) ? span_tyraniddanger(burn_message) : span_highdanger(burn_message))
 
 /obj/item/weapon/gun/flamer/big_flamer
 	name = "\improper FL-240 incinerator unit"
 	desc = "The FL-240 has proven to be one of the most effective weapons at clearing out soft-targets. This is a weapon to be feared and respected as it is quite deadly."
-	icon = 'icons/obj/items/guns/special.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special.dmi'
 	icon_state = "m240"
 	worn_icon_state = "m240"
 
 /obj/item/weapon/gun/flamer/big_flamer/vsd
 	starting_attachment_types = list(/obj/item/attachable/motiondetector, /obj/item/attachable/flamer_nozzle/wide,)
 
-/obj/item/weapon/gun/flamer/som
+/obj/item/weapon/gun/flamer/chaos
 	name = "\improper V-62 incinerator"
 	desc = "The V-62 is a deadly weapon employed in close quarter combat, favoured as much for the terror it inspires as the actual damage it inflicts. It has good range for a flamer, but lacks the integrated extinguisher of its TGMC equivalent."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "v62"
 	worn_icon_state = "v62"
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_WIELDED_STABLE_FIRING_ONLY|GUN_SHOWS_LOADED
 	inhand_x_dimension = 64
 	inhand_y_dimension = 32
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_64.dmi',
 	)
 	lit_overlay_icon_state = "v62_lit"
 	lit_overlay_offset_x = 0
 	flame_max_range = 8
 	cone_angle = 40
 	starting_attachment_types = list(/obj/item/attachable/flamer_nozzle/wide)
-	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large/som
+	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large/chaos
 	allowed_ammo_types = list(
-		/obj/item/ammo_magazine/flamer_tank/large/som,
-		/obj/item/ammo_magazine/flamer_tank/large/X/som,
+		/obj/item/ammo_magazine/flamer_tank/large/chaos,
+		/obj/item/ammo_magazine/flamer_tank/large/X/chaos,
 		/obj/item/ammo_magazine/flamer_tank/backtank,
 		/obj/item/ammo_magazine/flamer_tank/backtank/X,
 	)
 
-/obj/item/weapon/gun/flamer/som/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
+/obj/item/weapon/gun/flamer/chaos/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
 	. = ..()
 	var/mutable_appearance/emissive_overlay = emissive_appearance(icon_used, "[state_used]_emissive")
 	standing.overlays.Add(emissive_overlay)
 
-/obj/item/weapon/gun/flamer/som/mag_harness
+/obj/item/weapon/gun/flamer/chaos/mag_harness
 	starting_attachment_types = list(/obj/item/attachable/flamer_nozzle/wide, /obj/item/attachable/magnetic_harness)
 
 //dedicated engineer pyro kit flamer
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer
 	name = "\improper FL-86 incinerator unit"
 	desc = "The FL-86 is a more light weight incinerator unit designed specifically to fit into its accompanying engineers bag. Can only be used with magazine fuel tanks however."
 	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large
@@ -353,7 +353,7 @@
 	)
 	starting_attachment_types = list(/obj/item/attachable/flamer_nozzle, /obj/item/attachable/stock/t84stock)
 
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer/beginner
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer/beginner
 	starting_attachment_types = list(
 		/obj/item/attachable/motiondetector,
 		/obj/item/attachable/flamer_nozzle,
@@ -363,7 +363,7 @@
 /obj/item/weapon/gun/flamer/mini_flamer
 	name = "mini flamethrower"
 	desc = "A weapon-mounted refillable flamethrower attachment.\nIt is designed for short bursts."
-	icon = 'icons/obj/items/guns/attachments/flamer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/flamer.dmi'
 	icon_state = "flamethrower"
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_WIELDED_STABLE_FIRING_ONLY|GUN_IS_ATTACHMENT|GUN_ATTACHMENT_FIRE_ONLY
@@ -397,7 +397,7 @@
 	attach_features_flags = NONE
 
 
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard
 	name = "\improper FL-84 flamethrower"
 	desc = "The FL-84 flamethrower is the current standard issue flamethrower of the TGMC, and is used for area control and urban combat. Use unique action to use hydro cannon"
 	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large
@@ -419,7 +419,7 @@
 	)
 	starting_attachment_types = list(/obj/item/attachable/flamer_nozzle, /obj/item/attachable/stock/t84stock, /obj/item/weapon/gun/flamer/hydro_cannon)
 
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard/do_fire(obj/projectile/projectile_to_fire)
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/do_fire(obj/projectile/projectile_to_fire)
 	if(!target)
 		return
 	if(gun_user?.skills.getRating(SKILL_COMBAT) < 0)
@@ -432,7 +432,7 @@
 	return ..()
 
 ///Flamer windup called before firing
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard/proc/do_windup()
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/proc/do_windup()
 	windup_checked = WEAPON_WINDUP_CHECKING
 	if(!do_after(gun_user, 1 SECONDS, IGNORE_USER_LOC_CHANGE, src))
 		windup_checked = WEAPON_WINDUP_NOT_CHECKED
@@ -440,7 +440,7 @@
 	windup_checked = WEAPON_WINDUP_CHECKED
 	Fire()
 
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard/wide
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/wide
 	starting_attachment_types = list(
 		/obj/item/attachable/flamer_nozzle/wide,
 		/obj/item/attachable/stock/t84stock,
@@ -448,7 +448,7 @@
 		/obj/item/attachable/magnetic_harness,
 	)
 
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard/deathsquad
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/deathsquad
 	allowed_ammo_types = list(/obj/item/ammo_magazine/flamer_tank/large/X/deathsquad)
 	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large/X/deathsquad
 	starting_attachment_types = list(
@@ -508,7 +508,7 @@ GLOBAL_LIST_EMPTY(flamer_particles)
 /obj/item/weapon/gun/flamer/hydro_cannon
 	name = "underslung hydrocannon"
 	desc = "For the quenching of unfortunate mistakes."
-	icon = 'icons/obj/items/guns/attachments/gun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/gun.dmi'
 	icon_state = "hydrocannon"
 
 	fire_delay = 1.2 SECONDS

@@ -1,12 +1,12 @@
 /obj/structure/sign
-	icon = 'icons/obj/decals_arrow.dmi' // a copy of icons/obj/decals.dmi with directional arrows on the sprites, so a mapper knows which way a sign is facing
+	icon = 'modular_imperium/master_files/icons/obj/decals_arrow.dmi' // a copy of modular_imperium/master_files/icons/obj/decals.dmi with directional arrows on the sprites, so a mapper knows which way a sign is facing
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
 	layer = WALL_OBJ_LAYER
 	var/directional = TRUE //if true init to a given x/y offset on a wall, if not leave floating in space. used for multiple signs on a wall to prevent them all from moving to the same offset and overlapping/becoming unreadable
 	/// The clean version of the sprite, which we replace in initialize when the sign loads in game
-	var/base_icon = 'icons/obj/decals.dmi'
+	var/base_icon = 'modular_imperium/master_files/icons/obj/decals.dmi'
 	///if true try to automatically find the nearest wall and put ourselves on it
 	var/autoplace = TRUE
 
@@ -92,7 +92,7 @@
 /obj/item/sign
 	name = "sign"
 	desc = ""
-	icon = 'icons/obj/decals.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/decals.dmi'
 	w_class = WEIGHT_CLASS_NORMAL		//big
 	var/sign_state = ""
 
@@ -250,13 +250,13 @@
 /obj/structure/sign/science/two
 	icon_state = "science2"
 
-/obj/structure/sign/xenobio
+/obj/structure/sign/tyranidbio
 	name = "\improper SCIENCE!"
 	desc = "A warning sign which reads 'SCIENCE!'."
-	icon_state = "xenobio4"
+	icon_state = "tyranidbio4"
 
-/obj/structure/sign/xenobio/two
-	icon_state = "xenobio"
+/obj/structure/sign/tyranidbio/two
+	icon_state = "tyranidbio"
 
 /obj/structure/sign/chemistry
 	name = "\improper CHEMISTRY"
@@ -432,7 +432,7 @@
 
 /obj/structure/sign/safety/
 	name = "sign"
-	icon = 'icons/obj/safety_signs_arrow.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/safety_signs_arrow.dmi'
 	desc = "A sign warning of a particular hazard"
 	anchored = TRUE
 	opacity = FALSE
@@ -585,9 +585,9 @@
 
 /obj/structure/sign/safety/Initialize(mapload)
 	. = ..()
-	icon = 'icons/obj/safety_signs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/safety_signs.dmi'
 
-//Marine signs
+//Guardsman signs
 
 /obj/structure/sign/ROsign
 	name = "\improper TGMC requisitions office guidelines"
@@ -595,13 +595,13 @@
 	icon_state = "roplaque"
 
 /obj/structure/sign/prop1
-	name = "\improper TerraGov poster"
+	name = "\improper Imperium poster"
 	desc = "The symbol of the Terran Goverment."
 	icon_state = "prop1"
 
 /obj/structure/sign/prop2
 	name = "\improper TGMC poster"
-	desc = "A deeply faded poster of a group of glamorous TerraGov Marine Corps in uniform. Probably taken pre-Alpha."
+	desc = "A deeply faded poster of a group of glamorous Imperium Guardsman Corps in uniform. Probably taken pre-Alpha."
 	icon_state = "prop2"
 
 /obj/structure/sign/prop3
@@ -610,6 +610,6 @@
 	icon_state = "prop3"
 
 /obj/structure/sign/prop4
-	name = "TerraGov: United for Humanity"
-	desc = "A poster depicting TerraGov's logo and motto, reminding marines of who's looking out for humankind against the Xenomorph menace."
+	name = "Imperium: United for Humanity"
+	desc = "A poster depicting Imperium's logo and motto, reminding guardsmans of who's looking out for humankind against the Tyranid menace."
 	icon_state = "prop4"

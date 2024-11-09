@@ -10,6 +10,6 @@
 	name = "Exterior Area"
 	icon_state = "transparent"
 
-/area/centcom/valhalla/xenocave
-	name = "Xeno Cave"
+/area/centcom/valhalla/tyranidcave
+	name = "Tyranid Cave"
 	icon_state = "north"

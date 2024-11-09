@@ -1,7 +1,7 @@
 /obj/machinery/door/poddoor
 	name = "\improper Podlock"
 	desc = "That looks like it doesn't open easily."
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = "pdoor1"
 	soft_armor = list(MELEE = 50, BULLET = 100, LASER = 100, ENERGY = 100, BOMB = 50, BIO = 100, FIRE = 100, ACID = 70)
 	layer = PODDOOR_OPEN_LAYER
@@ -101,7 +101,7 @@
 	id = "tcomwind"
 
 /obj/machinery/door/poddoor/two_tile_hor
-	icon = 'icons/obj/doors/1x2blast_hor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x2blast_hor.dmi'
 	dir = EAST
 	width = 2
 
@@ -126,12 +126,12 @@
 	id = "tele_array"
 
 /obj/machinery/door/poddoor/two_tile_hor/secure
-	icon = 'icons/obj/doors/1x2blast_hor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x2blast_hor.dmi'
 	openspeed = 17
 	resistance_flags = RESIST_ALL
 
 /obj/machinery/door/poddoor/two_tile_ver
-	icon = 'icons/obj/doors/1x2blast_vert.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x2blast_vert.dmi'
 	dir = NORTH
 	width = 2
 
@@ -148,35 +148,35 @@
 	id = "lethal_armory"
 
 /obj/machinery/door/poddoor/two_tile_ver/secure
-	icon = 'icons/obj/doors/1x2blast_vert.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x2blast_vert.dmi'
 	openspeed = 17
 	resistance_flags = RESIST_ALL
 
 /obj/machinery/door/poddoor/four_tile_hor
-	icon = 'icons/obj/doors/1x4blast_hor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x4blast_hor.dmi'
 	dir = EAST
 	width = 4
 	resistance_flags = UNACIDABLE
 
 /obj/machinery/door/poddoor/four_tile_hor/secure
-	icon = 'icons/obj/doors/1x4blast_hor_secure.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x4blast_hor_secure.dmi'
 	openspeed = 17
 	resistance_flags = RESIST_ALL
 
 /obj/machinery/door/poddoor/four_tile_ver
-	icon = 'icons/obj/doors/1x4blast_vert.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x4blast_vert.dmi'
 	dir = NORTH
 	width = 4
 	resistance_flags = UNACIDABLE
 
 /obj/machinery/door/poddoor/four_tile_ver/secure
-	icon = 'icons/obj/doors/1x4blast_vert_secure.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/1x4blast_vert_secure.dmi'
 	openspeed = 17
 	resistance_flags = RESIST_ALL
 
 //mainship poddoors
 /obj/machinery/door/poddoor/mainship
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	openspeed = 4 //shorter open animation.
 
 /obj/machinery/door/poddoor/mainship/open
@@ -248,7 +248,7 @@
 
 
 /obj/machinery/door/poddoor/timed_late
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	name = "Timed Emergency Shutters"
 	use_power = FALSE
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL
@@ -291,33 +291,33 @@
 
 ///Faction signals for campaign mode doors
 GLOBAL_LIST_INIT(faction_to_campaign_door_signal, list(
-	FACTION_TERRAGOV = COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_TGMC,
-	FACTION_SOM = COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_SOM,
+	FACTION_IMPERIUM = COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_TGMC,
+	FACTION_CHAOS = COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_CHAOS,
 ))
 
 /obj/machinery/door/poddoor/campaign
 	name = "secure blast door"
 	desc = "Safety shutters designed to withstand any punishment. You're not forcing your way past this."
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	use_power = FALSE
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL
 	open_layer = UNDER_TURF_LAYER
 	closed_layer = ABOVE_WINDOW_LAYER
 	///Faction associated with the door, for signal purposes
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/machinery/door/poddoor/campaign/Initialize(mapload)
 	RegisterSignal(SSdcs, GLOB.faction_to_campaign_door_signal[faction], PROC_REF(open))
 	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, TYPE_PROC_REF(/obj/machinery/door, close))
 	return ..()
 
-/obj/machinery/door/poddoor/campaign/som
-	faction = FACTION_SOM
+/obj/machinery/door/poddoor/campaign/chaos
+	faction = FACTION_CHAOS
 
 /obj/machinery/door/poddoor/nt_lockdown
 	name = "secure blast door"
 	desc = "Safety shutters designed to withstand any punishment. You're not forcing your way past this."
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	use_power = FALSE
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL
 	open_layer = UNDER_TURF_LAYER

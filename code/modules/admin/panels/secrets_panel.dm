@@ -22,7 +22,7 @@
 		<b>Mass-Teleportation</b><br>
 		<br>
 		<a href='?src=[ref];secrets=gethumans'>Get ALL humans</a><br>
-		<a href='?src=[ref];secrets=getxenos'>Get ALL Xenos</a><br>
+		<a href='?src=[ref];secrets=gettyranids'>Get ALL Tyranids</a><br>
 		<a href='?src=[ref];secrets=getall'>Get ALL living, cliented mobs</a><br>
 		<br>
 		<b>Mass-Rejuvenate</b><br>

@@ -26,7 +26,7 @@
 		var/datum/fire_support/fire_support_option = GLOB.fire_support_types[firesupport_type]
 		fire_support_option.disable()
 
-/datum/campaign_asset/fire_support/som_cas
+/datum/campaign_asset/fire_support/chaos_cas
 	fire_support_types = list(
 		FIRESUPPORT_TYPE_VOLKITE = 3,
 		FIRESUPPORT_TYPE_INCEND_ROCKETS = 2,
@@ -48,7 +48,7 @@
 		FIRESUPPORT_TYPE_ACID_SMOKE_MORTAR = 2,
 	)
 
-/datum/campaign_asset/fire_support/som_mortar
+/datum/campaign_asset/fire_support/chaos_mortar
 	name = "Mortar support"
 	desc = "Mortar teams are activated to provide firesupport for this mission"
 	detailed_desc = "Activatable by squad leaders. A limited number of mortar strikes are available via tactical binoculars for this mission. Excellent for disrupting dug in enemy positions."
@@ -56,8 +56,8 @@
 	asset_flags = ASSET_ACTIVATED_EFFECT|ASSET_ACTIVE_MISSION_ONLY|ASSET_DISABLE_ON_MISSION_END|ASSET_SL_AVAILABLE
 	cost = 6
 	fire_support_types = list(
-		FIRESUPPORT_TYPE_HE_MORTAR_SOM = 6,
-		FIRESUPPORT_TYPE_INCENDIARY_MORTAR_SOM = 3,
-		FIRESUPPORT_TYPE_SMOKE_MORTAR_SOM = 2,
+		FIRESUPPORT_TYPE_HE_MORTAR_CHAOS = 6,
+		FIRESUPPORT_TYPE_INCENDIARY_MORTAR_CHAOS = 3,
+		FIRESUPPORT_TYPE_SMOKE_MORTAR_CHAOS = 2,
 		FIRESUPPORT_TYPE_SATRAPINE_SMOKE_MORTAR = 2,
 	)

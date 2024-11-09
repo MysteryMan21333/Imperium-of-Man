@@ -21,8 +21,8 @@
 	worn_icon_state = "gun"
 	item_state_worn = TRUE
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/rifles_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/rifles_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/rifles_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/rifles_right_1.dmi',
 	)
 	max_integrity = 250
 	w_class = WEIGHT_CLASS_NORMAL
@@ -235,8 +235,8 @@
 	var/fire_delay = 0.6 SECONDS
 	///Modifies the speed of projectiles fired.
 	var/shell_speed_mod = 0
-	///Modifies projectile damage by a % when a marine gets passed, but not hit
-	var/iff_marine_damage_falloff = 0
+	///Modifies projectile damage by a % when a guardsman gets passed, but not hit
+	var/iff_guardsman_damage_falloff = 0
 	///Determines how fire delay is changed when aim mode is active
 	var/aim_fire_delay = 0
 	///Holds the values modifying aim_fire_delay
@@ -1788,7 +1788,7 @@
 			var/obj/machinery/deployable/mounted/sentry/sentry = firer
 			iff_signal = sentry.iff_signal
 		projectile_to_fire.iff_signal = iff_signal
-	projectile_to_fire.damage_marine_falloff = iff_marine_damage_falloff
+	projectile_to_fire.damage_guardsman_falloff = iff_guardsman_damage_falloff
 	//no point blank bonus when akimbo
 	if(dual_wield)
 		projectile_to_fire.point_blank_range = 0
@@ -1887,8 +1887,8 @@
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
 
-//For letting xenos turn off the flashlights on any guns left lying around.
-/obj/item/weapon/gun/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+//For letting tyranids turn off the flashlights on any guns left lying around.
+/obj/item/weapon/gun/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!HAS_TRAIT(src, TRAIT_GUN_FLASHLIGHT_ON))
 		return
 	for(var/attachment_slot in attachments_by_slot)
@@ -1897,8 +1897,8 @@
 			continue
 		lit_flashlight.turn_light(null, FALSE)
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	to_chat(xeno_attacker, span_warning("We disable the metal thing's lights.") )
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	to_chat(tyranid_attacker, span_warning("We disable the metal thing's lights.") )
 
 /obj/item/weapon/gun/special_stripped_behavior(mob/stripper, mob/owner)
 	var/obj/item/attachable/magnetic_harness/magharn = attachments_by_slot[ATTACHMENT_SLOT_RAIL]

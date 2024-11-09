@@ -1,7 +1,7 @@
 /*****************************Coin********************************/
 
 /obj/item/coin
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	name = "Coin"
 	icon_state = "coin"
 	atom_flags = CONDUCT
@@ -62,7 +62,7 @@
 			to_chat(user, span_notice("This cable coil appears to be empty."))
 			return
 
-		overlays += image('icons/obj/items/items.dmi',"coin_string_overlay")
+		overlays += image('modular_imperium/master_files/icons/obj/items/items.dmi',"coin_string_overlay")
 		string_attached = TRUE
 		to_chat(user, span_notice("You attach a string to the coin."))
 

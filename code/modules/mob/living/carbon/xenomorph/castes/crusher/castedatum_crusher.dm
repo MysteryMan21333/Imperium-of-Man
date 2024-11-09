@@ -1,12 +1,12 @@
-/datum/xeno_caste/crusher
+/datum/tyranid_caste/crusher
 	caste_name = "Crusher"
 	display_name = "Crusher"
 	upgrade_name = ""
-	caste_desc = "A huge tanky xenomorph."
-	caste_type_path = /mob/living/carbon/xenomorph/crusher
+	caste_desc = "A huge tanky tyranid."
+	caste_type_path = /mob/living/carbon/tyranid/crusher
 
-	tier = XENO_TIER_THREE
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_THREE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "crusher" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -26,7 +26,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/bull
+	deevolves_to = /datum/tyranid_caste/bull
 
 	// *** Flags *** //
 	can_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
@@ -46,39 +46,39 @@
 	crest_toss_distance = 6
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/stomp,
-		/datum/action/ability/xeno_action/ready_charge,
-		/datum/action/ability/activable/xeno/cresttoss,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/stomp,
+		/datum/action/ability/tyranid_action/ready_charge,
+		/datum/action/ability/activable/tyranid/cresttoss,
 	)
 
-/datum/xeno_caste/crusher/on_caste_applied(mob/xenomorph)
+/datum/tyranid_caste/crusher/on_caste_applied(mob/tyranid)
 	. = ..()
-	xenomorph.AddElement(/datum/element/ridable, /datum/component/riding/creature/crusher)
-	xenomorph.RegisterSignal(xenomorph, COMSIG_GRAB_SELF_ATTACK, TYPE_PROC_REF(/mob/living/carbon/xenomorph, grabbed_self_attack))
+	tyranid.AddElement(/datum/element/ridable, /datum/component/riding/creature/crusher)
+	tyranid.RegisterSignal(tyranid, COMSIG_GRAB_SELF_ATTACK, TYPE_PROC_REF(/mob/living/carbon/tyranid, grabbed_self_attack))
 
-/datum/xeno_caste/crusher/on_caste_removed(mob/xenomorph)
+/datum/tyranid_caste/crusher/on_caste_removed(mob/tyranid)
 	. = ..()
-	xenomorph.RemoveElement(/datum/element/ridable, /datum/component/riding/creature/crusher)
-	xenomorph.UnregisterSignal(xenomorph, COMSIG_GRAB_SELF_ATTACK)
+	tyranid.RemoveElement(/datum/element/ridable, /datum/component/riding/creature/crusher)
+	tyranid.UnregisterSignal(tyranid, COMSIG_GRAB_SELF_ATTACK)
 
-/datum/xeno_caste/crusher/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/crusher/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/crusher/primordial
+/datum/tyranid_caste/crusher/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "Behemoth of the hive. Nothing will remain in its way"
 	primordial_message = "We are an unstoppable force. Crush. Kill. Destroy."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/stomp,
-		/datum/action/ability/xeno_action/ready_charge,
-		/datum/action/ability/activable/xeno/cresttoss,
-		/datum/action/ability/activable/xeno/advance,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/stomp,
+		/datum/action/ability/tyranid_action/ready_charge,
+		/datum/action/ability/activable/tyranid/cresttoss,
+		/datum/action/ability/activable/tyranid/advance,
 	)

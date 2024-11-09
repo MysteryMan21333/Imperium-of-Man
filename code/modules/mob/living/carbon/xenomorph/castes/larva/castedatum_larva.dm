@@ -1,11 +1,11 @@
-/datum/xeno_caste/larva
+/datum/tyranid_caste/larva
 	caste_name = "Larva"
 	display_name = "Bloody Larva"
 	upgrade_name = ""
 	caste_desc = "D'awwwww, so cute!"
-	caste_type_path = /mob/living/carbon/xenomorph/larva
-	tier = XENO_TIER_ZERO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/larva
+	tier = TYRANID_TIER_ZERO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "larva" //used to match appropriate wound overlays
 
 	gib_anim = "larva_gib_corpse"
@@ -40,9 +40,9 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/xeno_action/xenohide,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/tyranid_action/tyranidhide,
 	)
 
 	// *** Vent Crawl Parameters *** //
@@ -50,6 +50,6 @@
 	vent_exit_speed = LARVA_VENT_CRAWL_TIME
 	silent_vent_crawl = TRUE
 
-/datum/xeno_caste/larva/young
-	upgrade = XENO_UPGRADE_INVALID
+/datum/tyranid_caste/larva/young
+	upgrade = TYRANID_UPGRADE_INVALID
 

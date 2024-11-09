@@ -313,7 +313,7 @@
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/medical)
 "mC" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 5
 	},

@@ -1,5 +1,5 @@
-/mob/living/carbon/xenomorph/larva
-	caste_base_type = /datum/xeno_caste/larva
+/mob/living/carbon/tyranid/larva
+	caste_base_type = /datum/tyranid_caste/larva
 	speak_emote = list("hisses")
 	icon_state = "Bloody Larva"
 	bubble_icon = "alien"
@@ -9,41 +9,41 @@
 	maxHealth = 35
 	health = 35
 	see_in_dark = 8
-	allow_pass_flags = PASS_MOB|PASS_XENO
-	pass_flags = PASS_LOW_STRUCTURE|PASS_MOB|PASS_XENO
-	tier = XENO_TIER_ZERO  //Larva's don't count towards Pop limits
-	upgrade = XENO_UPGRADE_INVALID
+	allow_pass_flags = PASS_MOB|PASS_TYRANID
+	pass_flags = PASS_LOW_STRUCTURE|PASS_MOB|PASS_TYRANID
+	tier = TYRANID_TIER_ZERO  //Larva's don't count towards Pop limits
+	upgrade = TYRANID_UPGRADE_INVALID
 	gib_chance = 25
 	hud_type = /datum/hud/larva
 	inherent_verbs = list(
-		/mob/living/carbon/xenomorph/proc/vent_crawl,
+		/mob/living/carbon/tyranid/proc/vent_crawl,
 	)
 
 	base_icon_state = "Larva"
 
-/mob/living/carbon/xenomorph/larva/Initialize(mapload)
+/mob/living/carbon/tyranid/larva/Initialize(mapload)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_SILENT_FOOTSTEPS, XENO_TRAIT)
+	ADD_TRAIT(src, TRAIT_SILENT_FOOTSTEPS, TYRANID_TRAIT)
 
 // ***************************************
 // *********** Mob overrides
 // ***************************************
-/mob/living/carbon/xenomorph/larva/a_intent_change()
+/mob/living/carbon/tyranid/larva/a_intent_change()
 	return
 
-/mob/living/carbon/xenomorph/larva/start_pulling(atom/movable/AM, force = move_force, suppress_message = FALSE)
+/mob/living/carbon/tyranid/larva/start_pulling(atom/movable/AM, force = move_force, suppress_message = FALSE)
 	return FALSE
 
-/mob/living/carbon/xenomorph/larva/pull_response(mob/puller)
+/mob/living/carbon/tyranid/larva/pull_response(mob/puller)
 	return TRUE
 
 // ***************************************
 // *********** Name
 // ***************************************
-/mob/living/carbon/xenomorph/larva/generate_name()
+/mob/living/carbon/tyranid/larva/generate_name()
 	var/progress = "" //Naming convention, three different names
 
-	var/grown = (evolution_stored / xeno_caste.evolution_threshold) * 100
+	var/grown = (evolution_stored / tyranid_caste.evolution_threshold) * 100
 	switch(grown)
 		if(0 to 49) //We're still bloody
 			progress = "Bloody "
@@ -60,11 +60,11 @@
 // ***************************************
 // *********** Icon
 // ***************************************
-/mob/living/carbon/xenomorph/larva/update_icons()
+/mob/living/carbon/tyranid/larva/update_icons()
 	generate_name()
 
 	var/bloody = ""
-	var/grown = (evolution_stored / xeno_caste.evolution_threshold) * 100
+	var/grown = (evolution_stored / tyranid_caste.evolution_threshold) * 100
 	if(grown < 50)
 		bloody = "Bloody "
 
@@ -86,12 +86,12 @@
 // ***************************************
 // *********** Death
 // ***************************************
-/mob/living/carbon/xenomorph/larva/on_death()
+/mob/living/carbon/tyranid/larva/on_death()
 	log_game("[key_name(src)] died as a Larva at [AREACOORD(src)].")
 	message_admins("[ADMIN_TPMONTY(src)] died as a Larva.")
 	return ..()
 
-/mob/living/carbon/xenomorph/larva/spec_evolution_boost()
+/mob/living/carbon/tyranid/larva/spec_evolution_boost()
 	if(!loc_weeds_type)
 		return 0
 	return 1

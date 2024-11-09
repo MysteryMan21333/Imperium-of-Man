@@ -2,7 +2,7 @@
 	gender = PLURAL
 	name = "customization kit"
 	desc = "A kit designed for customizing various pieces of armor and clothing. Comes with facepaint!"
-	icon = 'icons/obj/items/cosmetics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cosmetics.dmi'
 	icon_state = "camo"
 	var/colour = "green"
 	w_class = WEIGHT_CLASS_TINY

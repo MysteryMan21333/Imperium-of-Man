@@ -9,9 +9,9 @@
 	alert_type = null
 
 /datum/status_effect/resin_jelly_coating/on_apply()
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return FALSE
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	ADD_TRAIT(X, TRAIT_NON_FLAMMABLE, id)
 	X.soft_armor = X.soft_armor.modifyRating(fire = 100)
 	X.hard_armor = X.hard_armor.modifyRating(fire = 100)
@@ -24,7 +24,7 @@
 	return TRUE
 
 /datum/status_effect/resin_jelly_coating/on_remove()
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	REMOVE_TRAIT(X, TRAIT_NON_FLAMMABLE, id)
 	X.soft_armor = X.soft_armor.modifyRating(fire = -100)
 	X.hard_armor = X.hard_armor.modifyRating(fire = -100)
@@ -43,7 +43,7 @@
 	name = "essence link beam"
 
 /datum/status_effect/stacking/essence_link
-	id = "xeno_essence_link"
+	id = "tyranid_essence_link"
 	tick_interval = 2 SECONDS
 	stacks = 0
 	stack_decay = -1 //Not meant to decay.
@@ -52,12 +52,12 @@
 	consumed_on_fadeout = FALSE
 	alert_type = null
 	/// The owner of the link.
-	var/mob/living/carbon/xenomorph/link_owner
+	var/mob/living/carbon/tyranid/link_owner
 	/// Whom the owner is linked to.
-	var/mob/living/carbon/xenomorph/link_target
+	var/mob/living/carbon/tyranid/link_target
 	/// References the Essence Link action and its vars.
-	var/datum/action/ability/activable/xeno/essence_link/essence_link_action
-	/// If the target xeno was within range.
+	var/datum/action/ability/activable/tyranid/essence_link/essence_link_action
+	/// If the target tyranid was within range.
 	var/was_within_range = TRUE
 	/// Cooldown for passive attunement increase.
 	COOLDOWN_DECLARE(attunement_increase)
@@ -65,20 +65,20 @@
 	var/plasma_warning_cooldown = 20 SECONDS
 	/// Cooldown for the plasma warning.
 	COOLDOWN_DECLARE(plasma_warning)
-	/// The beam used to represent the link between linked xenos.
+	/// The beam used to represent the link between linked tyranids.
 	var/datum/beam/current_beam
 
 /datum/status_effect/stacking/essence_link/on_creation(mob/living/new_owner, stacks_to_apply, mob/living/carbon/link_target)
 	link_owner = new_owner
 	src.link_target = link_target
-	essence_link_action = link_owner.actions_by_path[/datum/action/ability/activable/xeno/essence_link]
+	essence_link_action = link_owner.actions_by_path[/datum/action/ability/activable/tyranid/essence_link]
 	ADD_TRAIT(link_owner, TRAIT_ESSENCE_LINKED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(link_target, TRAIT_ESSENCE_LINKED, TRAIT_STATUS_EFFECT(id))
-	RegisterSignals(link_owner, list(COMSIG_MOB_DEATH, COMSIG_XENOMORPH_EVOLVED, COMSIG_XENOMORPH_DEEVOLVED), PROC_REF(end_link))
-	RegisterSignals(link_target, list(COMSIG_MOB_DEATH, COMSIG_XENOMORPH_EVOLVED, COMSIG_XENOMORPH_DEEVOLVED), PROC_REF(end_link))
+	RegisterSignals(link_owner, list(COMSIG_MOB_DEATH, COMSIG_TYRANID_EVOLVED, COMSIG_TYRANID_DEEVOLVED), PROC_REF(end_link))
+	RegisterSignals(link_target, list(COMSIG_MOB_DEATH, COMSIG_TYRANID_EVOLVED, COMSIG_TYRANID_DEEVOLVED), PROC_REF(end_link))
 	toggle_link(TRUE)
-	to_chat(link_owner, span_xenonotice("We have established an Essence Link with [link_target]. Stay within [DRONE_ESSENCE_LINK_RANGE] tiles to maintain it."))
-	to_chat(link_target, span_xenonotice("[link_owner] has established an Essence Link with us. Stay within [DRONE_ESSENCE_LINK_RANGE] tiles to maintain it."))
+	to_chat(link_owner, span_tyranidnotice("We have established an Essence Link with [link_target]. Stay within [DRONE_ESSENCE_LINK_RANGE] tiles to maintain it."))
+	to_chat(link_target, span_tyranidnotice("[link_owner] has established an Essence Link with us. Stay within [DRONE_ESSENCE_LINK_RANGE] tiles to maintain it."))
 	return ..()
 
 /datum/status_effect/stacking/essence_link/add_stacks(stacks_added)
@@ -89,19 +89,19 @@
 	update_beam()
 
 /datum/status_effect/stacking/essence_link/on_remove()
-	to_chat(link_owner, span_xenonotice("The Essence Link between us and [link_target] has been cancelled."))
-	to_chat(link_target, span_xenonotice("The Essence Link between us and [link_owner] has been cancelled."))
+	to_chat(link_owner, span_tyranidnotice("The Essence Link between us and [link_target] has been cancelled."))
+	to_chat(link_target, span_tyranidnotice("The Essence Link between us and [link_owner] has been cancelled."))
 	toggle_link(FALSE)
 	essence_link_action.end_ability()
-	UnregisterSignal(link_owner, list(COMSIG_MOB_DEATH, COMSIG_XENOMORPH_EVOLVED, COMSIG_XENOMORPH_DEEVOLVED))
-	UnregisterSignal(link_target, list(COMSIG_MOB_DEATH, COMSIG_XENOMORPH_EVOLVED, COMSIG_XENOMORPH_DEEVOLVED))
+	UnregisterSignal(link_owner, list(COMSIG_MOB_DEATH, COMSIG_TYRANID_EVOLVED, COMSIG_TYRANID_DEEVOLVED))
+	UnregisterSignal(link_target, list(COMSIG_MOB_DEATH, COMSIG_TYRANID_EVOLVED, COMSIG_TYRANID_DEEVOLVED))
 	REMOVE_TRAIT(link_owner, TRAIT_ESSENCE_LINKED, TRAIT_STATUS_EFFECT(id))
 	REMOVE_TRAIT(link_target, TRAIT_ESSENCE_LINKED, TRAIT_STATUS_EFFECT(id))
 	return ..()
 
 /datum/status_effect/stacking/essence_link/tick(delta_time)
 	var/within_range = get_dist(link_owner, link_target) <= DRONE_ESSENCE_LINK_RANGE
-	if(within_range != was_within_range) // Toggles the link depending on whether the linked xenos are still in range or not.
+	if(within_range != was_within_range) // Toggles the link depending on whether the linked tyranids are still in range or not.
 		was_within_range = within_range
 		toggle_link(was_within_range)
 		link_owner.balloon_alert(link_owner, was_within_range ? ("Link reestablished") : ("Link faltering"))
@@ -126,11 +126,11 @@
 	link_target.adjustBruteLoss(-heal_amount, passive = TRUE)
 	link_owner.use_plasma(ability_cost)
 
-/// Shares the Resin Jelly buff with the linked xeno.
+/// Shares the Resin Jelly buff with the linked tyranid.
 /datum/status_effect/stacking/essence_link/proc/share_jelly(datum/source)
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/buff_owner
-	var/mob/living/carbon/xenomorph/buff_target
+	var/mob/living/carbon/tyranid/buff_owner
+	var/mob/living/carbon/tyranid/buff_target
 
 	if(stacks < 1)
 		return
@@ -145,14 +145,14 @@
 	buff_owner.balloon_alert(buff_owner, "Buff shared")
 	buff_target.balloon_alert(buff_target, "Buff shared")
 	buff_target.visible_message(span_notice("[buff_target]'s chitin begins to gleam with an unseemly glow..."), \
-		span_xenonotice("Through the Essence Link, [buff_owner] has shared their resin jelly with us."))
-	INVOKE_ASYNC(buff_target, TYPE_PROC_REF(/mob/living/carbon/xenomorph, emote), "roar")
+		span_tyranidnotice("Through the Essence Link, [buff_owner] has shared their resin jelly with us."))
+	INVOKE_ASYNC(buff_target, TYPE_PROC_REF(/mob/living/carbon/tyranid, emote), "roar")
 	buff_target.apply_status_effect(STATUS_EFFECT_RESIN_JELLY_COATING)
 
-/// Shares heals with the linked xeno.
+/// Shares heals with the linked tyranid.
 /datum/status_effect/stacking/essence_link/proc/share_heal(datum/source, amount, amount_mod, passive)
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/heal_target
+	var/mob/living/carbon/tyranid/heal_target
 
 	// Besides the stacks check, also prevents actual damage, decimals of 0, and passive healing.
 	if(stacks < 1 || amount > -1 || passive)
@@ -173,14 +173,14 @@
 /// Toggles the link signals on or off.
 /datum/status_effect/stacking/essence_link/proc/toggle_link(toggle)
 	if(!toggle)
-		UnregisterSignal(link_owner, list(COMSIG_XENOMORPH_RESIN_JELLY_APPLIED, COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE))
-		UnregisterSignal(link_target, list(COMSIG_XENOMORPH_RESIN_JELLY_APPLIED, COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE))
+		UnregisterSignal(link_owner, list(COMSIG_TYRANID_RESIN_JELLY_APPLIED, COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE))
+		UnregisterSignal(link_target, list(COMSIG_TYRANID_RESIN_JELLY_APPLIED, COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE))
 		toggle_beam(FALSE)
 		return
-	RegisterSignal(link_owner, COMSIG_XENOMORPH_RESIN_JELLY_APPLIED, PROC_REF(share_jelly))
-	RegisterSignal(link_target, COMSIG_XENOMORPH_RESIN_JELLY_APPLIED, PROC_REF(share_jelly))
-	RegisterSignals(link_owner, list(COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE), PROC_REF(share_heal))
-	RegisterSignals(link_target, list(COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE), PROC_REF(share_heal))
+	RegisterSignal(link_owner, COMSIG_TYRANID_RESIN_JELLY_APPLIED, PROC_REF(share_jelly))
+	RegisterSignal(link_target, COMSIG_TYRANID_RESIN_JELLY_APPLIED, PROC_REF(share_jelly))
+	RegisterSignals(link_owner, list(COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE), PROC_REF(share_heal))
+	RegisterSignals(link_target, list(COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE), PROC_REF(share_heal))
 	toggle_beam(TRUE)
 
 /// Toggles the effect beam on or off.
@@ -210,11 +210,11 @@
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
 	/// The owner of this buff.
-	var/mob/living/carbon/xenomorph/buff_owner
+	var/mob/living/carbon/tyranid/buff_owner
 
 /datum/status_effect/salve_regen/on_apply()
 	buff_owner = owner
-	if(!isxeno(buff_owner))
+	if(!istyranid(buff_owner))
 		return FALSE
 	buff_owner.balloon_alert(buff_owner, "Salve regeneration")
 	return TRUE
@@ -259,69 +259,69 @@
 	tick_interval = 2 SECONDS
 	alert_type = null
 	/// Used to track who is giving this buff to the owner.
-	var/mob/living/carbon/xenomorph/buffing_xeno
+	var/mob/living/carbon/tyranid/buffing_tyranid
 	/// Used to track who is the owner of this buff.
-	var/mob/living/carbon/xenomorph/buffed_xeno
+	var/mob/living/carbon/tyranid/buffed_tyranid
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
 	/// References the Essence Link action and its vars.
-	var/datum/action/ability/activable/xeno/essence_link/essence_link_action
+	var/datum/action/ability/activable/tyranid/essence_link/essence_link_action
 	/// References the Enhancement action and its vars.
-	var/datum/action/ability/xeno_action/enhancement/enhancement_action
-	/// If the target xeno was within range.
+	var/datum/action/ability/tyranid_action/enhancement/enhancement_action
+	/// If the target tyranid was within range.
 	var/was_within_range = TRUE
 	/// The plasma cost per tick of this ability.
 	var/ability_cost
 
 /datum/status_effect/drone_enhancement/on_creation(mob/living/new_owner, mob/living/carbon/new_target)
-	buffed_xeno = new_owner
-	buffing_xeno = new_target
-	essence_link_action = buffing_xeno.actions_by_path[/datum/action/ability/activable/xeno/essence_link]
-	enhancement_action = buffing_xeno.actions_by_path[/datum/action/ability/xeno_action/enhancement]
-	ability_cost = round(buffing_xeno.xeno_caste.plasma_max * 0.1)
-	RegisterSignal(buffed_xeno, COMSIG_MOB_DEATH, PROC_REF(handle_death))
-	RegisterSignal(buffing_xeno, COMSIG_MOB_DEATH, PROC_REF(handle_death))
-	INVOKE_ASYNC(buffed_xeno, TYPE_PROC_REF(/mob/living/carbon/xenomorph, emote), "roar2")
+	buffed_tyranid = new_owner
+	buffing_tyranid = new_target
+	essence_link_action = buffing_tyranid.actions_by_path[/datum/action/ability/activable/tyranid/essence_link]
+	enhancement_action = buffing_tyranid.actions_by_path[/datum/action/ability/tyranid_action/enhancement]
+	ability_cost = round(buffing_tyranid.tyranid_caste.plasma_max * 0.1)
+	RegisterSignal(buffed_tyranid, COMSIG_MOB_DEATH, PROC_REF(handle_death))
+	RegisterSignal(buffing_tyranid, COMSIG_MOB_DEATH, PROC_REF(handle_death))
+	INVOKE_ASYNC(buffed_tyranid, TYPE_PROC_REF(/mob/living/carbon/tyranid, emote), "roar2")
 	toggle_buff(TRUE)
 	return ..()
 
 /datum/status_effect/drone_enhancement/on_remove()
-	buffed_xeno.balloon_alert(buffed_xeno, "Enhancement inactive")
-	buffing_xeno.balloon_alert(buffing_xeno, "Enhancement inactive")
-	UnregisterSignal(buffed_xeno, COMSIG_MOB_DEATH)
-	UnregisterSignal(buffing_xeno, COMSIG_MOB_DEATH)
+	buffed_tyranid.balloon_alert(buffed_tyranid, "Enhancement inactive")
+	buffing_tyranid.balloon_alert(buffing_tyranid, "Enhancement inactive")
+	UnregisterSignal(buffed_tyranid, COMSIG_MOB_DEATH)
+	UnregisterSignal(buffing_tyranid, COMSIG_MOB_DEATH)
 	toggle_buff(FALSE)
 	return ..()
 
 /datum/status_effect/drone_enhancement/tick(delta_time)
-	var/within_range = get_dist(buffed_xeno, buffing_xeno) <= DRONE_ESSENCE_LINK_RANGE
+	var/within_range = get_dist(buffed_tyranid, buffing_tyranid) <= DRONE_ESSENCE_LINK_RANGE
 	if(within_range != was_within_range)
 		was_within_range = within_range
 		toggle_buff(was_within_range)
 
-	if(buffing_xeno.plasma_stored < ability_cost)
+	if(buffing_tyranid.plasma_stored < ability_cost)
 		enhancement_action.end_ability()
 		return
-	buffing_xeno.use_plasma(ability_cost)
+	buffing_tyranid.use_plasma(ability_cost)
 
 /// Toggles the buff on or off.
 /datum/status_effect/drone_enhancement/proc/toggle_buff(toggle)
 	if(!toggle)
-		buffed_xeno.xeno_melee_damage_modifier = initial(buffed_xeno.xeno_melee_damage_modifier)
-		buffed_xeno.remove_movespeed_modifier(MOVESPEED_ID_ENHANCEMENT)
+		buffed_tyranid.tyranid_melee_damage_modifier = initial(buffed_tyranid.tyranid_melee_damage_modifier)
+		buffed_tyranid.remove_movespeed_modifier(MOVESPEED_ID_ENHANCEMENT)
 		toggle_particles(FALSE)
 		return
-	buffed_xeno.xeno_melee_damage_modifier = enhancement_action.damage_multiplier
-	buffed_xeno.add_movespeed_modifier(MOVESPEED_ID_ENHANCEMENT, TRUE, 0, NONE, FALSE, enhancement_action.speed_addition)
+	buffed_tyranid.tyranid_melee_damage_modifier = enhancement_action.damage_multiplier
+	buffed_tyranid.add_movespeed_modifier(MOVESPEED_ID_ENHANCEMENT, TRUE, 0, NONE, FALSE, enhancement_action.speed_addition)
 	toggle_particles(TRUE)
 
 /// Toggles particles on or off, adjusting their positioning to fit the buff's owner.
 /datum/status_effect/drone_enhancement/proc/toggle_particles(toggle)
-	var/particle_x = abs(buffed_xeno.pixel_x)
+	var/particle_x = abs(buffed_tyranid.pixel_x)
 	if(!toggle)
 		QDEL_NULL(particle_holder)
 		return
-	particle_holder = new(buffed_xeno, /particles/drone_enhancement)
+	particle_holder = new(buffed_tyranid, /particles/drone_enhancement)
 	particle_holder.pixel_x = particle_x
 	particle_holder.pixel_y = -3
 
@@ -342,23 +342,23 @@
 	amount = min(amount * redirect_mod, remaining_health); \
 	amount_mod += amount
 
-/datum/status_effect/xeno_psychic_link
-	id = "xeno_psychic_link"
+/datum/status_effect/tyranid_psychic_link
+	id = "tyranid_psychic_link"
 	tick_interval = 2 SECONDS
-	///Xenomorph the owner is linked to
-	var/mob/living/carbon/xenomorph/target_mob
+	///Tyranid the owner is linked to
+	var/mob/living/carbon/tyranid/target_mob
 	///How far apart the linked mobs can be
 	var/link_range
 	///Percentage of damage to be redirected
 	var/redirect_mod
 	///Minimum health threshold before the effect is deactivated
 	var/minimum_health
-	///If the target xeno was within range
+	///If the target tyranid was within range
 	var/was_within_range = FALSE
-	/// The beam used to represent the link between linked xenos.
+	/// The beam used to represent the link between linked tyranids.
 	var/datum/beam/psylink_beam
 
-/datum/status_effect/xeno_psychic_link/on_creation(mob/living/new_owner, set_duration, mob/living/carbon/target_mob, link_range, redirect_mod, minimum_health, scaling = FALSE)
+/datum/status_effect/tyranid_psychic_link/on_creation(mob/living/new_owner, set_duration, mob/living/carbon/target_mob, link_range, redirect_mod, minimum_health, scaling = FALSE)
 	owner = new_owner
 	duration = set_duration
 	src.target_mob = target_mob
@@ -377,89 +377,89 @@
 		handle_dist()
 	else
 		link_toggle(TRUE)
-	to_chat(target_mob, span_xenonotice(link_message))
+	to_chat(target_mob, span_tyranidnotice(link_message))
 	return ..()
 
-/datum/status_effect/xeno_psychic_link/on_remove()
+/datum/status_effect/tyranid_psychic_link/on_remove()
 	. = ..()
-	UnregisterSignal(target_mob, list(COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE))
+	UnregisterSignal(target_mob, list(COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE))
 	REMOVE_TRAIT(target_mob, TRAIT_PSY_LINKED, TRAIT_STATUS_EFFECT(id))
 	REMOVE_TRAIT(owner, TRAIT_PSY_LINKED, TRAIT_STATUS_EFFECT(id))
 	owner.remove_filter(id)
 	target_mob.remove_filter(id)
 	QDEL_NULL(psylink_beam)
-	to_chat(target_mob, span_xenonotice("[owner] has unlinked from you."))
-	SEND_SIGNAL(src, COMSIG_XENO_PSYCHIC_LINK_REMOVED)
+	to_chat(target_mob, span_tyranidnotice("[owner] has unlinked from you."))
+	SEND_SIGNAL(src, COMSIG_TYRANID_PSYCHIC_LINK_REMOVED)
 
 ///Handles the link breaking due to dying
-/datum/status_effect/xeno_psychic_link/proc/handle_mob_dead(datum/source)
+/datum/status_effect/tyranid_psychic_link/proc/handle_mob_dead(datum/source)
 	SIGNAL_HANDLER
-	owner.remove_status_effect(STATUS_EFFECT_XENO_PSYCHIC_LINK)
+	owner.remove_status_effect(STATUS_EFFECT_TYRANID_PSYCHIC_LINK)
 
 ///Handles the link breaking due to distance
-/datum/status_effect/xeno_psychic_link/proc/handle_dist(datum/source)
+/datum/status_effect/tyranid_psychic_link/proc/handle_dist(datum/source)
 	SIGNAL_HANDLER
 	var/within_range = get_dist(owner, target_mob) <= link_range
 	if(within_range == was_within_range)
 		return
 	was_within_range = within_range
 	link_toggle(was_within_range)
-	to_chat(owner, was_within_range ? span_xenowarning("[target_mob] is within range again.") : span_xenowarning("[target_mob] is too far away."))
+	to_chat(owner, was_within_range ? span_tyranidwarning("[target_mob] is within range again.") : span_tyranidwarning("[target_mob] is too far away."))
 
 ///Handles the link toggling on and off
-/datum/status_effect/xeno_psychic_link/proc/link_toggle(toggle_on)
+/datum/status_effect/tyranid_psychic_link/proc/link_toggle(toggle_on)
 	if(toggle_on)
-		RegisterSignal(target_mob, COMSIG_XENOMORPH_BURN_DAMAGE, PROC_REF(handle_burn_damage))
-		RegisterSignal(target_mob, COMSIG_XENOMORPH_BRUTE_DAMAGE, PROC_REF(handle_brute_damage))
+		RegisterSignal(target_mob, COMSIG_TYRANID_BURN_DAMAGE, PROC_REF(handle_burn_damage))
+		RegisterSignal(target_mob, COMSIG_TYRANID_BRUTE_DAMAGE, PROC_REF(handle_brute_damage))
 		owner.add_filter(id, 2, outline_filter(2, PSYCHIC_LINK_COLOR))
 		target_mob.add_filter(id, 2, outline_filter(2, PSYCHIC_LINK_COLOR))
 		psylink_beam = owner.beam(target_mob, icon_state= "medbeam", beam_type = /obj/effect/ebeam/essence_link)
 		psylink_beam.visuals.alpha = 127
 		return
-	UnregisterSignal(target_mob, COMSIG_XENOMORPH_BURN_DAMAGE)
-	UnregisterSignal(target_mob, COMSIG_XENOMORPH_BRUTE_DAMAGE)
+	UnregisterSignal(target_mob, COMSIG_TYRANID_BURN_DAMAGE)
+	UnregisterSignal(target_mob, COMSIG_TYRANID_BRUTE_DAMAGE)
 	owner.remove_filter(id)
 	target_mob.remove_filter(id)
 	QDEL_NULL(psylink_beam)
 
 ///Transfers mitigated burn damage
-/datum/status_effect/xeno_psychic_link/proc/handle_burn_damage(datum/source, amount, list/amount_mod)
+/datum/status_effect/tyranid_psychic_link/proc/handle_burn_damage(datum/source, amount, list/amount_mod)
 	SIGNAL_HANDLER
 	CALC_DAMAGE_REDUCTION(amount, amount_mod)
-	var/mob/living/carbon/xenomorph/owner_xeno = owner
-	owner_xeno.adjustFireLoss(amount)
+	var/mob/living/carbon/tyranid/owner_tyranid = owner
+	owner_tyranid.adjustFireLoss(amount)
 	if(owner.health <= minimum_health)
-		owner.remove_status_effect(STATUS_EFFECT_XENO_PSYCHIC_LINK)
+		owner.remove_status_effect(STATUS_EFFECT_TYRANID_PSYCHIC_LINK)
 
 ///Transfers mitigated brute damage
-/datum/status_effect/xeno_psychic_link/proc/handle_brute_damage(datum/source, amount, list/amount_mod)
+/datum/status_effect/tyranid_psychic_link/proc/handle_brute_damage(datum/source, amount, list/amount_mod)
 	SIGNAL_HANDLER
 	CALC_DAMAGE_REDUCTION(amount, amount_mod)
-	var/mob/living/carbon/xenomorph/owner_xeno = owner
-	owner_xeno.adjustBruteLoss(amount)
+	var/mob/living/carbon/tyranid/owner_tyranid = owner
+	owner_tyranid.adjustBruteLoss(amount)
 	if(owner.health <= minimum_health)
-		owner.remove_status_effect(STATUS_EFFECT_XENO_PSYCHIC_LINK)
+		owner.remove_status_effect(STATUS_EFFECT_TYRANID_PSYCHIC_LINK)
 
 #undef PSYCHIC_LINK_COLOR
 #undef CALC_DAMAGE_REDUCTION
 
 ///Calculates the effectiveness of parts of the status based on plasma of owner
-#define CALC_PLASMA_MOD(xeno) \
-	(clamp(1 - xeno.plasma_stored / owner_xeno.xeno_caste.plasma_max, 0.2, 0.8) + 0.2)
+#define CALC_PLASMA_MOD(tyranid) \
+	(clamp(1 - tyranid.plasma_stored / owner_tyranid.tyranid_caste.plasma_max, 0.2, 0.8) + 0.2)
 #define HIGN_THRESHOLD 0.6
 #define KNOCKDOWN_DURATION 1 SECONDS
 
 // ***************************************
 // *********** Carnage
 // ***************************************
-/atom/movable/screen/alert/status_effect/xeno_carnage
+/atom/movable/screen/alert/status_effect/tyranid_carnage
 	name = "Carnage"
 	desc = "Your attacks restore health."
-	icon_state = "xeno_carnage"
+	icon_state = "tyranid_carnage"
 
-/datum/status_effect/xeno_carnage
-	id = "xeno_carnage"
-	alert_type = /atom/movable/screen/alert/status_effect/xeno_carnage
+/datum/status_effect/tyranid_carnage
+	id = "tyranid_carnage"
+	alert_type = /atom/movable/screen/alert/status_effect/tyranid_carnage
 	///Effects modifier based on plasma amount on status application
 	var/plasma_mod
 	///Plasma gain on attack
@@ -467,20 +467,20 @@
 	///Health or overhealing received on attack
 	var/healing_on_hit
 
-/datum/status_effect/xeno_carnage/on_creation(mob/living/new_owner, set_duration, plasma_gain, healing, movement_speed_max)
+/datum/status_effect/tyranid_carnage/on_creation(mob/living/new_owner, set_duration, plasma_gain, healing, movement_speed_max)
 	owner = new_owner
 	duration = set_duration
 
-	var/mob/living/carbon/xenomorph/owner_xeno = owner
-	plasma_mod = CALC_PLASMA_MOD(owner_xeno)
+	var/mob/living/carbon/tyranid/owner_tyranid = owner
+	plasma_mod = CALC_PLASMA_MOD(owner_tyranid)
 
 	plasma_gain_on_hit = plasma_gain * plasma_mod
 	healing_on_hit = healing * plasma_mod
-	owner_xeno.add_movespeed_modifier(MOVESPEED_ID_GORGER_CARNAGE, TRUE, 0, NONE, TRUE, movement_speed_max * plasma_mod)
+	owner_tyranid.add_movespeed_modifier(MOVESPEED_ID_GORGER_CARNAGE, TRUE, 0, NONE, TRUE, movement_speed_max * plasma_mod)
 
 	to_chat(owner, span_notice("We give into our thirst!"))
-	owner_xeno.emote("roar")
-	RegisterSignal(owner, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(carnage_slash))
+	owner_tyranid.emote("roar")
+	RegisterSignal(owner, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(carnage_slash))
 
 	owner.add_filter(id, 5, rays_filter(size = 25, color = "#c50021", offset = 200, density = 50, y = 7))
 	if(plasma_mod >= HIGN_THRESHOLD)
@@ -488,47 +488,47 @@
 
 	return ..()
 
-/datum/status_effect/xeno_carnage/on_remove()
+/datum/status_effect/tyranid_carnage/on_remove()
 	. = ..()
 	owner.remove_movespeed_modifier(MOVESPEED_ID_GORGER_CARNAGE)
 	to_chat(owner, span_notice("Our bloodlust subsides..."))
-	UnregisterSignal(owner, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(carnage_slash))
+	UnregisterSignal(owner, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(carnage_slash))
 	owner.remove_filter(list(id, "[id]m"))
 	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, src)
 
 ///Calls slash proc
-/datum/status_effect/xeno_carnage/proc/carnage_slash(datum/source, mob/living/target, damage)
+/datum/status_effect/tyranid_carnage/proc/carnage_slash(datum/source, mob/living/target, damage)
 	SIGNAL_HANDLER
 	if(!ishuman(target) || issynth(target))
 		return
-	UnregisterSignal(owner, COMSIG_XENOMORPH_ATTACK_LIVING)
+	UnregisterSignal(owner, COMSIG_TYRANID_ATTACK_LIVING)
 	INVOKE_ASYNC(src, PROC_REF(do_carnage_slash), source, target, damage)
 
 ///Performs on-attack logic
-/datum/status_effect/xeno_carnage/proc/do_carnage_slash(datum/source, mob/living/target, damage)
-	var/mob/living/carbon/xenomorph/owner_xeno = owner
+/datum/status_effect/tyranid_carnage/proc/do_carnage_slash(datum/source, mob/living/target, damage)
+	var/mob/living/carbon/tyranid/owner_tyranid = owner
 	var/owner_heal = healing_on_hit
-	HEAL_XENO_DAMAGE(owner_xeno, owner_heal, FALSE)
-	adjustOverheal(owner_xeno, owner_heal * 0.5)
+	HEAL_TYRANID_DAMAGE(owner_tyranid, owner_heal, FALSE)
+	adjustOverheal(owner_tyranid, owner_heal * 0.5)
 
 	if(plasma_mod >= HIGN_THRESHOLD)
-		owner_xeno.AdjustImmobilized(KNOCKDOWN_DURATION)
-		ADD_TRAIT(owner_xeno, TRAIT_HANDS_BLOCKED, src)
+		owner_tyranid.AdjustImmobilized(KNOCKDOWN_DURATION)
+		ADD_TRAIT(owner_tyranid, TRAIT_HANDS_BLOCKED, src)
 		target.AdjustKnockdown(KNOCKDOWN_DURATION)
 
-		if(do_after(owner_xeno, KNOCKDOWN_DURATION, IGNORE_HELD_ITEM, target))
-			owner_xeno.gain_plasma(plasma_gain_on_hit)
+		if(do_after(owner_tyranid, KNOCKDOWN_DURATION, IGNORE_HELD_ITEM, target))
+			owner_tyranid.gain_plasma(plasma_gain_on_hit)
 
-	if(owner_xeno.has_status_effect(STATUS_EFFECT_XENO_FEAST))
-		for(var/mob/living/carbon/xenomorph/target_xeno AS in cheap_get_xenos_near(owner_xeno, 4))
-			if(target_xeno == owner_xeno)
+	if(owner_tyranid.has_status_effect(STATUS_EFFECT_TYRANID_FEAST))
+		for(var/mob/living/carbon/tyranid/target_tyranid AS in cheap_get_tyranids_near(owner_tyranid, 4))
+			if(target_tyranid == owner_tyranid)
 				continue
 			var/heal_amount = healing_on_hit
-			HEAL_XENO_DAMAGE(target_xeno, heal_amount, FALSE)
-			new /obj/effect/temp_visual/telekinesis(get_turf(target_xeno))
-			to_chat(target_xeno, span_notice("You feel your wounds being restored by [owner_xeno]'s pheromones."))
+			HEAL_TYRANID_DAMAGE(target_tyranid, heal_amount, FALSE)
+			new /obj/effect/temp_visual/telekinesis(get_turf(target_tyranid))
+			to_chat(target_tyranid, span_notice("You feel your wounds being restored by [owner_tyranid]'s pheromones."))
 
-	owner_xeno.remove_status_effect(STATUS_EFFECT_XENO_CARNAGE)
+	owner_tyranid.remove_status_effect(STATUS_EFFECT_TYRANID_CARNAGE)
 
 #undef CALC_PLASMA_MOD
 #undef HIGN_THRESHOLD
@@ -537,39 +537,39 @@
 // ***************************************
 // *********** Feast
 // ***************************************
-/atom/movable/screen/alert/status_effect/xeno_feast
+/atom/movable/screen/alert/status_effect/tyranid_feast
 	name = "Feast"
 	desc = "Your health is being restored at the cost of plasma."
-	icon_state = "xeno_feast"
+	icon_state = "tyranid_feast"
 
-/datum/status_effect/xeno_feast
-	id = "xeno_feast"
-	alert_type = /atom/movable/screen/alert/status_effect/xeno_feast
+/datum/status_effect/tyranid_feast
+	id = "tyranid_feast"
+	alert_type = /atom/movable/screen/alert/status_effect/tyranid_feast
 	///Amount of plasma drained per tick, removes effect if available plasma is less
 	var/plasma_drain
 
-/datum/status_effect/xeno_feast/on_creation(mob/living/new_owner, set_duration, plasma_drain)
+/datum/status_effect/tyranid_feast/on_creation(mob/living/new_owner, set_duration, plasma_drain)
 	owner = new_owner
 	duration = set_duration
 	src.plasma_drain = plasma_drain
-	owner.overlay_fullscreen("xeno_feast", /atom/movable/screen/fullscreen/animated/bloodlust)
+	owner.overlay_fullscreen("tyranid_feast", /atom/movable/screen/fullscreen/animated/bloodlust)
 	owner.add_filter("[id]2", 2, outline_filter(2, "#61132360"))
 	owner.add_filter("[id]1", 1, wave_filter(0.72, 0.24, 0.4, 0.5))
 	return ..()
 
-/datum/status_effect/xeno_feast/on_remove()
+/datum/status_effect/tyranid_feast/on_remove()
 	. = ..()
-	owner.clear_fullscreen("xeno_feast", 0.7 SECONDS)
+	owner.clear_fullscreen("tyranid_feast", 0.7 SECONDS)
 	owner.remove_filter(list("[id]1", "[id]2"))
 
-/datum/status_effect/xeno_feast/tick(delta_time)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/status_effect/tyranid_feast/tick(delta_time)
+	var/mob/living/carbon/tyranid/X = owner
 	if(X.plasma_stored < plasma_drain)
 		to_chat(X, span_notice("Our feast has come to an end..."))
-		X.remove_status_effect(STATUS_EFFECT_XENO_FEAST)
+		X.remove_status_effect(STATUS_EFFECT_TYRANID_FEAST)
 		return
 	var/heal_amount = X.maxHealth * 0.08
-	HEAL_XENO_DAMAGE(X, heal_amount, FALSE)
+	HEAL_TYRANID_DAMAGE(X, heal_amount, FALSE)
 	adjustOverheal(X, heal_amount / 2)
 	X.use_plasma(plasma_drain)
 
@@ -585,8 +585,8 @@
 	var/bonus_regen
 
 /datum/status_effect/plasma_surge/on_creation(mob/living/new_owner, flat_amount_restored, bonus_regen, set_duration)
-	if(!isxeno(new_owner))
-		CRASH("Plasma surge was applied on a nonxeno, dont do that")
+	if(!istyranid(new_owner))
+		CRASH("Plasma surge was applied on a nontyranid, dont do that")
 	duration = set_duration
 	src.flat_amount_restored = flat_amount_restored
 	src.bonus_regen = bonus_regen
@@ -595,26 +595,26 @@
 /datum/status_effect/plasma_surge/on_apply()
 	. = ..()
 	owner.add_filter("plasma_surge_infusion_outline", 3, outline_filter(1, COLOR_CYAN))
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	X.gain_plasma(flat_amount_restored)
 	if(!bonus_regen)
 		qdel(src)
 	else
-		RegisterSignal(owner, COMSIG_XENOMORPH_PLASMA_REGEN, PROC_REF(plasma_surge_regeneration))
+		RegisterSignal(owner, COMSIG_TYRANID_PLASMA_REGEN, PROC_REF(plasma_surge_regeneration))
 
-/datum/status_effect/plasma_surge/proc/plasma_surge_regeneration(mob/living/carbon/xenomorph/xeno, plasma_mod, seconds_per_tick)
+/datum/status_effect/plasma_surge/proc/plasma_surge_regeneration(mob/living/carbon/tyranid/tyranid, plasma_mod, seconds_per_tick)
 	SIGNAL_HANDLER
 
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	if(HAS_TRAIT(X,TRAIT_NOPLASMAREGEN)) //No bonus plasma if you're on a diet
 		return
-	var/bonus_plasma = X.xeno_caste.plasma_gain * bonus_regen * (1 + X.recovery_aura * 0.05) * seconds_per_tick * XENO_PER_SECOND_LIFE_MOD //Recovery aura multiplier; 5% bonus per full level
+	var/bonus_plasma = X.tyranid_caste.plasma_gain * bonus_regen * (1 + X.recovery_aura * 0.05) * seconds_per_tick * TYRANID_PER_SECOND_LIFE_MOD //Recovery aura multiplier; 5% bonus per full level
 	X.gain_plasma(bonus_plasma)
 
 /datum/status_effect/plasma_surge/on_remove()
 	. = ..()
 	owner.remove_filter("plasma_surge_infusion_outline")
-	UnregisterSignal(owner, COMSIG_XENOMORPH_PLASMA_REGEN)
+	UnregisterSignal(owner, COMSIG_TYRANID_PLASMA_REGEN)
 
 /atom/movable/screen/alert/status_effect/plasma_surge
 	name = "Plasma Surge"
@@ -634,8 +634,8 @@
 	var/sunder_ticks_remaining
 
 /datum/status_effect/healing_infusion/on_creation(mob/living/new_owner, set_duration = HIVELORD_HEALING_INFUSION_DURATION, stacks_to_apply = HIVELORD_HEALING_INFUSION_TICKS)
-	if(!isxeno(new_owner))
-		CRASH("something applied [id] on a nonxeno, dont do that")
+	if(!istyranid(new_owner))
+		CRASH("something applied [id] on a nontyranid, dont do that")
 
 	duration = set_duration
 	owner = new_owner
@@ -650,13 +650,13 @@
 		return
 	ADD_TRAIT(owner, TRAIT_HEALING_INFUSION, TRAIT_STATUS_EFFECT(id))
 	owner.add_filter("hivelord_healing_infusion_outline", 3, outline_filter(1, COLOR_VERY_PALE_LIME_GREEN)) //Set our cool aura; also confirmation we have the buff
-	RegisterSignal(owner, COMSIG_XENOMORPH_HEALTH_REGEN, PROC_REF(healing_infusion_regeneration)) //Register so we apply the effect whenever the target heals
-	RegisterSignal(owner, COMSIG_XENOMORPH_SUNDER_REGEN, PROC_REF(healing_infusion_sunder_regeneration)) //Register so we apply the effect whenever the target heals
+	RegisterSignal(owner, COMSIG_TYRANID_HEALTH_REGEN, PROC_REF(healing_infusion_regeneration)) //Register so we apply the effect whenever the target heals
+	RegisterSignal(owner, COMSIG_TYRANID_SUNDER_REGEN, PROC_REF(healing_infusion_sunder_regeneration)) //Register so we apply the effect whenever the target heals
 
 /datum/status_effect/healing_infusion/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_HEALING_INFUSION, TRAIT_STATUS_EFFECT(id))
 	owner.remove_filter("hivelord_healing_infusion_outline")
-	UnregisterSignal(owner, list(COMSIG_XENOMORPH_HEALTH_REGEN, COMSIG_XENOMORPH_SUNDER_REGEN))
+	UnregisterSignal(owner, list(COMSIG_TYRANID_HEALTH_REGEN, COMSIG_TYRANID_SUNDER_REGEN))
 
 	new /obj/effect/temp_visual/telekinesis(get_turf(owner)) //Wearing off VFX
 	new /obj/effect/temp_visual/healing(get_turf(owner))
@@ -666,8 +666,8 @@
 
 	return ..()
 
-///Called when the target xeno regains HP via heal_wounds in life.dm
-/datum/status_effect/healing_infusion/proc/healing_infusion_regeneration(mob/living/carbon/xenomorph/patient, heal_data, seconds_per_tick)
+///Called when the target tyranid regains HP via heal_wounds in life.dm
+/datum/status_effect/healing_infusion/proc/healing_infusion_regeneration(mob/living/carbon/tyranid/patient, heal_data, seconds_per_tick)
 	SIGNAL_HANDLER
 
 	if(!health_ticks_remaining)
@@ -678,7 +678,7 @@
 
 	new /obj/effect/temp_visual/healing(get_turf(patient)) //Cool SFX
 
-	var/total_heal_amount = 6 + (patient.maxHealth * 0.03) * seconds_per_tick * XENO_PER_SECOND_LIFE_MOD //Base amount 6 HP plus 3% of max
+	var/total_heal_amount = 6 + (patient.maxHealth * 0.03) * seconds_per_tick * TYRANID_PER_SECOND_LIFE_MOD //Base amount 6 HP plus 3% of max
 	if(patient.recovery_aura)
 		total_heal_amount *= (1 + patient.recovery_aura * 0.05) //Recovery aura multiplier; 5% bonus per full level
 
@@ -696,8 +696,8 @@
 		patient.adjustFireLoss(-burn_amount, updating_health = TRUE)
 
 
-///Called when the target xeno regains Sunder via heal_wounds in life.dm
-/datum/status_effect/healing_infusion/proc/healing_infusion_sunder_regeneration(mob/living/carbon/xenomorph/patient, seconds_per_tick)
+///Called when the target tyranid regains Sunder via heal_wounds in life.dm
+/datum/status_effect/healing_infusion/proc/healing_infusion_sunder_regeneration(mob/living/carbon/tyranid/patient, seconds_per_tick)
 	SIGNAL_HANDLER
 
 	if(!sunder_ticks_remaining)
@@ -711,7 +711,7 @@
 
 	new /obj/effect/temp_visual/telekinesis(get_turf(patient)) //Visual confirmation
 
-	patient.adjust_sunder(-1.5 * (1 + patient.recovery_aura * 0.05) * seconds_per_tick * XENO_PER_SECOND_LIFE_MOD) //5% bonus per rank of our recovery aura
+	patient.adjust_sunder(-1.5 * (1 + patient.recovery_aura * 0.05) * seconds_per_tick * TYRANID_PER_SECOND_LIFE_MOD) //5% bonus per rank of our recovery aura
 
 /atom/movable/screen/alert/status_effect/healing_infusion
 	name = "Healing Infusion"
@@ -731,9 +731,9 @@
 	var/obj/effect/abstract/particle_holder/particle_holder
 
 /datum/status_effect/drain_surge/on_apply()
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return FALSE
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	X.soft_armor = X.soft_armor.modifyAllRatings(SENTINEL_DRAIN_SURGE_ARMOR_MOD)
 	X.visible_message(span_danger("[X]'s chitin glows with a vicious green!"), \
 	span_notice("You imbue your chitinous armor with the toxins of your victim!"), null, 5)
@@ -744,7 +744,7 @@
 	return TRUE
 
 /datum/status_effect/drain_surge/on_remove()
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	X.soft_armor = X.soft_armor.modifyAllRatings(-SENTINEL_DRAIN_SURGE_ARMOR_MOD)
 	X.visible_message(span_danger("[X]'s chitin loses its green glow..."), \
 	span_notice("Your chitinous armor loses its glow."), null, 5)
@@ -780,22 +780,22 @@
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
 	/// The owner of this buff.
-	var/mob/living/carbon/xenomorph/buff_owner
+	var/mob/living/carbon/tyranid/buff_owner
 	///Aura strength of the puppeteer who gave this effect
 	var/strength = 1
 	///weakref to the puppeteer to set strength
 	var/datum/weakref/puppeteer
 
 /datum/status_effect/blessing/tick(delta_time)
-	var/mob/living/carbon/xenomorph/xeno = puppeteer?.resolve()
-	if(!xeno)
+	var/mob/living/carbon/tyranid/tyranid = puppeteer?.resolve()
+	if(!tyranid)
 		return
-	strength = xeno.xeno_caste.aura_strength
+	strength = tyranid.tyranid_caste.aura_strength
 
-/datum/status_effect/blessing/on_creation(mob/living/new_owner, mob/living/carbon/xenomorph/caster)
+/datum/status_effect/blessing/on_creation(mob/living/new_owner, mob/living/carbon/tyranid/caster)
 	owner = new_owner
 	puppeteer = WEAKREF(caster)
-	strength = caster.xeno_caste.aura_strength
+	strength = caster.tyranid_caste.aura_strength
 	return ..()
 
 /datum/status_effect/blessing/frenzy
@@ -803,7 +803,7 @@
 
 /datum/status_effect/blessing/frenzy/on_apply()
 	buff_owner = owner
-	if(!isxeno(buff_owner))
+	if(!istyranid(buff_owner))
 		return FALSE
 	buff_owner.add_movespeed_modifier(type, TRUE, 0, NONE, TRUE, strength * -0.2)
 	return TRUE
@@ -814,19 +814,19 @@
 
 /datum/status_effect/blessing/fury
 	id = "blessing of fury"
-	///the modifier we apply to the xenos melee damage modifier
+	///the modifier we apply to the tyranids melee damage modifier
 	var/modifier
 
 /datum/status_effect/blessing/fury/on_apply()
 	buff_owner = owner
-	if(!isxeno(buff_owner))
+	if(!istyranid(buff_owner))
 		return FALSE
 	modifier = strength * 0.07
-	buff_owner.xeno_melee_damage_modifier += modifier
+	buff_owner.tyranid_melee_damage_modifier += modifier
 	return TRUE
 
 /datum/status_effect/blessing/fury/on_remove()
-	buff_owner.xeno_melee_damage_modifier -= modifier
+	buff_owner.tyranid_melee_damage_modifier -= modifier
 	return ..()
 
 /datum/status_effect/blessing/warding
@@ -836,7 +836,7 @@
 
 /datum/status_effect/blessing/warding/on_apply()
 	buff_owner = owner
-	if(!isxeno(buff_owner))
+	if(!istyranid(buff_owner))
 		return FALSE
 	armor_modifier = buff_owner.soft_armor.scaleAllRatings(strength * 2.7)
 	buff_owner.soft_armor = buff_owner.soft_armor.attachArmor(armor_modifier)
@@ -859,15 +859,15 @@
 	var/modifier = 0.1
 
 /datum/status_effect/frenzy_screech/on_apply()
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return FALSE
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.xeno_melee_damage_modifier += modifier
-	xeno_owner.add_filter("frenzy_screech_outline", 3, outline_filter(1, COLOR_VIVID_RED))
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.tyranid_melee_damage_modifier += modifier
+	tyranid_owner.add_filter("frenzy_screech_outline", 3, outline_filter(1, COLOR_VIVID_RED))
 	return TRUE
 
 /datum/status_effect/frenzy_screech/on_remove()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.xeno_melee_damage_modifier -= modifier
-	xeno_owner.remove_filter("frenzy_screech_outline")
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.tyranid_melee_damage_modifier -= modifier
+	tyranid_owner.remove_filter("frenzy_screech_outline")
 	return ..()

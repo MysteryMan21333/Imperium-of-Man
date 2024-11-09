@@ -1,10 +1,10 @@
 //items designed as weapon
 /obj/item/weapon
 	name = "weapon"
-	icon = 'icons/obj/items/weapons/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/misc.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/melee_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/melee_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/melee_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/melee_right.dmi',
 	)
 	hitsound = SFX_SWING_HIT
 	var/caliber = "missing from codex" //codex

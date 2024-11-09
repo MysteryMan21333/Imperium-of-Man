@@ -1,6 +1,6 @@
 /obj/machinery/recharger
 	name = "recharger"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "recharger"
 	anchored = TRUE
 	use_power = IDLE_POWER_USE

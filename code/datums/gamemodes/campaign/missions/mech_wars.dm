@@ -57,9 +57,9 @@
 	if(message)
 		return ..()
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
-			message = "Heavy mechanised hostile units closing on the AO! Smash their mechs into junk marines!"
-		if(FACTION_SOM)
+		if(FACTION_IMPERIUM)
+			message = "Heavy mechanised hostile units closing on the AO! Smash their mechs into junk guardsmans!"
+		if(FACTION_CHAOS)
 			message = "Terran mechanised units confirmed in the AO. Move in and wipe them out, for the glory of Mars!"
 	return ..()
 
@@ -77,8 +77,8 @@
 
 	for(var/faction in list(starting_faction, hostile_faction))
 		for(var/i=1 to mechs_to_spawn + tanks_to_spawn)
-			if(faction == FACTION_SOM)
-				new /obj/item/storage/holster/backholster/rpg/som/heat(get_turf(pick(GLOB.campaign_reward_spawners[faction])))
+			if(faction == FACTION_CHAOS)
+				new /obj/item/storage/holster/backholster/rpg/chaos/heat(get_turf(pick(GLOB.campaign_reward_spawners[faction])))
 			else
 				new /obj/item/storage/holster/backholster/rpg/heam(get_turf(pick(GLOB.campaign_reward_spawners[faction])))
 
@@ -99,13 +99,13 @@
 /datum/campaign_mission/tdm/mech_wars/apply_minor_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 
 /datum/campaign_mission/tdm/mech_wars/apply_major_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	winning_team.add_asset(/datum/campaign_asset/mech/light/som)
-	winning_team.add_asset(/datum/campaign_asset/mech/som)
+	winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
+	winning_team.add_asset(/datum/campaign_asset/mech/chaos)
 
 /datum/campaign_mission/tdm/mech_wars/remove_mission_object(obj/mission_obj)
 	. = ..()
@@ -125,7 +125,7 @@
 		hostile_team_cap_points += kill_reward
 
 
-/datum/campaign_mission/tdm/mech_wars/som
+/datum/campaign_mission/tdm/mech_wars/chaos
 	map_name = "Big Red"
 	map_file = '_maps/map_files/BigRed_v2/BigRed_v2.dmm'
 	map_traits = list(ZTRAIT_AWAY = TRUE, ZTRAIT_SANDSTORM = TRUE)
@@ -133,23 +133,23 @@
 	map_light_levels = list(225, 150, 100, 75)
 	map_armor_color = MAP_ARMOR_STYLE_DESERT
 
-/datum/campaign_mission/tdm/mech_wars/som/apply_major_victory()
+/datum/campaign_mission/tdm/mech_wars/chaos/apply_major_victory()
 	winning_faction = starting_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[starting_faction]
-	winning_team.add_asset(/datum/campaign_asset/mech/light/som)
-	winning_team.add_asset(/datum/campaign_asset/mech/som)
+	winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
+	winning_team.add_asset(/datum/campaign_asset/mech/chaos)
 
-/datum/campaign_mission/tdm/mech_wars/som/apply_minor_victory()
+/datum/campaign_mission/tdm/mech_wars/chaos/apply_minor_victory()
 	winning_faction = starting_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[starting_faction]
-	winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 
-/datum/campaign_mission/tdm/mech_wars/som/apply_minor_loss()
+/datum/campaign_mission/tdm/mech_wars/chaos/apply_minor_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
 	winning_team.add_asset(/datum/campaign_asset/mech/light)
 
-/datum/campaign_mission/tdm/mech_wars/som/apply_major_loss()
+/datum/campaign_mission/tdm/mech_wars/chaos/apply_major_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
 	winning_team.add_asset(/datum/campaign_asset/mech/light)

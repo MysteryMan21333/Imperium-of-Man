@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	/datum/hallucination/sounds = 100,
 	/datum/hallucination/chat = 50,
 	/datum/hallucination/battle = 20,
-	/datum/hallucination/xeno_attack = 8,
+	/datum/hallucination/tyranid_attack = 8,
 ))
 
 
@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	var/mob/living/carbon/target = null
 
 /obj/effect/hallucination/simple
-	icon = 'icons/Xeno/castes/runner.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/runner.dmi'
 	icon_state = "Runner Walking"
 	var/px = 0
 	var/py = 0
@@ -123,30 +123,30 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	active = FALSE
 	return ..()
 
-/obj/effect/hallucination/simple/xeno
+/obj/effect/hallucination/simple/tyranid
 	name = "Mature Runner"
 	desc = "A small red alien that looks like it could run fairly quickly..."
-	icon = 'icons/Xeno/castes/runner.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/runner.dmi'
 	icon_state = "Runner Walking"
 
-/obj/effect/hallucination/simple/xeno/Initialize(mapload, mob/living/carbon/T)
+/obj/effect/hallucination/simple/tyranid/Initialize(mapload, mob/living/carbon/T)
 	. = ..()
 	name = "Mature Runner ([rand(100, 999)])"
 
-/obj/effect/hallucination/simple/xeno/throw_impact(atom/hit_atom, speed)
+/obj/effect/hallucination/simple/tyranid/throw_impact(atom/hit_atom, speed)
 	. = ..()
 	if(!.)
 		return
 	if(hit_atom == target && target.stat != DEAD)
 		target.Paralyze(3 SECONDS, TRUE, TRUE)
-		target.visible_message(span_danger("[target] flails around wildly."),span_xenowarning("\The [src] pounces at [target]!"))
+		target.visible_message(span_danger("[target] flails around wildly."),span_tyranidwarning("\The [src] pounces at [target]!"))
 
-/datum/hallucination/xeno_attack
-	//Xeno crawls from nearby vent,jumps at you, and goes back in
+/datum/hallucination/tyranid_attack
+	//Tyranid crawls from nearby vent,jumps at you, and goes back in
 	var/obj/machinery/atmospherics/components/unary/vent_pump/pump = null
-	var/obj/effect/hallucination/simple/xeno/xeno = null
+	var/obj/effect/hallucination/simple/tyranid/tyranid = null
 
-/datum/hallucination/xeno_attack/New(mob/living/carbon/C, forced = TRUE)
+/datum/hallucination/tyranid_attack/New(mob/living/carbon/C, forced = TRUE)
 	set waitfor = FALSE
 	..()
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/U in orange(3, target))
@@ -154,18 +154,18 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			pump = U
 			break
 	if(pump)
-		xeno = new(pump.loc, target)
+		tyranid = new(pump.loc, target)
 		playsound(src, SFX_ALIEN_VENTPASS, 35, 1)
 		sleep(1 SECONDS)
-		xeno.throw_at(target, 7, 1, xeno, FALSE, TRUE)
+		tyranid.throw_at(target, 7, 1, tyranid, FALSE, TRUE)
 		sleep(1 SECONDS)
-		xeno.throw_at(pump.loc, 7, 1, xeno, FALSE, TRUE)
+		tyranid.throw_at(pump.loc, 7, 1, tyranid, FALSE, TRUE)
 		sleep(1 SECONDS)
-		to_chat(target, span_notice("[xeno.name] begins climbing into the ventilation system..."))
+		to_chat(target, span_notice("[tyranid.name] begins climbing into the ventilation system..."))
 		sleep(1.5 SECONDS)
-		to_chat(target, span_notice("[xeno.name] scrambles into the ventilation ducts!"))
+		to_chat(target, span_notice("[tyranid.name] scrambles into the ventilation ducts!"))
 		playsound(src, SFX_ALIEN_VENTPASS, 35, 1)
-		qdel(xeno)
+		qdel(tyranid)
 	qdel(src)
 
 /datum/hallucination/battle
@@ -175,9 +175,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	..()
 	var/turf/source = random_far_turf()
 	if(!battle_type)
-		battle_type = pick("xeno")
+		battle_type = pick("tyranid")
 	switch(battle_type)
-		if("xeno")
+		if("tyranid")
 			var/hits = 0
 			for(var/i in 1 to rand(5, 10))
 				target.playsound_local(source, SFX_ALIEN_CLAW_FLESH, 25, TRUE)
@@ -234,7 +234,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(copytext(chosen, 1, 6) == "#slur") // 6 = #slur length
 			chosen = slur(copytext(chosen, 6))
 
-		var/image/speech_overlay = image('icons/mob/talk.dmi', person, "default0", layer = ABOVE_MOB_LAYER)
+		var/image/speech_overlay = image('modular_imperium/master_files/icons/mob/talk.dmi', person, "default0", layer = ABOVE_MOB_LAYER)
 		var/message = target.compose_message(person, understood_language, chosen, null, list(person.speech_span), face_name = TRUE)
 		to_chat(target, message)
 		if(target.client)
@@ -313,7 +313,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			fakemob = target //ever been so lonely you had to haunt yourself?
 		if(fakemob)
 			sleep(rand(20, 50))
-			to_chat(target, span_deadsay("<b>DEAD: [fakemob.name]</b> says, \"[pick("rip","why did i just drop dead?","hey [target.real_name]","git gud","you too?","did we get the [pick("nuke", "blue disk", "red disk", "green disk", "yellow disk")]?","i[prob(50)?" fucking":""] hate [pick("runners", "queens", "shrikes", "xenos", "this", "myself", "admins", "you")]")]\""))
+			to_chat(target, span_deadsay("<b>DEAD: [fakemob.name]</b> says, \"[pick("rip","why did i just drop dead?","hey [target.real_name]","git gud","you too?","did we get the [pick("nuke", "blue disk", "red disk", "green disk", "yellow disk")]?","i[prob(50)?" fucking":""] hate [pick("runners", "queens", "shrikes", "tyranids", "this", "myself", "admins", "you")]")]\""))
 	sleep(rand(7 SECONDS, 9 SECONDS))
 	target.set_screwyhud(SCREWYHUD_NONE)
 	target.SetSleeping(0)

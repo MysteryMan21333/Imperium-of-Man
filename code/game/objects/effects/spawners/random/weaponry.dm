@@ -30,9 +30,9 @@
 		/obj/item/weapon/gun/shotgun/double/derringer,
 		/obj/item/weapon/gun/rifle/pepperball,
 		/obj/item/weapon/gun/shotgun/pump/lever/repeater,
-		/obj/item/weapon/gun/shotgun/double/marine,
+		/obj/item/weapon/gun/shotgun/double/guardsman,
 		/obj/item/weapon/gun/rifle/standard_autoshotgun,
-		/obj/item/weapon/gun/shotgun/combat/standardmarine,
+		/obj/item/weapon/gun/shotgun/combat/standardguardsman,
 	)
 
 
@@ -44,9 +44,9 @@
 		/obj/item/weapon/gun/shotgun/pump/lever/repeater,
 		/obj/item/weapon/gun/shotgun/pump/bolt/unscoped,
 		/obj/item/weapon/gun/shotgun/pump/cmb,
-		/obj/item/weapon/gun/shotgun/double/marine,
+		/obj/item/weapon/gun/shotgun/double/guardsman,
 		/obj/item/weapon/gun/rifle/standard_autoshotgun,
-		/obj/item/weapon/gun/shotgun/combat/standardmarine,
+		/obj/item/weapon/gun/shotgun/combat/standardguardsman,
 		/obj/item/weapon/gun/shotgun/pump/t35,
 	)
 
@@ -54,11 +54,11 @@
 	name = "Random energy gun spawner"
 	icon_state = "random_egun"
 	loot = list(
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = 25,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = 25,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = 25,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = 25,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = 25,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle = 25,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_sniper = 25,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine = 25,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser = 25,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol = 25,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/tesla = 5,
 		/obj/item/weapon/gun/energy/lasgun/M43 = 5,
 	)
@@ -159,7 +159,7 @@
 		/obj/item/ammo_magazine/rifle/tx15_slug,
 	)
 
-///for specific ranged weapon ammo spawners we don't spawn anything that marines couldn't get back on their ship
+///for specific ranged weapon ammo spawners we don't spawn anything that guardsmans couldn't get back on their ship
 
 ///random shotgun ammunition
 /obj/effect/spawner/random/weaponry/ammo/shotgun

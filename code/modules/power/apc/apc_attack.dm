@@ -1,10 +1,10 @@
-/obj/machinery/power/apc/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/power/apc/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
 	if(effects)
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-		xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+		tyranid_attacker.visible_message(span_danger("[tyranid_attacker] slashes \the [src]!"), \
 		span_danger("We slash \the [src]!"), null, 5)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
 
@@ -19,8 +19,8 @@
 		wires.cut_all()
 		update_appearance()
 		visible_message(span_danger("\The [src]'s wires snap apart in a rain of sparks!"), null, null, 5)
-		if(xeno_attacker.client)
-			var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[xeno_attacker.ckey]
+		if(tyranid_attacker.client)
+			var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[tyranid_attacker.ckey]
 			personal_statistics.apcs_slashed++
 	else
 		beenhit += 1

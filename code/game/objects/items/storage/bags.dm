@@ -16,7 +16,7 @@
 
 //  Generic non-item
 /obj/item/storage/bag
-	icon = 'icons/obj/items/storage/bag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/bag.dmi'
 	equip_slot_flags = ITEM_SLOT_BELT
 	storage_type = /datum/storage/bag
 
@@ -51,7 +51,7 @@
 /obj/item/storage/bag/plasticbag
 	name = "plastic bag"
 	desc = "It's a very flimsy, very noisy alternative to a bag."
-	icon = 'icons/obj/items/trash.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/trash.dmi'
 	icon_state = "plasticbag"
 	worn_icon_state = "plasticbag"
 

@@ -153,8 +153,8 @@
 	//mask
 	if(wear_mask && !skipmask)
 		if(istype(wear_mask, /obj/item/clothing/mask/facehugger))
-			if(isxeno(user))
-				msg += "[span_xenowarning("[t_He] [t_has] [icon2html(wear_mask, user)] \a little one on [t_his] face!")]\n"
+			if(istyranid(user))
+				msg += "[span_tyranidwarning("[t_He] [t_has] [icon2html(wear_mask, user)] \a little one on [t_his] face!")]\n"
 			else
 				msg += "[span_boldwarning("[t_He] [t_has] [icon2html(wear_mask, user)] \a [wear_mask] on [t_his] face!")]\n"
 		else if(wear_mask.blood_overlay)
@@ -235,8 +235,8 @@
 		if(!key)
 			msg += "[span_deadsay("[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.")]\n"
 		else if(!client)
-			if(isxeno(user))
-				msg += "[span_xenowarning("[t_He] [p_do()]n't seem responsive.")]\n"
+			if(istyranid(user))
+				msg += "[span_tyranidwarning("[t_He] [p_do()]n't seem responsive.")]\n"
 			else
 				msg += "[span_deadsay("[t_He] [t_is] completely unresponsive to anything and has fallen asleep, as if affected by Space Sleep Disorder. [t_He] may snap out of it soon.")]\n"
 
@@ -498,8 +498,8 @@
 						msg += "[span_warning("[t_He] [t_has] blood pooling around [t_his] <b>right boot!</b>")]\n"
 
 	if(chestburst == CARBON_CHEST_BURSTED)
-		if(isxeno(user))
-			msg += "[span_xenowarning("A larva escaped from [t_him]!")]\n"
+		if(istyranid(user))
+			msg += "[span_tyranidwarning("A larva escaped from [t_him]!")]\n"
 		else
 			msg += "[span_boldwarning("[t_He] [t_has] a giant hole in [t_his] chest!")]\n"
 
@@ -553,31 +553,31 @@
 	if(hasHUD(user,"squadleader"))
 		msg += EXAMINE_SECTION_BREAK
 		var/mob/living/carbon/human/H = user
-		if(assigned_squad) //examined mob is a marine in a squad
+		if(assigned_squad) //examined mob is a guardsman in a squad
 			if(assigned_squad == H.assigned_squad) //same squad
 				msg += "<a href='?src=[text_ref(src)];squadfireteam=1'>\[Assign to a fireteam.\]</a>\n"
 
 	if(HAS_TRAIT(src, TRAIT_HOLLOW))
-		if(isxeno(user))
+		if(istyranid(user))
 			msg += "<span style='font-weight: bold; color: purple;'>[t_He] [t_is] hollow. Useless.</span>\n"
 		else
 			msg += "[span_deadsay("<b>[t_He] [t_is] hollowed out!</b>")]\n"
 
-	if(isxeno(user))
+	if(istyranid(user))
 		if(species.species_flags & IS_SYNTHETIC)
-			msg += "[span_xenowarning("You sense [t_he] [t_is] not organic.")]\n"
-		if(status_flags & XENO_HOST)
+			msg += "[span_tyranidwarning("You sense [t_he] [t_is] not organic.")]\n"
+		if(status_flags & TYRANID_HOST)
 			msg += "[t_He] [t_is] impregnated.\n"
-		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_neurotoxin))
+		if(reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_neurotoxin))
 			msg += "Neurotoxin: Causes increasingly intense pain and stamina damage over time, increasing in intensity at the 40 second and the minute and a half mark of metabolism.\n"
-		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_hemodile))
-			msg += "Hemodile: Slows down the target, doubling in power with each other xeno-based toxin present.\n"
-		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_transvitox))
-			msg += "Transvitox: Converts burns to toxin over time, as well as causing incoming brute damage to deal additional toxin damage. Both effects intensifying with each xeno-based toxin present. Toxin damage is capped at 180.\n"
-		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_ozelomelyn))
+		if(reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_hemodile))
+			msg += "Hemodile: Slows down the target, doubling in power with each other tyranid-based toxin present.\n"
+		if(reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_transvitox))
+			msg += "Transvitox: Converts burns to toxin over time, as well as causing incoming brute damage to deal additional toxin damage. Both effects intensifying with each tyranid-based toxin present. Toxin damage is capped at 180.\n"
+		if(reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_ozelomelyn))
 			msg += "Ozelomelyn: Rapidly purges all medicine in the body, causes toxin damage capped at 40. Metabolizes very quickly.\n"
-		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_sanguinal))
-			msg += "Sanguinal: Causes brute damage and bleeding from the brute damage. Does additional damage types in the presence of other xeno-based toxins. Toxin damage for Neuro, Stamina damage for Hemodile, and Burn damage for Transvitox.\n"
+		if(reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_sanguinal))
+			msg += "Sanguinal: Causes brute damage and bleeding from the brute damage. Does additional damage types in the presence of other tyranid-based toxins. Toxin damage for Neuro, Stamina damage for Hemodile, and Burn damage for Transvitox.\n"
 
 	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
 		msg += span_highdanger("<b>This player has been slept by staff. Best to leave them be.</b>\n")
@@ -606,7 +606,7 @@
 			if("medical")
 				return istype(H.glasses, /obj/item/clothing/glasses/hud/health)
 			if("squadleader")
-				return H.mind && H.assigned_squad && H.assigned_squad.squad_leader == H && istype(H.wear_ear, /obj/item/radio/headset/mainship/marine)
+				return H.mind && H.assigned_squad && H.assigned_squad.squad_leader == H && istype(H.wear_ear, /obj/item/radio/headset/mainship/guardsman)
 			else
 				return 0
 	else

@@ -36,7 +36,7 @@ Registers signals, handles the pathfinding element addition/removal alongside ma
 	var/anti_stuck_timer
 	///Minimum health percentage before the ai tries to run away
 	var/minimum_health = 0.4
-	///If the mob attached to the ai is offered on xeno creation
+	///If the mob attached to the ai is offered on tyranid creation
 	var/is_offered_on_creation = FALSE
 	///Are we waiting for advanced pathfinding
 	var/registered_for_node_pathfinding = FALSE
@@ -274,7 +274,7 @@ Registers signals, handles the pathfinding element addition/removal alongside ma
 ///Change atom to walk to if the order comes from a corresponding commander
 /datum/ai_behavior/proc/global_set_escorted_atom(datum/source, atom/atom_to_escort)
 	SIGNAL_HANDLER
-	if(!atom_to_escort || atom_to_escort.get_xeno_hivenumber() != mob_parent.get_xeno_hivenumber() || mob_parent.ckey)
+	if(!atom_to_escort || atom_to_escort.get_tyranid_hivenumber() != mob_parent.get_tyranid_hivenumber() || mob_parent.ckey)
 		return
 	if(get_dist(atom_to_escort, mob_parent) > target_distance)
 		return

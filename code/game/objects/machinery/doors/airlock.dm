@@ -1,6 +1,6 @@
 /obj/machinery/door/airlock
 	name = "\improper Airlock"
-	icon = 'icons/obj/doors/Doorint.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/Doorint.dmi'
 	icon_state = "door_closed"
 	soft_armor = list(MELEE = 20, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, FIRE = 100, ACID = 0)
 	power_channel = ENVIRON
@@ -239,7 +239,7 @@
 		for(var/heading in list(NORTH,SOUTH,EAST,WEST))
 			if(!(unres_sides & heading))
 				continue
-			var/image/access_overlay = image('icons/obj/doors/overlays.dmi', "unres_[heading]", layer = DOOR_HELPER_LAYER, pixel_y = -4)
+			var/image/access_overlay = image('modular_imperium/master_files/icons/obj/doors/overlays.dmi', "unres_[heading]", layer = DOOR_HELPER_LAYER, pixel_y = -4)
 			switch(heading)
 				if(NORTH)
 					access_overlay.pixel_x = 0
@@ -280,49 +280,49 @@
 
 
 //Prying open doors
-/obj/machinery/door/airlock/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/door/airlock/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	var/turf/cur_loc = xeno_attacker.loc
+	var/turf/cur_loc = tyranid_attacker.loc
 	if(isElectrified())
-		if(shock(xeno_attacker, 70))
+		if(shock(tyranid_attacker, 70))
 			return
 	if(locked)
-		to_chat(xeno_attacker, span_warning("\The [src] is bolted down tight."))
+		to_chat(tyranid_attacker, span_warning("\The [src] is bolted down tight."))
 		return FALSE
 	if(welded)
-		to_chat(xeno_attacker, span_warning("\The [src] is welded shut."))
+		to_chat(tyranid_attacker, span_warning("\The [src] is welded shut."))
 		return FALSE
 	if(!istype(cur_loc))
 		return FALSE //Some basic logic here
 	if(!density)
-		to_chat(xeno_attacker, span_warning("\The [src] is already open!"))
+		to_chat(tyranid_attacker, span_warning("\The [src] is already open!"))
 		return FALSE
 
-	if(xeno_attacker.do_actions)
+	if(tyranid_attacker.do_actions)
 		return FALSE
 
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
 
 	if(hasPower())
-		xeno_attacker.visible_message(span_warning("\The [xeno_attacker] digs into \the [src] and begins to pry it open."), \
+		tyranid_attacker.visible_message(span_warning("\The [tyranid_attacker] digs into \the [src] and begins to pry it open."), \
 		span_warning("We dig into \the [src] and begin to pry it open."), null, 5)
-		if(!do_after(xeno_attacker, 4 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE) && !xeno_attacker.lying_angle)
+		if(!do_after(tyranid_attacker, 4 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE) && !tyranid_attacker.lying_angle)
 			return FALSE
 	if(locked)
-		to_chat(xeno_attacker, span_warning("\The [src] is bolted down tight."))
+		to_chat(tyranid_attacker, span_warning("\The [src] is bolted down tight."))
 		return FALSE
 	if(welded)
-		to_chat(xeno_attacker, span_warning("\The [src] is welded shut."))
+		to_chat(tyranid_attacker, span_warning("\The [src] is welded shut."))
 		return FALSE
 
 	if(density) //Make sure it's still closed
 		open(TRUE)
-		xeno_attacker.visible_message(span_danger("\The [xeno_attacker] pries \the [src] open."), \
+		tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] pries \the [src] open."), \
 			span_danger("We pry \the [src] open."), null, 5)
 
-/obj/machinery/door/airlock/attack_larva(mob/living/carbon/xenomorph/larva/M)
+/obj/machinery/door/airlock/attack_larva(mob/living/carbon/tyranid/larva/M)
 	for(var/atom/movable/AM in get_turf(src))
 		if(AM != src && AM.density && !AM.CanPass(M, M.loc))
 			to_chat(M, span_warning("\The [AM] prevents you from squeezing under \the [src]!"))

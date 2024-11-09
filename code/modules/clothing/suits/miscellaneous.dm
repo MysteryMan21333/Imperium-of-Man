@@ -123,7 +123,7 @@
 
 /obj/item/clothing/suit/imperium_monk
 	name = "Imperium monk"
-	desc = "Have YOU killed a xenos today?"
+	desc = "Have YOU killed a tyranids today?"
 	icon_state = "imperium_monk"
 	worn_icon_state = "imperium_monk"
 	armor_protection_flags = HEAD|CHEST|GROIN|LEGS|FEET|ARMS
@@ -274,11 +274,11 @@
 	icon_state = "neocoat"
 	worn_icon_state = "neocoat"
 
-/obj/item/clothing/suit/xenos
-	name = "xenos suit"
+/obj/item/clothing/suit/tyranids
+	name = "tyranids suit"
 	desc = "A suit made out of chitinous alien hide."
-	icon_state = "xenos"
-	worn_icon_state = "xenos_helm"
+	icon_state = "tyranids"
+	worn_icon_state = "tyranids_helm"
 	armor_protection_flags = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	inv_hide_flags = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	siemens_coefficient = 2
@@ -351,11 +351,11 @@
 /obj/item/clothing/suit/replica
 	name = "replica armor"
 	desc = "A replica of the armour of choice for colonial militia."
-	icon = 'icons/obj/clothing/suits/ert_suits.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/suits/ert_suits.dmi'
 	worn_icon_list = list(
-		slot_wear_suit_str = 'icons/mob/clothing/suits/marine_armor.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_wear_suit_str = 'modular_imperium/master_files/icons/mob/clothing/suits/marine_armor.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	icon_state = "rebel_armor"
 	worn_icon_state = "rebel_armor"

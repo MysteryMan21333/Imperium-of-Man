@@ -8,11 +8,11 @@
 /obj/item/assembly
 	name = "assembly"
 	desc = "A small electronic device that should never exist."
-	icon = 'icons/obj/assemblies/new_assemblies.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/assemblies/new_assemblies.dmi'
 	icon_state = ""
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	atom_flags = CONDUCT
 	w_class = WEIGHT_CLASS_SMALL

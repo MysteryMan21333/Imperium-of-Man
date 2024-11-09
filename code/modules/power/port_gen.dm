@@ -2,7 +2,7 @@
 /obj/machinery/power/port_gen
 	name = "portable generator"
 	desc = "A portable generator for emergency backup power."
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	icon_state = "portgen0"
 	density = TRUE
 	anchored = FALSE
@@ -30,11 +30,11 @@
 	record_generator_sabotages(user)
 	return TRUE
 
-/obj/machinery/power/port_gen/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/power/port_gen/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	. = ..()
 	if(!.)
 		return FALSE
-	record_generator_sabotages(xeno_attacker)
+	record_generator_sabotages(tyranid_attacker)
 	return TRUE
 
 /obj/machinery/power/port_gen/should_have_node()

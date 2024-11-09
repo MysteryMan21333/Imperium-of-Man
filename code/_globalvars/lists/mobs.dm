@@ -14,10 +14,10 @@ GLOBAL_LIST_EMPTY(mob_list)					//all mobs, including clientless
 GLOBAL_LIST_EMPTY(new_player_list)			//all /mob/new_player
 GLOBAL_LIST_EMPTY(ready_players)			//all /mob/new_player that are (ready == TRUE)
 GLOBAL_LIST_EMPTY(observer_list)			//all /mob/dead/observer
-GLOBAL_LIST_EMPTY(xeno_mob_list)			//all /mob/living/carbon/xenomorph
-GLOBAL_LIST_EMPTY(alive_xeno_list)			//as above except stat != DEAD
-GLOBAL_LIST_EMPTY(alive_xeno_list_hive)		//living xenos by hive
-GLOBAL_LIST_EMPTY(dead_xeno_list)
+GLOBAL_LIST_EMPTY(tyranid_mob_list)			//all /mob/living/carbon/tyranid
+GLOBAL_LIST_EMPTY(alive_tyranid_list)			//as above except stat != DEAD
+GLOBAL_LIST_EMPTY(alive_tyranid_list_hive)		//living tyranids by hive
+GLOBAL_LIST_EMPTY(dead_tyranid_list)
 GLOBAL_LIST_EMPTY(human_mob_list)			//all /mob/living/carbon/human including synths and species
 GLOBAL_LIST_EMPTY(alive_human_list)			//as above except stat != DEAD
 GLOBAL_LIST_EMPTY(alive_human_list_faction) //as above but categorized by faction
@@ -45,85 +45,85 @@ GLOBAL_LIST_EMPTY(all_languages)
 GLOBAL_LIST_EMPTY(all_species)
 GLOBAL_LIST_EMPTY(roundstart_species)
 
-GLOBAL_LIST_INIT_TYPED(xeno_caste_datums, /list/datum/xeno_caste, init_xeno_caste_list())
+GLOBAL_LIST_INIT_TYPED(tyranid_caste_datums, /list/datum/tyranid_caste, init_tyranid_caste_list())
 
-/proc/init_xeno_caste_list()
+/proc/init_tyranid_caste_list()
 	. = list()
-	var/list/typelist = subtypesof(/datum/xeno_caste)
-	for(var/datum/xeno_caste/typepath AS in typelist)
-		if(initial(typepath.upgrade) == XENO_UPGRADE_BASETYPE)
+	var/list/typelist = subtypesof(/datum/tyranid_caste)
+	for(var/datum/tyranid_caste/typepath AS in typelist)
+		if(initial(typepath.upgrade) == TYRANID_UPGRADE_BASETYPE)
 			.[typepath] = list()
-			.[typepath][XENO_UPGRADE_BASETYPE] = new typepath
+			.[typepath][TYRANID_UPGRADE_BASETYPE] = new typepath
 			typelist -= typepath
 
 	for(var/typepath in typelist)
-		var/datum/xeno_caste/caste = new typepath
+		var/datum/tyranid_caste/caste = new typepath
 		.[caste.get_base_caste_type()][caste.upgrade] = caste
 
-GLOBAL_LIST_INIT(all_xeno_types, list(
-	/mob/living/carbon/xenomorph/runner,
-	/mob/living/carbon/xenomorph/runner/primordial,
-	/mob/living/carbon/xenomorph/drone,
-	/mob/living/carbon/xenomorph/drone/primordial,
-	/mob/living/carbon/xenomorph/sentinel,
-	/mob/living/carbon/xenomorph/sentinel/primordial,
-	/mob/living/carbon/xenomorph/defender,
-	/mob/living/carbon/xenomorph/defender/primordial,
-	/mob/living/carbon/xenomorph/gorger,
-	/mob/living/carbon/xenomorph/gorger/primordial,
-	/mob/living/carbon/xenomorph/hunter,
-	/mob/living/carbon/xenomorph/hunter/primordial,
-	/mob/living/carbon/xenomorph/warrior,
-	/mob/living/carbon/xenomorph/warrior/primordial,
-	/mob/living/carbon/xenomorph/spitter,
-	/mob/living/carbon/xenomorph/spitter/primordial,
-	/mob/living/carbon/xenomorph/hivelord,
-	/mob/living/carbon/xenomorph/hivelord/primordial,
-	/mob/living/carbon/xenomorph/carrier,
-	/mob/living/carbon/xenomorph/carrier/primordial,
-	/mob/living/carbon/xenomorph/bull,
-	/mob/living/carbon/xenomorph/bull/primordial,
-	/mob/living/carbon/xenomorph/queen,
-	/mob/living/carbon/xenomorph/queen/primordial,
-	/mob/living/carbon/xenomorph/king,
-	/mob/living/carbon/xenomorph/king/primordial,
-	/mob/living/carbon/xenomorph/wraith,
-	/mob/living/carbon/xenomorph/wraith/primordial,
-	/mob/living/carbon/xenomorph/ravager,
-	/mob/living/carbon/xenomorph/ravager/primordial,
-	/mob/living/carbon/xenomorph/praetorian,
-	/mob/living/carbon/xenomorph/praetorian/primordial,
-	/mob/living/carbon/xenomorph/praetorian/dancer,
-	/mob/living/carbon/xenomorph/praetorian/dancer/primordial,
-	/mob/living/carbon/xenomorph/boiler,
-	/mob/living/carbon/xenomorph/boiler/primordial,
-	/mob/living/carbon/xenomorph/defiler,
-	/mob/living/carbon/xenomorph/defiler/primordial,
-	/mob/living/carbon/xenomorph/crusher,
-	/mob/living/carbon/xenomorph/crusher/primordial,
-	/mob/living/carbon/xenomorph/widow,
-	/mob/living/carbon/xenomorph/widow/primordial,
-	/mob/living/carbon/xenomorph/shrike,
-	/mob/living/carbon/xenomorph/shrike/primordial,
-	/mob/living/carbon/xenomorph/warlock,
-	/mob/living/carbon/xenomorph/warlock/primordial,
-	/mob/living/carbon/xenomorph/puppeteer,
-	/mob/living/carbon/xenomorph/puppeteer/primordial,
-	/mob/living/carbon/xenomorph/behemoth,
-	/mob/living/carbon/xenomorph/behemoth/primordial,
-	/mob/living/carbon/xenomorph/beetle,
-	/mob/living/carbon/xenomorph/mantis,
-	/mob/living/carbon/xenomorph/scorpion,
-	/mob/living/carbon/xenomorph/spiderling,
-	/mob/living/carbon/xenomorph/pyrogen,
-	/mob/living/carbon/xenomorph/pyrogen/primordial,
-	/mob/living/carbon/xenomorph/baneling,
+GLOBAL_LIST_INIT(all_tyranid_types, list(
+	/mob/living/carbon/tyranid/runner,
+	/mob/living/carbon/tyranid/runner/primordial,
+	/mob/living/carbon/tyranid/drone,
+	/mob/living/carbon/tyranid/drone/primordial,
+	/mob/living/carbon/tyranid/sentinel,
+	/mob/living/carbon/tyranid/sentinel/primordial,
+	/mob/living/carbon/tyranid/defender,
+	/mob/living/carbon/tyranid/defender/primordial,
+	/mob/living/carbon/tyranid/gorger,
+	/mob/living/carbon/tyranid/gorger/primordial,
+	/mob/living/carbon/tyranid/hunter,
+	/mob/living/carbon/tyranid/hunter/primordial,
+	/mob/living/carbon/tyranid/warrior,
+	/mob/living/carbon/tyranid/warrior/primordial,
+	/mob/living/carbon/tyranid/spitter,
+	/mob/living/carbon/tyranid/spitter/primordial,
+	/mob/living/carbon/tyranid/hivelord,
+	/mob/living/carbon/tyranid/hivelord/primordial,
+	/mob/living/carbon/tyranid/carrier,
+	/mob/living/carbon/tyranid/carrier/primordial,
+	/mob/living/carbon/tyranid/bull,
+	/mob/living/carbon/tyranid/bull/primordial,
+	/mob/living/carbon/tyranid/queen,
+	/mob/living/carbon/tyranid/queen/primordial,
+	/mob/living/carbon/tyranid/king,
+	/mob/living/carbon/tyranid/king/primordial,
+	/mob/living/carbon/tyranid/wraith,
+	/mob/living/carbon/tyranid/wraith/primordial,
+	/mob/living/carbon/tyranid/ravager,
+	/mob/living/carbon/tyranid/ravager/primordial,
+	/mob/living/carbon/tyranid/praetorian,
+	/mob/living/carbon/tyranid/praetorian/primordial,
+	/mob/living/carbon/tyranid/praetorian/dancer,
+	/mob/living/carbon/tyranid/praetorian/dancer/primordial,
+	/mob/living/carbon/tyranid/boiler,
+	/mob/living/carbon/tyranid/boiler/primordial,
+	/mob/living/carbon/tyranid/defiler,
+	/mob/living/carbon/tyranid/defiler/primordial,
+	/mob/living/carbon/tyranid/crusher,
+	/mob/living/carbon/tyranid/crusher/primordial,
+	/mob/living/carbon/tyranid/widow,
+	/mob/living/carbon/tyranid/widow/primordial,
+	/mob/living/carbon/tyranid/shrike,
+	/mob/living/carbon/tyranid/shrike/primordial,
+	/mob/living/carbon/tyranid/warlock,
+	/mob/living/carbon/tyranid/warlock/primordial,
+	/mob/living/carbon/tyranid/puppeteer,
+	/mob/living/carbon/tyranid/puppeteer/primordial,
+	/mob/living/carbon/tyranid/behemoth,
+	/mob/living/carbon/tyranid/behemoth/primordial,
+	/mob/living/carbon/tyranid/beetle,
+	/mob/living/carbon/tyranid/mantis,
+	/mob/living/carbon/tyranid/scorpion,
+	/mob/living/carbon/tyranid/spiderling,
+	/mob/living/carbon/tyranid/pyrogen,
+	/mob/living/carbon/tyranid/pyrogen/primordial,
+	/mob/living/carbon/tyranid/baneling,
 	))
 
-GLOBAL_LIST_INIT(xeno_types_tier_one, list(/datum/xeno_caste/runner, /datum/xeno_caste/drone, /datum/xeno_caste/sentinel, /datum/xeno_caste/defender))
-GLOBAL_LIST_INIT(xeno_types_tier_two, list(/datum/xeno_caste/hunter, /datum/xeno_caste/warrior, /datum/xeno_caste/spitter, /datum/xeno_caste/hivelord, /datum/xeno_caste/carrier, /datum/xeno_caste/bull, /datum/xeno_caste/wraith, /datum/xeno_caste/puppeteer, /datum/xeno_caste/pyrogen))
-GLOBAL_LIST_INIT(xeno_types_tier_three, list(/datum/xeno_caste/gorger, /datum/xeno_caste/widow, /datum/xeno_caste/ravager, /datum/xeno_caste/praetorian, /datum/xeno_caste/boiler, /datum/xeno_caste/defiler, /datum/xeno_caste/crusher, /datum/xeno_caste/shrike, /datum/xeno_caste/behemoth, /datum/xeno_caste/warlock))
-GLOBAL_LIST_INIT(xeno_types_tier_four, list(/datum/xeno_caste/shrike, /datum/xeno_caste/queen, /datum/xeno_caste/king))
+GLOBAL_LIST_INIT(tyranid_types_tier_one, list(/datum/tyranid_caste/runner, /datum/tyranid_caste/drone, /datum/tyranid_caste/sentinel, /datum/tyranid_caste/defender))
+GLOBAL_LIST_INIT(tyranid_types_tier_two, list(/datum/tyranid_caste/hunter, /datum/tyranid_caste/warrior, /datum/tyranid_caste/spitter, /datum/tyranid_caste/hivelord, /datum/tyranid_caste/carrier, /datum/tyranid_caste/bull, /datum/tyranid_caste/wraith, /datum/tyranid_caste/puppeteer, /datum/tyranid_caste/pyrogen))
+GLOBAL_LIST_INIT(tyranid_types_tier_three, list(/datum/tyranid_caste/gorger, /datum/tyranid_caste/widow, /datum/tyranid_caste/ravager, /datum/tyranid_caste/praetorian, /datum/tyranid_caste/boiler, /datum/tyranid_caste/defiler, /datum/tyranid_caste/crusher, /datum/tyranid_caste/shrike, /datum/tyranid_caste/behemoth, /datum/tyranid_caste/warlock))
+GLOBAL_LIST_INIT(tyranid_types_tier_four, list(/datum/tyranid_caste/shrike, /datum/tyranid_caste/queen, /datum/tyranid_caste/king))
 
 
 GLOBAL_LIST_INIT_TYPED(hive_datums, /datum/hive_status, init_hive_datum_list()) // init by make_datum_references_lists()
@@ -144,25 +144,25 @@ GLOBAL_LIST_INIT(hive_ui_static_data, init_hive_status_lists()) // init by make_
 	. = list()
 	// Initializes static ui data used by all hive status UI
 	var/list/per_tier_counter = list()
-	for(var/caste_type_path AS in GLOB.xeno_caste_datums)
-		var/datum/xeno_caste/caste = GLOB.xeno_caste_datums[caste_type_path][XENO_UPGRADE_BASETYPE]
+	for(var/caste_type_path AS in GLOB.tyranid_caste_datums)
+		var/datum/tyranid_caste/caste = GLOB.tyranid_caste_datums[caste_type_path][TYRANID_UPGRADE_BASETYPE]
 		if(caste.caste_flags & CASTE_HIDE_IN_STATUS)
 			continue
 		var/type_path = initial(caste.caste_type_path)
 
 		GLOB.hive_ui_caste_index[type_path] = length(.) //Starts from 0.
 
-		var/icon/xeno_minimap = icon('icons/UI_icons/map_blips.dmi', initial(caste.minimap_icon))
+		var/icon/tyranid_minimap = icon('icons/UI_icons/map_blips.dmi', initial(caste.minimap_icon))
 		var/tier = initial(caste.tier)
-		if(tier == XENO_TIER_MINION)
+		if(tier == TYRANID_TIER_MINION)
 			continue
 		if(isnull(per_tier_counter[tier]))
 			per_tier_counter[tier] = 0
 
 		. += list(list(
 			"name" = initial(caste.caste_name),
-			"is_queen" = type_path == /mob/living/carbon/xenomorph/queen,
-			"minimap" = icon2base64(xeno_minimap),
+			"is_queen" = type_path == /mob/living/carbon/tyranid/queen,
+			"minimap" = icon2base64(tyranid_minimap),
 			"sort_mod" = per_tier_counter[tier]++,
 			"tier" = GLOB.tier_as_number[tier],
 			"is_unique" = caste.maximum_active_caste == 1,

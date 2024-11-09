@@ -381,7 +381,7 @@
 				qdel(H.glasses)
 				H.update_inv_glasses(0)
 
-	if(!isxeno(L))
+	if(!istyranid(L))
 		if(ishuman(L) && volume >= 10)
 			var/mob/living/carbon/human/H = L
 			var/datum/limb/affecting = H.get_limb("head")
@@ -440,16 +440,16 @@
 		new /obj/structure/razorwire(location)
 	return ..()
 
-/datum/reagent/toxin/xeno_neurotoxin
+/datum/reagent/toxin/tyranid_neurotoxin
 	name = "Neurotoxin"
 	description = "A debilitating nerve toxin. Impedes motor control in high doses. Causes progressive loss of mobility over time."
 	reagent_state = LIQUID
-	color = COLOR_TOXIN_XENO_NEUROTOXIN
+	color = COLOR_TOXIN_TYRANID_NEUROTOXIN
 	custom_metabolism = REAGENTS_METABOLISM * 2
 	overdose_threshold = 10000 //Overdosing for neuro is what happens when you run out of stamina to avoid its oxy and toxin damage
 	toxpwr = 0
 
-/datum/reagent/toxin/xeno_neurotoxin/on_mob_life(mob/living/L, metabolism)
+/datum/reagent/toxin/tyranid_neurotoxin/on_mob_life(mob/living/L, metabolism)
 	var/power
 	switch(current_cycle)
 		if(1 to 20)
@@ -486,21 +486,21 @@
 
 	return ..()
 
-/datum/reagent/toxin/xeno_hemodile //Slows its victim. The slow becomes twice as strong with each other xeno toxin in the victim's system.
+/datum/reagent/toxin/tyranid_hemodile //Slows its victim. The slow becomes twice as strong with each other tyranid toxin in the victim's system.
 	name = "Hemodile"
 	description = "Impedes motor functions and muscle response, causing slower movement."
 	reagent_state = LIQUID
-	color = COLOR_TOXIN_XENO_HEMODILE
+	color = COLOR_TOXIN_TYRANID_HEMODILE
 	custom_metabolism = 0.4
 	overdose_threshold = 10000
 	toxpwr = 0
 
-/datum/reagent/toxin/xeno_hemodile/on_mob_life(mob/living/L, metabolism)
+/datum/reagent/toxin/tyranid_hemodile/on_mob_life(mob/living/L, metabolism)
 
 	var/slowdown_multiplier = 0.5 //Because hemodile is obviously in blood already
 
 	for(var/datum/reagent/current_reagent AS in L.reagents.reagent_list) //Cycle through all chems
-		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each xeno toxin reagent, double the strength multiplier
+		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each tyranid toxin reagent, double the strength multiplier
 			slowdown_multiplier *= 2 //Each other Defiler toxin increases the multiplier by 2x; 2x if we have 1 combo chem, 4x if we have 2
 
 	switch(slowdown_multiplier) //Description varies in severity and probability with the multiplier
@@ -514,27 +514,27 @@
 			if(prob(30))
 				to_chat(L, span_danger("You can barely feel your legs!") )
 
-	L.add_movespeed_modifier(MOVESPEED_ID_XENO_HEMODILE, TRUE, 0, NONE, TRUE, 1.5 * slowdown_multiplier)
+	L.add_movespeed_modifier(MOVESPEED_ID_TYRANID_HEMODILE, TRUE, 0, NONE, TRUE, 1.5 * slowdown_multiplier)
 
 	return ..()
 
-/datum/reagent/toxin/xeno_hemodile/on_mob_delete(mob/living/L, metabolism)
-	L.remove_movespeed_modifier(MOVESPEED_ID_XENO_HEMODILE)
+/datum/reagent/toxin/tyranid_hemodile/on_mob_delete(mob/living/L, metabolism)
+	L.remove_movespeed_modifier(MOVESPEED_ID_TYRANID_HEMODILE)
 
 
-/datum/reagent/toxin/xeno_transvitox //when damage is received, converts brute/burn equal to 50% of damage received to tox damage
+/datum/reagent/toxin/tyranid_transvitox //when damage is received, converts brute/burn equal to 50% of damage received to tox damage
 	name = "Transvitox"
 	description = "Converts burn damage to toxin damage over time, and causes brute damage received to inflict extra toxin damage."
 	reagent_state = LIQUID
-	color = COLOR_TOXIN_XENO_TRANSVITOX
+	color = COLOR_TOXIN_TYRANID_TRANSVITOX
 	custom_metabolism = 0.4
 	overdose_threshold = 10000
 	toxpwr = 0
 
-/datum/reagent/toxin/xeno_transvitox/on_mob_add(mob/living/L, metabolism, affecting)
+/datum/reagent/toxin/tyranid_transvitox/on_mob_add(mob/living/L, metabolism, affecting)
 	RegisterSignal(L, COMSIG_HUMAN_DAMAGE_TAKEN, PROC_REF(transvitox_human_damage_taken))
 
-/datum/reagent/toxin/xeno_transvitox/on_mob_life(mob/living/L, metabolism)
+/datum/reagent/toxin/tyranid_transvitox/on_mob_life(mob/living/L, metabolism)
 	var/fire_loss = L.getFireLoss(TRUE)
 	if(!fire_loss) //If we have no burn damage, cancel out
 		return ..()
@@ -545,7 +545,7 @@
 	var/tox_cap_multiplier = 0.5 //Because transvitox is obviously in blood already
 
 	for(var/datum/reagent/current_reagent AS in L.reagents.reagent_list) //Cycle through all chems
-		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each xeno toxin reagent, double the strength multiplier
+		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each tyranid toxin reagent, double the strength multiplier
 			tox_cap_multiplier *= 2 //Each other Defiler toxin doubles the multiplier
 
 	var/tox_loss = L.getToxLoss()
@@ -562,13 +562,13 @@
 
 	return ..()
 
-/datum/reagent/toxin/xeno_transvitox/proc/transvitox_human_damage_taken(mob/living/L, damage)
+/datum/reagent/toxin/tyranid_transvitox/proc/transvitox_human_damage_taken(mob/living/L, damage)
 	SIGNAL_HANDLER
 
 	var/tox_cap_multiplier = 0.5 //Because transvitox is obviously in blood already
 
 	for(var/datum/reagent/current_reagent AS in L.reagents.reagent_list) //Cycle through all chems
-		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each xeno toxin reagent, double the strength multiplier
+		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each tyranid toxin reagent, double the strength multiplier
 			tox_cap_multiplier *= 2 //Each other Defiler toxin doubles the multiplier
 
 	var/tox_loss = L.getToxLoss()
@@ -577,23 +577,23 @@
 
 	L.setToxLoss(clamp(tox_loss + min(L.getBruteLoss(TRUE) * 0.1 * tox_cap_multiplier, damage * 0.1 * tox_cap_multiplier), tox_loss, DEFILER_TRANSVITOX_CAP)) //Deal bonus tox damage equal to a % of the lesser of the damage taken or the target's brute damage; capped at DEFILER_TRANSVITOX_CAP.
 
-/datum/reagent/toxin/xeno_sanguinal //deals brute damage and causes persistant bleeding. Causes additional damage for each other xeno chem in the system
+/datum/reagent/toxin/tyranid_sanguinal //deals brute damage and causes persistant bleeding. Causes additional damage for each other tyranid chem in the system
 	name = "Sanguinal"
-	description = "Potent blood coloured toxin that causes constant bleeding and reacts with other xeno toxins to cause rapid tissue damage."
+	description = "Potent blood coloured toxin that causes constant bleeding and reacts with other tyranid toxins to cause rapid tissue damage."
 	reagent_state = LIQUID
-	color = COLOR_TOXIN_XENO_SANGUINAL
+	color = COLOR_TOXIN_TYRANID_SANGUINAL
 	custom_metabolism = 0.4
 	overdose_threshold = 10000
 	toxpwr = 0
 
-/datum/reagent/toxin/xeno_sanguinal/on_mob_life(mob/living/L, metabolism)
-	if(L.reagents.get_reagent_amount(/datum/reagent/toxin/xeno_hemodile))
+/datum/reagent/toxin/tyranid_sanguinal/on_mob_life(mob/living/L, metabolism)
+	if(L.reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_hemodile))
 		L.adjustStaminaLoss(DEFILER_SANGUINAL_DAMAGE)
 
-	if(L.reagents.get_reagent_amount(/datum/reagent/toxin/xeno_neurotoxin))
+	if(L.reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_neurotoxin))
 		L.adjustToxLoss(DEFILER_SANGUINAL_DAMAGE)
 
-	if(L.reagents.get_reagent_amount(/datum/reagent/toxin/xeno_transvitox))
+	if(L.reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_transvitox))
 		L.adjustFireLoss(DEFILER_SANGUINAL_DAMAGE)
 
 	if(L.has_status_effect(STATUS_EFFECT_INTOXICATED))
@@ -610,18 +610,18 @@
 
 	return ..()
 
-/datum/reagent/toxin/xeno_ozelomelyn // deals capped toxloss and purges at a rapid rate
+/datum/reagent/toxin/tyranid_ozelomelyn // deals capped toxloss and purges at a rapid rate
 	name = "Ozelomelyn"
-	description = "A potent Xenomorph chemical that quickly purges other chemicals in a bloodstream, causing small scale poisoning in a organism that won't progress. Appears to be strangely water based.."
+	description = "A potent Tyranid chemical that quickly purges other chemicals in a bloodstream, causing small scale poisoning in a organism that won't progress. Appears to be strangely water based.."
 	reagent_state = LIQUID
-	color = COLOR_TOXIN_XENO_OZELOMELYN
+	color = COLOR_TOXIN_TYRANID_OZELOMELYN
 	custom_metabolism = 1.5 // metabolizes decently quickly. A sting does 15 at the same rate as neurotoxin.
 	overdose_threshold = 10000
 	toxpwr = 0 // This is going to do slightly snowflake tox damage.
 	purge_list = list(/datum/reagent/medicine)
 	purge_rate = 5
 
-/datum/reagent/toxin/xeno_ozelomelyn/on_mob_life(mob/living/L, metabolism)
+/datum/reagent/toxin/tyranid_ozelomelyn/on_mob_life(mob/living/L, metabolism)
 	if(L.getToxLoss() < 40) // if our toxloss is below 40, do 0.75 tox damage.
 		L.adjustToxLoss(0.75)
 		if(prob(15))
@@ -668,10 +668,10 @@
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, revive_to_crit), TRUE, TRUE), SSticker.mode?.zombie_transformation_time)
 
 
-//SOM nerve agent
+//CHAOS nerve agent
 /datum/reagent/toxin/satrapine
 	name = "Satrapine"
-	description = "A nerve agent designed to incapacitate targets through debilitating pain. Its severity increases over time, causing various lung complications, and will purge common painkillers. Based on a chemical agent originally used against rebelling Martian colonists, improved by the SOM for their own use."
+	description = "A nerve agent designed to incapacitate targets through debilitating pain. Its severity increases over time, causing various lung complications, and will purge common painkillers. Based on a chemical agent originally used against rebelling Martian colonists, improved by the CHAOS for their own use."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_SATRAPINE
 	overdose_threshold = 10000

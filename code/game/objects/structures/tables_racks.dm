@@ -4,14 +4,14 @@
 /obj/structure/table
 	name = "table"
 	desc = "A square metal surface resting on four legs. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/table_regular.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/table_regular.dmi'
 	icon_state = "table_regular-0"
 	density = TRUE
 	anchored = TRUE
 	layer = TABLE_LAYER
 	obj_flags = CAN_BE_HIT | IGNORE_DENSITY
 	climbable = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	hit_sound = 'sound/effects/metalhit.ogg'
 	coverage = 10
@@ -165,10 +165,10 @@
 ///Snowflake check to let ravagers kill tables
 /obj/structure/table/proc/on_cross(datum/source, atom/movable/O, oldloc, oldlocs)
 	SIGNAL_HANDLER
-	if(!istype(O,/mob/living/carbon/xenomorph/ravager))
+	if(!istype(O,/mob/living/carbon/tyranid/ravager))
 		return
-	var/mob/living/carbon/xenomorph/M = O
-	if(!M.stat) //No dead xenos jumpin on the bed~
+	var/mob/living/carbon/tyranid/M = O
+	if(!M.stat) //No dead tyranids jumpin on the bed~
 		visible_message(span_danger("[O] plows straight through [src]!"))
 		deconstruct(FALSE)
 
@@ -330,7 +330,7 @@
 /obj/structure/table/wood
 	name = "wooden table"
 	desc = "A square wood surface resting on four legs. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/wood_table_reinforced.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/wood_table_reinforced.dmi'
 	icon_state = "wood_table_reinforced-0"
 	sheet_type = /obj/item/stack/sheet/wood
 	parts = /obj/item/frame/table/wood
@@ -348,7 +348,7 @@
 /obj/structure/table/wood/fancy
 	name = "fancy wooden table"
 	desc = "An expensive fancy wood surface resting on four legs. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/fancy_table.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/fancy_table.dmi'
 	icon_state = "fancy_table-0"
 	base_icon_state = "fancy_table"
 	table_prefix = "fwood"
@@ -357,7 +357,7 @@
 /obj/structure/table/wood/rustic
 	name = "rustic wooden table"
 	desc = "A rustic wooden surface resting on four legs. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/rustic_table.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/rustic_table.dmi'
 	icon_state = "rustic_table-0"
 	base_icon_state = "rustic_table"
 	table_prefix = "pwood"
@@ -366,7 +366,7 @@
 /obj/structure/table/wood/gambling
 	name = "gambling table"
 	desc = "A curved wood and carpet surface resting on four legs. Used for gambling games. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/pool_table.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/pool_table.dmi'
 	icon_state = "pool_table-0"
 	base_icon_state = "pool_table"
 	sheet_type = /obj/item/stack/sheet/wood
@@ -376,13 +376,13 @@
 	max_integrity = 20
 
 /obj/structure/table/wood/gambling/urban
-	icon = 'icons/obj/smooth_objects/urban_table_gambling.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/urban_table_gambling.dmi'
 	icon_state = "urban_table_gambling-0"
 	base_icon_state = "urban_table_gambling"
 	parts = /obj/item/frame/table/gambling
 
 /obj/structure/table/wood/gambling/urban/black
-	icon = 'icons/obj/smooth_objects/urban_table_gambling_black.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/urban_table_gambling_black.dmi'
 	icon_state = "urban_table_gambling_black-0"
 	base_icon_state = "urban_table_gambling_black"
 	parts = /obj/item/frame/table/gambling
@@ -390,7 +390,7 @@
 /obj/structure/table/black
 	name = "black metal table"
 	desc = "A sleek black metallic surface resting on four legs. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/black_table.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/black_table.dmi'
 	icon_state = "black_table-0"
 	base_icon_state = "black_table"
 	table_prefix = "black"
@@ -399,7 +399,7 @@
 /obj/structure/table/urban/shiny_black
 	name = "shiny black metal table"
 	desc = "A shiny black metallic surface resting on four legs, looks like it belongs in a boardroom. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/urban_table_black.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/urban_table_black.dmi'
 	icon_state = "urban_table_black-0"
 	base_icon_state = "urban_table_black"
 	table_prefix = "urban_table_black"
@@ -408,7 +408,7 @@
 /obj/structure/table/urban/shiny_brown
 	name = "shiny brown metal table"
 	desc = "A shiny brown metallic surface resting on four legs, looks like it belongs in a boardroom. Useful to put stuff on. Can be flipped in emergencies to act as cover."
-	icon = 'icons/obj/smooth_objects/urban_table_brown.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/urban_table_brown.dmi'
 	icon_state = "urban_table_brown-0"
 	base_icon_state = "urban_table_brown"
 	table_prefix = "urban_table_brown"
@@ -417,7 +417,7 @@
 /obj/structure/table/reinforced
 	name = "reinforced table"
 	desc = "A square metal surface resting on four legs. This one has side panels, making it useful as a desk, but impossible to flip."
-	icon = 'icons/obj/smooth_objects/table_reinforced.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/table_reinforced.dmi'
 	icon_state = "table_reinforced-0"
 	base_icon_state = "table_reinforced"
 	max_integrity = 100
@@ -491,7 +491,7 @@
 
 /obj/structure/table/reinforced/prison
 	desc = "A square metal surface resting on four legs. This one has side panels, making it useful as a desk, but impossible to flip."
-	icon = 'icons/obj/smooth_objects/prison_table.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/prison_table.dmi'
 	icon_state = "prison_table-0"
 	base_icon_state = "prison_table"
 	table_prefix = "prison"
@@ -499,7 +499,7 @@
 /obj/structure/table/reinforced/fabric
 	name = "cloth table"
 	desc = "A fancy cloth-topped wooden table, bolted to the floor. Fit for formal occasions."
-	icon = 'icons/obj/smooth_objects/table_fabric.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/table_fabric.dmi'
 	icon_state = "table_fabric-0"
 	base_icon_state = "table_fabric"
 	table_prefix = "fabric"
@@ -507,7 +507,7 @@
 	reinforced = TRUE
 
 /obj/structure/table/mainship
-	icon = 'icons/obj/smooth_objects/mainship_table.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/mainship_table.dmi'
 	icon_state = "mainship_table-0"
 	base_icon_state = "mainship_table"
 	table_prefix = "ship"
@@ -523,16 +523,16 @@
 /obj/structure/rack
 	name = "rack"
 	desc = "A bunch of metal shelves stacked on top of eachother. Excellent for storage purposes, less so as cover."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "rack"
 	density = TRUE
 	layer = TABLE_LAYER
 	anchored = TRUE
 	coverage = 20
 	climbable = TRUE
-	var/dropmetal = TRUE   //if true drop metal when destroyed; mostly used when we need large amounts of racks without marines hoarding the metal
+	var/dropmetal = TRUE   //if true drop metal when destroyed; mostly used when we need large amounts of racks without guardsmans hoarding the metal
 	max_integrity = 40
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE
 	var/parts = /obj/item/frame/rack
 
@@ -569,10 +569,10 @@
 
 /obj/structure/rack/proc/on_cross(datum/source, atom/movable/O, oldloc, oldlocs)
 	SIGNAL_HANDLER
-	if(!istype(O,/mob/living/carbon/xenomorph/ravager))
+	if(!istype(O,/mob/living/carbon/tyranid/ravager))
 		return
-	var/mob/living/carbon/xenomorph/M = O
-	if(!M.stat) //No dead xenos jumpin on the bed~
+	var/mob/living/carbon/tyranid/M = O
+	if(!M.stat) //No dead tyranids jumpin on the bed~
 		visible_message(span_danger("[O] plows straight through [src]!"))
 		deconstruct(FALSE)
 

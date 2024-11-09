@@ -4,7 +4,7 @@
 
 /obj/machinery/computer/sleep_console
 	name = "Sleeper Console"
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "sleeperconsole"
 	screen_overlay = "sleeperconsole_emissive"
 	dir = EAST
@@ -132,7 +132,7 @@
 /obj/machinery/sleeper
 	name = "Sleeper"
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "sleeper"
 	density = TRUE
 	light_range = 1
@@ -290,7 +290,7 @@
 	. = ..()
 	if(.)
 		return
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
 		to_chat(user, span_notice("\ [src] is non-functional!"))
@@ -419,15 +419,15 @@
 	else
 		to_chat(user, span_notice("There is no one inside!"))
 
-/obj/machinery/sleeper/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/sleeper/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(tyranid_attacker, span_tyranidwarning("There is nothing of interest in there."))
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+	if(tyranid_attacker.status_flags & INCORPOREAL || tyranid_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[tyranid_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
-	if(!do_after(xeno_attacker, 2 SECONDS))
+	if(!do_after(tyranid_attacker, 2 SECONDS))
 		return
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
 	go_out()

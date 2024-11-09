@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(restricted_camera_networks, list( //Those networks can only be 
 #define NIGHTFALL_IMMUNE 3
 #define NO_LIGHT_STATE_CHANGE 4
 
-//Xeno turrets define
+//Tyranid turrets define
 #define TURRET_SCAN_RANGE 25
 #define TURRET_SCAN_FREQUENCY 10 SECONDS
 #define TURRET_HEALTH_REGEN 8
@@ -267,7 +267,7 @@ GLOBAL_LIST_INIT(restricted_camera_networks, list( //Those networks can only be 
 #define DROPPOD_LANDED 3
 
 //cameras
-#define SOM_CAMERA_NETWORK "som_camera_network"
+#define CHAOS_CAMERA_NETWORK "chaos_camera_network"
 
 ///Burn level applied by lava if it calls fire_act
 #define LAVA_BURN_LEVEL 60

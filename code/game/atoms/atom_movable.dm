@@ -1185,7 +1185,7 @@
 	SIGNAL_HANDLER_DOES_SLEEP
 
 	var/mob/resisting_mob = source
-	if(resisting_mob.restrained(RESTRAINED_XENO_NEST))
+	if(resisting_mob.restrained(RESTRAINED_TYRANID_NEST))
 		return FALSE
 	user_unbuckle_mob(resisting_mob, resisting_mob)
 

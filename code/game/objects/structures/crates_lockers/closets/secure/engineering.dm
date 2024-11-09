@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/engineering_chief
 	name = "\improper Chief Engineer's locker"
-	req_access = list(ACCESS_MARINE_CE)
+	req_access = list(ACCESS_GUARDSMAN_CE)
 	icon_state = "securece1"
 	icon_closed = "securece"
 	icon_locked = "securece1"
@@ -30,13 +30,13 @@
 	new /obj/item/storage/pouch/tools(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
 
 
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies"
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 	icon_state = "secureengelec1"
 	icon_closed = "secureengelec"
 	icon_locked = "secureengelec1"
@@ -62,7 +62,7 @@
 
 /obj/structure/closet/secure_closet/engineering_welding
 	name = "welding supplies"
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 	icon_state = "secureengweld1"
 	icon_closed = "secureengweld"
 	icon_locked = "secureengweld1"
@@ -84,7 +84,7 @@
 
 /obj/structure/closet/secure_closet/engineering_personal
 	name = "engineer's locker"
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 	icon_state = "secureeng1"
 	icon_closed = "secureeng"
 	icon_locked = "secureeng1"
@@ -112,7 +112,7 @@
 	new /obj/item/storage/backpack/industrial(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
 	new /obj/item/tool/shovel/etool(src)
 	new /obj/item/clothing/head/modular/m10x(src)
@@ -123,7 +123,7 @@
 
 /obj/structure/closet/secure_closet/atmos_personal
 	name = "technician's locker"
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 	icon_state = "secureatm1"
 	icon_closed = "secureatm"
 	icon_locked = "secureatm1"

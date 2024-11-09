@@ -43,7 +43,7 @@
 
 /obj/item/spy_bug
 	name = "pocket protector"
-	icon = 'icons/obj/clothing/accessories.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/accessories.dmi'
 	icon_state = "pocketprotector"
 	desc = "an advanced peice of espionage equipment in the shape of a pocket protector. it has a built in 360 degree camera for all your nefarious needs. Microphone not included."
 

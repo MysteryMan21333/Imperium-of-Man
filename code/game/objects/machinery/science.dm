@@ -1,6 +1,6 @@
 //Random science machines that don't do anything
 /obj/machinery/science
-	icon = 'icons/obj/machines/virology.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/virology.dmi'
 	density = TRUE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE

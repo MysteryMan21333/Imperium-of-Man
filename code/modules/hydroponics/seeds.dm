@@ -1,7 +1,7 @@
 //Seed packet object/procs.
 /obj/item/seeds
 	name = "packet of seeds"
-	icon = 'icons/obj/items/seeds.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/seeds.dmi'
 	icon_state = "seed"
 	atom_flags = NONE
 	w_class = WEIGHT_CLASS_TINY

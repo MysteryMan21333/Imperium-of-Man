@@ -1,7 +1,7 @@
 /obj/item/defibrillator
 	name = "emergency defibrillator"
 	desc = "A device that delivers powerful shocks to resuscitate incapacitated patients."
-	icon = 'icons/obj/items/defibrillator.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/defibrillator.dmi'
 	icon_state = "defib"
 	worn_icon_state = "defib"
 	atom_flags = CONDUCT
@@ -209,7 +209,7 @@
 			title = "Revival Imminent!",
 			message = "Someone is trying to resuscitate your body! Stay in it if you want to be resurrected!",
 			color_override = "purple"
-		), ghost_sound = 'sound/effects/gladosmarinerevive.ogg')
+		), ghost_sound = 'modular_imperium/master_files/sound/effects/gladosmarinerevive.ogg')
 		ghost.reenter_corpse()
 
 	user.visible_message(span_notice("[user] starts setting up the paddles on [patient]'s chest."),
@@ -315,7 +315,7 @@
 	GLOB.round_statistics.total_human_revives[patient.faction]++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_human_revives[patient.faction]")
 
-	if(CHECK_BITFIELD(patient.status_flags, XENO_HOST))
+	if(CHECK_BITFIELD(patient.status_flags, TYRANID_HOST))
 		var/obj/item/alien_embryo/friend = locate() in patient
 		START_PROCESSING(SSobj, friend)
 
@@ -329,7 +329,7 @@
 
 ///used for advanced medical (defibrillator) gloves: defibrillator_gloves.dm
 /obj/item/defibrillator/internal
-	icon = 'icons/obj/clothing/gloves.dmi' //even though you'll never see this directly, it shows up in the chat panel due to icon2html
+	icon = 'modular_imperium/master_files/icons/obj/clothing/gloves.dmi' //even though you'll never see this directly, it shows up in the chat panel due to icon2html
 	ready = TRUE
 	ready_needed = FALSE
 	///Parent item containing this defib

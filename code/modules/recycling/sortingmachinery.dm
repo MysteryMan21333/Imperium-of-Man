@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 /obj/structure/bigDelivery
 	desc = "A big wrapped package."
 	name = "large parcel"
-	icon = 'icons/obj/items/storage/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/misc.dmi'
 	icon_state = "deliverycloset"
 	var/obj/wrapped = null
 	density = TRUE
@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 /obj/structure/bigDelivery/update_overlays()
 	. = ..()
 	if(nameset || examtext)
-		var/image/I = new/image('icons/obj/items/storage/misc.dmi', "delivery_label")
+		var/image/I = new/image('modular_imperium/master_files/icons/obj/items/storage/misc.dmi', "delivery_label")
 		if(icon_state == "deliverycloset")
 			I.pixel_x = 2
 			if(label_y == null)
@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			I.pixel_y = -3
 		. += I
 	if(src.sortTag)
-		var/image/I = new/image('icons/obj/items/storage/misc.dmi', "delivery_tag")
+		var/image/I = new/image('modular_imperium/master_files/icons/obj/items/storage/misc.dmi', "delivery_tag")
 		if(icon_state == "deliverycloset")
 			if(tag_x == null)
 				tag_x = rand(-2, 3)
@@ -62,8 +62,8 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			to_chat(user, span_notice("It has a note attached which reads, \"[examtext]\""))
 	return
 
-/obj/structure/bigDelivery/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	attack_hand(xeno_attacker)
+/obj/structure/bigDelivery/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	attack_hand(tyranid_attacker)
 
 /obj/structure/bigDelivery/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -122,7 +122,7 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 /obj/item/smallDelivery
 	desc = "A small wrapped package."
 	name = "small parcel"
-	icon = 'icons/obj/items/storage/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/misc.dmi'
 	icon_state = "deliverycrate3"
 	var/obj/item/wrapped = null
 	var/sortTag = null
@@ -144,12 +144,12 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 /obj/item/smallDelivery/update_overlays()
 	. = ..()
 	if((nameset || examtext) && icon_state != "deliverycrate1")
-		var/image/I = new/image('icons/obj/items/storage/misc.dmi', "delivery_label")
+		var/image/I = new/image('modular_imperium/master_files/icons/obj/items/storage/misc.dmi', "delivery_label")
 		if(icon_state == "deliverycrate5")
 			I.pixel_y = -1
 		. += I
 	if(src.sortTag)
-		var/image/I = new/image('icons/obj/items/storage/misc.dmi', "delivery_tag")
+		var/image/I = new/image('modular_imperium/master_files/icons/obj/items/storage/misc.dmi', "delivery_tag")
 		switch(icon_state)
 			if("deliverycrate1")
 				I.pixel_y = -5
@@ -230,7 +230,7 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 
 /obj/item/packageWrap
 	name = "package wrapper"
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stack_objects.dmi'
 	icon_state = "deliveryPaper"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/amount = 25
@@ -323,14 +323,14 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 /obj/item/destTagger
 	name = "destination tagger"
 	desc = "Used to set the destination of properly wrapped packages."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "dest_tagger"
 	var/currTag = 0
 
 	w_class = WEIGHT_CLASS_SMALL
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "electronic"
 	atom_flags = CONDUCT

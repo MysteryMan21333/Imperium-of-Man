@@ -8,8 +8,8 @@
 	var/wet = 0 //whether the turf is wet (only used by floors).
 	var/shoefootstep = FOOTSTEP_FLOOR
 	var/barefootstep = FOOTSTEP_HARD
-	var/mediumxenofootstep = FOOTSTEP_HARD
-	var/heavyxenofootstep = FOOTSTEP_GENERIC_HEAVY
+	var/mediumtyranidfootstep = FOOTSTEP_HARD
+	var/heavytyranidfootstep = FOOTSTEP_GENERIC_HEAVY
 	smoothing_groups = list(SMOOTH_GROUP_OPEN_FLOOR)
 
 /turf/open/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs) //todo refactor this entire proc is garbage
@@ -73,7 +73,7 @@
 	icon = 'icons/misc/beach.dmi'
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
-	mediumxenofootstep = FOOTSTEP_SAND
+	mediumtyranidfootstep = FOOTSTEP_SAND
 
 /turf/open/beach/sand
 	name = "sand"
@@ -94,7 +94,7 @@
 	allow_construction = FALSE
 	shoefootstep = FOOTSTEP_PLATING
 	barefootstep = FOOTSTEP_HARD
-	mediumxenofootstep = FOOTSTEP_PLATING
+	mediumtyranidfootstep = FOOTSTEP_PLATING
 
 
 /turf/open/shuttle/check_alien_construction(mob/living/builder, silent = FALSE, planned_building)
@@ -311,7 +311,7 @@
 	icon_state = "basalt"
 	shoefootstep = FOOTSTEP_GRAVEL
 	barefootstep = FOOTSTEP_GRAVEL
-	mediumxenofootstep = FOOTSTEP_GRAVEL
+	mediumtyranidfootstep = FOOTSTEP_GRAVEL
 
 /turf/open/lavaland/basalt/cave
 	name = "cave"

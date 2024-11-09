@@ -5,7 +5,7 @@
 	screen_overlay = "cameras"
 	broken_icon = "computer_small_red_broken"
 	circuit = /obj/item/circuitboard/computer/security
-	var/list/network = list("marinemainship")
+	var/list/network = list("guardsmanmainship")
 	var/list/watchers = list() //who's using the console, associated with the camera they're on.
 	var/long_ranged = FALSE
 
@@ -151,7 +151,7 @@
 /obj/machinery/computer/security/telescreen
 	name = "Telescreen"
 	desc = "Used for watching an empty arena."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "telescreen"
 	network = list("thunder")
 	density = FALSE
@@ -166,7 +166,7 @@
 /obj/machinery/computer/security/telescreen/entertainment
 	name = "entertainment monitor"
 	desc = "Damn, why do they never have anything interesting on these things?"
-	icon = 'icons/obj/status_display.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/status_display.dmi'
 	icon_state = "entertainment"
 	circuit = null
 
@@ -203,24 +203,24 @@
 	network = list("NUKE")
 	circuit = null
 
-/obj/machinery/computer/security/marinemainship
+/obj/machinery/computer/security/guardsmanmainship
 	name = "Ship Security Cameras"
 	density = FALSE
 	icon_state = "computer_small"
 	screen_overlay = "security_cam"
-	network = list("marinemainship")
+	network = list("guardsmanmainship")
 
-/obj/machinery/computer/security/marinemainship_network
-	network = list("marinemainship")
+/obj/machinery/computer/security/guardsmanmainship_network
+	network = list("guardsmanmainship")
 
-/obj/machinery/computer/security/marine_network
-	network = list("marine")
+/obj/machinery/computer/security/guardsman_network
+	network = list("guardsman")
 
-/obj/machinery/computer/security/som_mainship
+/obj/machinery/computer/security/chaos_mainship
 	network = list("sommainship")
 
-/obj/machinery/computer/security/som_network
-	network = list(SOM_CAMERA_NETWORK)
+/obj/machinery/computer/security/chaos_network
+	network = list(CHAOS_CAMERA_NETWORK)
 
 /obj/machinery/computer/security/dropship
 	name = "abstract dropship camera computer"

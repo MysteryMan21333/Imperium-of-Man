@@ -47,7 +47,7 @@
 	if(!picture_image)
 		return
 	var/icon/small_img = icon(picture_image)
-	var/icon/ic = icon('icons/obj/items/items.dmi', "photo")
+	var/icon/ic = icon('modular_imperium/master_files/icons/obj/items/items.dmi', "photo")
 	small_img.Scale(8, 8)
 	ic.Blend(small_img, ICON_OVERLAY, 13, 13)
 	picture_icon = ic
@@ -77,7 +77,7 @@
 
 /obj/item/camera_film
 	name = "film cartridge"
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	desc = "A camera film cartridge. Insert it into a camera to reload it."
 	icon_state = "film"
 	worn_icon_state = "electropack"
@@ -86,11 +86,11 @@
 
 /obj/item/photo
 	name = "photo"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "photo"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "paper"
 	w_class = WEIGHT_CLASS_TINY
@@ -165,7 +165,7 @@
 
 /obj/item/camera
 	name = "camera"
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	desc = "A polaroid camera."
 	icon_state = "camera"
 	worn_icon_state = "camera"

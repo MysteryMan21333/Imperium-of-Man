@@ -1,5 +1,5 @@
 /datum/job/sectoid
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/sectoid
@@ -11,7 +11,7 @@
 	jobtype = /datum/job/sectoid
 
 	id = /obj/item/card/id
-	belt = /obj/item/storage/belt/marine/sectoid
+	belt = /obj/item/storage/belt/guardsman/sectoid
 	head = /obj/item/clothing/head/helmet/sectoid
 	ears = /obj/item/radio/headset/distress/sectoid
 	w_uniform = /obj/item/clothing/under/sectoid

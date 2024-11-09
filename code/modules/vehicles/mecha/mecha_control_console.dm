@@ -1,7 +1,7 @@
 /obj/machinery/computer/mecha
 	name = "exosuit control console"
 	desc = "Used to remotely locate or lockdown exosuits."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "mecha"
 	broken_icon = "computer_blue_broken"
@@ -76,7 +76,7 @@
 /obj/item/mecha_parts/mecha_tracking
 	name = "exosuit tracking beacon"
 	desc = "Device used to transmit exosuit data."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "motion2"
 	w_class = WEIGHT_CLASS_SMALL
 	/// If this beacon allows for AI control. Exists to avoid using istype() on checking

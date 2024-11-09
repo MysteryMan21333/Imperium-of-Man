@@ -527,8 +527,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-/datum/reagent/xenomicrobes
-	name = "Xenomicrobes"
+/datum/reagent/tyranidmicrobes
+	name = "Tyranidmicrobes"
 	description = "Microbes with an entirely alien cellular structure."
 	reagent_state = LIQUID
 	color = "#535E66" // rgb: 83, 94, 102

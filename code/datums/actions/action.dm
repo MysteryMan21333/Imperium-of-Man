@@ -14,9 +14,9 @@ KEYBINDINGS
 	var/datum/target = null
 	var/atom/movable/screen/action_button/button = null
 	var/mob/owner
-	var/action_icon = 'icons/mob/actions.dmi'
+	var/action_icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	var/action_icon_state = "default"
-	var/background_icon = 'icons/mob/actions.dmi'
+	var/background_icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	var/background_icon_state = "template"
 	///Holds a set of misc visual references to use with the overlay API. Always atleast one
 	var/list/visual_references = list()
@@ -50,9 +50,9 @@ KEYBINDINGS
 		visual_references[VREF_MUTABLE_MAPTEXT] = maptext_list
 	switch(action_type)
 		if(ACTION_TOGGLE)
-			visual_references[VREF_MUTABLE_ACTIVE_FRAME] = mutable_appearance('icons/mob/actions.dmi', "active", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)
+			visual_references[VREF_MUTABLE_ACTIVE_FRAME] = mutable_appearance('modular_imperium/master_files/icons/mob/actions.dmi', "active", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)
 		if(ACTION_SELECT)
-			visual_references[VREF_MUTABLE_SELECTED_FRAME] = mutable_appearance('icons/mob/actions.dmi', "selected_frame", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)
+			visual_references[VREF_MUTABLE_SELECTED_FRAME] = mutable_appearance('modular_imperium/master_files/icons/mob/actions.dmi', "selected_frame", ACTION_LAYER_ACTION_ICON_STATE, FLOAT_PLANE)
 	visual_references[VREF_MUTABLE_ACTION_STATE] = mutable_appearance(action_icon, action_icon_state, HUD_LAYER, HUD_PLANE)
 	button.add_overlay(visual_references[VREF_MUTABLE_ACTION_STATE])
 

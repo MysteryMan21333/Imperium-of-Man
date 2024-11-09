@@ -12,11 +12,11 @@
 /obj/item/clothing/suit/modular
 	name = "Jaeger XM-02 combat exoskeleton"
 	desc = "Designed to mount a variety of modular armor components and support systems. It comes installed with light-plating and a shoulder lamp. Mount armor pieces to it by clicking on the frame with the components. Use Alt-Click to remove any attached items."
-	icon = 'icons/mob/modular/modular_armor.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/modular/modular_armor.dmi'
 	icon_state = "underarmor"
 	worn_icon_state = "underarmor"
 	item_state_worn = TRUE
-	worn_icon_list = list(slot_wear_suit_str = 'icons/mob/modular/modular_armor.dmi')
+	worn_icon_list = list(slot_wear_suit_str = 'modular_imperium/master_files/icons/mob/modular/modular_armor.dmi')
 
 	atom_flags = CONDUCT
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
@@ -57,45 +57,45 @@
 		ATTACHMENT_SLOT_BELT,
 	)
 	attachments_allowed = list(
-		/obj/item/armor_module/armor/chest/marine,
-		/obj/item/armor_module/armor/legs/marine,
-		/obj/item/armor_module/armor/arms/marine,
+		/obj/item/armor_module/armor/chest/guardsman,
+		/obj/item/armor_module/armor/legs/guardsman,
+		/obj/item/armor_module/armor/arms/guardsman,
 
-		/obj/item/armor_module/armor/chest/marine/skirmisher,
-		/obj/item/armor_module/armor/legs/marine/skirmisher,
-		/obj/item/armor_module/armor/arms/marine/skirmisher,
+		/obj/item/armor_module/armor/chest/guardsman/skirmisher,
+		/obj/item/armor_module/armor/legs/guardsman/skirmisher,
+		/obj/item/armor_module/armor/arms/guardsman/skirmisher,
 
-		/obj/item/armor_module/armor/chest/marine/skirmisher/scout,
-		/obj/item/armor_module/armor/legs/marine/scout,
-		/obj/item/armor_module/armor/arms/marine/scout,
+		/obj/item/armor_module/armor/chest/guardsman/skirmisher/scout,
+		/obj/item/armor_module/armor/legs/guardsman/scout,
+		/obj/item/armor_module/armor/arms/guardsman/scout,
 
-		/obj/item/armor_module/armor/chest/marine/skirmisher/trooper,
-		/obj/item/armor_module/armor/legs/marine/trooper,
-		/obj/item/armor_module/armor/arms/marine/trooper,
+		/obj/item/armor_module/armor/chest/guardsman/skirmisher/trooper,
+		/obj/item/armor_module/armor/legs/guardsman/trooper,
+		/obj/item/armor_module/armor/arms/guardsman/trooper,
 
-		/obj/item/armor_module/armor/chest/marine/assault,
-		/obj/item/armor_module/armor/legs/marine/assault,
-		/obj/item/armor_module/armor/arms/marine/assault,
+		/obj/item/armor_module/armor/chest/guardsman/assault,
+		/obj/item/armor_module/armor/legs/guardsman/assault,
+		/obj/item/armor_module/armor/arms/guardsman/assault,
 
-		/obj/item/armor_module/armor/chest/marine/eva,
-		/obj/item/armor_module/armor/legs/marine/eva,
-		/obj/item/armor_module/armor/arms/marine/eva,
+		/obj/item/armor_module/armor/chest/guardsman/eva,
+		/obj/item/armor_module/armor/legs/guardsman/eva,
+		/obj/item/armor_module/armor/arms/guardsman/eva,
 
-		/obj/item/armor_module/armor/chest/marine/assault/eod,
-		/obj/item/armor_module/armor/legs/marine/eod,
-		/obj/item/armor_module/armor/arms/marine/eod,
+		/obj/item/armor_module/armor/chest/guardsman/assault/eod,
+		/obj/item/armor_module/armor/legs/guardsman/eod,
+		/obj/item/armor_module/armor/arms/guardsman/eod,
 
-		/obj/item/armor_module/armor/chest/marine/helljumper,
-		/obj/item/armor_module/armor/legs/marine/helljumper,
-		/obj/item/armor_module/armor/arms/marine/helljumper,
+		/obj/item/armor_module/armor/chest/guardsman/helljumper,
+		/obj/item/armor_module/armor/legs/guardsman/helljumper,
+		/obj/item/armor_module/armor/arms/guardsman/helljumper,
 
-		/obj/item/armor_module/armor/chest/marine/ranger,
-		/obj/item/armor_module/armor/legs/marine/ranger,
-		/obj/item/armor_module/armor/arms/marine/ranger,
+		/obj/item/armor_module/armor/chest/guardsman/ranger,
+		/obj/item/armor_module/armor/legs/guardsman/ranger,
+		/obj/item/armor_module/armor/arms/guardsman/ranger,
 
-		/obj/item/armor_module/armor/chest/marine/mjolnir,
-		/obj/item/armor_module/armor/legs/marine/mjolnir,
-		/obj/item/armor_module/armor/arms/marine/mjolnir,
+		/obj/item/armor_module/armor/chest/guardsman/mjolnir,
+		/obj/item/armor_module/armor/legs/guardsman/mjolnir,
+		/obj/item/armor_module/armor/arms/guardsman/mjolnir,
 
 		/obj/item/armor_module/module/better_shoulder_lamp,
 		/obj/item/armor_module/module/valkyrie_autodoc,
@@ -113,9 +113,9 @@
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
 		/obj/item/armor_module/storage/medical,
-		/obj/item/armor_module/storage/general/som,
-		/obj/item/armor_module/storage/engineering/som,
-		/obj/item/armor_module/storage/medical/som,
+		/obj/item/armor_module/storage/general/chaos,
+		/obj/item/armor_module/storage/engineering/chaos,
+		/obj/item/armor_module/storage/medical/chaos,
 		/obj/item/armor_module/storage/injector,
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,
@@ -124,7 +124,7 @@
 	light_range = 5
 
 	///Uniform type that is allowed to be worn with this.
-	var/allowed_uniform_type = /obj/item/clothing/under/marine
+	var/allowed_uniform_type = /obj/item/clothing/under/guardsman
 
 /obj/item/clothing/suit/modular/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
 	if(inhands)
@@ -144,7 +144,7 @@
 		var/mob/living/carbon/human/H = user
 		var/obj/item/clothing/under/undersuit = H.w_uniform
 		if(!istype(undersuit, allowed_uniform_type))
-			to_chat(user, span_warning("You must be wearing a marine jumpsuit to equip this."))
+			to_chat(user, span_warning("You must be wearing a guardsman jumpsuit to equip this."))
 			return FALSE
 	return ..()
 
@@ -209,7 +209,7 @@
 
 /obj/item/clothing/suit/modular/rownin
 	name = "\improper Rownin Skeleton"
-	desc = "A light armor, if you can even call it that, for marines that want to have agility in exchange for protection. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	desc = "A light armor, if you can even call it that, for guardsmans that want to have agility in exchange for protection. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
 	icon_state = "rownin_skeleton"
 	worn_icon_state = "rownin_skeleton"
 	allowed_uniform_type = /obj/item/clothing/under
@@ -230,9 +230,9 @@
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
 		/obj/item/armor_module/storage/medical,
-		/obj/item/armor_module/storage/general/som,
-		/obj/item/armor_module/storage/engineering/som,
-		/obj/item/armor_module/storage/medical/som,
+		/obj/item/armor_module/storage/general/chaos,
+		/obj/item/armor_module/storage/engineering/chaos,
+		/obj/item/armor_module/storage/medical/chaos,
 		/obj/item/armor_module/storage/injector,
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,
@@ -242,7 +242,7 @@
 /obj/item/clothing/suit/modular/rownin/erp
 	name = "\improper ERP rownin Skeleton"
 	desc = "A modified version of the Rowning Skeleton that offers much better, more entertaining and prank-inducing, design. Oh, also improved armor, but that part isn't as important. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_MEDIUM
+	soft_armor = GUARDSMAN_ARMOR_MEDIUM
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 
 	allowed_uniform_type = /obj/item/clothing/under/rank/clown/erp
@@ -259,17 +259,17 @@
 	allowed_uniform_type = /obj/item/clothing/under
 	attachments_allowed = list(
 
-		/obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markfive,
-		/obj/item/armor_module/armor/arms/marine/hardsuit_arms/syndicate_markfive,
-		/obj/item/armor_module/armor/legs/marine/hardsuit_legs/syndicate_markfive,
+		/obj/item/armor_module/armor/chest/guardsman/hardsuit/syndicate_markfive,
+		/obj/item/armor_module/armor/arms/guardsman/hardsuit_arms/syndicate_markfive,
+		/obj/item/armor_module/armor/legs/guardsman/hardsuit_legs/syndicate_markfive,
 
-		/obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markthree,
-		/obj/item/armor_module/armor/arms/marine/hardsuit_arms/syndicate_markthree,
-		/obj/item/armor_module/armor/legs/marine/hardsuit_legs/syndicate_markthree,
+		/obj/item/armor_module/armor/chest/guardsman/hardsuit/syndicate_markthree,
+		/obj/item/armor_module/armor/arms/guardsman/hardsuit_arms/syndicate_markthree,
+		/obj/item/armor_module/armor/legs/guardsman/hardsuit_legs/syndicate_markthree,
 
-		/obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markone,
-		/obj/item/armor_module/armor/arms/marine/hardsuit_arms/syndicate_markone,
-		/obj/item/armor_module/armor/legs/marine/hardsuit_legs/syndicate_markone,
+		/obj/item/armor_module/armor/chest/guardsman/hardsuit/syndicate_markone,
+		/obj/item/armor_module/armor/arms/guardsman/hardsuit_arms/syndicate_markone,
+		/obj/item/armor_module/armor/legs/guardsman/hardsuit_legs/syndicate_markone,
 
 		/obj/item/armor_module/module/better_shoulder_lamp,
 		/obj/item/armor_module/module/valkyrie_autodoc,
@@ -287,9 +287,9 @@
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
 		/obj/item/armor_module/storage/medical,
-		/obj/item/armor_module/storage/general/som,
-		/obj/item/armor_module/storage/engineering/som,
-		/obj/item/armor_module/storage/medical/som,
+		/obj/item/armor_module/storage/general/chaos,
+		/obj/item/armor_module/storage/engineering/chaos,
+		/obj/item/armor_module/storage/medical/chaos,
 		/obj/item/armor_module/storage/injector,
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,

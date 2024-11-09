@@ -3,13 +3,13 @@
 	desc = "Creates and dispenses chemicals."
 	density = TRUE
 	anchored = TRUE
-	icon = 'icons/obj/machines/chemical_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/chemical_machines.dmi'
 	icon_state = "dispenser"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 	active_power_usage = 250
 	interaction_flags = INTERACT_MACHINE_TGUI
-	req_one_access = list(ACCESS_MARINE_CMO, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY)
+	req_one_access = list(ACCESS_GUARDSMAN_CMO, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_CHEMISTRY)
 	layer = BELOW_OBJ_LAYER //So beakers reliably appear above it
 
 

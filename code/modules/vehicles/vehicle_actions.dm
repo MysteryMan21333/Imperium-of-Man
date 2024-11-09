@@ -185,7 +185,7 @@
 /***************** ACTION DATUMS *****************/
 
 /datum/action/vehicle
-	action_icon = 'icons/mob/actions/actions_vehicle.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions/actions_vehicle.dmi'
 	action_icon_state = "vehicle_eject"
 	var/obj/vehicle/vehicle_target
 

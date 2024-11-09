@@ -1,9 +1,9 @@
-/obj/docking_port/stationary/marine_dropship/cas
+/obj/docking_port/stationary/guardsman_dropship/cas
 	name = "CAS plane hangar pad"
 	id = SHUTTLE_CAS_DOCK
 	roundstart_template = /datum/map_template/shuttle/cas
 
-/obj/docking_port/mobile/marine_dropship/casplane
+/obj/docking_port/mobile/guardsman_dropship/casplane
 	name = "Condor Jet"
 	id = SHUTTLE_CAS_DOCK
 	width = 11
@@ -32,29 +32,29 @@
 	var/fuel_max = 40
 	///Our currently selected weapon we will fire
 	var/obj/structure/dropship_equipment/cas/weapon/active_weapon
-	///Minimap for the pilot to know where the marines have ran off to
-	var/datum/action/minimap/marine/external/cas_mini
+	///Minimap for the pilot to know where the guardsmans have ran off to
+	var/datum/action/minimap/guardsman/external/cas_mini
 
 	///If the shuttle is currently returning to the hangar.
 	var/currently_returning = FALSE
 	/// Jump to Lase action for active firemissions
 	var/datum/action/innate/jump_to_lase/jump_action
 
-/obj/docking_port/mobile/marine_dropship/casplane/Initialize(mapload)
+/obj/docking_port/mobile/guardsman_dropship/casplane/Initialize(mapload)
 	. = ..()
 	off_action = new
 	cas_mini = new
 	jump_action = new(null, src)
 	RegisterSignal(src, COMSIG_SHUTTLE_SETMODE, PROC_REF(update_state))
 
-/obj/docking_port/mobile/marine_dropship/casplane/Destroy(force)
+/obj/docking_port/mobile/guardsman_dropship/casplane/Destroy(force)
 	STOP_PROCESSING(SSslowprocess, src)
 	end_cas_mission(chair?.occupant)
 	QDEL_NULL(off_action)
 	QDEL_NULL(cas_mini)
 	return ..()
 
-/obj/docking_port/mobile/marine_dropship/casplane/process()
+/obj/docking_port/mobile/guardsman_dropship/casplane/process()
 	#ifndef TESTING
 	fuel_left--
 	if((fuel_max*LOW_FUEL_WARNING_THRESHOLD) == fuel_left)
@@ -71,7 +71,7 @@
 	#endif
 
 
-/obj/docking_port/mobile/marine_dropship/casplane/on_ignition()
+/obj/docking_port/mobile/guardsman_dropship/casplane/on_ignition()
 	. = ..()
 	for(var/i in engines)
 		var/obj/structure/caspart/internalengine/engine = i
@@ -79,7 +79,7 @@
 		var/image/engine_overlay = image('icons/turf/cas.dmi', engine.loc, "engine_on", ABOVE_MOB_PROP_LAYER, pixel_x = engine.x_offset)
 		engine.add_overlay(engine_overlay)
 
-/obj/docking_port/mobile/marine_dropship/casplane/on_prearrival()
+/obj/docking_port/mobile/guardsman_dropship/casplane/on_prearrival()
 	. = ..()
 	if(fuel_left <= LOW_FUEL_LANDING_THRESHOLD)
 		turn_off_engines()
@@ -91,7 +91,7 @@
 		engine.add_overlay(engine_overlay)
 
 ///Updates state and overlay to make te engines on
-/obj/docking_port/mobile/marine_dropship/casplane/proc/turn_on_engines()
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/turn_on_engines()
 	for(var/i in engines)
 		var/obj/structure/caspart/internalengine/engine = i
 		var/image/engine_overlay = image('icons/turf/cas.dmi', engine.loc, "engine_idle", ABOVE_MOB_PROP_LAYER, pixel_x = engine.x_offset)
@@ -100,7 +100,7 @@
 	START_PROCESSING(SSslowprocess, src)
 
 ///Updates state and overlay to make te engines off
-/obj/docking_port/mobile/marine_dropship/casplane/proc/turn_off_engines()
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/turn_off_engines()
 	for(var/i in engines)
 		var/obj/structure/caspart/internalengine/engine = i
 		engine.cut_overlays()
@@ -108,12 +108,12 @@
 	STOP_PROCESSING(SSslowprocess, src)
 
 ///Called to check if a equipment was changed and to unset the active equipment if it got removed
-/obj/docking_port/mobile/marine_dropship/casplane/proc/on_equipment_change(datum/source)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/on_equipment_change(datum/source)
 	if(!locate(active_weapon) in equipments)
 		active_weapon = null
 
 ///Updates our state. We use a different var from mode so we can distinguish when engines are turned on/ we are in-flight
-/obj/docking_port/mobile/marine_dropship/casplane/proc/update_state(datum/source, mode)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/update_state(datum/source, mode)
 	if(state == PLANE_STATE_DEACTIVATED)
 		return
 	if(!is_mainship_level(z) || mode != SHUTTLE_IDLE)
@@ -127,7 +127,7 @@
 				state = PLANE_STATE_ACTIVATED
 
 ///Runs checks and creates a new eye/hands over control to the eye
-/obj/docking_port/mobile/marine_dropship/casplane/proc/begin_cas_mission(mob/living/user)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/begin_cas_mission(mob/living/user)
 	if(!fuel_left)
 		to_chat(user, span_warning("No fuel remaining!"))
 		return
@@ -161,7 +161,7 @@
 		starting_point = tgui_input_list(user, "Select a CAS target", "CAS Targeting", GLOB.active_cas_targets)
 
 	else //if we don't have any targets use the minimap to select a starting position
-		var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(2, MINIMAP_FLAG_MARINE)
+		var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(2, MINIMAP_FLAG_GUARDSMAN)
 		user.client.screen += map
 		var/list/polled_coords = map.get_coords_from_click(user)
 		user?.client?.screen -= map
@@ -198,7 +198,7 @@
 	eyeobj.setLoc(get_turf(starting_point))
 
 ///Gives user control of the eye and allows them to start shooting
-/obj/docking_port/mobile/marine_dropship/casplane/proc/give_eye_control(mob/user)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/give_eye_control(mob/user)
 	off_action.target = user
 	off_action.give_action(user)
 	cas_mini.target = user
@@ -218,7 +218,7 @@
 	user.client.mouse_pointer_icon = 'icons/effects/supplypod_down_target.dmi'
 
 ///Ends the CAS mission
-/obj/docking_port/mobile/marine_dropship/casplane/proc/end_cas_mission(mob/living/user)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/end_cas_mission(mob/living/user)
 	if(!user)
 		return
 	if(eyeobj?.eye_user != user)
@@ -248,7 +248,7 @@
 	user.unset_interaction()
 
 ///Handles clicking on a target while in CAS mode
-/obj/docking_port/mobile/marine_dropship/casplane/proc/fire_weapons_at(datum/source, atom/target, turf/location, control, params)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/fire_weapons_at(datum/source, atom/target, turf/location, control, params)
 	if(state != PLANE_STATE_FLYING || is_mainship_level(z))
 		end_cas_mission(source)
 		return
@@ -273,7 +273,7 @@
 	active_weapon.open_fire(target, attackdir)
 	record_cas_activity(active_weapon)
 
-/obj/docking_port/mobile/marine_dropship/casplane/ui_data(mob/user)
+/obj/docking_port/mobile/guardsman_dropship/casplane/ui_data(mob/user)
 	. = list()
 	.["plane_state"] = state
 	.["location_state"] = !is_mainship_level(z)
@@ -298,7 +298,7 @@
 		element_nbr++
 
 /// Used to intercept JUMP links.
-/obj/docking_port/mobile/marine_dropship/casplane/proc/handle_topic(datum/source, mob/user, list/href_list)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/handle_topic(datum/source, mob/user, list/href_list)
 	SIGNAL_HANDLER
 
 	if(href_list["cas_jump"])

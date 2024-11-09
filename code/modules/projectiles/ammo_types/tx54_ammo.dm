@@ -195,7 +195,7 @@
 	trail_spread_system = /datum/effect_system/smoke_spread/plasmaloss
 
 /datum/ammo/bullet/tx54_spread/smoke/acid
-	trail_spread_system = /datum/effect_system/smoke_spread/xeno/acid
+	trail_spread_system = /datum/effect_system/smoke_spread/tyranid/acid
 
 /datum/ammo/bullet/tx54_spread/razor
 	name = "chemical bomblet"

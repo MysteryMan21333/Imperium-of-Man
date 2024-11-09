@@ -10,15 +10,15 @@
 #define LOST_FLAG_AURA_STRENGTH -2
 
 /obj/item/plantable_flag
-	name = "\improper TerraGov flag"
-	desc = "A flag bearing the symbol of TerraGov. It flutters in the breeze heroically. This one looks ready to be planted into the ground."
-	icon = 'icons/obj/items/flags/plantable_flag_large.dmi'
+	name = "\improper Imperium flag"
+	desc = "A flag bearing the symbol of Imperium. It flutters in the breeze heroically. This one looks ready to be planted into the ground."
+	icon = 'modular_imperium/master_files/icons/obj/items/flags/plantable_flag_large.dmi'
 	icon_state = "flag_tgmc"
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/large_flag_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/large_flag_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/large_flag_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/large_flag_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_HUGE
 	force = 55
@@ -29,7 +29,7 @@
 	throw_range = 2
 	soft_armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 100, FIRE = 50, ACID = 50)
 	///The faction this belongs to
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	///Aura emitter
 	var/datum/aura_bearer/current_aura
 	///Start point for it to return to when called
@@ -145,20 +145,20 @@
 	personal_statistics.flags_captured ++
 	personal_statistics.mission_flags_captured ++
 
-/obj/item/plantable_flag/som
-	name = "\improper SOM flag"
+/obj/item/plantable_flag/chaos
+	name = "\improper CHAOS flag"
 	desc = "A flag bearing the symbol of the Sons of Mars. It flutters in the breeze heroically. This one looks ready to be planted into the ground."
 	icon_state = "flag_som"
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 
 /obj/structure/plantable_flag
 	name = "flag"
 	desc = "A flag of something. This one looks like you could dismantle it."
-	icon = 'icons/obj/items/flags/plantable_flag_large.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/flags/plantable_flag_large.dmi'
 	pixel_x = 9
 	pixel_y = 12
 	layer = ABOVE_ALL_MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	///Weakref to item that is deployed to create src
 	var/datum/weakref/internal_item
 

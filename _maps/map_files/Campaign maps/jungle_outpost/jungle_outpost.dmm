@@ -2016,7 +2016,7 @@
 /turf/open/floor,
 /area/campaign/jungle_outpost/outpost/security)
 "kg" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/ground/grass/weedable,
 /area/campaign/jungle_outpost/ground/jungle/north_east)
 "kh" = (
@@ -2745,7 +2745,7 @@
 	},
 /area/campaign/jungle_outpost/ground/jungle)
 "nM" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/dirtgrassborder2/corner2{
 	dir = 1
 	},
@@ -4614,15 +4614,15 @@
 /area/campaign/jungle_outpost/ground/jungle/east)
 "xk" = (
 /obj/structure/rack,
-/obj/item/weapon/gun/pistol/som,
-/obj/item/weapon/gun/pistol/som,
-/obj/item/weapon/gun/pistol/som,
-/obj/item/ammo_magazine/pistol/som,
-/obj/item/ammo_magazine/pistol/som,
-/obj/item/ammo_magazine/pistol/som,
-/obj/item/ammo_magazine/pistol/som,
-/obj/item/ammo_magazine/pistol/som,
-/obj/item/ammo_magazine/pistol/som,
+/obj/item/weapon/gun/pistol/chaos,
+/obj/item/weapon/gun/pistol/chaos,
+/obj/item/weapon/gun/pistol/chaos,
+/obj/item/ammo_magazine/pistol/chaos,
+/obj/item/ammo_magazine/pistol/chaos,
+/obj/item/ammo_magazine/pistol/chaos,
+/obj/item/ammo_magazine/pistol/chaos,
+/obj/item/ammo_magazine/pistol/chaos,
+/obj/item/ammo_magazine/pistol/chaos,
 /turf/open/floor/tile/red/redtaupe{
 	dir = 4
 	},

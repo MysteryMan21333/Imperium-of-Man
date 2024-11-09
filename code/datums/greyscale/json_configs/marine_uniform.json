@@ -1,45 +1,45 @@
 {
-	"hyperscale_marine_jumpsuit":[
+	"hyperscale_guardsman_jumpsuit":[
 		{
 			"type": "hyperscale",
-			"icon_state": "hyperscale_marine_jumpsuit"
+			"icon_state": "hyperscale_guardsman_jumpsuit"
 		},
 		{
 			"type":"icon_state",
-			"icon_state":"hyperscale_marine_jumpsuit_no_color",
+			"icon_state":"hyperscale_guardsman_jumpsuit_no_color",
 			"blend_mode":"overlay"
 		}
 	],
-	"hyperscale_marine_jumpsuit_d":[
+	"hyperscale_guardsman_jumpsuit_d":[
 		{
 			"type": "hyperscale",
-			"icon_state": "hyperscale_marine_jumpsuit_d"
+			"icon_state": "hyperscale_guardsman_jumpsuit_d"
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "hyperscale_marine_jumpsuit_d_no_color",
+			"icon_state": "hyperscale_guardsman_jumpsuit_d_no_color",
 			"blend_mode": "overlay"
 		}
 	],
-	"hyperscale_marine_jumpsuit_h":[
+	"hyperscale_guardsman_jumpsuit_h":[
 		{
 			"type": "hyperscale",
-			"icon_state": "hyperscale_marine_jumpsuit_h"
+			"icon_state": "hyperscale_guardsman_jumpsuit_h"
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "hyperscale_marine_jumpsuit_h_no_color",
+			"icon_state": "hyperscale_guardsman_jumpsuit_h_no_color",
 			"blend_mode": "overlay"
 		}
 	],
-	"hyperscale_marine_jumpsuit_r":[
+	"hyperscale_guardsman_jumpsuit_r":[
 		{
 			"type": "hyperscale",
-			"icon_state": "hyperscale_marine_jumpsuit_r"
+			"icon_state": "hyperscale_guardsman_jumpsuit_r"
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "hyperscale_marine_jumpsuit_r_no_color",
+			"icon_state": "hyperscale_guardsman_jumpsuit_r_no_color",
 			"blend_mode": "overlay"
 		}
 	],

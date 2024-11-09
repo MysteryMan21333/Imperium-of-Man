@@ -22,7 +22,7 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/lv624/ground/caves/central2)
 "bt" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /obj/effect/turf_decal/lvsanddecal/full,
 /turf/open/floor/plating/asteroidfloor,
@@ -48,7 +48,7 @@
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
 "dj" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/asteroidfloor,
 /area/lv624/ground/caves/central2)
 "ed" = (
@@ -56,7 +56,7 @@
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
 "el" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "eq" = (
@@ -85,7 +85,7 @@
 	},
 /area/lv624/ground/caves/central1)
 "eX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/lv624/ground/caves/rock)
 "gk" = (
@@ -93,7 +93,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "gA" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/item/ammo_casing/bullet,
 /obj/effect/ai_node,
 /turf/open/floor/dark2,
@@ -129,11 +129,11 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "iV" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "iW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
@@ -142,7 +142,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "jx" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/item/ammo_casing/bullet,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
@@ -169,7 +169,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "mx" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
@@ -234,7 +234,7 @@
 "ui" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	dir = 1;
-	name = "\improper Xenomorph Research Dome"
+	name = "\improper Tyranid Research Dome"
 	},
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 5
@@ -248,7 +248,7 @@
 "uz" = (
 /obj/machinery/door/airlock/mainship/medical/glass/free_access{
 	dir = 1;
-	name = "\improper Xenomorph Research Dome"
+	name = "\improper Tyranid Research Dome"
 	},
 /turf/open/floor/plating,
 /area/lv624/ground/caves/central2)
@@ -313,7 +313,7 @@
 /area/lv624/ground/caves/central2)
 "zu" = (
 /obj/structure/rack,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -332,7 +332,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -353,7 +353,7 @@
 /turf/open/floor/tile/dark,
 /area/lv624/ground/caves/central1)
 "Ao" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/turf_decal/lvsanddecal/full,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroidfloor,
@@ -368,7 +368,7 @@
 /area/lv624/ground/caves/central2)
 "Bi" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
 "By" = (
@@ -385,7 +385,7 @@
 /area/lv624/ground/caves/central2)
 "BZ" = (
 /obj/machinery/door/airlock/mainship/medical/glass/free_access{
-	name = "\improper Xenomorph Research Dome"
+	name = "\improper Tyranid Research Dome"
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/lv624/ground/caves/central2)
@@ -395,7 +395,7 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/lv624/ground/caves/central2)
 "Dd" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/up,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/up,
 /obj/item/stack/sheet/metal/small_stack,
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
@@ -417,7 +417,7 @@
 /area/lv624/ground/caves/central2)
 "DE" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
 "DU" = (
@@ -426,7 +426,7 @@
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
 "EZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central3)
 "Fb" = (
@@ -447,7 +447,7 @@
 /turf/open/floor/dark2,
 /area/lv624/ground/caves/central2)
 "GP" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "Hb" = (
@@ -490,16 +490,16 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/lv624/ground/caves/central2)
 "Ko" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/limb,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,
 /turf/open/floor/plating,
 /area/lv624/ground/caves/central2)
 "KG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/turf_decal/lvsanddecal/full,
 /turf/open/floor/plating/asteroidfloor,
 /area/lv624/ground/caves/central2)
 "KP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "KZ" = (
@@ -602,7 +602,7 @@
 "Ro" = (
 /obj/structure/rack,
 /obj/item/tool/shovel,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -686,11 +686,11 @@
 /area/lv624/ground/caves/central2)
 "VS" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/rock)
 "WA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/rock)
 "WL" = (

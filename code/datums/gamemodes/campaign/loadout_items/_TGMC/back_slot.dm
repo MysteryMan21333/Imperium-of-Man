@@ -7,7 +7,7 @@
 	ui_icon = "empty"
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 	jobs_supported = list(
-		SQUAD_MARINE,
+		SQUAD_GUARDSMAN,
 		SQUAD_CORPSMAN,
 		SQUAD_ENGINEER,
 		SQUAD_SMARTGUNNER,
@@ -15,35 +15,35 @@
 		FIELD_COMMANDER,
 		STAFF_OFFICER,
 		CAPTAIN,
-		SOM_SQUAD_MARINE,
-		SOM_SQUAD_CORPSMAN,
-		SOM_SQUAD_ENGINEER,
-		SOM_SQUAD_VETERAN,
-		SOM_SQUAD_LEADER,
-		SOM_FIELD_COMMANDER,
-		SOM_STAFF_OFFICER,
-		SOM_COMMANDER,
+		CHAOS_SQUAD_GUARDSMAN,
+		CHAOS_SQUAD_CORPSMAN,
+		CHAOS_SQUAD_ENGINEER,
+		CHAOS_SQUAD_VETERAN,
+		CHAOS_SQUAD_LEADER,
+		CHAOS_FIELD_COMMANDER,
+		CHAOS_STAFF_OFFICER,
+		CHAOS_COMMANDER,
 	)
 
-/datum/loadout_item/back/marine_satchel
+/datum/loadout_item/back/guardsman_satchel
 	name = "Satchel"
 	desc = "A heavy-duty satchel carried by some TGMC soldiers and support personnel. Carries less than a backpack, but items can be drawn instantly."
-	item_typepath = /obj/item/storage/backpack/marine/satchel
-	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, STAFF_OFFICER, CAPTAIN)
+	item_typepath = /obj/item/storage/backpack/guardsman/satchel
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_SMARTGUNNER, STAFF_OFFICER, CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/back/marine_backpack
+/datum/loadout_item/back/guardsman_backpack
 	name = "Backpack"
 	desc = "The standard-issue pack of the TGMC forces. Designed to slug gear into the battlefield. Carries more than a satchel but has a draw delay."
-	item_typepath = /obj/item/storage/backpack/marine
-	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER)
+	item_typepath = /obj/item/storage/backpack/guardsman
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_SMARTGUNNER)
 
 /datum/loadout_item/back/combat_pack
 	name = "Combat pack"
 	desc = "A small lightweight pack for expeditions and short-range operations. Has the storage capacity of a backpack but no draw delay."
 	purchase_cost = 25
 	item_typepath = /obj/item/storage/backpack/lightpack
-	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER)
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_SMARTGUNNER)
 
 /datum/loadout_item/back/combat_pack/free
 	purchase_cost = 0
@@ -55,8 +55,8 @@
 	desc = "A specialized fuel tank for use with the FL-84 flamethrower and FL-240 incinerator unit."
 	req_desc = "Requires a FL-84 flamethrower."
 	item_typepath = /obj/item/ammo_magazine/flamer_tank/backtank
-	jobs_supported = list(SQUAD_MARINE)
-	item_whitelist = list(/obj/item/weapon/gun/flamer/big_flamer/marinestandard/wide = ITEM_SLOT_SUITSTORE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
+	item_whitelist = list(/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/wide = ITEM_SLOT_SUITSTORE)
 
 /datum/loadout_item/back/flamer_tank/x_fuel
 	name = "X-fuel tank"
@@ -72,8 +72,8 @@
 	It provides better mobility for heavy users and enough thrust to be used in an aggressive manner. \
 	Alt right click or middleclick to fly to a destination when the jetpack is equipped. Will collide with hostiles"
 	req_desc = "Requires a SMG-25 or ALF-51B."
-	item_typepath = /obj/item/jetpack_marine/heavy
-	jobs_supported = list(SQUAD_MARINE)
+	item_typepath = /obj/item/jetpack_guardsman/heavy
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	item_whitelist = list(
 		/obj/item/weapon/gun/smg/m25/magharness = ITEM_SLOT_SUITSTORE,
 		/obj/item/weapon/gun/rifle/alf_machinecarbine/assault = ITEM_SLOT_SUITSTORE,
@@ -81,7 +81,7 @@
 	)
 
 //special unlockable
-/datum/loadout_item/back/marine_shotgun
+/datum/loadout_item/back/guardsman_shotgun
 	name = "SH-35"
 	desc = "Equipped with a mag harness, bayonet, angled grip and foldable stock. \
 	The SH-35 is the most commonly used shotgun of the TGMC. With good mobility and handling, it has unparalleled close range power when using buckshot. Able to kill or maim all but the most heavily armored targets with a single well aimmed blast. \
@@ -90,10 +90,10 @@
 	ui_icon = "t35"
 	purchase_cost = 25
 	item_typepath = /obj/item/weapon/gun/shotgun/pump/t35/standard
-	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER)
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_SMARTGUNNER, SQUAD_LEADER)
 	loadout_item_flags = NONE
 
-/datum/loadout_item/back/marine_shotgun/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
+/datum/loadout_item/back/guardsman_shotgun/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
 	. = ..()
 	wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/shotgun/buckshot, SLOT_R_HAND)
 
@@ -108,14 +108,14 @@
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_UNLOCKABLE
 	quantity = 2
 	item_typepath = /obj/item/storage/holster/backholster/rpg/heam
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 
 /datum/loadout_item/back/machete
 	name = "Machete"
 	desc = "A large leather scabbard carrying a M2132 machete. It can be strapped to the back, waist or armor. Extremely dangerous against human opponents - if you can get close enough."
 	ui_icon = "machete"
 	item_typepath = /obj/item/storage/holster/blade/machete/full
-	jobs_supported = list(SQUAD_MARINE, SQUAD_LEADER)
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_LEADER)
 	loadout_item_flags = NONE
 
 /datum/loadout_item/back/minigun_powerpack
@@ -123,7 +123,7 @@
 	desc = "A heavy reinforced backpack with support equipment, power cells, and spare rounds for the MG-100 Minigun System. You don't get any spare, so make it count."
 	req_desc = "Requires an MG-100."
 	item_typepath = /obj/item/ammo_magazine/minigun_powerpack
-	jobs_supported = list(SQUAD_MARINE)
+	jobs_supported = list(SQUAD_GUARDSMAN)
 	loadout_item_flags = NONE
 	item_whitelist = list(/obj/item/weapon/gun/minigun/magharness = ITEM_SLOT_SUITSTORE)
 
@@ -131,13 +131,13 @@
 /datum/loadout_item/back/corpsman_satchel
 	name = "Medical satchel"
 	desc = "A heavy-duty satchel carried by some TGMC corpsmen. You can recharge defibrillators by plugging them in. Carries less than a backpack, but items can be drawn instantly."
-	item_typepath = /obj/item/storage/backpack/marine/corpsman/satchel
+	item_typepath = /obj/item/storage/backpack/guardsman/corpsman/satchel
 	jobs_supported = list(SQUAD_CORPSMAN)
 
 /datum/loadout_item/back/corpsman_backpack
 	name = "Medical backpack"
 	desc = "The standard-issue backpack worn by TGMC corpsmen. You can recharge defibrillators by plugging them in. Carries more than a satchel but has a draw delay."
-	item_typepath = /obj/item/storage/backpack/marine/corpsman
+	item_typepath = /obj/item/storage/backpack/guardsman/corpsman
 	jobs_supported = list(SQUAD_CORPSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
@@ -145,7 +145,7 @@
 /datum/loadout_item/back/engineerpack
 	name = "Sentry welderpack"
 	desc = "A specialized backpack worn by TGMC technicians. It carries a fueltank for quick welder refueling. Loaded with a point defense sentry, excellent for defending areas or establishing killboxes."
-	item_typepath = /obj/item/storage/backpack/marine/engineerpack
+	item_typepath = /obj/item/storage/backpack/guardsman/engineerpack
 	jobs_supported = list(SQUAD_ENGINEER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
@@ -168,7 +168,7 @@
 /datum/loadout_item/back/tech_backpack
 	name = "Demolition backpack"
 	desc = "The standard-issue backpack worn by TGMC technicians. Filled with a detpacks, C4 and grenades. Has a draw delay."
-	item_typepath = /obj/item/storage/backpack/marine/tech
+	item_typepath = /obj/item/storage/backpack/guardsman/tech
 	jobs_supported = list(SQUAD_ENGINEER)
 
 /datum/loadout_item/back/tech_backpack/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)

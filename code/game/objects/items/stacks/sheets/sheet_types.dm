@@ -52,10 +52,10 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 
 
 GLOBAL_LIST_INIT(metal_radial_images, list(
-	"recipes" = image('icons/obj/structures/barricades/misc.dmi', icon_state = "plus"),
-	"barricade" = image('icons/obj/structures/barricades/metal.dmi', icon_state = "metal_0"),
-	"razorwire" = image('icons/obj/structures/barricades/barbedwire.dmi', icon_state = "barbedwire_assembly"),
-	"barbedwire" = image('icons/obj/stack_objects.dmi', icon_state = "barbed_wire")
+	"recipes" = image('modular_imperium/master_files/icons/obj/structures/barricades/misc.dmi', icon_state = "plus"),
+	"barricade" = image('modular_imperium/master_files/icons/obj/structures/barricades/metal.dmi', icon_state = "metal_0"),
+	"razorwire" = image('modular_imperium/master_files/icons/obj/structures/barricades/barbedwire.dmi', icon_state = "barbedwire_assembly"),
+	"barbedwire" = image('modular_imperium/master_files/icons/obj/stack_objects.dmi', icon_state = "barbed_wire")
 	))
 
 /obj/item/stack/sheet/metal
@@ -149,11 +149,11 @@ GLOBAL_LIST_INIT(plasteel_recipes, list( \
 * Wood
 */
 GLOBAL_LIST_INIT(wood_radial_images, list(
-	"recipes" = image('icons/obj/structures/barricades/misc.dmi', icon_state = "plus"),
-	"barricade" = image('icons/obj/structures/barricades/misc.dmi', icon_state = "wooden"),
-	"chair" = image('icons/obj/objects.dmi', icon_state = "wooden_chair"),
-	"tile" = image('icons/obj/stack_objects.dmi', icon_state = "tile-wood"),
-	"crate" = image('icons/obj/structures/crates.dmi', icon_state = "secure_crate")
+	"recipes" = image('modular_imperium/master_files/icons/obj/structures/barricades/misc.dmi', icon_state = "plus"),
+	"barricade" = image('modular_imperium/master_files/icons/obj/structures/barricades/misc.dmi', icon_state = "wooden"),
+	"chair" = image('modular_imperium/master_files/icons/obj/objects.dmi', icon_state = "wooden_chair"),
+	"tile" = image('modular_imperium/master_files/icons/obj/stack_objects.dmi', icon_state = "tile-wood"),
+	"crate" = image('modular_imperium/master_files/icons/obj/structures/crates.dmi', icon_state = "secure_crate")
 	))
 
 
@@ -279,7 +279,7 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 		new/datum/stack_recipe("AR-21 mag box", /obj/item/storage/box/visual/magazine/compact/standard_skirmishrifle, crafting_flags = NONE), \
 		new/datum/stack_recipe("AR-11 mag box", /obj/item/storage/box/visual/magazine/compact/ar11, crafting_flags = NONE), \
 		new/datum/stack_recipe("Martini Henry packet box", /obj/item/storage/box/visual/magazine/compact/martini, crafting_flags = NONE), \
-		new/datum/stack_recipe("TE cell box", /obj/item/storage/box/visual/magazine/compact/lasrifle/marine, crafting_flags = NONE), \
+		new/datum/stack_recipe("TE cell box", /obj/item/storage/box/visual/magazine/compact/lasrifle/guardsman, crafting_flags = NONE), \
 		new/datum/stack_recipe("SH-15 mag box", /obj/item/storage/box/visual/magazine/compact/sh15, crafting_flags = NONE), \
 		)), \
 	new/datum/stack_recipe_list("marksmen rifle boxes",list( \

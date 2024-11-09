@@ -6,7 +6,7 @@
 
 	syllables = list(
 		"Imperium", "Emperor", "planet", "troops", "recruitment", "Imperial Guard", "Administratum", "fortress", "commander",
-		"death", "victory", "glory", "grimdark", "Codex Astartes", "Space Marines", "the",
+		"death", "victory", "glory", "grimdark", "Codex Astartes", "Space Guardsmans", "the",
 	)
 
 	icon_state = "galcom"

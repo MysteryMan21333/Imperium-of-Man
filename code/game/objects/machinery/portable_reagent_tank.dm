@@ -1,7 +1,7 @@
 /obj/machinery/deployable/reagent_tank
 	name = "portable reagent dispenser"
 	desc = "A large vessel for transporting chemicals. Has a cabinet for storing chemical supplies."
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	density = TRUE
 	max_integrity = 200
 	///Properties relating to reagents for this container; whether you can check if reagents are visible, if it is refillable, etc.
@@ -66,23 +66,23 @@
 	var/obj/item/storage/internal_bag = get_internal_item()
 	internal_bag?.storage_datum.open(user)
 
-/obj/machinery/deployable/reagent_tank/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.a_intent != INTENT_HARM)
-		return drink_from_nozzle(xeno_attacker, TRUE)
+/obj/machinery/deployable/reagent_tank/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.a_intent != INTENT_HARM)
+		return drink_from_nozzle(tyranid_attacker, TRUE)
 	return ..()
 
 ///Process for drinking reagents directly from the dispenser's nozzle
-/obj/machinery/deployable/reagent_tank/proc/drink_from_nozzle(mob/living/user, is_xeno = FALSE)
+/obj/machinery/deployable/reagent_tank/proc/drink_from_nozzle(mob/living/user, is_tyranid = FALSE)
 	if(isrobot(user) || issynth(user))
 		balloon_alert(user, "You are incapable of drinking!")
 		return FALSE
 	if(reagents?.total_volume)
-		if(!is_xeno)
+		if(!is_tyranid)
 			//Everyone will be made aware of your nasty habits!
 			visible_message(span_alert("[user] is putting [user.p_their()] mouth on [src]'s nozzle. Gross!"))
 		if(!do_after(user, 0.5 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_DANGER))
 			return FALSE
-		if(is_xeno)
+		if(is_tyranid)
 			visible_message(span_alert("[user] sips from [src]'s nozzle. Adorable."))
 		record_sippies(5, reagents.reagent_list, user)
 		playsound(user.loc,'sound/items/drink.ogg', 25, 2)
@@ -118,7 +118,7 @@
 /obj/item/storage/reagent_tank
 	name = "portable reagent dispenser"
 	desc = "A large vessel for transporting chemicals. Has a cabinet for storing chemical supplies."
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "dispenser"
 	item_state_worn = TRUE
 	worn_icon_state = "reagent_dispenser"

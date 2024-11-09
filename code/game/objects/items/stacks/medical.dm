@@ -6,8 +6,8 @@
 	name = "medical pack"
 	singular_name = "medical pack"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medical_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medical_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_right.dmi',
 	)
 	amount = 10
 	max_amount = 10
@@ -173,7 +173,7 @@
 	name = "\improper healing resin pack"
 	singular_name = "healing resin pack"
 	desc = "A strange tool filled with a sticky, alien resin. It seems it is meant for covering wounds."
-	icon = 'icons/obj/items/surgery_tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/surgery_tools.dmi'
 	icon_state = "predator_fixovein"
 	heal_brute = 20
 	heal_burn = 20

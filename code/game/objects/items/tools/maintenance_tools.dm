@@ -354,10 +354,10 @@
 	name = "Welding kit"
 	desc = "A heavy-duty, portable fuel carrier. Welder and flamer compatible."
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon = 'icons/obj/items/tank.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tank.dmi'
 	icon_state = "welderpack"
 	w_class = WEIGHT_CLASS_BULKY
-	var/max_fuel = 500 //Because the marine backpack can carry 260, and still allows you to take items, there should be a reason to still use this one.
+	var/max_fuel = 500 //Because the guardsman backpack can carry 260, and still allows you to take items, there should be a reason to still use this one.
 
 /obj/item/tool/weldpack/Initialize(mapload)
 	. = ..()
@@ -460,18 +460,18 @@
 	. = ..()
 	. += "[reagents.total_volume] units of welding fuel left!"
 
-/obj/item/tool/weldpack/marinestandard
+/obj/item/tool/weldpack/guardsmanstandard
 	name = "M-22 welding kit"
 	desc = "A heavy-duty, portable fuel carrier. Mainly used in flamethrowers. Welder and flamer compatible."
 	equip_slot_flags = ITEM_SLOT_BACK
-	icon_state = "marine_flamerpack"
+	icon_state = "guardsman_flamerpack"
 	w_class = WEIGHT_CLASS_BULKY
-	max_fuel = 500 //Because the marine backpack can carry 260, and still allows you to take items, there should be a reason to still use this one.
+	max_fuel = 500 //Because the guardsman backpack can carry 260, and still allows you to take items, there should be a reason to still use this one.
 
 /obj/item/tool/handheld_charger
 	name = "handheld charger"
 	desc = "A hand-held, lightweight cell charger. It isn't going to give you tons of power, but it can help in a pinch."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "handheldcharger_black"
 	worn_icon_state = "handheldcharger_black_empty"
 	w_class = WEIGHT_CLASS_SMALL

@@ -1,21 +1,21 @@
-/obj/structure/prop/som_fighter
+/obj/structure/prop/chaos_fighter
 	name = "\improper Harbinger"
-	desc = "A state of the art Harbinger class fighter. The premier fighter for SOM forces in space and atmosphere, bristling with high tech systems and weapons."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
-	icon_state = "SOM_fighter"
+	desc = "A state of the art Harbinger class fighter. The premier fighter for CHAOS forces in space and atmosphere, bristling with high tech systems and weapons."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
+	icon_state = "CHAOS_fighter"
 	pixel_x = -33
 	pixel_y = -10
 	density = TRUE
 	allow_pass_flags = PASS_AIR
 
-/obj/structure/prop/som_fighter/empty
-	icon_state = "SOM_fighter_empty"
-	desc = "A state of the art Harbinger class fighter. The premier fighter for SOM forces in space and atmosphere, this one seems to be unarmed currently."
+/obj/structure/prop/chaos_fighter/empty
+	icon_state = "CHAOS_fighter_empty"
+	desc = "A state of the art Harbinger class fighter. The premier fighter for CHAOS forces in space and atmosphere, this one seems to be unarmed currently."
 
 /obj/structure/prop/train
 	name = "locomotive"
 	desc = "A heavy duty maglev locomotive. Designed for moving large quantities of goods from point A to point B."
-	icon = 'icons/obj/structures/train.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/train.dmi'
 	icon_state = "maglev"
 	density = TRUE
 	allow_pass_flags = PASS_AIR
@@ -88,7 +88,7 @@
 /obj/structure/prop/nt_computer
 	name = "server rack"
 	desc = "A server rack. Who knows what's on it?."
-	icon = 'icons/obj/structures/campaign/tall_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tall_structures.dmi'
 	icon_state = "serverrack_on"
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
@@ -119,7 +119,7 @@
 /obj/structure/gauss_cannon
 	name = "\improper Gauss Cannon"
 	desc = "A powerful gauss cannon. Designed to punch holes through hostile spacecraft."
-	icon = 'icons/obj/machines/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/artillery.dmi'
 	icon_state = "gauss_cannon"
 	density = TRUE
 	anchored = TRUE

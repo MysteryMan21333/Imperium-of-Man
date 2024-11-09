@@ -3,7 +3,7 @@
 // *************************************
 
 /obj/item/tool/plantspray
-	icon = 'icons/obj/items/spray.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/spray.dmi'
 	worn_icon_state = "spray"
 	item_flags = NOBLUDGEON
 	equip_slot_flags = ITEM_SLOT_BELT
@@ -29,7 +29,7 @@
 
 /obj/item/tool/plantspray/pests/old
 	name = "bottle of pestkiller"
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "bottle16"
 
 /obj/item/tool/plantspray/pests/old/carbaryl
@@ -54,7 +54,7 @@
 
 /obj/item/tool/weedkiller
 	name = "bottle of weedkiller"
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "bottle16"
 	var/toxicity = 0
 	var/weed_kill_str = 0
@@ -80,7 +80,7 @@
 /obj/item/tool/minihoe // -- Numbers
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "hoe"
 	worn_icon_state = "hoe"
 	atom_flags = CONDUCT
@@ -94,7 +94,7 @@
 /obj/item/tool/hatchet
 	name = "hatchet"
 	desc = "A sharp hand hatchet, commonly used to cut things apart, be it timber or other objects. Often found in the hands of woodsmen, scouts, and looters."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "hatchet"
 	atom_flags = CONDUCT
 	force = 35
@@ -113,7 +113,7 @@
 /obj/item/tool/scythe
 	name = "scythe"
 	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "scythe"
 	force = 35
 	throwforce = 5

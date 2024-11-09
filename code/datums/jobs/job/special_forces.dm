@@ -1,5 +1,5 @@
 /datum/job/special_forces
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/special_forces_standard
@@ -17,13 +17,13 @@
 
 	glasses = /obj/item/clothing/glasses/night
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/dutch
 	mask = /obj/item/clothing/mask/gas/specops
-	w_uniform = /obj/item/clothing/under/marine/specops
-	shoes = /obj/item/clothing/shoes/marine/srf/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/specops
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/guardsman/specops
+	shoes = /obj/item/clothing/shoes/guardsman/srf/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/specops
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/modular/m10x
 	suit_store = /obj/item/weapon/gun/smg/m25/elite/suppressed
 	r_store = /obj/item/storage/pouch/grenade
@@ -76,13 +76,13 @@
 
 	glasses = /obj/item/clothing/glasses/night
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/dutch
 	mask = /obj/item/clothing/mask/gas/specops
-	w_uniform = /obj/item/clothing/under/marine/specops
-	shoes = /obj/item/clothing/shoes/marine/srf/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/specops/support
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/guardsman/specops
+	shoes = /obj/item/clothing/shoes/guardsman/srf/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/specops/support
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/modular/m10x
 	suit_store = /obj/item/weapon/gun/smg/m25/elite/suppressed/breacher
 	r_store = /obj/item/storage/pouch/medical_injectors/firstaid
@@ -119,7 +119,7 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/m15, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/cloak, SLOT_IN_R_POUCH)
 
-	H.equip_to_slot_or_del(new /obj/item/weapon/shield/riot/marine/metal, SLOT_R_HAND)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/riot/guardsman/metal, SLOT_R_HAND)
 
 /datum/job/special_forces/drone_operator
 	title = "Special Response Force Drone Operator"
@@ -131,13 +131,13 @@
 
 	glasses = /obj/item/clothing/glasses/night
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/dutch
 	mask = /obj/item/clothing/mask/gas/specops
-	w_uniform = /obj/item/clothing/under/marine/specops
-	shoes = /obj/item/clothing/shoes/marine/srf/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/specops/support
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/guardsman/specops
+	shoes = /obj/item/clothing/shoes/guardsman/srf/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/specops/support
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/modular/m10x/welding
 	suit_store = /obj/item/weapon/gun/smg/m25/elite/suppressed
 	r_store = /obj/item/storage/pouch/grenade
@@ -191,12 +191,12 @@
 	glasses = /obj/item/clothing/glasses/night
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/distress/dutch
-	w_uniform = /obj/item/clothing/under/marine/specops
+	w_uniform = /obj/item/clothing/under/guardsman/specops
 	belt = /obj/item/storage/belt/lifesaver/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/specops/medic
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/specops/medic
 	head = /obj/item/clothing/head/modular/m10x
-	shoes = /obj/item/clothing/shoes/marine/srf/full
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	shoes = /obj/item/clothing/shoes/guardsman/srf/full
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	glasses = /obj/item/clothing/glasses/hud/health
 	suit_store = /obj/item/weapon/gun/smg/m25/elite/suppressed
 	r_store = /obj/item/storage/pouch/medical_injectors/medic
@@ -236,14 +236,14 @@
 	jobtype = /datum/job/special_forces/leader
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/dutch
 	mask = /obj/item/clothing/mask/gas/specops
-	w_uniform = /obj/item/clothing/under/marine/specops
+	w_uniform = /obj/item/clothing/under/guardsman/specops
 	glasses = /obj/item/clothing/glasses/night
-	shoes = /obj/item/clothing/shoes/marine/srf/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/specops/leader
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	shoes = /obj/item/clothing/shoes/guardsman/srf/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/specops/leader
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/beret/sec
 	suit_store = /obj/item/weapon/gun/rifle/m16/spec_op
 	r_store = /obj/item/storage/pouch/shotgun

@@ -1,6 +1,6 @@
 //Large vehicles need overlays for correct cropping
 /obj/structure/prop/urban/vehicles/large
-	icon = 'icons/obj/structures/prop/urban/128x32_vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/128x32_vehiclesexpanded.dmi'
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/vehicles/large/Initialize(mapload)
@@ -69,10 +69,10 @@
 	name = "mega-hauler truck"
 	icon_state = "longtruck_kellandmining"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/128x32_vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/128x32_vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 128
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 1000 //mega hauler trucks are still tanks that soak up fire
 	coverage = 100
 	soft_armor = list(MELEE = 30, BULLET = 90, LASER = 95, ENERGY = 55, BOMB = 60, BIO = 10, FIRE = 10, ACID = 10)
@@ -106,7 +106,7 @@
 /obj/structure/prop/urban/vehicles/large/suv
 	name = "SUV"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "SUV"
 	bound_height = 32
 	bound_width = 64
@@ -149,7 +149,7 @@
 	name = "truck"
 	icon_state = "zentruck1"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 64
 	max_integrity = 120
@@ -187,7 +187,7 @@
 	name = "mega-hauler truck"
 	icon_state = "zenithlongtruck4"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 64
 
@@ -232,29 +232,29 @@
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers
 	icon_state = "crawler_wy2"
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 64
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining
 	icon_state = "miningcrawler1"
 	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining2
 	icon_state = "crawler_fuel"
 	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining3
 	icon_state = "crawler_covered_bed"
 	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/science
 	icon_state = "crawler_wy2"
 	desc = "It is a tread bound crawler used in harsh conditions. This one is designed for personnel transportation. Supplied by Orbital Blue International; 'Your friends, in the Aerospace business.' A subsidiary of Nanotrasen."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 // science crawlers
 
@@ -263,11 +263,11 @@
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/science/science1
 	icon_state = "crawler_wy1"
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/science/science2
 	icon_state = "crawler_wy2"
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 // Mining Crawlers
 
@@ -295,7 +295,7 @@
 /obj/structure/prop/urban/vehicles/large/suv/misc
 	name = "\improper Nanotrasen rapid response vehicle"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "WYSUV1"
 	bound_height = 32
 	bound_width = 64
@@ -349,7 +349,7 @@
 /obj/structure/prop/urban/vehicles/large/van
 	name = "van"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "greyvan"
 	bound_height = 32
 	bound_width = 64
@@ -374,7 +374,7 @@
 /obj/structure/prop/urban/vehicles/large/crashedcarsleft
 	name = "car pileup"
 	desc = "Burned out wrecked vehicles block your path."
-	icon = 'icons/obj/structures/prop/urban/crashedcars.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/crashedcars.dmi'
 	icon_state = "crashedcarsleft"
 	bound_height = 64
 	bound_width = 64
@@ -383,7 +383,7 @@
 /obj/structure/prop/urban/vehicles/large/crashedcarsright
 	name = "car pileup"
 	desc = "Burned out wrecked vehicles block your path."
-	icon = 'icons/obj/structures/prop/urban/crashedcars.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/crashedcars.dmi'
 	icon_state = "crashedcarsright"
 	bound_height = 64
 	bound_width = 64

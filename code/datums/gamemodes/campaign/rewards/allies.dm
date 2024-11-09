@@ -25,9 +25,9 @@
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/militia_reinforcement
 	ui_icon = "militia"
 	bonus_job_list = list(
-		/datum/job/som/mercenary/militia/leader = 1,
-		/datum/job/som/mercenary/militia/medic = 2,
-		/datum/job/som/mercenary/militia/standard = 9,
+		/datum/job/chaos/mercenary/militia/leader = 1,
+		/datum/job/chaos/mercenary/militia/medic = 2,
+		/datum/job/chaos/mercenary/militia/standard = 9,
 	)
 
 /datum/campaign_asset/bonus_job/freelancer

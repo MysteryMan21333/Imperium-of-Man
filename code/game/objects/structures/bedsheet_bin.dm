@@ -7,11 +7,11 @@ LINEN BINS
 /obj/item/bedsheet
 	name = "bedsheet"
 	desc = "A surprisingly soft linen bedsheet."
-	icon = 'icons/obj/items/bedsheets.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/bedsheets.dmi'
 	icon_state = "sheet"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "bedsheet"
 	layer = MOB_LAYER
@@ -83,7 +83,7 @@ LINEN BINS
 /obj/structure/bedsheetbin
 	name = "linen bin"
 	desc = "A linen bin. It looks rather cosy."
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "linenbin-full"
 	anchored = TRUE
 	var/amount = 20

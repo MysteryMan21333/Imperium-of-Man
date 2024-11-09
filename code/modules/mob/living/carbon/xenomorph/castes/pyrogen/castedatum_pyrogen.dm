@@ -1,11 +1,11 @@
-/datum/xeno_caste/pyrogen
+/datum/tyranid_caste/pyrogen
 	caste_name = "Pyrogen"
 	display_name = "Pyrogen"
 	upgrade_name = ""
-	caste_desc = "A xenomorph constantly engulfed by plasma flames."
-	caste_type_path = /mob/living/carbon/xenomorph/pyrogen
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_desc = "A tyranid constantly engulfed by plasma flames."
+	caste_type_path = /mob/living/carbon/tyranid/pyrogen
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "pyrogen" //used to match appropriate wound overlays
 	evolution_threshold = 225
 
@@ -26,7 +26,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /mob/living/carbon/xenomorph/runner
+	deevolves_to = /mob/living/carbon/tyranid/runner
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_FIRE_IMMUNE
@@ -42,30 +42,30 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/charge/fire_charge,
-		/datum/action/ability/activable/xeno/fireball,
-		/datum/action/ability/activable/xeno/firestorm,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/charge/fire_charge,
+		/datum/action/ability/activable/tyranid/fireball,
+		/datum/action/ability/activable/tyranid/firestorm,
 	)
 
-/datum/xeno_caste/pyrogen/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/pyrogen/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/pyrogen/primordial
+/datum/tyranid_caste/pyrogen/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "The fire within this one shimmers brighter than the ones before."
 	primordial_message = "Everything shall experience the cold of the void."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/charge/fire_charge,
-		/datum/action/ability/activable/xeno/fireball,
-		/datum/action/ability/activable/xeno/firestorm,
-		/datum/action/ability/xeno_action/heatray,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/charge/fire_charge,
+		/datum/action/ability/activable/tyranid/fireball,
+		/datum/action/ability/activable/tyranid/firestorm,
+		/datum/action/ability/tyranid_action/heatray,
 	)

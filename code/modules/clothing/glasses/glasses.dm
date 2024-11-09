@@ -1,10 +1,10 @@
 
 /obj/item/clothing/glasses
 	name = "glasses"
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/glasses_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/glasses_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/glasses_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/glasses_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_SMALL
 	var/prescription = FALSE
@@ -163,7 +163,7 @@
 	armor_protection_flags = NONE
 
 /obj/item/clothing/glasses/mgoggles
-	name = "marine ballistic goggles"
+	name = "guardsman ballistic goggles"
 	desc = "Standard issue TGMC goggles. Mostly used to decorate one's helmet."
 	icon_state = "mgoggles"
 	worn_icon_state = "mgoggles"
@@ -174,7 +174,7 @@
 
 
 /obj/item/clothing/glasses/mgoggles/prescription
-	name = "prescription marine ballistic goggles"
+	name = "prescription guardsman ballistic goggles"
 	desc = "Standard issue TGMC goggles. Mostly used to decorate one's helmet. Contains prescription lenses in case you weren't sure if they were lame or not."
 	prescription = TRUE
 
@@ -215,7 +215,7 @@
 /obj/item/clothing/glasses/m42_goggles
 	name = "\improper M42 scout sight"
 	desc = "A headset and goggles system for the M42 Scout Rifle. Allows highlighted imaging of surroundings. Click it to toggle."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	icon_state = "m56_goggles"
 	deactive_state = "m56_goggles_0"
 	vision_flags = SEE_TURFS

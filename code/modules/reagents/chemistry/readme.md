@@ -50,7 +50,7 @@ NOTE: IF YOU UPDATE THE REAGENT-SYSTEM, ALSO UPDATE THIS README.
 			This proc check all recipes and, on a match, uses them.
 			It will also call the recipe's on_reaction proc (for explosions or w/e).
 			Currently, this proc is automatically called by trans_to.
-			- Modified from the original to preserve reagent data across reactions (originally for xenoarchaeology)
+			- Modified from the original to preserve reagent data across reactions (originally for tyranidarchaeology)
 
 		isolate_reagent(reagent)
 			Pass it a reagent id and it will remove all reagents but that one.
@@ -89,7 +89,7 @@ NOTE: IF YOU UPDATE THE REAGENT-SYSTEM, ALSO UPDATE THIS README.
 
 		remove_reagent(reagent, amount)
 			The exact opposite of the add_reagent proc.
-			- Modified from original to return the reagent's data, in order to preserve reagent data across reactions (originally for xenoarchaeology)
+			- Modified from original to return the reagent's data, in order to preserve reagent data across reactions (originally for tyranidarchaeology)
 
 		has_reagent(reagent, amount)
 			Returns TRUE if the holder contains this reagent.

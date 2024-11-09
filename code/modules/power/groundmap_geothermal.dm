@@ -22,7 +22,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 	var/fail_check_ticks = 100 //Check for failure every this many ticks
 	var/cur_tick = 0 //Tick updater
 	///Hive it should be powering and whether it should be generating hive psycic points instead of power on process()
-	var/corrupted = XENO_HIVE_NORMAL
+	var/corrupted = TYRANID_HIVE_NORMAL
 	///whether we wil allow these to be corrupted
 	var/is_corruptible = TRUE
 	///whether they should generate corruption if corrupted
@@ -30,7 +30,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 
 /obj/machinery/power/geothermal/Initialize(mapload)
 	. = ..()
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED), PROC_REF(activate_corruption))
+	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED), PROC_REF(activate_corruption))
 	update_icon()
 	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, "generator", ABOVE_FLOAT_LAYER))
 
@@ -48,8 +48,8 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 /obj/machinery/power/geothermal/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(corrupted)
-		. += "It is covered in writhing tendrils [!isxeno(user) ? "that could be cut away with a welder" : ""]."
-	if(!isxeno(user) && !is_corruptible)
+		. += "It is covered in writhing tendrils [!istyranid(user) ? "that could be cut away with a welder" : ""]."
+	if(!istyranid(user) && !is_corruptible)
 		. += "It is reinforced, making us not able to corrupt it."
 
 /obj/machinery/power/geothermal/should_have_node()
@@ -108,7 +108,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 ///Allow generators to generate psych points
 /obj/machinery/power/geothermal/proc/activate_corruption(datum/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
+	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
 	corruption_on = TRUE
 	start_processing()
 
@@ -116,7 +116,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 	if(corrupted && corruption_on)
 		if(!GLOB.generators_on_ground)	//Prevent division by 0
 			return PROCESS_KILL
-		if((length(GLOB.humans_by_zlevel["2"]) > 0.2 * length(GLOB.alive_human_list_faction[FACTION_TERRAGOV])))
+		if((length(GLOB.humans_by_zlevel["2"]) > 0.2 * length(GLOB.alive_human_list_faction[FACTION_IMPERIUM])))
 			//You get points proportional to the % of generators corrupted (for example, if 66% of generators are corrupted the hive gets 0.66 points per second)
 			var/points_generated = GENERATOR_PSYCH_POINT_OUTPUT / GLOB.generators_on_ground
 			SSpoints.add_strategic_psy_points(corrupted, points_generated)
@@ -155,7 +155,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 			buildstate = GEOTHERMAL_LIGHT_DAMAGE
 			icon_state = "wrench"
 
-		//Resets the fail_rate incase the xenos have been fucking with it.
+		//Resets the fail_rate incase the tyranids have been fucking with it.
 		fail_rate = initial(fail_rate)
 
 		is_on = FALSE
@@ -166,26 +166,26 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 		return TRUE
 	return FALSE //Nope, all fine
 
-/obj/machinery/power/geothermal/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/power/geothermal/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	. = ..()
 	if(corrupted) //you have no reason to interact with it if its already corrupted
 		return
-	if(CHECK_BITFIELD(xeno_attacker.xeno_caste.can_flags, CASTE_CAN_CORRUPT_GENERATOR) && is_corruptible)
-		to_chat(xeno_attacker, span_notice("You start to corrupt [src]"))
-		if(!do_after(xeno_attacker, 10 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
+	if(CHECK_BITFIELD(tyranid_attacker.tyranid_caste.can_flags, CASTE_CAN_CORRUPT_GENERATOR) && is_corruptible)
+		to_chat(tyranid_attacker, span_notice("You start to corrupt [src]"))
+		if(!do_after(tyranid_attacker, 10 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 			return
-		corrupt(xeno_attacker.hivenumber)
-		to_chat(xeno_attacker, span_notice("You have corrupted [src]"))
-		record_generator_sabotages(xeno_attacker)
+		corrupt(tyranid_attacker.hivenumber)
+		to_chat(tyranid_attacker, span_notice("You have corrupted [src]"))
+		record_generator_sabotages(tyranid_attacker)
 		return
 	if(buildstate)
 		return
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 	play_attack_sound(1)
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] slashes at \the [src], tearing at it's components!"),
+	tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] slashes at \the [src], tearing at it's components!"),
 		span_danger("We start slashing at \the [src], tearing at it's components!"))
 	fail_rate += 5 // 5% fail rate every attack
-	record_generator_sabotages(xeno_attacker)
+	record_generator_sabotages(tyranid_attacker)
 
 /obj/machinery/power/geothermal/attack_hand(mob/living/carbon/user)
 	interact_hand(user)

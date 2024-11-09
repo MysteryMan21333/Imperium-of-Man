@@ -22,7 +22,7 @@
 
 /datum/game_mode/hvh/combat_patrol/announce()
 	to_chat(world, "<b>The current game mode is - Combat Patrol!</b>")
-	to_chat(world, "<b>The TGMC and SOM both lay claim to this planet. Across contested areas, small combat patrols frequently clash in their bid to enforce their respective claims. Seek and destroy any hostiles you encounter, good hunting!</b>")
+	to_chat(world, "<b>The TGMC and CHAOS both lay claim to this planet. Across contested areas, small combat patrols frequently clash in their bid to enforce their respective claims. Seek and destroy any hostiles you encounter, good hunting!</b>")
 
 /datum/game_mode/hvh/combat_patrol/setup_blockers()
 	. = ..()
@@ -37,7 +37,7 @@
 	var/op_name_tgmc = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
 	var/op_name_som = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
-		if(human.faction == FACTION_TERRAGOV)
+		if(human.faction == FACTION_IMPERIUM)
 			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_tgmc]</u></span><br>" + "[SSmapping.configs[GROUND_MAP].map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "Territorial Defense Force Platoon<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/tdf)
 		else
 			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_som]</u></span><br>" + "[SSmapping.configs[GROUND_MAP].map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "Shokk Infantry Platoon<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/shokk)
@@ -64,7 +64,7 @@
 
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_BIOSCAN) || bioscan_interval == 0)
 		return
-	announce_bioscans_marine_som()
+	announce_bioscans_guardsman_som()
 
 //End game checks
 /datum/game_mode/hvh/combat_patrol/check_finished()
@@ -74,12 +74,12 @@
 	if(SSmonitor.gamestate != GROUNDSIDE || !game_timer)
 		return
 
-	///pulls the number of marines and SOM, both dead and alive
+	///pulls the number of guardsmans and CHAOS, both dead and alive
 	var/list/player_list = count_humans(count_flags = COUNT_IGNORE_ALIVE_SSD)
 	var/num_som = length(player_list[1])
 	var/num_tgmc = length(player_list[2])
 	var/num_dead_som = length(player_list[3])
-	var/num_dead_marines = length(player_list[4])
+	var/num_dead_guardsmans = length(player_list[4])
 
 	if(num_tgmc && num_som && !max_time_reached)
 		return //fighting is ongoing
@@ -90,23 +90,23 @@
 			message_admins("Round finished: [MODE_COMBAT_PATROL_DRAW]") //everyone died at the same time, no one wins
 			round_finished = MODE_COMBAT_PATROL_DRAW
 			return TRUE
-		message_admins("Round finished: [MODE_COMBAT_PATROL_SOM_MAJOR]") //SOM wiped out ALL the marines, SOM major victory
-		round_finished = MODE_COMBAT_PATROL_SOM_MAJOR
+		message_admins("Round finished: [MODE_COMBAT_PATROL_CHAOS_MAJOR]") //CHAOS wiped out ALL the guardsmans, CHAOS major victory
+		round_finished = MODE_COMBAT_PATROL_CHAOS_MAJOR
 		return TRUE
 
 	if(!num_som)
-		message_admins("Round finished: [MODE_COMBAT_PATROL_MARINE_MAJOR]") //Marines wiped out ALL the SOM, marine major victory
-		round_finished = MODE_COMBAT_PATROL_MARINE_MAJOR
+		message_admins("Round finished: [MODE_COMBAT_PATROL_GUARDSMAN_MAJOR]") //Guardsmans wiped out ALL the CHAOS, guardsman major victory
+		round_finished = MODE_COMBAT_PATROL_GUARDSMAN_MAJOR
 		return TRUE
 
 	//minor victories for more kills or draw for equal kills
-	if(num_dead_marines > num_dead_som)
-		message_admins("Round finished: [MODE_COMBAT_PATROL_SOM_MINOR]") //The SOM inflicted greater casualties on the marines, SOM minor victory
-		round_finished = MODE_COMBAT_PATROL_SOM_MINOR
+	if(num_dead_guardsmans > num_dead_som)
+		message_admins("Round finished: [MODE_COMBAT_PATROL_CHAOS_MINOR]") //The CHAOS inflicted greater casualties on the guardsmans, CHAOS minor victory
+		round_finished = MODE_COMBAT_PATROL_CHAOS_MINOR
 		return TRUE
-	if(num_dead_som > num_dead_marines)
-		message_admins("Round finished: [MODE_COMBAT_PATROL_MARINE_MINOR]") //The marines inflicted greater casualties on the SOM, marine minor victory
-		round_finished = MODE_COMBAT_PATROL_MARINE_MINOR
+	if(num_dead_som > num_dead_guardsmans)
+		message_admins("Round finished: [MODE_COMBAT_PATROL_GUARDSMAN_MINOR]") //The guardsmans inflicted greater casualties on the CHAOS, guardsman minor victory
+		round_finished = MODE_COMBAT_PATROL_GUARDSMAN_MINOR
 		return TRUE
 
 	message_admins("Round finished: [MODE_COMBAT_PATROL_DRAW]") //equal number of kills, or any other edge cases
@@ -115,23 +115,23 @@
 
 /datum/game_mode/hvh/combat_patrol/declare_completion()
 	. = ..()
-	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal TGMC spawned: [GLOB.round_statistics.total_humans_created[FACTION_TERRAGOV]]\nTotal SOM spawned: [GLOB.round_statistics.total_humans_created[FACTION_SOM]]")
+	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal TGMC spawned: [GLOB.round_statistics.total_humans_created[FACTION_IMPERIUM]]\nTotal CHAOS spawned: [GLOB.round_statistics.total_humans_created[FACTION_CHAOS]]")
 
 /datum/game_mode/hvh/combat_patrol/end_round_fluff()
 	send_ooc_announcement(
 		sender_override = "Round Concluded",
 		title = round_finished,
-		text = "Thus ends the story of the brave men and women of the TerraGov Marine Corps and Sons of Mars, and their struggle on [SSmapping.configs[GROUND_MAP].map_name].",
+		text = "Thus ends the story of the brave men and women of the Imperium Guardsman Corps and Sons of Mars, and their struggle on [SSmapping.configs[GROUND_MAP].map_name].",
 		play_sound = FALSE,
 		style = "game"
 	)
 
 /datum/game_mode/hvh/combat_patrol/get_deploy_point_message(mob/living/user)
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
+		if(FACTION_IMPERIUM)
 			. = "Eliminate all hostile forces in the AO, good luck team."
-		if(FACTION_SOM)
-			. = "Eliminate the TerraGov imperialists in the AO, glory to Mars!"
+		if(FACTION_CHAOS)
+			. = "Eliminate the Imperium imperialists in the AO, glory to Mars!"
 
 ///round timer
 /datum/game_mode/hvh/combat_patrol/proc/set_game_timer()

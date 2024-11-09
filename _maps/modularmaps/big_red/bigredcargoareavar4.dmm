@@ -279,7 +279,7 @@
 	},
 /area/bigredv2/outside/nw)
 "so" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "sq" = (
@@ -292,7 +292,7 @@
 	},
 /area/bigredv2/outside/nw)
 "tS" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "tZ" = (
@@ -359,7 +359,7 @@
 	},
 /area/bigredv2/outside/nw)
 "zg" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "zl" = (
@@ -419,7 +419,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "CA" = (
@@ -520,7 +520,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/west)
 "HQ" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "HV" = (

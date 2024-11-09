@@ -1,11 +1,11 @@
 /obj/item/cell
 	name = "power cell"
 	desc = "A rechargable electrochemical power cell."
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	icon_state = "cell"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	worn_icon_state = "cell"
 	force = 5
@@ -314,7 +314,7 @@
 /obj/item/cell/potato
 	name = "potato battery"
 	desc = "A rechargable starch based power cell."
-	icon = 'icons/obj/power.dmi' //'icons/obj/items/harvest.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi' //'modular_imperium/master_files/icons/obj/items/harvest.dmi'
 	icon_state = "potato_cell" //"potato_battery"
 	charge = 100
 	maxcharge = 300
@@ -323,7 +323,7 @@
 /obj/item/cell/rtg/small
 	name = "recharger cell"
 	desc = "This is a miniature radioisotope generator that can fit into APC's, but not laser-based weapory. The needed shielding lowers the maximum capacity significantly."
-	icon = 'icons/obj/items/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/stock_parts.dmi'
 	icon_state = "capacitor"
 	worn_icon_state = "capacitor"
 	maxcharge = 2000
@@ -342,7 +342,7 @@
 /obj/item/cell/rtg/large
 	name = "large recharger cell"
 	desc = "This is a radioisotope generator that can fit into APC's, but not laser-based weapory. It is too hot to be easily stored and cannot be handcharged."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "trashmelt"
 	worn_icon_state = "trashmelt"
 	w_class = WEIGHT_CLASS_HUGE
@@ -354,7 +354,7 @@
 /obj/item/cell/mecha
 	name = "small radiotope cell"
 	desc = "A large twisting piece of metal that acts as the power core of a mecha. You probably shouldn't lick it, despite the blue glow."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "trashmelt"
 	worn_icon_state = "trashmelt"
 	w_class = WEIGHT_CLASS_HUGE

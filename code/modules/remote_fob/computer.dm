@@ -2,18 +2,18 @@
 /obj/machinery/computer/camera_advanced/remote_fob
 	name = "FOB Construction Drone Control"
 	desc = "A computer console equipped with camera screen and controls for a planetside deployed construction drone. Materials or equipment vouchers can be added simply by inserting them into the computer."
-	icon = 'icons/obj/machines/fob.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/fob.dmi'
 	icon_state = "fob"
 	screen_overlay = "fob_emissive"
 	broken_icon = "fob_broken"
 	interaction_flags = INTERACT_MACHINE_DEFAULT
-	req_one_access = list(ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LEADER)
+	req_one_access = list(ACCESS_GUARDSMAN_REMOTEBUILD, ACCESS_GUARDSMAN_CE, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_LEADER)
 	resistance_flags = RESIST_ALL
 	networks = FALSE
 	off_action = new/datum/action/innate/camera_off/remote_fob
 	jump_action = null
 	var/drone_creation_allowed = TRUE
-	var/obj/docking_port/stationary/marine_dropship/spawn_spot
+	var/obj/docking_port/stationary/guardsman_dropship/spawn_spot
 	var/datum/action/innate/remote_fob/metal_cade/metal_cade
 	var/metal_remaining = 200
 	var/datum/action/innate/remote_fob/plast_cade/plast_cade
@@ -95,12 +95,12 @@
 	spawn_spot = FALSE
 	switch(tgui_alert(user, "Summon Drone in:", "FOB Construction Drone Control", list("LZ1","LZ2", "Cancel")))
 		if("LZ1")
-			spawn_spot = locate(/obj/docking_port/stationary/marine_dropship/lz1) in SSshuttle.stationary
+			spawn_spot = locate(/obj/docking_port/stationary/guardsman_dropship/lz1) in SSshuttle.stationary
 			if(!spawn_spot)
 				to_chat(user, span_warning("No valid location for drone deployment found."))
 				return
 		if("LZ2")
-			spawn_spot = locate(/obj/docking_port/stationary/marine_dropship/lz2) in SSshuttle.stationary
+			spawn_spot = locate(/obj/docking_port/stationary/guardsman_dropship/lz2) in SSshuttle.stationary
 			if(!spawn_spot)
 				to_chat(user, span_warning("No valid location for drone deployment found."))
 				return

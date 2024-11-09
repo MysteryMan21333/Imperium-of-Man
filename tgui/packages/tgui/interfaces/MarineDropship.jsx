@@ -14,7 +14,7 @@ export const MarineDropship = (props) => {
 
   return (
     <>
-      {!data.is_xeno ? (
+      {!data.is_tyranid ? (
         <Window width={500} height={600}>
           <Window.Content scrollable>
             {!data.hijack_state ? (

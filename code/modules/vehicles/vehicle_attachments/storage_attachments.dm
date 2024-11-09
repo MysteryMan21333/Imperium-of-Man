@@ -1,5 +1,5 @@
 /obj/item/vehicle_module/storage
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = ""
 	slot = ATTACHMENT_SLOT_STORAGE
 	w_class = WEIGHT_CLASS_BULKY

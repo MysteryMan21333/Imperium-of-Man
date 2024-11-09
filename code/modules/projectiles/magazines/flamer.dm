@@ -6,7 +6,7 @@
 	name = "incinerator tank"
 	desc = "A fuel tank of usually ultra thick napthal, a sticky combustable liquid chemical, for use in the FL-240 incinerator unit. Handle with care."
 	icon_state = "flametank"
-	icon = 'icons/obj/items/ammo/flamer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/flamer.dmi'
 	max_rounds = 50 //Per turf.
 	current_rounds = 50
 	reload_delay = 2 SECONDS
@@ -64,7 +64,7 @@
 	reload_delay = 3 SECONDS
 	icon_state_mini = "tank_orange"
 
-/obj/item/ammo_magazine/flamer_tank/large/som
+/obj/item/ammo_magazine/flamer_tank/large/chaos
 	name = "large flamerthrower tank"
 	desc = "A large fuel tank of ultra thick napthal, a sticky combustable liquid chemical, for use in the V-62 flamethrower."
 	icon_state = "flametank_som"
@@ -81,9 +81,9 @@
 	icon_state_mini = "tank_blue"
 	dispenser_type = /obj/structure/reagent_dispensers/fueltank/xfuel
 
-/obj/item/ammo_magazine/flamer_tank/large/X/som
+/obj/item/ammo_magazine/flamer_tank/large/X/chaos
 	desc = "A large fuel tank of ultra thick napthal Fuel type X, a sticky combustable liquid chemical, for use in the V-62 flamethrower."
-	icon_state = "flametank_som_x"
+	icon_state = "flametank_chaos_x"
 
 /obj/item/ammo_magazine/flamer_tank/large/X/deathsquad
 	name = "Gargantuan flamethrower X-tank"

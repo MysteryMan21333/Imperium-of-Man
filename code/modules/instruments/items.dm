@@ -3,13 +3,13 @@
 	name = "generic instrument"
 	force = 10
 	max_integrity = 100
-	icon = 'icons/obj/musician.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/musician.dmi'
 	interaction_flags = INTERACT_OBJ_UI
 	item_state_worn = TRUE
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/instruments_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/instruments_right.dmi',
-		slot_s_store_str = 'icons/mob/instruments_back.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/instruments_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/instruments_right.dmi',
+		slot_s_store_str = 'modular_imperium/master_files/icons/mob/instruments_back.dmi',
 		)
 	/// Our song datum.
 	var/datum/song/handheld/song
@@ -174,8 +174,8 @@
 	desc = "An exquisitely decorated bike horn, capable of honking in a variety of notes."
 	icon_state = "bike_horn"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/toys_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/toys_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/toys_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/toys_right.dmi',
 	)
 	allowed_instrument_ids = list("bikehorn", "honk")
 	attack_verb = list("beautifully honks")

@@ -223,7 +223,7 @@
   - tweak: Enhanced the Language menu.
   - tweak: Talking to the ERT radio with ; now goes to whatever ERT channel is meant
       for (bugged, somehow the frequency is for the Alamo instead)
-  - bugfix: Fixed both SoM and (unused) Echo headsets.
+  - bugfix: Fixed both Chaos and (unused) Echo headsets.
   - spellcheck: Removed an uneeded end quotation in "X human\s on the ship."
   - spellcheck: Added "a / an" to the job intro text (for the AI).
   - spellcheck: Renamed the ERT headsets.

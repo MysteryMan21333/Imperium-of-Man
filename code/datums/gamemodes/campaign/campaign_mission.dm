@@ -164,19 +164,19 @@
 
 ///Sets up the loot tables for this mission, if required
 /datum/campaign_mission/proc/set_loot_tables()
-	if(starting_faction == FACTION_TERRAGOV)
+	if(starting_faction == FACTION_IMPERIUM)
 		major_victory_reward_table = GLOB.campaign_tgmc_major_loot
 		minor_victory_reward_table = GLOB.campaign_tgmc_minor_loot
-	else if(starting_faction == FACTION_SOM)
-		major_victory_reward_table = GLOB.campaign_som_major_loot
-		minor_victory_reward_table = GLOB.campaign_som_minor_loot
+	else if(starting_faction == FACTION_CHAOS)
+		major_victory_reward_table = GLOB.campaign_chaos_major_loot
+		minor_victory_reward_table = GLOB.campaign_chaos_minor_loot
 
-	if(hostile_faction == FACTION_TERRAGOV)
+	if(hostile_faction == FACTION_IMPERIUM)
 		minor_loss_reward_table = GLOB.campaign_tgmc_minor_loot
 		major_loss_reward_table = GLOB.campaign_tgmc_major_loot
-	else if(hostile_faction == FACTION_SOM)
-		minor_loss_reward_table = GLOB.campaign_som_minor_loot
-		major_loss_reward_table = GLOB.campaign_som_major_loot
+	else if(hostile_faction == FACTION_CHAOS)
+		minor_loss_reward_table = GLOB.campaign_chaos_minor_loot
+		major_loss_reward_table = GLOB.campaign_chaos_major_loot
 
 ///Sets up the mission once it has been selected
 /datum/campaign_mission/proc/load_mission()
@@ -206,10 +206,10 @@
 /datum/campaign_mission/proc/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
 	if(!message) //overridden by specific missions
 		switch(user.faction)
-			if(FACTION_TERRAGOV)
-				message = "Stick together and achieve those objectives marines. Good luck."
-			if(FACTION_SOM)
-				message = "Remember your training marines, show those Terrans the strength of the SOM, glory to Mars!"
+			if(FACTION_IMPERIUM)
+				message = "Stick together and achieve those objectives guardsmans. Good luck."
+			if(FACTION_CHAOS)
+				message = "Remember your training guardsmans, show those Terrans the strength of the CHAOS, glory to Mars!"
 			else
 				return
 
@@ -441,7 +441,7 @@
 	mode.stat_list[starting_faction].apply_cash(start_team_cash)
 	mode.stat_list[hostile_faction].apply_cash(hostile_team_cash)
 
-///checks how many marines and SOM are still alive
+///checks how many guardsmans and CHAOS are still alive
 /datum/campaign_mission/proc/count_humans(list/z_levels = SSmapping.levels_by_trait(ZTRAIT_AWAY), count_flags) //todo: make new Z's not away levels, or ensure ground and away is consistant in behavior
 	var/list/team_one_alive = list()
 	var/list/team_one_dead = list()
@@ -449,7 +449,7 @@
 	var/list/team_two_dead = list()
 
 	for(var/z in z_levels)
-		//counts the live marines and SOM
+		//counts the live guardsmans and CHAOS
 		for(var/i in GLOB.humans_by_zlevel["[z]"])
 			var/mob/living/carbon/human/H = i
 			if(!istype(H))
@@ -460,7 +460,7 @@
 				team_one_alive += H
 			else //assumption here that there is only 2 teams
 				team_two_alive += H
-	//counts the dead marines and SOM
+	//counts the dead guardsmans and CHAOS
 	for(var/i in GLOB.dead_human_list)
 		var/mob/living/carbon/human/H = i
 		if(!istype(H))

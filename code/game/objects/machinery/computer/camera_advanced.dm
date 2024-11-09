@@ -11,7 +11,7 @@
 	var/mob/camera/aiEye/remote/hud/overwatch/eyeobj
 	var/mob/living/current_user
 	var/datum/cameranet/parent_cameranet
-	var/list/networks = list("marinemainship")
+	var/list/networks = list("guardsmanmainship")
 	var/datum/action/innate/camera_off/off_action
 	var/datum/action/innate/camera_jump/jump_action
 	var/list/actions
@@ -26,8 +26,8 @@
 	for(var/i in networks)
 		networks -= i
 		networks += lowertext(i)
-	if(SOM_CAMERA_NETWORK in networks)
-		parent_cameranet = GLOB.som_cameranet
+	if(CHAOS_CAMERA_NETWORK in networks)
+		parent_cameranet = GLOB.chaos_cameranet
 	else
 		parent_cameranet = GLOB.cameranet
 	off_action = new
@@ -311,11 +311,11 @@
 	setLoc(T)
 
 
-//Version of remote eye that's added to marine HUD. Not visible to xenos but visible to marines
+//Version of remote eye that's added to guardsman HUD. Not visible to tyranids but visible to guardsmans
 //This one's for CAS
 /mob/camera/aiEye/remote/hud
 	icon_state = "nothing"
-	faction = FACTION_TERRAGOV
+	faction = FACTION_IMPERIUM
 	///Visible icon state
 	var/icon_state_on = "cas_camera"
 
@@ -362,15 +362,15 @@
 	current_aura_list -= dead_auras
 	update_aura_overlays()
 
-///Applies order overlays (hold/move/focus) depending on what we have. Only visible to marines.
+///Applies order overlays (hold/move/focus) depending on what we have. Only visible to guardsmans.
 /mob/camera/aiEye/remote/hud/overwatch/proc/update_aura_overlays(source, list/new_auras)
 	var/image/holder = hud_list[GLOB.faction_to_squad_hud[faction]]
 	if(!holder)
 		return
 	holder.overlays.Cut()
 	for(var/aura_type in current_aura_list)
-		holder.overlays += image('icons/mob/hud/aura.dmi', src, "[aura_type]")
-		holder.overlays += image('icons/mob/hud/aura.dmi', src, "[aura_type]_aura")
+		holder.overlays += image('modular_imperium/master_files/icons/mob/hud/aura.dmi', src, "[aura_type]")
+		holder.overlays += image('modular_imperium/master_files/icons/mob/hud/aura.dmi', src, "[aura_type]_aura")
 
 /datum/action/innate/camera_off
 	name = "End Camera View"

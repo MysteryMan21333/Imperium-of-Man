@@ -1,7 +1,7 @@
 /obj/item/campaign_beacon
 	name = "default campaign beacon"
 	desc = "what smelly admin spawned this?"
-	icon = 'icons/obj/items/beacon.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/beacon.dmi'
 	icon_state = "motion_4"
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = IS_DEPLOYABLE
@@ -73,9 +73,9 @@
 /obj/structure/campaign_objective/destruction_objective/bunker_buster
 	name = "deployed orbital beacon"
 	desc = "An ominous red beacon, used to provide precision guidance to powerful orbital weapon systems."
-	icon = 'icons/obj/items/beacon.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/beacon.dmi'
 	icon_state = "motion_1"
-	faction = FACTION_TERRAGOV
+	faction = FACTION_IMPERIUM
 	density = FALSE
 	///How long the beacon takes to trigger its effect
 	var/beacon_duration = 3 MINUTES
@@ -129,7 +129,7 @@
 	name = "deployed bluespace beacon"
 	desc = "An ominous blue beacon, used to provide precision guidance for powerful bluespace weapon systems."
 	icon_state = "bluespace_deployed"
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 
 /obj/structure/campaign_objective/destruction_objective/bunker_buster/bluespace/beacon_effect()
 	. = ..()

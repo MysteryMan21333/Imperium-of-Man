@@ -92,7 +92,7 @@
 		"HELP",
 		"HELP",
 		"HELP",
-		"@pick(xeno)!",
+		"@pick(tyranid)!",
 		"HELP ME",
 		"HELP HIM",
 		"HELP HER",
@@ -139,7 +139,7 @@
 		""
 	],
 
-	"xeno": [
+	"tyranid": [
 		"Queen",
 		"Shrike",
 		"Prae",

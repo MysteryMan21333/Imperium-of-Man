@@ -1,7 +1,7 @@
-#define XENO_CURTAIN_PULL_DELAY 5 SECONDS
+#define TYRANID_CURTAIN_PULL_DELAY 5 SECONDS
 
 /obj/structure/curtain
-	icon = 'icons/obj/structures/curtain.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/curtain.dmi'
 	name = "curtain"
 	icon_state = "medicalcurtain"
 	///used to reset curtain back to default state when closing
@@ -28,11 +28,11 @@
 	playsound(get_turf(loc), pick(possiblesounds), 15, 1, 6)
 	toggle()
 
-/obj/structure/curtain/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(!do_after(xeno_attacker, XENO_CURTAIN_PULL_DELAY, NONE, src, BUSY_ICON_FRIENDLY))
+/obj/structure/curtain/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(!do_after(tyranid_attacker, TYRANID_CURTAIN_PULL_DELAY, NONE, src, BUSY_ICON_FRIENDLY))
 		return
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] pulls [src] down and slices it apart!"), \
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] pulls [src] down and slices it apart!"), \
 	span_danger("You pull the [src] down and rip it to shreds!"), null, 5)
 	qdel(src)
 
@@ -89,4 +89,4 @@
 	color = "#B8F5E3"
 	alpha = 200
 
-#undef XENO_CURTAIN_PULL_DELAY
+#undef TYRANID_CURTAIN_PULL_DELAY

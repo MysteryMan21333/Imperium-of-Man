@@ -8,7 +8,7 @@
 	var/list/access = list() //Which special access do we grant them
 
 	var/current_positions = list(
-		SQUAD_MARINE = 0,
+		SQUAD_GUARDSMAN = 0,
 		SQUAD_ENGINEER = 0,
 		SQUAD_CORPSMAN = 0,
 		SQUAD_SMARTGUNNER = 0,
@@ -16,10 +16,10 @@
 		SQUAD_ROBOT = 0, //for campaign
 	)
 	var/max_positions = list(
-		SQUAD_MARINE = -1,
+		SQUAD_GUARDSMAN = -1,
 		SQUAD_LEADER = 1)
 
-	var/list/marines_list = list() // list of humans in that squad.
+	var/list/guardsmans_list = list() // list of humans in that squad.
 
 	var/radio_freq = 1461
 	var/mob/living/carbon/human/squad_leader
@@ -30,14 +30,14 @@
 
 	var/list/squad_laser_targets = list()
 	///Faction of that squad
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 
 /datum/squad/alpha
 	name = "Alpha"
 	id = ALPHA_SQUAD
 	color = COLOR_SQUAD_ALPHA
-	access = list(ACCESS_MARINE_ALPHA)
+	access = list(ACCESS_GUARDSMAN_ALPHA)
 	radio_freq = FREQ_ALPHA
 
 
@@ -45,7 +45,7 @@
 	name = "Bravo"
 	id = BRAVO_SQUAD
 	color = COLOR_SQUAD_BRAVO
-	access = list(ACCESS_MARINE_BRAVO)
+	access = list(ACCESS_GUARDSMAN_BRAVO)
 	radio_freq = FREQ_BRAVO
 
 
@@ -53,91 +53,91 @@
 	name = "Charlie"
 	id = CHARLIE_SQUAD
 	color = COLOR_SQUAD_CHARLIE
-	access = list(ACCESS_MARINE_CHARLIE)
+	access = list(ACCESS_GUARDSMAN_CHARLIE)
 	radio_freq = FREQ_CHARLIE
 
 /datum/squad/delta
 	name = "Delta"
 	id = DELTA_SQUAD
 	color = COLOR_SQUAD_DELTA
-	access = list(ACCESS_MARINE_DELTA)
+	access = list(ACCESS_GUARDSMAN_DELTA)
 	radio_freq = FREQ_DELTA
 
-//SOM squads
+//CHAOS squads
 /datum/squad/zulu
 	name = "Zulu"
 	id = ZULU_SQUAD
 	color = COLOR_SQUAD_ZULU
-	access = list(ACCESS_MARINE_ALPHA) //No unique SOM access yet
+	access = list(ACCESS_GUARDSMAN_ALPHA) //No unique CHAOS access yet
 	radio_freq = FREQ_ZULU
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 	current_positions = list(
-		SOM_SQUAD_MARINE = 0,
-		SOM_SQUAD_VETERAN = 0,
-		SOM_SQUAD_CORPSMAN = 0,
-		SOM_SQUAD_ENGINEER = 0,
-		SOM_SQUAD_LEADER = 0,
+		CHAOS_SQUAD_GUARDSMAN = 0,
+		CHAOS_SQUAD_VETERAN = 0,
+		CHAOS_SQUAD_CORPSMAN = 0,
+		CHAOS_SQUAD_ENGINEER = 0,
+		CHAOS_SQUAD_LEADER = 0,
 )
 	max_positions = list(
-		SOM_SQUAD_MARINE = -1,
-		SOM_SQUAD_LEADER = 1,
+		CHAOS_SQUAD_GUARDSMAN = -1,
+		CHAOS_SQUAD_LEADER = 1,
 )
 
 /datum/squad/yankee
 	name = "Yankee"
 	id = YANKEE_SQUAD
 	color = COLOR_SQUAD_YANKEE
-	access = list(ACCESS_MARINE_BRAVO)
+	access = list(ACCESS_GUARDSMAN_BRAVO)
 	radio_freq = FREQ_YANKEE
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 	current_positions = list(
-		SOM_SQUAD_MARINE = 0,
-		SOM_SQUAD_VETERAN = 0,
-		SOM_SQUAD_CORPSMAN = 0,
-		SOM_SQUAD_ENGINEER = 0,
-		SOM_SQUAD_LEADER = 0,
+		CHAOS_SQUAD_GUARDSMAN = 0,
+		CHAOS_SQUAD_VETERAN = 0,
+		CHAOS_SQUAD_CORPSMAN = 0,
+		CHAOS_SQUAD_ENGINEER = 0,
+		CHAOS_SQUAD_LEADER = 0,
 )
 	max_positions = list(
-		SOM_SQUAD_MARINE = -1,
-		SOM_SQUAD_LEADER = 1,
+		CHAOS_SQUAD_GUARDSMAN = -1,
+		CHAOS_SQUAD_LEADER = 1,
 )
 
 /datum/squad/xray
 	name = "Xray"
 	id = XRAY_SQUAD
 	color = COLOR_SQUAD_XRAY
-	access = list(ACCESS_MARINE_CHARLIE)
+	access = list(ACCESS_GUARDSMAN_CHARLIE)
 	radio_freq = FREQ_XRAY
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 	current_positions = list(
-		SOM_SQUAD_MARINE = 0,
-		SOM_SQUAD_VETERAN = 0,
-		SOM_SQUAD_CORPSMAN = 0,
-		SOM_SQUAD_ENGINEER = 0,
-		SOM_SQUAD_LEADER = 0,
+		CHAOS_SQUAD_GUARDSMAN = 0,
+		CHAOS_SQUAD_VETERAN = 0,
+		CHAOS_SQUAD_CORPSMAN = 0,
+		CHAOS_SQUAD_ENGINEER = 0,
+		CHAOS_SQUAD_LEADER = 0,
 )
 	max_positions = list(
-		SOM_SQUAD_MARINE = -1,
-		SOM_SQUAD_LEADER = 1,
+		CHAOS_SQUAD_GUARDSMAN = -1,
+		CHAOS_SQUAD_LEADER = 1,
 )
 
 /datum/squad/whiskey
 	name = "Whiskey"
 	id = WHISKEY_SQUAD
 	color = COLOR_SQUAD_WHISKEY
-	access = list(ACCESS_MARINE_DELTA)
+	access = list(ACCESS_GUARDSMAN_DELTA)
 	radio_freq = FREQ_WHISKEY
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 	current_positions = list(
-		SOM_SQUAD_MARINE = 0,
-		SOM_SQUAD_VETERAN = 0,
-		SOM_SQUAD_CORPSMAN = 0,
-		SOM_SQUAD_ENGINEER = 0,
-		SOM_SQUAD_LEADER = 0,
+		CHAOS_SQUAD_GUARDSMAN = 0,
+		CHAOS_SQUAD_VETERAN = 0,
+		CHAOS_SQUAD_CORPSMAN = 0,
+		CHAOS_SQUAD_ENGINEER = 0,
+		CHAOS_SQUAD_LEADER = 0,
 )
 	max_positions = list(
-		SOM_SQUAD_MARINE = -1,
-		SOM_SQUAD_LEADER = 1,
+		CHAOS_SQUAD_GUARDSMAN = -1,
+		CHAOS_SQUAD_LEADER = 1,
 )
 
 /datum/squad/New(set_color, set_name)
@@ -160,7 +160,7 @@
 		GLOB.minimap_icons[icon_state] = icon2base64(top)
 
 /datum/squad/Destroy(force, ...)
-	for(var/mob/living/carbon/human/squaddie AS in marines_list)
+	for(var/mob/living/carbon/human/squaddie AS in guardsmans_list)
 		remove_from_squad(squaddie)
 	GLOB.custom_squad_radio_freqs -= "[radio_freq]"
 	SSjob.active_squads[faction] -= src
@@ -169,33 +169,33 @@
 
 
 /datum/squad/proc/get_all_members()
-	return marines_list
+	return guardsmans_list
 
 
 /datum/squad/proc/get_total_members()
-	return length(marines_list)
+	return length(guardsmans_list)
 
 
 /datum/squad/proc/insert_into_squad(mob/living/carbon/human/new_squaddie, give_radio = FALSE)
 	if(!(new_squaddie.job in SSjob.active_occupations))
-		CRASH("attempted to insert marine [new_squaddie] from squad [name] while having job [isnull(new_squaddie.job) ? "null" : new_squaddie.job.title]")
+		CRASH("attempted to insert guardsman [new_squaddie] from squad [name] while having job [isnull(new_squaddie.job) ? "null" : new_squaddie.job.title]")
 
 	var/obj/item/card/id/idcard = new_squaddie.get_idcard()
 	if(!istype(idcard))
 		return FALSE
 
 	if(new_squaddie.assigned_squad)
-		CRASH("attempted to insert marine [new_squaddie] into squad while already having one")
+		CRASH("attempted to insert guardsman [new_squaddie] into squad while already having one")
 
 	if(!(new_squaddie.job.title in current_positions))
 		return FALSE
 
 	current_positions[new_squaddie.job.title]++
 
-	if((ismarineleaderjob(new_squaddie.job) || issommarineleaderjob(new_squaddie.job)) && !squad_leader)
+	if((isguardsmanleaderjob(new_squaddie.job) || issomguardsmanleaderjob(new_squaddie.job)) && !squad_leader)
 		squad_leader = new_squaddie
 		SSdirection.set_leader(tracking_id, new_squaddie)
-		SSdirection.start_tracking(faction == FACTION_SOM ? TRACKING_ID_SOM_COMMANDER : TRACKING_ID_MARINE_COMMANDER, new_squaddie)
+		SSdirection.start_tracking(faction == FACTION_CHAOS ? TRACKING_ID_CHAOS_COMMANDER : TRACKING_ID_GUARDSMAN_COMMANDER, new_squaddie)
 
 	var/obj/item/radio/headset/mainship/headset = new_squaddie.wear_ear
 	if(give_radio && !istype(headset))
@@ -221,7 +221,7 @@
 	idcard.assigned_fireteam = 0
 	idcard.update_label()
 
-	marines_list += new_squaddie
+	guardsmans_list += new_squaddie
 	new_squaddie.assigned_squad = src
 	new_squaddie.hud_set_job(faction)
 	new_squaddie.update_inv_head()
@@ -231,13 +231,13 @@
 
 /datum/squad/proc/remove_from_squad(mob/living/carbon/human/leaving_squaddie)
 	if(!(leaving_squaddie.job in SSjob.active_occupations))
-		CRASH("attempted to remove marine [leaving_squaddie] from squad [name] while having job [isnull(leaving_squaddie.job) ? "null" : leaving_squaddie.job.title]")
+		CRASH("attempted to remove guardsman [leaving_squaddie] from squad [name] while having job [isnull(leaving_squaddie.job) ? "null" : leaving_squaddie.job.title]")
 
 	if(!leaving_squaddie.assigned_squad)
 		return FALSE
 
 	if(leaving_squaddie.assigned_squad != src)
-		CRASH("attempted to remove marine [leaving_squaddie] from squad [name] while being a member of squad [leaving_squaddie.assigned_squad.name]")
+		CRASH("attempted to remove guardsman [leaving_squaddie] from squad [name] while being a member of squad [leaving_squaddie.assigned_squad.name]")
 
 	var/obj/item/card/id/id_card = leaving_squaddie.get_idcard()
 	if(!istype(id_card))
@@ -267,7 +267,7 @@
 	id_card.assignment = leaving_squaddie.job.title
 	id_card.update_label()
 
-	marines_list -= leaving_squaddie
+	guardsmans_list -= leaving_squaddie
 
 	leaving_squaddie.assigned_squad = null
 	leaving_squaddie.hud_set_job(faction)
@@ -281,21 +281,21 @@
 		CRASH("attempted to remove squad leader from squad [name] while not having one set")
 
 	SSdirection.clear_leader(tracking_id)
-	SSdirection.stop_tracking(faction == FACTION_SOM ? TRACKING_ID_SOM_COMMANDER : TRACKING_ID_MARINE_COMMANDER, squad_leader)
+	SSdirection.stop_tracking(faction == FACTION_CHAOS ? TRACKING_ID_CHAOS_COMMANDER : TRACKING_ID_GUARDSMAN_COMMANDER, squad_leader)
 
 	//Handle aSL skill level and radio
-	if(!ismarineleaderjob(squad_leader.job) && !issommarineleaderjob(squad_leader.job))
+	if(!isguardsmanleaderjob(squad_leader.job) && !issomguardsmanleaderjob(squad_leader.job))
 		squad_leader.set_skills(squad_leader.skills.setRating(leadership = SKILL_LEAD_NOVICE))
 		if(squad_leader.mind)
 			var/datum/job/J = squad_leader.job
 			squad_leader.comm_title = J.comm_title
-		if(istype(squad_leader.wear_ear, /obj/item/radio/headset/mainship/marine))
-			var/obj/item/radio/headset/mainship/marine/R = squad_leader.wear_ear
+		if(istype(squad_leader.wear_ear, /obj/item/radio/headset/mainship/guardsman))
+			var/obj/item/radio/headset/mainship/guardsman/R = squad_leader.wear_ear
 			R.recalculateChannels()
 			R.use_command = FALSE
 		var/obj/item/card/id/ID = squad_leader.get_idcard()
 		if(istype(ID))
-			ID.access -= list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE)
+			ID.access -= list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_TADPOLE)
 
 	to_chat(squad_leader, "<font size='3' color='blue'>You're no longer the Squad Leader for [src]!</font>")
 	var/mob/living/carbon/human/H = squad_leader
@@ -313,18 +313,18 @@
 
 	squad_leader = H
 	SSdirection.set_leader(tracking_id, H)
-	SSdirection.start_tracking(faction == FACTION_SOM ? TRACKING_ID_SOM_COMMANDER : TRACKING_ID_MARINE_COMMANDER, H)
+	SSdirection.start_tracking(faction == FACTION_CHAOS ? TRACKING_ID_CHAOS_COMMANDER : TRACKING_ID_GUARDSMAN_COMMANDER, H)
 
 	//Handle aSL skill level and radio
-	if(!ismarineleaderjob(squad_leader.job) && !issommarineleaderjob(squad_leader.job))
+	if(!isguardsmanleaderjob(squad_leader.job) && !issomguardsmanleaderjob(squad_leader.job))
 		squad_leader.set_skills(squad_leader.skills.setRating(leadership = SKILL_LEAD_TRAINED))
 		squad_leader.comm_title = "aSL"
 		var/obj/item/card/id/ID = squad_leader.get_idcard()
 		if(istype(ID))
-			ID.access += list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE)
+			ID.access += list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_TADPOLE)
 
-	if(istype(squad_leader.wear_ear, /obj/item/radio/headset/mainship/marine))
-		var/obj/item/radio/headset/mainship/marine/R = squad_leader.wear_ear
+	if(istype(squad_leader.wear_ear, /obj/item/radio/headset/mainship/guardsman))
+		var/obj/item/radio/headset/mainship/guardsman/R = squad_leader.wear_ear
 		R.channels[RADIO_CHANNEL_COMMAND] = TRUE
 		R.secure_radio_connections[RADIO_CHANNEL_COMMAND] = add_radio(R, GLOB.radiochannels[RADIO_CHANNEL_COMMAND])
 		R.use_command = TRUE
@@ -363,9 +363,9 @@
 		message_color = color
 		message_type = /atom/movable/screen/text/screen_text/command_order
 
-	for(var/mob/living/marine AS in marines_list)
-		marine.playsound_local(marine, sound, 35)
-		marine.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[header]</u></span><br>" + message, message_type, message_color)
+	for(var/mob/living/guardsman AS in guardsmans_list)
+		guardsman.playsound_local(guardsman, sound, 35)
+		guardsman.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[header]</u></span><br>" + message, message_type, message_color)
 
 /datum/squad/proc/check_entry(datum/job/job)
 	if(!(job.title in current_positions))
@@ -393,12 +393,12 @@
 
 
 ///A generic proc for handling the initial squad role assignment in SSjob
-/proc/handle_initial_squad(mob/new_player/player, datum/job/job, latejoin = FALSE, faction = FACTION_TERRAGOV)
+/proc/handle_initial_squad(mob/new_player/player, datum/job/job, latejoin = FALSE, faction = FACTION_IMPERIUM)
 	var/strict = player.client.prefs.be_special && (player.client.prefs.be_special & BE_SQUAD_STRICT)
 	//List of all the faction accessible squads
 	var/list/available_squads = SSjob.active_squads[faction]
 	var/datum/squad/preferred_squad
-	if(faction == FACTION_SOM)
+	if(faction == FACTION_CHAOS)
 		preferred_squad = LAZYACCESSASSOC(SSjob.squads_by_name, faction, player.client.prefs.preferred_squad_som)
 	else
 		preferred_squad = LAZYACCESSASSOC(SSjob.squads_by_name, faction, player.client.prefs.preferred_squad) //TGMC and rebels use the same squads
@@ -437,7 +437,7 @@ GLOBAL_LIST_EMPTY_TYPED(custom_squad_radio_freqs, /datum/squad)
 	var/squad_faction = creator.faction
 	var/datum/squad/new_squad = new(squad_color, squad_name)
 	new_squad.id = new_id
-	new_squad.access = list(ACCESS_MARINE_ALPHA, ACCESS_MARINE_BRAVO, ACCESS_MARINE_CHARLIE, ACCESS_MARINE_DELTA)
+	new_squad.access = list(ACCESS_GUARDSMAN_ALPHA, ACCESS_GUARDSMAN_BRAVO, ACCESS_GUARDSMAN_CHARLIE, ACCESS_GUARDSMAN_DELTA)
 	new_squad.radio_freq = freq
 	GLOB.custom_squad_radio_freqs["[freq]"] = new_squad
 	var/radio_channel_name = new_squad.name
@@ -460,7 +460,7 @@ GLOBAL_LIST_EMPTY_TYPED(custom_squad_radio_freqs, /datum/squad)
 	GLOB.department_radio_keys[key_prefix] = radio_channel_name
 	GLOB.channel_tokens[radio_channel_name] = ":[key_prefix]"
 
-	if(new_squad.faction == FACTION_TERRAGOV)
+	if(new_squad.faction == FACTION_IMPERIUM)
 		var/list/terragov_server_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/server/presets/alpha]
 		var/list/terragov_bus_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/bus/preset_three]
 		var/list/terragov_receiver_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/receiver/preset_left]
@@ -468,12 +468,12 @@ GLOBAL_LIST_EMPTY_TYPED(custom_squad_radio_freqs, /datum/squad)
 		LAZYADDASSOCSIMPLE(terragov_bus_freqs, 1, freq)
 		LAZYADDASSOCSIMPLE(terragov_receiver_freqs, 1, freq)
 	else
-		var/list/som_server_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/server/presets/zulu]
-		var/list/som_bus_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/bus/preset_three/som]
-		var/list/som_receiver_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/receiver/preset_left/som]
-		LAZYADDASSOCSIMPLE(som_server_freqs, 1, freq)
-		LAZYADDASSOCSIMPLE(som_bus_freqs, 1, freq)
-		LAZYADDASSOCSIMPLE(som_receiver_freqs, 1, freq)
+		var/list/chaos_server_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/server/presets/zulu]
+		var/list/chaos_bus_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/bus/preset_three/chaos]
+		var/list/chaos_receiver_freqs = GLOB.telecomms_freq_listening_list[/obj/machinery/telecomms/receiver/preset_left/chaos]
+		LAZYADDASSOCSIMPLE(chaos_server_freqs, 1, freq)
+		LAZYADDASSOCSIMPLE(chaos_bus_freqs, 1, freq)
+		LAZYADDASSOCSIMPLE(chaos_receiver_freqs, 1, freq)
 	SSjob.active_squads[new_squad.faction] += new_squad
 	SSjob.squads[new_squad.id] = new_squad
 	LAZYSET(SSjob.squads_by_name[new_squad.faction], new_squad.name, new_squad)

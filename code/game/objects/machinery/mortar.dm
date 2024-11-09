@@ -1,4 +1,4 @@
-//The Marine mortar, the T-50S Mortar
+//The Guardsman mortar, the T-50S Mortar
 //Works like a contemporary crew weapon mortar
 
 //TODO SPLIT THIS FILE INTO A FOLDER BECAUSE ITS ARTY NOT MORTAR NOW
@@ -426,7 +426,7 @@
 /obj/item/mortar_kit
 	name = "\improper TA-50S mortar"
 	desc = "A manual, crew-operated mortar system intended to rain down 80mm goodness on anything it's aimed at. Needs to be set down first to fire. Ctrl+Click on a tile to deploy, drag the mortar's sprites to mob's sprite to undeploy."
-	icon = 'icons/obj/machines/deployable/mortar.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/mortar.dmi'
 	icon_state = "mortar"
 	max_integrity = 200
 	soft_armor = list(MELEE = 0, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 15, BIO = 100, FIRE = 0, ACID = 0)
@@ -477,7 +477,7 @@
 /obj/item/mortar_kit/howitzer
 	name = "\improper TA-100Y howitzer"
 	desc = "A manual, crew-operated and towable howitzer, will rain down 150mm laserguided and accurate shells on any of your foes."
-	icon = 'icons/obj/machines/deployable/howitzer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer"
 	max_integrity = 400
 	item_flags = IS_DEPLOYABLE|TWOHANDED|DEPLOYED_NO_PICKUP|DEPLOY_ON_INITIALIZE
@@ -562,7 +562,7 @@
 
 /obj/item/mortar_kit/mlrs
 	name = "\improper TA-40L multiple rocket launcher system"
-	desc = "A manual, crew-operated and towable multiple rocket launcher system piece used by the TerraGov Marine Corps, it is meant to saturate an area with munitions to total up to large amounts of firepower, it thus has high scatter when firing to accomplish such a task. Fires in only bursts of up to 16 rockets, it can hold 32 rockets in total. Uses 60mm Rockets."
+	desc = "A manual, crew-operated and towable multiple rocket launcher system piece used by the Imperium Guardsman Corps, it is meant to saturate an area with munitions to total up to large amounts of firepower, it thus has high scatter when firing to accomplish such a task. Fires in only bursts of up to 16 rockets, it can hold 32 rockets in total. Uses 60mm Rockets."
 	icon_state = "mlrs"
 	max_integrity = 400
 	item_flags = IS_DEPLOYABLE|TWOHANDED|DEPLOYED_NO_PICKUP|DEPLOY_ON_INITIALIZE
@@ -655,10 +655,10 @@
 /obj/item/mortal_shell
 	name = "\improper 80mm mortar shell"
 	desc = "An unlabeled 80mm mortar shell, probably a casing."
-	icon = 'icons/obj/items/ammo/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/artillery.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/ammo_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/ammo_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/ammo_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/ammo_right.dmi',
 	)
 	icon_state = "mortar"
 	w_class = WEIGHT_CLASS_SMALL
@@ -680,13 +680,13 @@
 
 /obj/item/mortal_shell/smoke
 	name = "\improper 80mm smoke mortar shell"
-	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at marines more-or-less safely. Way slimmer than your typical 80mm."
+	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at guardsmans more-or-less safely. Way slimmer than your typical 80mm."
 	icon_state = "mortar_smk"
 	ammo_type = /datum/ammo/mortar/smoke
 
 /obj/item/mortal_shell/plasmaloss
 	name = "\improper 80mm tangle mortar shell"
-	desc = "An 80mm mortar shell, loaded with plasma-draining Tanglefoot gas. Can be fired at marines more-or-less safely."
+	desc = "An 80mm mortar shell, loaded with plasma-draining Tanglefoot gas. Can be fired at guardsmans more-or-less safely."
 	icon_state = "mortar_fsh"
 	ammo_type = /datum/ammo/mortar/smoke/plasmaloss
 

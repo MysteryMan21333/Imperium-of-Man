@@ -1,4 +1,4 @@
-/particles/xeno_slash
+/particles/tyranid_slash
 	icon = 'icons/effects/particles/generic_particles.dmi'
 	icon_state = "rectangle"
 	width = 100
@@ -16,19 +16,19 @@
 	rotation = 0
 	spin = generator(GEN_NUM, 10, 20)
 
-/particles/xeno_slash/neurotoxin
+/particles/tyranid_slash/neurotoxin
 	color = "#BF8F42"
 
-/particles/xeno_slash/hemodile
+/particles/tyranid_slash/hemodile
 	color = "#239FB2"
 
-/particles/xeno_slash/transvitox
+/particles/tyranid_slash/transvitox
 	color = "#87BF5F"
 
-/particles/xeno_slash/ozelomelyn
+/particles/tyranid_slash/ozelomelyn
 	color = "#CCB7C5"
 
-/particles/xeno_smoke
+/particles/tyranid_smoke
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "smoke"
 	width = 100
@@ -46,39 +46,39 @@
 	rotation = 0
 	spin = generator(GEN_NUM, -20, 20)
 
-/particles/xeno_smoke/neurotoxin
+/particles/tyranid_smoke/neurotoxin
 	color = "#BF8F42"
 
-/particles/xeno_smoke/hemodile
+/particles/tyranid_smoke/hemodile
 	color = "#006C7F"
 
-/particles/xeno_smoke/transvitox
+/particles/tyranid_smoke/transvitox
 	color = "#87BF5F"
 
-/particles/xeno_smoke/ozelomelyn
+/particles/tyranid_smoke/ozelomelyn
 	color = "#CCB7C5"
 
 // ***************************************
 // *********** Defile
 // ***************************************
-/datum/action/ability/activable/xeno/defile
+/datum/action/ability/activable/tyranid/defile
 	name = "Defile"
 	action_icon_state = "defiler_sting"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
-	desc = "Channel to inject an adjacent target with an accelerant that violently reacts with xeno toxins, releasing gas and dealing heavy tox damage in proportion to the amount in their system."
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
+	desc = "Channel to inject an adjacent target with an accelerant that violently reacts with tyranid toxins, releasing gas and dealing heavy tox damage in proportion to the amount in their system."
 	ability_cost = 100
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_DEFILE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_DEFILE,
 	)
 
-/datum/action/ability/activable/xeno/defile/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/defile/on_cooldown_finish()
 	playsound(owner.loc, 'sound/voice/alien/drool1.ogg', 50, 1)
-	to_chat(owner, span_xenodanger("You feel your toxin accelerant glands refill. You can use Defile again."))
+	to_chat(owner, span_tyraniddanger("You feel your toxin accelerant glands refill. You can use Defile again."))
 	return ..()
 
-/datum/action/ability/activable/xeno/defile/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/defile/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -89,14 +89,14 @@
 		return FALSE
 
 	if(!owner.Adjacent(A))
-		var/mob/living/carbon/xenomorph/X = owner
+		var/mob/living/carbon/tyranid/X = owner
 		if(!silent)
 			A.balloon_alert(X, "Cannot reach")
 		return FALSE
 
 
-/datum/action/ability/activable/xeno/defile/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/defile/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/X = owner
 	var/mob/living/carbon/living_target = A
 	if(living_target.status_flags & GODMODE)
 		owner.balloon_alert(owner, "Cannot defile")
@@ -112,7 +112,7 @@
 	X.do_attack_animation(living_target)
 	playsound(living_target, 'sound/effects/spray3.ogg', 15, TRUE)
 	playsound(living_target, pick('sound/voice/alien/drool1.ogg', 'sound/voice/alien/drool2.ogg'), 15, 1)
-	to_chat(X, span_xenodanger("Our stinger successfully discharges accelerant into our victim."))
+	to_chat(X, span_tyraniddanger("Our stinger successfully discharges accelerant into our victim."))
 	to_chat(living_target, span_danger("You feel horrible pain as something sharp forcibly pierces your thorax."))
 	living_target.apply_damage(50, STAMINA)
 	living_target.apply_damage(5, BRUTE, "chest", updating_health = TRUE)
@@ -126,8 +126,8 @@
 	for(var/datum/reagent/current_reagent AS in living_target.reagents.reagent_list) //Cycle through all chems
 		defile_reagent_amount += living_target.reagents.get_reagent_amount(current_reagent.type)
 		living_target.reagents.remove_reagent(current_reagent.type,defile_reagent_amount) //Purge current chem
-		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each xeno toxin reagent, double the strength multiplier
-			if(istype(current_reagent, /datum/reagent/toxin/xeno_neurotoxin)) //Make sure neurotoxin isn't double counted
+		if(is_type_in_typecache(current_reagent, GLOB.defiler_toxins_typecache_list)) //For each tyranid toxin reagent, double the strength multiplier
+			if(istype(current_reagent, /datum/reagent/toxin/tyranid_neurotoxin)) //Make sure neurotoxin isn't double counted
 				if(neuro_applied)
 					continue
 				else
@@ -142,7 +142,7 @@
 
 	living_target.setToxLoss(min(200, living_target.getToxLoss() + defile_power)) //Apply the toxin damage; cap toxin damage at lower of 200 or defile power + current tox loss
 
-	var/datum/effect_system/smoke_spread/xeno/sanguinal/blood_smoke = new(living_target) //Set up Sanguinal smoke
+	var/datum/effect_system/smoke_spread/tyranid/sanguinal/blood_smoke = new(living_target) //Set up Sanguinal smoke
 	blood_smoke.strength = CEILING(clamp(defile_power*DEFILER_SANGUINAL_SMOKE_MULTIPLIER,1,2),1)
 	blood_smoke.set_up(CEILING(clamp(defile_power*DEFILER_SANGUINAL_SMOKE_MULTIPLIER,1,4),1), get_turf(living_target))
 	blood_smoke.start()
@@ -163,89 +163,89 @@
 // ***************************************
 // *********** Neurogas
 // ***************************************
-/datum/action/ability/xeno_action/emit_neurogas
+/datum/action/ability/tyranid_action/emit_neurogas
 	name = "Emit Noxious Gas"
 	action_icon_state = "emit_neurogas"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
 	desc = "Channel for 3 seconds to emit a cloud of noxious smoke, based on selected reagent, that follows the Defiler. You must remain stationary while channeling; moving will cancel the ability but will still cost plasma."
 	ability_cost = 200
 	cooldown_duration = 40 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY|ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_EMIT_NEUROGAS,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_EMIT_NEUROGAS,
 	)
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
 
-/datum/action/ability/xeno_action/emit_neurogas/on_cooldown_finish()
+/datum/action/ability/tyranid_action/emit_neurogas/on_cooldown_finish()
 	playsound(owner.loc, 'sound/effects/alien/new_larva.ogg', 50, 0)
-	to_chat(owner, span_xenodanger("We feel our dorsal vents bristle with heated gas. We can emit Noxious Gas again."))
+	to_chat(owner, span_tyraniddanger("We feel our dorsal vents bristle with heated gas. We can emit Noxious Gas again."))
 	return ..()
 
-/datum/action/ability/xeno_action/emit_neurogas/action_activate()
-	var/mob/living/carbon/xenomorph/defiler/X = owner
+/datum/action/ability/tyranid_action/emit_neurogas/action_activate()
+	var/mob/living/carbon/tyranid/defiler/X = owner
 	toggle_particles(TRUE)
 
 	//give them fair warning
 	X.visible_message(span_danger("Tufts of smoke begin to billow from [X]!"), \
-	span_xenodanger("Our dorsal vents widen, preparing to emit toxic smoke. We must keep still!"))
+	span_tyraniddanger("Our dorsal vents widen, preparing to emit toxic smoke. We must keep still!"))
 	X.balloon_alert(X, "Keep still...")
 
 	X.emitting_gas = TRUE //We gain bump movement immunity while we're emitting gas.
 
-	X.icon_state = "[X.xeno_caste.caste_name][(X.xeno_flags & XENO_ROUNY) ? " rouny" : ""] Power Up"
+	X.icon_state = "[X.tyranid_caste.caste_name][(X.tyranid_flags & TYRANID_ROUNY) ? " rouny" : ""] Power Up"
 
 	if(!do_after(X, DEFILER_GAS_CHANNEL_TIME, NONE, null, BUSY_ICON_HOSTILE))
 		if(!QDELETED(src))
-			to_chat(X, span_xenodanger("We abort emitting fumes, our expended plasma resulting in nothing."))
+			to_chat(X, span_tyraniddanger("We abort emitting fumes, our expended plasma resulting in nothing."))
 			X.emitting_gas = FALSE
-			X.icon_state = "[X.xeno_caste.caste_name][(X.xeno_flags & XENO_ROUNY) ? " rouny" : ""] Running"
+			X.icon_state = "[X.tyranid_caste.caste_name][(X.tyranid_flags & TYRANID_ROUNY) ? " rouny" : ""] Running"
 			return fail_activate()
 	X.emitting_gas = FALSE
-	X.icon_state = "[X.xeno_caste.caste_name][(X.xeno_flags & XENO_ROUNY) ? " rouny" : ""] Running"
+	X.icon_state = "[X.tyranid_caste.caste_name][(X.tyranid_flags & TYRANID_ROUNY) ? " rouny" : ""] Running"
 
 	add_cooldown()
 	succeed_activate()
 
 	if(X.IsStaggered()) //If we got staggered, return
-		to_chat(X, span_xenowarning("We try to emit toxins but are staggered!"))
+		to_chat(X, span_tyranidwarning("We try to emit toxins but are staggered!"))
 		return fail_activate()
 
 	owner.record_war_crime()
 	GLOB.round_statistics.defiler_neurogas_uses++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "defiler_neurogas_uses")
 
-	X.visible_message(span_xenodanger("[X] emits a noxious gas!"), \
-	span_xenodanger("We emit noxious gas!"))
+	X.visible_message(span_tyraniddanger("[X] emits a noxious gas!"), \
+	span_tyraniddanger("We emit noxious gas!"))
 	dispense_gas()
 
-/datum/action/ability/xeno_action/emit_neurogas/fail_activate()
+/datum/action/ability/tyranid_action/emit_neurogas/fail_activate()
 	toggle_particles(FALSE)
 	return ..()
 
-/datum/action/ability/xeno_action/emit_neurogas/proc/dispense_gas(time_left = 3, datum/effect_system/smoke_spread/emitted_gas)
+/datum/action/ability/tyranid_action/emit_neurogas/proc/dispense_gas(time_left = 3, datum/effect_system/smoke_spread/emitted_gas)
 	if(time_left <= 0)
 		return
-	var/mob/living/carbon/xenomorph/defiler/defiler_owner = owner
+	var/mob/living/carbon/tyranid/defiler/defiler_owner = owner
 	var/smoke_range = 2
 
 	if(!emitted_gas)
 		switch(defiler_owner.selected_reagent)
-			if(/datum/reagent/toxin/xeno_neurotoxin)
-				emitted_gas = new /datum/effect_system/smoke_spread/xeno/neuro/medium(defiler_owner)
-			if(/datum/reagent/toxin/xeno_hemodile)
-				emitted_gas = new /datum/effect_system/smoke_spread/xeno/hemodile(defiler_owner)
-			if(/datum/reagent/toxin/xeno_transvitox)
-				emitted_gas = new /datum/effect_system/smoke_spread/xeno/transvitox(defiler_owner)
-			if(/datum/reagent/toxin/xeno_ozelomelyn)
-				emitted_gas = new /datum/effect_system/smoke_spread/xeno/ozelomelyn(defiler_owner)
+			if(/datum/reagent/toxin/tyranid_neurotoxin)
+				emitted_gas = new /datum/effect_system/smoke_spread/tyranid/neuro/medium(defiler_owner)
+			if(/datum/reagent/toxin/tyranid_hemodile)
+				emitted_gas = new /datum/effect_system/smoke_spread/tyranid/hemodile(defiler_owner)
+			if(/datum/reagent/toxin/tyranid_transvitox)
+				emitted_gas = new /datum/effect_system/smoke_spread/tyranid/transvitox(defiler_owner)
+			if(/datum/reagent/toxin/tyranid_ozelomelyn)
+				emitted_gas = new /datum/effect_system/smoke_spread/tyranid/ozelomelyn(defiler_owner)
 
 	if(defiler_owner.IsStaggered()) //If we got staggered, return
-		to_chat(defiler_owner, span_xenowarning("We try to emit toxins but are staggered!"))
+		to_chat(defiler_owner, span_tyranidwarning("We try to emit toxins but are staggered!"))
 		toggle_particles(FALSE)
 		return
 	if(defiler_owner.IsStun() || defiler_owner.IsParalyzed())
-		to_chat(defiler_owner, span_xenowarning("We try to emit toxins but are disabled!"))
+		to_chat(defiler_owner, span_tyranidwarning("We try to emit toxins but are disabled!"))
 		toggle_particles(FALSE)
 		return
 	var/turf/T = get_turf(defiler_owner)
@@ -255,52 +255,52 @@
 	else //last emission is larger
 		emitted_gas.set_up(CEILING(smoke_range*1.3,1), T)
 	emitted_gas.start()
-	T.visible_message(span_danger("Noxious smoke billows from the hulking xenomorph!"))
+	T.visible_message(span_danger("Noxious smoke billows from the hulking tyranid!"))
 	toggle_particles(FALSE)
 	addtimer(CALLBACK(src, PROC_REF(dispense_gas), time_left - 1, emitted_gas), DEFILER_GAS_DELAY)
 
 // Toggles particles on or off, depending on the defined var.
-/datum/action/ability/xeno_action/emit_neurogas/proc/toggle_particles(activate)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/emit_neurogas/proc/toggle_particles(activate)
+	var/mob/living/carbon/tyranid/X = owner
 
 	if(!activate)
 		QDEL_NULL(particle_holder)
 		return
 
 	switch(X.selected_reagent)
-		if(/datum/reagent/toxin/xeno_neurotoxin)
-			particle_holder = new(owner, /particles/xeno_smoke/neurotoxin)
-		if(/datum/reagent/toxin/xeno_hemodile)
-			particle_holder = new(owner, /particles/xeno_smoke/hemodile)
-		if(/datum/reagent/toxin/xeno_transvitox)
-			particle_holder = new(owner, /particles/xeno_smoke/transvitox)
-		if(/datum/reagent/toxin/xeno_ozelomelyn)
-			particle_holder = new(owner, /particles/xeno_smoke/ozelomelyn)
+		if(/datum/reagent/toxin/tyranid_neurotoxin)
+			particle_holder = new(owner, /particles/tyranid_smoke/neurotoxin)
+		if(/datum/reagent/toxin/tyranid_hemodile)
+			particle_holder = new(owner, /particles/tyranid_smoke/hemodile)
+		if(/datum/reagent/toxin/tyranid_transvitox)
+			particle_holder = new(owner, /particles/tyranid_smoke/transvitox)
+		if(/datum/reagent/toxin/tyranid_ozelomelyn)
+			particle_holder = new(owner, /particles/tyranid_smoke/ozelomelyn)
 	particle_holder.pixel_x = 16
 	particle_holder.pixel_y = 16
 
 // ***************************************
 // *********** Inject Egg Neurogas
 // ***************************************
-/datum/action/ability/activable/xeno/inject_egg_neurogas
+/datum/action/ability/activable/tyranid/inject_egg_neurogas
 	name = "Inject Gas"
 	action_icon_state = "inject_egg"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
 	desc = "Inject an egg with toxins, killing the larva, but filling it full with gas ready to explode."
 	ability_cost = 100
 	cooldown_duration = 5 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_INJECT_EGG_NEUROGAS,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_INJECT_EGG_NEUROGAS,
 	)
 
-/datum/action/ability/activable/xeno/inject_egg_neurogas/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/inject_egg_neurogas/on_cooldown_finish()
 	playsound(owner.loc, 'sound/effects/alien/new_larva.ogg', 50, 0)
-	to_chat(owner, span_xenodanger("We feel our stinger fill with toxins. We can inject an egg with gas again."))
+	to_chat(owner, span_tyraniddanger("We feel our stinger fill with toxins. We can inject an egg with gas again."))
 	return ..()
 
-/datum/action/ability/activable/xeno/inject_egg_neurogas/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/defiler/X = owner
+/datum/action/ability/activable/tyranid/inject_egg_neurogas/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/defiler/X = owner
 
 	if(!owner.Adjacent(A))
 		A.balloon_alert(X, "Out of reach")
@@ -320,11 +320,11 @@
 
 	alien_egg.balloon_alert_to_viewers("Injecting...")
 	X.visible_message(span_danger("[X] starts injecting the egg with neurogas, killing the little one inside!"), \
-		span_xenodanger("We extend our stinger into the egg, filling it with gas, killing the little one inside!"))
+		span_tyraniddanger("We extend our stinger into the egg, filling it with gas, killing the little one inside!"))
 	if(!do_after(X, 2 SECONDS, NONE, alien_egg, BUSY_ICON_HOSTILE))
 		alien_egg.balloon_alert_to_viewers("Canceled injection")
 		X.visible_message(span_danger("The stinger retracts from [X], leaving the egg and little one alive."), \
-			span_xenodanger("Our stinger retracts, leaving the egg and little one alive."))
+			span_tyraniddanger("Our stinger retracts, leaving the egg and little one alive."))
 		return fail_activate()
 
 	if(alien_egg.maturity_stage != alien_egg.stage_ready_to_burst)
@@ -337,14 +337,14 @@
 
 	var/obj/alien/egg/gas/newegg = new(A.loc, X.hivenumber)
 	switch(X.selected_reagent)
-		if(/datum/reagent/toxin/xeno_neurotoxin)
-			newegg.gas_type = /datum/effect_system/smoke_spread/xeno/neuro/medium
-		if(/datum/reagent/toxin/xeno_ozelomelyn)
-			newegg.gas_type = /datum/effect_system/smoke_spread/xeno/ozelomelyn
-		if(/datum/reagent/toxin/xeno_hemodile)
-			newegg.gas_type = /datum/effect_system/smoke_spread/xeno/hemodile
-		if(/datum/reagent/toxin/xeno_transvitox)
-			newegg.gas_type = /datum/effect_system/smoke_spread/xeno/transvitox
+		if(/datum/reagent/toxin/tyranid_neurotoxin)
+			newegg.gas_type = /datum/effect_system/smoke_spread/tyranid/neuro/medium
+		if(/datum/reagent/toxin/tyranid_ozelomelyn)
+			newegg.gas_type = /datum/effect_system/smoke_spread/tyranid/ozelomelyn
+		if(/datum/reagent/toxin/tyranid_hemodile)
+			newegg.gas_type = /datum/effect_system/smoke_spread/tyranid/hemodile
+		if(/datum/reagent/toxin/tyranid_transvitox)
+			newegg.gas_type = /datum/effect_system/smoke_spread/tyranid/transvitox
 	qdel(alien_egg)
 
 	owner.record_war_crime()
@@ -354,31 +354,31 @@
 // ***************************************
 // *********** Reagent selection
 // ***************************************
-/datum/action/ability/xeno_action/select_reagent
+/datum/action/ability/tyranid_action/select_reagent
 	name = "Select Reagent"
 	action_icon_state = "select_reagent0"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
-	desc = "Selects which reagent to use for reagent slash and noxious gas. Neuro causes increasing pain and stamina damage. Hemodile slows targets down, multiplied by each other xeno-based toxin. Transvitox converts burns to toxin, and causes additional toxin damage when they take brute damage, both effects multiplied by other xeno-based toxins. Ozelomelyn purges all medicines from their system rapidly and causes minor toxin damage."
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
+	desc = "Selects which reagent to use for reagent slash and noxious gas. Neuro causes increasing pain and stamina damage. Hemodile slows targets down, multiplied by each other tyranid-based toxin. Transvitox converts burns to toxin, and causes additional toxin damage when they take brute damage, both effects multiplied by other tyranid-based toxins. Ozelomelyn purges all medicines from their system rapidly and causes minor toxin damage."
 	use_state_flags = ABILITY_USE_BUSY|ABILITY_USE_LYING
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SELECT_REAGENT,
-		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_RADIAL_SELECT_REAGENT,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_SELECT_REAGENT,
+		KEYBINDING_ALTERNATE = COMSIG_TYRANIDABILITY_RADIAL_SELECT_REAGENT,
 	)
 
-/datum/action/ability/xeno_action/select_reagent/give_action(mob/living/L)
+/datum/action/ability/tyranid_action/select_reagent/give_action(mob/living/L)
 	. = ..()
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	X.selected_reagent = GLOB.defiler_toxin_type_list[1] //Set our default
 	update_button_icon() //Update immediately to get our default
 
-/datum/action/ability/xeno_action/select_reagent/update_button_icon()
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/select_reagent/update_button_icon()
+	var/mob/living/carbon/tyranid/X = owner
 	var/atom/A = X.selected_reagent
 	action_icon_state = initial(A.name)
 	return ..()
 
-/datum/action/ability/xeno_action/select_reagent/action_activate()
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/select_reagent/action_activate()
+	var/mob/living/carbon/tyranid/X = owner
 	var/i = GLOB.defiler_toxin_type_list.Find(X.selected_reagent)
 	if(length(GLOB.defiler_toxin_type_list) == i)
 		X.selected_reagent = GLOB.defiler_toxin_type_list[1]
@@ -390,24 +390,24 @@
 	update_button_icon()
 	return succeed_activate()
 
-/datum/action/ability/xeno_action/select_reagent/alternate_action_activate()
+/datum/action/ability/tyranid_action/select_reagent/alternate_action_activate()
 	INVOKE_ASYNC(src, PROC_REF(select_reagent_radial))
 	return COMSIG_KB_ACTIVATED
 
-/datum/action/ability/xeno_action/select_reagent/proc/select_reagent_radial()
+/datum/action/ability/tyranid_action/select_reagent/proc/select_reagent_radial()
 	//List of toxin images
 	// This is cursed, don't copy this code its the WRONG way to do this.
 	// TODO: generate this from GLOB.defiler_toxin_type_list
 	var/static/list/defiler_toxin_images_list = list(
-			DEFILER_NEUROTOXIN = image('icons/Xeno/actions/defiler.dmi', icon_state = DEFILER_NEUROTOXIN),
-			DEFILER_HEMODILE = image('icons/Xeno/actions/defiler.dmi', icon_state = DEFILER_HEMODILE),
-			DEFILER_TRANSVITOX = image('icons/Xeno/actions/defiler.dmi', icon_state = DEFILER_TRANSVITOX),
-			DEFILER_OZELOMELYN = image('icons/Xeno/actions/defiler.dmi', icon_state = DEFILER_OZELOMELYN),
+			DEFILER_NEUROTOXIN = image('modular_imperium/master_files/icons/tyranid/actions/defiler.dmi', icon_state = DEFILER_NEUROTOXIN),
+			DEFILER_HEMODILE = image('modular_imperium/master_files/icons/tyranid/actions/defiler.dmi', icon_state = DEFILER_HEMODILE),
+			DEFILER_TRANSVITOX = image('modular_imperium/master_files/icons/tyranid/actions/defiler.dmi', icon_state = DEFILER_TRANSVITOX),
+			DEFILER_OZELOMELYN = image('modular_imperium/master_files/icons/tyranid/actions/defiler.dmi', icon_state = DEFILER_OZELOMELYN),
 			)
 	var/toxin_choice = show_radial_menu(owner, owner, defiler_toxin_images_list, radius = 48)
 	if(!toxin_choice)
 		return
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	for(var/toxin in GLOB.defiler_toxin_type_list)
 		var/datum/reagent/R = GLOB.chemical_reagents_list[toxin]
 		if(R.name == toxin_choice)
@@ -420,15 +420,15 @@
 // ***************************************
 // *********** Reagent slash
 // ***************************************
-/datum/action/ability/xeno_action/reagent_slash
+/datum/action/ability/tyranid_action/reagent_slash
 	name = "Reagent Slash"
 	action_icon_state = "reagent_slash"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
 	desc = "For a short duration the next 3 slashes made will inject a small amount of selected toxin."
 	cooldown_duration = 6 SECONDS
 	ability_cost = 100
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_REAGENT_SLASH,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_REAGENT_SLASH,
 	)
 	target_flags = ABILITY_MOB_TARGET
 	///How many remaining reagent slashes the Defiler has
@@ -440,11 +440,11 @@
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
 
-/datum/action/ability/xeno_action/reagent_slash/action_activate()
+/datum/action/ability/tyranid_action/reagent_slash/action_activate()
 	. = ..()
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 
-	RegisterSignal(X, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(reagent_slash))
+	RegisterSignal(X, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(reagent_slash))
 
 	reagent_slash_count = DEFILER_REAGENT_SLASH_COUNT //Set the number of slashes
 	reagent_slash_duration_timer_id = addtimer(CALLBACK(src, PROC_REF(reagent_slash_deactivate), X), DEFILER_REAGENT_SLASH_DURATION, TIMER_STOPPABLE) //Initiate the timer and set the timer ID for reference
@@ -458,8 +458,8 @@
 	add_cooldown()
 
 ///Called when the duration of reagent slash lapses
-/datum/action/ability/xeno_action/reagent_slash/proc/reagent_slash_deactivate(mob/living/carbon/xenomorph/X)
-	UnregisterSignal(X, COMSIG_XENOMORPH_ATTACK_LIVING) //unregister the signals; party's over
+/datum/action/ability/tyranid_action/reagent_slash/proc/reagent_slash_deactivate(mob/living/carbon/tyranid/X)
+	UnregisterSignal(X, COMSIG_TYRANID_ATTACK_LIVING) //unregister the signals; party's over
 
 	reagent_slash_count = 0 //Zero out vars
 	deltimer(reagent_slash_duration_timer_id) //delete the timer so we don't have mismatch issues, and so we don't potentially try to deactivate the ability twice
@@ -472,13 +472,13 @@
 
 
 ///Called when we slash while reagent slash is active
-/datum/action/ability/xeno_action/reagent_slash/proc/reagent_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
+/datum/action/ability/tyranid_action/reagent_slash/proc/reagent_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
 	SIGNAL_HANDLER
 
 	if(!target?.can_sting()) //We only care about targets that we can actually sting
 		return
 
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	var/mob/living/carbon/carbon_target = target
 
 	carbon_target.reagents.add_reagent(reagent_slash_reagent, DEFILER_REAGENT_SLASH_INJECT_AMOUNT)
@@ -494,48 +494,48 @@
 		reagent_slash_deactivate(X)
 
 
-/datum/action/ability/xeno_action/reagent_slash/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We are able to infuse our spines with toxins again."))
+/datum/action/ability/tyranid_action/reagent_slash/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("We are able to infuse our spines with toxins again."))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
 // Toggles particles on or off, depending on the defined var.
-/datum/action/ability/xeno_action/reagent_slash/proc/toggle_particles(activate)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/reagent_slash/proc/toggle_particles(activate)
+	var/mob/living/carbon/tyranid/X = owner
 
 	if(!activate)
 		QDEL_NULL(particle_holder)
 		return
 
 	switch(X.selected_reagent)
-		if(/datum/reagent/toxin/xeno_neurotoxin)
-			particle_holder = new(owner, /particles/xeno_slash/neurotoxin)
-		if(/datum/reagent/toxin/xeno_hemodile)
-			particle_holder = new(owner, /particles/xeno_slash/hemodile)
-		if(/datum/reagent/toxin/xeno_transvitox)
-			particle_holder = new(owner, /particles/xeno_slash/transvitox)
-		if(/datum/reagent/toxin/xeno_ozelomelyn)
-			particle_holder = new(owner, /particles/xeno_slash/ozelomelyn)
+		if(/datum/reagent/toxin/tyranid_neurotoxin)
+			particle_holder = new(owner, /particles/tyranid_slash/neurotoxin)
+		if(/datum/reagent/toxin/tyranid_hemodile)
+			particle_holder = new(owner, /particles/tyranid_slash/hemodile)
+		if(/datum/reagent/toxin/tyranid_transvitox)
+			particle_holder = new(owner, /particles/tyranid_slash/transvitox)
+		if(/datum/reagent/toxin/tyranid_ozelomelyn)
+			particle_holder = new(owner, /particles/tyranid_slash/ozelomelyn)
 	particle_holder.pixel_x = 16
 	particle_holder.pixel_y = 12
 
 // ***************************************
 // *********** Tentacle
 // ***************************************
-/datum/action/ability/activable/xeno/tentacle
+/datum/action/ability/activable/tyranid/tentacle
 	name = "Tentacle"
 	action_icon_state = "tail_attack"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
 	desc = "Throw one of your tentacles forward to grab a tallhost or item."
 	cooldown_duration = 20 SECONDS
 	ability_cost = 175
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TENTACLE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_TENTACLE,
 	)
 	///reference to beam tentacle
 	var/datum/beam/tentacle
 
-/datum/action/ability/activable/xeno/tentacle/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/tentacle/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -570,7 +570,7 @@
 		current = get_step_towards(current, target_turf)
 
 
-/datum/action/ability/activable/xeno/tentacle/use_ability(atom/movable/target)
+/datum/action/ability/activable/tyranid/tentacle/use_ability(atom/movable/target)
 	var/atom/movable/tentacle_end/tentacle_end = new (get_turf(owner))
 	tentacle = owner.beam(tentacle_end,"curse0",'icons/effects/beam.dmi')
 	RegisterSignals(tentacle_end, list(COMSIG_MOVABLE_POST_THROW, COMSIG_MOVABLE_IMPACT), PROC_REF(finish_grab))
@@ -579,7 +579,7 @@
 	add_cooldown()
 
 ///Signal handler to grab the target when we thentacle head hit something
-/datum/action/ability/activable/xeno/tentacle/proc/finish_grab(datum/source, atom/movable/target)
+/datum/action/ability/activable/tyranid/tentacle/proc/finish_grab(datum/source, atom/movable/target)
 	SIGNAL_HANDLER
 	QDEL_NULL(tentacle)
 	qdel(source)
@@ -599,7 +599,7 @@
 		loser.adjust_stagger(5 SECONDS)
 
 ///signal handler to delete tetacle after we are done draggging owner along
-/datum/action/ability/activable/xeno/tentacle/proc/delete_beam(datum/source, atom/impacted)
+/datum/action/ability/activable/tyranid/tentacle/proc/delete_beam(datum/source, atom/impacted)
 	SIGNAL_HANDLER
 	UnregisterSignal(source, COMSIG_MOVABLE_POST_THROW)
 	QDEL_NULL(tentacle)

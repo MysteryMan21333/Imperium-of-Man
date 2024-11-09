@@ -195,7 +195,7 @@
 /area/bigredv2/outside/engineering)
 "jy" = (
 /obj/item/shard,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/window_frame/colony,
 /turf/open/floor/plating,
 /area/bigredv2/outside/engineering/east)

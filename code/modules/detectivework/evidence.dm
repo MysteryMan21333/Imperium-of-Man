@@ -3,7 +3,7 @@
 /obj/item/evidencebag
 	name = "evidence bag"
 	desc = "An empty evidence bag."
-	icon = 'icons/obj/items/storage/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/misc.dmi'
 	icon_state = "evidenceobj"
 	worn_icon_state = ""
 	w_class = WEIGHT_CLASS_SMALL
@@ -106,12 +106,12 @@
 /obj/item/f_card
 	name = "finger print card"
 	desc = "Used to take fingerprints."
-	icon = 'icons/obj/items/card.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/card.dmi'
 	icon_state = "fingerprint0"
 	var/amount = 10
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "paper"
 	throwforce = 1
@@ -123,10 +123,10 @@
 /obj/item/fcardholder
 	name = "fingerprint card case"
 	desc = "Apply finger print card."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "fcardholder0"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "clipboard"

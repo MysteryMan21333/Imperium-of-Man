@@ -27,11 +27,11 @@
 	ui_icon = "heavy_mech"
 	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/heavy
 
-/datum/campaign_asset/mech/som
-	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/som
+/datum/campaign_asset/mech/chaos
+	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/chaos
 
-/datum/campaign_asset/mech/light/som
-	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/som/light
+/datum/campaign_asset/mech/light/chaos
+	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/chaos/light
 
-/datum/campaign_asset/mech/heavy/som
-	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/som/heavy
+/datum/campaign_asset/mech/heavy/chaos
+	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/chaos/heavy

@@ -2,5 +2,5 @@
     "map_name": "Fort Phobos",
     "map_path": "map_files/Fort_Phobos",
     "map_file": "Fort_Phobos.dmm",
-    "traits": [{"Marine Main Ship": true}]
+    "traits": [{"Guardsman Main Ship": true}]
 }

@@ -9,7 +9,7 @@
 /obj/machinery/disposal
 	name = "disposal unit"
 	desc = "A pneumatic waste disposal unit."
-	icon = 'icons/obj/pipes/disposal.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/pipes/disposal.dmi'
 	icon_state = "disposal"
 	anchored = TRUE
 	density = TRUE
@@ -73,7 +73,7 @@
 	if(machine_stat & BROKEN)
 		return
 
-	else if(isxeno(user))
+	else if(istyranid(user))
 		return
 
 	else if(mode <= 0)
@@ -150,7 +150,7 @@
 /obj/machinery/disposal/MouseDrop_T(mob/target, mob/user)
 	. = ..()
 	// Check the user, if they can do all the things, are they close, alive?
-	if(isAI(user) || isxeno(user) || !isliving(user) || get_dist(user, target) > 1 || !in_range(user, src) || user.incapacitated(TRUE))
+	if(isAI(user) || istyranid(user) || !isliving(user) || get_dist(user, target) > 1 || !in_range(user, src) || user.incapacitated(TRUE))
 		return
 	// Check the target, are they valid, small enough, and not tied down
 	if(!istype(target) || target.anchored || target.buckled || target.mob_size >= MOB_SIZE_BIG)
@@ -312,7 +312,7 @@
 
 	//Flush handle
 	if(flush)
-		overlays += image('icons/obj/pipes/disposal.dmi', "dispover-handle")
+		overlays += image('modular_imperium/master_files/icons/obj/pipes/disposal.dmi', "dispover-handle")
 
 	//Only handle is shown if no power
 	if(machine_stat & NOPOWER || mode == -1)
@@ -320,13 +320,13 @@
 
 	//Check for items in disposal - occupied light
 	if(length(contents) > 0)
-		overlays += image('icons/obj/pipes/disposal.dmi', "dispover-full")
+		overlays += image('modular_imperium/master_files/icons/obj/pipes/disposal.dmi', "dispover-full")
 
 	//Charging and ready light
 	if(mode == 1)
-		overlays += image('icons/obj/pipes/disposal.dmi', "dispover-charge")
+		overlays += image('modular_imperium/master_files/icons/obj/pipes/disposal.dmi', "dispover-charge")
 	else if(mode == 2)
-		overlays += image('icons/obj/pipes/disposal.dmi', "dispover-ready")
+		overlays += image('modular_imperium/master_files/icons/obj/pipes/disposal.dmi', "dispover-ready")
 
 //Timed process, charge the gas reservoir and perform flush if ready
 /obj/machinery/disposal/process()
@@ -561,7 +561,7 @@
 
 //Disposal pipes
 /obj/structure/disposalpipe
-	icon = 'icons/obj/pipes/disposal.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/pipes/disposal.dmi'
 	name = "disposal pipe"
 	desc = "An underfloor disposal pipe."
 	anchored = TRUE
@@ -874,7 +874,7 @@
 		return null
 	return P
 
-// *** special cased marine ship stuff because its all one z level ***
+// *** special cased guardsman ship stuff because its all one z level ***
 
 /obj/structure/disposalpipe/up/mainship
 	var/id
@@ -938,7 +938,7 @@
 		return null
 	return P
 
-// *** end special cased marine ship stuff ***
+// *** end special cased guardsman ship stuff ***
 
 //Z-Level stuff
 //A three-way junction with dir being the dominant direction
@@ -1278,7 +1278,7 @@
 /obj/structure/disposaloutlet
 	name = "disposal outlet"
 	desc = "An outlet for the pneumatic disposal system."
-	icon = 'icons/obj/pipes/disposal.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/pipes/disposal.dmi'
 	icon_state = "outlet"
 	density = TRUE
 	anchored = TRUE

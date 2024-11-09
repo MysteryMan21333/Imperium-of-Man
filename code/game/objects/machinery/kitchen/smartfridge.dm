@@ -2,7 +2,7 @@
 */
 /obj/machinery/smartfridge
 	name = "\improper SmartFridge"
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "smartfridge"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
@@ -228,7 +228,7 @@
 /obj/machinery/smartfridge/seeds
 	name = "\improper MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "seeds"
 	icon_on = "seeds"
 	icon_off = "seeds-off"
@@ -246,7 +246,7 @@
 	icon_on = "smartfridge"
 	icon_off = "smartfridge-off"
 	is_secure_fridge = TRUE
-	req_one_access = list(ACCESS_MARINE_CMO, ACCESS_CIVILIAN_MEDICAL)
+	req_one_access = list(ACCESS_GUARDSMAN_CMO, ACCESS_CIVILIAN_MEDICAL)
 
 
 /obj/machinery/smartfridge/secure/medbay/accept_check(obj/item/O as obj)

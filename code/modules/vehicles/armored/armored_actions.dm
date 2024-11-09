@@ -6,7 +6,7 @@
 
 ///yes this is a blatant mech copypaste
 /datum/action/vehicle/sealed/armored
-	action_icon = 'icons/mob/actions/actions_mecha.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions/actions_mecha.dmi'
 	///mech owner of this action
 	var/obj/vehicle/sealed/armored/chassis
 
@@ -135,7 +135,7 @@
 
 /datum/action/vehicle/sealed/armored/horn
 	name = "Honk Horn"
-	action_icon = 'icons/mob/actions/actions_vehicle.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions/actions_vehicle.dmi'
 	action_icon_state = "car_horn"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_VEHICLEHONK,

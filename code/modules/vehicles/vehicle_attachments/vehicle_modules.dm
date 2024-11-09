@@ -1,8 +1,8 @@
 /obj/item/vehicle_module
 	name = "vehicle module"
 	desc = "A proto-vehicle module. Call the coders if you see this."
-	icon = 'icons/mob/modular/modular_armor.dmi'
-	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0) // This is here to overwrite code over at objs.dm line 41. Marines don't get funny 200+ bio buff anymore.
+	icon = 'modular_imperium/master_files/icons/mob/modular/modular_armor.dmi'
+	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0) // This is here to overwrite code over at objs.dm line 41. Guardsmans don't get funny 200+ bio buff anymore.
 	appearance_flags = KEEP_APART|TILE_BOUND
 
 	///Reference to parent object.

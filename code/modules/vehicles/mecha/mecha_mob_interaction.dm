@@ -29,7 +29,7 @@
 		log_message("Permission denied (Attached mobs).", LOG_MECHA)
 		return FALSE
 	var/obj/item/I = entering_mob.get_item_by_slot(SLOT_BACK)
-	if(I && istype(I, /obj/item/jetpack_marine))
+	if(I && istype(I, /obj/item/jetpack_guardsman))
 		to_chat(entering_mob, span_warning("Something on your back prevents you from entering the mech!"))
 		return FALSE
 	return ..()

@@ -50,7 +50,7 @@
 /obj/machinery/power/generator/update_overlays()
 	. = ..()
 	if(lastgenlev != 0)
-		. += image('icons/obj/power.dmi', "teg-op[lastgenlev]")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "teg-op[lastgenlev]")
 
 /obj/machinery/power/generator/process()
 	if(!circ1 || !circ2 || !anchored || machine_stat & (BROKEN|NOPOWER))

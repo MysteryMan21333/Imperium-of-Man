@@ -41,7 +41,7 @@
 	if(over != user)
 		return
 
-	if(isxeno(user))
+	if(istyranid(user))
 		return //bad
 
 	var/datum/strip_menu/strip_menu = LAZYACCESS(strip_menus, source)

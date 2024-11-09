@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(bump_teleporters)
 
 /obj/effect/bump_teleporter
 	name = "bump-teleporter"
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	icon_state = "x2"
 	var/id = null			//id of this bump_teleporter.
 	var/id_target = null	//id of bump_teleporter which this moves you to.

@@ -379,7 +379,7 @@
 /turf/open/floor/tile/neutral,
 /area/lv624/lazarus/quartstorage/two)
 "PP" = (
-/obj/item/gift/marine,
+/obj/item/gift/guardsman,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/lazarus/quartstorage/two)
 "PY" = (

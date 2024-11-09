@@ -2,7 +2,7 @@
 /obj/machinery/reagentgrinder
 	name = "\improper All-In-One Grinder"
 	desc = "From BlenderTech. Will It Blend? Let's test it out!"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/kitchen.dmi'
 	icon_state = "juicer1"
 	layer = BELOW_OBJ_LAYER
 	density = FALSE
@@ -365,7 +365,7 @@
 				break
 		remove_object(O)
 
-	//special xeno embryo grinding
+	//special tyranid embryo grinding
 	for (var/obj/item/alien_embryo/O in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break

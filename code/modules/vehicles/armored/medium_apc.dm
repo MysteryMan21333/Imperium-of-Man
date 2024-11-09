@@ -1,8 +1,8 @@
 /obj/vehicle/sealed/armored/multitile/medium/apc
 	name = "TAV - Nike"
 	desc = "A heavily armoured vehicle with light armaments designed to ferry troops around the battlefield, or assist with search and rescue (SAR) operations."
-	icon = 'icons/obj/armored/2x2/medium_vehicles.dmi'
-	turret_icon = 'icons/obj/armored/2x2/medium_vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/2x2/medium_vehicles.dmi'
+	turret_icon = 'modular_imperium/master_files/icons/obj/armored/2x2/medium_vehicles.dmi'
 	turret_icon_state = "apc_turret"
 	damage_icon_path = null
 	interior = null

@@ -23,7 +23,7 @@
 #define SHUTTLE_HEIGHT_TOO_LARGE "height too large"
 #define SHUTTLE_RESERVED "dock is reserved"
 #define SHUTTLE_ALREADY_DOCKED "we are already docked"
-#define SHUTTLE_SOMEONE_ELSE_DOCKED "someone else docked"
+#define SHUTTLE_CHAOSEONE_ELSE_DOCKED "someone else docked"
 
 //Launching Shuttles to CentCom
 #define NOLAUNCH -1
@@ -95,7 +95,7 @@
 #define SHUTTLE_TAKEOFF_GROUND_CALLTIME 2 SECONDS
 
 //Shuttle control flags
-#define SHUTTLE_MARINE_PRIMARY_DROPSHIP (1<<0)
+#define SHUTTLE_GUARDSMAN_PRIMARY_DROPSHIP (1<<0)
 
 //Shuttle name defines used for a whole load of stuff
 #define SHUTTLE_ALAMO "alamo"

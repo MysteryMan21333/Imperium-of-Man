@@ -2,7 +2,7 @@
 
 /obj/machinery/computer3
 	name = "computer"
-	icon = 'icons/obj/machines/computer3.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer3.dmi'
 	icon_state = "frame"
 	density = TRUE
 	anchored = TRUE
@@ -21,7 +21,7 @@
 
 /obj/machinery/computer3/server
 	name = "server"
-	icon = 'icons/obj/machines/computer3.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer3.dmi'
 	icon_state = "serverframe"
 
 /obj/machinery/computer3/server/rack
@@ -31,7 +31,7 @@
 /obj/item/laptop
 	name = "Laptop Computer"
 	desc = "A clamshell portable computer.  It is closed."
-	icon = 'icons/obj/machines/computer3.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer3.dmi'
 	icon_state =  "laptop-closed"
 	worn_icon_state =  "laptop-inhand"
 	pixel_x = 2
@@ -41,7 +41,7 @@
 /obj/machinery/lapvend
 	name = "Laptop Vendor"
 	desc = "A generic vending machine."
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "robotics"
 	layer = BELOW_OBJ_LAYER
 	anchored = TRUE
@@ -51,7 +51,7 @@
 	density = TRUE
 	anchored = FALSE
 	name = "computer frame"
-	icon = 'icons/obj/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stock_parts.dmi'
 	icon_state = "0"
 
 /obj/machinery/computer/atmoscontrol
@@ -65,7 +65,7 @@
 	name = "computer part"
 	desc = "Holy jesus you donnit now"
 	gender = PLURAL
-	icon = 'icons/obj/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stock_parts.dmi'
 	icon_state = "hdd1"
 	w_class = WEIGHT_CLASS_SMALL
 

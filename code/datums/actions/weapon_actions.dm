@@ -1,6 +1,6 @@
 //Stamina using weapon based abilities
 /datum/action/ability/activable/weapon_skill
-	action_icon = 'icons/mob/actions.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	///Damage of this attack
 	var/damage
 	///Penetration of this attack

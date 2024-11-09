@@ -93,7 +93,7 @@
 
 
 /obj/bullet_act(obj/projectile/proj)
-	if(istype(proj.ammo, /datum/ammo/xeno) && !(resistance_flags & XENO_DAMAGEABLE))
+	if(istype(proj.ammo, /datum/ammo/tyranid) && !(resistance_flags & TYRANID_DAMAGEABLE))
 		return
 	. = ..()
 	if(proj.damage < 1)
@@ -124,25 +124,25 @@
 			playsound(loc, 'sound/effects/meteorimpact.ogg', 100, 1)
 
 
-/obj/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	// SHOULD_CALL_PARENT(TRUE) // TODO: fix this
-	if(xeno_attacker.status_flags & INCORPOREAL) //Ghosts can't attack machines
+	if(tyranid_attacker.status_flags & INCORPOREAL) //Ghosts can't attack machines
 		return FALSE
-	SEND_SIGNAL(xeno_attacker, COMSIG_XENOMORPH_ATTACK_OBJ, src)
-	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_ALIEN, xeno_attacker) & COMPONENT_NO_ATTACK_ALIEN)
+	SEND_SIGNAL(tyranid_attacker, COMSIG_TYRANID_ATTACK_OBJ, src)
+	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_ALIEN, tyranid_attacker) & COMPONENT_NO_ATTACK_ALIEN)
 		return FALSE
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		to_chat(xeno_attacker, span_warning("We stare at \the [src] cluelessly."))
+	if(!(resistance_flags & TYRANID_DAMAGEABLE))
+		to_chat(tyranid_attacker, span_warning("We stare at \the [src] cluelessly."))
 		return FALSE
 	if(effects)
-		xeno_attacker.visible_message(span_danger("[xeno_attacker] has slashed [src]!"),
+		tyranid_attacker.visible_message(span_danger("[tyranid_attacker] has slashed [src]!"),
 		span_danger("We slash [src]!"))
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25)
-	attack_generic(xeno_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration)
+	attack_generic(tyranid_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration)
 	return TRUE
 
-/obj/attack_larva(mob/living/carbon/xenomorph/larva/L)
+/obj/attack_larva(mob/living/carbon/tyranid/larva/L)
 	L.visible_message(span_danger("[L] nudges its head against [src]."), \
 	span_danger("You nudge your head against [src]."))
 

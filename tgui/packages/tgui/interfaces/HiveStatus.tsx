@@ -33,14 +33,14 @@ type InputPack = {
   hive_queen_max: number;
   hive_structures: StructureData[];
   // ----- Per xeno info ------
-  xeno_info: XenoData[];
+  tyranid_info: XenoData[];
   static_info: StaticData[];
   // ------- User info --------
   user_ref: string;
-  user_xeno: boolean;
+  user_tyranid: boolean;
   user_index: number;
   user_queen: boolean;
-  user_watched_xeno: string;
+  user_watched_tyranid: string;
   user_evolution: number;
   user_purchase_perms: boolean;
   user_maturity: number;
@@ -50,7 +50,7 @@ type InputPack = {
   user_show_empty: boolean;
   user_show_general: boolean;
   user_show_population: boolean;
-  user_show_xeno_list: boolean;
+  user_show_tyranid_list: boolean;
   user_show_structures: boolean;
 };
 
@@ -102,7 +102,7 @@ export const HiveStatus = (_props: any) => {
     user_ref,
     user_show_general,
     user_show_population,
-    user_show_xeno_list,
+    user_show_tyranid_list,
     user_show_structures,
   } = data;
 
@@ -132,7 +132,7 @@ export const HiveStatus = (_props: any) => {
         <Divider />
         <CachedCollapsible
           title="Xenomorph List"
-          open={user_show_xeno_list}
+          open={user_show_tyranid_list}
           onClickXeno={() => act('ToggleXenoList', { xeno: user_ref })}
         >
           <XenoList />
@@ -158,9 +158,9 @@ const CachedCollapsible = (props: {
   onClickXeno: any;
 }) => {
   const { data } = useBackend<InputPack>();
-  const { user_xeno } = data;
+  const { user_tyranid } = data;
 
-  if (!user_xeno) {
+  if (!user_tyranid) {
     return (
       <Collapsible open title={props.title}>
         {props.children}
@@ -357,9 +357,9 @@ const LarvaBar = (_props: any) => {
 
 const MaturityBar = (_props: any) => {
   const { data } = useBackend<InputPack>();
-  const { user_xeno, user_maturity, user_next_mat_level } = data;
+  const { user_tyranid, user_maturity, user_next_mat_level } = data;
 
-  if (!user_xeno || user_next_mat_level === 0) {
+  if (!user_tyranid || user_next_mat_level === 0) {
     return <Box />; // Empty.
   }
 
@@ -387,11 +387,12 @@ const MaturityBar = (_props: any) => {
 
 const EvolutionBar = (_props: any) => {
   const { act, data } = useBackend<InputPack>();
-  const { static_info, user_ref, user_xeno, user_index, user_evolution } = data;
+  const { static_info, user_ref, user_tyranid, user_index, user_evolution } =
+    data;
 
   const max = static_info[user_index].evolution_max;
 
-  if (!user_xeno || max === 0) {
+  if (!user_tyranid || max === 0) {
     return <Box />; // Empty.
   }
 
@@ -434,10 +435,10 @@ const PopulationPyramid = (_props: any) => {
     hive_max_tier_three,
     hive_minion_count,
     hive_primos,
-    xeno_info,
+    tyranid_info,
     static_info,
     user_ref,
-    user_xeno,
+    user_tyranid,
     user_show_empty,
     user_show_compact,
   } = data;
@@ -469,7 +470,7 @@ const PopulationPyramid = (_props: any) => {
     pyramid_data[static_entry.tier].index[static_entry.sort_mod] = index;
   });
 
-  xeno_info.map((entry) => {
+  tyranid_info.map((entry) => {
     // Accumulating counts.
     const static_entry = static_info[entry.index];
     pyramid_data[static_entry.tier].caste[static_entry.sort_mod]++;
@@ -655,11 +656,11 @@ const default_sort: sort_by = {
 const XenoList = (_props: any) => {
   const { act, data } = useBackend<InputPack>();
   const {
-    xeno_info,
+    tyranid_info,
     static_info,
     user_ref,
     user_queen,
-    user_watched_xeno,
+    user_watched_tyranid,
     user_tracked,
   } = data;
 
@@ -728,7 +729,7 @@ const XenoList = (_props: any) => {
 
   if (sortingBy.category === location) {
     // Sorting value inverted because direction is inverted.
-    xeno_info.sort((a, b) => -a.location.localeCompare(b.location));
+    tyranid_info.sort((a, b) => -a.location.localeCompare(b.location));
   }
 
   return (
@@ -761,7 +762,7 @@ const XenoList = (_props: any) => {
           </Flex>
         </Flex.Item>
         {!sortingBy.down && <HeaderDivider order={Number.MIN_SAFE_INTEGER} />}
-        {xeno_info.map((entry) => {
+        {tyranid_info.map((entry) => {
           const static_entry = static_info[entry.index];
           let order: number;
           switch (sortingBy.category) {
@@ -779,7 +780,7 @@ const XenoList = (_props: any) => {
               order = entry.plasma;
               break;
             case location:
-              order = 0; // Sorted by xeno_info.sort()
+              order = 0; // Sorted by tyranid_info.sort()
               break;
             default:
               order = 0;
@@ -800,7 +801,7 @@ const XenoList = (_props: any) => {
                     <ActionButtons
                       target_ref={entry.ref}
                       is_queen={user_queen}
-                      watched_xeno={user_watched_xeno}
+                      watched_tyranid={user_watched_tyranid}
                       can_transfer_plasma={static_entry.can_transfer_plasma}
                     />
                   )}
@@ -920,13 +921,13 @@ const XenoList = (_props: any) => {
 type ActionButtonProps = {
   target_ref: string;
   is_queen: boolean;
-  watched_xeno: string;
+  watched_tyranid: string;
   can_transfer_plasma: boolean;
 };
 
 const ActionButtons = (props: ActionButtonProps) => {
   const { act } = useBackend<InputPack>();
-  const observing = props.target_ref === props.watched_xeno;
+  const observing = props.target_ref === props.watched_tyranid;
 
   const overwatch_button = (
     <Button

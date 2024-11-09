@@ -1,5 +1,5 @@
 /datum/campaign_mission/raiding_base
-	name = "SOM Raiding Base"
+	name = "CHAOS Raiding Base"
 	mission_icon = "raiding_base"
 	map_name = "Raiding base Zulu"
 	map_file = '_maps/map_files/Campaign maps/som_raid_base/som_raiding_base.dmm'
@@ -8,7 +8,7 @@
 	starting_faction_objective_description = "Major Victory: Set and defend an orbital beacon inside the facility until a precision orbital strike can be called in."
 	hostile_faction_objective_description = "Major Victory: Prevent the enemy from activating an orbital beacon inside the facility."
 	intro_message = list(
-		MISSION_STARTING_FACTION = "Infiltrate the SOM base, then plant and defend an orbital beacon until we can drop the hammer on them from orbit!",
+		MISSION_STARTING_FACTION = "Infiltrate the CHAOS base, then plant and defend an orbital beacon until we can drop the hammer on them from orbit!",
 		MISSION_HOSTILE_FACTION = "Stop TGMC forces from infiltrating the base. Prevent them from activating an orbital beacon at all costs!",
 	)
 	mission_flags = MISSION_DISALLOW_DROPPODS
@@ -33,7 +33,7 @@
 		MISSION_OUTCOME_MAJOR_LOSS = list(10, 30),
 	)
 
-	starting_faction_mission_brief = "We have finally been able to track down a hidden SOM outpost which they have been using as a base of operations to raid our supply lines, wrecking havoc on our logistics. \
+	starting_faction_mission_brief = "We have finally been able to track down a hidden CHAOS outpost which they have been using as a base of operations to raid our supply lines, wrecking havoc on our logistics. \
 	Your unit has been tasked with ensuring the complete and utter destruction of this base and everything within it. \
 	Infiltrate the facility, then deploy one of the orbital beacons you have been supplied with. \
 	Defend the beacon until the TGS Horizon can secure a target lock and deploy a thermobaric bunker buster to wipe the outpost off the face of the planet."
@@ -44,12 +44,12 @@
 	hostile_faction_additional_rewards = "Allow us to continue degrading TGMC logistics"
 	outro_message = list(
 		MISSION_OUTCOME_MAJOR_VICTORY = list(
-			MISSION_STARTING_FACTION = "<u>Major victory</u><br> Confirming good hit. Successful destruction of target facility. Outstanding marines!",
+			MISSION_STARTING_FACTION = "<u>Major victory</u><br> Confirming good hit. Successful destruction of target facility. Outstanding guardsmans!",
 			MISSION_HOSTILE_FACTION = "<u>Major loss</u><br> We've lost Zulu, any survivors, fallback to exfil point Charlie, retreat!",
 		),
 		MISSION_OUTCOME_MAJOR_LOSS = list(
-			MISSION_STARTING_FACTION = "<u>Major loss</u><br> SOM interceptors are inbound, all forces fallback, this operation is a loss.",
-			MISSION_HOSTILE_FACTION = "<u>Major victory</u><br> Reinforcements are almost here and enemy forces are falling back, you've done Mars proud today marines.",
+			MISSION_STARTING_FACTION = "<u>Major loss</u><br> CHAOS interceptors are inbound, all forces fallback, this operation is a loss.",
+			MISSION_HOSTILE_FACTION = "<u>Major victory</u><br> Reinforcements are almost here and enemy forces are falling back, you've done Mars proud today guardsmans.",
 		),
 	)
 	///The type of beacon used in this mission
@@ -143,7 +143,7 @@
 	winning_team.remove_asset(/datum/campaign_asset/attrition_modifier/malus_strong)
 	winning_team.remove_asset(/datum/campaign_asset/attrition_modifier/malus_standard)
 	//We don't have enough missions in the pool yet to activate this
-	//GLOB.campaign_mission_pool[hostile_faction] -= /datum/campaign_mission/destroy_mission/supply_raid/som
+	//GLOB.campaign_mission_pool[hostile_faction] -= /datum/campaign_mission/destroy_mission/supply_raid/chaos
 	//GLOB.campaign_mission_pool[hostile_faction] -= /datum/campaign_mission/destroy_mission/supply_raid
 
 
@@ -151,33 +151,33 @@
 	. = ..()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	if(hostile_faction == FACTION_TERRAGOV)
+	if(hostile_faction == FACTION_IMPERIUM)
 		winning_team.add_asset(/datum/campaign_asset/equipment/power_armor)
-	else if(hostile_faction == FACTION_SOM)
-		winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	else if(hostile_faction == FACTION_CHAOS)
+		winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 		winning_team.add_asset(/datum/campaign_asset/equipment/gorgon_armor)
 
 /datum/campaign_mission/raiding_base/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
 	if(message)
 		return ..()
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
-			message = "Find any weak spots in the SOM's defences and deploy a beacon deep in their base. Lets wipe them off the map marines!"
-		if(FACTION_SOM)
+		if(FACTION_IMPERIUM)
+			message = "Find any weak spots in the CHAOS's defences and deploy a beacon deep in their base. Lets wipe them off the map guardsmans!"
+		if(FACTION_CHAOS)
 			message = "Keep those Terran dogs out of of Zulu. If they deploy a beacon it needs to be destroyed before they can call in a strike. Glory to Mars!"
 	return ..()
 
 ///Returns a list of areas in which the beacon can be deployed
 /datum/campaign_mission/raiding_base/proc/get_valid_beacon_areas()
 	return list(
-		/area/campaign/som_raiding/outpost/command,
-		/area/campaign/som_raiding/outpost/command/captain,
-		/area/campaign/som_raiding/outpost/command/telecom,
-		/area/campaign/som_raiding/outpost/command/cic,
-		/area/campaign/som_raiding/outpost/command/north,
-		/area/campaign/som_raiding/outpost/command/living,
-		/area/campaign/som_raiding/outpost/medbay,
-		/area/campaign/som_raiding/outpost/central_corridor,
+		/area/campaign/chaos_raiding/outpost/command,
+		/area/campaign/chaos_raiding/outpost/command/captain,
+		/area/campaign/chaos_raiding/outpost/command/telecom,
+		/area/campaign/chaos_raiding/outpost/command/cic,
+		/area/campaign/chaos_raiding/outpost/command/north,
+		/area/campaign/chaos_raiding/outpost/command/living,
+		/area/campaign/chaos_raiding/outpost/medbay,
+		/area/campaign/chaos_raiding/outpost/central_corridor,
 	)
 
 ///Reacts to an OB beacon being successfully triggered
@@ -190,7 +190,7 @@
 
 ///Maptext alert when a beacon is placed
 /datum/campaign_mission/raiding_base/proc/play_beacon_deployed_annoucement(area/deployed_area)
-	map_text_broadcast(starting_faction, "Confirming beacon deployed in [deployed_area]. Defend it until we can secure a target lock marines!", "TGS Horizon", /atom/movable/screen/text/screen_text/picture/potrait/pod_officer, "sound/effects/alert.ogg")
+	map_text_broadcast(starting_faction, "Confirming beacon deployed in [deployed_area]. Defend it until we can secure a target lock guardsmans!", "TGS Horizon", /atom/movable/screen/text/screen_text/picture/potrait/pod_officer, "sound/effects/alert.ogg")
 	map_text_broadcast(hostile_faction, "Orbital beacon detected in [deployed_area]. Destroy that beacon before they can secure a target lock!", "Overwatch", sound_effect = "sound/effects/alert.ogg")
 
 ///Handles a beacon being destroyed. Separate from normal objective destruction for convenience as we want the specific beacon ref
@@ -221,7 +221,7 @@
 		return
 	qdel(beacon)
 
-/datum/campaign_mission/raiding_base/som
+/datum/campaign_mission/raiding_base/chaos
 	name = "TGMC Raiding Base"
 	map_name = "Jeneora Valley"
 	map_file = '_maps/map_files/Campaign maps/tgmc_raid_base/tgmc_raiding_base.dmm'
@@ -231,7 +231,7 @@
 	hostile_faction_objective_description = "Major Victory: Prevent the enemy from activating a bluespace beacon inside the facility."
 	intro_message = list(
 		MISSION_STARTING_FACTION = "Infiltrate the TGMC base, then plant and defend a bluespace beacon until we can activate bluespace artillery!",
-		MISSION_HOSTILE_FACTION = "Stop SOM forces from infiltrating the base. Prevent them from activating a bluespace beacon at all costs!",
+		MISSION_HOSTILE_FACTION = "Stop CHAOS forces from infiltrating the base. Prevent them from activating a bluespace beacon at all costs!",
 	)
 	mission_flags = MISSION_DISALLOW_TELEPORT
 
@@ -239,11 +239,11 @@
 	Your unit has been tasked with ensuring the complete and utter destruction of this base and everything within it. \
 	Infiltrate the facility, then deploy one of the bluespace beacons you have been supplied with. \
 	Defend the beacon until our bluespace artillery can secure a lock, and wipe out the base for good from the inside."
-	hostile_faction_mission_brief = "Intelligence has picked up a SOM plan to assault our base at Jeneora Valley. This base has been key to our sabotage and disruption efforts, significantly degrading SOM supply lines. \
-	Intel suggests that the SOM are seeking to infiltrate the base to deploy a bluespace beacon, in order to call down an bluespace strike. \
-	Prevent SOM forces from entering the base, and destroy any bluespace beacon they try to deploy."
+	hostile_faction_mission_brief = "Intelligence has picked up a CHAOS plan to assault our base at Jeneora Valley. This base has been key to our sabotage and disruption efforts, significantly degrading CHAOS supply lines. \
+	Intel suggests that the CHAOS are seeking to infiltrate the base to deploy a bluespace beacon, in order to call down an bluespace strike. \
+	Prevent CHAOS forces from entering the base, and destroy any bluespace beacon they try to deploy."
 	starting_faction_additional_rewards = "Remove negative effects on our logistics"
-	hostile_faction_additional_rewards = "Allow us to continue degrading SOM logistics"
+	hostile_faction_additional_rewards = "Allow us to continue degrading CHAOS logistics"
 	outro_message = list(
 		MISSION_OUTCOME_MAJOR_VICTORY = list(
 			MISSION_STARTING_FACTION = "<u>Major victory</u><br> Confirming good hit. Successful destruction of target facility. Outstanding, glory to Mars!",
@@ -251,12 +251,12 @@
 		),
 		MISSION_OUTCOME_MAJOR_LOSS = list(
 			MISSION_STARTING_FACTION = "<u>Major loss</u><br> TGMC interceptors are inbound, all forces fallback, this operation is a loss.",
-			MISSION_HOSTILE_FACTION = "<u>Major victory</u><br> Reinforcements are almost here and enemy forces are falling back, you've done the Corp proud today marines.",
+			MISSION_HOSTILE_FACTION = "<u>Major victory</u><br> Reinforcements are almost here and enemy forces are falling back, you've done the Corp proud today guardsmans.",
 		),
 	)
 	beacon_type = /obj/item/campaign_beacon/bunker_buster/bluespace
 
-/datum/campaign_mission/raiding_base/som/get_valid_beacon_areas()
+/datum/campaign_mission/raiding_base/chaos/get_valid_beacon_areas()
 	return list(
 		/area/campaign/tgmc_raiding/underground/command,
 		/area/campaign/tgmc_raiding/underground/command/east,
@@ -267,20 +267,20 @@
 		/area/campaign/tgmc_raiding/underground/living/offices,
 	)
 
-/datum/campaign_mission/raiding_base/som/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
+/datum/campaign_mission/raiding_base/chaos/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
 	if(message)
 		return ..()
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
+		if(FACTION_IMPERIUM)
 			message = "Defend the base at all costs. Hold back those rusters until reinforcements can arrive. Do not let them deploy a beacon!"
-		if(FACTION_SOM)
+		if(FACTION_CHAOS)
 			message = "Closing in on the Terran outpost.  Breach their defences and get that beacon down. Glory to Mars!"
 	return ..()
 
-/datum/campaign_mission/raiding_base/som/play_beacon_deployed_annoucement(area/deployed_area)
-	map_text_broadcast(starting_faction, "Confirming beacon deployed in [deployed_area]. Defend it until bluespace artillery has a fix!", "Teleporter Command", /atom/movable/screen/text/screen_text/picture/potrait/som_scientist, "sound/effects/alert.ogg")
+/datum/campaign_mission/raiding_base/chaos/play_beacon_deployed_annoucement(area/deployed_area)
+	map_text_broadcast(starting_faction, "Confirming beacon deployed in [deployed_area]. Defend it until bluespace artillery has a fix!", "Teleporter Command", /atom/movable/screen/text/screen_text/picture/potrait/chaos_scientist, "sound/effects/alert.ogg")
 	map_text_broadcast(hostile_faction, "Bluespace beacon detected in [deployed_area]. Destroy that beacon before they can call in a strike!", "Overwatch", sound_effect = "sound/effects/alert.ogg")
 
-/datum/campaign_mission/raiding_base/som/beacon_effect(obj/structure/campaign_objective/destruction_objective/bunker_buster/beacon, turf/location)
+/datum/campaign_mission/raiding_base/chaos/beacon_effect(obj/structure/campaign_objective/destruction_objective/bunker_buster/beacon, turf/location)
 	playsound(beacon, 'sound/magic/lightningbolt.ogg', 150, 0)
 	return ..()

@@ -6,7 +6,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 /mob/dead/observer
 	name = "ghost"
 	desc = "It's a g-g-g-g-ghooooost!"
-	icon = 'icons/mob/ghost.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/ghost.dmi'
 	icon_state = "ghost"
 	layer = GHOST_LAYER
 	stat = DEAD
@@ -44,7 +44,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/ghost_medhud = FALSE
 	var/ghost_sechud = FALSE
 	var/ghost_squadhud = FALSE
-	var/ghost_xenohud = FALSE
+	var/ghost_tyranidhud = FALSE
 	var/ghost_orderhud = FALSE
 	///If you can see things only ghosts see, like other ghosts
 	var/ghost_vision = TRUE
@@ -193,9 +193,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 			return
 		var/mob/dead/observer/ghost = usr
 
-		var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
+		var/datum/hive_status/normal/HS = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 		if(LAZYFIND(HS.candidates, ghost.client))
-			to_chat(ghost, span_warning("You are already in the queue to become a Xenomorph."))
+			to_chat(ghost, span_warning("You are already in the queue to become a Tyranid."))
 			return
 
 		switch(tgui_alert(ghost, "What would you like to do?", "Burrowed larva source available", list("Join as Larva", "Cancel"), 0))
@@ -211,22 +211,22 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		stack_trace("This code path is no longer valid, migrate this to new TGUI prefs")
 		return
 
-	else if(href_list["track_xeno_name"])
-		var/xeno_name = href_list["track_xeno_name"]
-		for(var/Y in GLOB.hive_datums[XENO_HIVE_NORMAL].get_all_xenos())
-			var/mob/living/carbon/xenomorph/X = Y
+	else if(href_list["track_tyranid_name"])
+		var/tyranid_name = href_list["track_tyranid_name"]
+		for(var/Y in GLOB.hive_datums[TYRANID_HIVE_NORMAL].get_all_tyranids())
+			var/mob/living/carbon/tyranid/X = Y
 			if(isnum(X.nicknumber))
-				if(num2text(X.nicknumber) != xeno_name)
+				if(num2text(X.nicknumber) != tyranid_name)
 					continue
 			else
-				if(X.nicknumber != xeno_name)
+				if(X.nicknumber != tyranid_name)
 					continue
 			ManualFollow(X)
 			break
 
 	else if(href_list["track_silo_number"])
 		var/silo_number = href_list["track_silo_number"]
-		for(var/obj/structure/xeno/silo/resin_silo in GLOB.xeno_resin_silos_by_hive[XENO_HIVE_NORMAL])
+		for(var/obj/structure/tyranid/silo/resin_silo in GLOB.tyranid_resin_silos_by_hive[TYRANID_HIVE_NORMAL])
 			if(num2text(resin_silo.number_silo) == silo_number)
 				var/mob/dead/observer/ghost = usr
 				ghost.abstract_move(resin_silo.loc)
@@ -291,13 +291,13 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	if(!aghosting && job?.job_flags & (JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE))//Only some jobs cost you your respawn timer.
 		GLOB.key_to_time_of_role_death[ghost.key] = world.time
 
-/mob/living/carbon/xenomorph/ghostize(can_reenter_corpse = TRUE, aghosting = FALSE)
+/mob/living/carbon/tyranid/ghostize(can_reenter_corpse = TRUE, aghosting = FALSE)
 	. = ..()
 	if(!. || can_reenter_corpse || aghosting)
 		return
 	var/mob/ghost = .
-	if(tier != XENO_TIER_MINION && hivenumber == XENO_HIVE_NORMAL)
-		GLOB.key_to_time_of_xeno_death[ghost.key] = world.time //If you ghost as a xeno that is not a minion, sets respawn timer
+	if(tier != TYRANID_TIER_MINION && hivenumber == TYRANID_HIVE_NORMAL)
+		GLOB.key_to_time_of_tyranid_death[ghost.key] = world.time //If you ghost as a tyranid that is not a minion, sets respawn timer
 
 
 /mob/dead/observer/Move(atom/newloc, direct, glide_size_override = 32)
@@ -382,7 +382,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	if(!client?.prefs)
 		return
 
-	var/hud_choice = tgui_input_list(usr, "Choose a HUD to toggle", "Toggle HUD", list("Medical HUD", "Security HUD", "Squad HUD", "Xeno Status HUD", "Order HUD"))
+	var/hud_choice = tgui_input_list(usr, "Choose a HUD to toggle", "Toggle HUD", list("Medical HUD", "Security HUD", "Squad HUD", "Tyranid Status HUD", "Order HUD"))
 
 	var/datum/atom_hud/H
 	switch(hud_choice)
@@ -402,20 +402,20 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 			to_chat(src, span_boldnotice("[hud_choice] [ghost_sechud ? "Enabled": "Disabled"]"))
 		if("Squad HUD")
 			ghost_squadhud = !ghost_squadhud
-			H = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+			H = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 			ghost_squadhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-			H = GLOB.huds[DATA_HUD_SQUAD_SOM]
+			H = GLOB.huds[DATA_HUD_SQUAD_CHAOS]
 			ghost_squadhud ? H.add_hud_to(src) : H.remove_hud_from(src)
 			client.prefs.ghost_hud ^= GHOST_HUD_SQUAD
 			client.prefs.save_preferences()
 			to_chat(src, span_boldnotice("[hud_choice] [ghost_squadhud ? "Enabled": "Disabled"]"))
-		if("Xeno Status HUD")
-			ghost_xenohud = !ghost_xenohud
-			H = GLOB.huds[DATA_HUD_XENO_STATUS]
-			ghost_xenohud ? H.add_hud_to(src) : H.remove_hud_from(src)
-			client.prefs.ghost_hud ^= GHOST_HUD_XENO
+		if("Tyranid Status HUD")
+			ghost_tyranidhud = !ghost_tyranidhud
+			H = GLOB.huds[DATA_HUD_TYRANID_STATUS]
+			ghost_tyranidhud ? H.add_hud_to(src) : H.remove_hud_from(src)
+			client.prefs.ghost_hud ^= GHOST_HUD_TYRANID
 			client.prefs.save_preferences()
-			to_chat(src, span_boldnotice("[hud_choice] [ghost_xenohud ? "Enabled" : "Disabled"]"))
+			to_chat(src, span_boldnotice("[hud_choice] [ghost_tyranidhud ? "Enabled" : "Disabled"]"))
 		if("Order HUD")
 			ghost_orderhud = !ghost_orderhud
 			H = GLOB.huds[DATA_HUD_ORDER]
@@ -473,20 +473,20 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	ManualFollow(target)
 
 
-/mob/dead/observer/verb/follow_xeno()
+/mob/dead/observer/verb/follow_tyranid()
 	set category = "Ghost"
-	set name = "Follow Xeno"
+	set name = "Follow Tyranid"
 
 	var/admin = FALSE
 	if(check_rights(R_ADMIN, FALSE))
 		admin = TRUE
 
-	var/list/xenos = list()
+	var/list/tyranids = list()
 	var/list/names = list()
 	var/list/namecounts = list()
 
-	for(var/x in sortNames(GLOB.alive_xeno_list))
-		var/mob/living/carbon/xenomorph/X = x
+	for(var/x in sortNames(GLOB.alive_tyranid_list))
+		var/mob/living/carbon/tyranid/X = x
 		var/name = X.name
 		if(name in names)
 			namecounts[name]++
@@ -507,18 +507,18 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 					if(MOB_DISCONNECTED)
 						name += " (DC)"
 
-		xenos[name] = X
+		tyranids[name] = X
 
-	if(!length(xenos))
-		to_chat(usr, span_warning("There are no xenos at the moment."))
+	if(!length(tyranids))
+		to_chat(usr, span_warning("There are no tyranids at the moment."))
 		return
 
 
-	var/selected = tgui_input_list(usr, "Please select a Xeno:", "Follow Xeno", xenos)
+	var/selected = tgui_input_list(usr, "Please select a Tyranid:", "Follow Tyranid", tyranids)
 	if(!selected)
 		return
 
-	var/mob/target = xenos[selected]
+	var/mob/target = tyranids[selected]
 	ManualFollow(target)
 
 
@@ -550,7 +550,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 			name += " - Synth"
 		else if(issurvivorjob(H.job))
 			name += " - Survivor"
-		else if(H.faction != "TerraGov")
+		else if(H.faction != "Imperium")
 			name += " - [H.faction]"
 		if((H.client && H.client.is_afk()) || (!H.client && (H.key || H.ckey)))
 			if(isaghost(H))
@@ -638,10 +638,10 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		to_chat(src, span_warning("Mob already taken."))
 		return
 
-	if(isxeno(L))
-		var/mob/living/carbon/xenomorph/offered_xenomorph = L
-		if(offered_xenomorph.tier != XENO_TIER_MINION && XENODEATHTIME_CHECK(src))
-			XENODEATHTIME_MESSAGE(src)
+	if(istyranid(L))
+		var/mob/living/carbon/tyranid/offered_tyranid = L
+		if(offered_tyranid.tier != TYRANID_TIER_MINION && TYRANIDDEATHTIME_CHECK(src))
+			TYRANIDDEATHTIME_MESSAGE(src)
 			return
 
 	switch(tgui_alert(usr, "Take over mob named: [L.real_name][L.job ? " | Job: [L.job]" : ""]", "Offered Mob", list("Yes", "No", "Follow")))
@@ -886,7 +886,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
 
-	var/choice = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. This will make you unrevivable. Xenomorph or Marine?", "Join Valhalla", list("Xenomorph", "Marine"))
+	var/choice = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. This will make you unrevivable. Tyranid or Guardsman?", "Join Valhalla", list("Tyranid", "Guardsman"))
 
 	if(!choice)
 		return
@@ -895,31 +895,31 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	if(ishuman(original_corpse))
 		original_corpse?.set_undefibbable(TRUE)
 
-	if(choice == "Xenomorph")
-		var/mob/living/carbon/xenomorph/xeno_choice = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. What xenomorph would you like to have?", "Join Valhalla", GLOB.all_xeno_types)
-		if(!xeno_choice)
+	if(choice == "Tyranid")
+		var/mob/living/carbon/tyranid/tyranid_choice = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. What tyranid would you like to have?", "Join Valhalla", GLOB.all_tyranid_types)
+		if(!tyranid_choice)
 			return
-		log_game("[key_name(usr)] has joined Valhalla as a Xenomorph.")
-		var/mob/living/carbon/xenomorph/new_xeno = new xeno_choice(pick(GLOB.spawns_by_job[/datum/job/fallen/xenomorph]))
-		new_xeno.transfer_to_hive(XENO_HIVE_FALLEN)
-		ADD_TRAIT(new_xeno, TRAIT_VALHALLA_XENO, VALHALLA_TRAIT)
-		var/datum/job/xallhala_job = SSjob.GetJobType(/datum/job/fallen/xenomorph)
-		new_xeno.apply_assigned_role_to_spawn(xallhala_job)
-		SSpoints.xeno_strategic_points_by_hive[XENO_HIVE_FALLEN] = 10000
-		SSpoints.xeno_tactical_points_by_hive[XENO_HIVE_FALLEN] = 10000
-		mind.transfer_to(new_xeno, TRUE)
-		xallhala_job.after_spawn(new_xeno)
+		log_game("[key_name(usr)] has joined Valhalla as a Tyranid.")
+		var/mob/living/carbon/tyranid/new_tyranid = new tyranid_choice(pick(GLOB.spawns_by_job[/datum/job/fallen/tyranid]))
+		new_tyranid.transfer_to_hive(TYRANID_HIVE_FALLEN)
+		ADD_TRAIT(new_tyranid, TRAIT_VALHALLA_TYRANID, VALHALLA_TRAIT)
+		var/datum/job/xallhala_job = SSjob.GetJobType(/datum/job/fallen/tyranid)
+		new_tyranid.apply_assigned_role_to_spawn(xallhala_job)
+		SSpoints.tyranid_strategic_points_by_hive[TYRANID_HIVE_FALLEN] = 10000
+		SSpoints.tyranid_tactical_points_by_hive[TYRANID_HIVE_FALLEN] = 10000
+		mind.transfer_to(new_tyranid, TRUE)
+		xallhala_job.after_spawn(new_tyranid)
 		return
 
-	var/datum/job/valhalla_job = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. What job would you like to have?", "Join Valhalla", GLOB.jobs_fallen_marine)
+	var/datum/job/valhalla_job = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. What job would you like to have?", "Join Valhalla", GLOB.jobs_fallen_guardsman)
 	if(!valhalla_job)
 		return
 
 	valhalla_job = SSjob.GetJobType(valhalla_job)
 	var/spawn_type = valhalla_job.return_spawn_type(client.prefs)
-	var/mob/living/carbon/human/new_fallen = new spawn_type(pick(GLOB.spawns_by_job[/datum/job/fallen/marine]))
+	var/mob/living/carbon/human/new_fallen = new spawn_type(pick(GLOB.spawns_by_job[/datum/job/fallen/guardsman]))
 
-	log_game("[key_name(usr)] has joined Valhalla as a Marine.")
+	log_game("[key_name(usr)] has joined Valhalla as a Guardsman.")
 	client.prefs.copy_to(new_fallen)
 	new_fallen.apply_assigned_role_to_spawn(valhalla_job)
 	mind.transfer_to(new_fallen, TRUE)

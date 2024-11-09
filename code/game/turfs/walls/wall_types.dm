@@ -1,4 +1,4 @@
-//----- Marine ship walls ---//
+//----- Guardsman ship walls ---//
 /turf/closed/wall/mainship
 	name = "hull"
 	desc = "A huge chunk of metal used to seperate rooms and make up the ship."
@@ -171,15 +171,15 @@
 
 /turf/closed/wall/tyson/airlock
 	name = "rusted airlock"
-	icon = 'icons/obj/doors/Doorext.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/Doorext.dmi'
 	icon_state = "door_locked"
 
 /turf/closed/wall/tyson/airlock/maint
-	icon = 'icons/obj/doors/Doormaint.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/Doormaint.dmi'
 
 /turf/closed/wall/tyson/poddoor
 	name = "rusted poddoor"
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = "pdoor1"
 
 /turf/closed/wall/tyson/r_wall

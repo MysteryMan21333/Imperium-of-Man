@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(blood_particles)
 /obj/effect/temp_visual/order
 	icon = 'icons/effects/orders.dmi'
 	var/icon_state_on
-	hud_possible = list(SQUAD_HUD_TERRAGOV, SQUAD_HUD_SOM)
+	hud_possible = list(SQUAD_HUD_IMPERIUM, SQUAD_HUD_CHAOS)
 	duration = CIC_ORDER_DURATION
 	layer = TURF_LAYER
 
@@ -224,33 +224,33 @@ GLOBAL_LIST_EMPTY(blood_particles)
 
 /obj/effect/temp_visual/smoke
 	name = "smoke"
-	icon = 'icons/obj/items/jetpack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/jetpack.dmi'
 	icon_state = "smoke"
 	duration = 1.2 SECONDS
 
 /obj/effect/temp_visual/blink_portal
 	name = "blink portal"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "anom"
 	layer = ABOVE_LYING_MOB_LAYER
 	duration = 0.5 SECONDS
 
 /obj/effect/temp_visual/banishment_portal
 	name = "banishment portal"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "bhole3"
 	layer = ABOVE_LYING_MOB_LAYER
 	duration = WRAITH_BANISH_BASE_DURATION+1 //So we don't delete our contents early
 
 /obj/effect/temp_visual/acid_splatter
 	name = "acid_splatter"
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "splatter"
 	duration = 0.8 SECONDS
 
 /obj/effect/temp_visual/acid_bath
 	name = "acid bath"
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "boiler_gas"
 	duration = 0.8 SECONDS
 

@@ -5,10 +5,10 @@
 /obj/item/blink_drive
 	name = "blink drive"
 	desc = "A portable Bluespace Displacement Drive, otherwise known as a blink drive. Can teleport the user across short distances with a degree of unreliability, with potentially fatal results. Teleporting past 5 tiles, to tiles out of sight or rapid use of the drive add variance to the teleportation destination. <b>Alt right click or middleclick to teleport to a destination when the blink drive is equipped.</b>"
-	icon = 'icons/obj/items/jetpack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/jetpack.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
 	icon_state = "bluespace_pack"
 	w_class = WEIGHT_CLASS_BULKY
@@ -165,12 +165,12 @@
 	. = ..()
 	var/list/traits = list()
 
-	traits += "The 'blink drive', properly known as a Bluespace Displacement Drive, is a cutting edge SOM device designed for use by their elite infantry.<br>\
+	traits += "The 'blink drive', properly known as a Bluespace Displacement Drive, is a cutting edge CHAOS device designed for use by their elite infantry.<br>\
 		It allows the user to travel very short distances through bluespace, which had previously been considering impossible to do without near certain risk of death \
 		due to the inherent instability associated with such bluespace drives of this size. <br> <br>\
 		While the blink drive appears to be the most accurate bluespace drive of this size yet seen, there are still dramatic risks associated with its use. <br> \
 		Multiple reported instances of user displacing themselves into solid walls or other obstacles resulting in their instant death testifies to the enduring risks of such technology.<br>\
-		The SOM however, appear to have no shortage of volunteers ready to accept such risks in the name of their cause. <br>"
+		The CHAOS however, appear to have no shortage of volunteers ready to accept such risks in the name of their cause. <br>"
 
 	traits += "<U>Range:</U><br>The blink drive can teleport the user up to [BLINK_DRIVE_RANGE] tiles away, by middle clicking with the drive active. Line of Sight is not required to teleport.<br>"
 

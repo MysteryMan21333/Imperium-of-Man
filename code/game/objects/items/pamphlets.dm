@@ -2,7 +2,7 @@
 /obj/item/pamphlet
 	name = "generic phamplet"
 	desc = "you shouldnt see this"
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "paper_words"
 	w_class = WEIGHT_CLASS_TINY
 	var/unarmed

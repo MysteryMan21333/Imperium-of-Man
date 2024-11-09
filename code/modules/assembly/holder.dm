@@ -1,6 +1,6 @@
 /obj/item/assembly_holder
 	name = "Assembly"
-	icon = 'icons/obj/assemblies/new_assemblies.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/assemblies/new_assemblies.dmi'
 	icon_state = "holder"
 	worn_icon_state = "assembly"
 	atom_flags = CONDUCT

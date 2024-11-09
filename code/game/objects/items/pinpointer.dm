@@ -1,13 +1,13 @@
 /obj/item/pinpointer
-	name = "Xeno structure pinpointer"
-	icon = 'icons/obj/items/pinpointer.dmi'
+	name = "Tyranid structure pinpointer"
+	icon = 'modular_imperium/master_files/icons/obj/items/pinpointer.dmi'
 	icon_state = "pinpointer_off"
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_TINY
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "electronic"
 	throw_speed = 4
@@ -17,13 +17,13 @@
 	///The list of things we're tracking
 	var/list/tracked_list
 	///The hive we're tracking
-	var/tracked_hivenumber = XENO_HIVE_NORMAL
+	var/tracked_hivenumber = TYRANID_HIVE_NORMAL
 	///The list of hives we will never track
-	var/static/list/blacklisted_hivenumbers = list(XENO_HIVE_NONE, XENO_HIVE_ADMEME, XENO_HIVE_FALLEN)
+	var/static/list/blacklisted_hivenumbers = list(TYRANID_HIVE_NONE, TYRANID_HIVE_ADMEME, TYRANID_HIVE_FALLEN)
 
 /obj/item/pinpointer/Initialize(mapload)
 	. = ..()
-	tracked_list = GLOB.xeno_critical_structures_by_hive[tracked_hivenumber]
+	tracked_list = GLOB.tyranid_critical_structures_by_hive[tracked_hivenumber]
 
 /obj/item/pinpointer/Destroy()
 	target = null
@@ -32,21 +32,21 @@
 /obj/item/pinpointer/proc/set_target(mob/living/user)
 	///The hivenumbers that we're allowed to select structures to track from
 	var/list/trackable_hivenumbers = list()
-	for(var/hivenumber in GLOB.xeno_critical_structures_by_hive)
+	for(var/hivenumber in GLOB.tyranid_critical_structures_by_hive)
 		if(hivenumber in blacklisted_hivenumbers) //no reason to ever track valhalla or admin beans
 			continue
-		if(!length(GLOB.xeno_critical_structures_by_hive[hivenumber])) //hives with no structures don't need tracking either
+		if(!length(GLOB.tyranid_critical_structures_by_hive[hivenumber])) //hives with no structures don't need tracking either
 			continue
 		trackable_hivenumbers |= hivenumber
 
 	if(length(trackable_hivenumbers) == 1)
-		tracked_list = GLOB.xeno_critical_structures_by_hive[trackable_hivenumbers[1]]
+		tracked_list = GLOB.tyranid_critical_structures_by_hive[trackable_hivenumbers[1]]
 
 	else if(length(trackable_hivenumbers) > 1)
 		tracked_hivenumber = tgui_input_list(user, "Select the hive you wish to track.", "Pinpointer", trackable_hivenumbers)
 		if(!tracked_hivenumber)
 			return
-		tracked_list = GLOB.xeno_critical_structures_by_hive[tracked_hivenumber]
+		tracked_list = GLOB.tyranid_critical_structures_by_hive[tracked_hivenumber]
 
 	if(!length(tracked_list))
 		balloon_alert(user, "No signal")

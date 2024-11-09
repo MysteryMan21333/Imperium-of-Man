@@ -6,7 +6,7 @@
 /obj/structure/orbital_cannon
 	name = "\improper Orbital Cannon"
 	desc = "The TGMC Orbital Cannon System. Used for shooting large targets on the planet that is orbited. It accelerates its payload with solid fuel for devastating results upon impact."
-	icon = 'icons/obj/machines/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/artillery.dmi'
 	icon_state = "OBC_unloaded"
 	density = TRUE
 	anchored = TRUE
@@ -23,8 +23,8 @@
 
 /obj/structure/orbital_cannon/Initialize(mapload)
 	. = ..()
-	if(!GLOB.marine_main_ship.orbital_cannon)
-		GLOB.marine_main_ship.orbital_cannon = src
+	if(!GLOB.guardsman_main_ship.orbital_cannon)
+		GLOB.guardsman_main_ship.orbital_cannon = src
 
 	var/turf/T = locate(x+1,y+1,z)
 	var/obj/structure/orbital_tray/O = new(T)
@@ -35,8 +35,8 @@
 	if(tray)
 		tray.linked_ob = null
 		tray = null
-	if(GLOB.marine_main_ship.orbital_cannon == src)
-		GLOB.marine_main_ship.orbital_cannon = null
+	if(GLOB.guardsman_main_ship.orbital_cannon == src)
+		GLOB.guardsman_main_ship.orbital_cannon = null
 	QDEL_NULL(tray)
 	return ..()
 
@@ -195,7 +195,7 @@
 	var/inaccurate_fuel = 0
 	inaccurate_fuel = abs(WARHEAD_FUEL_REQUIREMENT - tray.fuel_amt)
 
-	// Give marines a warning if misfuelled.
+	// Give guardsmans a warning if misfuelled.
 	var/fuel_warning = "Warhead fuel level: safe."
 	if(inaccurate_fuel > 0)
 		fuel_warning = "Warhead fuel level: incorrect.<br>Warhead may be inaccurate."
@@ -214,7 +214,7 @@
 	var/list/receivers = (GLOB.alive_human_list + GLOB.ai_list + GLOB.observer_list)
 	for(var/mob/living/screentext_receiver AS in receivers)
 		screentext_receiver.play_screen_text("<span class='maptext' style=font-size:36pt;text-align:center valign='top'><u><b>ORBITAL STRIKE IMMINENT</b></u></span><br>TYPE: [uppertext(tray.warhead.warhead_kind)]", /atom/movable/screen/text/screen_text/command_order)
-	playsound(target, 'sound/effects/OB_warning_announce_novoiceover.ogg', 125, FALSE, 30, 10) //VOX-less version for xenomorphs
+	playsound(target, 'sound/effects/OB_warning_announce_novoiceover.ogg', 125, FALSE, 30, 10) //VOX-less version for tyranids
 
 	var/impact_time = 10 SECONDS + (WARHEAD_FLY_TIME * (GLOB.current_orbit/3))
 
@@ -242,7 +242,7 @@
 /obj/structure/orbital_tray
 	name = "loading tray"
 	desc = "The orbital cannon's loading tray."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	icon_state = "cannon_tray"
 	density = TRUE
 	anchored = TRUE
@@ -325,8 +325,8 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
-	icon = 'icons/obj/structures/prop/mainship.dmi'
-	resistance_flags = XENO_DAMAGEABLE
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
+	resistance_flags = TYRANID_DAMAGEABLE
 	interaction_flags = INTERACT_OBJ_DEFAULT|INTERACT_POWERLOADER_PICKUP_ALLOWED_BYPASS_ANCHOR
 	coverage = 100
 	var/is_solid_fuel = 0
@@ -454,9 +454,9 @@
 			return
 
 	var/dat
-	if(!GLOB.marine_main_ship?.orbital_cannon)
+	if(!GLOB.guardsman_main_ship?.orbital_cannon)
 		dat += "No Orbital Cannon System Detected!<BR>"
-	else if(!GLOB.marine_main_ship.orbital_cannon.tray)
+	else if(!GLOB.guardsman_main_ship.orbital_cannon.tray)
 		dat += "Orbital Cannon System Tray is missing!<BR>"
 	else
 		if(orbital_window_page == 1)
@@ -466,16 +466,16 @@
 			dat += "<BR><BR><A href='?src=[text_ref(src)];back=1'><font size=3>Back</font></A><BR>"
 		else
 			var/tray_status = "unloaded"
-			if(GLOB.marine_main_ship.orbital_cannon.chambered_tray)
+			if(GLOB.guardsman_main_ship.orbital_cannon.chambered_tray)
 				tray_status = "chambered"
-			else if(GLOB.marine_main_ship.orbital_cannon.loaded_tray)
+			else if(GLOB.guardsman_main_ship.orbital_cannon.loaded_tray)
 				tray_status = "loaded"
 			dat += "Orbital Cannon Tray is <b>[tray_status]</b><BR>"
-			if(GLOB.marine_main_ship.orbital_cannon.tray.warhead)
-				dat += "[GLOB.marine_main_ship.orbital_cannon.tray.warhead.name] Detected<BR>"
+			if(GLOB.guardsman_main_ship.orbital_cannon.tray.warhead)
+				dat += "[GLOB.guardsman_main_ship.orbital_cannon.tray.warhead.name] Detected<BR>"
 			else
 				dat += "No Warhead Detected<BR>"
-			dat += "[GLOB.marine_main_ship.orbital_cannon.tray.fuel_amt] Solid Fuel Block\s Detected<BR><HR>"
+			dat += "[GLOB.guardsman_main_ship.orbital_cannon.tray.fuel_amt] Solid Fuel Block\s Detected<BR><HR>"
 
 			dat += "<A href='?src=[text_ref(src)];load_tray=1'><font size=3>Load Tray</font></A><BR>"
 			dat += "<A href='?src=[text_ref(src)];unload_tray=1'><font size=3>Unload Tray</font></A><BR>"
@@ -496,13 +496,13 @@
 		return
 
 	if(href_list["load_tray"])
-		GLOB.marine_main_ship?.orbital_cannon?.load_tray(usr)
+		GLOB.guardsman_main_ship?.orbital_cannon?.load_tray(usr)
 
 	else if(href_list["unload_tray"])
-		GLOB.marine_main_ship?.orbital_cannon?.unload_tray(usr)
+		GLOB.guardsman_main_ship?.orbital_cannon?.unload_tray(usr)
 
 	else if(href_list["chamber_tray"])
-		GLOB.marine_main_ship?.orbital_cannon?.chamber_payload(usr)
+		GLOB.guardsman_main_ship?.orbital_cannon?.chamber_payload(usr)
 
 	else if(href_list["check_req"])
 		orbital_window_page = 1
@@ -516,7 +516,7 @@
 /obj/structure/ship_rail_gun
 	name = "\improper Rail Gun"
 	desc = "A powerful ship-to-ship weapon sometimes used for ground support at reduced efficiency."
-	icon = 'icons/obj/machines/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/artillery.dmi'
 	icon_state = "Railgun"
 	density = TRUE
 	anchored = TRUE
@@ -532,15 +532,15 @@
 
 /obj/structure/ship_rail_gun/Initialize(mapload)
 	. = ..()
-	if(!GLOB.marine_main_ship.rail_gun)
-		GLOB.marine_main_ship.rail_gun = src
+	if(!GLOB.guardsman_main_ship.rail_gun)
+		GLOB.guardsman_main_ship.rail_gun = src
 	rail_gun_ammo = new /obj/structure/ship_ammo/railgun(src)
 	rail_gun_ammo.max_ammo_count = 8000 //200 uses or 15 full minutes of firing.
 	rail_gun_ammo.ammo_count = 8000
 
 /obj/structure/ship_rail_gun/Destroy()
-	if(GLOB.marine_main_ship.rail_gun == src)
-		GLOB.marine_main_ship.rail_gun = null
+	if(GLOB.guardsman_main_ship.rail_gun == src)
+		GLOB.guardsman_main_ship.rail_gun = null
 	QDEL_NULL(rail_gun_ammo)
 	return ..()
 

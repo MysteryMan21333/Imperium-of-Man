@@ -328,7 +328,7 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/spacedrugs //CL goodie
 	name = "space drugs autoinjector"
-	desc = "An auto-injector loaded with sweet, sweet space drugs... Hard to get as a marine."
+	desc = "An auto-injector loaded with sweet, sweet space drugs... Hard to get as a guardsman."
 	icon_state = "autoinjector-1"
 	amount_per_transfer_from_this = 25
 	volume = 25

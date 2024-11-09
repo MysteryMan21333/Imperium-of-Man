@@ -3,6 +3,6 @@
 
 /obj/item/explosive
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/explosives_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/explosives_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/explosives_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/explosives_right.dmi',
 	)

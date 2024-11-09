@@ -1,11 +1,11 @@
 /datum/job/retired
 	title = "TGMC retired veteran"
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	paygrade = "MSGT"
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/veteran //they're old, they know their stuff
-	faction = FACTION_TERRAGOV
+	faction = FACTION_IMPERIUM
 	outfit = /datum/outfit/job/retired
 
 /datum/outfit/job/retired
@@ -13,19 +13,19 @@
 	jobtype = /datum/job/retired
 
 	id = /obj/item/card/id/dogtag
-	wear_suit = /obj/item/clothing/suit/storage/marine/officer/req //it's pas
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/officer/req //it's pas
 	glasses = /obj/item/clothing/glasses/eyepatch
-	w_uniform = /obj/item/clothing/under/marine/service
+	w_uniform = /obj/item/clothing/under/guardsman/service
 	mask = /obj/item/clothing/mask/cigarette/pipe
 	head = /obj/item/clothing/head/servicecap
 	back = /obj/item/storage/backpack/satchel
-	belt = /obj/item/storage/belt/marine
-	gloves = /obj/item/clothing/gloves/marine/black
+	belt = /obj/item/storage/belt/guardsman
+	gloves = /obj/item/clothing/gloves/guardsman/black
 	l_store = /obj/item/storage/pouch/medkit/firstaid
 	r_store = /obj/item/storage/holster/flarepouch/full
 	suit_store = /obj/item/weapon/gun/rifle/m41a/magharness
 	ears = /obj/item/radio/headset/distress/retired
-	shoes = /obj/item/clothing/shoes/marine/brown/full
+	shoes = /obj/item/clothing/shoes/guardsman/brown/full
 
 /datum/outfit/job/retired/post_equip(mob/living/carbon/human/H, visualsOnly)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m41a, SLOT_IN_BELT)
@@ -36,7 +36,7 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m41a, SLOT_IN_BELT)
 
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/burger/tofu, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/flask/marine, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/flask/guardsman, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
@@ -64,8 +64,8 @@
 
 	id = /obj/item/card/id/dogtag/fc
 	head = /obj/item/clothing/head/tgmcberet/fc
-	gloves = /obj/item/clothing/gloves/marine/officer
-	w_uniform = /obj/item/clothing/under/marine/officer/exec
+	gloves = /obj/item/clothing/gloves/guardsman/officer
+	w_uniform = /obj/item/clothing/under/guardsman/officer/exec
 	belt = /obj/item/storage/holster/blade/officer/full
 	suit_store = /obj/item/storage/holster/belt/mateba/full
 	back = /obj/item/ammo_magazine/minigun_wheelchair

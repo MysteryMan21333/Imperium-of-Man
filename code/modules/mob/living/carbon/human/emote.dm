@@ -387,7 +387,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/image/warcry = image('icons/mob/talk.dmi', user, icon_state = "warcry")
+	var/image/warcry = image('modular_imperium/master_files/icons/mob/talk.dmi', user, icon_state = "warcry")
 	user.add_emote_overlay(warcry)
 
 /datum/emote/living/carbon/human/snap
@@ -466,7 +466,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/image/scream = image('icons/mob/talk.dmi', user, icon_state = "scream")
+	var/image/scream = image('modular_imperium/master_files/icons/mob/talk.dmi', user, icon_state = "scream")
 	user.add_emote_overlay(scream)
 
 
@@ -490,7 +490,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/image/medic = image('icons/mob/talk.dmi', user, icon_state = "medic")
+	var/image/medic = image('modular_imperium/master_files/icons/mob/talk.dmi', user, icon_state = "medic")
 	user.add_emote_overlay(medic)
 
 
@@ -513,7 +513,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/image/pain = image('icons/mob/talk.dmi', user, icon_state = "pain")
+	var/image/pain = image('modular_imperium/master_files/icons/mob/talk.dmi', user, icon_state = "pain")
 	user.add_emote_overlay(pain)
 
 
@@ -537,7 +537,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/image/pain = image('icons/mob/talk.dmi', user, icon_state = "pain")
+	var/image/pain = image('modular_imperium/master_files/icons/mob/talk.dmi', user, icon_state = "pain")
 	user.add_emote_overlay(pain)
 
 
@@ -562,5 +562,5 @@
 	. = ..()
 	if(!.)
 		return
-	var/image/pain = image('icons/mob/talk.dmi', user, icon_state = "pain")
+	var/image/pain = image('modular_imperium/master_files/icons/mob/talk.dmi', user, icon_state = "pain")
 	user.add_emote_overlay(pain)

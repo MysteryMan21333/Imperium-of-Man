@@ -157,7 +157,7 @@
 /turf/open/floor/plating,
 /area/shuttle/cas)
 "EQ" = (
-/obj/docking_port/mobile/marine_dropship/casplane,
+/obj/docking_port/mobile/guardsman_dropship/casplane,
 /turf/closed/shuttle/cas/twentyone{
 	dir = 4
 	},

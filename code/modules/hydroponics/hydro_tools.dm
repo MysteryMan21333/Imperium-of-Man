@@ -168,7 +168,7 @@
 /obj/item/reagent_containers/glass/fertilizer
 	name = "fertilizer bottle"
 	desc = "A small glass bottle. Can hold up to 10 units."
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "bottle16"
 	possible_transfer_amounts = null
 	w_class = WEIGHT_CLASS_SMALL

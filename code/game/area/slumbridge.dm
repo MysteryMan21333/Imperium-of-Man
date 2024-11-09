@@ -103,21 +103,21 @@
 	outside = FALSE
 
 /area/slumbridge/inside/sombase
-	name = "SOM Base"
+	name = "CHAOS Base"
 	ceiling = CEILING_UNDERGROUND
 	minimap_color = MINIMAP_AREA_SEC_CAVE
 
 /area/slumbridge/inside/sombase/east
-	name = "\improper SOM Base Starboard"
+	name = "\improper CHAOS Base Starboard"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	icon_state = "syndie-ship"
 
 /area/slumbridge/inside/sombase/west
-	name = "\improper SOM Base Port"
+	name = "\improper CHAOS Base Port"
 	icon_state = "syndie-control"
 
 /area/slumbridge/inside/sombase/hangar
-	name = "\improper SOM Base Hangar"
+	name = "\improper CHAOS Base Hangar"
 	icon_state = "syndie-elite"
 
 /area/slumbridge/inside/houses
@@ -163,7 +163,7 @@
 /area/slumbridge/inside/zeta/south
 	ceiling = CEILING_UNDERGROUND
 	name = "Research Lab Foyer"
-	icon_state = "xeno_lab"
+	icon_state = "tyranid_lab"
 
 /area/slumbridge/inside/zeta/entrance
 	name = "Research Lab Entrance"

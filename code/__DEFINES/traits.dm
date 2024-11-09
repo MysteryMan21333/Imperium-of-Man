@@ -79,7 +79,7 @@
 #define STASIS_BAG_TRAIT "stasis_bag"
 #define SPECIES_TRAIT "species" // /datum/species innate trait
 #define CRYOPOD_TRAIT "cryopod"
-#define XENO_TRAIT "xeno"
+#define TYRANID_TRAIT "tyranid"
 #define ARMOR_TRAIT "armor"
 #define STAT_TRAIT "stat"
 #define NECKGRAB_TRAIT "neckgrab"
@@ -152,7 +152,7 @@
 
 //mob traits
 #define TRAIT_POSSESSING "possessing" // Prevents mob from being taken by ghosts
-#define TRAIT_BURROWED "burrowed" // Burrows the xeno
+#define TRAIT_BURROWED "burrowed" // Burrows the tyranid
 #define TRAIT_KNOCKEDOUT "knockedout" //Forces the user to stay unconscious.
 #define TRAIT_STAGGERED "staggered" //damage or ability debuffs
 #define TRAIT_INCAPACITATED "incapacitated"
@@ -197,12 +197,12 @@
 #define TRAIT_FLASHBANGIMMUNE "flashbang_immunity"
 #define TRAIT_FAKEDEATH "fakedeath" //Makes the owner appear as dead to most forms of medical examination
 #define TRAIT_LEGLESS "legless" //Has lost all the appendages needed to stay standing up.
-#define TRAIT_NOPLASMAREGEN "noplasmaregen"//xeno plasma wont recharge
+#define TRAIT_NOPLASMAREGEN "noplasmaregen"//tyranid plasma wont recharge
 #define TRAIT_UNDEFIBBABLE "undefibbable"//human can't be revived
 #define TRAIT_HOLLOW "hollowedout" //examine trait for puppeteer
 #define TRAIT_IMMEDIATE_DEFIB "immediate_defib"//immediately revives when defibbed, rather than just healing
-#define TRAIT_HEALING_INFUSION "healing_infusion"//greatly improves natural healing for xenos
-#define TRAIT_PSY_DRAINED "psy_drained"//mob was drained of life force by a xenos
+#define TRAIT_HEALING_INFUSION "healing_infusion"//greatly improves natural healing for tyranids
+#define TRAIT_PSY_DRAINED "psy_drained"//mob was drained of life force by a tyranids
 #define TRAIT_HIVE_TARGET "hive_target"//mob is targeted for draining by the hive
 #define TRAIT_RESEARCHED "researched" // Whether the thing has been researched/probed
 #define TRAIT_STAGGERIMMUNE	"stagger_immunity" //Immunity to stagger
@@ -211,9 +211,9 @@
 #define TRAIT_SEE_IN_DARK "see_in_dark" //Able to see in dark
 #define TRAIT_MUTED "muted" //target is mute and can't speak
 #define TRAIT_TURRET_HIDDEN "turret_hidden" //target gets passed over by turrets choosing a victim
-///The target xenomorph's wound overlays won't be visible
-#define TRAIT_XENOMORPH_INVISIBLE_BLOOD "invisible_blood"
-#define TRAIT_VALHALLA_XENO "valhalla_xeno"
+///The target tyranid's wound overlays won't be visible
+#define TRAIT_TYRANID_INVISIBLE_BLOOD "invisible_blood"
+#define TRAIT_VALHALLA_TYRANID "valhalla_tyranid"
 #define TRAIT_BULWARKED_TURF "bulwarked_turf" // turf is affected by bulwark ability
 
 //important_recursive_contents traits
@@ -250,7 +250,7 @@
 // turf traits
 #define TRAIT_TURF_BULLET_MANIPULATION "bullet_manipulation" //This tile is doing something to projectile
 // projectile traits
-#define TRAIT_PROJ_HIT_SOMETHING "hit_something" //If projectile hit something on its path
+#define TRAIT_PROJ_HIT_CHAOSETHING "hit_something" //If projectile hit something on its path
 //structure traits
 #define BENCH_BEING_USED "bench_being_used"
 
@@ -266,7 +266,7 @@
 #define TRAIT_STOPS_TANK_COLLISION "stops_tanks"
 
 //added to escaped humans
-#define TRAIT_HAS_ESCAPED "escaped_marine"
+#define TRAIT_HAS_ESCAPED "escaped_guardsman"
 #define TRAIT_HAS_BEEN_TARGETED "been_targeted"
 
 //added to AIs firing railguns

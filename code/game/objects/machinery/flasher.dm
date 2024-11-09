@@ -3,7 +3,7 @@
 /obj/machinery/flasher
 	name = "Mounted flash"
 	desc = "A wall-mounted flashbulb device."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "mflash1"
 	anchored = TRUE
 	power_channel = EQUIP
@@ -69,7 +69,7 @@
 		if (get_dist(src, L) > range)
 			continue
 
-		if(isxeno(L))
+		if(istyranid(L))
 			continue
 
 		if(ishuman(L))

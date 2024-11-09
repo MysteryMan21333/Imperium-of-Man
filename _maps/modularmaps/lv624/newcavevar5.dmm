@@ -72,7 +72,7 @@
 "id" = (
 /obj/structure/rack,
 /obj/item/tool/shovel,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -81,7 +81,7 @@
 /turf/closed/mineral/smooth/indestructible,
 /area/lv624/ground/caves/rock)
 "iB" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central3)
 "iN" = (
@@ -105,7 +105,7 @@
 /area/lv624/ground/caves/central2)
 "jx" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/rock)
 "jD" = (
@@ -121,7 +121,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -326,7 +326,7 @@
 /turf/open/floor/wood,
 /area/lv624/ground/caves/central2)
 "za" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
@@ -353,7 +353,7 @@
 	},
 /area/lv624/ground/caves/central2)
 "Dm" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/lv624/ground/caves/rock)
 "DE" = (
@@ -381,7 +381,7 @@
 /turf/open/floor/wood,
 /area/lv624/ground/caves/central2)
 "GF" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central2)
 "GS" = (
@@ -406,7 +406,7 @@
 /area/lv624/ground/caves/central2)
 "Hu" = (
 /obj/structure/rack,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -517,7 +517,7 @@
 /turf/open/floor/wood,
 /area/lv624/ground/caves/central2)
 "QO" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "RA" = (

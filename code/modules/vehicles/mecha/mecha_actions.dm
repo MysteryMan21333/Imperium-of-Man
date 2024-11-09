@@ -7,7 +7,7 @@
 		mecha.chassis = src
 
 /datum/action/vehicle/sealed/mecha
-	action_icon = 'icons/mob/actions/actions_mecha.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions/actions_mecha.dmi'
 	///mech owner of this action
 	var/obj/vehicle/sealed/mecha/chassis
 

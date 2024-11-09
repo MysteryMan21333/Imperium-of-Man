@@ -37,5 +37,5 @@
 
 /obj/structure/closet/secure_closet/bar/captain
 	name = "Success Cabinet"
-	req_access = list(ACCESS_MARINE_CAPTAIN)
+	req_access = list(ACCESS_GUARDSMAN_CAPTAIN)
 

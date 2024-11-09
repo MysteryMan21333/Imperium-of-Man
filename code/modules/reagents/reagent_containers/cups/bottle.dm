@@ -55,7 +55,7 @@
 /obj/item/reagent_containers/cup/bottle/adminordrazine
 	name = "Adminordrazine Bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
-	icon = 'icons/obj/drinks/bottles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/bottles.dmi'
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 
@@ -167,7 +167,7 @@
 /obj/item/reagent_containers/cup/bottle/syrup_bottle
 	name = "syrup bottle"
 	desc = "A bottle with a syrup pump to dispense the delicious substance directly into your coffee cup."
-	icon = 'icons/obj/food/containers.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/food/containers.dmi'
 	icon_state = "syrup"
 	fill_icon_state = "syrup"
 	fill_icon_thresholds = list(0, 20, 40, 60, 80, 100)
@@ -251,7 +251,7 @@
 		new/obj/item/shard(target.loc) // Create a glass shard at the target's location!
 	B.icon_state = src.icon_state
 
-	var/icon/I = new('icons/obj/items/drinks.dmi', src.icon_state)
+	var/icon/I = new('modular_imperium/master_files/icons/obj/items/drinks.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -276,7 +276,7 @@
 	//apply damage
 	var/weaken_duration = target.apply_damage(force, BRUTE, affecting, MELEE, updating_health = TRUE)
 
-	if(affecting == "head" && istype(target, /mob/living/carbon/) && !isxeno(target))
+	if(affecting == "head" && istype(target, /mob/living/carbon/) && !istyranid(target))
 
 		if(target != user)
 			user.visible_message(span_danger("[target] has been hit over the head with a bottle of [name], by [user]!"))
@@ -304,10 +304,10 @@
 	//Finally, smash the bottle. This kills (del) the bottle.
 	smash(target, user)
 
-/obj/item/reagent_containers/food/drinks/bottle/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/reagent_containers/food/drinks/bottle/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!CONFIG_GET(flag/fun_allowed))
 		return FALSE
-	attack_hand(xeno_attacker)
+	attack_hand(tyranid_attacker)
 
 /obj/item/reagent_containers/food/drinks/bottle/gin
 	name = "\improper Griffeater Gin"

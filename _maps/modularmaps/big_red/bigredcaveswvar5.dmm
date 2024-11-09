@@ -8,7 +8,7 @@
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "g" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "h" = (
@@ -16,11 +16,11 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "j" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "l" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "n" = (
@@ -43,16 +43,16 @@
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/southwest)
 "x" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/southwest)
 "y" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "F" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "G" = (
@@ -60,7 +60,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "I" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "J" = (
@@ -69,11 +69,11 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "K" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "O" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/rock)
 "P" = (

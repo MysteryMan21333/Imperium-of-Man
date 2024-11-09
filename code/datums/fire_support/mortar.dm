@@ -17,10 +17,10 @@
 /datum/fire_support/mortar/do_impact(turf/target_turf)
 	explosion(target_turf, 0, 2, 3, 5, 2)
 
-/datum/fire_support/mortar/som
-	fire_support_type = FIRESUPPORT_TYPE_HE_MORTAR_SOM
+/datum/fire_support/mortar/chaos
+	fire_support_type = FIRESUPPORT_TYPE_HE_MORTAR_CHAOS
 	initiate_title = "Guardian-1"
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_mortar
 
 /datum/fire_support/mortar/incendiary
 	name = "Incendiary mortar barrage"
@@ -34,10 +34,10 @@
 	explosion(target_turf, weak_impact_range = 4, flame_range = 5, throw_range = 0)
 	playsound(target_turf, 'sound/weapons/guns/fire/flamethrower2.ogg', 35)
 
-/datum/fire_support/mortar/incendiary/som
-	fire_support_type = FIRESUPPORT_TYPE_INCENDIARY_MORTAR_SOM
+/datum/fire_support/mortar/incendiary/chaos
+	fire_support_type = FIRESUPPORT_TYPE_INCENDIARY_MORTAR_CHAOS
 	initiate_title = "Guardian-1"
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_mortar
 
 /datum/fire_support/mortar/smoke
 	name = "Smoke mortar barrage"
@@ -61,10 +61,10 @@
 	smoke.set_up(smokeradius, target_turf, smoke_duration)
 	smoke.start()
 
-/datum/fire_support/mortar/smoke/som
-	fire_support_type = FIRESUPPORT_TYPE_SMOKE_MORTAR_SOM
+/datum/fire_support/mortar/smoke/chaos
+	fire_support_type = FIRESUPPORT_TYPE_SMOKE_MORTAR_CHAOS
 	initiate_title = "Guardian-1"
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_mortar
 
 /datum/fire_support/mortar/smoke/acid
 	name = "Acid smoke mortar barrage"
@@ -73,7 +73,7 @@
 	icon_state = "acid_smoke_mortar"
 	initiate_chat_message = "COORDINATES CONFIRMED. MORTAR BARRAGE INCOMING."
 	initiate_screen_message = "Coordinates confirmed, acid smoke inbound!"
-	smoketype = /datum/effect_system/smoke_spread/xeno/acid/opaque
+	smoketype = /datum/effect_system/smoke_spread/tyranid/acid/opaque
 	smokeradius = 5
 
 /datum/fire_support/mortar/smoke/satrapine
@@ -83,6 +83,6 @@
 	icon_state = "satrapine_mortar"
 	initiate_chat_message = "COORDINATES CONFIRMED. MORTAR BARRAGE INCOMING."
 	initiate_screen_message = "Coordinates confirmed, satrapine inbound!"
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_mortar
 	smoketype = /datum/effect_system/smoke_spread/satrapine
 	smokeradius = 5

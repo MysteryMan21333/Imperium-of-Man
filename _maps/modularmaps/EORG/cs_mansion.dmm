@@ -47,7 +47,7 @@
 /turf/open/floor/grass,
 /area/deathmatch)
 "dd" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/wood,
 /area/deathmatch)
 "de" = (
@@ -220,7 +220,7 @@
 /turf/open/floor/grime,
 /area/deathmatch)
 "ld" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/landmark/weapon_spawn/tier4_weapon_spawn,
 /turf/open/floor/wood,
 /area/deathmatch)
@@ -287,13 +287,13 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/turf_decal/riverdecal/edge,
 /turf/open/floor/mainship/mono,
 /area/deathmatch)
 "pq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/turf_decal/riverdecal,
 /turf/open/floor/mainship/mono,
 /area/deathmatch)
@@ -349,7 +349,7 @@
 /turf/closed/wall/wood,
 /area/deathmatch)
 "qW" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -522,7 +522,7 @@
 /turf/open/floor/grass,
 /area/deathmatch)
 "yo" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/landmark/deathmatch,
 /turf/open/floor/wood,
 /area/deathmatch)
@@ -592,7 +592,7 @@
 /area/deathmatch)
 "An" = (
 /obj/structure/prop/mainship/ship_memorial{
-	desc = "A ship memorial dedicated to the triumphs of the TGMC and the fallen marines of this ship. On the left there are grand tales of victory etched into the slab. On the right there is a list of famous marines who have fallen in combat serving the TGMC. There seems to be an etch of three spikes on the free space below."
+	desc = "A ship memorial dedicated to the triumphs of the TGMC and the fallen guardsmans of this ship. On the left there are grand tales of victory etched into the slab. On the right there is a list of famous guardsmans who have fallen in combat serving the TGMC. There seems to be an etch of three spikes on the free space below."
 	},
 /turf/open/floor/grime,
 /area/deathmatch)
@@ -675,7 +675,7 @@
 /area/deathmatch)
 "Ds" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/turf_decal/riverdecal/edge,
 /turf/open/floor/plating/plating_catwalk,
 /area/deathmatch)
@@ -686,7 +686,7 @@
 /area/deathmatch)
 "DG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/turf_decal/riverdecal/edge{
 	dir = 1
 	},
@@ -920,7 +920,7 @@
 /area/deathmatch)
 "ND" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/turf_decal/riverdecal/edge,
 /turf/open/floor/mainship/mono,
 /area/deathmatch)
@@ -994,7 +994,7 @@
 /area/deathmatch)
 "Qd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/turf_decal/riverdecal/edge,
 /turf/open/floor/mainship/mono,
 /area/deathmatch)
@@ -1170,7 +1170,7 @@
 /turf/open/floor/wood,
 /area/deathmatch)
 "Xv" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/spawner/random/engineering/ore_box,
 /turf/open/floor/wood,
 /area/deathmatch)
@@ -1187,7 +1187,7 @@
 /turf/open/floor/grass,
 /area/deathmatch)
 "XY" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/deathmatch)
 "Ya" = (
@@ -1204,7 +1204,7 @@
 /turf/open/floor/wood,
 /area/deathmatch)
 "YK" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/light{
 	dir = 8
 	},

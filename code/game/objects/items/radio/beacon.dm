@@ -3,8 +3,8 @@
 	desc = "A beacon used by a teleporter."
 	icon_state = "beacon"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	worn_icon_state = "signaler"
 	var/code = "electronic"

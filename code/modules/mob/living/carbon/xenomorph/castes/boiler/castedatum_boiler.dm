@@ -1,13 +1,13 @@
-/datum/xeno_caste/boiler
+/datum/tyranid_caste/boiler
 	caste_name = "Boiler"
 	display_name = "Boiler"
 	upgrade_name = ""
 	caste_desc = "Gross!"
 
-	caste_type_path = /mob/living/carbon/xenomorph/boiler
+	caste_type_path = /mob/living/carbon/tyranid/boiler
 
-	tier = XENO_TIER_THREE
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_THREE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "boiler" //used to match appropriate wound overlays
 
 	gib_flick = "gibbed-a-boiler"
@@ -28,7 +28,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/spitter
+	deevolves_to = /datum/tyranid_caste/spitter
 
 	// *** Darksight *** ///
 	conscious_see_in_dark = 20
@@ -43,7 +43,7 @@
 
 	// *** Ranged Attack *** //
 	spit_delay = 1 SECONDS
-	spit_types = list(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/corrosive)
+	spit_types = list(/datum/ammo/tyranid/boiler_gas, /datum/ammo/tyranid/boiler_gas/corrosive)
 
 	// *** Minimap Icon *** //
 	minimap_icon = "boiler"
@@ -59,41 +59,41 @@
 	acid_spray_structure_damage = 45
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/corrosive_acid/strong,
-		/datum/action/ability/xeno_action/create_boiler_bomb,
-		/datum/action/ability/activable/xeno/bombard,
-		/datum/action/ability/xeno_action/toggle_long_range,
-		/datum/action/ability/xeno_action/toggle_bomb,
-		/datum/action/ability/activable/xeno/spray_acid/line/boiler,
-		/datum/action/ability/activable/xeno/acid_shroud,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/corrosive_acid/strong,
+		/datum/action/ability/tyranid_action/create_boiler_bomb,
+		/datum/action/ability/activable/tyranid/bombard,
+		/datum/action/ability/tyranid_action/toggle_long_range,
+		/datum/action/ability/tyranid_action/toggle_bomb,
+		/datum/action/ability/activable/tyranid/spray_acid/line/boiler,
+		/datum/action/ability/activable/tyranid/acid_shroud,
 	)
 
-/datum/xeno_caste/boiler/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/boiler/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/boiler/primordial
+/datum/tyranid_caste/boiler/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "A horrendously effective alien siege engine."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	primordial_message = "We have refined the art of bombardement to perfection. End them before they can utter a desperate plea."
 
 	// *** Ranged Attack *** //
-	spit_types = list(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/lance, /datum/ammo/xeno/boiler_gas/corrosive, /datum/ammo/xeno/boiler_gas/corrosive/lance)
+	spit_types = list(/datum/ammo/tyranid/boiler_gas, /datum/ammo/tyranid/boiler_gas/lance, /datum/ammo/tyranid/boiler_gas/corrosive, /datum/ammo/tyranid/boiler_gas/corrosive/lance)
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/corrosive_acid/strong,
-		/datum/action/ability/xeno_action/create_boiler_bomb,
-		/datum/action/ability/activable/xeno/bombard,
-		/datum/action/ability/xeno_action/toggle_long_range,
-		/datum/action/ability/xeno_action/toggle_bomb,
-		/datum/action/ability/activable/xeno/spray_acid/line/boiler,
-		/datum/action/ability/activable/xeno/acid_shroud,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/corrosive_acid/strong,
+		/datum/action/ability/tyranid_action/create_boiler_bomb,
+		/datum/action/ability/activable/tyranid/bombard,
+		/datum/action/ability/tyranid_action/toggle_long_range,
+		/datum/action/ability/tyranid_action/toggle_bomb,
+		/datum/action/ability/activable/tyranid/spray_acid/line/boiler,
+		/datum/action/ability/activable/tyranid/acid_shroud,
 	)

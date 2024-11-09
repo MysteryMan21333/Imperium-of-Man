@@ -1,4 +1,4 @@
-//MARINE SHIP AREAS--------------------------------------//
+//GUARDSMAN SHIP AREAS--------------------------------------//
 // Fore = West  | Aft = East //
 // Port = South | Starboard = North //
 /area/mainship
@@ -439,7 +439,7 @@
 	icon_state = "req"
 
 
-/area/mainship/squads/general/som
+/area/mainship/squads/general/chaos
 
 /area/mainship/squads/req
 	name = "Requisitions"
@@ -506,36 +506,36 @@
 	icon_state = "cryo"
 	minimap_color = MINIMAP_AREA_LIVING
 
-/area/mainship/patrol_base/som
-	name = "SOM Combat Patrol Base"
+/area/mainship/patrol_base/chaos
+	name = "CHAOS Combat Patrol Base"
 
-/area/mainship/patrol_base/som/hanger
-	name = "SOM Main Hanger"
+/area/mainship/patrol_base/chaos/hanger
+	name = "CHAOS Main Hanger"
 	icon_state = "hangar"
 	minimap_color = MINIMAP_AREA_LZ
 
-/area/mainship/patrol_base/som/command
-	name = "SOM Command"
+/area/mainship/patrol_base/chaos/command
+	name = "CHAOS Command"
 	icon_state = "bridge"
 	minimap_color = MINIMAP_AREA_COMMAND
 
-/area/mainship/patrol_base/som/prep
-	name = "SOM Preparations"
+/area/mainship/patrol_base/chaos/prep
+	name = "CHAOS Preparations"
 	icon_state = "mainship"
 	minimap_color = MINIMAP_AREA_PREP
 
-/area/mainship/patrol_base/som/barracks
-	name = "SOM Barracks"
+/area/mainship/patrol_base/chaos/barracks
+	name = "CHAOS Barracks"
 	icon_state = "cryo"
 	minimap_color = MINIMAP_AREA_LIVING
 
-/area/mainship/patrol_base/som/medical
-	name = "SOM Medical bay"
+/area/mainship/patrol_base/chaos/medical
+	name = "CHAOS Medical bay"
 	icon_state = "medical"
 	minimap_color = MINIMAP_AREA_MEDBAY
 
-/area/mainship/patrol_base/som/equipment_bay
-	name = "SOM Equipment bay"
+/area/mainship/patrol_base/chaos/equipment_bay
+	name = "CHAOS Equipment bay"
 	icon_state = "req"
 	minimap_color = MINIMAP_AREA_REQ
 

@@ -163,7 +163,7 @@
 		/obj/item/ammo_magazine/pistol,
 		/obj/item/weapon/gun/revolver,
 		/obj/item/ammo_magazine/revolver,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol,
 		/obj/item/cell/lasgun/lasrifle,
 	))
 	storage_type_limits_max = list(/obj/item/weapon/gun = 1)
@@ -384,17 +384,17 @@
 		/obj/item/weapon/gun/pistol/standard_pocketpistol,
 		/obj/item/weapon/gun/shotgun/double/derringer,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/stack/throwing_knife,
 		/obj/item/storage/box/MRE,
 	))
 
-/datum/storage/internal/marinehelmet
+/datum/storage/internal/guardsmanhelmet
 	max_storage_space = 3
 	storage_slots = 2
 	max_w_class = WEIGHT_CLASS_TINY
 
-/datum/storage/internal/marinehelmet/New(atom/parent)
+/datum/storage/internal/guardsmanhelmet/New(atom/parent)
 	. = ..()
 	set_holdable(
 		cant_hold_list = list(

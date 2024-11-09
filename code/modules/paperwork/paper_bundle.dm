@@ -1,11 +1,11 @@
 /obj/item/paper_bundle
 	name = "paper bundle"
 	gender = PLURAL
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "paper"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "paper"
 	w_class = WEIGHT_CLASS_TINY
@@ -229,7 +229,7 @@
 	underlays = 0
 	var/paper_number = 0
 	for(var/obj/O in src)
-		var/image/IMG = image('icons/obj/items/paper.dmi')
+		var/image/IMG = image('modular_imperium/master_files/icons/obj/items/paper.dmi')
 		if(istype(O, /obj/item/paper))
 			IMG.icon_state = O.icon_state
 			IMG.pixel_x -= min(1*paper_number, 2)
@@ -242,7 +242,7 @@
 			var/obj/item/photo/PH = O
 			IMG = PH.picture.picture_icon
 			. += IMG
-	. += image('icons/obj/items/paper.dmi', "clip")
+	. += image('modular_imperium/master_files/icons/obj/items/paper.dmi', "clip")
 
 /obj/item/paper_bundle/proc/attach_doc(obj/item/I, mob/living/user, no_message)
 	if(I.loc == user)

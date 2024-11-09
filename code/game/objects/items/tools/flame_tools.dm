@@ -23,7 +23,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/tool/candle
 	name = "red candle"
 	desc = "a candle"
-	icon = 'icons/obj/items/candle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/candle.dmi'
 	icon_state = "candle1"
 	worn_icon_state = "candle1"
 	w_class = WEIGHT_CLASS_TINY
@@ -94,11 +94,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/tool/match
 	name = "match"
 	desc = "A simple match stick, used for lighting fine smokables."
-	icon = 'icons/obj/items/cigarettes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cigarettes.dmi'
 	icon_state = "match_unlit"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/smoking_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/smoking_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/smoking_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/smoking_right.dmi',
 	)
 	light_system = MOVABLE_LIGHT
 	light_range = 2
@@ -435,7 +435,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/tram
 	name = "poppy flavored cigarette"
-	desc = "TerraGov opioid alternative, diluted in water to skirt the 2112 Opioid Control act."
+	desc = "Imperium opioid alternative, diluted in water to skirt the 2112 Opioid Control act."
 	icon_state = "tramcigoff"
 	worn_icon_state = "tramcigoff"
 	icon_on = "tramcigon"
@@ -549,11 +549,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/tool/lighter
 	name = "cheap lighter"
 	desc = "A cheap-as-free lighter."
-	icon = 'icons/obj/items/cigarettes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cigarettes.dmi'
 	icon_state = "lighter-g"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/smoking_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/smoking_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/smoking_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/smoking_right.dmi',
 	)
 	worn_icon_state = "lighter-g"
 	var/icon_on = "lighter-g-on"

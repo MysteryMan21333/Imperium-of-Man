@@ -1,26 +1,26 @@
 /obj/effect/landmark/campaign_structure/tele_blocker
 	name = "\improper Bluespace quantum disruption emitter"
-	icon = 'icons/obj/structures/campaign/tele_blocker.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tele_blocker.dmi'
 	icon_state = "tele_blocker"
 	pixel_x = -16
-	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid/som, /datum/campaign_mission/destroy_mission/fire_support_raid/som, /datum/campaign_mission/capture_mission/asat)
+	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid/chaos, /datum/campaign_mission/destroy_mission/fire_support_raid/chaos, /datum/campaign_mission/capture_mission/asat)
 	spawn_object = /obj/structure/campaign_deployblocker
 
 /obj/structure/campaign_deployblocker
 	name = "\improper Bluespace quantum disruption emitter"
-	desc = "A cutting edge piece of technology designed to disrupt long range bluespace interference in a given radius. The SOM's long range teleporters are unlikely to work here while this is active."
+	desc = "A cutting edge piece of technology designed to disrupt long range bluespace interference in a given radius. The CHAOS's long range teleporters are unlikely to work here while this is active."
 	density = TRUE
 	anchored = TRUE
 	atom_flags = CRITICAL_ATOM
 	allow_pass_flags = PASS_PROJECTILE|PASS_AIR
 	destroy_sound = 'sound/effects/meteorimpact.ogg'
-	icon = 'icons/obj/structures/campaign/tele_blocker.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tele_blocker.dmi'
 	icon_state = "tele_blocker"
 	pixel_x = -16
 	///What flag this removes from the mission
 	var/to_remove_flags = MISSION_DISALLOW_TELEPORT
 	///The faction this belongs to
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	var/owning_faction_notification = "A teleportation disruptor has been deployed in this area. Protect the disruptor to ensure hostile forces cannot deploy via teleportation. "
 	var/hostile_faction_notification = "The enemy has a device in this area that will prevent the use of the teleporter array. Destroy this first to allow for teleportation insertion against primary objectives. "
 
@@ -58,7 +58,7 @@
 
 /obj/effect/landmark/campaign_structure/drop_blocker
 	name = "TELEBLOCKER"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign_structures.dmi'
 	icon_state = "drop_block"
 	mission_types = list(
 		/datum/campaign_mission/destroy_mission/supply_raid,
@@ -71,6 +71,6 @@
 	name = "drop pod guidance disruptor array"
 	desc = "A sophisticated device intended to severely disrupt drop pod guidance systems, rendering them unusable while the tower stands."
 	to_remove_flags = MISSION_DISALLOW_DROPPODS
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 	owning_faction_notification = "A drop pod disruptor has been deployed in this area. Protect the disruptor to ensure hostile forces cannot deploy via drop pod. "
 	hostile_faction_notification = "The enemy has a device in this area that will prevent the use of our drop pods. Destroy this first to allow for drop pod assault against primary objectives. "

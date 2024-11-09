@@ -1,6 +1,6 @@
 /obj/machinery/floodlight
 	name = "Emergency Floodlight"
-	icon = 'icons/obj/machines/floodlight.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/floodlight.dmi'
 	icon_state = "flood00"
 	anchored = TRUE
 	density = TRUE
@@ -84,7 +84,7 @@
 	use_power = NO_POWER_USE
 	anchored = TRUE
 	density = TRUE
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
+	resistance_flags = UNACIDABLE|TYRANID_DAMAGEABLE
 	allow_pass_flags = PASSABLE
 	/// The lighting power of the floodlight
 	var/floodlight_light_range = 15
@@ -131,7 +131,7 @@
 /obj/item/deployable_floodlight
 	name = "\improper deployable floodlight"
 	desc = "A powerful light able to be transported and deployed easily for a very long lasting light."
-	icon = 'icons/obj/machines/floodlight.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/floodlight.dmi'
 	icon_state = "floodlightcombat"
 	max_integrity = 200
 	item_flags = IS_DEPLOYABLE
@@ -189,7 +189,7 @@
 
 /obj/machinery/colony_floodlight_switch
 	name = "Colony Floodlight Switch"
-	icon = 'icons/obj/machines/floodlight.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/floodlight.dmi'
 	icon_state = "panelnopower"
 	desc = "This switch controls the floodlights surrounding the archaeology complex. It only functions when there is power."
 	density = FALSE

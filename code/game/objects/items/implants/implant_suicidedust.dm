@@ -1,5 +1,5 @@
 ///Implant meant for admin ERTs that will dust a body upon death.
-///In order to prevent Marines from looting things they should not ever have
+///In order to prevent Guardsmans from looting things they should not ever have
 /obj/item/implant/suicide_dust
 	name = "self-dusting implant"
 	implant_flags = NONE

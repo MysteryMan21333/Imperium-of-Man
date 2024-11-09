@@ -79,7 +79,7 @@
 /area/shuttle/minidropship)
 "u" = (
 /obj/effect/turf_decal/tile/transparent/dark_blue/full,
-/obj/docking_port/mobile/marine_dropship/minidropship,
+/obj/docking_port/mobile/guardsman_dropship/minidropship,
 /turf/open/floor/mainship/mono,
 /area/shuttle/minidropship)
 "v" = (

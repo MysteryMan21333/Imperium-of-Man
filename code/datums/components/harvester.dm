@@ -175,7 +175,7 @@
 /datum/component/harvester/proc/update_loaded_color(datum/source, list/overlays_list)
 	SIGNAL_HANDLER
 	var/obj/item/item_parent = parent
-	var/image/item_overlay = image('icons/obj/items/weapons/vali.dmi', item_parent, "[initial(item_parent.icon_state)]_loaded")
+	var/image/item_overlay = image('modular_imperium/master_files/icons/obj/items/weapons/vali.dmi', item_parent, "[initial(item_parent.icon_state)]_loaded")
 	if(!loaded_reagent)
 		item_overlay.color = COLOR_GREEN
 	else
@@ -317,7 +317,7 @@
 
 /datum/action/harvester/reagent_select/New(Target)
 	. = ..()
-	selected_reagent_overlay = image('icons/mob/actions.dmi', null, "selected_reagent")
+	selected_reagent_overlay = image('modular_imperium/master_files/icons/mob/actions.dmi', null, "selected_reagent")
 	update_button_icon()
 
 /datum/action/harvester/reagent_select/update_button_icon()

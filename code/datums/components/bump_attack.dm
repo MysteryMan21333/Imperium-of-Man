@@ -13,8 +13,8 @@
 	if(ishuman(parent))
 		RegisterSignal(parent, COMSIG_ITEM_TOGGLE_BUMP_ATTACK, PROC_REF(living_activation_toggle))
 		bump_action_path = PROC_REF(human_bump_action)
-	else if(isxeno(parent))
-		bump_action_path = PROC_REF(xeno_bump_action)
+	else if(istyranid(parent))
+		bump_action_path = PROC_REF(tyranid_bump_action)
 	else
 		bump_action_path = PROC_REF(living_bump_action)
 	if(has_button)
@@ -89,22 +89,22 @@
 	var/mob/living/living_target = target
 	if(bumper.faction == living_target.faction)
 		return //FF
-	if(isxeno(target))
-		var/mob/living/carbon/xenomorph/xeno = target
-		if(bumper.wear_id && CHECK_BITFIELD(xeno.xeno_iff_check(), bumper.wear_id.iff_signal))
+	if(istyranid(target))
+		var/mob/living/carbon/tyranid/tyranid = target
+		if(bumper.wear_id && CHECK_BITFIELD(tyranid.tyranid_iff_check(), bumper.wear_id.iff_signal))
 			return //Do not hit friend with tag!
 	INVOKE_ASYNC(src, PROC_REF(human_do_bump_action), target)
 
-///Handles xeno pre-bump attack checks.
-/datum/component/bump_attack/proc/xeno_bump_action(datum/source, atom/target)
+///Handles tyranid pre-bump attack checks.
+/datum/component/bump_attack/proc/tyranid_bump_action(datum/source, atom/target)
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/bumper = parent
+	var/mob/living/carbon/tyranid/bumper = parent
 	. = carbon_bump_action_checks(target)
 	if(!isnull(.))
 		return
-	if(bumper.issamexenohive(target))
+	if(bumper.issametyranidhive(target))
 		return //No more nibbling.
-	return xeno_do_bump_action(target)
+	return tyranid_do_bump_action(target)
 
 ///Handles living bump attacks.
 /datum/component/bump_attack/proc/living_do_bump_action(atom/target)
@@ -132,13 +132,13 @@
 	TIMER_COOLDOWN_START(src, COOLDOWN_BUMP_ATTACK, held_item ? held_item.attack_speed : CLICK_CD_MELEE)
 	return COMPONENT_BUMP_RESOLVED
 
-///Handles xeno bump attacks.
-/datum/component/bump_attack/proc/xeno_do_bump_action(atom/target)
-	var/mob/living/carbon/xenomorph/bumper = parent
+///Handles tyranid bump attacks.
+/datum/component/bump_attack/proc/tyranid_do_bump_action(atom/target)
+	var/mob/living/carbon/tyranid/bumper = parent
 	if(bumper.next_move > world.time)
 		return COMPONENT_BUMP_RESOLVED //We don't want to push people while on attack cooldown.
 	bumper.UnarmedAttack(target, TRUE)
-	GLOB.round_statistics.xeno_bump_attacks++
-	SSblackbox.record_feedback("tally", "round_statistics", 1, "xeno_bump_attacks")
-	TIMER_COOLDOWN_START(src, COOLDOWN_BUMP_ATTACK, bumper.xeno_caste.attack_delay)
+	GLOB.round_statistics.tyranid_bump_attacks++
+	SSblackbox.record_feedback("tally", "round_statistics", 1, "tyranid_bump_attacks")
+	TIMER_COOLDOWN_START(src, COOLDOWN_BUMP_ATTACK, bumper.tyranid_caste.attack_delay)
 	return COMPONENT_BUMP_RESOLVED

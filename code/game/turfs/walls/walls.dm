@@ -106,17 +106,17 @@
 
 /turf/closed/wall/MouseDrop_T(mob/M, mob/user)
 	if(acided_hole)
-		if(M == user && isxeno(user))
+		if(M == user && istyranid(user))
 			acided_hole.use_wall_hole(user)
 			return
 	..()
 
 
-/turf/closed/wall/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/turf/closed/wall/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
-	if(acided_hole && (xeno_attacker.mob_size == MOB_SIZE_BIG || xeno_attacker.xeno_caste.caste_flags & CASTE_IS_STRONG)) //Strong and/or big xenos can tear open acided walls
-		acided_hole.expand_hole(xeno_attacker)
+	if(acided_hole && (tyranid_attacker.mob_size == MOB_SIZE_BIG || tyranid_attacker.tyranid_caste.caste_flags & CASTE_IS_STRONG)) //Strong and/or big tyranids can tear open acided walls
+		acided_hole.expand_hole(tyranid_attacker)
 	else
 		return ..()
 
@@ -211,7 +211,7 @@
 	wall_integrity = max(0, wall_integrity - damage_amount)
 
 	if(wall_integrity <= 0)
-		// Xenos used to be able to crawl through the wall, should suggest some structural damage to the girder
+		// Tyranids used to be able to crawl through the wall, should suggest some structural damage to the girder
 		if (acided_hole)
 			dismantle_wall(1)
 		else

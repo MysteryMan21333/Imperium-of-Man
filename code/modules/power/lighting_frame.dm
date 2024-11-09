@@ -1,7 +1,7 @@
 /obj/machinery/light_construct
 	name = "light fixture frame"
 	desc = "A light fixture under construction."
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "tube-construct-stage1"
 	anchored = TRUE
 	layer = FLY_LAYER
@@ -114,7 +114,7 @@
 /obj/machinery/light_construct/small
 	name = "small light fixture frame"
 	desc = "A small light fixture under construction."
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "bulb-construct-stage1"
 	anchored = TRUE
 	stage = 1

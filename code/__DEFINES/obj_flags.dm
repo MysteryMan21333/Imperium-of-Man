@@ -22,7 +22,7 @@
 #define INDESTRUCTIBLE (1<<0) //doesn't take damage
 #define UNACIDABLE (1<<1) //immune to acid
 #define ON_FIRE (1<<2) //currently on fire
-#define XENO_DAMAGEABLE (1<<3) //xenos can damage this by slashing and spitting
+#define TYRANID_DAMAGEABLE (1<<3) //tyranids can damage this by slashing and spitting
 #define DROPSHIP_IMMUNE (1<<4) //dropship cannot land on it
 #define CRUSHER_IMMUNE (1<<5) //is immune to crusher's charge destruction
 #define BANISH_IMMUNE (1<<6) //is immune it wraith's banish ability

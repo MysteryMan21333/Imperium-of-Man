@@ -18,7 +18,7 @@
 		/datum/outfit/job/clf/standard/shotgun,
 		/datum/outfit/job/clf/standard/garand,
 		/datum/outfit/job/clf/standard/fanatic,
-		/datum/outfit/job/clf/standard/som_smg,
+		/datum/outfit/job/clf/standard/chaos_smg,
 	)
 
 //the base loadout for all clf standards
@@ -29,7 +29,7 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/distress/dutch
 	w_uniform = /obj/item/clothing/under/colonist
-	shoes = /obj/item/clothing/shoes/marine/clf/full
+	shoes = /obj/item/clothing/shoes/guardsman/clf/full
 	wear_suit = /obj/item/clothing/suit/storage/faction/militia
 	gloves = /obj/item/clothing/gloves/black
 	head = /obj/item/clothing/head/strawhat
@@ -84,7 +84,7 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/skorpion, SLOT_IN_BACKPACK)
 
 /datum/outfit/job/clf/standard/mpi_km
-	belt = /obj/item/storage/belt/marine/som
+	belt = /obj/item/storage/belt/guardsman/chaos
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/standard
 
 
@@ -128,7 +128,7 @@
 
 /datum/outfit/job/clf/standard/fanatic
 	head = /obj/item/clothing/head/headband/rambo
-	wear_suit = /obj/item/clothing/suit/storage/marine/boomvest/fast
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/boomvest/fast
 	belt = /obj/item/weapon/gun/shotgun/double/sawn
 	suit_store = /obj/item/weapon/gun/smg/skorpion/mag_harness
 
@@ -143,26 +143,26 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/skorpion, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/skorpion, SLOT_IN_BACKPACK)
 
-/datum/outfit/job/clf/standard/som_smg
-	belt = /obj/item/storage/belt/marine/som
-	suit_store = /obj/item/weapon/gun/smg/som/basic
+/datum/outfit/job/clf/standard/chaos_smg
+	belt = /obj/item/storage/belt/guardsman/chaos
+	suit_store = /obj/item/weapon/gun/smg/chaos/basic
 
 
-/datum/outfit/job/clf/standard/som_smg/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/clf/standard/chaos_smg/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/som, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/chaos, SLOT_IN_BELT)
 
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/explosive/plastique, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/stack/sheet/metal/medium_stack, SLOT_IN_BACKPACK)
 
 /datum/outfit/job/clf/standard/garand
-	belt = /obj/item/storage/belt/marine/som
+	belt = /obj/item/storage/belt/guardsman/chaos
 	suit_store = /obj/item/weapon/gun/rifle/garand
 
 
@@ -202,7 +202,7 @@
 	ears = /obj/item/radio/headset/distress/dutch
 	head = /obj/item/clothing/head/tgmcberet/bloodred
 	w_uniform = /obj/item/clothing/under/colonist
-	shoes = /obj/item/clothing/shoes/marine/clf/full
+	shoes = /obj/item/clothing/shoes/guardsman/clf/full
 	wear_suit = /obj/item/clothing/suit/storage/faction/militia
 	gloves = /obj/item/clothing/gloves/black
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -302,13 +302,13 @@
 	jobtype = /datum/job/clf/specialist
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/dutch
 	w_uniform = /obj/item/clothing/under/colonist/webbing
 	shoes = /obj/item/clothing/shoes/black
 	wear_suit = /obj/item/clothing/suit/storage/faction/militia
 	gloves = /obj/item/clothing/gloves/black
-	head = /obj/item/clothing/head/helmet/marine
+	head = /obj/item/clothing/head/helmet/guardsman
 	r_store = /obj/item/storage/pouch/pistol
 	l_store = /obj/item/storage/pouch/medical_injectors/firstaid
 
@@ -394,7 +394,7 @@
 	outfits = list(
 		/datum/outfit/job/clf/leader/assault_rifle,
 		/datum/outfit/job/clf/leader/mpi_km,
-		/datum/outfit/job/clf/leader/som_rifle,
+		/datum/outfit/job/clf/leader/chaos_rifle,
 		/datum/outfit/job/clf/leader/upp_rifle,
 		/datum/outfit/job/clf/leader/lmg_d,
 	)
@@ -405,7 +405,7 @@
 	jobtype = /datum/job/clf/leader
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/dutch
 	w_uniform = /obj/item/clothing/under/colonist/webbing
 	shoes = /obj/item/clothing/shoes/black
@@ -459,7 +459,7 @@
 
 /datum/outfit/job/clf/leader/mpi_km
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/grenadier
-	belt = /obj/item/storage/belt/marine/som
+	belt = /obj/item/storage/belt/guardsman/chaos
 
 /datum/outfit/job/clf/leader/mpi_km/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -477,19 +477,19 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/stick, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_ACCESSORY)
 
-/datum/outfit/job/clf/leader/som_rifle
-	suit_store = /obj/item/weapon/gun/rifle/som/basic
-	belt = /obj/item/storage/belt/marine/som
+/datum/outfit/job/clf/leader/chaos_rifle
+	suit_store = /obj/item/weapon/gun/rifle/chaos/basic
+	belt = /obj/item/storage/belt/guardsman/chaos
 
-/datum/outfit/job/clf/leader/som_rifle/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/clf/leader/chaos_rifle/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som, SLOT_IN_BELT)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/som, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/chaos, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/chaos, SLOT_IN_BELT)
 
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/handful/micro_grenade, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/handful/micro_grenade, SLOT_IN_ACCESSORY)
@@ -518,7 +518,7 @@
 
 /datum/outfit/job/clf/leader/lmg_d
 	suit_store = /obj/item/weapon/gun/rifle/lmg_d/magharness
-	belt = /obj/item/storage/belt/marine/som
+	belt = /obj/item/storage/belt/guardsman/chaos
 
 /datum/outfit/job/clf/leader/lmg_d/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()

@@ -1,11 +1,11 @@
 /obj/structure/door_assembly
-	icon = 'icons/obj/doors/door_assembly.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/door_assembly.dmi'
 
 	name = "airlock assembly"
 	icon_state = "door_as_0"
 	anchored = FALSE
 	density = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_AIR
 	max_integrity = 50
 	var/state = 0
@@ -106,7 +106,7 @@
 	glass = -1
 
 /obj/structure/door_assembly/multi_tile
-	icon = 'icons/obj/doors/door_assembly2x1.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/door_assembly2x1.dmi'
 	dir = EAST
 	base_icon_state = "g" //Remember to delete this line when reverting "glass" var to 1.
 	airlock_type = "/multi_tile/glass"

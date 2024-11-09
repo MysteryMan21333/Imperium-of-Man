@@ -108,8 +108,8 @@
 	shadow_languages = list()
 
 
-/datum/language_holder/xeno
-	languages = list(/datum/language/xenocommon)
+/datum/language_holder/tyranid
+	languages = list(/datum/language/tyranidcommon)
 
 
 /datum/language_holder/universal/New()
@@ -120,7 +120,7 @@
 	languages = list(/datum/language/common, /datum/language/machine)
 
 /datum/language_holder/synthetic
-	languages = list(/datum/language/common, /datum/language/machine, /datum/language/xenocommon)
+	languages = list(/datum/language/common, /datum/language/machine, /datum/language/tyranidcommon)
 
 /datum/language_holder/moth
 	languages = list(/datum/language/common, /datum/language/moth)

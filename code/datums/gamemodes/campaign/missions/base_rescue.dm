@@ -41,11 +41,11 @@
 	hostile_faction_additional_rewards = "Improved relations with local militias will allow us to call on their assistance in the future."
 	outro_message = list(
 		MISSION_OUTCOME_MAJOR_VICTORY = list(
-			MISSION_STARTING_FACTION = "<u>Major victory</u><br> SOM forces have been driven back, we've got them on the backfoot now marines!",
+			MISSION_STARTING_FACTION = "<u>Major victory</u><br> CHAOS forces have been driven back, we've got them on the backfoot now guardsmans!",
 			MISSION_HOSTILE_FACTION = "<u>Major loss</u><br> The assault is a failure, pull back and regroup!",
 		),
 		MISSION_OUTCOME_MAJOR_LOSS = list(
-			MISSION_STARTING_FACTION = "<u>Major loss</u><br> VIP assets destroyed, mission failure. Fallback and regroup marines.",
+			MISSION_STARTING_FACTION = "<u>Major loss</u><br> VIP assets destroyed, mission failure. Fallback and regroup guardsmans.",
 			MISSION_HOSTILE_FACTION = "<u>Major victory</u><br> Outstanding work Martians, Nanotrasen won't be coming back here any time soon!",
 		),
 	)
@@ -66,7 +66,7 @@
 
 /datum/campaign_mission/destroy_mission/base_rescue/play_start_intro()
 	intro_message = list(
-		MISSION_STARTING_FACTION = "[map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "Protect all the NT base from SOM aggression until reinforcements arrive. Eliminate all SOM forces and prevent them from overriding the security lockdown and raiding the facility.",
+		MISSION_STARTING_FACTION = "[map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "Protect all the NT base from CHAOS aggression until reinforcements arrive. Eliminate all CHAOS forces and prevent them from overriding the security lockdown and raiding the facility.",
 		MISSION_HOSTILE_FACTION = "[map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "The NT facility is on lockdown. Find a way to override the lockdown, then penetrate the facility and destroy whatever you find inside.",
 	)
 	return ..()
@@ -107,8 +107,8 @@
 
 /datum/campaign_mission/destroy_mission/base_rescue/load_mission_brief()
 	starting_faction_mission_brief = "NanoTrasen has issues an emergency request for assistance at an isolated medical facility located in the Western Ayolan Ranges. \
-		SOM forces are rapidly approaching the facility, which is currently on emergency lockdown. \
-		Move quickly prevent the SOM from lifting the lockdown and destroying the facility."
+		CHAOS forces are rapidly approaching the facility, which is currently on emergency lockdown. \
+		Move quickly prevent the CHAOS from lifting the lockdown and destroying the facility."
 	hostile_faction_mission_brief = "Recon forces have led us to this secure Nanotrasen facility in the Western Ayolan Ranges. Sympathetic native elements suggest NT have been conducting secret research here to the detriment of the local ecosystem and human settlements. \
 		Find the security override terminals to override the facility's emergency lockdown. \
 		Once the lockdown is lifted, destroy what they're working on inside."
@@ -116,14 +116,14 @@
 	hostile_faction_mission_parameters = "Teleportation is unavailable in this area due to unknown interference from beneath the NT compound."
 
 /datum/campaign_mission/destroy_mission/base_rescue/load_objective_description()
-	starting_faction_objective_description = "Major Victory:Protect the NT base from SOM attack. Do not allow them to override the security lockdown and destroy NT's sensitive equipment"
+	starting_faction_objective_description = "Major Victory:Protect the NT base from CHAOS attack. Do not allow them to override the security lockdown and destroy NT's sensitive equipment"
 	hostile_faction_objective_description = "Major Victory: Override the security lockdown on the NT facility and destroy whatever secrets they are working on"
 
 /datum/campaign_mission/destroy_mission/base_rescue/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
-			message = "The SOM have a headstart on us, move in quickly and defend the installation. Do not let them override the security lockdowns!"
-		if(FACTION_SOM)
+		if(FACTION_IMPERIUM)
+			message = "The CHAOS have a headstart on us, move in quickly and defend the installation. Do not let them override the security lockdowns!"
+		if(FACTION_CHAOS)
 			message = "Nanotrasen is working on abominations here. Override the security lockdown so we can destroy their project. Show the people of this world we're fighting for them!"
 	return ..()
 
@@ -176,7 +176,7 @@
 
 /obj/effect/landmark/campaign_structure/weapon_x
 	name = "weapon X spawner"
-	icon = 'icons/obj/structures/campaign/tall_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tall_structures.dmi'
 	icon_state = "nt_pod"
 	mission_types = list(/datum/campaign_mission/destroy_mission/base_rescue)
 	spawn_object = /obj/structure/weapon_x_pod
@@ -184,14 +184,14 @@
 /obj/structure/weapon_x_pod
 	name = "pod"
 	desc = "A unadorned metal pod of some kind. Seems kind of ominous."
-	icon = 'icons/obj/structures/campaign/tall_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tall_structures.dmi'
 	icon_state = "nt_pod"
 	density = TRUE
 	anchored = TRUE
 	resistance_flags = RESIST_ALL
 	destroy_sound = 'sound/effects/meteorimpact.ogg'
 	///Mob type to spawn
-	var/mob_type = /mob/living/carbon/xenomorph/hunter/weapon_x
+	var/mob_type = /mob/living/carbon/tyranid/hunter/weapon_x
 	///Actual mob occupant
 	var/mob/living/occupant
 	///Color code associated for signal purposes
@@ -216,8 +216,8 @@
 	else
 		icon_state = "[initial(icon_state)]_open"
 
-/obj/structure/weapon_x_pod/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker != occupant)
+/obj/structure/weapon_x_pod/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker != occupant)
 		return
 	release_occupant()
 

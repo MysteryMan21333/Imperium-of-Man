@@ -2,8 +2,8 @@
 /obj/item/armor_module
 	name = "armor module"
 	desc = "A dis-figured armor module, in its prime this would've been a key item in your modular armor... now its just trash."
-	icon = 'icons/mob/modular/modular_armor.dmi'
-	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0) // This is here to overwrite code over at objs.dm line 41. Marines don't get funny 200+ bio buff anymore.
+	icon = 'modular_imperium/master_files/icons/mob/modular/modular_armor.dmi'
+	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0) // This is here to overwrite code over at objs.dm line 41. Guardsmans don't get funny 200+ bio buff anymore.
 
 	slowdown = 0
 	appearance_flags = KEEP_APART|TILE_BOUND
@@ -133,7 +133,7 @@
 
 /obj/item/armor_module/armor
 	name = "modular armor - armor module"
-	icon = 'icons/mob/modular/modular_armor.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/modular/modular_armor.dmi'
 
 	/// The additional armor provided by equipping this piece.
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)

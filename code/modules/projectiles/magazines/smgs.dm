@@ -3,7 +3,7 @@
 	desc = "A submachinegun magazine."
 	default_ammo = /datum/ammo/bullet/smg
 	max_rounds = 30
-	icon = 'icons/obj/items/ammo/submachinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/submachinegun.dmi'
 	icon_state_mini = "mag_smg"
 
 //-------------------------------------------------------
@@ -144,9 +144,9 @@
 	icon_state_mini = "mag_smg_dark"
 
 //-------------------------------------------------------
-//V-21 SOM SMG
+//V-21 CHAOS SMG
 
-/obj/item/ammo_magazine/smg/som
+/obj/item/ammo_magazine/smg/chaos
 	name = "\improper V-21 submachinegun magazine (10x20mm)"
 	desc = "A 10x20mm caseless submachinegun magazine."
 	caliber = CALIBER_10X20_CASELESS
@@ -155,21 +155,21 @@
 	max_rounds = 50
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_magazine/smg/som/ap
+/obj/item/ammo_magazine/smg/chaos/ap
 	name = "\improper V-21 AP submachinegun magazine (10x20mm)"
 	desc = "A 10x20mm caseless submachinegun magazine, loaded in armor piercing rounds."
 	icon_state = "v21_ap"
 	default_ammo = /datum/ammo/bullet/smg/ap
 	icon_state_mini = "mag_smg_green"
 
-/obj/item/ammo_magazine/smg/som/incendiary
+/obj/item/ammo_magazine/smg/chaos/incendiary
 	name = "\improper V-21 incendiary submachinegun magazine (10x20mm)"
 	desc = "A 10x20mm caseless submachinegun magazine, loaded in incendiary rounds."
 	icon_state = "v21_incend"
 	default_ammo = /datum/ammo/bullet/smg/incendiary
 	icon_state_mini = "mag_smg_red"
 
-/obj/item/ammo_magazine/smg/som/extended
+/obj/item/ammo_magazine/smg/chaos/extended
 	name = "\improper V-21 extended submachinegun magazine (10x20mm)"
 	desc = "An extended 10x20mm caseless submachinegun magazine."
 	icon_state = "v21_extended"
@@ -178,7 +178,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	aim_speed_mod = 0.1
 
-/obj/item/ammo_magazine/smg/som/rad
+/obj/item/ammo_magazine/smg/chaos/rad
 	name = "\improper V-21 radioactive submachinegun magazine (10x20mm)"
 	desc = "A 10x20mm caseless submachinegun magazine, loaded with radioactive rounds. Handle with care."
 	icon_state = "v21_rad"

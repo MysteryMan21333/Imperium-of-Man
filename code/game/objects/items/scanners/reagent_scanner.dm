@@ -1,7 +1,7 @@
 /obj/item/reagent_scanner
 	name = "reagent scanner"
 	desc = "A hand-held reagent scanner which identifies chemical agents."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "spectrometer"
 	worn_icon_state = "analyzer"
 	w_class = WEIGHT_CLASS_SMALL

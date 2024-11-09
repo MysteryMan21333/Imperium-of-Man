@@ -124,10 +124,10 @@
 	freq_listening = list(FREQ_CAS)
 	autolinkers = list("firesupport")
 
-//SOM
-/obj/machinery/telecomms/server/presets/medical/som
-	id = "Medical Server som"
-	freq_listening = list(FREQ_MEDICAL_SOM)
+//CHAOS
+/obj/machinery/telecomms/server/presets/medical/chaos
+	id = "Medical Server chaos"
+	freq_listening = list(FREQ_MEDICAL_CHAOS)
 	autolinkers = list("medical_som")
 
 /obj/machinery/telecomms/server/presets/zulu
@@ -154,33 +154,33 @@
 	autolinkers = list("whiskey")
 
 
-/obj/machinery/telecomms/server/presets/command/som
-	id = "Command Server som"
-	freq_listening = list(FREQ_COMMAND_SOM)
+/obj/machinery/telecomms/server/presets/command/chaos
+	id = "Command Server chaos"
+	freq_listening = list(FREQ_COMMAND_CHAOS)
 	autolinkers = list("command_som")
 
 
-/obj/machinery/telecomms/server/presets/engineering/som
-	id = "Engineering Server som"
-	freq_listening = list(FREQ_ENGINEERING_SOM)
+/obj/machinery/telecomms/server/presets/engineering/chaos
+	id = "Engineering Server chaos"
+	freq_listening = list(FREQ_ENGINEERING_CHAOS)
 	autolinkers = list("engineering_som")
 
 
 /obj/machinery/telecomms/server/presets/common
 	id = "Common Server"
-	freq_listening = list(FREQ_COMMON, FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_SOM, FREQ_SECTOID, FREQ_ECHO)
+	freq_listening = list(FREQ_COMMON, FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_CHAOS, FREQ_SECTOID, FREQ_ECHO)
 	autolinkers = list("common", "ert")
 
 //adds a proper emergency server in CIC instead of an unlinked one.
 /obj/machinery/telecomms/server/presets/common/cicbackup
 	on = 0
 	id = "Backup Common Server"
-	freq_listening = list(FREQ_COMMON, FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_SOM, FREQ_SECTOID, FREQ_ECHO)
+	freq_listening = list(FREQ_COMMON, FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_CHAOS, FREQ_SECTOID, FREQ_ECHO)
 	autolinkers = list("common", "ert")
 
-/obj/machinery/telecomms/server/presets/common/som
-	id = "Common Server som"
-	freq_listening = list(FREQ_SOM)
+/obj/machinery/telecomms/server/presets/common/chaos
+	id = "Common Server chaos"
+	freq_listening = list(FREQ_CHAOS)
 	autolinkers = list("common_som")
 
 //Common and other radio frequencies for people to freely use

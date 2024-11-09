@@ -1,9 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aai" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/head/helmet/marine/imperial/sergeant/veteran,
-/obj/item/clothing/under/marine/imperial,
-/obj/item/clothing/shoes/marine/imperial,
+/obj/item/clothing/head/helmet/guardsman/imperial/sergeant/veteran,
+/obj/item/clothing/under/guardsman/imperial,
+/obj/item/clothing/shoes/guardsman/imperial,
 /obj/item/weapon/gun/energy/lasgun/lasrifle,
 /obj/item/cell/lasgun/lasrifle,
 /obj/item/cell/lasgun/lasrifle,
@@ -41,8 +41,8 @@
 /area/centcom/valhalla)
 "ade" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marineshootingrightfar"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmanshootingrightfar"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
@@ -142,7 +142,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "anC" = (
-/obj/machinery/vending/MarineMed/valhalla,
+/obj/machinery/vending/GuardsmanMed/valhalla,
 /turf/open/floor/mainship/sterile/side{
 	dir = 4
 	},
@@ -752,7 +752,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/centcom/valhalla)
 "aSD" = (
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "far1"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -1184,13 +1184,13 @@
 /area/centcom/valhalla)
 "boC" = (
 /turf/closed/mineral/smooth,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "bqF" = (
 /obj/item/explosive/grenade/flare/on,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/centcom/valhalla)
 "bqN" = (
-/obj/machinery/marine_selector/gear/medic/valhalla,
+/obj/machinery/guardsman_selector/gear/medic/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "bsX" = (
@@ -1205,7 +1205,7 @@
 "bsY" = (
 /obj/effect/landmark/corpsespawner/colonist,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "bur" = (
 /obj/structure/window/framed/colony/reinforced/hull,
 /obj/machinery/door/poddoor/shutters/mainship/open{
@@ -1268,7 +1268,7 @@
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "bCd" = (
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "tanknorth"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -1286,7 +1286,7 @@
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 6
 	},
-/obj/machinery/vending/MarineMed/valhalla,
+/obj/machinery/vending/GuardsmanMed/valhalla,
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "bDf" = (
@@ -1407,8 +1407,8 @@
 "bLb" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/item/clothing/head/xenos,
-/obj/item/clothing/suit/xenos,
+/obj/item/clothing/head/tyranids,
+/obj/item/clothing/suit/tyranids,
 /obj/effect/landmark/itemspawner/highlander,
 /turf/open/floor/tile/lightred,
 /area/centcom/valhalla)
@@ -1418,7 +1418,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "bMr" = (
-/obj/machinery/vending/MarineMed/valhalla,
+/obj/machinery/vending/GuardsmanMed/valhalla,
 /turf/open/floor/mainship/sterile/corner,
 /area/centcom/valhalla)
 "bMv" = (
@@ -1655,7 +1655,7 @@
 /turf/open/floor,
 /area/start)
 "cbS" = (
-/obj/machinery/marine_selector/clothes/valhalla,
+/obj/machinery/guardsman_selector/clothes/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "cdt" = (
@@ -1818,7 +1818,7 @@
 /turf/open/floor/tile/cafe,
 /area/centcom/valhalla)
 "cre" = (
-/obj/machinery/marine_selector/gear/commander/valhalla,
+/obj/machinery/guardsman_selector/gear/commander/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "crv" = (
@@ -2210,7 +2210,7 @@
 /turf/open/floor/tile/cafe,
 /area/centcom/valhalla)
 "cNB" = (
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "tankmid"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -2622,8 +2622,8 @@
 /area/centcom/valhalla)
 "dur" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marineshootingrightclose"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmanshootingrightclose"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
@@ -2709,7 +2709,7 @@
 /obj/effect/turf_decal/sandedge{
 	dir = 4
 	},
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "close2"
 	},
 /turf/open/floor/plating,
@@ -2905,7 +2905,7 @@
 /area/centcom/valhalla)
 "dJc" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/item/book/manual/medical_cloning,
 /obj/item/book/manual/medical_diagnostics_manual,
 /turf/open/floor/tile/vault{
@@ -3099,7 +3099,7 @@
 /area/tdome/tdomeadmin)
 "dRR" = (
 /obj/effect/landmark/valhalla/vehicle_spawner_landmark{
-	where = "marinecenter"
+	where = "guardsmancenter"
 	},
 /turf/open/floor/mainship/hexagon,
 /area/centcom/valhalla)
@@ -3195,7 +3195,7 @@
 /area/centcom/valhalla)
 "dXi" = (
 /obj/item/stack/sheet/metal/large_stack,
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "shootingrightclose"
 	},
 /turf/open/floor/plating/scorched,
@@ -3269,7 +3269,7 @@
 /area/centcom/valhalla)
 "efF" = (
 /obj/machinery/button/valhalla/vehicle_button{
-	link = "vehiclemarineupper";
+	link = "vehicleguardsmanupper";
 	name = "North Vehicle Spawner"
 	},
 /turf/open/floor/tile/dark/gray,
@@ -3518,7 +3518,7 @@
 /area/centcom/valhalla)
 "eCf" = (
 /obj/machinery/vending/armor_supply/valhalla,
-/obj/machinery/marine_selector/clothes/valhalla,
+/obj/machinery/guardsman_selector/clothes/valhalla,
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "eCH" = (
@@ -3963,9 +3963,9 @@
 /turf/open/floor/grimy,
 /area/centcom/valhalla)
 "fog" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "foh" = (
 /obj/machinery/vending/uniform_supply/valhalla,
 /turf/open/floor/plating,
@@ -4013,13 +4013,13 @@
 /area/tdome/tdome1)
 "frN" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenofar1"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidfar1"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
 "frZ" = (
-/obj/machinery/door/airlock/mainship/marine/general/sl{
+/obj/machinery/door/airlock/mainship/guardsman/general/sl{
 	dir = 3
 	},
 /turf/open/floor/tile/dark/gray,
@@ -4346,7 +4346,7 @@
 /area/centcom/valhalla)
 "fRn" = (
 /obj/effect/landmark/valhalla/vehicle_spawner_landmark{
-	where = "marineupper"
+	where = "guardsmanupper"
 	},
 /turf/open/floor/plating,
 /area/centcom/valhalla)
@@ -4804,7 +4804,7 @@
 	},
 /area/centcom/valhalla)
 "gzS" = (
-/obj/machinery/marine_selector/clothes/valhalla,
+/obj/machinery/guardsman_selector/clothes/valhalla,
 /obj/machinery/vending/weapon/valhalla,
 /turf/open/floor/plating,
 /area/centcom/valhalla)
@@ -4817,7 +4817,7 @@
 /turf/open/floor/tile/lightred,
 /area/centcom/valhalla)
 "gAO" = (
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "close1"
 	},
 /turf/open/floor/plating,
@@ -4898,11 +4898,11 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "gEX" = (
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marineright"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmanright"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "gFm" = (
 /obj/structure/mirror{
 	dir = 4;
@@ -4917,7 +4917,7 @@
 /area/centcom/valhalla)
 "gFO" = (
 /obj/machinery/button/valhalla/vehicle_button{
-	link = "vehiclemarinecenter";
+	link = "vehicleguardsmancenter";
 	name = "Center Vehicle Spawner"
 	},
 /turf/open/floor/tile/dark/gray,
@@ -5177,11 +5177,11 @@
 /turf/open/floor/tile/cafe,
 /area/centcom/valhalla)
 "hda" = (
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marinetop"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmantop"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "hdk" = (
 /obj/effect/turf_decal/warning_stripes/thick,
 /turf/open/floor/mainship/stripesquare,
@@ -5191,11 +5191,11 @@
 /turf/open/floor/plating/scorched,
 /area/centcom/valhalla)
 "heB" = (
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marineleft"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmanleft"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "heF" = (
 /obj/structure/bed/chair/comfy{
 	color = "#596479";
@@ -5463,7 +5463,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "hwm" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/tile/cafe,
 /area/centcom/valhalla)
 "hxf" = (
@@ -5510,12 +5510,12 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/weapon/shield/riot/marine{
+/obj/item/weapon/shield/riot/guardsman{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/weapon/shield/riot/marine,
-/obj/item/weapon/shield/riot/marine{
+/obj/item/weapon/shield/riot/guardsman,
+/obj/item/weapon/shield/riot/guardsman{
 	pixel_x = 3;
 	pixel_y = -3
 	},
@@ -5540,7 +5540,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "hDW" = (
@@ -6070,7 +6070,7 @@
 	},
 /area/tdome/tdomeobserve)
 "iuC" = (
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "shootingrightfar"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -6304,7 +6304,7 @@
 /turf/closed/wall,
 /area/centcom/valhalla)
 "iNh" = (
-/obj/machinery/door/airlock/mainship/marine/general/engi{
+/obj/machinery/door/airlock/mainship/guardsman/general/engi{
 	dir = 3
 	},
 /turf/open/floor/tile/dark/gray,
@@ -6743,14 +6743,14 @@
 /area/centcom/valhalla)
 "jvR" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marineshootingleftfar"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmanshootingleftfar"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
 "jvT" = (
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marinesurgeryright"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmansurgeryright"
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/centcom/valhalla)
@@ -6879,7 +6879,7 @@
 /turf/open/floor/tile/dark,
 /area/centcom/valhalla)
 "jCQ" = (
-/obj/machinery/marine_selector/clothes/smartgun/valhalla,
+/obj/machinery/guardsman_selector/clothes/smartgun/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "jDO" = (
@@ -6887,7 +6887,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/machinery/marine_selector/clothes/medic/valhalla,
+/obj/machinery/guardsman_selector/clothes/medic/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "jFg" = (
@@ -6895,9 +6895,9 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "jFD" = (
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenotanknorth";
-	name = "North xeno spawner"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidtanknorth";
+	name = "North tyranid spawner"
 	},
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
@@ -6927,7 +6927,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/machinery/marine_selector/gear/leader/valhalla,
+/obj/machinery/guardsman_selector/gear/leader/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "jHN" = (
@@ -7131,7 +7131,7 @@
 	dir = 1
 	},
 /turf/closed/mineral/smooth,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "jXn" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/sheet/metal/large_stack,
@@ -7234,8 +7234,8 @@
 /area/centcom/valhalla)
 "kcV" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenoclose1"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidclose1"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
@@ -7371,7 +7371,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "khV" = (
-/obj/machinery/door/airlock/mainship/marine/general/corps{
+/obj/machinery/door/airlock/mainship/guardsman/general/corps{
 	dir = 3
 	},
 /turf/open/floor/tile/dark/gray,
@@ -7396,9 +7396,9 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "kjZ" = (
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenotankmid";
-	name = "Middle xeno spawner"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidtankmid";
+	name = "Middle tyranid spawner"
 	},
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
@@ -7413,7 +7413,7 @@
 "kmb" = (
 /obj/item/toy/plush/rouny,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "kmz" = (
 /obj/machinery/door/airlock/mainship/command/FCDRquarters{
 	dir = 3
@@ -7442,11 +7442,11 @@
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "knX" = (
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "top"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "kov" = (
 /obj/machinery/prop/computer,
 /obj/structure/table/reinforced,
@@ -7561,8 +7561,8 @@
 /turf/open/floor,
 /area/tdome)
 "kvr" = (
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marinesurgeryleft"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmansurgeryleft"
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/centcom/valhalla)
@@ -7712,7 +7712,7 @@
 /turf/open/floor/wood,
 /area/tdome/tdomeobserve)
 "kIe" = (
-/obj/machinery/marine_selector/clothes/medic/valhalla,
+/obj/machinery/guardsman_selector/clothes/medic/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "kIk" = (
@@ -7783,7 +7783,7 @@
 "kOY" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "kPj" = (
 /obj/effect/turf_decal/sandytile/sandyplating,
 /turf/open/floor/plating/ironsand,
@@ -7849,7 +7849,7 @@
 	},
 /obj/item/book/manual/detective,
 /obj/item/detective_scanner,
-/obj/item/weapon/gun/revolver/mateba/notmarine,
+/obj/item/weapon/gun/revolver/mateba/notguardsman,
 /obj/item/ammo_magazine/revolver/mateba,
 /obj/item/ammo_magazine/revolver/mateba,
 /turf/open/floor/tile/dark,
@@ -8279,7 +8279,7 @@
 /area/centcom/valhalla)
 "lIu" = (
 /obj/machinery/optable,
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "surgeryleft"
 	},
 /obj/item/tank/anesthetic,
@@ -8490,8 +8490,8 @@
 /area/centcom/valhalla)
 "lZP" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenoclose2"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidclose2"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
@@ -8717,7 +8717,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "mqB" = (
-/obj/machinery/marine_selector/clothes/engi/valhalla,
+/obj/machinery/guardsman_selector/clothes/engi/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "msP" = (
@@ -8873,10 +8873,10 @@
 /area/centcom/valhalla)
 "mFD" = (
 /obj/effect/landmark/valhalla/vehicle_spawner_landmark{
-	where = "xenocave"
+	where = "tyranidcave"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "mGe" = (
 /obj/effect/turf_decal/tile/black{
 	dir = 1
@@ -9023,7 +9023,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "mPT" = (
-/obj/machinery/marine_selector/clothes/leader/valhalla,
+/obj/machinery/guardsman_selector/clothes/leader/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "mQe" = (
@@ -10433,7 +10433,7 @@
 /area/centcom/valhalla)
 "oXf" = (
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "oXK" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/power/smes{
@@ -10640,7 +10640,7 @@
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "plj" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/tile/dark,
 /area/centcom/valhalla)
 "plk" = (
@@ -10679,8 +10679,8 @@
 /area/centcom/valhalla)
 "poF" = (
 /obj/effect/turf_decal/warning_stripes/thick,
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenofar2"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidfar2"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)
@@ -10702,13 +10702,13 @@
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "pqM" = (
-/obj/machinery/marine_selector/clothes/valhalla,
+/obj/machinery/guardsman_selector/clothes/valhalla,
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "pqO" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "prD" = (
 /obj/machinery/door/airlock/external{
 	name = "External Airlock"
@@ -10883,7 +10883,7 @@
 /turf/open/floor/tile/neutral/full,
 /area/centcom/valhalla)
 "pLH" = (
-/obj/machinery/vending/MarineMed/valhalla,
+/obj/machinery/vending/GuardsmanMed/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "pLZ" = (
@@ -11511,7 +11511,7 @@
 	corrupted = "fallen_hive"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "qLI" = (
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 8
@@ -11908,7 +11908,7 @@
 /turf/closed/wall/r_wall/unmeltable,
 /area/centcom/valhalla)
 "rhC" = (
-/obj/machinery/marine_selector/gear/smartgun/valhalla,
+/obj/machinery/guardsman_selector/gear/smartgun/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "rjI" = (
@@ -11917,9 +11917,9 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "rjK" = (
-/obj/effect/landmark/start/job/fallen/xenomorph,
+/obj/effect/landmark/start/job/fallen/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "rkT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -11936,7 +11936,7 @@
 /area/centcom/valhalla)
 "rnA" = (
 /obj/effect/turf_decal/sandedge/corner2,
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "shootingleftfar"
 	},
 /turf/open/floor/plating,
@@ -12074,7 +12074,7 @@
 /area/centcom/valhalla)
 "rxd" = (
 /obj/effect/turf_decal/sandedge/corner,
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "far2"
 	},
 /turf/open/floor/plating,
@@ -12346,10 +12346,10 @@
 /area/centcom/valhalla)
 "rXn" = (
 /obj/machinery/button/valhalla/vehicle_button{
-	link = "vehiclexenocave"
+	link = "vehicletyranidcave"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "rXw" = (
 /obj/machinery/door/airlock/mainship/maint/free_access{
 	dir = 1
@@ -12635,8 +12635,8 @@
 /obj/item/storage/toolbox/emergency,
 /obj/item/tool/crowbar/red,
 /obj/item/clothing/mask/gas,
-/obj/item/clothing/head/xenos,
-/obj/item/clothing/suit/xenos,
+/obj/item/clothing/head/tyranids,
+/obj/item/clothing/suit/tyranids,
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "sor" = (
@@ -12791,7 +12791,7 @@
 "sCM" = (
 /obj/effect/turf_decal/warning_stripes/thick,
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/marine/veteran/pmc/gunner,
+/obj/item/clothing/suit/storage/guardsman/veteran/pmc/gunner,
 /obj/item/storage/box/m94,
 /obj/item/clothing/glasses/hud/xenohud,
 /turf/open/floor/plating,
@@ -13360,10 +13360,10 @@
 /turf/open/floor/tile/red/redblue/full,
 /area/tdome/tdomeobserve)
 "tqo" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "trx" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/turf_decal/warning_stripes/box/empty,
@@ -13595,7 +13595,7 @@
 /turf/open/floor/engine,
 /area/centcom/valhalla)
 "tFi" = (
-/obj/machinery/door/airlock/mainship/marine/general/smart{
+/obj/machinery/door/airlock/mainship/guardsman/general/smart{
 	dir = 3
 	},
 /turf/open/floor/tile/dark/gray,
@@ -14009,7 +14009,7 @@
 /area/centcom/valhalla)
 "utb" = (
 /obj/machinery/optable,
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "surgeryright"
 	},
 /obj/item/tank/anesthetic,
@@ -14041,7 +14041,7 @@
 /turf/open/floor/plating,
 /area/space)
 "uut" = (
-/obj/machinery/marine_selector/gear/engi/valhalla,
+/obj/machinery/guardsman_selector/gear/engi/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "uuR" = (
@@ -14113,7 +14113,7 @@
 /area/centcom/valhalla)
 "uCr" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/sliceable/sandwiches/xenomeatbread,
+/obj/item/reagent_containers/food/snacks/sliceable/sandwiches/tyranidmeatbread,
 /obj/item/tool/kitchen/utensil/fork{
 	pixel_x = 14
 	},
@@ -14283,7 +14283,7 @@
 /obj/machinery/light_switch{
 	pixel_y = 24
 	},
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/tile/dark,
 /area/centcom/valhalla)
 "uSh" = (
@@ -14313,7 +14313,7 @@
 /turf/open/floor/tile/red/yellowfull,
 /area/tdome/tdomeadmin)
 "uUY" = (
-/obj/machinery/marine_selector/gear/leader/valhalla,
+/obj/machinery/guardsman_selector/gear/leader/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "uUZ" = (
@@ -14438,7 +14438,7 @@
 "veZ" = (
 /obj/item/explosive/grenade/flare/on,
 /obj/effect/turf_decal/sandedge,
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "shootingleftclose"
 	},
 /turf/open/floor/plating,
@@ -14514,7 +14514,7 @@
 /turf/open/floor/tile/cafe,
 /area/centcom/valhalla)
 "vjU" = (
-/obj/effect/landmark/valhalla/xeno_spawn_landmark{
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark{
 	where = "tanksouth"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -14932,9 +14932,9 @@
 /turf/open/floor/plating,
 /area/centcom/valhalla)
 "vNx" = (
-/obj/machinery/button/valhalla/marine_button{
-	link = "xenotanksouth";
-	name = "South xeno spawner"
+/obj/machinery/button/valhalla/guardsman_button{
+	link = "tyranidtanksouth";
+	name = "South tyranid spawner"
 	},
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
@@ -15194,8 +15194,8 @@
 /obj/item/reagent_containers/food/snacks/carpmeat,
 /obj/item/reagent_containers/food/snacks/carpmeat,
 /obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat/xeno,
-/obj/item/reagent_containers/food/snacks/meat/xeno,
+/obj/item/reagent_containers/food/snacks/meat/tyranid,
+/obj/item/reagent_containers/food/snacks/meat/tyranid,
 /turf/open/floor/freezer,
 /area/centcom/valhalla)
 "vYZ" = (
@@ -15499,7 +15499,7 @@
 	pixel_x = 24;
 	pixel_y = 24
 	},
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/item/radio/intercom{
 	dir = 8;
 	name = "Station Intercom"
@@ -15667,7 +15667,7 @@
 /turf/open/floor/tile/red/yellowfull,
 /area/tdome/tdomeadmin)
 "wHz" = (
-/obj/machinery/marine_selector/clothes/synth/valhalla,
+/obj/machinery/guardsman_selector/clothes/synth/valhalla,
 /turf/open/floor/plating/dmg3,
 /area/centcom/valhalla)
 "wIw" = (
@@ -15790,11 +15790,11 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "wPz" = (
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "right"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "wQi" = (
 /obj/structure/prop/mainship/propcarp,
 /turf/open/space/basic,
@@ -16255,11 +16255,11 @@
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "xte" = (
-/obj/effect/landmark/valhalla/marine_spawner_landmark{
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark{
 	where = "left"
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
-/area/centcom/valhalla/xenocave)
+/area/centcom/valhalla/tyranidcave)
 "xtx" = (
 /obj/machinery/hydroponics,
 /obj/effect/turf_decal/warning_stripes/thick{
@@ -16407,7 +16407,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/marine_selector/clothes/commander/valhalla,
+/obj/machinery/guardsman_selector/clothes/commander/valhalla,
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
 "xIx" = (
@@ -16635,8 +16635,8 @@
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 10
 	},
-/obj/machinery/button/valhalla/marine_spawner{
-	link = "marineshootingleftclose"
+/obj/machinery/button/valhalla/guardsman_spawner{
+	link = "guardsmanshootingleftclose"
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/centcom/valhalla)

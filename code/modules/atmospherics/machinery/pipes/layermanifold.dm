@@ -1,6 +1,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold
 	name = "layer adaptor"
-	icon = 'icons/obj/atmospherics/pipes/manifold.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/atmospherics/pipes/manifold.dmi'
 	icon_state = "manifoldlayer"
 	desc = "A special pipe to bridge pipe layers with."
 	dir = SOUTH

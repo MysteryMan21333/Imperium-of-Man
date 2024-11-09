@@ -1,6 +1,6 @@
 /obj/item/ore
 	name = "rock"
-	icon = 'icons/obj/mining.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/mining.dmi'
 	icon_state = "ore2"
 	var/oretag
 

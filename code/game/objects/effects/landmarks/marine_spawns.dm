@@ -82,7 +82,7 @@
 	icon_state = "Synth"
 	job = /datum/job/terragov/silicon/synthetic
 
-/obj/effect/landmark/start/job/squadmarine
+/obj/effect/landmark/start/job/squadguardsman
 	icon_state = "PFC"
 	job = /datum/job/terragov/squad/standard
 
@@ -115,44 +115,44 @@
 	job = /datum/job/survivor/rambo
 
 /obj/effect/landmark/start/job/fallen
-	job = /datum/job/fallen/marine
+	job = /datum/job/fallen/guardsman
 
-/obj/effect/landmark/start/job/fallen/xenomorph
-	job = /datum/job/fallen/xenomorph
+/obj/effect/landmark/start/job/fallen/tyranid
+	job = /datum/job/fallen/tyranid
 
-/obj/effect/landmark/start/job/xenomorph
-	icon_state = "xeno_spawn"
-	job = /datum/job/xenomorph
+/obj/effect/landmark/start/job/tyranid
+	icon_state = "tyranid_spawn"
+	job = /datum/job/tyranid
 
-//SOM
-/obj/effect/landmark/start/job/som/squadstandard
-	icon_state = "som_standard"
-	job = /datum/job/som/squad/standard
+//CHAOS
+/obj/effect/landmark/start/job/chaos/squadstandard
+	icon_state = "chaos_standard"
+	job = /datum/job/chaos/squad/standard
 
-/obj/effect/landmark/start/job/som/squadveteran
-	icon_state = "som_veteran"
-	job = /datum/job/som/squad/veteran
+/obj/effect/landmark/start/job/chaos/squadveteran
+	icon_state = "chaos_veteran"
+	job = /datum/job/chaos/squad/veteran
 
-/obj/effect/landmark/start/job/som/squadengineer
-	icon_state = "som_engineer"
-	job = /datum/job/som/squad/engineer
+/obj/effect/landmark/start/job/chaos/squadengineer
+	icon_state = "chaos_engineer"
+	job = /datum/job/chaos/squad/engineer
 
-/obj/effect/landmark/start/job/som/squadcorpsman
-	icon_state = "som_medic"
-	job = /datum/job/som/squad/medic
+/obj/effect/landmark/start/job/chaos/squadcorpsman
+	icon_state = "chaos_medic"
+	job = /datum/job/chaos/squad/medic
 
-/obj/effect/landmark/start/job/som/squadleader
-	icon_state = "som_squad_leader"
-	job = /datum/job/som/squad/leader
+/obj/effect/landmark/start/job/chaos/squadleader
+	icon_state = "chaos_squad_leader"
+	job = /datum/job/chaos/squad/leader
 
-/obj/effect/landmark/start/job/som/fieldcommander
-	icon_state = "som_field_commander"
-	job = /datum/job/som/command/fieldcommander
+/obj/effect/landmark/start/job/chaos/fieldcommander
+	icon_state = "chaos_field_commander"
+	job = /datum/job/chaos/command/fieldcommander
 
-/obj/effect/landmark/start/job/som/commander
-	icon_state = "som_commander"
-	job = /datum/job/som/command/commander
+/obj/effect/landmark/start/job/chaos/commander
+	icon_state = "chaos_commander"
+	job = /datum/job/chaos/command/commander
 
-/obj/effect/landmark/start/job/som/staff_officer
-	icon_state = "som_staff_officer"
-	job = /datum/job/som/command/staffofficer
+/obj/effect/landmark/start/job/chaos/staff_officer
+	icon_state = "chaos_staff_officer"
+	job = /datum/job/chaos/command/staffofficer

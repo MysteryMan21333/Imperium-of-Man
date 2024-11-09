@@ -1,6 +1,6 @@
 /datum/species/zombie
 	name = "Zombie"
-	icobase = 'icons/mob/human_races/r_husk.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_husk.dmi'
 	total_health = 125
 	species_flags = NO_BREATHE|NO_SCAN|NO_BLOOD|NO_POISON|NO_PAIN|NO_CHEM_METABOLIZATION|NO_STAMINA|HAS_UNDERWEAR|HEALTH_HUD_ALWAYS_DEAD|PARALYSE_RESISTANT
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
@@ -124,7 +124,7 @@
 	H.transform = matrix().Scale(1/(1.2), 1/(1.2))
 
 /datum/species/zombie/strong
-	name = "Strong zombie" //These are zombies created from marines, they are stronger, but of course rarer
+	name = "Strong zombie" //These are zombies created from guardsmans, they are stronger, but of course rarer
 	slowdown = -0.5
 	heal_rate = 20
 	total_health = 200

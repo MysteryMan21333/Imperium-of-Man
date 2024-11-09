@@ -6,7 +6,7 @@
 	///explosion smoke particle holder
 	var/obj/effect/abstract/particle_holder/explosion_smoke
 	///The faction this belongs to
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/structure/campaign_objective/destruction_objective/Destroy()
 	QDEL_NULL(explosion_smoke)
@@ -24,7 +24,7 @@
 //Howitzer
 /obj/effect/landmark/campaign_structure/howitzer_objective
 	name = "howitzer objective"
-	icon = 'icons/obj/machines/deployable/howitzer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer_deployed"
 	mission_types = list(/datum/campaign_mission/destroy_mission/fire_support_raid)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/howitzer
@@ -32,24 +32,24 @@
 /obj/structure/campaign_objective/destruction_objective/howitzer
 	name = "\improper TA-100Y howitzer"
 	desc = "A manual, crew-operated and towable howitzer, will rain down 150mm laserguided and accurate shells on any of your foes."
-	icon = 'icons/obj/machines/deployable/howitzer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer_deployed"
 	pixel_x = -16
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 
 //MLRS
 /obj/effect/landmark/campaign_structure/mlrs
 	name = "MLRS objective"
-	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "mlrs"
 	pixel_y = -15
-	mission_types = list(/datum/campaign_mission/destroy_mission/fire_support_raid/som)
+	mission_types = list(/datum/campaign_mission/destroy_mission/fire_support_raid/chaos)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/mlrs
 
 /obj/structure/campaign_objective/destruction_objective/mlrs
 	name = "\improper SOT-A1 MLRS"
 	desc = "A massive multi launch rocket system on a tracked chassis. Can unleash a tremendous amount of firepower in a short amount of time."
-	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "mlrs"
 	bound_height = 64
 	bound_width = 128
@@ -118,9 +118,9 @@
 /obj/effect/landmark/campaign_structure/tank
 	name = "tank objective"
 	icon_state = "tank"
-	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_big.dmi'
 	pixel_y = -15
-	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid/som)
+	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid/chaos)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/mlrs/tank
 
 /obj/structure/campaign_objective/destruction_objective/mlrs/tank
@@ -131,9 +131,9 @@
 /obj/effect/landmark/campaign_structure/apc
 	name = "apc objective"
 	icon_state = "apc"
-	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_big.dmi'
 	pixel_y = -15
-	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid/som)
+	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid/chaos)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/mlrs/apc
 
 /obj/structure/campaign_objective/destruction_objective/mlrs/apc
@@ -148,21 +148,21 @@
 //Supply depot objectives
 /obj/structure/campaign_objective/destruction_objective/supply_objective
 	name = "SUPPLY_OBJECTIVE"
-	icon = 'icons/obj/machines/deployable/howitzer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer_deployed"
 
 //Train
 /obj/effect/landmark/campaign_structure/train
 	name = "locomotive objective"
-	icon = 'icons/obj/structures/train.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/train.dmi'
 	icon_state = "maglev"
-	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid, /datum/campaign_mission/destroy_mission/supply_raid/som)
+	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid, /datum/campaign_mission/destroy_mission/supply_raid/chaos)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/supply_objective/train
 
 /obj/structure/campaign_objective/destruction_objective/supply_objective/train
 	name = "locomotive"
 	desc = "A heavy duty maglev locomotive. Designed for moving large quantities of goods from point A to point B."
-	icon = 'icons/obj/structures/train.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/train.dmi'
 	icon_state = "maglev"
 	allow_pass_flags = PASS_PROJECTILE|PASS_AIR
 	bound_width = 128
@@ -189,19 +189,19 @@
 //Phoron stack
 /obj/effect/landmark/campaign_structure/phoron_stack
 	name = "phoron crates"
-	icon = 'icons/obj/structures/campaign/campaign_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_64.dmi'
 	icon_state = "phoron_stack"
-	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid, /datum/campaign_mission/destroy_mission/supply_raid/som)
+	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid, /datum/campaign_mission/destroy_mission/supply_raid/chaos)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/supply_objective/phoron_stack
 
 /obj/structure/campaign_objective/destruction_objective/supply_objective/phoron_stack
 	name = "phoron crates"
 	desc = "A stack of crates filled to the brim with valuable phoron."
-	icon = 'icons/obj/structures/campaign/campaign_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_64.dmi'
 	icon_state = "phoron_stack"
 	bound_height = 32
 	bound_width = 64
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 
 /obj/structure/campaign_objective/destruction_objective/supply_objective/phoron_stack/Initialize(mapload)
 	. = ..()
@@ -215,7 +215,7 @@
 //NT base
 /obj/effect/landmark/campaign_structure/nt_pod
 	name = "Mysterious pod"
-	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "alien_pod_mapper"
 	mission_types = list(/datum/campaign_mission/destroy_mission/base_rescue)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/nt_pod
@@ -223,7 +223,7 @@
 /obj/structure/campaign_objective/destruction_objective/nt_pod
 	name = "Mysterious pod"
 	desc = "A large sealed pod, containing something huge and monstrous in its murky center."
-	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "alien_pod"
 	bound_height = 64
 	bound_width = 64
@@ -244,7 +244,7 @@
 //teleporter core
 /obj/effect/landmark/campaign_structure/bluespace_core
 	name = "Bluespace Core objective"
-	icon = 'icons/obj/machines/bluespacedrive.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/bluespacedrive.dmi'
 	icon_state = "bsd_core"
 	pixel_y = -18
 	pixel_x = -16
@@ -258,13 +258,13 @@
 /obj/structure/campaign_objective/destruction_objective/bluespace_core
 	name = "\improper Bluespace Teleportation Displacement Core"
 	desc = "An incredibly sophisticated piece of bluespace technology that is the engine behind any number of quantum entangled bluespace teleporter devices in the system."
-	icon = 'icons/obj/machines/bluespacedrive.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/bluespacedrive.dmi'
 	icon_state = "bsd_core"
 	bound_height = 64
 	bound_width = 64
 	pixel_y = -18
 	pixel_x = -16
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 	var/status = BLUESPACE_CORE_OK
 
 /obj/structure/campaign_objective/destruction_objective/bluespace_core/Initialize(mapload)
@@ -309,11 +309,11 @@
 		change_status(BLUESPACE_CORE_BROKEN)
 
 //airbase
-/obj/structure/prop/som_fighter
+/obj/structure/prop/chaos_fighter
 	name = "harbinger"
-	desc = "A state of the art Harbinger class fighter. The premier fighter for SOM forces in space and atmosphere, bristling with high tech systems and weapons."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
-	icon_state = "SOM_fighter"
+	desc = "A state of the art Harbinger class fighter. The premier fighter for CHAOS forces in space and atmosphere, bristling with high tech systems and weapons."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
+	icon_state = "CHAOS_fighter"
 	pixel_x = -33
 	pixel_y = -10
 	density = TRUE
@@ -321,8 +321,8 @@
 
 /obj/effect/landmark/campaign_structure/harbinger
 	name = "harbinger"
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
-	icon_state = "SOM_fighter"
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
+	icon_state = "CHAOS_fighter"
 	pixel_x = -33
 	pixel_y = -10
 	mission_types = list(/datum/campaign_mission/destroy_mission/airbase)
@@ -330,30 +330,30 @@
 
 /obj/structure/campaign_objective/destruction_objective/harbinger
 	name = "harbinger"
-	desc = "A state of the art harbinger class fighter. The premier fighter for SOM forces in space and atmosphere, bristling with high tech systems and weapons."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
-	icon_state = "SOM_fighter"
+	desc = "A state of the art harbinger class fighter. The premier fighter for CHAOS forces in space and atmosphere, bristling with high tech systems and weapons."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
+	icon_state = "CHAOS_fighter"
 	pixel_x = -33
 	pixel_y = -10
 	bound_height = 2
 	bound_width = 3
 	bound_x = -32
 	layer = ABOVE_MOB_LAYER
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 
 /obj/effect/landmark/campaign_structure/viper
 	name = "\improper Viper"
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "fighter_loaded"
 	pixel_x = -33
 	pixel_y = -10
-	mission_types = list(/datum/campaign_mission/destroy_mission/airbase/som)
+	mission_types = list(/datum/campaign_mission/destroy_mission/airbase/chaos)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/viper
 
 /obj/structure/campaign_objective/destruction_objective/viper
 	name = "\improper Viper"
-	desc = "A viper MK.III fightcraft. Effective in atmosphere and space, the viper has been a reliable and versatile workhorse in the TerraGov navy for decades."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	desc = "A viper MK.III fightcraft. Effective in atmosphere and space, the viper has been a reliable and versatile workhorse in the Imperium navy for decades."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "fighter_loaded"
 	pixel_x = -33
 	pixel_y = -10

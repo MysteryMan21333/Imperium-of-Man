@@ -1,7 +1,7 @@
 /obj/item/loot_box
 	name = "Blackmarket loot box"
 	desc = "A box of loot, what could be inside?"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "lootbox"
 	worn_icon_state = "lootbox"
 	///list of the lowest probability drops
@@ -40,7 +40,7 @@
 		rolls --
 	qdel(src)
 
-/obj/item/loot_box/marine
+/obj/item/loot_box/guardsman
 	legendary_list = list(
 		/obj/item/weapon/karambit,
 		/obj/item/weapon/karambit/fade,
@@ -67,8 +67,8 @@
 		/obj/vehicle/ridden/motorbike,
 		/obj/item/weapon/gun/launcher/rocket/oneuse,
 		/obj/item/weapon/gun/rifle/m412l1_hpr,
-		/obj/item/weapon/gun/shotgun/som,
-		/obj/item/loot_box/marine, //reroll time
+		/obj/item/weapon/gun/shotgun/chaos,
+		/obj/item/loot_box/guardsman, //reroll time
 	)
 	common_list = list(
 		/obj/item/clothing/head/strawhat,
@@ -84,7 +84,7 @@
 /obj/item/loot_box/supply_drop
 	name = "supply drop"
 	desc = "A TGMC-marked box full of valuable military tactical equipment."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	w_class = WEIGHT_CLASS_GIGANTIC
 	slowdown = 1 //You won't be running off with this
 	rolls = 4
@@ -97,7 +97,7 @@
 		/obj/effect/supply_drop/zx_shotgun,
 	)
 	uncommon_list = list(
-		/obj/effect/supply_drop/marine_sentry,
+		/obj/effect/supply_drop/guardsman_sentry,
 		/obj/effect/supply_drop/recoilless_rifle,
 		/obj/effect/supply_drop/scout,
 		/obj/effect/supply_drop/oicw,
@@ -118,60 +118,60 @@
 		/obj/effect/supply_drop/standard_shotgun,
 	)
 
-/obj/item/loot_box/supply_drop/som
+/obj/item/loot_box/supply_drop/chaos
 	name = "supply drop"
-	desc = "A rugged box composed of valuable SOM military materiel."
-	icon = 'icons/obj/items/items.dmi'
+	desc = "A rugged box composed of valuable CHAOS military materiel."
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	w_class = WEIGHT_CLASS_GIGANTIC
 	rolls = 4
 
 	rare_list = list(
 		/obj/effect/supply_drop/culverin,
 		/obj/effect/supply_drop/caliver,
-		/obj/effect/supply_drop/som_shotgun_burst,
+		/obj/effect/supply_drop/chaos_shotgun_burst,
 		/obj/effect/supply_drop/blink_kit,
 	)
 	uncommon_list = list(
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/cope,
-		/obj/effect/supply_drop/som_rifle_ap,
-		/obj/effect/supply_drop/som_smg_ap,
-		/obj/effect/supply_drop/som_rpg,
-		/obj/effect/supply_drop/som_flamer,
-		/obj/item/storage/belt/lifesaver/som/quick,
+		/obj/effect/supply_drop/chaos_rifle_ap,
+		/obj/effect/supply_drop/chaos_smg_ap,
+		/obj/effect/supply_drop/chaos_rpg,
+		/obj/effect/supply_drop/chaos_flamer,
+		/obj/item/storage/belt/lifesaver/chaos/quick,
 		/obj/item/storage/belt/rig/medical,
 		/obj/effect/supply_drop/charger,
 	)
 	common_list = list(
-		/obj/effect/supply_drop/som_armor_upgrades,
+		/obj/effect/supply_drop/chaos_armor_upgrades,
 		/obj/effect/supply_drop/medical_basic,
-		/obj/item/storage/pouch/firstaid/som/combat_patrol,
-		/obj/item/storage/pouch/medical_injectors/som/firstaid,
-		/obj/item/storage/pouch/medical_injectors/som/medic,
-		/obj/effect/supply_drop/som_rifle,
-		/obj/effect/supply_drop/som_smg,
-		/obj/effect/supply_drop/som_shotgun,
-		/obj/effect/supply_drop/som_mg,
+		/obj/item/storage/pouch/firstaid/chaos/combat_patrol,
+		/obj/item/storage/pouch/medical_injectors/chaos/firstaid,
+		/obj/item/storage/pouch/medical_injectors/chaos/medic,
+		/obj/effect/supply_drop/chaos_rifle,
+		/obj/effect/supply_drop/chaos_smg,
+		/obj/effect/supply_drop/chaos_shotgun,
+		/obj/effect/supply_drop/chaos_mg,
 	)
 
 //Alien supply drop, how'd they get a bluespace teleporter?
-/obj/effect/supply_drop/xenomorph/Initialize(mapload)
+/obj/effect/supply_drop/tyranid/Initialize(mapload)
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(spawn_larva)), 1)
 
-/obj/effect/supply_drop/xenomorph/proc/spawn_larva()
+/obj/effect/supply_drop/tyranid/proc/spawn_larva()
 	var/mob/picked = get_alien_candidate()
-	var/mob/living/carbon/xenomorph/larva/new_xeno
+	var/mob/living/carbon/tyranid/larva/new_tyranid
 
-	new_xeno = new(loc)
+	new_tyranid = new(loc)
 
-	new_xeno.hivenumber = XENO_HIVE_NORMAL
-	new_xeno.update_icons()
+	new_tyranid.hivenumber = TYRANID_HIVE_NORMAL
+	new_tyranid.update_icons()
 
 	//If we have a candidate, transfer it over.
 	if(picked)
-		picked.mind.transfer_to(new_xeno, TRUE)
-		to_chat(new_xeno, span_xenoannounce("The Queen Mother has hurled us through Bluespace, we live for the hive!"))
-		new_xeno << sound('sound/effects/alien/new_larva.ogg')
+		picked.mind.transfer_to(new_tyranid, TRUE)
+		to_chat(new_tyranid, span_tyranidannounce("The Queen Mother has hurled us through Bluespace, we live for the hive!"))
+		new_tyranid << sound('sound/effects/alien/new_larva.ogg')
 	return INITIALIZE_HINT_QDEL
 
 //The actual drop sets
@@ -183,17 +183,17 @@
 
 /obj/effect/supply_drop/heavy_armor/Initialize(mapload)
 	. = ..()
-	new /obj/item/clothing/head/helmet/marine/specialist(loc)
-	new /obj/item/clothing/gloves/marine/specialist(loc)
-	new /obj/item/clothing/suit/storage/marine/specialist(loc)
+	new /obj/item/clothing/head/helmet/guardsman/specialist(loc)
+	new /obj/item/clothing/gloves/guardsman/specialist(loc)
+	new /obj/item/clothing/suit/storage/guardsman/specialist(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/grenadier/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/grenade_launcher/multinade_launcher(loc)
 	new /obj/item/storage/belt/grenade/b17(loc)
-	new /obj/item/clothing/head/helmet/marine/grenadier(loc)
-	new /obj/item/clothing/suit/storage/marine/B17(loc)
+	new /obj/item/clothing/head/helmet/guardsman/grenadier(loc)
+	new /obj/item/clothing/suit/storage/guardsman/B17(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/minigun/Initialize(mapload)
@@ -208,7 +208,7 @@
 	new /obj/item/storage/belt/shotgun/flechette(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/marine_sentry/Initialize(mapload)
+/obj/effect/supply_drop/guardsman_sentry/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/sentry/mini/combat_patrol(loc)
 	new /obj/item/weapon/gun/sentry/mini/combat_patrol(loc)
@@ -224,20 +224,20 @@
 /obj/effect/supply_drop/oicw/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/rifle/tx55/combat_patrol(loc)
-	new /obj/item/storage/belt/marine/oicw(loc)
+	new /obj/item/storage/belt/guardsman/oicw(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/scout/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/rifle/tx8/scout(loc)
-	new /obj/item/storage/belt/marine/tx8(loc)
+	new /obj/item/storage/belt/guardsman/tx8(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/armor_upgrades/Initialize(mapload)
 	. = ..()
 	new /obj/item/clothing/suit/modular/xenonauten/heavy/tyr_two(loc)
 	new /obj/item/clothing/head/modular/m10x/tyr(loc)
-	new /obj/item/weapon/shield/riot/marine(loc)
+	new /obj/item/weapon/shield/riot/guardsman(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/mmg/Initialize(mapload)
@@ -253,7 +253,7 @@
 /obj/effect/supply_drop/standard_carbine/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/rifle/standard_carbine/scout(loc)
-	new /obj/item/storage/belt/marine/t18(loc)
+	new /obj/item/storage/belt/guardsman/t18(loc)
 	new /obj/item/explosive/grenade(loc)
 	new /obj/item/explosive/grenade(loc)
 	return INITIALIZE_HINT_QDEL
@@ -261,7 +261,7 @@
 /obj/effect/supply_drop/standard_rifle/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/rifle/standard_assaultrifle/rifleman(loc)
-	new /obj/item/storage/belt/marine/t12(loc)
+	new /obj/item/storage/belt/guardsman/t12(loc)
 	new /obj/item/explosive/grenade(loc)
 	new /obj/item/explosive/grenade(loc)
 	return INITIALIZE_HINT_QDEL
@@ -269,13 +269,13 @@
 /obj/effect/supply_drop/combat_rifle/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/rifle/tx11/standard(loc)
-	new /obj/item/storage/belt/marine/combat_rifle(loc)
+	new /obj/item/storage/belt/guardsman/combat_rifle(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/laser_rifle/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman(loc)
-	new /obj/item/storage/belt/marine/te_cells(loc)
+	new /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/rifleman(loc)
+	new /obj/item/storage/belt/guardsman/te_cells(loc)
 	new /obj/item/ammo_magazine/flamer_tank/mini(loc)
 	return INITIALIZE_HINT_QDEL
 
@@ -285,35 +285,35 @@
 	new /obj/item/storage/belt/shotgun/mixed(loc)
 	return INITIALIZE_HINT_QDEL
 
-//SOM drops
+//CHAOS drops
 /obj/effect/supply_drop/gorgon_armor/Initialize(mapload)
 	. = ..()
-	new /obj/item/clothing/head/modular/som/leader(loc)
-	new /obj/item/clothing/suit/modular/som/heavy/leader/valk(loc)
+	new /obj/item/clothing/head/modular/chaos/leader(loc)
+	new /obj/item/clothing/suit/modular/chaos/heavy/leader/valk(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_mg/Initialize(mapload)
+/obj/effect/supply_drop/chaos_mg/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/rifle/som_mg/standard(loc)
-	new /obj/item/ammo_magazine/som_mg(loc)
-	new /obj/item/ammo_magazine/som_mg(loc)
-	new /obj/item/ammo_magazine/som_mg(loc)
+	new /obj/item/weapon/gun/rifle/chaos_mg/standard(loc)
+	new /obj/item/ammo_magazine/chaos_mg(loc)
+	new /obj/item/ammo_magazine/chaos_mg(loc)
+	new /obj/item/ammo_magazine/chaos_mg(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_rifle/Initialize(mapload)
+/obj/effect/supply_drop/chaos_rifle/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/rifle/som/standard(loc)
-	new /obj/item/storage/belt/marine/som/som_rifle(loc)
+	new /obj/item/weapon/gun/rifle/chaos/standard(loc)
+	new /obj/item/storage/belt/guardsman/chaos/chaos_rifle(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade/dragonbreath(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade/cluster(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_rifle_ap/Initialize(mapload)
+/obj/effect/supply_drop/chaos_rifle_ap/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/rifle/som/veteran(loc)
-	new /obj/item/storage/belt/marine/som/som_rifle_ap(loc)
+	new /obj/item/weapon/gun/rifle/chaos/veteran(loc)
+	new /obj/item/storage/belt/guardsman/chaos/chaos_rifle_ap(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade(loc)
 	new /obj/item/ammo_magazine/handful/micro_grenade/dragonbreath(loc)
@@ -323,73 +323,73 @@
 /obj/effect/supply_drop/mpi/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/rifle/mpi_km/black/grenadier(loc)
-	new /obj/item/storage/belt/marine/som/mpi_black(loc)
-	new /obj/item/explosive/grenade/som(loc)
-	new /obj/item/explosive/grenade/som(loc)
+	new /obj/item/storage/belt/guardsman/chaos/mpi_black(loc)
+	new /obj/item/explosive/grenade/chaos(loc)
+	new /obj/item/explosive/grenade/chaos(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_carbine/Initialize(mapload)
+/obj/effect/supply_drop/chaos_carbine/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/rifle/som_carbine/black/standard(loc)
-	new /obj/item/storage/belt/marine/som/carbine(loc)
+	new /obj/item/weapon/gun/rifle/chaos_carbine/black/standard(loc)
+	new /obj/item/storage/belt/guardsman/chaos/carbine(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_smg/Initialize(mapload)
+/obj/effect/supply_drop/chaos_smg/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/smg/som/scout(loc)
-	new /obj/item/storage/belt/marine/som/som_smg(loc)
+	new /obj/item/weapon/gun/smg/chaos/scout(loc)
+	new /obj/item/storage/belt/guardsman/chaos/chaos_smg(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_smg_ap/Initialize(mapload)
+/obj/effect/supply_drop/chaos_smg_ap/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/smg/som/veteran(loc)
-	new /obj/item/storage/belt/marine/som/som_smg_ap(loc)
+	new /obj/item/weapon/gun/smg/chaos/veteran(loc)
+	new /obj/item/storage/belt/guardsman/chaos/chaos_smg_ap(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_shotgun/Initialize(mapload)
+/obj/effect/supply_drop/chaos_shotgun/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/shotgun/som/pointman(loc)
-	new /obj/item/storage/belt/shotgun/som/mixed(loc)
+	new /obj/item/weapon/gun/shotgun/chaos/pointman(loc)
+	new /obj/item/storage/belt/shotgun/chaos/mixed(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_shotgun_burst/Initialize(mapload)
+/obj/effect/supply_drop/chaos_shotgun_burst/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/shotgun/som/burst/pointman(loc)
-	new /obj/item/storage/belt/shotgun/som/flechette(loc)
+	new /obj/item/weapon/gun/shotgun/chaos/burst/pointman(loc)
+	new /obj/item/storage/belt/shotgun/chaos/flechette(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_rpg/Initialize(mapload)
+/obj/effect/supply_drop/chaos_rpg/Initialize(mapload)
 	. = ..()
-	new /obj/item/storage/holster/backholster/rpg/som/war_crimes(loc)
-	new /obj/item/clothing/head/modular/som/bio(loc)
-	new /obj/item/clothing/suit/modular/som/heavy/mithridatius(loc)
+	new /obj/item/storage/holster/backholster/rpg/chaos/war_crimes(loc)
+	new /obj/item/clothing/head/modular/chaos/bio(loc)
+	new /obj/item/clothing/suit/modular/chaos/heavy/mithridatius(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_flamer/Initialize(mapload)
+/obj/effect/supply_drop/chaos_flamer/Initialize(mapload)
 	. = ..()
-	new /obj/item/weapon/gun/flamer/som/mag_harness(loc)
+	new /obj/item/weapon/gun/flamer/chaos/mag_harness(loc)
 	new /obj/item/ammo_magazine/flamer_tank/backtank(loc)
-	new /obj/item/clothing/suit/modular/som/heavy/pyro(loc)
+	new /obj/item/clothing/suit/modular/chaos/heavy/pyro(loc)
 	new /obj/item/tool/extinguisher(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/supply_drop/som_armor_upgrades/Initialize(mapload)
+/obj/effect/supply_drop/chaos_armor_upgrades/Initialize(mapload)
 	. = ..()
-	new /obj/item/clothing/head/modular/som/lorica(loc)
-	new /obj/item/clothing/suit/modular/som/heavy/lorica(loc)
-	new /obj/item/weapon/shield/riot/marine/som(loc)
+	new /obj/item/clothing/head/modular/chaos/lorica(loc)
+	new /obj/item/clothing/suit/modular/chaos/heavy/lorica(loc)
+	new /obj/item/weapon/shield/riot/guardsman/chaos(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/charger/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/charger/scout(loc)
-	new /obj/item/storage/belt/marine/som/volkite(loc)
+	new /obj/item/storage/belt/guardsman/chaos/volkite(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/caliver/Initialize(mapload)
 	. = ..()
 	new /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/caliver/standard(loc)
-	new /obj/item/storage/belt/marine/som/volkite(loc)
+	new /obj/item/storage/belt/guardsman/chaos/volkite(loc)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/supply_drop/culverin/Initialize(mapload)
@@ -401,14 +401,14 @@
 /obj/effect/supply_drop/blink_kit/Initialize(mapload)
 	. = ..()
 	new /obj/item/blink_drive(loc)
-	new /obj/item/weapon/energy/sword/som(loc)
+	new /obj/item/weapon/energy/sword/chaos(loc)
 	return INITIALIZE_HINT_QDEL
 
 // 150 to 200 points of value packs, spend 100 points get 150 to 200 in value, basically. Ideally, commons are variety packs, uncommons maybe shake up the round a bit, rares a bit more. Legendaries make the round go wacko. You get a crate of stuff dropped on spawn.
 /obj/item/loot_box/tgmclootbox
 	name = "TGMC pack box"
 	desc = "A box of gear sent over by the TGMC on request, nobody knows what's in it. You just know it'll probably be good."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "lootbox"
 	worn_icon_state = "lootbox"
 
@@ -460,7 +460,7 @@
 /obj/structure/closet/crate/loot
 	name = "\improper generic equipment"
 	desc = "A large crate containing some kind of equipment."
-	icon = 'icons/obj/structures/crates.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/crates.dmi'
 	icon_state = "closed_basic"
 	icon_opened = "open_basic"
 	icon_closed = "closed_basic"
@@ -671,9 +671,9 @@
 
 /obj/item/storage/box/crate/loot/b18classic_pack/PopulateContents()
 	. = ..()
-	new /obj/item/clothing/suit/storage/marine/specialist(src)
-	new /obj/item/clothing/head/helmet/marine/specialist(src)
-	new /obj/item/clothing/gloves/marine/specialist(src)
+	new /obj/item/clothing/suit/storage/guardsman/specialist(src)
+	new /obj/item/clothing/head/helmet/guardsman/specialist(src)
+	new /obj/item/clothing/gloves/guardsman/specialist(src)
 	new /obj/item/weapon/gun/minigun(src)
 	new /obj/item/ammo_magazine/minigun_powerpack(src)
 	new /obj/item/ammo_magazine/minigun_powerpack(src)
@@ -693,5 +693,5 @@
 /obj/item/storage/box/crate/loot/sadarclassic_pack/PopulateContents()
 	. = ..()
 	new /obj/item/weapon/gun/launcher/rocket/sadar(src)
-	new /obj/item/storage/backpack/marine/satchel/scout_cloak(src)
+	new /obj/item/storage/backpack/guardsman/satchel/scout_cloak(src)
 	new /obj/item/ammo_magazine/rocket/sadar/ap(src)

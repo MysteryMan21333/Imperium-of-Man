@@ -1,8 +1,8 @@
 /datum/species/robot
 	name = "Combat Robot"
 	species_type = SPECIES_COMBAT_ROBOT
-	icobase = 'icons/mob/human_races/r_robot.dmi'
-	damage_mask_icon = 'icons/mob/dam_mask_robot.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_robot.dmi'
+	damage_mask_icon = 'modular_imperium/master_files/icons/mob/dam_mask_robot.dmi'
 	brute_damage_icon_state = "robot_brute"
 	burn_damage_icon_state = "robot_burn"
 	eyes = "blank_eyes"
@@ -101,20 +101,20 @@
 
 /datum/species/robot/alpharii
 	name = "Hammerhead Combat Robot"
-	icobase = 'icons/mob/human_races/r_robot_alpharii.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_robot_alpharii.dmi'
 	joinable_roundstart = FALSE
 
 /datum/species/robot/charlit
 	name = "Chilvaris Combat Robot"
-	icobase = 'icons/mob/human_races/r_robot_charlit.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_robot_charlit.dmi'
 	joinable_roundstart = FALSE
 
 /datum/species/robot/deltad
 	name = "Ratcher Combat Robot"
-	icobase = 'icons/mob/human_races/r_robot_deltad.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_robot_deltad.dmi'
 	joinable_roundstart = FALSE
 
 /datum/species/robot/bravada
 	name = "Sterling Combat Robot"
-	icobase = 'icons/mob/human_races/r_robot_bravada.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_robot_bravada.dmi'
 	joinable_roundstart = FALSE

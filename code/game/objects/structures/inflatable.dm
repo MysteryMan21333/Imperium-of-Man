@@ -1,7 +1,7 @@
 /obj/item/inflatable
 	name = "generic inflatable"
 	desc = "You shouldn't be seeing this."
-	icon = 'icons/obj/inflatable.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/inflatable.dmi'
 	hit_sound = 'sound/effects/Glasshit_old.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	///The type of structure we make upon inflation
@@ -39,9 +39,9 @@
 	desc = "You shouldn't be seeing this."
 	density = TRUE
 	allow_pass_flags = NONE
-	icon = 'icons/obj/inflatable.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/inflatable.dmi'
 	max_integrity = 50
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 	///Are we deflated?
 	var/deflated = FALSE

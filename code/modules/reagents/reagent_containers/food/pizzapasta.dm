@@ -1,14 +1,14 @@
 /////////////////////////////////////////////////PIZZA////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/pizzapasta
-	icon = 'icons/obj/items/food/pizzaspaghetti.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/pizzaspaghetti.dmi'
 	slices_num = 6
 	bitesize = 1
 	filling_color = "#BAA14C"
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizzapasta
-	icon = 'icons/obj/items/food/pizzaspaghetti.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/pizzaspaghetti.dmi'
 	bitesize = 1
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
 
@@ -162,7 +162,7 @@
 /obj/item/pizzabox
 	name = "pizza box"
 	desc = "A box suited for pizzas."
-	icon = 'icons/obj/items/food/pizzaspaghetti.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/pizzaspaghetti.dmi'
 	icon_state = "pizzabox1"
 
 	var/open = 0 // Is the box open?
@@ -361,7 +361,7 @@
 
 ///spaghetti prototype used by all subtypes
 /obj/item/reagent_containers/food/snacks/pizzapasta
-	icon = 'icons/obj/items/food/pizzaspaghetti.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/pizzaspaghetti.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 
 /obj/item/reagent_containers/food/snacks/pizzapasta/raw
@@ -373,7 +373,7 @@
 /obj/item/reagent_containers/food/snacks/pizzapasta/boiledspaghetti
 	name = "boiled spaghetti"
 	desc = "A plain dish of noodles, this needs more ingredients."
-	icon = 'icons/obj/items/food/pizzaspaghetti.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/pizzaspaghetti.dmi'
 	icon_state = "spagettiboiled"
 	trash = /obj/item/trash/plate
 	filling_color = "#FCEE81"

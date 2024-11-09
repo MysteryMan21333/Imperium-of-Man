@@ -1,8 +1,8 @@
-/mob/living/carbon/xenomorph/queen
-	caste_base_type = /datum/xeno_caste/queen
+/mob/living/carbon/tyranid/queen
+	caste_base_type = /datum/tyranid_caste/queen
 	name = "Queen"
 	desc = "A huge, looming alien creature. The biggest and the baddest."
-	icon = 'icons/Xeno/castes/queen.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/queen.dmi'
 	icon_state = "Queen Walking"
 	attacktext = "bites"
 	attack_sound = null
@@ -12,42 +12,42 @@
 	plasma_stored = 300
 	pixel_x = -16
 	mob_size = MOB_SIZE_BIG
-	drag_delay = 6 //pulling a big dead xeno is hard
-	tier = XENO_TIER_FOUR //Queen doesn't count towards population limit.
-	upgrade = XENO_UPGRADE_NORMAL
+	drag_delay = 6 //pulling a big dead tyranid is hard
+	tier = TYRANID_TIER_FOUR //Queen doesn't count towards population limit.
+	upgrade = TYRANID_UPGRADE_NORMAL
 	bubble_icon = "alienroyal"
 
 	var/breathing_counter = 0
 	inherent_verbs = list(
-		/mob/living/carbon/xenomorph/proc/hijack,
+		/mob/living/carbon/tyranid/proc/hijack,
 	)
 
 // ***************************************
 // *********** Init
 // ***************************************
-/mob/living/carbon/xenomorph/queen/Initialize(mapload)
+/mob/living/carbon/tyranid/queen/Initialize(mapload)
 	RegisterSignal(src, COMSIG_HIVE_BECOME_RULER, PROC_REF(on_becoming_ruler))
 	. = ..()
-	hive.RegisterSignal(src, COMSIG_HIVE_XENO_DEATH, TYPE_PROC_REF(/datum/hive_status, on_queen_death))
+	hive.RegisterSignal(src, COMSIG_HIVE_TYRANID_DEATH, TYPE_PROC_REF(/datum/hive_status, on_queen_death))
 	playsound(loc, 'sound/voice/alien/queen_command.ogg', 75, 0)
 
 // ***************************************
 // *********** Mob overrides
 // ***************************************
 
-/mob/living/carbon/xenomorph/queen/handle_special_state()
+/mob/living/carbon/tyranid/queen/handle_special_state()
 	if(is_charging >= CHARGE_ON)
-		icon_state = "[xeno_caste.caste_name][(xeno_flags & XENO_ROUNY) ? " rouny" : ""] Charging"
+		icon_state = "[tyranid_caste.caste_name][(tyranid_flags & TYRANID_ROUNY) ? " rouny" : ""] Charging"
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/xenomorph/reset_perspective(atom/A)
+/mob/living/carbon/tyranid/reset_perspective(atom/A)
 	if (!client)
 		return
 
-	if(observed_xeno && !stat)
+	if(observed_tyranid && !stat)
 		client.perspective = EYE_PERSPECTIVE
-		client.eye = observed_xeno
+		client.eye = observed_tyranid
 		return
 
 	if (ismovableatom(A))
@@ -63,17 +63,17 @@
 	client.perspective = EYE_PERSPECTIVE
 	client.eye = loc
 
-/mob/living/carbon/xenomorph/queen/upgrade_xeno(newlevel, silent = FALSE)
+/mob/living/carbon/tyranid/queen/upgrade_tyranid(newlevel, silent = FALSE)
 	. = ..()
 	hive?.update_leader_pheromones()
 
 // ***************************************
 // *********** Name
 // ***************************************
-/mob/living/carbon/xenomorph/queen/generate_name()
-	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
-	var/prefix = (hive.prefix || xeno_caste.upgrade_name) ? "[hive.prefix][xeno_caste.upgrade_name] " : ""
-	if(!client?.prefs.show_xeno_rank || !client)
+/mob/living/carbon/tyranid/queen/generate_name()
+	var/playtime_mins = client?.get_exp(tyranid_caste.caste_name)
+	var/prefix = (hive.prefix || tyranid_caste.upgrade_name) ? "[hive.prefix][tyranid_caste.upgrade_name] " : ""
+	if(!client?.prefs.show_tyranid_rank || !client)
 		name = prefix + "Queen ([nicknumber])"
 		real_name = name
 		if(mind)
@@ -101,10 +101,10 @@
 // ***************************************
 // *********** Death
 // ***************************************
-/mob/living/carbon/xenomorph/queen/death_cry()
+/mob/living/carbon/tyranid/queen/death_cry()
 	playsound(loc, 'sound/voice/alien/queen_died.ogg', 75, 0)
 
-/mob/living/carbon/xenomorph/queen/xeno_death_alert()
+/mob/living/carbon/tyranid/queen/tyranid_death_alert()
 	return
 
 
@@ -112,6 +112,6 @@
 // *********** Larva Mother
 // ***************************************
 
-/mob/living/carbon/xenomorph/queen/proc/is_burrowed_larva_host(datum/source, list/mothers, list/silos)
+/mob/living/carbon/tyranid/queen/proc/is_burrowed_larva_host(datum/source, list/mothers, list/silos)
 	if(!incapacitated(TRUE))
 		mothers += src //Adding us to the list.

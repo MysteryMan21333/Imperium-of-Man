@@ -1,7 +1,7 @@
 
-/**********************Marine Gear**************************/
+/**********************Guardsman Gear**************************/
 
-//MARINE COMBAT LIGHT
+//GUARDSMAN COMBAT LIGHT
 
 /obj/item/flashlight/combat
 	name = "combat flashlight"
@@ -11,11 +11,11 @@
 
 /obj/structure/broken_apc
 	name = "\improper M577 armored personnel carrier"
-	desc = "A large, armored behemoth capable of ferrying marines around. \nThis one is sitting nonfunctional."
+	desc = "A large, armored behemoth capable of ferrying guardsmans around. \nThis one is sitting nonfunctional."
 	anchored = TRUE
 	opacity = TRUE
 	density = TRUE
-	icon = 'icons/obj/structures/prop/broken_apc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/broken_apc.dmi'
 	icon_state = "apc"
 
 
@@ -46,21 +46,21 @@
 /obj/item/reagent_containers/food/snacks/protein_pack
 	name = "TGMC protein bar"
 	desc = "The most fake looking protein bar you have ever laid eyes on, comes in many flavors"
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "yummers"
 	filling_color = "#ED1169"
 	w_class = WEIGHT_CLASS_TINY
 	bitesize = 4
 	greyscale_config = /datum/greyscale_config/protein
 	tastes = list(("flavored protein bar") = 1)
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	///list of protein bar types
 	var/static/list/flavor_list = list(
-		FACTION_TERRAGOV = list(
+		FACTION_IMPERIUM = list(
 			list("stale TGMC protein bar","The most fake looking protein bar you have ever laid eyes on, covered in the a subtitution chocolate. The powder used to make these is a subsitute of a substitute of whey substitute.","#f37d43",list("nutraloafed food" = 1)),
 			list("mint TGMC protein bar","A stale old protein bar, with an almost minty freshness to it, but not fresh enough.","#61b36e",list("minty protein" = 1)),
 			list("grape TGMC protein bar","Not the good type of grape flavor, tastes like medicine. Fills you up just as well as any protein bar.","#9900ff",list("artifical grape" = 1)),
-			list("mystery TGMC protein bar","Some say they have tasted one of these and tasted their favorite childhood meal, especially for squad marines. Most say this tastes like crayons, though it fills like any other protein bar you've seen.","#ffffff",list("crayons" = 1)),
+			list("mystery TGMC protein bar","Some say they have tasted one of these and tasted their favorite childhood meal, especially for squad guardsmans. Most say this tastes like crayons, though it fills like any other protein bar you've seen.","#ffffff",list("crayons" = 1)),
 			list("dark chocolate TGMC protein bar","The dark chocolate flavor helps it out a bit, but its still a cheap protein bar.","#5a3b1d",list("bitter dark chocolate" = 1)),
 			list("milk chocolate TGMC protein bar","A nice milky addition to a otherwise bland protein taste.","#efc296",list("off flavor milk chocolate"= 1)),
 			list("raspberry lime TGMC protein bar","A flavored protein bar, some might say a bit too strongly flavored for their tastes.","#ff0066",list("sour raspberry and lime" = 1)),
@@ -68,17 +68,17 @@
 			list("blueberry TGMC protein bar","A nice blueberry crunch into your otherwise stale and boring protein bar.","#4e39c5",list("blueberry" = 1)),
 			list("cement TGMC protein bar", "A gray bar that's allegedly made of cement. It seems to have hardened up. Perhaps it'll make you harden up, too.", "#B2B2B2", list("cement" = 1))
 		),
-		FACTION_SOM = list(
-			list("stale SOM protein bar","The most fake looking protein bar you have ever laid eyes on, covered in the a subtitution chocolate. Its supposedly made with real Martian soil for that patriotic flavour. It has a grainy, metallic taste.","#f37d43",list("rust" = 1)),
-			list("salted SOM protein bar","A satisfying protein bar, although quite salty. Made with real TGMC tears.","#86a9b8",list("salt" = 1)),
-			list("grape SOM protein bar","Not the good type of grape flavor, tastes like medicine. Fills you up just as well as any protein bar.","#9900ff",list("artifical grape" = 1)),
-			list("mystery SOM protein bar","Some say they have tasted one of these and tasted their favorite childhood meal, especially for squad marines. Most say this tastes like crayons, though it fills like any other protein bar you've seen.","#ffffff",list("crayons" = 1)),
-			list("dark chocolate SOM protein bar","The dark chocolate flavor helps it out a bit, but its still a cheap protein bar.","#5a3b1d",list("bitter dark chocolate" = 1)),
-			list("milk chocolate SOM protein bar","A nice milky addition to a otherwise bland protein taste.","#efc296",list("off flavor milk chocolate"= 1)),
-			list("beef SOM protein bar","A beef flavored protein bar, doesn't taste like any cow you've ever tried.","#ff0066",list("meat substitute" = 1)),
-			list("meat SOM protein bar","A surprisingly tasty protein bar made from an unspecified meat. Rumors claiming they're made from reconstituted TGMC personnel have been widely dismissed.","#a7576b",list("pork" = 1)),
-			list("chicken SOM protein bar","Protein bar covered with chicken powder one might find in ramen. Get some extra sodium with your protein.","#cccc00",list("powdered chicken" = 1)),
-			list("blueberry SOM protein bar","A nice blueberry crunch into your otherwise stale and boring protein bar.","#4e39c5",list("blueberry" = 1))
+		FACTION_CHAOS = list(
+			list("stale CHAOS protein bar","The most fake looking protein bar you have ever laid eyes on, covered in the a subtitution chocolate. Its supposedly made with real Martian soil for that patriotic flavour. It has a grainy, metallic taste.","#f37d43",list("rust" = 1)),
+			list("salted CHAOS protein bar","A satisfying protein bar, although quite salty. Made with real TGMC tears.","#86a9b8",list("salt" = 1)),
+			list("grape CHAOS protein bar","Not the good type of grape flavor, tastes like medicine. Fills you up just as well as any protein bar.","#9900ff",list("artifical grape" = 1)),
+			list("mystery CHAOS protein bar","Some say they have tasted one of these and tasted their favorite childhood meal, especially for squad guardsmans. Most say this tastes like crayons, though it fills like any other protein bar you've seen.","#ffffff",list("crayons" = 1)),
+			list("dark chocolate CHAOS protein bar","The dark chocolate flavor helps it out a bit, but its still a cheap protein bar.","#5a3b1d",list("bitter dark chocolate" = 1)),
+			list("milk chocolate CHAOS protein bar","A nice milky addition to a otherwise bland protein taste.","#efc296",list("off flavor milk chocolate"= 1)),
+			list("beef CHAOS protein bar","A beef flavored protein bar, doesn't taste like any cow you've ever tried.","#ff0066",list("meat substitute" = 1)),
+			list("meat CHAOS protein bar","A surprisingly tasty protein bar made from an unspecified meat. Rumors claiming they're made from reconstituted TGMC personnel have been widely dismissed.","#a7576b",list("pork" = 1)),
+			list("chicken CHAOS protein bar","Protein bar covered with chicken powder one might find in ramen. Get some extra sodium with your protein.","#cccc00",list("powdered chicken" = 1)),
+			list("blueberry CHAOS protein bar","A nice blueberry crunch into your otherwise stale and boring protein bar.","#4e39c5",list("blueberry" = 1))
 		),
 	)
 
@@ -93,16 +93,16 @@
 	//due the way nutriment works it has to be added like this or the flavor is cached
 	reagents.add_reagent(/datum/reagent/consumable/nutriment, 8, picked[4])
 
-/obj/item/reagent_containers/food/snacks/protein_pack/som
-	name = "SOM protein bar"
+/obj/item/reagent_containers/food/snacks/protein_pack/chaos
+	name = "CHAOS protein bar"
 	desc = "The most fake looking protein bar you have ever laid eyes on, comes in many flavors"
-	icon = 'icons/obj/items/food/mre.dmi'
-	faction = FACTION_SOM
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
+	faction = FACTION_CHAOS
 
 /obj/item/reagent_containers/food/snacks/req_pizza
 	name = "\improper TGMC PFC Jim pizza"
 	desc = "You think that is a pizza. You definitely shouldn't eat this, but you can sell this for a PROFIT! While it certainly looks like one, the first, active, primary, and only ingredient that went into it was a rounded metal plate. Maybe it'll taste better after it sat in the ASRS for a while? Oh well, time to sell it to some poor customer in space."
-	icon = 'icons/obj/items/food/pizzaspaghetti.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/pizzaspaghetti.dmi'
 	icon_state = "mushroompizza"
 	list_reagents = list(/datum/reagent/iron = 8)
 	tastes = list("metal" = 3, "one of your teeth cracking" = 1)
@@ -112,7 +112,7 @@
 	//trash = /obj/item/trash/TGMCtray
 	trash = null
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 
 /obj/item/reagent_containers/food/snacks/mre_pack/meal1
 	name = "\improper TGMC Prepared Meal (banana bread)"
@@ -246,7 +246,7 @@
 /obj/item/belt_harness
 	name = "gun sling"
 	desc = "A leather sling with a clip to attach something. Should keep you from losing your weapon, hopefully."
-	icon = 'icons/obj/clothing/belts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/belts.dmi'
 	icon_state = "gun_sling"
 	worn_icon_state = "gun_sling"
 	equip_slot_flags = ITEM_SLOT_BELT
@@ -320,13 +320,13 @@
 	..()
 	return user.equip_to_appropriate_slot(src)
 
-/obj/item/belt_harness/marine
+/obj/item/belt_harness/guardsman
 	name = "\improper M45 pattern belt harness"
 	desc = "A shoulder worn strap with clamps that can attach to most anything. Should keep you from losing your weapon, hopefully."
 	icon_state = "heavy_harness"
 	worn_icon_state = "heavy_harness"
 
-/obj/item/belt_harness/marine/equipped(mob/user, slot)
+/obj/item/belt_harness/guardsman/equipped(mob/user, slot)
 	. = ..()
 	if(slot == SLOT_BELT)
 		playsound(src,'sound/machines/click.ogg', 15, FALSE, 1)

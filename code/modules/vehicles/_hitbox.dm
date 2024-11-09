@@ -153,7 +153,7 @@
 			tank_desant.abstract_move(loc) //todo: have some better code to actually preserve their location
 		else
 			tank_desant.forceMove(get_step(tank_desant, direction))
-		if(isxeno(tank_desant))
+		if(istyranid(tank_desant))
 			continue
 		if(move_dist > 1)
 			continue
@@ -233,7 +233,7 @@
 
 /obj/hitbox/effect_smoke(obj/effect/particle_effect/smoke/S)
 	. = ..()
-	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID))
+	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID_ACID))
 		take_damage((10 * S.strength) * 0.2 , BURN, ACID)
 
 ///Returns the turf where primary weapon projectiles should source from
@@ -412,6 +412,6 @@
 			return NONE
 	return COMPONENT_DRIVER_BLOCK_MOVE
 
-//Some hover specific stuff for the SOM tank
-/obj/hitbox/rectangle/som_tank/get_projectile_loc(obj/item/armored_weapon/weapon)
+//Some hover specific stuff for the CHAOS tank
+/obj/hitbox/rectangle/chaos_tank/get_projectile_loc(obj/item/armored_weapon/weapon)
 	return get_step(get_step(src, root.dir), root.dir)

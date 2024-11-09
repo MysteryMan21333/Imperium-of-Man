@@ -4,23 +4,23 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 /proc/init_quick_loadouts()
 	. = list()
 	var/list/loadout_list = list(
-		/datum/outfit/quick/tgmc/marine/standard_carbine,
-		/datum/outfit/quick/tgmc/marine/standard_assaultrifle,
-		/datum/outfit/quick/tgmc/marine/combat_rifle,
-		/datum/outfit/quick/tgmc/marine/standard_laserrifle,
-		/datum/outfit/quick/tgmc/marine/standard_battlerifle,
-		/datum/outfit/quick/tgmc/marine/standard_skirmishrifle,
-		/datum/outfit/quick/tgmc/marine/alf_shocktrooper,
-		/datum/outfit/quick/tgmc/marine/standard_machinegunner,
-		/datum/outfit/quick/tgmc/marine/medium_machinegunner,
-		/datum/outfit/quick/tgmc/marine/standard_lasermg,
-		/datum/outfit/quick/tgmc/marine/pyro,
-		/datum/outfit/quick/tgmc/marine/standard_shotgun,
-		/datum/outfit/quick/tgmc/marine/standard_lasercarbine,
-		/datum/outfit/quick/tgmc/marine/light_carbine,
-		/datum/outfit/quick/tgmc/marine/shield_tank,
-		/datum/outfit/quick/tgmc/marine/machete,
-		/datum/outfit/quick/tgmc/marine/scout,
+		/datum/outfit/quick/tgmc/guardsman/standard_carbine,
+		/datum/outfit/quick/tgmc/guardsman/standard_assaultrifle,
+		/datum/outfit/quick/tgmc/guardsman/combat_rifle,
+		/datum/outfit/quick/tgmc/guardsman/standard_laserrifle,
+		/datum/outfit/quick/tgmc/guardsman/standard_battlerifle,
+		/datum/outfit/quick/tgmc/guardsman/standard_skirmishrifle,
+		/datum/outfit/quick/tgmc/guardsman/alf_shocktrooper,
+		/datum/outfit/quick/tgmc/guardsman/standard_machinegunner,
+		/datum/outfit/quick/tgmc/guardsman/medium_machinegunner,
+		/datum/outfit/quick/tgmc/guardsman/standard_lasermg,
+		/datum/outfit/quick/tgmc/guardsman/pyro,
+		/datum/outfit/quick/tgmc/guardsman/standard_shotgun,
+		/datum/outfit/quick/tgmc/guardsman/standard_lasercarbine,
+		/datum/outfit/quick/tgmc/guardsman/light_carbine,
+		/datum/outfit/quick/tgmc/guardsman/shield_tank,
+		/datum/outfit/quick/tgmc/guardsman/machete,
+		/datum/outfit/quick/tgmc/guardsman/scout,
 		/datum/outfit/quick/tgmc/engineer/rrengineer,
 		/datum/outfit/quick/tgmc/engineer/sentry,
 		/datum/outfit/quick/tgmc/engineer/demolition,
@@ -40,42 +40,42 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 		/datum/outfit/quick/tgmc/leader/auto_shotgun,
 		/datum/outfit/quick/tgmc/leader/standard_laserrifle,
 		/datum/outfit/quick/tgmc/leader/oicw,
-		/datum/outfit/quick/som/marine/standard_assaultrifle,
-		/datum/outfit/quick/som/marine/mpi,
-		/datum/outfit/quick/som/marine/light_carbine,
-		/datum/outfit/quick/som/marine/scout,
-		/datum/outfit/quick/som/marine/shotgunner,
-		/datum/outfit/quick/som/marine/pyro,
-		/datum/outfit/quick/som/marine/breacher,
-		/datum/outfit/quick/som/marine/breacher_melee,
-		/datum/outfit/quick/som/marine/machine_gunner,
-		/datum/outfit/quick/som/marine/charger,
-		/datum/outfit/quick/som/engineer/standard_assaultrifle,
-		/datum/outfit/quick/som/engineer/mpi,
-		/datum/outfit/quick/som/engineer/standard_carbine,
-		/datum/outfit/quick/som/engineer/standard_smg,
-		/datum/outfit/quick/som/engineer/standard_shotgun,
-		/datum/outfit/quick/som/medic/standard_assaultrifle,
-		/datum/outfit/quick/som/medic/mpi,
-		/datum/outfit/quick/som/medic/standard_carbine,
-		/datum/outfit/quick/som/medic/standard_smg,
-		/datum/outfit/quick/som/medic/standard_shotgun,
-		/datum/outfit/quick/som/veteran/standard_assaultrifle,
-		/datum/outfit/quick/som/veteran/standard_smg,
-		/datum/outfit/quick/som/veteran/mpi,
-		/datum/outfit/quick/som/veteran/carbine,
-		/datum/outfit/quick/som/veteran/charger,
-		/datum/outfit/quick/som/veteran/breacher,
-		/datum/outfit/quick/som/veteran/caliver,
-		/datum/outfit/quick/som/veteran/caliver_pack,
-		/datum/outfit/quick/som/veteran/culverin,
-		/datum/outfit/quick/som/veteran/rocket_man,
-		/datum/outfit/quick/som/veteran/blinker,
-		/datum/outfit/quick/som/squad_leader/standard_assaultrifle,
-		/datum/outfit/quick/som/squad_leader/standard_smg,
-		/datum/outfit/quick/som/squad_leader/charger,
-		/datum/outfit/quick/som/squad_leader/caliver,
-		/datum/outfit/quick/som/squad_leader/mpi,
+		/datum/outfit/quick/chaos/guardsman/standard_assaultrifle,
+		/datum/outfit/quick/chaos/guardsman/mpi,
+		/datum/outfit/quick/chaos/guardsman/light_carbine,
+		/datum/outfit/quick/chaos/guardsman/scout,
+		/datum/outfit/quick/chaos/guardsman/shotgunner,
+		/datum/outfit/quick/chaos/guardsman/pyro,
+		/datum/outfit/quick/chaos/guardsman/breacher,
+		/datum/outfit/quick/chaos/guardsman/breacher_melee,
+		/datum/outfit/quick/chaos/guardsman/machine_gunner,
+		/datum/outfit/quick/chaos/guardsman/charger,
+		/datum/outfit/quick/chaos/engineer/standard_assaultrifle,
+		/datum/outfit/quick/chaos/engineer/mpi,
+		/datum/outfit/quick/chaos/engineer/standard_carbine,
+		/datum/outfit/quick/chaos/engineer/standard_smg,
+		/datum/outfit/quick/chaos/engineer/standard_shotgun,
+		/datum/outfit/quick/chaos/medic/standard_assaultrifle,
+		/datum/outfit/quick/chaos/medic/mpi,
+		/datum/outfit/quick/chaos/medic/standard_carbine,
+		/datum/outfit/quick/chaos/medic/standard_smg,
+		/datum/outfit/quick/chaos/medic/standard_shotgun,
+		/datum/outfit/quick/chaos/veteran/standard_assaultrifle,
+		/datum/outfit/quick/chaos/veteran/standard_smg,
+		/datum/outfit/quick/chaos/veteran/mpi,
+		/datum/outfit/quick/chaos/veteran/carbine,
+		/datum/outfit/quick/chaos/veteran/charger,
+		/datum/outfit/quick/chaos/veteran/breacher,
+		/datum/outfit/quick/chaos/veteran/caliver,
+		/datum/outfit/quick/chaos/veteran/caliver_pack,
+		/datum/outfit/quick/chaos/veteran/culverin,
+		/datum/outfit/quick/chaos/veteran/rocket_man,
+		/datum/outfit/quick/chaos/veteran/blinker,
+		/datum/outfit/quick/chaos/squad_leader/standard_assaultrifle,
+		/datum/outfit/quick/chaos/squad_leader/standard_smg,
+		/datum/outfit/quick/chaos/squad_leader/charger,
+		/datum/outfit/quick/chaos/squad_leader/caliver,
+		/datum/outfit/quick/chaos/squad_leader/mpi,
 	)
 
 	for(var/X in loadout_list)
@@ -85,7 +85,7 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 	name = "Kwik-E-Quip vendor"
 	desc = "An advanced vendor to instantly arm soldiers with specific sets of equipment, allowing for immediate combat deployment. \
 	Mutually exclusive with the GHMME."
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "specialist"
 	density = TRUE
 	anchored = TRUE
@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 	var/faction = FACTION_NEUTRAL
 	//the different tabs in the vendor
 	var/list/categories = list(
-		"Squad Marine",
+		"Squad Guardsman",
 		"Squad Engineer",
 		"Squad Corpsman",
 		"Squad Smartgunner",
@@ -191,8 +191,8 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 	data["loadout_list"] = loadouts_data_tgui
 	var/ui_theme
 	switch(faction)
-		if(FACTION_SOM)
-			ui_theme = "som"
+		if(FACTION_CHAOS)
+			ui_theme = "chaos"
 		else
 			ui_theme = "ntos"
 	data["ui_theme"] = ui_theme
@@ -222,12 +222,12 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 				to_chat(ui.user, span_warning("Access denied, continue using the GHHME."))
 				return FALSE
 			if(user_id.id_flags & CAN_BUY_LOADOUT)
-				for(var/points in user_id.marine_points)
-					if(user_id.marine_points[points] != GLOB.default_marine_points[points])
+				for(var/points in user_id.guardsman_points)
+					if(user_id.guardsman_points[points] != GLOB.default_guardsman_points[points])
 						to_chat(ui.user, span_warning("Access denied, continue using the GHHME."))
 						return FALSE
-				for(var/option in user_id.marine_buy_choices)
-					if(user_id.marine_buy_choices[option] != GLOB.marine_selector_cats[option])
+				for(var/option in user_id.guardsman_buy_choices)
+					if(user_id.guardsman_buy_choices[option] != GLOB.guardsman_selector_cats[option])
 						to_chat(ui.user, span_warning("Access denied, continue using the GHHME."))
 						return FALSE
 				user_id.id_flags &= ~CAN_BUY_LOADOUT
@@ -239,19 +239,19 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 						ui.user.dropItemToGround(inventory_items)
 				selected_loadout.equip(ui.user) //actually equips the loadout
 				//After vending a quick loadout, remove points and GHMME options so that you can't vend them via loadout vendor
-				for(var/points in user_id.marine_points)
-					user_id.marine_points[points] = 0
-				for(var/option in user_id.marine_buy_choices)
-					user_id.marine_buy_choices[option] = 0
+				for(var/points in user_id.guardsman_points)
+					user_id.guardsman_points[points] = 0
+				for(var/option in user_id.guardsman_buy_choices)
+					user_id.guardsman_buy_choices[option] = 0
 			else
 				to_chat(usr, span_warning("You can't buy things from this category anymore."))
 
-/obj/machinery/quick_vendor/som
-	faction = FACTION_SOM
+/obj/machinery/quick_vendor/chaos
+	faction = FACTION_CHAOS
 	categories = list(
-		"SOM Squad Standard",
-		"SOM Squad Engineer",
-		"SOM Squad Medic",
-		"SOM Squad Veteran",
-		"SOM Squad Leader",
+		"CHAOS Squad Standard",
+		"CHAOS Squad Engineer",
+		"CHAOS Squad Medic",
+		"CHAOS Squad Veteran",
+		"CHAOS Squad Leader",
 	)

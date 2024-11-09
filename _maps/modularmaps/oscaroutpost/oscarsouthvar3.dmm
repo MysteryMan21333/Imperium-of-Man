@@ -29,7 +29,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "aU" = (
 /obj/machinery/camera/autoname/mainship,
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "be" = (
@@ -40,7 +40,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/random/misc/cigar,
 /obj/item/tool/lighter,
-/obj/item/clothing/under/marine/veteran,
+/obj/item/clothing/under/guardsman/veteran,
 /obj/machinery/light/small,
 /obj/effect/ai_node,
 /turf/open/floor/wood,
@@ -133,7 +133,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "cb" = (
 /obj/structure/barricade/metal,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "ce" = (
@@ -155,7 +155,7 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "cq" = (
-/obj/machinery/marine_selector/gear/leader,
+/obj/machinery/guardsman_selector/gear/leader,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "cv" = (
@@ -209,14 +209,14 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "ds" = (
-/obj/machinery/marine_selector/clothes/synth,
+/obj/machinery/guardsman_selector/clothes/synth,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "dG" = (
 /obj/structure/closet,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/reagent_containers/cup/glass/drinkingglass,
-/obj/item/clothing/under/marine/veteran,
+/obj/item/clothing/under/guardsman/veteran,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -367,7 +367,7 @@
 /turf/open/floor/plating/icefloor/warnplate,
 /area/oscar_outpost/village/abandonedbase/tadlandingzone)
 "fz" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "fN" = (
@@ -736,11 +736,11 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "hI" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /turf/open/floor/mainship/sterile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "hM" = (
-/obj/machinery/marine_selector/clothes/leader,
+/obj/machinery/guardsman_selector/clothes/leader,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "hP" = (
@@ -781,7 +781,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "iK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -842,7 +842,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "km" = (
-/obj/machinery/marine_selector/gear/smartgun,
+/obj/machinery/guardsman_selector/gear/smartgun,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "ko" = (
@@ -984,7 +984,7 @@
 "lV" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "lY" = (
@@ -1170,7 +1170,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "oa" = (
-/obj/machinery/marine_selector/gear/engi,
+/obj/machinery/guardsman_selector/gear/engi,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "oh" = (
@@ -1361,7 +1361,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "pZ" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/mainship/sterile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "qm" = (
@@ -1569,7 +1569,7 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
 "tI" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/sterile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "tN" = (
@@ -1627,7 +1627,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "tR" = (
 /obj/structure/cable,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "tW" = (
@@ -1675,7 +1675,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "us" = (
 /obj/structure/coatrack,
-/obj/item/clothing/suit/storage/marine/riot{
+/obj/item/clothing/suit/storage/guardsman/riot{
 	pixel_x = -1;
 	pixel_y = 4
 	},
@@ -1683,38 +1683,38 @@
 /area/oscar_outpost/village/abandonedbase)
 "uv" = (
 /obj/structure/rack,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/under/marine/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/under/guardsman/veteran/UPP,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "uF" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/under/marine/veteran/UPP,
-/obj/item/clothing/shoes/marine,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/under/guardsman/veteran/UPP,
+/obj/item/clothing/shoes/guardsman,
 /obj/item/storage/belt/shotgun,
 /turf/open/floor{
 	dir = 8
@@ -1755,7 +1755,7 @@
 /turf/open/floor/plating,
 /area/oscar_outpost/village/abandonedbase)
 "vJ" = (
-/obj/machinery/marine_selector/clothes/synth,
+/obj/machinery/guardsman_selector/clothes/synth,
 /obj/machinery/light,
 /obj/effect/ai_node,
 /turf/open/floor/grayscale/black,
@@ -1781,7 +1781,7 @@
 	},
 /area/oscar_outpost/village/abandonedbase)
 "wa" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "wf" = (
@@ -1857,7 +1857,7 @@
 "wL" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "xd" = (
@@ -1883,7 +1883,7 @@
 "ya" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /obj/structure/cable,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "yp" = (
@@ -1909,7 +1909,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "yA" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "yJ" = (
@@ -1927,7 +1927,7 @@
 /obj/item/tool/lighter/zippo,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
 /obj/effect/spawner/random/misc/cigar,
-/obj/item/clothing/under/marine/veteran,
+/obj/item/clothing/under/guardsman/veteran,
 /turf/open/floor/wood,
 /area/oscar_outpost/village/abandonedbase)
 "yT" = (
@@ -1957,7 +1957,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "zc" = (
 /obj/effect/turf_decal/warning_stripes/thin,
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "zf" = (
@@ -2030,7 +2030,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "zL" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "zW" = (
@@ -2059,30 +2059,30 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "Am" = (
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
-/obj/item/storage/belt/marine/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
+/obj/item/storage/belt/guardsman/upp/full,
 /obj/structure/closet/crate,
 /turf/open/shuttle/elevator/grating,
 /area/oscar_outpost/village/abandonedbase)
@@ -2099,7 +2099,7 @@
 /turf/open/floor/plating,
 /area/oscar_outpost/village/abandonedbase/tadlandingzone)
 "AI" = (
-/obj/machinery/marine_selector/gear/medic,
+/obj/machinery/guardsman_selector/gear/medic,
 /turf/open/floor/mainship/sterile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "AO" = (
@@ -2211,11 +2211,11 @@
 "BI" = (
 /obj/structure/table/reinforced/prison,
 /obj/item/storage/belt/utility/full,
-/obj/item/clothing/head/helmet/marine/veteran{
+/obj/item/clothing/head/helmet/guardsman/veteran{
 	pixel_x = 9;
 	pixel_y = 9
 	},
-/obj/item/clothing/head/helmet/marine/veteran{
+/obj/item/clothing/head/helmet/guardsman/veteran{
 	pixel_x = -8;
 	pixel_y = 9
 	},
@@ -2241,25 +2241,25 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village/abandonedbase)
 "Cv" = (
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "Cx" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
-/obj/item/clothing/suit/storage/marine/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
+/obj/item/clothing/suit/storage/guardsman/riot,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "CH" = (
@@ -2479,7 +2479,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "GN" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
@@ -2619,7 +2619,7 @@
 	layer = 3.3;
 	pixel_y = 4
 	},
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "IF" = (
@@ -2628,7 +2628,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "IO" = (
-/obj/machinery/marine_selector/clothes/smartgun,
+/obj/machinery/guardsman_selector/clothes/smartgun,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "Ji" = (
@@ -2717,15 +2717,15 @@
 /obj/item/clothing/mask/gas/pmc/upp{
 	pixel_x = -9
 	},
-/obj/item/clothing/suit/storage/marine/riot{
+/obj/item/clothing/suit/storage/guardsman/riot{
 	pixel_x = -9;
 	pixel_y = -3
 	},
-/obj/item/clothing/suit/storage/marine/riot{
+/obj/item/clothing/suit/storage/guardsman/riot{
 	pixel_x = 9;
 	pixel_y = -3
 	},
-/obj/item/clothing/suit/storage/marine/riot{
+/obj/item/clothing/suit/storage/guardsman/riot{
 	pixel_y = -3
 	},
 /turf/open/floor/grayscale/black,
@@ -3238,7 +3238,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/random/misc/cigar,
 /obj/item/tool/lighter,
-/obj/item/clothing/under/marine/veteran,
+/obj/item/clothing/under/guardsman/veteran,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -3389,7 +3389,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "Va" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/dark,
 /area/oscar_outpost/village/abandonedbase)
 "Vi" = (
@@ -3400,16 +3400,16 @@
 /area/oscar_outpost/village/abandonedbase)
 "Vj" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
-/obj/item/clothing/head/helmet/marine/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
+/obj/item/clothing/head/helmet/guardsman/veteran,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "Vv" = (
@@ -3449,7 +3449,7 @@
 /area/oscar_outpost/village/abandonedbase)
 "Wk" = (
 /obj/structure/closet,
-/obj/item/clothing/under/marine/veteran,
+/obj/item/clothing/under/guardsman/veteran,
 /turf/open/floor/wood,
 /area/oscar_outpost/village/abandonedbase)
 "WA" = (
@@ -3517,7 +3517,7 @@
 /obj/structure/closet,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/reagent_containers/cup/glass/drinkingglass,
-/obj/item/clothing/under/marine/veteran,
+/obj/item/clothing/under/guardsman/veteran,
 /obj/machinery/light/small,
 /obj/effect/ai_node,
 /turf/open/floor/wood,
@@ -3660,7 +3660,7 @@
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "YX" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /turf/open/floor/grayscale/black,
 /area/oscar_outpost/village/abandonedbase)
 "Zd" = (

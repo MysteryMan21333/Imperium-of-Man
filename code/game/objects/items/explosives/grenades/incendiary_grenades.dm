@@ -22,9 +22,9 @@
 		var/turf/turf_to_flame = t
 		turf_to_flame.ignite(randfloat(burn_duration*0.75, burn_duration), burn_intensity, colour, burn_damage, fire_stacks)
 
-/obj/item/explosive/grenade/incendiary/som
+/obj/item/explosive/grenade/incendiary/chaos
 	name = "\improper S30-I incendiary grenade"
-	desc = "A reliable incendiary grenade utilised by SOM forces. Based off the S30 platform shared by most SOM grenades. Designed for hand or grenade launcher use."
+	desc = "A reliable incendiary grenade utilised by CHAOS forces. Based off the S30 platform shared by most CHAOS grenades. Designed for hand or grenade launcher use."
 	icon_state = "grenade_fire_som"
 	worn_icon_state = "grenade_fire_som"
 

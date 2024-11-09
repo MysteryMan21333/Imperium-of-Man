@@ -1,7 +1,7 @@
 /obj/machinery/keycard_auth
 	name = "Keycard Authentication Device"
 	desc = "This device is used to trigger station functions, which require more than one ID card to authenticate."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/monitors.dmi'
 	icon_state = "auth_off"
 	var/active = 0 //This gets set to 1 on all devices except the one where the initial request was made.
 	var/event = ""
@@ -33,7 +33,7 @@
 
 	else if(istype(I, /obj/item/card/id))
 		var/obj/item/card/id/ID = I
-		if(!(ACCESS_MARINE_BRIDGE in ID.access))
+		if(!(ACCESS_GUARDSMAN_BRIDGE in ID.access))
 			return
 
 		if(active && event_source)
@@ -162,13 +162,13 @@
 /obj/machinery/keycard_auth/proc/trigger_event()
 	switch(event)
 		if("Red alert")
-			GLOB.marine_main_ship.set_security_level(SEC_LEVEL_RED)
+			GLOB.guardsman_main_ship.set_security_level(SEC_LEVEL_RED)
 		if("Grant Emergency Maintenance Access")
-			GLOB.marine_main_ship.make_maint_all_access()
+			GLOB.guardsman_main_ship.make_maint_all_access()
 		if("Revoke Emergency Maintenance Access")
-			GLOB.marine_main_ship.revoke_maint_all_access()
+			GLOB.guardsman_main_ship.revoke_maint_all_access()
 
 /obj/machinery/door/airlock/allowed(mob/M)
-	if(is_mainship_level(z) && GLOB.marine_main_ship.maint_all_access && (ACCESS_MARINE_ENGINEERING in (req_access+req_one_access)))
+	if(is_mainship_level(z) && GLOB.guardsman_main_ship.maint_all_access && (ACCESS_GUARDSMAN_ENGINEERING in (req_access+req_one_access)))
 		return TRUE
 	return ..(M)

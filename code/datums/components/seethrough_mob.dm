@@ -39,7 +39,7 @@
 
 	render_source_atom.render_source = "*transparent_bigmob[personal_uid]"
 
-	var/datum/action/ability/xeno_action/toggle_seethrough/action = new(src)
+	var/datum/action/ability/tyranid_action/toggle_seethrough/action = new(src)
 	action.give_action(parent)
 
 /datum/component/seethrough_mob/Destroy(force)
@@ -111,21 +111,21 @@
 		untrick_mob()
 		ability.set_toggle(FALSE)
 
-/datum/action/ability/xeno_action/toggle_seethrough
+/datum/action/ability/tyranid_action/toggle_seethrough
 	name = "Toggle Seethrough"
 	desc = "Allows you to see behind your massive body and click through it."
-	action_icon_state = "xenohide"
+	action_icon_state = "tyranidhide"
 	cooldown_duration = 1 SECONDS
 	use_state_flags = ABILITY_USE_LYING
 	action_type = ACTION_TOGGLE
 
-/datum/action/ability/xeno_action/toggle_seethrough/action_activate(atom/t)
+/datum/action/ability/tyranid_action/toggle_seethrough/action_activate(atom/t)
 	. = ..()
 	var/datum/component/seethrough_mob/transparency = target
 	transparency.toggle_active(src)
 	add_cooldown()
 
-/datum/action/ability/xeno_action/toggle_seethrough/Destroy()
+/datum/action/ability/tyranid_action/toggle_seethrough/Destroy()
 	var/datum/component/seethrough_mob/transparency = target
 	if(transparency.is_active)
 		transparency.untrick_mob()

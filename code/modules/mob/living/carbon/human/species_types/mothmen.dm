@@ -1,6 +1,6 @@
 /datum/species/moth
 	name = "Moth"
-	icobase = 'icons/mob/human_races/r_moth.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_moth.dmi'
 	default_language_holder = /datum/language_holder/moth
 	eyes = "blank_eyes"
 	count_human = TRUE

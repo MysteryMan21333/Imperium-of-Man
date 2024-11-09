@@ -71,7 +71,7 @@
 
 /datum/species/early_synthetic // Worse at medical, better at engineering. Tougher in general than later synthetics
 	name = "Early Synthetic"
-	icobase = 'icons/mob/human_races/r_synthetic.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_synthetic.dmi'
 	default_language_holder = /datum/language_holder/synthetic
 	unarmed_type = /datum/unarmed_attack/punch
 	slowdown = 1.15 //Slower than Late Synths

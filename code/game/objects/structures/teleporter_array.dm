@@ -1,7 +1,7 @@
 /obj/structure/teleporter_array
 	name = "TELEPORTER"
 	desc = "PLACEHOLDER."
-	icon = 'icons/obj/structures/teleporter.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/teleporter.dmi'
 	icon_state = "teleporter"
 	obj_flags = NONE
 	density = FALSE
@@ -10,7 +10,7 @@
 
 	var/teleporter_status = TELEPORTER_ARRAY_READY
 	///The faction this belongs to
-	var/faction = FACTION_SOM
+	var/faction = FACTION_CHAOS
 	///How many times this can be used
 	var/charges = 3
 	///The target turf for teleportation

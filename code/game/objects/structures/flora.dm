@@ -39,7 +39,7 @@
 	layer = ABOVE_FLY_LAYER
 	allow_pass_flags = PASS_PROJECTILE|PASS_AIR
 	var/log_amount = 10
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/flora/tree/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
@@ -111,19 +111,19 @@
 /obj/structure/flora/stump
 	name = "stump"
 	desc = "This represents our promise to cut down as many trees as possible."
-	icon = 'icons/obj/flora/deadtrees.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
 
 /obj/structure/flora/tree/pine
 	name = "pine tree"
-	icon = 'icons/obj/flora/pinetrees.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine"
 	icon_variants = 3
 
 /obj/structure/flora/tree/xmas
-	icon = 'icons/obj/flora/pinetrees.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/pinetrees.dmi'
 	name = "xmas tree"
 	icon_state = "pine_c"
 	icon_variants = NONE
@@ -132,7 +132,7 @@
 /obj/structure/flora/tree/xmas/presents
 	icon_state = "pinepresents"
 	desc = "A wondrous decorated Christmas tree. It has presents!"
-	var/gift_type = /obj/item/gift/marine
+	var/gift_type = /obj/item/gift/guardsman
 	var/list/ckeys_that_took = list()
 
 /obj/structure/flora/tree/xmas/presents/attack_hand(mob/living/user)
@@ -151,7 +151,7 @@
 	user.put_in_hands(G)
 
 /obj/structure/flora/tree/dead
-	icon = 'icons/obj/flora/deadtrees.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree"
 	icon_variants = 6
 
@@ -161,14 +161,14 @@
 /obj/structure/flora/tree/dead/drought
 	name = "dead tree"
 	desc = "A dead tree. Its probably seen better days."
-	icon = 'icons/obj/flora/tall_trees.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/tall_trees.dmi'
 	icon_state = "dead_tree"
 	icon_variants = 3
 
 /obj/structure/flora/tree/joshua
 	name = "joshua tree"
 	desc = "A tall tree covered in spiky-like needles, covering it's trunk."
-	icon = 'icons/obj/flora/joshuatree.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/joshuatree.dmi'
 	icon_state = "joshua"
 	icon_variants = 4
 
@@ -176,7 +176,7 @@
 	name = "jungle tree"
 	icon_state = "tree"
 	desc = "It's seriously hampering your view of the jungle."
-	icon = 'icons/obj/flora/jungletrees.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/jungletrees.dmi'
 	pixel_x = -48
 	pixel_y = -20
 
@@ -186,7 +186,7 @@
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
 	pixel_x = -32
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/jungletreesmall.dmi'
 	icon_variants = 6
 
 /obj/structure/flora/tree/jungle/small/AddTransparencyComponent()
@@ -196,7 +196,7 @@
 
 /obj/structure/flora/grass
 	name = "grass"
-	icon = 'icons/obj/flora/snowflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/snowflora.dmi'
 	anchored = TRUE
 
 /obj/structure/flora/grass/brown
@@ -214,7 +214,7 @@
 //grayscale tall grass
 /obj/structure/flora/grass/tallgrass
 	name = "tall grass"
-	icon = 'icons/obj/flora/tallgrass.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/tallgrass.dmi'
 	icon_state = "tallgrass"
 	layer = TALL_GRASS_LAYER
 	opacity = TRUE
@@ -243,7 +243,7 @@
 
 /obj/structure/flora/grass/tallgrass/autosmooth
 	name = "tall grass"
-	icon = 'icons/obj/flora/smooth/tall_grass.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/smooth/tall_grass.dmi'
 	icon_state = "tallgrass-icon"
 	base_icon_state = "tallgrass"
 	smoothing_flags = SMOOTH_BITMASK
@@ -268,14 +268,14 @@
 //bushes
 /obj/structure/flora/bush
 	name = "bush"
-	icon = 'icons/obj/flora/snowflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/snowflora.dmi'
 	icon_state = "snowbush"
 	anchored = TRUE
 	icon_variants = 6
 
 /obj/structure/flora/pottedplant
 	name = "potted plant"
-	icon = 'icons/obj/flora/plants.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/plants.dmi'
 	icon_state = "plant-05"
 
 /obj/structure/flora/pottedplant/one
@@ -360,7 +360,7 @@
 
 /obj/structure/flora/ausbushes
 	name = "bush"
-	icon = 'icons/obj/flora/ausflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/ausflora.dmi'
 	icon_state = "firstbush"
 	anchored = TRUE
 	icon_variants = 4
@@ -430,7 +430,7 @@
 //*********************//
 /obj/structure/flora/desert
 	anchored = TRUE
-	icon = 'icons/obj/flora/dam.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/dam.dmi'
 
 //GRASS
 /obj/structure/flora/desert/grass
@@ -494,7 +494,7 @@
 	name = "jungle bush"
 	desc = "A small leafy plant."
 	icon_state = "bush"
-	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/jungleflora.dmi'
 	icon_variants = 9
 	layer = OBJ_LAYER
 
@@ -502,7 +502,7 @@
 	name = "jungle grass"
 	desc = "some type of grass species."
 	icon_state = "grass"
-	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/jungleflora.dmi'
 	icon_variants = 5
 	layer = OBJ_LAYER
 
@@ -513,7 +513,7 @@
 	name = "large plant"
 	desc = "A large leafy plant."
 	icon_state = "bush"
-	icon = 'icons/obj/flora/largejungleflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/largejungleflora.dmi'
 	layer = ABOVE_MOB_LAYER
 	pixel_x = -16
 	pixel_y = -8
@@ -559,7 +559,7 @@
 
 //drought map flora
 /obj/structure/flora/drought
-	icon = 'icons/obj/flora/desert_flora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/desert_flora.dmi'
 
 //GRASS
 /obj/structure/flora/drought/grass
@@ -574,7 +574,7 @@
 	icon_state = "tall_cactus"
 	icon_variants = 3
 	density = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 /obj/structure/flora/drought/short_cactus
 	name = "cactus"
 	desc = "Some short, spikey looking cactus."

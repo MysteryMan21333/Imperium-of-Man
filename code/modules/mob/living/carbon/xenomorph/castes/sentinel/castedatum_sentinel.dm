@@ -1,11 +1,11 @@
-/datum/xeno_caste/sentinel
+/datum/tyranid_caste/sentinel
 	caste_name = "Sentinel"
 	display_name = "Sentinel"
 	upgrade_name = ""
 	caste_desc = "A weak ranged combat alien."
-	caste_type_path = /mob/living/carbon/xenomorph/sentinel
-	tier = XENO_TIER_ONE
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/sentinel
+	tier = TYRANID_TIER_ONE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	gib_anim = "gibbed-a-small-corpse"
 	gib_flick = "gibbed-a-small"
@@ -37,7 +37,7 @@
 
 	// *** Ranged Attack *** //
 	spit_delay = 1.0 SECONDS
-	spit_types = list(/datum/ammo/xeno/acid/toxic_spit)
+	spit_types = list(/datum/ammo/tyranid/acid/toxic_spit)
 
 	// *** Sentinel Abilities ***
 	additional_stacks = 3
@@ -47,70 +47,70 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
-		/datum/action/ability/activable/xeno/xeno_spit/toxic_spit,
-		/datum/action/ability/xeno_action/toxic_slash,
-		/datum/action/ability/activable/xeno/drain_sting,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
+		/datum/action/ability/activable/tyranid/tyranid_spit/toxic_spit,
+		/datum/action/ability/tyranid_action/toxic_slash,
+		/datum/action/ability/activable/tyranid/drain_sting,
 	)
 
-/datum/xeno_caste/sentinel/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/sentinel/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/sentinel/retrograde/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/sentinel/retrograde/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/sentinel/primordial
+/datum/tyranid_caste/sentinel/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "A doctors worst nightmare. It's stinger drips with poison."
 	primordial_message = "All will succumb to our toxins. Leave noone standing."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
-		/datum/action/ability/activable/xeno/xeno_spit/toxic_spit,
-		/datum/action/ability/xeno_action/toxic_slash,
-		/datum/action/ability/activable/xeno/drain_sting,
-		/datum/action/ability/activable/xeno/toxic_grenade,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
+		/datum/action/ability/activable/tyranid/tyranid_spit/toxic_spit,
+		/datum/action/ability/tyranid_action/toxic_slash,
+		/datum/action/ability/activable/tyranid/drain_sting,
+		/datum/action/ability/activable/tyranid/toxic_grenade,
 	)
 
-/datum/xeno_caste/sentinel/retrograde
-	caste_type_path = /mob/living/carbon/xenomorph/sentinel/retrograde
+/datum/tyranid_caste/sentinel/retrograde
+	caste_type_path = /mob/living/carbon/tyranid/sentinel/retrograde
 	upgrade_name = ""
 	caste_name = "Retrograde Sentinel"
 	display_name = "Sentinel"
-	upgrade = XENO_UPGRADE_BASETYPE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	caste_desc = "A weak ranged combat alien. This one seems to have a different kind of spit."
 
 		// *** Ranged Attack *** //
 	spit_delay = 1 SECONDS
-	spit_types = list(/datum/ammo/xeno/toxin, /datum/ammo/xeno/acid/passthrough)
+	spit_types = list(/datum/ammo/tyranid/toxin, /datum/ammo/tyranid/acid/passthrough)
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
-		/datum/action/ability/activable/xeno/neurotox_sting,
-		/datum/action/ability/activable/xeno/xeno_spit,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
+		/datum/action/ability/activable/tyranid/neurotox_sting,
+		/datum/action/ability/activable/tyranid/tyranid_spit,
 	)
 
-/datum/xeno_caste/sentinel/retrograde/primordial
+/datum/tyranid_caste/sentinel/retrograde/primordial
 	upgrade_name = "Primordial"
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	caste_desc = "A neurotoxic nightmare. It's stingers drip with poison."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
-		/datum/action/ability/activable/xeno/neurotox_sting,
-		/datum/action/ability/activable/xeno/xeno_spit,
-		/datum/action/ability/activable/xeno/toxic_grenade/neuro
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
+		/datum/action/ability/activable/tyranid/neurotox_sting,
+		/datum/action/ability/activable/tyranid/tyranid_spit,
+		/datum/action/ability/activable/tyranid/toxic_grenade/neuro
 	)

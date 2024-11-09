@@ -175,7 +175,7 @@
 /area/bigredv2/outside/s)
 "mu" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/se)
 "mz" = (
@@ -193,11 +193,11 @@
 	},
 /area/bigredv2/outside/se)
 "om" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/se)
 "ou" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth{
 	dir = 9
 	},
@@ -325,7 +325,7 @@
 /turf/open/floor/asteroidfloor,
 /area/bigredv2/outside/s)
 "vY" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/spawner/random/weaponry/gun/sidearms,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/se)
@@ -336,7 +336,7 @@
 	},
 /area/bigredv2/outside/se)
 "wM" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/bigredv2/outside/se)
@@ -448,7 +448,7 @@
 /turf/open/floor/marking/asteroidwarning,
 /area/bigredv2/outside/s)
 "Eu" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth{
 	dir = 1
 	},

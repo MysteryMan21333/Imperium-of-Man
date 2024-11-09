@@ -286,7 +286,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northwest)
 "uM" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "uU" = (
@@ -579,7 +579,7 @@
 	},
 /area/bigredv2/outside/nw)
 "RX" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "Sk" = (

@@ -16,9 +16,9 @@ SUBSYSTEM_DEF(evacuation)
 	var/dest_status = NUKE_EXPLOSION_INACTIVE
 
 	var/scuttle_flags = FLAGS_SDEVAC_TIMELOCK
-	///How many marines were on ship when the dropship crashed
+	///How many guardsmans were on ship when the dropship crashed
 	var/initial_human_on_ship = 0
-	///How many marines escaped
+	///How many guardsmans escaped
 	var/human_escaped = 0
 
 
@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(evacuation)
 	evac_status = EVACUATION_STATUS_INITIATING
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_EVACUATION_STARTED)
 	priority_announce("Emergency evacuation has been triggered. Please proceed to the escape pods. Evacuation in [EVACUATION_AUTOMATIC_DEPARTURE/600] minutes.", title = "Emergency Evacuation", type = ANNOUNCEMENT_PRIORITY, sound = 'sound/AI/evacuate.ogg', color_override = "orange")
-	xeno_message("A wave of adrenaline ripples through the hive. The fleshy creatures are trying to escape!")
+	tyranid_message("A wave of adrenaline ripples through the hive. The fleshy creatures are trying to escape!")
 	pod_list = SSshuttle.escape_pods.Copy()
 	for(var/obj/docking_port/mobile/escape_pod/pod AS in pod_list)
 		pod.prep_for_launch()
@@ -134,7 +134,7 @@ SUBSYSTEM_DEF(evacuation)
 		return FALSE
 	dest_status = NUKE_EXPLOSION_ACTIVE
 	dest_master.toggle()
-	GLOB.marine_main_ship.set_security_level(SEC_LEVEL_DELTA)
+	GLOB.guardsman_main_ship.set_security_level(SEC_LEVEL_DELTA)
 	for(var/obj/machinery/floor_warn_light/self_destruct/light AS in alarm_lights)
 		light.enable()
 	return TRUE
@@ -160,7 +160,7 @@ SUBSYSTEM_DEF(evacuation)
 	dest_index = 1
 	priority_announce("The emergency destruct system has been deactivated.", title = "Self Destruct System", type = ANNOUNCEMENT_PRIORITY, sound = 'sound/AI/selfdestruct_deactivated.ogg', color_override = "purple")
 	if(evac_status == EVACUATION_STATUS_STANDING_BY)
-		GLOB.marine_main_ship.set_security_level(SEC_LEVEL_RED, TRUE)
+		GLOB.guardsman_main_ship.set_security_level(SEC_LEVEL_RED, TRUE)
 	for(var/obj/machinery/floor_warn_light/self_destruct/light AS in alarm_lights)
 		light.disable()
 	return TRUE
@@ -184,10 +184,10 @@ SUBSYSTEM_DEF(evacuation)
 	var/sound/S = sound(pick('sound/theme/nuclear_detonation1.ogg','sound/theme/nuclear_detonation2.ogg'), channel = CHANNEL_CINEMATIC)
 	SEND_SOUND(world, S)
 
-	var/list/z_levels = list(SSmapping.levels_by_trait(ZTRAIT_MARINE_MAIN_SHIP))
+	var/list/z_levels = list(SSmapping.levels_by_trait(ZTRAIT_GUARDSMAN_MAIN_SHIP))
 	var/ship_intact = FALSE
 
-	var/f = SSmapping.levels_by_trait(ZTRAIT_MARINE_MAIN_SHIP)
+	var/f = SSmapping.levels_by_trait(ZTRAIT_GUARDSMAN_MAIN_SHIP)
 	if(f in z_levels)
 		ship_intact = TRUE
 
@@ -209,4 +209,4 @@ SUBSYSTEM_DEF(evacuation)
 /datum/controller/subsystem/evacuation/proc/get_affected_zlevels()
 	if(dest_status >= NUKE_EXPLOSION_IN_PROGRESS || evac_status != EVACUATION_STATUS_COMPLETE)
 		return
-	. = SSmapping.levels_by_any_trait(list(ZTRAIT_MARINE_MAIN_SHIP))
+	. = SSmapping.levels_by_any_trait(list(ZTRAIT_GUARDSMAN_MAIN_SHIP))

@@ -6,12 +6,12 @@ GLOBAL_LIST_INIT(ammo_list, init_ammo_list())
 /proc/init_ammo_list()
 	. = list()
 	// Our ammo stuff is initialized here.
-	var/blacklist = list(/datum/ammo/energy, /datum/ammo/bullet/shotgun, /datum/ammo/xeno)
+	var/blacklist = list(/datum/ammo/energy, /datum/ammo/bullet/shotgun, /datum/ammo/tyranid)
 	for(var/t in subtypesof(/datum/ammo) - blacklist)
 		var/datum/ammo/A = new t
 		.[A.type] = A
 
-GLOBAL_LIST_EMPTY(marine_turrets)
+GLOBAL_LIST_EMPTY(guardsman_turrets)
 
 GLOBAL_LIST_EMPTY(droppod_list)
 GLOBAL_LIST_EMPTY(tank_list)
@@ -100,19 +100,19 @@ GLOBAL_LIST_EMPTY(ai_status_displays)
 /// Station alert consoles, /obj/machinery/computer/station_alert
 GLOBAL_LIST_EMPTY(alert_consoles)
 
-///list of all /obj/structure/xeno/tunnel
-GLOBAL_LIST_EMPTY(xeno_tunnels_by_hive)
-GLOBAL_LIST_EMPTY(xeno_resin_silo_turfs)
-GLOBAL_LIST_EMPTY(xeno_weed_node_turfs)
-GLOBAL_LIST_EMPTY(xeno_resin_door_turfs)
-GLOBAL_LIST_EMPTY(xeno_resin_wall_turfs)
-GLOBAL_LIST_EMPTY(xeno_tunnel_spawn_turfs)
-GLOBAL_LIST_EMPTY(xeno_jelly_pod_turfs)
-GLOBAL_LIST_EMPTY(xeno_resin_silos_by_hive)
-GLOBAL_LIST_EMPTY(xeno_resin_turrets_by_hive)
-GLOBAL_LIST_EMPTY(xeno_spawners_by_hive)
-GLOBAL_LIST_EMPTY(xeno_structures_by_hive)
-GLOBAL_LIST_EMPTY(xeno_critical_structures_by_hive)
+///list of all /obj/structure/tyranid/tunnel
+GLOBAL_LIST_EMPTY(tyranid_tunnels_by_hive)
+GLOBAL_LIST_EMPTY(tyranid_resin_silo_turfs)
+GLOBAL_LIST_EMPTY(tyranid_weed_node_turfs)
+GLOBAL_LIST_EMPTY(tyranid_resin_door_turfs)
+GLOBAL_LIST_EMPTY(tyranid_resin_wall_turfs)
+GLOBAL_LIST_EMPTY(tyranid_tunnel_spawn_turfs)
+GLOBAL_LIST_EMPTY(tyranid_jelly_pod_turfs)
+GLOBAL_LIST_EMPTY(tyranid_resin_silos_by_hive)
+GLOBAL_LIST_EMPTY(tyranid_resin_turrets_by_hive)
+GLOBAL_LIST_EMPTY(tyranid_spawners_by_hive)
+GLOBAL_LIST_EMPTY(tyranid_structures_by_hive)
+GLOBAL_LIST_EMPTY(tyranid_critical_structures_by_hive)
 
 GLOBAL_LIST_EMPTY(shuttle_controls_list)
 
@@ -152,13 +152,13 @@ GLOBAL_LIST_INIT(do_not_preserve, typecacheof(list(
 	/obj/item/clothing/glasses/sunglasses/sechud,
 	/obj/item/radio/headset/mainship,
 	/obj/item/card/id,
-	/obj/item/clothing/under/marine,
-	/obj/item/clothing/shoes/marine,
+	/obj/item/clothing/under/guardsman,
+	/obj/item/clothing/shoes/guardsman,
 	/obj/item/clothing/head/tgmccap,
 	/obj/item/trash)))
 
 GLOBAL_LIST_INIT(do_not_preserve_empty, typecacheof(list(
-	/obj/item/storage/backpack/marine/satchel,
-	/obj/item/storage/backpack/marine/corpsman/satchel,
-	/obj/item/storage/backpack/marine/satchel/tech,
-	/obj/item/storage/backpack/marine/standard), only_root_path = TRUE))
+	/obj/item/storage/backpack/guardsman/satchel,
+	/obj/item/storage/backpack/guardsman/corpsman/satchel,
+	/obj/item/storage/backpack/guardsman/satchel/tech,
+	/obj/item/storage/backpack/guardsman/standard), only_root_path = TRUE))

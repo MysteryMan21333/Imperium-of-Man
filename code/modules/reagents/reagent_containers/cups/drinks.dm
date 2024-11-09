@@ -4,7 +4,7 @@
 /obj/item/reagent_containers/cup/glass
 	name = "drink"
 	desc = "yummy"
-	icon = 'icons/obj/drinks/drinks.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/drinks.dmi'
 	icon_state = "glass_empty"
 	possible_transfer_amounts = list(5,10,15,20,25,30,50)
 	resistance_flags = NONE
@@ -32,7 +32,7 @@
 /obj/item/reagent_containers/cup/glass/coffee
 	name = "robust coffee"
 	desc = "Careful, the beverage you're about to enjoy is extremely hot."
-	icon = 'icons/obj/drinks/coffee.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/coffee.dmi'
 	icon_state = "coffee"
 	base_icon_state = "coffee"
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
@@ -70,7 +70,7 @@
 /obj/item/reagent_containers/cup/glass/mug // parent type is literally just so empty mug sprites are a thing
 	name = "mug"
 	desc = "A drink served in a classy mug."
-	icon = 'icons/obj/drinks/coffee.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/coffee.dmi'
 	icon_state = "tea_empty"
 	base_icon_state = "tea"
 
@@ -100,7 +100,7 @@
 /obj/item/reagent_containers/cup/glass/coffee_cup
 	name = "coffee cup"
 	desc = "A heat-formed plastic coffee cup. Can theoretically be used for other hot drinks, if you're feeling adventurous."
-	icon = 'icons/obj/drinks/coffee.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/coffee.dmi'
 	icon_state = "coffee_cup_e"
 	base_icon_state = "coffee_cup"
 	possible_transfer_amounts = list(10)
@@ -122,7 +122,7 @@
 /obj/item/reagent_containers/cup/glass/waterbottle
 	name = "bottle of water"
 	desc = "A bottle of water filled at an old Earth bottling facility."
-	icon = 'icons/obj/drinks/bottles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/bottles.dmi'
 	icon_state = "smallbottle"
 	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
 	volume = 50
@@ -130,7 +130,7 @@
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
 	can_shatter = FALSE
 	// The 2 bottles have separate cap overlay icons because if the bottle falls over while bottle flipping the cap stays fucked on the moved overlay
-	var/cap_icon = 'icons/obj/drinks/drink_effects.dmi'
+	var/cap_icon = 'modular_imperium/master_files/icons/obj/drinks/drink_effects.dmi'
 	var/cap_icon_state = "bottle_cap_small"
 	var/cap_on = TRUE
 	var/cap_lost = FALSE
@@ -270,7 +270,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/juice/smallcarton
 	name = "small carton"
 	desc = "A small carton, intended for holding drinks."
-	icon = 'icons/obj/drinks/boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/boxes.dmi'
 	icon_state = "juicebox"
 	volume = 15
 	drink_type = NONE
@@ -294,7 +294,7 @@
 /obj/item/reagent_containers/cup/glass/colocup
 	name = "colo cup"
 	desc = "A cheap, mass produced style of cup, typically used at parties. They never seem to come out red, for some reason..."
-	icon = 'icons/obj/drinks/colo.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/colo.dmi'
 	icon_state = "colocup"
 	possible_transfer_amounts = list(5, 10, 15, 20)
 	volume = 20
@@ -321,7 +321,7 @@
 /obj/item/reagent_containers/cup/glass/flask
 	name = "flask"
 	desc = "Every good spaceman knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
-	icon = 'icons/obj/drinks/bottles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/bottles.dmi'
 	icon_state = "flask"
 	volume = 60
 	can_shatter = FALSE
@@ -343,7 +343,7 @@
 /obj/item/reagent_containers/cup/glass/mug/britcup
 	name = "cup"
 	desc = "A cup with the british flag emblazoned on it."
-	icon = 'icons/obj/drinks/coffee.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/coffee.dmi'
 	icon_state = "britcup_empty"
 	base_icon_state = "britcup"
 	volume = 30

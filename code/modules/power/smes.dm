@@ -73,16 +73,16 @@
 	if(CHECK_BITFIELD(machine_stat, (PANEL_OPEN|BROKEN)))
 		return
 
-	. += image('icons/obj/power.dmi', "smes_op[outputting]")
+	. += image('modular_imperium/master_files/icons/obj/power.dmi', "smes_op[outputting]")
 
 	if(inputting)
-		. += image('icons/obj/power.dmi', "smes_oc1")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "smes_oc1")
 	else if (input_attempt)
-		. += image('icons/obj/power.dmi', "smes_oc0")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "smes_oc0")
 
 	var/clevel = chargedisplay()
 	if(clevel>0)
-		. += image('icons/obj/power.dmi', "smes_og[clevel]")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "smes_og[clevel]")
 
 
 /obj/machinery/power/smes/proc/chargedisplay()

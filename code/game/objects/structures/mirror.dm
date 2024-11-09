@@ -1,13 +1,13 @@
 /obj/structure/mirror
 	name = "mirror"
 	desc = "Mirror mirror on the wall, who's the most robust of them all?"
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "mirror"
 	hit_sound = 'sound/effects/Glasshit.ogg'
 	destroy_sound = SFX_SHATTER
 	density = FALSE
 	anchored = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	var/shattered = FALSE
 
 /obj/structure/mirror/Initialize(mapload)

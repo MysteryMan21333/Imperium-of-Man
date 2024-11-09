@@ -1,13 +1,13 @@
 /datum/ai_behavior/puppet
 	target_distance = 7
 	base_action = IDLE
-	identifier = IDENTIFIER_XENO
+	identifier = IDENTIFIER_TYRANID
 	///should we go back to escorting the puppeteer if we stray too far
 	var/too_far_escort = TRUE
 	///weakref to our puppeteer
 	var/datum/weakref/master_ref
 	///the feed ability
-	var/datum/action/ability/activable/xeno/feed
+	var/datum/action/ability/activable/tyranid/feed
 
 
 /datum/ai_behavior/puppet/New(loc, parent_to_assign, escorted_atom)
@@ -15,7 +15,7 @@
 	master_ref = WEAKREF(escorted_atom)
 	RegisterSignals(escorted_atom, list(COMSIG_MOB_DEATH, COMSIG_QDELETING), PROC_REF(die_on_master_death))
 	change_order(null, PUPPET_RECALL)
-	feed = mob_parent.actions_by_path[/datum/action/ability/activable/xeno/feed]
+	feed = mob_parent.actions_by_path[/datum/action/ability/activable/tyranid/feed]
 
 ///starts AI and registers obstructed move signal
 /datum/ai_behavior/puppet/start_ai()
@@ -24,8 +24,8 @@
 		RegisterSignal(master, COMSIG_PUPPET_CHANGE_ALL_ORDER, PROC_REF(change_order))
 	RegisterSignal(mob_parent, COMSIG_OBSTRUCTED_MOVE, PROC_REF(deal_with_obstacle))
 	RegisterSignal(mob_parent, COMSIG_PUPPET_CHANGE_ORDER, PROC_REF(change_order))
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_REST, PROC_REF(start_resting))
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_UNREST, PROC_REF(stop_resting))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_REST, PROC_REF(start_resting))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_UNREST, PROC_REF(stop_resting))
 	RegisterSignal(escorted_atom, COMSIG_ELEMENT_JUMP_STARTED, PROC_REF(do_jump))
 	RegisterSignal(escorted_atom, COMSIG_LIVING_DO_RESIST, PROC_REF(parent_resist))
 	return ..()
@@ -160,7 +160,7 @@
 			return
 		if(isobj(thing)) //otherwise smash it if its damageable
 			var/obj/obstacle = thing
-			if(obstacle.resistance_flags & XENO_DAMAGEABLE)
+			if(obstacle.resistance_flags & TYRANID_DAMAGEABLE)
 				INVOKE_ASYNC(src, PROC_REF(attack_target), null, obstacle)
 				return COMSIG_OBSTACLE_DEALT_WITH
 	if(ISDIAGONALDIR(direction) && ((deal_with_obstacle(null, turn(direction, -45)) & COMSIG_OBSTACLE_DEALT_WITH) || (deal_with_obstacle(null, turn(direction, 45)) & COMSIG_OBSTACLE_DEALT_WITH)))
@@ -202,5 +202,5 @@
 /// resist when puppeter does
 /datum/ai_behavior/puppet/proc/parent_resist()
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/puppet/puppet_parent = mob_parent
+	var/mob/living/carbon/tyranid/puppet/puppet_parent = mob_parent
 	puppet_parent?.do_resist()

@@ -2440,7 +2440,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/theta/biodome/complex)
 "Cj" = (
-/obj/structure/xeno/tunnel,
+/obj/structure/tyranid/tunnel,
 /turf/open/floor/plating/ground/dirt,
 /area/corsat/theta/biodome)
 "Cm" = (
@@ -3951,7 +3951,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/theta/airlock/control)
 "Uu" = (
-/obj/structure/xeno/tunnel,
+/obj/structure/tyranid/tunnel,
 /turf/open/floor/wood,
 /area/corsat/theta/biodome/complex)
 "UB" = (

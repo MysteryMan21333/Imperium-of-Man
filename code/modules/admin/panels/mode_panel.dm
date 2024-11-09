@@ -69,8 +69,8 @@
 
 
 	dat += "<table cellspacing=5><tr><td><B>Aliens</B></td><td></td><td></td></tr>"
-	for(var/i in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
-		var/mob/living/carbon/xenomorph/X = i
+	for(var/i in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
+		var/mob/living/carbon/tyranid/X = i
 		dat += "<tr><td><a href='?priv_msg=[REF(X)]'>[X.real_name]</a>[X.client ? "" : " <i>(logged out)</i>"]</td>"
 		dat += "<td>[get_area(get_turf(X))]</td>"
 		dat += "<td><a href='?src=[ref];playerpanel=[REF(X)]'>PP</A></td></TR>"

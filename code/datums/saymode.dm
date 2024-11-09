@@ -10,14 +10,14 @@
 	return TRUE
 
 
-/datum/saymode/xeno
+/datum/saymode/tyranid
 	key = "a"
 	mode = MODE_ALIEN
 
 
-/datum/saymode/xeno/handle_message(mob/living/user, message, datum/language/language)
-	if(isxeno(user))
-		var/mob/living/carbon/xenomorph/X = user
+/datum/saymode/tyranid/handle_message(mob/living/user, message, datum/language/language)
+	if(istyranid(user))
+		var/mob/living/carbon/tyranid/X = user
 		if(X.hivemind_talk(message))
 			return FALSE
 	return TRUE

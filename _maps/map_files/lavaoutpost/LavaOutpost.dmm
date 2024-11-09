@@ -35,7 +35,7 @@
 /turf/open/floor/marking,
 /area/lv624/lazarus/console)
 "aL" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southwest)
 "aM" = (
@@ -108,11 +108,11 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/engine)
 "bp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northwest)
 "bs" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/basalt,
 /area/lavaland/cave/northwest)
 "bu" = (
@@ -221,7 +221,7 @@
 /turf/open/lavaland/basalt/glowing,
 /area/lavaland/cave/east)
 "cv" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northwest)
 "cw" = (
@@ -351,7 +351,7 @@
 /area/lavaland/cave/east)
 "er" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northwest)
 "eu" = (
@@ -421,7 +421,7 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/engine)
 "fA" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -881,9 +881,9 @@
 "jU" = (
 /obj/structure/rack,
 /obj/item/ammo_magazine/shotgun/incendiary,
-/obj/item/clothing/under/marine/black_vest,
-/obj/item/clothing/under/marine/black_vest,
-/obj/item/clothing/under/marine/black_vest,
+/obj/item/clothing/under/guardsman/black_vest,
+/obj/item/clothing/under/guardsman/black_vest,
+/obj/item/clothing/under/guardsman/black_vest,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -1061,8 +1061,8 @@
 /turf/closed/wall,
 /area/lavaland/civilian/botany)
 "lt" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/tyranid_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northwest)
 "lx" = (
@@ -1351,7 +1351,7 @@
 /turf/open/floor/tile/white,
 /area/lavaland/medical)
 "oI" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northwest)
 "oJ" = (
@@ -1776,7 +1776,7 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/civilian/cargo)
 "tq" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southeast)
 "tr" = (
@@ -1970,7 +1970,7 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/civilian/cargo)
 "vj" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "vk" = (
@@ -1996,7 +1996,7 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/civilian/cargo)
 "vw" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southwest)
 "vy" = (
@@ -2222,7 +2222,7 @@
 /turf/open/floor/plating,
 /area/lavaland/engie/one)
 "ym" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southwest)
 "yn" = (
@@ -2466,7 +2466,7 @@
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southeast)
 "AH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/basalt,
 /area/lavaland/cave/southwest)
 "AK" = (
@@ -2630,7 +2630,7 @@
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/south)
 "BZ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southeast)
 "Ca" = (
@@ -3502,7 +3502,7 @@
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/west)
 "Lk" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
 "Ls" = (
@@ -3677,8 +3677,8 @@
 /turf/open/floor/tile/white,
 /area/lavaland/medical)
 "Ny" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northwest)
 "NA" = (
@@ -3770,7 +3770,7 @@
 /turf/open/floor/tile/white,
 /area/lavaland/security/storage)
 "Oz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/basalt,
 /area/lavaland/cave/southeast)
 "OA" = (
@@ -4129,7 +4129,7 @@
 /area/lavaland/cave/east)
 "Ss" = (
 /obj/structure/table/mainship,
-/obj/item/weapon/gun/flamer/big_flamer/marinestandard,
+/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard,
 /turf/open/floor/tile/dark,
 /area/lavaland/security/nuke)
 "St" = (
@@ -4248,11 +4248,11 @@
 /area/lavaland/engie/engine)
 "Ts" = (
 /obj/structure/table,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/tile/white,
 /area/lavaland/medical/cmo)
 "Tw" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/tile/white,
 /area/lavaland/medical/cmo)
 "TA" = (
@@ -4285,7 +4285,7 @@
 /turf/open/floor/plating/platebot,
 /area/lavaland/security/nuke)
 "TG" = (
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /turf/open/floor/tile/white,
 /area/lavaland/medical/cmo)
 "TK" = (
@@ -4578,7 +4578,7 @@
 /turf/open/floor/tile/white,
 /area/lavaland/security)
 "WN" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/tile/white,
 /area/lavaland/medical/cmo)
 "WT" = (
@@ -4774,7 +4774,7 @@
 /turf/open/floor/tile/dark,
 /area/lavaland/security/storage)
 "Za" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/southeast)
 "Zb" = (

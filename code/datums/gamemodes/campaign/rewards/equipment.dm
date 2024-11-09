@@ -19,22 +19,22 @@
 	uses = 3
 	cost = 25
 	equipment_to_spawn = list(
-		/obj/item/clothing/head/helmet/marine/specialist/tdf,
-		/obj/item/clothing/gloves/marine/specialist/tdf,
-		/obj/item/clothing/suit/storage/marine/specialist/tdf,
+		/obj/item/clothing/head/helmet/guardsman/specialist/tdf,
+		/obj/item/clothing/gloves/guardsman/specialist/tdf,
+		/obj/item/clothing/suit/storage/guardsman/specialist/tdf,
 	)
 
 /datum/campaign_asset/equipment/gorgon_armor
 	name = "Gorgon consignment"
 	desc = "Five sets of Gorgon power armor"
-	detailed_desc = "Activatable by squad leaders. Your battalion has been assigned a number of Gorgon power armor sets, available at your request. Gorgon armor is the SOM's elite infantry armor, providing superior protection and an automedical system without significantly compromising on speed."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	detailed_desc = "Activatable by squad leaders. Your battalion has been assigned a number of Gorgon power armor sets, available at your request. Gorgon armor is the CHAOS's elite infantry armor, providing superior protection and an automedical system without significantly compromising on speed."
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "gorgon"
 	uses = 5
 	cost = 12
 	equipment_to_spawn = list(
-		/obj/item/clothing/head/modular/som/leader,
-		/obj/item/clothing/suit/modular/som/heavy/leader/valk,
+		/obj/item/clothing/head/modular/chaos/leader,
+		/obj/item/clothing/suit/modular/chaos/heavy/leader/valk,
 	)
 
 /datum/campaign_asset/equipment/medkit_basic
@@ -59,15 +59,15 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/synaptizine,
 	)
 
-/datum/campaign_asset/equipment/medkit_basic/som
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+/datum/campaign_asset/equipment/medkit_basic/chaos
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	equipment_to_spawn = list(
-		/obj/item/storage/pouch/firstaid/som/full,
-		/obj/item/storage/pouch/firstaid/som/full,
-		/obj/item/storage/pouch/firstaid/som/full,
-		/obj/item/storage/pouch/firstaid/som/full,
-		/obj/item/storage/pouch/firstaid/som/full,
-		/obj/item/storage/pouch/firstaid/som/full,
+		/obj/item/storage/pouch/firstaid/chaos/full,
+		/obj/item/storage/pouch/firstaid/chaos/full,
+		/obj/item/storage/pouch/firstaid/chaos/full,
+		/obj/item/storage/pouch/firstaid/chaos/full,
+		/obj/item/storage/pouch/firstaid/chaos/full,
+		/obj/item/storage/pouch/firstaid/chaos/full,
 		/obj/item/reagent_containers/hypospray/autoinjector/combat_advanced,
 		/obj/item/reagent_containers/hypospray/autoinjector/combat_advanced,
 		/obj/item/reagent_containers/hypospray/autoinjector/combat_advanced,
@@ -87,8 +87,8 @@
 		/obj/item/storage/box/crate/loot/materials_pack,
 	)
 
-/datum/campaign_asset/equipment/materials_pack/som
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+/datum/campaign_asset/equipment/materials_pack/chaos
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 
 /datum/campaign_asset/equipment/ballistic_tgmc
 	name = "ballistic weapon cache"
@@ -111,16 +111,16 @@
 	name = "ballistic weapon cache"
 	desc = "Ballistic weapons and ammo"
 	detailed_desc = "A number of standard ballistic weapons and ammo to match."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "ballistic"
 	uses = 1
 	cost = 3
 	equipment_to_spawn = list(
-		/obj/effect/supply_drop/som_rifle,
-		/obj/effect/supply_drop/som_smg,
-		/obj/effect/supply_drop/som_mg,
+		/obj/effect/supply_drop/chaos_rifle,
+		/obj/effect/supply_drop/chaos_smg,
+		/obj/effect/supply_drop/chaos_mg,
 		/obj/effect/supply_drop/mpi,
-		/obj/effect/supply_drop/som_carbine,
+		/obj/effect/supply_drop/chaos_carbine,
 	)
 
 /datum/campaign_asset/equipment/lasers
@@ -131,19 +131,19 @@
 	uses = 1
 	cost = 3
 	equipment_to_spawn = list(
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/mag_harness,
-		/obj/item/storage/belt/marine/te_cells,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman,
-		/obj/item/storage/belt/marine/te_cells,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser/patrol,
-		/obj/item/storage/belt/marine/te_cells,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/mag_harness,
+		/obj/item/storage/belt/guardsman/te_cells,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/rifleman,
+		/obj/item/storage/belt/guardsman/te_cells,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser/patrol,
+		/obj/item/storage/belt/guardsman/te_cells,
 	)
 
 /datum/campaign_asset/equipment/volkite
 	name = "Volkite weapon cache"
 	desc = "Volkite weapon cache and ammo"
 	detailed_desc = "A volkite caliver and charger, with accompanying ammo. Able to deflagrate targets, making them deadly against tightly packed opponents."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "volkite"
 	uses = 1
 	cost = 4
@@ -172,11 +172,11 @@
 	cost = 4
 	equipment_to_spawn = list(
 		/obj/item/weapon/gun/rifle/standard_smartmachinegun/patrol,
-		/obj/item/storage/belt/marine/smartgun,
+		/obj/item/storage/belt/guardsman/smartgun,
 		/obj/item/weapon/gun/minigun/smart_minigun/motion_detector,
 		/obj/item/ammo_magazine/minigun_powerpack/smartgun,
 		/obj/item/weapon/gun/rifle/standard_smarttargetrifle/motion,
-		/obj/item/storage/belt/marine/target_rifle,
+		/obj/item/storage/belt/guardsman/target_rifle,
 		/obj/item/ammo_magazine/rifle/standard_spottingrifle/incendiary,
 		/obj/item/ammo_magazine/rifle/standard_spottingrifle/tungsten,
 		/obj/item/ammo_magazine/rifle/standard_spottingrifle/highimpact,
@@ -200,13 +200,13 @@
 	name = "Shotgun cache"
 	desc = "Shotgun and ammo"
 	detailed_desc = "A V-51 and ammo to match."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "shotgun"
 	uses = 1
 	cost = 2
 	equipment_to_spawn = list(
-		/obj/item/storage/belt/shotgun/som/mixed,
-		/obj/item/weapon/gun/shotgun/som/standard,
+		/obj/item/storage/belt/shotgun/chaos/mixed,
+		/obj/item/weapon/gun/shotgun/chaos/standard,
 	)
 
 /datum/campaign_asset/equipment/heavy_armour_tgmc
@@ -229,8 +229,8 @@
 	uses = 2
 	cost = 3
 	equipment_to_spawn = list(
-		/obj/item/weapon/shield/riot/marine,
-		/obj/item/weapon/shield/riot/marine,
+		/obj/item/weapon/shield/riot/guardsman,
+		/obj/item/weapon/shield/riot/guardsman,
 	)
 
 /datum/campaign_asset/equipment/grenades_tgmc
@@ -260,39 +260,39 @@
 	name = "Lorica heavy armour"
 	desc = "Heavy armor upgrades"
 	detailed_desc = "A pair of heavy armor suits equipped with 'Lorica' armour upgrades. Premier protection, but somewhat cumbersome."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "lorica"
 	uses = 2
 	cost = 4
 	equipment_to_spawn = list(
-		/obj/item/clothing/head/modular/som/lorica,
-		/obj/item/clothing/suit/modular/som/heavy/lorica,
+		/obj/item/clothing/head/modular/chaos/lorica,
+		/obj/item/clothing/suit/modular/chaos/heavy/lorica,
 	)
 
 /datum/campaign_asset/equipment/shields_som
 	name = "Defensive shields"
 	desc = "Heavy shields to hide behind"
 	detailed_desc = "A pair of heavy riot shields. Able to withstand a tremendous amount of punishment at the cost of occupying a hand and slowing you down."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "riot_shield"
 	uses = 2
 	cost = 3
 	equipment_to_spawn = list(
-		/obj/item/weapon/shield/riot/marine/som,
-		/obj/item/weapon/shield/riot/marine/som,
+		/obj/item/weapon/shield/riot/guardsman/chaos,
+		/obj/item/weapon/shield/riot/guardsman/chaos,
 	)
 
 /datum/campaign_asset/equipment/grenades_som
 	name = "Grenade resupply"
 	desc = "An assortment of grenades"
 	detailed_desc = "A variety of different grenade types. Throw towards enemy."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "grenade"
 	uses = 2
 	cost = 6
 	equipment_to_spawn = list(
-		/obj/item/storage/belt/grenade/som/standard,
-		/obj/item/storage/pouch/grenade/som/combat_patrol,
+		/obj/item/storage/belt/grenade/chaos/standard,
+		/obj/item/storage/pouch/grenade/chaos/combat_patrol,
 	)
 
 /datum/campaign_asset/equipment/at_mines
@@ -307,17 +307,17 @@
 		/obj/item/storage/box/explosive_mines/antitank,
 	)
 
-/datum/campaign_asset/equipment/at_mines/som
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+/datum/campaign_asset/equipment/at_mines/chaos
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 
 /datum/campaign_asset/equipment/tac_bino_som
 	name = "Tactical binoculars"
 	desc = "One set of tactical binoculars"
 	detailed_desc = "Tactical binoculars for seeing into the distance and calling down air support."
-	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
+	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	ui_icon = "binoculars"
 	uses = 1
 	cost = 3
 	equipment_to_spawn = list(
-		/obj/item/binoculars/fire_support/campaign/som,
+		/obj/item/binoculars/fire_support/campaign/chaos,
 	)

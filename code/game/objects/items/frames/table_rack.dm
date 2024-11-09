@@ -9,11 +9,11 @@
 	name = "table parts"
 	desc = "A kit for a table, including a large, flat metal surface and four legs. Some assembly required."
 	gender = PLURAL
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "table_parts"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "table_parts"
 	atom_flags = CONDUCT
@@ -90,7 +90,7 @@
 /obj/item/frame/table/reinforced
 	name = "reinforced table parts"
 	desc = "A kit for a table, including a large, flat metal surface and four legs. This kit has side panels. Some assembly required."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "reinf_tableparts"
 	table_type = /obj/structure/table/reinforced
 	deconstruct_amount = 2
@@ -162,10 +162,10 @@
 /obj/item/frame/rack
 	name = "rack parts"
 	desc = "A kit for a storage rack with multiple metal shelves. Relatively cheap, useful for mass storage. Some assembly required."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	icon_state = "rack_parts"
 	atom_flags = CONDUCT

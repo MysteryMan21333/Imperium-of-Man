@@ -1,6 +1,6 @@
 #define FACTION_NEUTRAL "Neutral"
-#define FACTION_TERRAGOV "TerraGov"
-#define FACTION_XENO "Xeno"
+#define FACTION_IMPERIUM "Imperium"
+#define FACTION_TYRANID "Tyranid"
 #define FACTION_ZOMBIE "Zombie"
 #define FACTION_CLF "Colonial Liberation Force"
 #define FACTION_DEATHSQUAD "Deathsquad"
@@ -9,7 +9,7 @@
 #define FACTION_UNKN_MERCS "Unknown Mercenary Group"
 #define FACTION_NANOTRASEN "Nanotrasen"
 #define FACTION_SECTOIDS "Sectoids"
-#define FACTION_SOM "Sons of Mars"
+#define FACTION_CHAOS "Sons of Mars"
 #define FACTION_ICC "Independent Colonial Confederation"
 #define FACTION_USL "United Space Lepidoptera"
 #define FACTION_ALIEN "Alien"
@@ -33,19 +33,19 @@
 GLOBAL_LIST_INIT(faction_to_alignement, list(
 	FACTION_NEUTRAL = ALIGNEMENT_NEUTRAL,
 	//Friendly
-	FACTION_TERRAGOV = ALIGNEMENT_FRIENDLY,
+	FACTION_IMPERIUM = ALIGNEMENT_FRIENDLY,
 	FACTION_NANOTRASEN = ALIGNEMENT_FRIENDLY,
 	FACTION_FREELANCERS = ALIGNEMENT_FRIENDLY,
 	FACTION_SPECFORCE = ALIGNEMENT_FRIENDLY,
 	FACTION_ERP = ALIGNEMENT_FRIENDLY,
 	//Hostile
-	FACTION_XENO = ALIGNEMENT_HOSTILE,
+	FACTION_TYRANID = ALIGNEMENT_HOSTILE,
 	FACTION_CLF = ALIGNEMENT_HOSTILE,
 	FACTION_DEATHSQUAD = ALIGNEMENT_HOSTILE,
 	FACTION_IMP = ALIGNEMENT_HOSTILE,
 	FACTION_UNKN_MERCS = ALIGNEMENT_HOSTILE,
 	FACTION_SECTOIDS = ALIGNEMENT_HOSTILE,
-	FACTION_SOM = ALIGNEMENT_HOSTILE,
+	FACTION_CHAOS = ALIGNEMENT_HOSTILE,
 	FACTION_ICC = ALIGNEMENT_HOSTILE,
 	FACTION_USL = ALIGNEMENT_HOSTILE,
 	FACTION_ALIEN = ALIGNEMENT_HOSTILE,
@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(faction_to_alignement, list(
 
 ///Iff signals for factions
 #define TGMC_LOYALIST_IFF (1<<0) //Friendly IFF Signal
-#define SOM_IFF (1<<1)
+#define CHAOS_IFF (1<<1)
 #define DEATHSQUAD_IFF (1<<2)
 #define ICC_IFF (1<<3)
 #define CLF_IFF (1<<4)
@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(faction_to_alignement, list(
 ///Iff for each faction that is able to use iff
 GLOBAL_LIST_INIT(faction_to_iff, list(
 	FACTION_NEUTRAL = TGMC_LOYALIST_IFF,
-	FACTION_TERRAGOV = TGMC_LOYALIST_IFF,
+	FACTION_IMPERIUM = TGMC_LOYALIST_IFF,
 	FACTION_SPECFORCE = TGMC_LOYALIST_IFF,
 	FACTION_NANOTRASEN = TGMC_LOYALIST_IFF,
 	FACTION_FREELANCERS = TGMC_LOYALIST_IFF,
@@ -82,7 +82,7 @@ GLOBAL_LIST_INIT(faction_to_iff, list(
 	FACTION_IMP = IMP_IFF,
 	FACTION_UNKN_MERCS = UNKN_MERCS_IFF,
 	FACTION_SECTOIDS = SECTOIDS_IFF,
-	FACTION_SOM = SOM_IFF,
+	FACTION_CHAOS = CHAOS_IFF,
 	FACTION_ICC = ICC_IFF,
 	FACTION_USL = USL_IFF,
 	FACTION_PIRATE = PIRATE_IFF,
@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(faction_to_iff, list(
 ///Acronyms for each faction, or the shortest name possible
 GLOBAL_LIST_INIT(faction_to_acronym, list(
 	FACTION_NEUTRAL = "Neutral",
-	FACTION_TERRAGOV = "TGMC",
+	FACTION_IMPERIUM = "TGMC",
 	FACTION_SPECFORCE = "SRF",
 	FACTION_NANOTRASEN = "PMC",
 	FACTION_FREELANCERS = "FRE",
@@ -101,7 +101,7 @@ GLOBAL_LIST_INIT(faction_to_acronym, list(
 	FACTION_IMP = "IMP",
 	FACTION_UNKN_MERCS = "Unknown",
 	FACTION_SECTOIDS = "Sectoids",
-	FACTION_SOM = "SOM",
+	FACTION_CHAOS = "CHAOS",
 	FACTION_ICC = "ICC",
 	FACTION_USL = "USL",
 	FACTION_PIRATE = "Pirates",
@@ -109,29 +109,29 @@ GLOBAL_LIST_INIT(faction_to_acronym, list(
 
 ///List of correspond factions to data hud
 GLOBAL_LIST_INIT(faction_to_data_hud, list(
-	FACTION_TERRAGOV = DATA_HUD_SQUAD_TERRAGOV,
-	FACTION_SOM = DATA_HUD_SQUAD_SOM,
+	FACTION_IMPERIUM = DATA_HUD_SQUAD_IMPERIUM,
+	FACTION_CHAOS = DATA_HUD_SQUAD_CHAOS,
 ))
 
 GLOBAL_LIST_INIT(faction_to_squad_hud, list(
-	FACTION_TERRAGOV = SQUAD_HUD_TERRAGOV,
-	FACTION_SOM = SQUAD_HUD_SOM,
+	FACTION_IMPERIUM = SQUAD_HUD_IMPERIUM,
+	FACTION_CHAOS = SQUAD_HUD_CHAOS,
 ))
 
 GLOBAL_LIST_INIT(faction_to_portrait, list(
-	FACTION_TERRAGOV = /atom/movable/screen/text/screen_text/picture/potrait,
-	FACTION_SOM = /atom/movable/screen/text/screen_text/picture/potrait/som_over,
+	FACTION_IMPERIUM = /atom/movable/screen/text/screen_text/picture/potrait,
+	FACTION_CHAOS = /atom/movable/screen/text/screen_text/picture/potrait/chaos_over,
 ))
 
 GLOBAL_LIST_INIT(faction_to_mech_spawner, list(
-	FACTION_TERRAGOV = list(
+	FACTION_IMPERIUM = list(
 		"heavy" = /obj/effect/landmark/campaign/vehicle_spawner/mech/heavy,
 		"medium" = /obj/effect/landmark/campaign/vehicle_spawner/mech,
 		"light" = /obj/effect/landmark/campaign/vehicle_spawner/mech/light,
 	),
-	FACTION_SOM = list(
-		"heavy" = /obj/effect/landmark/campaign/vehicle_spawner/mech/som/heavy,
-		"medium" = /obj/effect/landmark/campaign/vehicle_spawner/mech/som,
-		"light" = /obj/effect/landmark/campaign/vehicle_spawner/mech/som/light,
+	FACTION_CHAOS = list(
+		"heavy" = /obj/effect/landmark/campaign/vehicle_spawner/mech/chaos/heavy,
+		"medium" = /obj/effect/landmark/campaign/vehicle_spawner/mech/chaos,
+		"light" = /obj/effect/landmark/campaign/vehicle_spawner/mech/chaos/light,
 	),
 ))

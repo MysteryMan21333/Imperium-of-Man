@@ -211,50 +211,50 @@
 	var/turf/firedturf = get_turf(src)
 	firedturf.AICtrlClick(user)
 
-/* Xenos */
-/mob/living/carbon/xenomorph/AIMiddleClick(mob/living/silicon/ai/user)
+/* Tyranids */
+/mob/living/carbon/tyranid/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_NORMAL)
 
-/mob/living/carbon/xenomorph/shrike/AIMiddleClick(mob/living/silicon/ai/user) //xenomorph leadership castes get some reduction in ping cooldown
+/mob/living/carbon/tyranid/shrike/AIMiddleClick(mob/living/silicon/ai/user) //tyranid leadership castes get some reduction in ping cooldown
 	user.ai_ping(src, COOLDOWN_AI_PING_LOW)
 
-/mob/living/carbon/xenomorph/queen/AIMiddleClick(mob/living/silicon/ai/user)
+/mob/living/carbon/tyranid/queen/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_LOW)
 
-/mob/living/carbon/xenomorph/king/AIMiddleClick(mob/living/silicon/ai/user)
+/mob/living/carbon/tyranid/king/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_LOW)
 
-/* Xeno structures */
-/obj/structure/xeno/silo/AIMiddleClick(mob/living/silicon/ai/user)
+/* Tyranid structures */
+/obj/structure/tyranid/silo/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_EXTRA_LOW)
 
-/obj/structure/xeno/xeno_turret/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/tyranid_turret/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_EXTRA_LOW)
 
-/obj/structure/xeno/evotower/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/evotower/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_EXTRA_LOW)
 
-/obj/structure/xeno/psychictower/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/psychictower/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_EXTRA_LOW)
 
-/obj/structure/xeno/pherotower/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/pherotower/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_EXTRA_LOW)
 
-/obj/structure/xeno/spawner/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/spawner/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_EXTRA_LOW)
 
-/obj/structure/xeno/spawner/plant/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/spawner/plant/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_LOW)
 
-/obj/structure/xeno/tunnel/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/tunnel/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_LOW)
 
-/obj/structure/xeno/trap/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/structure/tyranid/trap/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_NORMAL)
 
 /* acid */
 
-/obj/effect/xenomorph/acid/AIMiddleClick(mob/living/silicon/ai/user)
+/obj/effect/tyranid/acid/AIMiddleClick(mob/living/silicon/ai/user)
 	user.ai_ping(src, COOLDOWN_AI_PING_NORMAL)
 
 
@@ -310,7 +310,7 @@
 	if(HAS_TRAIT(user, TRAIT_IS_FIRING_RAILGUN))
 		to_chat(user, span_warning("The rail guns are already targeting a location, wait for them to finish."))
 		return
-	if(!is_ground_level(user.eyeobj.z) || isdropshiparea(A) || A.area_flags & MARINE_BASE) //can't fire the railgun off the ground level, at the DS, or in FOB
+	if(!is_ground_level(user.eyeobj.z) || isdropshiparea(A) || A.area_flags & GUARDSMAN_BASE) //can't fire the railgun off the ground level, at the DS, or in FOB
 		to_chat(user, span_warning("Incompatible target location."))
 		return
 	if(SSmonitor.gamestate == SHUTTERS_CLOSED)
@@ -319,7 +319,7 @@
 	if(A.ceiling > CEILING_OBSTRUCTED)
 		to_chat(user, span_warning("DEPTH WARNING: Target too deep for ordnance."))
 		return
-	if((GLOB.marine_main_ship?.rail_gun?.last_firing_ai + COOLDOWN_RAILGUN_FIRE) > world.time)
+	if((GLOB.guardsman_main_ship?.rail_gun?.last_firing_ai + COOLDOWN_RAILGUN_FIRE) > world.time)
 		to_chat(user, "[icon2html(src, user)] [span_warning("The rail gun hasn't cooled down yet!")]")
 		return
 	else if(!A)
@@ -350,10 +350,10 @@
 			REMOVE_TRAIT(user, TRAIT_IS_FIRING_RAILGUN, TRAIT_IS_FIRING_RAILGUN)
 			break
 		///used to check if we have valid targets
-		var/list/mob/living/carbon/xenomorph/possible_xenos = list()
-		for(var/mob/living/carbon/xenomorph/target_xeno AS in cheap_get_xenos_near(laser, AI_RAILGUN_AUTOTARGET_RANGE))
-			if(target_xeno.stat != DEAD)
-				possible_xenos += target_xeno
+		var/list/mob/living/carbon/tyranid/possible_tyranids = list()
+		for(var/mob/living/carbon/tyranid/target_tyranid AS in cheap_get_tyranids_near(laser, AI_RAILGUN_AUTOTARGET_RANGE))
+			if(target_tyranid.stat != DEAD)
+				possible_tyranids += target_tyranid
 		//used to calculate nearby human mobs for avoidance purposes
 		var/mob/living/carbon/human/possible_humans = list()
 		//used for calculating zombies
@@ -365,11 +365,11 @@
 				possible_humans += nearby_human
 		if(length(possible_zombies))
 			var/mob/living/carbon/human/nuked_zombie = pick(possible_zombies)
-			GLOB.marine_main_ship?.rail_gun?.fire_rail_gun(nuked_zombie, user, TRUE, TRUE)
+			GLOB.guardsman_main_ship?.rail_gun?.fire_rail_gun(nuked_zombie, user, TRUE, TRUE)
 			++timesfired
-		else if(length(possible_xenos))
-			var/mob/living/carbon/xenomorph/nuked_xeno = pick(possible_xenos)
-			GLOB.marine_main_ship?.rail_gun?.fire_rail_gun(nuked_xeno, user, TRUE, TRUE)
+		else if(length(possible_tyranids))
+			var/mob/living/carbon/tyranid/nuked_tyranid = pick(possible_tyranids)
+			GLOB.guardsman_main_ship?.rail_gun?.fire_rail_gun(nuked_tyranid, user, TRUE, TRUE)
 			++timesfired
 		else if(length(possible_humans))
 			var/turf/targetturf = get_turf(laser)
@@ -381,11 +381,11 @@
 				if(length(possible_humans))
 					targetturf = locate(targetturf.x + rand(AI_RAILGUN_HUMAN_EXCLUSION_NEGATIVE, AI_RAILGUN_HUMAN_EXCLUSION_POSITIVE), targetturf.y + rand(AI_RAILGUN_HUMAN_EXCLUSION_NEGATIVE, AI_RAILGUN_HUMAN_EXCLUSION_POSITIVE), targetturf.z)
 				else
-					GLOB.marine_main_ship?.rail_gun?.fire_rail_gun(targetturf, user, TRUE, TRUE)
+					GLOB.guardsman_main_ship?.rail_gun?.fire_rail_gun(targetturf, user, TRUE, TRUE)
 					++timesfired
 					break
 		else
-			GLOB.marine_main_ship?.rail_gun?.fire_rail_gun(laser, user, TRUE, TRUE)
+			GLOB.guardsman_main_ship?.rail_gun?.fire_rail_gun(laser, user, TRUE, TRUE)
 			++timesfired
 
 #undef AI_MAX_RAILGUN_SHOTS_FIRED_UPPER_RANGE

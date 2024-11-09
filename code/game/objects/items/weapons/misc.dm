@@ -28,7 +28,7 @@
 /obj/item/weapon/broken_bottle
 	name = "Broken Bottle"
 	desc = "A bottle with a sharp broken bottom."
-	icon = 'icons/obj/items/drinks.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/drinks.dmi'
 	icon_state = "broken_bottle"
 	force = 9
 	throwforce = 5
@@ -38,7 +38,7 @@
 	attack_verb = list("stabbed", "slashed", "attacked")
 	sharp = IS_SHARP_ITEM_SIMPLE
 	edge = 0
-	var/icon/broken_outline = icon('icons/obj/items/drinks.dmi', "broken")
+	var/icon/broken_outline = icon('modular_imperium/master_files/icons/obj/items/drinks.dmi', "broken")
 
 /obj/item/weapon/broken_bottle/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 25, 1)

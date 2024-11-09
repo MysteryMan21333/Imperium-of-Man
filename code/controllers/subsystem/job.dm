@@ -101,15 +101,15 @@ SUBSYSTEM_DEF(job)
 	if(!job.player_old_enough(player.client))
 		JobDebug("AR player not old enough, Player: [player], Job:[job.title]")
 		return FALSE
-	if(ismarinejob(job) || issommarinejob(job))
+	if(isguardsmanjob(job) || issomguardsmanjob(job))
 		if(!handle_initial_squad(player, job, latejoin, job.faction))
-			JobDebug("Failed to assign marine role to a squad. Player: [player.key] Job: [job.title]")
+			JobDebug("Failed to assign guardsman role to a squad. Player: [player.key] Job: [job.title]")
 			return FALSE
-		JobDebug("Successfuly assigned marine role to a squad. Player: [player.key], Job: [job.title], Squad: [player.assigned_squad]")
+		JobDebug("Successfuly assigned guardsman role to a squad. Player: [player.key], Job: [job.title], Squad: [player.assigned_squad]")
 	if(!latejoin)
 		unassigned -= player
-	if(job.job_category != JOB_CAT_XENO && !GLOB.joined_player_list.Find(player.ckey))
-		SSpoints.supply_points[job.faction] += SUPPLY_POINT_MARINE_SPAWN
+	if(job.job_category != JOB_CAT_TYRANID && !GLOB.joined_player_list.Find(player.ckey))
+		SSpoints.supply_points[job.faction] += SUPPLY_POINT_GUARDSMAN_SPAWN
 	job.occupy_job_positions(1, GLOB.joined_player_list.Find(player.ckey))
 	player.mind?.assigned_role = job
 	player.assigned_role = job
@@ -210,7 +210,7 @@ SUBSYSTEM_DEF(job)
 			RejectPlayer(player)
 		//Choose a faction in advance if needed
 		if(SSticker.mode?.round_type_flags & MODE_TWO_HUMAN_FACTIONS) //Alternates between the two factions
-			faction_rejected = faction_rejected == FACTION_TERRAGOV ? FACTION_SOM : FACTION_TERRAGOV
+			faction_rejected = faction_rejected == FACTION_IMPERIUM ? FACTION_CHAOS : FACTION_IMPERIUM
 		// Loop through all jobs
 		for(var/datum/job/job AS in occupations_to_assign)
 			// If the player wants that job on this level, then try give it to him.
@@ -334,7 +334,7 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, datum/job/assigned_role)
 	switch(assigned_role.faction)
-		if(FACTION_SOM)
+		if(FACTION_CHAOS)
 			if(length(GLOB.latejoinsom))
 				SendToAtom(M, pick(GLOB.latejoinsom))
 				return

@@ -126,11 +126,11 @@ GLOBAL_LIST_INIT(string_equip_flags, list("suit slot" = ITEM_SLOT_OCLOTHING,
 	. += "<br>Its protection is provided by the plate inside, examine it for details on armor.<br>"
 
 /datum/codex_entry/M3_normal
-	display_name = "M3 pattern marine armor"
+	display_name = "M3 pattern guardsman armor"
 	mechanics_text = "This is the base armor, it neither good nor bad. It will serve you well in most situations."
 	lore_text = "This armor was first developed for the TGMC upon requests by General McCoy because he was finding casualties happening due to chest penetrations a bit too common for his liking."
 
 /datum/codex_entry/M3_edge
-	display_name = "M3-E pattern marine armor"
+	display_name = "M3-E pattern guardsman armor"
 	mechanics_text = "This is the edge armor. It is good vs melee based attacks but bad against most everything else. Great for those who like to get in close."
 	lore_text = "This armor was first developed for the TGMC upon requests by General McCoy because he was finding casualties happening due to guerrilla machete commandos a bit too common for his liking."

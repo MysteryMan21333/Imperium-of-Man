@@ -1,18 +1,18 @@
 
 /datum/loadout_item/secondary/kit //faction generic secondaries
 	jobs_supported = list(
-		SQUAD_MARINE,
+		SQUAD_GUARDSMAN,
 		SQUAD_CORPSMAN,
 		SQUAD_ENGINEER,
 		SQUAD_SMARTGUNNER,
 		SQUAD_LEADER,
 		FIELD_COMMANDER,
-		SOM_SQUAD_MARINE,
-		SOM_SQUAD_CORPSMAN,
-		SOM_SQUAD_ENGINEER,
-		SOM_SQUAD_VETERAN,
-		SOM_SQUAD_LEADER,
-		SOM_FIELD_COMMANDER,
+		CHAOS_SQUAD_GUARDSMAN,
+		CHAOS_SQUAD_CORPSMAN,
+		CHAOS_SQUAD_ENGINEER,
+		CHAOS_SQUAD_VETERAN,
+		CHAOS_SQUAD_LEADER,
+		CHAOS_FIELD_COMMANDER,
 	)
 
 /datum/loadout_item/secondary/kit/primary_ammo
@@ -29,7 +29,7 @@
 	wearer.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/secondary/kit/primary_ammo/default
-	jobs_supported = list(SQUAD_CORPSMAN, SOM_SQUAD_CORPSMAN)
+	jobs_supported = list(SQUAD_CORPSMAN, CHAOS_SQUAD_CORPSMAN)
 
 /datum/loadout_item/secondary/kit/emp_nades
 	name = "EMP nades"

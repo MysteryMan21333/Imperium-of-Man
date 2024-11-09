@@ -166,9 +166,9 @@ SUBSYSTEM_DEF(automatedfire)
 
 /obj/structure/turret_debug/Initialize(mapload)
 	. = ..()
-	ammo = GLOB.ammo_list[/datum/ammo/xeno/acid]
+	ammo = GLOB.ammo_list[/datum/ammo/tyranid/acid]
 	target = locate(x+5, y, z)
-	AddComponent(/datum/component/automatedfire/xeno_turret_autofire, firerate)
+	AddComponent(/datum/component/automatedfire/tyranid_turret_autofire, firerate)
 	RegisterSignal(src, COMSIG_AUTOMATIC_SHOOTER_SHOOT, PROC_REF(shoot))
 	SEND_SIGNAL(src, COMSIG_AUTOMATIC_SHOOTER_START_SHOOTING_AT)
 	var/static/number = 1
@@ -182,13 +182,13 @@ SUBSYSTEM_DEF(automatedfire)
 	newshot.generate_bullet(ammo)
 	newshot.fire_at(target, null, src, ammo.max_range, ammo.shell_speed)
 
-/datum/component/automatedfire/xeno_turret_autofire
+/datum/component/automatedfire/tyranid_turret_autofire
 	///Delay between two shots
 	var/shot_delay
 	///If we must shoot
 	var/shooting = FALSE
 
-/datum/component/automatedfire/xeno_turret_autofire/Initialize(_shot_delay)
+/datum/component/automatedfire/tyranid_turret_autofire/Initialize(_shot_delay)
 	. = ..()
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -197,7 +197,7 @@ SUBSYSTEM_DEF(automatedfire)
 	RegisterSignal(parent, COMSIG_AUTOMATIC_SHOOTER_STOP_SHOOTING_AT, PROC_REF(stop_shooting))
 
 ///Signal handler for starting the autoshooting at something
-/datum/component/automatedfire/xeno_turret_autofire/proc/start_shooting(datum/source)
+/datum/component/automatedfire/tyranid_turret_autofire/proc/start_shooting(datum/source)
 	SIGNAL_HANDLER
 	if(!shooting)
 		shooting = TRUE
@@ -205,11 +205,11 @@ SUBSYSTEM_DEF(automatedfire)
 
 
 ///Signal handler for stoping the shooting
-/datum/component/automatedfire/xeno_turret_autofire/proc/stop_shooting(datum/source)
+/datum/component/automatedfire/tyranid_turret_autofire/proc/stop_shooting(datum/source)
 	SIGNAL_HANDLER
 	shooting = FALSE
 
-/datum/component/automatedfire/xeno_turret_autofire/process_shot()
+/datum/component/automatedfire/tyranid_turret_autofire/process_shot()
 	//We check if the parent is not null, because the component could be scheduled to fire and then the turret is destroyed
 	if(!shooting || !parent)
 		return

@@ -248,7 +248,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/dorms)
 "Hf" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/up,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/up,
 /turf/open/floor/grimy,
 /area/bigredv2/outside/dorms)
 "Ii" = (

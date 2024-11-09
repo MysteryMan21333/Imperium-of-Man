@@ -5,12 +5,12 @@
 /obj/structure/bed/nest
 	name = "alien nest"
 	desc = "It's a gruesome pile of thick, sticky resin shaped like a nest."
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "nest"
 	hit_sound = SFX_ALIEN_RESIN_BREAK
 	buckling_y = 6
 	buildstacktype = null //can't be disassembled and doesn't drop anything when destroyed
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
+	resistance_flags = UNACIDABLE|TYRANID_DAMAGEABLE
 	max_integrity = 100
 	var/resisting_time = 0
 	layer = RESIN_STRUCTURE_LAYER
@@ -23,16 +23,16 @@
 	grabbed_mob.forceMove(loc)
 	return TRUE
 
-/obj/structure/bed/nest/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.a_intent != INTENT_HARM)
-		return attack_hand(xeno_attacker)
+/obj/structure/bed/nest/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.a_intent != INTENT_HARM)
+		return attack_hand(tyranid_attacker)
 	return ..()
 
 
 /obj/structure/bed/nest/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
 	if(user.incapacitated() || !in_range(user, src) || buckling_mob.buckled)
 		return FALSE
-	if(!isxeno(user))
+	if(!istyranid(user))
 		to_chat(user, span_warning("Gross! You're not touching that stuff."))
 		return FALSE
 	if(LAZYLEN(buckled_mobs))
@@ -57,12 +57,12 @@
 	if(LAZYLEN(buckled_mobs))
 		to_chat(user, span_warning("There's already someone in [src]."))
 		return FALSE
-	if(ishuman(buckling_mob) && !buckling_mob.lying_angle) //Improperly stunned Marines won't be nested
+	if(ishuman(buckling_mob) && !buckling_mob.lying_angle) //Improperly stunned Guardsmans won't be nested
 		to_chat(user, span_warning("[buckling_mob] is resisting, ground [buckling_mob.p_them()]."))
 		return FALSE
 
-	buckling_mob.visible_message(span_xenonotice("[user] secretes a thick, vile resin, securing [buckling_mob] into [src]!"),
-		span_xenonotice("[user] drenches you in a foul-smelling resin, trapping you in [src]!"),
+	buckling_mob.visible_message(span_tyranidnotice("[user] secretes a thick, vile resin, securing [buckling_mob] into [src]!"),
+		span_tyranidnotice("[user] drenches you in a foul-smelling resin, trapping you in [src]!"),
 		span_notice("You hear squelching."))
 	playsound(loc, SFX_ALIEN_RESIN_MOVE, 50)
 
@@ -112,7 +112,7 @@
 
 /obj/structure/bed/nest/post_buckle_mob(mob/living/buckling_mob)
 	. = ..()
-	ENABLE_BITFIELD(buckling_mob.restrained_flags, RESTRAINED_XENO_NEST)
+	ENABLE_BITFIELD(buckling_mob.restrained_flags, RESTRAINED_TYRANID_NEST)
 	buckling_mob.pulledby?.stop_pulling()
 
 /obj/structure/bed/nest/post_unbuckle_mob(mob/living/buckled_mob)
@@ -120,7 +120,7 @@
 	resisting_time = 0 //Reset it to keep track on if someone is actively resisting.
 	if(QDELETED(buckled_mob))
 		return
-	DISABLE_BITFIELD(buckled_mob.restrained_flags, RESTRAINED_XENO_NEST)
+	DISABLE_BITFIELD(buckled_mob.restrained_flags, RESTRAINED_TYRANID_NEST)
 
 
 /obj/structure/bed/nest/update_overlays()

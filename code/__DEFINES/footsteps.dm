@@ -22,10 +22,10 @@
 
 //footstep mob defines
 #define FOOTSTEP_MOB_BAREFOOT 1
-#define FOOTSTEP_XENO_HEAVY 2
+#define FOOTSTEP_TYRANID_HEAVY 2
 #define FOOTSTEP_MOB_SHOE 3
 #define FOOTSTEP_MOB_HUMAN 4 //Warning: Only works on /mob/living/carbon/human
-#define FOOTSTEP_XENO_MEDIUM 5
+#define FOOTSTEP_TYRANID_MEDIUM 5
 
 GLOBAL_LIST_INIT(shoefootstep, list(
 	FOOTSTEP_WOOD = list(list(
@@ -243,7 +243,7 @@ GLOBAL_LIST_INIT(barefootstep, list(
 ))
 
 //claw footsteps lists
-GLOBAL_LIST_INIT(xenomediumstep, list(
+GLOBAL_LIST_INIT(tyranidmediumstep, list(
 	FOOTSTEP_WOOD = list(list(
 		'sound/effects/footstep/woodclaw1.ogg',
 		'sound/effects/footstep/woodclaw2.ogg',
@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(xenomediumstep, list(
 ))
 
 //heavy footsteps list
-GLOBAL_LIST_INIT(xenoheavystep, list(
+GLOBAL_LIST_INIT(tyranidheavystep, list(
 	FOOTSTEP_GENERIC_HEAVY = list(list(
 		'sound/effects/footstep/heavy1.ogg',
 		'sound/effects/footstep/heavy2.ogg',

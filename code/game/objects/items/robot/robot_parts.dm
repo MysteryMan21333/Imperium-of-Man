@@ -1,9 +1,9 @@
 /obj/item/robot_parts
 	name = "robot parts"
-	icon = 'icons/obj/items/robot_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/robot_parts.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "buildpipe"
 	icon_state = "blank"
@@ -52,7 +52,7 @@
 
 /obj/item/robot_parts/biotic
 	name = "biotic limbs"
-	icon = 'icons/mob/human_races/r_human.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human_races/r_human.dmi'
 	atom_flags = NONE
 
 /obj/item/robot_parts/biotic/l_arm

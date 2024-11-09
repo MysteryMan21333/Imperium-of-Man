@@ -306,7 +306,7 @@ Min Core Pressure: [pressure_limit] kPa<BR>"}
 	addtimer(CALLBACK(src, PROC_REF(updateUsrDialog)), 5)
 
 /obj/machinery/computer/general_air_control/fuel_injection
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	screen_overlay = "atmos"
 

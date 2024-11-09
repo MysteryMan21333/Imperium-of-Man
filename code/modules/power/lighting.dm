@@ -3,7 +3,7 @@
 
 /obj/machinery/light
 	name = "light fixture"
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	base_icon_state = "tube"
 	icon_state = "tube_empty"
 	desc = "A lighting fixture."
@@ -219,13 +219,13 @@
 	qdel(src)
 	return TRUE
 
-/obj/machinery/light/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/light/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
 	if(status == LIGHT_BROKEN)
 		return FALSE
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] smashes [src]!"), \
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+	tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] smashes [src]!"), \
 	span_danger("We smash [src]!"), null, 5)
 	broken()
 
@@ -507,7 +507,7 @@
 //not directly related stuff
 /obj/machinery/landinglight
 	name = "landing light"
-	icon = 'icons/obj/landinglights.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/landinglights.dmi'
 	icon_state = "landingstripe"
 	desc = "A landing light, if it's flashing stay clear!"
 	anchored = TRUE
@@ -520,7 +520,7 @@
 	///ID of dropship
 	var/id
 	///port its linked to
-	var/obj/docking_port/stationary/marine_dropship/linked_port = null
+	var/obj/docking_port/stationary/guardsman_dropship/linked_port = null
 
 /obj/machinery/landinglight/Initialize(mapload)
 	. = ..()
@@ -556,7 +556,7 @@
 /obj/machinery/floor_warn_light
 	name = "alarm light"
 	desc = "If this is on you should probably be running!"
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "rotating_alarm"
 	light_system = HYBRID_LIGHT
 	light_color = LIGHT_COLOR_RED

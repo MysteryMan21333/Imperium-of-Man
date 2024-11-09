@@ -17,7 +17,7 @@ log transactions
 /obj/machinery/atm
 	name = "NanoTrasen Automatic Teller Machine"
 	desc = "For all your monetary needs!"
-	icon = 'icons/obj/terminals.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/terminals.dmi'
 	icon_state = "atm"
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
@@ -354,7 +354,7 @@ log transactions
 					R.info += "<i>Service terminal ID:</i> [machine_id]<br>"
 
 					//stamp the paper
-					var/image/stampoverlay = image('icons/obj/items/paper.dmi')
+					var/image/stampoverlay = image('modular_imperium/master_files/icons/obj/items/paper.dmi')
 					stampoverlay.icon_state = "paper_stamp-cent"
 					if(!R.stamped)
 						R.stamped = new
@@ -396,7 +396,7 @@ log transactions
 					R.info += "</table>"
 
 					//stamp the paper
-					var/image/stampoverlay = image('icons/obj/items/paper.dmi')
+					var/image/stampoverlay = image('modular_imperium/master_files/icons/obj/items/paper.dmi')
 					stampoverlay.icon_state = "paper_stamp-cent"
 					if(!R.stamped)
 						R.stamped = new

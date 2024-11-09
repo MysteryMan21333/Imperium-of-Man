@@ -1,8 +1,8 @@
 /atom/movable/screen/alien
-	icon = 'icons/mob/screen/alien.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 
 /atom/movable/screen/alien/Click()
-	if(!isxeno(usr))
+	if(!istyranid(usr))
 		return FALSE
 	return TRUE
 
@@ -15,7 +15,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/mob/living/carbon/xenomorph/X = usr
+	var/mob/living/carbon/tyranid/X = usr
 	X.toggle_nightvision()
 	switch(X.lighting_alpha)
 		if(LIGHTING_PLANE_ALPHA_INVISIBLE)
@@ -37,7 +37,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/mob/living/carbon/xenomorph/X = usr
+	var/mob/living/carbon/tyranid/X = usr
 	X.hive_status()
 
 /atom/movable/screen/alien/plasmadisplay
@@ -45,7 +45,7 @@
 	icon_state = "power_display2"
 	screen_loc = ui_alienplasmadisplay
 
-/datum/hud/alien/New(mob/living/carbon/xenomorph/owner, ui_style, ui_color, ui_alpha = 230)
+/datum/hud/alien/New(mob/living/carbon/tyranid/owner, ui_style, ui_color, ui_alpha = 230)
 	..()
 	var/atom/movable/screen/using
 	var/atom/movable/screen/inventory/inv_box
@@ -64,12 +64,12 @@
 	move_intent = using
 
 	using = new /atom/movable/screen/drop(null, src)
-	using.icon = 'icons/mob/screen/alien.dmi'
+	using.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	using.alpha = ui_alpha
 	static_inventory += using
 
 	inv_box = new /atom/movable/screen/inventory/hand/right(null, src)
-	inv_box.icon = 'icons/mob/screen/alien.dmi'
+	inv_box.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	using.alpha = ui_alpha
 	inv_box.slot_id = SLOT_R_HAND
 	inv_box.update_icon()
@@ -77,7 +77,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory/hand/left(null, src)
-	inv_box.icon = 'icons/mob/screen/alien.dmi'
+	inv_box.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	using.alpha = ui_alpha
 	inv_box.slot_id = SLOT_L_HAND
 	inv_box.update_icon()
@@ -85,23 +85,23 @@
 	static_inventory += inv_box
 
 	using = new /atom/movable/screen/swap_hand(null, src)
-	using.icon = 'icons/mob/screen/alien.dmi'
+	using.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	using.alpha = ui_alpha
 	static_inventory += using
 
 	using = new /atom/movable/screen/swap_hand/right(null, src)
-	using.icon = 'icons/mob/screen/alien.dmi'
+	using.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	using.alpha = ui_alpha
 	static_inventory += using
 
 	using = new /atom/movable/screen/resist(null, src)
-	using.icon = 'icons/mob/screen/alien.dmi'
+	using.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	using.screen_loc = ui_above_movement
 	using.alpha = ui_alpha
 	hotkeybuttons += using
 
 	throw_icon = new /atom/movable/screen/throw_catch(null, src)
-	throw_icon.icon = 'icons/mob/screen/alien.dmi'
+	throw_icon.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	throw_icon.alpha = ui_alpha
 	hotkeybuttons += throw_icon
 
@@ -122,7 +122,7 @@
 	infodisplay += locate_leader
 
 	pull_icon = new /atom/movable/screen/pull(null, src)
-	pull_icon.icon = 'icons/mob/screen/alien.dmi'
+	pull_icon.icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	pull_icon.screen_loc = ui_above_movement
 	pull_icon.alpha = ui_alpha
 	pull_icon.update_icon()
@@ -135,7 +135,7 @@
 /datum/hud/alien/persistent_inventory_update()
 	if(!mymob)
 		return
-	var/mob/living/carbon/xenomorph/H = mymob
+	var/mob/living/carbon/tyranid/H = mymob
 	if(hud_version != HUD_STYLE_NOHUD)
 		if(H.r_hand)
 			H.r_hand.screen_loc = ui_rhand

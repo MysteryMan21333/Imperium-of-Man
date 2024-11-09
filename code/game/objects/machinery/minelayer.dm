@@ -1,7 +1,7 @@
 /obj/item/minelayer
 	name = "\improper M21 APRDS \"Minelayer\""
 	desc = "Anti-Personnel Rapid Deploy System, APRDS for short, is a device designed to quickly deploy M20 mines in large quantities. WARNING: Operating in tight places or existing mine fields will result in reduced efficiency."
-	icon = 'icons/obj/items/mines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/mines.dmi'
 	icon_state = "minelayer"
 	max_integrity = 200
 	item_flags = IS_DEPLOYABLE

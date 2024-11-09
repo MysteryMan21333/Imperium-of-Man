@@ -133,7 +133,7 @@
 	xooc(message)
 
 
-/client/verb/xooc(msg as text) // Same as MOOC, but for xenos.
+/client/verb/xooc(msg as text) // Same as MOOC, but for tyranids.
 	set name = "XOOC"
 	set category = "OOC"
 
@@ -150,8 +150,8 @@
 	if(mob.stat == DEAD && !admin)
 		to_chat(src, span_warning("You must be alive to use XOOC."))
 		return
-	if(!(mob in GLOB.xeno_mob_list) && !admin)
-		to_chat(src, span_warning("You must be a xeno to use XOOC."))
+	if(!(mob in GLOB.tyranid_mob_list) && !admin)
+		to_chat(src, span_warning("You must be a tyranid to use XOOC."))
 		return
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
@@ -208,12 +208,12 @@
 	for(var/client/C AS in GLOB.clients)
 		if(!(C.prefs.toggles_chat & CHAT_OOC))
 			continue
-		if(!(C.mob in GLOB.xeno_mob_list) && !(C.mob in GLOB.observer_list) || check_other_rights(C, R_ADMIN, FALSE)) // If the client is a xeno, an observer, and not an admin.
+		if(!(C.mob in GLOB.tyranid_mob_list) && !(C.mob in GLOB.observer_list) || check_other_rights(C, R_ADMIN, FALSE)) // If the client is a tyranid, an observer, and not an admin.
 			continue
 
 		var/display_name = mob.name
 		var/display_key = (holder?.fakekey ? "Administrator" : mob.key)
-		if(!(mob in GLOB.xeno_mob_list) && admin) // If the verb caller is an admin and not a xeno mob, use their fakekey or key instead.
+		if(!(mob in GLOB.tyranid_mob_list) && admin) // If the verb caller is an admin and not a tyranid mob, use their fakekey or key instead.
 			display_name = display_key
 
 		var/avoid_highlight = C == src
@@ -228,7 +228,7 @@
 
 		var/display_name = mob.name
 		var/display_key = (holder?.fakekey ? "Administrator" : mob.key)
-		if(!(mob in GLOB.xeno_mob_list) && admin) // If the verb caller is an admin and not a xeno mob, use their fakekey or key instead.
+		if(!(mob in GLOB.tyranid_mob_list) && admin) // If the verb caller is an admin and not a tyranid mob, use their fakekey or key instead.
 			display_name = display_key
 		display_name = "<a class='hidelink' href='?_src_=holder;[HrefToken(TRUE)];playerpanel=[REF(usr)]'>[display_name]</a>" // Admins get a clickable player panel.
 		if(!holder?.fakekey) // Show their key and their fakekey if they have one.

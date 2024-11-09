@@ -10,10 +10,10 @@
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "It's an emergency medical kit for those serious boo-boos."
-	icon = 'icons/obj/items/storage/firstaid.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/firstaid.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medkits_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medkits_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medkits_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medkits_right.dmi',
 	)
 	icon_state = "firstaid"
 	w_class = WEIGHT_CLASS_BULKY
@@ -153,7 +153,7 @@
 	name = "syringe case"
 	desc = "It's a medical case for storing syringes and bottles."
 	icon_state = "syringe_case"
-	icon = 'icons/obj/items/storage/firstaid.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/firstaid.dmi'
 	throw_speed = 2
 	throw_range = 8
 	w_class = WEIGHT_CLASS_SMALL
@@ -262,10 +262,10 @@
 	name = "pill bottle"
 	desc = "It's an airtight container for storing medication."
 	icon_state = "pill_canister"
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medical_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medical_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_right.dmi',
 	)
 	worn_icon_state = "contsolid"
 	w_class = WEIGHT_CLASS_SMALL

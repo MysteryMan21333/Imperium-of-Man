@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/jerrycan
 	name = "\improper jerry can"
 	desc = "A can filled with fuel to light things on fire. It has Absolut Jerry stamped in the side."
-	icon = 'icons/obj/items/tank.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tank.dmi'
 	icon_state = "canister"
 	w_class = WEIGHT_CLASS_BULKY
 	volume = 200

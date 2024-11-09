@@ -2,11 +2,11 @@
 	name = "detonation pack"
 	desc = "Programmable remotely triggered 'smart' explosive controlled via a signaler, used for demolitions and impromptu booby traps. Can be set to breach or demolition detonation patterns."
 	gender = PLURAL
-	icon = 'icons/obj/det.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/det.dmi'
 	icon_state = "detpack_off"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/explosives_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/explosives_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/explosives_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/explosives_right.dmi',
 		)
 	worn_icon_state = "plasticx"
 	item_flags = NOBLUDGEON
@@ -298,7 +298,7 @@
 
 		notify_ghosts("<b>[user]</b> has planted \a <b>[name]</b> on <b>[target.name]</b> with a <b>[timer]</b> second fuse!", source = user, action = NOTIFY_ORBIT)
 
-		//target.overlays += image('icons/obj/items/assemblies.dmi', "plastic-explosive2")
+		//target.overlays += image('modular_imperium/master_files/icons/obj/items/assemblies.dmi', "plastic-explosive2")
 		user.visible_message(span_warning("[user] plants [name] on [target]!"),
 		span_warning("You plant [name] on [target]! Timer set for [timer] seconds."))
 

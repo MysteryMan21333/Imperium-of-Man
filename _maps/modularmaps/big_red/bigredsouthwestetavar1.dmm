@@ -19,7 +19,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/south)
 "bN" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 4
 	},
@@ -37,7 +37,7 @@
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "cV" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "dy" = (
@@ -52,18 +52,18 @@
 	},
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "dE" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "em" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "ff" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
@@ -77,7 +77,7 @@
 /turf/open/floor/tile/dark/red2/corner,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "gE" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "hd" = (
@@ -132,7 +132,7 @@
 /turf/open/floor/plating,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "kP" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "kW" = (
@@ -166,7 +166,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "oN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "oV" = (
@@ -189,7 +189,7 @@
 	},
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "ql" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "qw" = (
@@ -197,7 +197,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "qx" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
@@ -208,7 +208,7 @@
 /obj/structure/table,
 /obj/machinery/light,
 /obj/effect/spawner/random/engineering/technology_scanner,
-/obj/item/xenos_claw,
+/obj/item/tyranids_claw,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
@@ -224,7 +224,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "rU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 1
@@ -235,7 +235,7 @@
 /turf/open/floor/tile/dark/red2,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "tP" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "uA" = (
@@ -279,7 +279,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "BM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/south)
 "CD" = (
@@ -354,7 +354,7 @@
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "Gg" = (
 /obj/structure/table,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 4
 	},
@@ -438,11 +438,11 @@
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/south)
 "Op" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "Oz" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "Pn" = (
@@ -451,7 +451,7 @@
 /turf/open/floor/tile/dark/red2/corner,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "Pr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/outside/nanotrasen_lab/inside)
@@ -513,7 +513,7 @@
 	},
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "UN" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
@@ -535,7 +535,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mainship/research/glass/free_access{
-	name = "\improper Eta Lab Xenobiology Lab"
+	name = "\improper Eta Lab Tyranidbiology Lab"
 	},
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)

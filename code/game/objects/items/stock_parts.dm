@@ -2,7 +2,7 @@
 	name = "stock part"
 	desc = "What?"
 	gender = PLURAL
-	icon = 'icons/obj/items/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/stock_parts.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	var/rating = 1
 

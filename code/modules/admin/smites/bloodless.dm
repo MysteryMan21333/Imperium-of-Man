@@ -8,7 +8,7 @@
 	. = ..()
 
 	if (!ishuman(target))
-		to_chat(user, span_warning("Xenomorph blood is protected by the Queen Mother you silly goose. Aborting."), confidential = TRUE)
+		to_chat(user, span_warning("Tyranid blood is protected by the Queen Mother you silly goose. Aborting."), confidential = TRUE)
 		return
 
 	var/bloodlossamount = tgui_alert(usr, "How much blood should [target] lose?", "Bloodloss amount", list("A little", "A lot", "So fucking much", "FUCK THIS DUDE"))

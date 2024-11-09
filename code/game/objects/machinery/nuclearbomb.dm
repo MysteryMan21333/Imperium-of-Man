@@ -8,7 +8,7 @@
 /obj/machinery/nuclearbomb
 	name = "nuclear fission explosive"
 	desc = "You probably shouldn't stick around to see if this is armed."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "nuclearbomb0"
 	density = TRUE
 	anchored = TRUE
@@ -74,7 +74,7 @@
 	GLOB.active_nuke_list -= src
 	if(timer_enabled)
 		log_game("[reason] has disabled the nuke at [AREACOORD(src)]")
-		message_admins("[reason] has disabled the nuke at [ADMIN_VERBOSEJMP(src)]") //Incase disputes show up about marines griefing and the like.
+		message_admins("[reason] has disabled the nuke at [ADMIN_VERBOSEJMP(src)]") //Incase disputes show up about guardsmans griefing and the like.
 	timer_enabled = FALSE
 	if(timer)
 		deltimer(timer)
@@ -125,23 +125,23 @@
 	if(r_auth && g_auth && b_auth)
 		has_auth = TRUE
 
-/obj/machinery/nuclearbomb/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/nuclearbomb/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
 	if(!timer_enabled)
-		to_chat(xeno_attacker, span_warning("\The [src] is soundly asleep. We better not disturb it."))
+		to_chat(tyranid_attacker, span_warning("\The [src] is soundly asleep. We better not disturb it."))
 		return
 
-	xeno_attacker.visible_message("[xeno_attacker] begins to slash delicately at the nuke",
+	tyranid_attacker.visible_message("[tyranid_attacker] begins to slash delicately at the nuke",
 	"You start slashing delicately at the nuke.")
-	if(!do_after(xeno_attacker, 5 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
+	if(!do_after(tyranid_attacker, 5 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
 		return
-	xeno_attacker.visible_message("[xeno_attacker] disabled the nuke",
+	tyranid_attacker.visible_message("[tyranid_attacker] disabled the nuke",
 	"You disabled the nuke.")
 
-	disable(key_name(xeno_attacker))
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NUKE_DIFFUSED, src, xeno_attacker)
+	disable(key_name(tyranid_attacker))
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NUKE_DIFFUSED, src, tyranid_attacker)
 
 /obj/machinery/nuclearbomb/can_interact(mob/user)
 	. = ..()

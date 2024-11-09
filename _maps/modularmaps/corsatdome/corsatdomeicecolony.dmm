@@ -476,7 +476,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/gamma/biodome/complex)
 "fU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -937,7 +937,7 @@
 /turf/open/floor/grayscale/round/black,
 /area/corsat/gamma/biodome/complex)
 "kA" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/corsat/gamma/biodome)
 "kF" = (
@@ -1896,7 +1896,7 @@
 /obj/effect/turf_decal/tile/corsatcorner/lighpurple{
 	dir = 8
 	},
-/obj/structure/xeno/tunnel,
+/obj/structure/tyranid/tunnel,
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/gamma/biodome/virology)
 "vZ" = (
@@ -2405,7 +2405,7 @@
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/gamma/biodome/toxins)
 "BM" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/gamma/biodome/virology)
 "BP" = (
@@ -2913,7 +2913,7 @@
 /turf/open/floor/grayscale/white,
 /area/corsat/gamma/biodome/complex)
 "HP" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -2994,7 +2994,7 @@
 /turf/open/floor/wood,
 /area/corsat/gamma/biodome/complex)
 "IJ" = (
-/obj/structure/xeno/tunnel,
+/obj/structure/tyranid/tunnel,
 /turf/open/floor/plating/ground/ice,
 /area/corsat/gamma/biodome)
 "IN" = (
@@ -3737,7 +3737,7 @@
 /turf/open/floor/grayscale/black,
 /area/corsat/gamma/airlock/control)
 "Ql" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/plating/ground/ice,
 /area/corsat/gamma/biodome)
@@ -3944,14 +3944,14 @@
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/gamma/biodome/toxins)
 "Sh" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 5
 	},
 /turf/open/floor/plating/ground/ice,
 /area/corsat/gamma/biodome)
 "Sl" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor,
 /area/corsat/gamma/biodome)
 "Sn" = (
@@ -4562,7 +4562,7 @@
 /turf/open/floor/grayscale/round/lightgray,
 /area/corsat/gamma/biodome/virology)
 "YR" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/corsat/gamma/biodome)
 "YS" = (

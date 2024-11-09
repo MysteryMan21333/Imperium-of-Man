@@ -157,7 +157,7 @@
 	density = 0
 	},
 /obj/item/book/manual/evaguide,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /turf/open/floor/wood,
 /area/bigredv2/outside/library)
 "yy" = (
@@ -392,7 +392,7 @@
 	density = 0
 	},
 /obj/item/book/manual/engineering_construction,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /turf/open/floor/wood,
 /area/bigredv2/outside/library)
 "ZP" = (

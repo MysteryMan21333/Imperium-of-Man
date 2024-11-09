@@ -1,7 +1,7 @@
 //Some debug variables. Toggle them to 1 in order to see the related debug messages. Helpful when testing out formulas.
 #define DEBUG_HIT_CHANCE 0
 #define DEBUG_HUMAN_DEFENSE 0
-#define DEBUG_XENO_DEFENSE 0
+#define DEBUG_TYRANID_DEFENSE 0
 #define DEBUG_CREST_DEFENSE 0
 
 #if DEBUG_HIT_CHANCE
@@ -24,7 +24,7 @@
 //The actual bullet objects.
 /obj/projectile
 	name = "projectile"
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "bullet"
 	density = FALSE
 	resistance_flags = RESIST_ALL
@@ -66,7 +66,7 @@
 	*/
 	var/apy
 
-	///The atom which shot us i.e. a gun or xeno
+	///The atom which shot us i.e. a gun or tyranid
 	var/atom/shot_from
 	///the projectile's starting turf
 	var/turf/starting_turf
@@ -87,8 +87,8 @@
 
 	///how many damage points the projectile loses per tiles travelled
 	var/damage_falloff = 0
-	///Modifies projectile damage by a % when a marine gets passed, but not hit
-	var/damage_marine_falloff = 0
+	///Modifies projectile damage by a % when a guardsman gets passed, but not hit
+	var/damage_guardsman_falloff = 0
 
 	/// The iff signal that will be compared to the target's one, to apply iff if needed
 	var/iff_signal = NONE
@@ -716,7 +716,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 /obj/alien/egg/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
 	return src == proj.original_target
 
-/obj/structure/xeno/trap/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
+/obj/structure/tyranid/trap/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
 	return src == proj.original_target
 
 /obj/item/clothing/mask/facehugger/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
@@ -724,7 +724,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 
 /obj/vehicle/unmanned/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
 	if(iff_signal & proj.iff_signal)
-		proj.damage -= proj.damage*proj.damage_marine_falloff
+		proj.damage -= proj.damage*proj.damage_guardsman_falloff
 		return FALSE
 	return ..()
 
@@ -741,7 +741,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 		return FALSE
 	if(lying_angle && src != proj.original_target)
 		return FALSE
-	if((proj.ammo.ammo_behavior_flags & AMMO_XENO) && (isnestedhost(src) || stat == DEAD))
+	if((proj.ammo.ammo_behavior_flags & AMMO_TYRANID) && (isnestedhost(src) || stat == DEAD))
 		return FALSE
 	if(pass_flags & PASS_PROJECTILE) //he's beginning to believe
 		return FALSE
@@ -757,7 +757,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 		if(proj.firer.faction == faction)
 			hit_chance = round(hit_chance*0.85) //You (presumably) aren't trying to shoot your friends
 		var/obj/item/shot_source = proj.shot_from
-		if((!istype(shot_source) || !shot_source.zoom) && !line_of_sight(proj.starting_turf, src, 9)) //if you can't draw LOS within 9 tiles (to accomodate wide screen), AND the source was either not zoomed or not an item(like a xeno)
+		if((!istype(shot_source) || !shot_source.zoom) && !line_of_sight(proj.starting_turf, src, 9)) //if you can't draw LOS within 9 tiles (to accomodate wide screen), AND the source was either not zoomed or not an item(like a tyranid)
 			BULLET_DEBUG("Can't see target ([round(hit_chance*0.8)]).")
 			hit_chance = round(hit_chance*0.8) //Can't see the target (Opaque thing between shooter and target), or out of view range
 
@@ -830,15 +830,15 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 
 /mob/living/carbon/human/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
 	if((wear_id?.iff_signal & proj.iff_signal) || (proj?.firer?.faction == faction && proj.original_target != src && Adjacent(proj.firer)))
-		proj.damage -= proj.damage*proj.damage_marine_falloff
+		proj.damage -= proj.damage*proj.damage_guardsman_falloff
 		return FALSE
 	return ..()
 
 
-/mob/living/carbon/xenomorph/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
-	if(CHECK_BITFIELD(xeno_iff_check(), proj.iff_signal))
+/mob/living/carbon/tyranid/projectile_hit(obj/projectile/proj, cardinal_move, uncrossing)
+	if(CHECK_BITFIELD(tyranid_iff_check(), proj.iff_signal))
 		return FALSE
-	if(SEND_SIGNAL(src, COMSIG_XENO_PROJECTILE_HIT, proj, cardinal_move, uncrossing) & COMPONENT_PROJECTILE_DODGE)
+	if(SEND_SIGNAL(src, COMSIG_TYRANID_PROJECTILE_HIT, proj, cardinal_move, uncrossing) & COMPONENT_PROJECTILE_DODGE)
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_BURROWED))
 		return FALSE
@@ -862,11 +862,11 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 
 /atom/proc/bullet_act(obj/projectile/proj)
 	SHOULD_CALL_PARENT(TRUE)
-	if(HAS_TRAIT(proj, TRAIT_PROJ_HIT_SOMETHING))
+	if(HAS_TRAIT(proj, TRAIT_PROJ_HIT_CHAOSETHING))
 		proj.damage *= proj.ammo.on_pierce_multiplier
 		proj.penetration *= proj.ammo.on_pierce_multiplier
 		proj.sundering *= proj.ammo.on_pierce_multiplier
-	ADD_TRAIT(proj, TRAIT_PROJ_HIT_SOMETHING, BULLET_ACT_TRAIT)
+	ADD_TRAIT(proj, TRAIT_PROJ_HIT_CHAOSETHING, BULLET_ACT_TRAIT)
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, proj)
 
 
@@ -932,8 +932,8 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 
 	return TRUE
 
-/mob/living/carbon/xenomorph/bullet_act(obj/projectile/proj)
-	if(issamexenohive(proj.shot_from)) //Aliens won't be harming allied aliens.
+/mob/living/carbon/tyranid/bullet_act(obj/projectile/proj)
+	if(issametyranidhive(proj.shot_from)) //Aliens won't be harming allied aliens.
 		return
 
 	return ..()
@@ -1306,7 +1306,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 		msg_admin_ff("[ADMIN_TPMONTY(firingMob)] shot [ADMIN_TPMONTY(src)] with [proj] in [ADMIN_VERBOSEJMP(T)].")
 
 
-/mob/living/carbon/xenomorph/bullet_message(obj/projectile/proj, feedback_flags, damage)
+/mob/living/carbon/tyranid/bullet_message(obj/projectile/proj, feedback_flags, damage)
 	. = ..()
 	if(client?.prefs.mute_self_combat_messages)
 		return
@@ -1399,7 +1399,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 
 #undef DEBUG_HIT_CHANCE
 #undef DEBUG_HUMAN_DEFENSE
-#undef DEBUG_XENO_DEFENSE
+#undef DEBUG_TYRANID_DEFENSE
 
 #undef PROJ_ABS_PIXEL_TO_TURF
 #undef PROJ_ANIMATION_SPEED

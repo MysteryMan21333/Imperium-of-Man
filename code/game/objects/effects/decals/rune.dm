@@ -1,7 +1,7 @@
 /obj/effect/decal/cleanable/rune
 	name = "rune"
 	desc = "A rune drawn in blood."
-	icon = 'icons/obj/rune.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rune.dmi'
 	icon_state = "rune1"
 	layer = ABOVE_TURF_LAYER
 	anchored = TRUE

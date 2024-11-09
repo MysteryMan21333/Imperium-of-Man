@@ -1,7 +1,7 @@
 /obj/machinery/exportpad
 	name = "ASRS Bluespace Export Point"
 	desc = "A bluespace telepad for sending valuble assets, such as valuble minerals and alien corpses. It needs to be wrenched down in a powered area to function."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "broadcaster_off"
 	density = FALSE
 	anchored = FALSE
@@ -30,9 +30,9 @@
 	for(var/i in get_turf(src))
 		var/atom/movable/onpad = i
 		can_sell = FALSE
-		if(isxeno(onpad))
-			var/mob/living/carbon/xenomorph/sellxeno = onpad
-			if(sellxeno.stat != DEAD)
+		if(istyranid(onpad))
+			var/mob/living/carbon/tyranid/selltyranid = onpad
+			if(selltyranid.stat != DEAD)
 				to_chat(user, span_warning("[src] buzzes: Live animals cannot be sold."))
 				continue
 			can_sell = TRUE
@@ -68,7 +68,7 @@
 		to_chat(user, "You bolt the [src] to the ground, activating it.")
 		playsound(loc, 'sound/items/ratchet.ogg', 25, TRUE)
 		icon_state = "broadcaster"
-		SSminimaps.add_marker(src, MINIMAP_FLAG_MARINE, image('icons/UI_icons/map_blips.dmi', null, "asrs"))
+		SSminimaps.add_marker(src, MINIMAP_FLAG_GUARDSMAN, image('icons/UI_icons/map_blips.dmi', null, "asrs"))
 	else
 		to_chat(user, "You unbolt the [src] from the ground, deactivating it.")
 		playsound(loc, 'sound/items/ratchet.ogg', 25, TRUE)

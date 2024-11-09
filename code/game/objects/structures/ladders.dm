@@ -1,7 +1,7 @@
 /obj/structure/ladder
 	name = "ladder"
 	desc = "A sturdy metal ladder."
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "ladder11"
 	var/id = null
 	var/height = 0							//The 'height' of the ladder. higher numbers are considered physically higher
@@ -66,13 +66,13 @@
 	else	//wtf make your ladders properly assholes
 		icon_state = "ladder00"
 
-/obj/structure/ladder/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	return attack_hand(xeno_attacker)
+/obj/structure/ladder/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	return attack_hand(tyranid_attacker)
 
-/obj/structure/ladder/attack_larva(mob/living/carbon/xenomorph/larva/X)
+/obj/structure/ladder/attack_larva(mob/living/carbon/tyranid/larva/X)
 	return attack_hand(X)
 
-/obj/structure/ladder/attack_hivemind(mob/living/carbon/xenomorph/hivemind/M)
+/obj/structure/ladder/attack_hivemind(mob/living/carbon/tyranid/hivemind/M)
 	return attack_hand(M)
 
 /obj/structure/ladder/attack_hand(mob/living/user)
@@ -170,7 +170,7 @@
 //Peeking up/down
 /obj/structure/ladder/MouseDrop(over_object, src_location, over_location)
 	if((over_object == usr && (in_range(src, usr))))
-		if(isxenolarva(usr) || isobserver(usr) || usr.incapacitated() || is_blind(usr) || usr.lying_angle)
+		if(istyranidlarva(usr) || isobserver(usr) || usr.incapacitated() || is_blind(usr) || usr.lying_angle)
 			to_chat(usr, "You can't do that in your current state.")
 			return
 		if(is_watching)

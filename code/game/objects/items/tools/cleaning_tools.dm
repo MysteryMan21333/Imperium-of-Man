@@ -1,10 +1,10 @@
 /obj/item/tool/mop
 	desc = "The world of janitalia wouldn't be complete without a mop."
 	name = "mop"
-	icon = 'icons/obj/janitor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/janitor_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/janitor_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/janitor_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/janitor_right.dmi',
 	)
 	icon_state = "mop"
 	force = 3
@@ -50,10 +50,10 @@
 	name = "wet floor sign"
 	desc = "Caution! Wet Floor!"
 	icon_state = "caution"
-	icon = 'icons/obj/janitor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/janitor_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/janitor_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/janitor_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/janitor_right.dmi',
 	)
 	force = 1
 	throwforce = 3
@@ -66,8 +66,8 @@
 	name = "warning cone"
 	desc = "This cone is trying to warn you of something!"
 	icon_state = "cone"
-	icon = 'icons/obj/janitor.dmi'
-	worn_icon_list = list(slot_head_str = 'icons/mob/clothing/headwear/head_0.dmi')
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
+	worn_icon_list = list(slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/head_0.dmi')
 	force = 1
 	throwforce = 3
 	throw_speed = 1
@@ -81,7 +81,7 @@
 	name = "soap"
 	desc = "A cheap bar of soap. Doesn't smell."
 	gender = PLURAL
-	icon = 'icons/obj/janitor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
 	icon_state = "soap"
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 4

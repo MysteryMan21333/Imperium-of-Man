@@ -217,7 +217,7 @@
 				is_speaker_squad_lead = TRUE
 
 		var/is_speaker_command_freq = FALSE
-		if(frequency == FREQ_COMMAND || frequency == FREQ_COMMAND_SOM)
+		if(frequency == FREQ_COMMAND || frequency == FREQ_COMMAND_CHAOS)
 			is_speaker_command_freq = TRUE
 
 		if(speaker in receive)

@@ -1,11 +1,11 @@
 /obj/vehicle/ridden/hover_bike
 	name = "hover bike"
-	desc = "A SOM light hovercraft. Used to swiftly carry up to 2 soldiers over the roughest of terrain, or light defences. Is typically armed with a pair of forwarded mounted weapons. Favoured for rapid assaults."
-	icon = 'icons/obj/vehicles/hover_bike.dmi'
+	desc = "A CHAOS light hovercraft. Used to swiftly carry up to 2 soldiers over the roughest of terrain, or light defences. Is typically armed with a pair of forwarded mounted weapons. Favoured for rapid assaults."
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/hover_bike.dmi'
 	icon_state = "hover_bike"
 	max_integrity = 325
 	soft_armor = list(MELEE = 45, BULLET = 50, LASER = 50, ENERGY = 60, BOMB = 60, FIRE = 80, ACID = 40)
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	atom_flags = PREVENT_CONTENTS_EXPLOSION
 	key_type = null
 	coverage = 60

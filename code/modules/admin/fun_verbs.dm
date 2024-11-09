@@ -55,12 +55,12 @@
 		return
 
 	var/customname = tgui_input_text(usr, "What do you want the title of this report to be?", "Report Title", "Queen Mother Directive", encode = FALSE)
-	var/input = tgui_input_text(usr, "This should be a message from the ruler of the Xenomorph race.", "Queen Mother Report", "", multiline = TRUE, encode = FALSE)
+	var/input = tgui_input_text(usr, "This should be a message from the ruler of the Tyranid race.", "Queen Mother Report", "", multiline = TRUE, encode = FALSE)
 	if(!input || !customname)
 		return
 
 
-	for(var/i in (GLOB.xeno_mob_list + GLOB.observer_list))
+	for(var/i in (GLOB.tyranid_mob_list + GLOB.observer_list))
 		var/mob/M = i
 		to_chat(M, assemble_alert(
 			title = customname,
@@ -72,17 +72,17 @@
 	message_admins("[ADMIN_TPMONTY(usr)] created a Queen Mother report.")
 
 /datum/admins/proc/rouny_all()
-	set name = "Toggle Glob Xeno Rouny"
+	set name = "Toggle Glob Tyranid Rouny"
 	set category = "Admin.Fun"
-	set desc = "Toggle all living xenos into rouny versions of themselves"
+	set desc = "Toggle all living tyranids into rouny versions of themselves"
 
 	if(!check_rights(R_FUN))
 		return
 
-	for(var/mob/living/carbon/xenomorph/xenotorouny in GLOB.xeno_mob_list)
-		if(!isliving(xenotorouny))
+	for(var/mob/living/carbon/tyranid/tyranidtorouny in GLOB.tyranid_mob_list)
+		if(!isliving(tyranidtorouny))
 			return
-		xenotorouny.xeno_flags ^= XENO_ROUNY
+		tyranidtorouny.tyranid_flags ^= TYRANID_ROUNY
 
 
 /datum/admins/proc/hive_status()
@@ -415,13 +415,13 @@
 		return
 
 	var/list/targets
-	var/style = tgui_input_list(usr, "Do you want to play this globally or to the xenos/marines?", null, list("Globally", "Xenos", "Marines", "Locally"))
+	var/style = tgui_input_list(usr, "Do you want to play this globally or to the tyranids/guardsmans?", null, list("Globally", "Tyranids", "Guardsmans", "Locally"))
 	switch(style)
 		if("Globally")
 			targets = GLOB.mob_list
-		if("Xenos")
-			targets = GLOB.xeno_mob_list + GLOB.dead_mob_list
-		if("Marines")
+		if("Tyranids")
+			targets = GLOB.tyranid_mob_list + GLOB.dead_mob_list
+		if("Guardsmans")
 			targets = GLOB.human_mob_list + GLOB.dead_mob_list
 		if("Locally")
 			targets = viewers(usr.client.view, usr)
@@ -690,14 +690,14 @@
 	if(!check_rights(R_FUN))
 		return
 
-	var/sec_level = tgui_input_list(usr, "It's currently code [GLOB.marine_main_ship.get_security_level()]. Choose the new security level.", "Set Security Level", list("green", "blue", "red", "delta") - GLOB.marine_main_ship.get_security_level())
+	var/sec_level = tgui_input_list(usr, "It's currently code [GLOB.guardsman_main_ship.get_security_level()]. Choose the new security level.", "Set Security Level", list("green", "blue", "red", "delta") - GLOB.guardsman_main_ship.get_security_level())
 	if(!sec_level)
 		return
 
-	if(tgui_alert(usr, "Switch from code [GLOB.marine_main_ship.get_security_level()] to code [sec_level]?", "Set Security Level", list("Yes", "No")) != "Yes")
+	if(tgui_alert(usr, "Switch from code [GLOB.guardsman_main_ship.get_security_level()] to code [sec_level]?", "Set Security Level", list("Yes", "No")) != "Yes")
 		return
 
-	GLOB.marine_main_ship.set_security_level(sec_level)
+	GLOB.guardsman_main_ship.set_security_level(sec_level)
 
 	log_admin("[key_name(usr)] changed the security level to code [sec_level].")
 	message_admins("[ADMIN_TPMONTY(usr)] changed the security level to code [sec_level].")
@@ -716,7 +716,7 @@
 	if(!H.mind)
 		dat += "No mind! <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=createmind;mob=[REF(H)]'>Create</a><br>"
 		dat += "Take-over job: [H.job ? H.job.title : "None"] <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=rank;mob=[REF(H)]'>Edit</a><br>"
-		if(ismarinejob(H.job))
+		if(isguardsmanjob(H.job))
 			dat += "Squad: [H.assigned_squad] <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=squad;mob=[REF(H)]'>Edit</a><br>"
 	else
 		dat += "Job: [H.job ? H.job.title : "Unassigned"] <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=rank;mob=[REF(H)]'>Edit</a> "
@@ -725,7 +725,7 @@
 		dat += "<br>"
 		dat += "Skillset: [H.skills.name] <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=skills;mob=[REF(H)]'>Edit</a><br>"
 		dat += "Comms title: [H.comm_title] <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=commstitle;mob=[REF(H)]'>Edit</a><br>"
-		if(ismarinejob(H.job))
+		if(isguardsmanjob(H.job))
 			dat += "Squad: [H.assigned_squad] <a href='?src=[REF(usr.client.holder)];[HrefToken()];rank=squad;mob=[REF(H)]'>Edit</a><br>"
 	if(istype(C))
 		dat += "<br>"
@@ -815,9 +815,9 @@
 	message_admins("[ADMIN_TPMONTY(usr)] has offered [ADMIN_TPMONTY(L)].")
 
 
-/datum/admins/proc/xeno_panel(mob/living/carbon/xenomorph/X in GLOB.xeno_mob_list)
+/datum/admins/proc/tyranid_panel(mob/living/carbon/tyranid/X in GLOB.tyranid_mob_list)
 	set category = "Admin.Fun"
-	set name = "Xeno Panel"
+	set name = "Tyranid Panel"
 
 	if(!check_rights(R_FUN))
 		return
@@ -827,11 +827,11 @@
 
 	var/dat = "<br>"
 
-	dat += "Hive: [X.hive.hivenumber] <a href='?src=[REF(usr.client.holder)];[HrefToken()];xeno=hive;mob=[REF(X)]'>Edit</a><br>"
-	dat += "Nicknumber: [X.nicknumber] <a href='?src=[REF(usr.client.holder)];[HrefToken()];xeno=nicknumber;mob=[REF(X)]'>Edit</a><br>"
-	dat += "Upgrade Tier: [X.xeno_caste.upgrade_name] <a href='?src=[REF(usr.client.holder)];[HrefToken()];xeno=upgrade;mob=[REF(X)]'>Edit</a><br>"
+	dat += "Hive: [X.hive.hivenumber] <a href='?src=[REF(usr.client.holder)];[HrefToken()];tyranid=hive;mob=[REF(X)]'>Edit</a><br>"
+	dat += "Nicknumber: [X.nicknumber] <a href='?src=[REF(usr.client.holder)];[HrefToken()];tyranid=nicknumber;mob=[REF(X)]'>Edit</a><br>"
+	dat += "Upgrade Tier: [X.tyranid_caste.upgrade_name] <a href='?src=[REF(usr.client.holder)];[HrefToken()];tyranid=upgrade;mob=[REF(X)]'>Edit</a><br>"
 
-	var/datum/browser/browser = new(usr, "xeno_panel_[key_name(X)]", "<div align='center'>Xeno Panel [key_name(X)]</div>")
+	var/datum/browser/browser = new(usr, "tyranid_panel_[key_name(X)]", "<div align='center'>Tyranid Panel [key_name(X)]</div>")
 	browser.set_content(dat)
 	browser.open(FALSE)
 

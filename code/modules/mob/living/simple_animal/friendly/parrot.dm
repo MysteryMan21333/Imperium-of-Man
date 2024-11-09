@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 /mob/living/simple_animal/parrot
 	name = "parrot"
 	desc = "The parrot squaks, \"It's a Parrot! BAWWK!\""
-	icon = 'icons/mob/animal.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/animal.dmi'
 	icon_state = "parrot_fly"
 	icon_living = "parrot_fly"
 	icon_dead = "parrot_dead"
@@ -156,8 +156,8 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 	if(stat != DEAD && user.a_intent == INTENT_HELP)
 		handle_automated_speech(1) //assured speak/emote
 
-/mob/living/simple_animal/parrot/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	return attack_hand(xeno_attacker)
+/mob/living/simple_animal/parrot/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	return attack_hand(tyranid_attacker)
 
 
 /mob/living/simple_animal/parrot/attack_animal(mob/living/simple_animal/M)

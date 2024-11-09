@@ -10,7 +10,7 @@
 /obj/item/reagent_containers/food/snacks/grown
 	var/plantname
 	var/potency = -1
-	icon = 'icons/obj/items/harvest.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/harvest.dmi'
 
 /obj/item/reagent_containers/food/snacks/grown/Initialize(mapload, newpotency)
 	. = ..()

@@ -2,7 +2,7 @@
 /obj/vehicle/train/cargo/engine
 	name = "cargo train tug"
 	desc = "A ridable electric car designed for pulling cargo trolleys."
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "cargo_engine"
 	var/on = FALSE
 	var/powered = TRUE
@@ -22,13 +22,13 @@
 /obj/item/key/cargo_train
 	name = "key"
 	desc = "A keyring with a small steel key, and a yellow fob reading \"Choo Choo!\"."
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "train_keys"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/vehicle/train/cargo/trolley
 	name = "cargo train trolley"
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "cargo_trailer"
 	anchored = FALSE
 
@@ -39,7 +39,7 @@
 	. = ..()
 	cell = new /obj/item/cell/apc
 	key = new()
-	var/image/I = new(icon = 'icons/obj/vehicles.dmi', icon_state = "cargo_engine_overlay", layer = src.layer + 0.2) //over mobs
+	var/image/I = new(icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi', icon_state = "cargo_engine_overlay", layer = src.layer + 0.2) //over mobs
 	overlays += I
 	turn_off()	//so engine verbs are correctly set
 

@@ -1,5 +1,5 @@
 
-//Parameters used when displaying hive message to all xenos
+//Parameters used when displaying hive message to all tyranids
 /atom/movable/screen/text/screen_text/queen_order
 	maptext_height = 128 //Default 64 doubled in height
 	maptext_width = 456 //Default 480 shifted right by 12

@@ -37,7 +37,7 @@
 			span_danger("You feel a powerful shock course through your body!"), \
 			span_warning(" You hear a heavy electrical crack.") \
 		)
-		if(isxeno(src))
+		if(istyranid(src))
 			if(mob_size != MOB_SIZE_BIG)
 				Paralyze(4 SECONDS)
 		else

@@ -81,11 +81,11 @@
 	actions_types = list(/datum/action/item_action/toggle)
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	prescription = TRUE
 
 /obj/item/clothing/glasses/hud/medgoggles
@@ -99,11 +99,11 @@
 	actions_types = list(/datum/action/item_action/toggle)
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	soft_armor = list(MELEE = 40, BULLET = 40, LASER = 0, ENERGY = 15, BOMB = 35, BIO = 10, FIRE = 30, ACID = 30)
 	equip_slot_flags = ITEM_SLOT_EYES
 	goggles = TRUE
@@ -120,11 +120,11 @@
 	deactive_state = "degoggles_medpatch"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	toggleable = TRUE
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
 	actions_types = list(/datum/action/item_action/toggle)
@@ -137,11 +137,11 @@
 	deactive_state = "degoggles_medglasses"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	prescription = TRUE
 	toggleable = TRUE
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
@@ -155,11 +155,11 @@
 	deactive_state = "degoggles_medsunglasses"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	prescription = TRUE
 	toggleable = TRUE
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
@@ -170,11 +170,11 @@
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records."
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	icon_state = "securityhud"
 	deactive_state = "degoggles_sec"
 	toggleable = 1
@@ -193,20 +193,20 @@
 	actions_types = null
 
 /obj/item/clothing/glasses/hud/xenohud
-	name = "XenoMate HUD"
-	desc = "A heads-up display that scans any nearby xenomorph's data."
+	name = "TyranidMate HUD"
+	desc = "A heads-up display that scans any nearby tyranid's data."
 	icon_state = "securityhud"
 	deactive_state = "degoggles_sec"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	armor_protection_flags = NONE
 	toggleable = TRUE
-	hud_type = DATA_HUD_XENO_STATUS
+	hud_type = DATA_HUD_TYRANID_STATUS
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/glasses/hud/painhud
@@ -216,11 +216,11 @@
 	deactive_state = "degoggles_sec"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	toggleable = TRUE
 	hud_type = DATA_HUD_MEDICAL_PAIN
 	actions_types = list(/datum/action/item_action/toggle)
@@ -232,7 +232,7 @@
 	worn_icon_state = "sunglasses"
 	eye_protection = 2
 	darkness_view = 8
-	hud_type = list(DATA_HUD_MEDICAL_OBSERVER, DATA_HUD_XENO_STATUS, DATA_HUD_SECURITY_ADVANCED, DATA_HUD_SQUAD_TERRAGOV, DATA_HUD_SQUAD_SOM, DATA_HUD_ORDER)
+	hud_type = list(DATA_HUD_MEDICAL_OBSERVER, DATA_HUD_TYRANID_STATUS, DATA_HUD_SECURITY_ADVANCED, DATA_HUD_SQUAD_IMPERIUM, DATA_HUD_SQUAD_CHAOS, DATA_HUD_ORDER)
 	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_INVISIBLE
 	activation_sound = null

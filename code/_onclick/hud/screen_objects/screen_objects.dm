@@ -8,7 +8,7 @@
 */
 /atom/movable/screen
 	name = ""
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	layer = HUD_LAYER
 	// NOTE: screen objects do NOT change their plane to match the z layer of their owner
 	// You shouldn't need this, but if you ever do and it's widespread, reconsider what you're doing.
@@ -85,13 +85,13 @@
 
 /atom/movable/screen/craft
 	name = "crafting menu"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "craft"
 	screen_loc = ui_crafting
 
 /atom/movable/screen/language_menu
 	name = "language menu"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "talk_wheel"
 	screen_loc = ui_language_menu
 
@@ -202,7 +202,7 @@
 
 /atom/movable/screen/mov_intent
 	name = "run/walk toggle"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "running"
 	screen_loc = ui_movi
 
@@ -223,11 +223,11 @@
 			icon_state = "walking"
 
 /atom/movable/screen/mov_intent/alien
-	icon = 'icons/mob/screen/alien.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 
 /atom/movable/screen/rest
 	name = "rest"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "act_rest"
 	screen_loc = ui_above_movement
 
@@ -246,7 +246,7 @@
 
 /atom/movable/screen/pull
 	name = "stop pulling"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "pull0"
 	screen_loc = ui_above_movement
 
@@ -269,7 +269,7 @@
 
 /atom/movable/screen/resist
 	name = "resist"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "act_resist"
 	screen_loc = ui_above_intent
 
@@ -337,7 +337,7 @@
 
 /atom/movable/screen/throw_catch
 	name = "throw/catch"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "act_throw_off"
 	screen_loc = ui_drop_throw
 
@@ -394,7 +394,7 @@
 	vis_contents += overlay_object
 
 /obj/effect/overlay/zone_sel
-	icon = 'icons/mob/screen/zone_sel.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/zone_sel.dmi'
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	alpha = 128
 	anchored = TRUE
@@ -457,24 +457,24 @@
 
 /atom/movable/screen/zone_sel/update_overlays()
 	. = ..()
-	. += mutable_appearance('icons/mob/screen/zone_sel.dmi', "[z_prefix][selecting]")
+	. += mutable_appearance('modular_imperium/master_files/icons/mob/screen/zone_sel.dmi', "[z_prefix][selecting]")
 
 /atom/movable/screen/zone_sel/alien
-	icon = 'icons/mob/screen/alien.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	z_prefix = "ay_"
 
 /atom/movable/screen/healths
 	name = "health"
 	icon_state = "health0"
 	screen_loc = ui_health
-	icon = 'icons/mob/screen/health.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/health.dmi'
 
 /atom/movable/screen/healths/alien
-	icon = 'icons/mob/screen/alien.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/alien.dmi'
 	screen_loc = ui_alien_health
 
 /atom/movable/screen/stamina_hud
-	icon = 'icons/mob/screen/health.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/health.dmi'
 	name = "stamina"
 	icon_state = "stamloss-14"
 	screen_loc = UI_STAMINA
@@ -516,7 +516,7 @@
 	parent?.component_click(src, params)
 
 /atom/movable/screen/action_button
-	icon = 'icons/mob/actions.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	icon_state = "template"
 	var/datum/action/source_action
 
@@ -549,7 +549,7 @@
 
 /atom/movable/screen/action_button/hide_toggle
 	name = "Hide Buttons"
-	icon = 'icons/mob/actions.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	icon_state = "hide"
 	var/hidden = 0
 
@@ -567,7 +567,7 @@
 
 /atom/movable/screen/SL_locator
 	name = "sl locator"
-	icon = 'icons/mob/screen/arrows.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/arrows.dmi'
 	icon_state = "Blue_arrow"
 	alpha = 0 //invisible
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -575,7 +575,7 @@
 
 /atom/movable/screen/drop
 	name = "drop"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "act_drop"
 	screen_loc = ui_drop_throw
 	layer = HUD_LAYER
@@ -585,7 +585,7 @@
 
 /atom/movable/screen/toggle_inv
 	name = "toggle"
-	icon = 'icons/mob/screen/midnight.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 	icon_state = "toggle"
 	screen_loc = ui_inventory
 
@@ -609,7 +609,7 @@
  */
 /atom/movable/screen/ammo
 	name = "ammo"
-	icon = 'icons/mob/ammoHUD.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/ammoHUD.dmi'
 	icon_state = "ammo"
 	screen_loc = ui_ammo1
 	///If the user has already had their warning played for running out of ammo
@@ -648,8 +648,8 @@
 	overlays.Cut()
 
 	if(rounds <= 0)
-		overlays += image('icons/mob/ammoHUD.dmi', src, "o0")
-		var/image/empty_state = image('icons/mob/ammoHUD.dmi', src, ammo_type[AMMO_HUD_ICON_EMPTY])
+		overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "o0")
+		var/image/empty_state = image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, ammo_type[AMMO_HUD_ICON_EMPTY])
 		overlays += empty_state
 		if(warned)
 			return
@@ -658,31 +658,31 @@
 		return
 
 	warned = FALSE
-	overlays += image('icons/mob/ammoHUD.dmi', src, "[ammo_type[AMMO_HUD_ICON_NORMAL]]")
+	overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "[ammo_type[AMMO_HUD_ICON_NORMAL]]")
 
 	rounds = num2text(rounds)
 
 	//Handle the amount of rounds
 	switch(length(rounds))
 		if(1)
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o[rounds[1]]")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "o[rounds[1]]")
 		if(2)
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o[rounds[2]]")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "t[rounds[1]]")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "o[rounds[2]]")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "t[rounds[1]]")
 		if(3)
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o[rounds[3]]")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "t[rounds[2]]")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "h[rounds[1]]")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "o[rounds[3]]")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "t[rounds[2]]")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "h[rounds[1]]")
 		else //"0" is still length 1 so this means it's over 999
-			overlays += image('icons/mob/ammoHUD.dmi', src, "o9")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "t9")
-			overlays += image('icons/mob/ammoHUD.dmi', src, "h9")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "o9")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "t9")
+			overlays += image('modular_imperium/master_files/icons/mob/ammoHUD.dmi', src, "h9")
 
 #undef AMMO_HUD_ICON_NORMAL
 #undef AMMO_HUD_ICON_EMPTY
 
 /atom/movable/screen/arrow
-	icon = 'icons/mob/screen/arrows.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/arrows.dmi'
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	screen_loc = ui_sl_dir
 	alpha = 128 //translucent
@@ -739,17 +739,17 @@
 /atom/movable/screen/arrow/leader_tracker_arrow
 	name = "hive leader tracker arrow"
 	icon_state = "Blue_arrow"
-	duration = XENO_RALLYING_POINTER_DURATION
+	duration = TYRANID_RALLYING_POINTER_DURATION
 
 /atom/movable/screen/arrow/silo_damaged_arrow
 	name = "Hive damaged tracker arrow"
 	icon_state = "Red_arrow"
-	duration = XENO_SILO_DAMAGE_POINTER_DURATION
+	duration = TYRANID_SILO_DAMAGE_POINTER_DURATION
 
 /atom/movable/screen/arrow/turret_attacking_arrow
 	name = "Turret attacking arrow"
 	icon_state = "Green_arrow"
-	duration = XENO_SILO_DAMAGE_POINTER_DURATION
+	duration = TYRANID_SILO_DAMAGE_POINTER_DURATION
 
 /atom/movable/screen/arrow/attack_order_arrow
 	name = "attack order arrow"

@@ -341,32 +341,32 @@
 	id = "plasmadrain"
 
 /datum/status_effect/plasmadrain/on_creation(mob/living/new_owner, set_duration)
-	if(isxeno(new_owner))
+	if(istyranid(new_owner))
 		owner = new_owner
 		duration = set_duration
 		return ..()
 	else
-		CRASH("something applied plasmadrain on a nonxeno, dont do that")
+		CRASH("something applied plasmadrain on a nontyranid, dont do that")
 
 /datum/status_effect/plasmadrain/tick(delta_time)
-	var/mob/living/carbon/xenomorph/xenoowner = owner
-	if(xenoowner.plasma_stored >= 0)
-		var/remove_plasma_amount = xenoowner.xeno_caste.plasma_max / 10
-		xenoowner.plasma_stored -= remove_plasma_amount
-		if(xenoowner.plasma_stored <= 0)
-			xenoowner.plasma_stored = 0
+	var/mob/living/carbon/tyranid/tyranidowner = owner
+	if(tyranidowner.plasma_stored >= 0)
+		var/remove_plasma_amount = tyranidowner.tyranid_caste.plasma_max / 10
+		tyranidowner.plasma_stored -= remove_plasma_amount
+		if(tyranidowner.plasma_stored <= 0)
+			tyranidowner.plasma_stored = 0
 
 /datum/status_effect/noplasmaregen
 	id = "noplasmaregen"
 	tick_interval = 2 SECONDS
 
 /datum/status_effect/noplasmaregen/on_creation(mob/living/new_owner, set_duration)
-	if(isxeno(new_owner))
+	if(istyranid(new_owner))
 		owner = new_owner
 		duration = set_duration
 		return ..()
 	else
-		CRASH("something applied noplasmaregen on a nonxeno, dont do that")
+		CRASH("something applied noplasmaregen on a nontyranid, dont do that")
 
 /datum/status_effect/noplasmaregen/on_apply()
 	. = ..()
@@ -579,12 +579,12 @@
 	var/mob/living/carbon/debuff_owner
 	/// Used for the fire effect.
 	var/obj/vis_melt_fire/visual_fire
-	/// Xenomorph which created the debuff.
-	var/mob/living/carbon/xenomorph/debuff_creator
+	/// Tyranid which created the debuff.
+	var/mob/living/carbon/tyranid/debuff_creator
 
 /obj/vis_melt_fire
 	name = "ouch ouch ouch"
-	icon = 'icons/mob/OnFire.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/OnFire.dmi'
 	layer = ABOVE_MOB_LAYER
 	vis_flags = VIS_INHERIT_DIR | VIS_INHERIT_ID | VIS_INHERIT_PLANE
 
@@ -680,10 +680,10 @@
 	. = ..()
 	if(!.)
 		return
-	owner.add_movespeed_modifier(MOVESPEED_ID_XENO_DREAD, TRUE, 0, NONE, TRUE, 0.4)
+	owner.add_movespeed_modifier(MOVESPEED_ID_TYRANID_DREAD, TRUE, 0, NONE, TRUE, 0.4)
 
 /datum/status_effect/dread/on_remove()
-	owner.remove_movespeed_modifier(MOVESPEED_ID_XENO_DREAD)
+	owner.remove_movespeed_modifier(MOVESPEED_ID_TYRANID_DREAD)
 	return ..()
 
 // ***************************************
@@ -739,10 +739,10 @@
 
 	debuff_owner.apply_damage(STATUS_EFFECT_MELTING_DAMAGE, BURN, null, FIRE)
 
-	if(!isxeno(debuff_owner))
+	if(!istyranid(debuff_owner))
 		return
-	var/mob/living/carbon/xenomorph/xenomorph_owner = debuff_owner
-	xenomorph_owner.adjust_sunder(STATUS_EFFECT_MELTING_SUNDER_DAMAGE)
+	var/mob/living/carbon/tyranid/tyranid_owner = debuff_owner
+	tyranid_owner.adjust_sunder(STATUS_EFFECT_MELTING_SUNDER_DAMAGE)
 
 /atom/movable/screen/alert/status_effect/melting
 	name = "Melting"

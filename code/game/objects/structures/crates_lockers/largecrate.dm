@@ -1,12 +1,12 @@
 /obj/structure/largecrate
 	name = "large crate"
 	desc = "A hefty wooden crate."
-	icon = 'icons/obj/structures/crates.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/crates.dmi'
 	icon_state = "densecrate"
 	density = TRUE
 	anchored = FALSE
 	var/dropmetal = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	interaction_flags = INTERACT_OBJ_DEFAULT|INTERACT_POWERLOADER_PICKUP_ALLOWED
 	allow_pass_flags = PASSABLE|PASS_WALKOVER|PASS_LOW_STRUCTURE
 	max_integrity = 40
@@ -105,8 +105,8 @@
 						/obj/item/tool/weldingtool,
 						/obj/item/tool/wirecutters,
 						/obj/item/tool/analyzer,
-						/obj/item/clothing/under/marine,
-						/obj/item/clothing/shoes/marine
+						/obj/item/clothing/under/guardsman,
+						/obj/item/clothing/shoes/guardsman
 						)
 
 /obj/structure/largecrate/random/Initialize(mapload)

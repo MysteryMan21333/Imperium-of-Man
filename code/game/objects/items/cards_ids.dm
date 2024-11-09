@@ -14,10 +14,10 @@
 /obj/item/card
 	name = "card"
 	desc = "Does card things."
-	icon = 'icons/obj/items/card.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/card.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/id_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/id_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/id_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/id_right.dmi',
 	)
 	worn_icon_state = "card-id"
 	item_state_worn = TRUE
@@ -83,25 +83,25 @@
 	var/blood_type = "\[UNSET\]"
 
 	///How many points you can use to buy items
-	var/marine_points = list()
+	var/guardsman_points = list()
 
 	///What category of items can you buy - used for armor and pouches
-	var/marine_buy_choices = list()
+	var/guardsman_buy_choices = list()
 
 	//alt titles are handled a bit weirdly in order to unobtrusively integrate into existing ID system
 	var/assignment = null	//can be alt title or the actual job
 	var/rank = null			//actual job
 	var/dorm = 0		// determines if this ID has claimed a dorm already
-	var/paygrade = null  // Marine's paygrade
+	var/paygrade = null  // Guardsman's paygrade
 
-	var/assigned_fireteam = "" //which fire team this ID belongs to, only used by squad marines.
+	var/assigned_fireteam = "" //which fire team this ID belongs to, only used by squad guardsmans.
 	/// Iff bitfield to determines hit and misses
 	var/iff_signal = NONE
 
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
-	marine_buy_choices = GLOB.marine_selector_cats.Copy() //by default you can buy the whole list
+	guardsman_buy_choices = GLOB.guardsman_selector_cats.Copy() //by default you can buy the whole list
 	if(!ishuman(loc))
 		return
 	var/mob/living/carbon/human/H = loc
@@ -224,12 +224,12 @@
 	worn_icon_state = "gold_id"
 	registered_name = CAPTAIN
 	assignment = CAPTAIN
-	access = ALL_MARINE_ACCESS
+	access = ALL_GUARDSMAN_ACCESS
 
 
 /obj/item/card/id/equipped(mob/living/carbon/human/H, slot)
 	if(istype(H))
-		H.update_inv_head() //updating marine helmet squad coloring
+		H.update_inv_head() //updating guardsman helmet squad coloring
 		H.update_inv_wear_suit()
 	..()
 
@@ -244,7 +244,7 @@
 
 /obj/item/card/id/dogtag
 	name = "dog tag"
-	desc = "A marine dog tag."
+	desc = "A guardsman dog tag."
 	icon_state = "dogtag"
 	worn_icon_state = "dogtag"
 	iff_signal = TGMC_LOYALIST_IFF
@@ -283,32 +283,32 @@
 
 // Vendor points for job override
 /obj/item/card/id/dogtag/smartgun
-	marine_points = list(
+	guardsman_points = list(
 		CAT_SGSUP = DEFAULT_TOTAL_BUY_POINTS,
 	)
 
 /obj/item/card/id/dogtag/engineer
-	marine_points = list(
+	guardsman_points = list(
 		CAT_ENGSUP = ENGINEER_TOTAL_BUY_POINTS,
 	)
 
 /obj/item/card/id/dogtag/leader
-	marine_points = list(
+	guardsman_points = list(
 		CAT_LEDSUP = DEFAULT_TOTAL_BUY_POINTS,
 	)
 
 /obj/item/card/id/dogtag/corpsman
-	marine_points = list(
+	guardsman_points = list(
 		CAT_MEDSUP = MEDIC_TOTAL_BUY_POINTS,
 	)
 
 /obj/item/card/id/dogtag/fc
-	marine_points = list(
+	guardsman_points = list(
 		CAT_FCSUP = COMMANDER_TOTAL_BUY_POINTS,
 	)
 
 /obj/item/card/id/dogtag/full
-	marine_points = list(
+	guardsman_points = list(
 		CAT_SGSUP = DEFAULT_TOTAL_BUY_POINTS,
 		CAT_ENGSUP = ENGINEER_TOTAL_BUY_POINTS,
 		CAT_LEDSUP = DEFAULT_TOTAL_BUY_POINTS,
@@ -316,12 +316,12 @@
 		CAT_FCSUP = COMMANDER_TOTAL_BUY_POINTS,
 	)
 
-/obj/item/card/id/dogtag/som
+/obj/item/card/id/dogtag/chaos
 	name = "\improper Sons of Mars dogtag"
 	desc = "Used by the Sons of Mars."
 	icon_state = "dogtag_som"
 	worn_icon_state = "dogtag_som"
-	iff_signal = SOM_IFF
+	iff_signal = CHAOS_IFF
 
 
 /obj/item/card/id/dogtag/examine(mob/user)
@@ -332,9 +332,9 @@
 
 /obj/item/dogtag
 	name = "information dog tag"
-	desc = "A fallen marine's information dog tag."
+	desc = "A fallen guardsman's information dog tag."
 	icon_state = "dogtag_taken"
-	icon = 'icons/obj/items/card.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	var/fallen_names[0]
 	var/fallen_assignments[0]

@@ -5,7 +5,7 @@
 /obj/item/target
 	name = "shooting target"
 	desc = "A shooting target."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "target_h"
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
@@ -25,11 +25,11 @@
 /obj/structure/target_stake
 	name = "target stake"
 	desc = "A thin platform with negatively-magnetized wheels."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "target_stake"
 	density = TRUE
 	atom_flags = CONDUCT
-	max_integrity = 15000 //important that what the marines are shooting at doesn't break, we don't make it invulnerable because we still need to plasma cutter it sometimes
+	max_integrity = 15000 //important that what the guardsmans are shooting at doesn't break, we don't make it invulnerable because we still need to plasma cutter it sometimes
 	soft_armor = list(MELEE = 80, BULLET = 100, LASER = 100, ENERGY = 100, BOMB = 120, BIO = 100, FIRE = 100, ACID = 0)
 	///ungas need to actually hit this
 	coverage = 90

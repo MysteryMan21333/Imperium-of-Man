@@ -113,5 +113,5 @@
 
 /datum/codex_entry/mines
 	associated_paths = list(/obj/item/explosive/mine)
-	mechanics_text = "Claymores are best used in tandem with sentry guns that can shoot enemies which trip them, and ambushing marines concealed by tarps or cloaking devices."
+	mechanics_text = "Claymores are best used in tandem with sentry guns that can shoot enemies which trip them, and ambushing guardsmans concealed by tarps or cloaking devices."
 

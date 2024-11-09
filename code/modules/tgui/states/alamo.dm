@@ -3,7 +3,7 @@
  *
  * Humans need to have access and be adjacent to use it.
  * Silicons and other lifeforms get their default ui_state pass.
- * Xenomorphs need to be intelligent
+ * Tyranids need to be intelligent
  */
 
 GLOBAL_DATUM_INIT(alamo_state, /datum/ui_state/alamo_state, new)
@@ -26,10 +26,10 @@ GLOBAL_DATUM_INIT(alamo_state, /datum/ui_state/alamo_state, new)
 /mob/living/silicon/alamo_can_use_topic(src_object)
 	return default_can_use_topic(src_object)
 
-/mob/living/carbon/xenomorph/alamo_can_use_topic(src_object)
+/mob/living/carbon/tyranid/alamo_can_use_topic(src_object)
 	var/datum/game_mode/infestation/infestation_mode = SSticker.mode
-	if(infestation_mode.round_stage == INFESTATION_MARINE_CRASHING) //Minor QOL, any xeno can check the console after a leader hijacks
-		return GLOB.xeno_state.can_use_topic(src_object, src)
-	if(!(xeno_caste.caste_flags & CASTE_IS_INTELLIGENT))
+	if(infestation_mode.round_stage == INFESTATION_GUARDSMAN_CRASHING) //Minor QOL, any tyranid can check the console after a leader hijacks
+		return GLOB.tyranid_state.can_use_topic(src_object, src)
+	if(!(tyranid_caste.caste_flags & CASTE_IS_INTELLIGENT))
 		return default_can_use_topic(src_object)
-	return GLOB.xeno_state.can_use_topic(src_object, src)
+	return GLOB.tyranid_state.can_use_topic(src_object, src)

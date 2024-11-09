@@ -9,7 +9,7 @@
 
 /datum/action/observer_action/crew_manifest
 	name = "Show Crew manifest"
-	action_icon = 'icons/obj/items/books.dmi'
+	action_icon = 'modular_imperium/master_files/icons/obj/items/books.dmi'
 	action_icon_state = "book"
 
 
@@ -22,8 +22,8 @@
 
 /datum/action/observer_action/show_hivestatus
 	name = "Show Hive status"
-	action_icon = 'icons/Xeno/actions/queen.dmi'
-	action_icon_state = "watch_xeno"
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/queen.dmi'
+	action_icon_state = "watch_tyranid"
 
 
 /datum/action/observer_action/show_hivestatus/action_activate()
@@ -65,10 +65,10 @@
 		return FALSE
 	if(tgui_alert(owner, "Are you sure you want to take " + new_mob.real_name +" ("+new_mob.job.title+")?", "Take SSD mob", list("Yes", "No",)) != "Yes")
 		return
-	if(isxeno(new_mob))
-		var/mob/living/carbon/xenomorph/ssd_xeno = new_mob
-		if(ssd_xeno.tier != XENO_TIER_MINION && XENODEATHTIME_CHECK(owner))
-			XENODEATHTIME_MESSAGE(owner)
+	if(istyranid(new_mob))
+		var/mob/living/carbon/tyranid/ssd_tyranid = new_mob
+		if(ssd_tyranid.tier != TYRANID_TIER_MINION && TYRANIDDEATHTIME_CHECK(owner))
+			TYRANIDDEATHTIME_MESSAGE(owner)
 			return
 
 	if(HAS_TRAIT(new_mob, TRAIT_POSSESSING))

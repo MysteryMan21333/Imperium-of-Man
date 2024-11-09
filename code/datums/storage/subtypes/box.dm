@@ -58,7 +58,7 @@
 			/obj/item/ammo_magazine/standard_mmg,
 			/obj/item/ammo_magazine/heavymachinegun,
 			/obj/item/ammo_magazine/standard_smartmachinegun,
-			/obj/item/ammo_magazine/som_mg,
+			/obj/item/ammo_magazine/chaos_mg,
 			/obj/item/cell/lasgun,
 		),
 		cant_hold_list = list(

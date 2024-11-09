@@ -12,7 +12,7 @@
 /obj/item/frame/apc
 	name = "APC frame"
 	desc = "Used for repairing or building APCs"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "apc_frame"
 	atom_flags = CONDUCT
 

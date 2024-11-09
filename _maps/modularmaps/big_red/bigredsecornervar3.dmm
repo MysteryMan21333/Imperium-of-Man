@@ -9,14 +9,14 @@
 	},
 /area/bigredv2/caves/undergroundrobotics)
 "aL" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "ba" = (
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "bk" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "bn" = (
@@ -63,7 +63,7 @@
 	dir = 1
 	},
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marinemainship_network,
+/obj/machinery/computer/security/guardsmanmainship_network,
 /turf/open/floor/tile/blue/taupeblue{
 	dir = 1
 	},
@@ -86,7 +86,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/undergroundrobotics)
 "eU" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "eZ" = (
@@ -135,7 +135,7 @@
 	},
 /area/bigredv2/caves/undergroundrobotics)
 "gG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "gX" = (
@@ -235,7 +235,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "kN" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "kP" = (
@@ -364,12 +364,12 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/undergroundrobotics)
 "qj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "qC" = (
 /obj/effect/turf_decal/sandedge,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/undergroundrobotics)
 "qD" = (
@@ -577,7 +577,7 @@
 /turf/open/space/basic,
 /area/space)
 "DB" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
@@ -669,7 +669,7 @@
 /area/bigredv2/caves/undergroundrobotics)
 "Ja" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "Jq" = (
@@ -716,8 +716,8 @@
 	},
 /area/bigredv2/caves/undergroundrobotics)
 "Lr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "LQ" = (
@@ -821,8 +821,8 @@
 /turf/closed/mineral/smooth/bigred/indestructible,
 /area/space)
 "Qq" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "QB" = (
@@ -899,7 +899,7 @@
 	},
 /area/bigredv2/caves/undergroundrobotics)
 "Wd" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "WD" = (

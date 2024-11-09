@@ -1,7 +1,7 @@
 /obj/structure/grille
 	desc = "A flimsy lattice of metal rods, with screws to secure it to the floor."
 	name = "grille"
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "grille0"
 	hit_sound = 'sound/effects/grillehit.ogg'
 	density = TRUE
@@ -10,7 +10,7 @@
 	atom_flags = CONDUCT
 	allow_pass_flags = PASS_AIR|PASS_PROJECTILE|PASS_GRILLE
 	layer = OBJ_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 100, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
 	max_integrity = 10
 
@@ -42,14 +42,14 @@
 /obj/structure/grille/fence/east_west
 	//width=80
 	//height=42
-	icon='icons/obj/structures/fence_ew.dmi'
+	icon='modular_imperium/master_files/icons/obj/structures/fence_ew.dmi'
 	icon_state = "fence-ew"
 	dir = 4
 
 /obj/structure/grille/fence/north_south
 	//width=80
 	//height=42
-	icon='icons/obj/structures/fence_ns.dmi'
+	icon='modular_imperium/master_files/icons/obj/structures/fence_ns.dmi'
 	icon_state = "fence-ns"
 
 
@@ -136,10 +136,10 @@
 
 
 
-//MARINE SHIP GRILLE
+//GUARDSMAN SHIP GRILLE
 
 /obj/structure/grille/smoothing
-	icon = 'icons/obj/smooth_objects/grille.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/grille.dmi'
 	icon_state = "grille-0"
 	base_icon_state = "grille"
 	smoothing_flags = SMOOTH_BITMASK

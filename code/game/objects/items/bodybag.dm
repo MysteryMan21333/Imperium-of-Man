@@ -3,7 +3,7 @@
 /obj/item/bodybag
 	name = "body bag"
 	desc = "A folded bag designed for the storage and transportation of cadavers."
-	icon = 'icons/obj/bodybag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/bodybag.dmi'
 	icon_state = "bodybag_folded"
 	w_class = WEIGHT_CLASS_SMALL
 	var/unfoldedbag_path = /obj/structure/closet/bodybag
@@ -52,7 +52,7 @@
 	name = "body bag"
 	var/bag_name = "body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers."
-	icon = 'icons/obj/bodybag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/bodybag.dmi'
 	icon_state = "bodybag_closed"
 	icon_closed = "bodybag_closed"
 	icon_opened = "bodybag_open"
@@ -206,15 +206,15 @@
 		icon_state = icon_opened
 
 
-/obj/structure/closet/bodybag/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/structure/closet/bodybag/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 	if(opened)
-		return FALSE // stop xeno closing things
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	bodybag_occupant?.attack_alien(xeno_attacker)
+		return FALSE // stop tyranid closing things
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	bodybag_occupant?.attack_alien(tyranid_attacker)
 	open()
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] slashes \the [src] open!"), \
+	tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] slashes \the [src] open!"), \
 		span_danger("We slash \the [src] open!"), null, 5)
 	return TRUE
 
@@ -244,7 +244,7 @@
 			visible_message(span_danger("The shockwave blows [src] apart!"))
 			qdel(src) //blown apart
 
-/obj/structure/closet/bodybag/proc/acidspray_act(datum/source, obj/effect/xenomorph/spray/acid_puddle)
+/obj/structure/closet/bodybag/proc/acidspray_act(datum/source, obj/effect/tyranid/spray/acid_puddle)
 	if(!opened && bodybag_occupant)
 
 		if(ishuman(bodybag_occupant))
@@ -259,7 +259,7 @@
 	if(!.)
 		return
 
-	if((CHECK_BITFIELD(S.smoke_traits, SMOKE_BLISTERING) || CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID)) && !opened && bodybag_occupant)
+	if((CHECK_BITFIELD(S.smoke_traits, SMOKE_BLISTERING) || CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID_ACID)) && !opened && bodybag_occupant)
 		bodybag_occupant.effect_smoke(S) //tarp *definitely* isn't acid/phosphorous smoke proof, lol.
 		balloon_alert(bodybag_occupant, "smoke forces you out")
 		open() //Get out
@@ -277,7 +277,7 @@
 /obj/item/bodybag/cryobag
 	name = "stasis bag"
 	desc = "A folded, reusable bag designed to prevent additional damage to an occupant."
-	icon = 'icons/obj/cryobag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/cryobag.dmi'
 	icon_state = "bodybag_folded"
 	unfoldedbag_path = /obj/structure/closet/bodybag/cryobag
 	var/used = FALSE
@@ -287,7 +287,7 @@
 	name = "stasis bag"
 	bag_name = "stasis bag"
 	desc = "A reusable plastic bag designed to prevent additional damage to an occupant."
-	icon = 'icons/obj/cryobag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/cryobag.dmi'
 	foldedbag_path = /obj/item/bodybag/cryobag
 
 
@@ -385,17 +385,17 @@
 
 /obj/item/trash/used_stasis_bag
 	name = "used stasis bag"
-	icon = 'icons/obj/cryobag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/cryobag.dmi'
 	icon_state = "bodybag_used"
 	desc = "It's been ripped open. You will need to find a machine capable of recycling it."
 
 
-//MARINE SNIPER TARPS
+//GUARDSMAN SNIPER TARPS
 
 /obj/item/bodybag/tarp
 	name = "\improper V1 thermal-dampening tarp (folded)"
 	desc = "A tarp carried by TGMC Snipers. When laying underneath the tarp, the sniper is almost indistinguishable from the landscape if utilized correctly. The tarp contains a thermal-dampening weave to hide the wearer's heat signatures, optical camoflauge, and smell dampening."
-	icon = 'icons/obj/bodybag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/bodybag.dmi'
 	icon_state = "jungletarp_folded"
 	w_class = WEIGHT_CLASS_SMALL
 	unfoldedbag_path = /obj/structure/closet/bodybag/tarp
@@ -422,7 +422,7 @@
 
 
 /obj/item/bodybag/tarp/snow
-	icon = 'icons/obj/bodybag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/bodybag.dmi'
 	icon_state = "snowtarp_folded"
 	unfoldedbag_path = /obj/structure/closet/bodybag/tarp/snow
 
@@ -431,7 +431,7 @@
 	name = "\improper V1 thermal-dampening tarp"
 	bag_name = "V1 thermal-dampening tarp"
 	desc = "An active camo tarp carried by TGMC Snipers. When laying underneath the tarp, the sniper is almost indistinguishable from the landscape if utilized correctly. The tarp contains a thermal-dampening weave to hide the wearer's heat signatures, optical camouflage, and smell dampening."
-	icon = 'icons/obj/bodybag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/bodybag.dmi'
 	icon_state = "jungletarp_closed"
 	icon_closed = "jungletarp_closed"
 	icon_opened = "jungletarp_open"

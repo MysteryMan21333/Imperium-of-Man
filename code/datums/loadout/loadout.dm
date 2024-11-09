@@ -2,7 +2,7 @@
 	///Name of the loadout
 	var/name = ""
 	///The job associated with the loadout
-	var/job = SQUAD_MARINE
+	var/job = SQUAD_GUARDSMAN
 	/**
 	 * Assoc list of all visible items composing this loadout
 	 * the key of each item is a slot key

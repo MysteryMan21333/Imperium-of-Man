@@ -2,13 +2,13 @@
 /obj/item/reagent_containers/food/snacks/pastries
 	name = "snack"
 	desc = "yummy"
-	icon = 'icons/obj/items/food/piecake.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/piecake.dmi'
 	icon_state = null
 
 /obj/item/reagent_containers/food/snacks/sliceable/pastries
 	name = "snack"
 	desc = "yummy"
-	icon = 'icons/obj/items/food/piecake.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/piecake.dmi'
 	icon_state = null
 
 /obj/item/reagent_containers/food/snacks/pastries/pie
@@ -603,8 +603,8 @@
 		reagents.add_reagent(/datum/reagent/medicine/tricordrazine, 5)
 
 /obj/item/reagent_containers/food/snacks/pastries/xemeatpie
-	name = "Xeno-pie"
-	icon_state = "xenomeatpie"
+	name = "Tyranid-pie"
+	icon_state = "tyranidmeatpie"
 	desc = "A delicious meatpie. Probably heretical."
 	trash = /obj/item/trash/plate
 	filling_color = "#43DE18"

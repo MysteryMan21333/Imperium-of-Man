@@ -54,7 +54,7 @@
 	///Whether the contents on the meds_beaker will be injected into the wearer when the system is turned on
 	var/automatic_meds_use = TRUE
 	///Image that gets added to the wearer's overlays and gets changed based on resource_storage_current
-	var/static/image/resource_overlay = image('icons/mob/hud/human.dmi', icon_state = "chemsuit_vis")
+	var/static/image/resource_overlay = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "chemsuit_vis")
 	COOLDOWN_DECLARE(chemboost_activation_cooldown)
 	///Information about how reagents boost the system's effects.
 	var/reagent_info = ""
@@ -211,10 +211,10 @@
 ///Shows the radial menu with suit options. It is separate from configure() due to linters
 /datum/component/chem_booster/proc/show_radial()
 	var/list/radial_options = list(
-		BOOST_CONFIG = image(icon = 'icons/mob/radial.dmi', icon_state = "[boost_icon]"),
-		EXTRACT = image(icon = 'icons/mob/radial.dmi', icon_state = "cboost_extract"),
-		LOAD = image(icon = 'icons/mob/radial.dmi', icon_state = "cboost_load"),
-		VALI_INFO = image(icon = 'icons/mob/radial.dmi', icon_state = "cboost_info"),
+		BOOST_CONFIG = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "[boost_icon]"),
+		EXTRACT = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "cboost_extract"),
+		LOAD = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "cboost_load"),
+		VALI_INFO = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "cboost_info"),
 		)
 
 	var/choice = show_radial_menu(wearer, wearer, radial_options, null, 48, null, TRUE, TRUE)
@@ -372,7 +372,7 @@
 ///Handles resource collection and is ativated when attacking with a weapon.
 /datum/component/chem_booster/proc/drain_resource(datum/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
-	if(!isxeno(M))
+	if(!istyranid(M))
 		return
 	if(M.stat == DEAD)
 		return
@@ -474,7 +474,7 @@
 
 /datum/action/chem_booster/configure
 	name = "Configure Vali Chemical Enhancement"
-	action_icon = 'icons/mob/actions.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	action_icon_state = "cboost_configure"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_VALI_CONFIGURE,
@@ -482,7 +482,7 @@
 
 /datum/action/chem_booster/power
 	name = "Power Vali Chemical Enhancement"
-	action_icon = 'icons/mob/actions.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	action_icon_state = "cboost_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_VALI_HEAL,
@@ -512,7 +512,7 @@
 
 /datum/action/chem_booster/connect_weapon
 	name = "Connect Weapon"
-	action_icon = 'icons/mob/actions.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	action_icon_state = "vali_weapon_connect"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_VALI_CONNECT,

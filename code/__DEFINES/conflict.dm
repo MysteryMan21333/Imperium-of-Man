@@ -41,8 +41,8 @@
 
 ///Ammo will impact a targeted open turf instead of continuing past it
 #define AMMO_TARGET_TURF (1<<0)
-///Xeno type projectile
-#define AMMO_XENO (1<<1)
+///Tyranid type projectile
+#define AMMO_TYRANID (1<<1)
 ///poor accuracy against humans
 #define AMMO_UNWIELDY (1<<2)
 ///Ammo will pass through windows and has damage reduced by smokes with SMOKE_NERF_BEAM
@@ -51,7 +51,7 @@
 #define AMMO_SNIPER (1<<4)
 ///Ammo will attempt to add firestacks and ignite a hit mob if it deals any damage. Armor applies, regardless of AMMO_IGNORE_ARMOR
 #define AMMO_INCENDIARY (1<<5)
-///Ammo type entirely ignores xenos
+///Ammo type entirely ignores tyranids
 #define AMMO_SKIPS_ALIENS (1<<6)
 ///Generates blood splatters on mob hit
 #define AMMO_BALLISTIC (1<<7)
@@ -142,10 +142,10 @@
 #define SLOWDOWN_ARMOR_HEAVY 0.7
 #define SLOWDOWN_ARMOR_VERY_HEAVY 1
 
-//Marine armor defines
-#define MARINE_ARMOR_LIGHT list(MELEE = 35, BULLET = 55, LASER = 55, ENERGY = 50, BOMB = 45, BIO = 45, FIRE = 45, ACID = 45)
-#define MARINE_ARMOR_MEDIUM list(MELEE = 45, BULLET = 65, LASER = 65, ENERGY = 55, BOMB = 50, BIO = 50, FIRE = 50, ACID = 55)
-#define MARINE_ARMOR_HEAVY list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
+//Guardsman armor defines
+#define GUARDSMAN_ARMOR_LIGHT list(MELEE = 35, BULLET = 55, LASER = 55, ENERGY = 50, BOMB = 45, BIO = 45, FIRE = 45, ACID = 45)
+#define GUARDSMAN_ARMOR_MEDIUM list(MELEE = 45, BULLET = 65, LASER = 65, ENERGY = 55, BOMB = 50, BIO = 50, FIRE = 50, ACID = 55)
+#define GUARDSMAN_ARMOR_HEAVY list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
 
 //=================================================
 
@@ -176,21 +176,21 @@
 #define SMOKE_SLEEP (1<<6)
 #define SMOKE_BLISTERING (1<<7)
 #define SMOKE_PLASMALOSS (1<<8)
-#define SMOKE_XENO (1<<9)
-#define SMOKE_XENO_ACID (1<<10)
-#define SMOKE_XENO_NEURO (1<<11)
-#define SMOKE_XENO_HEMODILE (1<<12)
-#define SMOKE_XENO_TRANSVITOX (1<<13)
+#define SMOKE_TYRANID (1<<9)
+#define SMOKE_TYRANID_ACID (1<<10)
+#define SMOKE_TYRANID_NEURO (1<<11)
+#define SMOKE_TYRANID_HEMODILE (1<<12)
+#define SMOKE_TYRANID_TRANSVITOX (1<<13)
 #define SMOKE_CHEM (1<<14)
 #define SMOKE_EXTINGUISH (1<<15) //Extinguishes fires and mobs that are on fire
 #define SMOKE_NEURO_LIGHT (1<<16) //Effectively a sub-flag of Neuro; precludes higher impact effects
 #define SMOKE_HUGGER_PACIFY (1<<17) //Smoke that pacifies huggers in its area; mainly used for vision blocking smoke
-#define SMOKE_XENO_SANGUINAL (1<<18) //Toxic crimson smoke created by the Defiler's Defile ability.
-#define SMOKE_XENO_OZELOMELYN (1<<19) //Smoke that purges chemicals and does minor capped toxin damage for Defiler.
+#define SMOKE_TYRANID_SANGUINAL (1<<18) //Toxic crimson smoke created by the Defiler's Defile ability.
+#define SMOKE_TYRANID_OZELOMELYN (1<<19) //Smoke that purges chemicals and does minor capped toxin damage for Defiler.
 #define SMOKE_SATRAPINE (1<<20) //nerve agent that purges painkillers and causes increasing pain
-#define SMOKE_XENO_TOXIC (1<<21) //deals damage to anyone inside it and inflicts the intoxicated debuff, dealing damage over time
+#define SMOKE_TYRANID_TOXIC (1<<21) //deals damage to anyone inside it and inflicts the intoxicated debuff, dealing damage over time
 #define SMOKE_PURGER (1<<22) // This smoke removes any smoke has this in its effects_cycle, that removes certain types of smokes.
-#define SMOKE_XENO_PYROGEN (1<<23) // Smoke that acts like SMOKE_BLISTERING for non-xenos and applies pyrogen's melting fire status effect when entering.
+#define SMOKE_TYRANID_PYROGEN (1<<23) // Smoke that acts like SMOKE_BLISTERING for non-tyranids and applies pyrogen's melting fire status effect when entering.
 
 //Incapacitated
 #define INCAPACITATED_IGNORE_RESTRAINED (1<<0)
@@ -198,7 +198,7 @@
 
 
 //Restraints
-#define RESTRAINED_XENO_NEST (1<<0)
+#define RESTRAINED_TYRANID_NEST (1<<0)
 #define RESTRAINED_NECKGRAB (1<<1)
 #define RESTRAINED_STRAIGHTJACKET (1<<2)
 #define RESTRAINED_RAZORWIRE (1<<3)

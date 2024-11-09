@@ -25,7 +25,7 @@
 	id = "req_sec_storage";
 	name = "\improper Requesitions Storage Shutters"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/requesition/sec_storage)
 "aau" = (
@@ -235,7 +235,7 @@
 	id = "req_sec_storage";
 	name = "\improper Requesitions Storage Shutters"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/requesition/sec_storage)
 "adb" = (
@@ -1533,7 +1533,7 @@
 /turf/open/floor/plating/icefloor,
 /area/ice_colony/underground/hangar)
 "alQ" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating/icefloor,
 /area/ice_colony/exterior/surface/landing_pad)
 "alS" = (
@@ -1602,7 +1602,7 @@
 /obj/structure/mirror{
 	pixel_y = 25
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/tile/white,
 /area/ice_colony/surface/excavationbarracks)
 "amp" = (
@@ -3257,7 +3257,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/gibs/xeno/down,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/down,
 /obj/effect/spawner/random/misc/structure/curtain/medical,
 /obj/effect/ai_node,
 /turf/open/floor/tile/white,
@@ -4922,7 +4922,7 @@
 /turf/open/floor/tile/green/whitegreen,
 /area/ice_colony/surface/clinic/storage)
 "aEs" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 10
 	},
@@ -7821,7 +7821,7 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/ice_colony/exterior/surface/clearing/south)
 "aWq" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/ice_colony/exterior/surface/landing_pad2)
 "aWr" = (
@@ -8057,11 +8057,11 @@
 	},
 /area/ice_colony/surface/hangar/hallway)
 "aXt" = (
-/obj/item/clothing/under/marine/veteran/pmc,
-/obj/item/clothing/head/helmet/marine/veteran/pmc,
-/obj/item/clothing/gloves/marine/veteran/pmc,
+/obj/item/clothing/under/guardsman/veteran/pmc,
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc,
+/obj/item/clothing/gloves/guardsman/veteran/pmc,
 /obj/item/clothing/mask/gas/pmc/damaged,
-/obj/item/clothing/suit/storage/marine/veteran/pmc,
+/obj/item/clothing/suit/storage/guardsman/veteran/pmc,
 /obj/item/weapon/gun/smg/m25/elite,
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/tile/dark/red2{
@@ -8725,7 +8725,7 @@
 /area/ice_colony/surface/excavation)
 "bcj" = (
 /obj/machinery/door/airlock/multi_tile/mainship/medidoor{
-	name = "\improper Colony Xenoarcheology Outpost"
+	name = "\improper Colony Tyranidarcheology Outpost"
 	},
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/excavation)
@@ -10272,7 +10272,7 @@
 /area/ice_colony/underground/responsehangar)
 "blz" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/item/clothing/head/helmet/marine/veteran/pmc{
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc{
 	pixel_x = 14;
 	pixel_y = 11
 	},
@@ -11424,7 +11424,7 @@
 	},
 /area/ice_colony/surface/hangar/alpha)
 "bud" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
@@ -12109,7 +12109,7 @@
 	},
 /area/ice_colony/underground/medical/storage)
 "bzV" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/red/whitered{
 	dir = 1
 	},
@@ -13370,7 +13370,7 @@
 /area/ice_colony/underground/security/interrogation)
 "bFM" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/item/storage/donut_box,
 /obj/machinery/firealarm,
 /turf/open/floor/tile/dark/red2{
@@ -17224,7 +17224,7 @@
 /area/ice_colony/exterior/surface/valley/south/excavation)
 "bYF" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "bYG" = (
@@ -18131,7 +18131,7 @@
 	},
 /area/ice_colony/exterior/surface/landing_pad2)
 "cUB" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/surface/valley/northeast)
 "cUW" = (
@@ -18377,7 +18377,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/landing_pad2)
 "dhk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "dka" = (
@@ -18415,7 +18415,7 @@
 /turf/open/floor/plating/icefloor/warnplate,
 /area/ice_colony/exterior/surface/landing_pad)
 "dpq" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "dpy" = (
@@ -18488,12 +18488,12 @@
 	},
 /area/ice_colony/surface/substation/smes)
 "dtR" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/central)
 "duU" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "duZ" = (
@@ -18644,7 +18644,7 @@
 /area/ice_colony/underground/crew/dorm_l)
 "dES" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "dFS" = (
@@ -18736,7 +18736,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/command)
 "dNx" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/red2{
 	dir = 1
 	},
@@ -19049,7 +19049,7 @@
 /obj/machinery/power/apc/drained{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -19127,8 +19127,8 @@
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/ice_w)
 "emN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "enw" = (
@@ -19535,7 +19535,7 @@
 /turf/open/floor/freezer,
 /area/ice_colony/surface/dorms/restroom_e)
 "eVT" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/darkgreen/darkgreen2,
 /area/ice_colony/underground/hallway/south_east)
 "eWy" = (
@@ -19663,11 +19663,11 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/hallway/south_east)
 "ffU" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/open)
 "ffZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/south)
 "fgi" = (
@@ -20109,7 +20109,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/clearing/north)
 "fKN" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "fKW" = (
@@ -20220,7 +20220,7 @@
 /area/ice_colony/surface/bar/canteen)
 "fUH" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/south/excavation)
 "fUJ" = (
@@ -20273,7 +20273,7 @@
 	},
 /area/ice_colony/surface/storage_unit/research)
 "fXA" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
 "fXQ" = (
@@ -20281,7 +20281,7 @@
 /turf/open/floor/wood,
 /area/ice_colony/surface/command)
 "fXU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "fXZ" = (
@@ -20290,7 +20290,7 @@
 /area/ice_colony/underground/security/interrogation)
 "fYj" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/crew/leisure)
 "fYO" = (
@@ -20301,7 +20301,7 @@
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "gaf" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "gbf" = (
@@ -20401,7 +20401,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/landing_pad2)
 "gje" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "gkC" = (
@@ -20568,8 +20568,8 @@
 /turf/open/floor/tile/white,
 /area/ice_colony/underground/hallway/north_west/garbledradio)
 "gvT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "gvW" = (
@@ -20632,7 +20632,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/clearing/north)
 "gAZ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "gBA" = (
@@ -20813,7 +20813,7 @@
 	},
 /area/ice_colony/surface/research)
 "gLN" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "gMe" = (
@@ -20858,8 +20858,8 @@
 	},
 /area/ice_colony/underground/requesition)
 "gOi" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "gOA" = (
@@ -21041,7 +21041,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/hangar)
 "hfh" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering/garbledradio)
 "hfp" = (
@@ -21221,7 +21221,7 @@
 	},
 /area/ice_colony/underground/crew/disposals)
 "hsx" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/central)
 "hsQ" = (
@@ -21286,7 +21286,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/command)
 "hwE" = (
@@ -21580,7 +21580,7 @@
 	},
 /area/ice_colony/surface/dorms)
 "hZA" = (
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/misc/handcuffs,
 /turf/open/floor/tile/dark/red2{
@@ -21655,8 +21655,8 @@
 /area/ice_colony/underground/medical/lobby/garbledradio)
 "ieu" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/maintenance/south)
 "ieU" = (
@@ -21728,7 +21728,7 @@
 "ikJ" = (
 /obj/effect/turf_underlay/icefloor,
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "ill" = (
@@ -21841,7 +21841,7 @@
 /area/ice_colony/surface/hydroponics/lobby)
 "iwO" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "iyo" = (
@@ -21914,7 +21914,7 @@
 /area/ice_colony/surface/dorms)
 "iCp" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/central)
 "iDh" = (
@@ -21930,14 +21930,14 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/hallway/north_west/garbledradio)
 "iEO" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "iET" = (
@@ -21993,7 +21993,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/crew/bball/garbledradio)
 "iHM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/hallway/north_west/garbledradio)
 "iIp" = (
@@ -22008,8 +22008,8 @@
 /area/ice_colony/surface/dorms)
 "iIt" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "iJn" = (
@@ -22155,7 +22155,7 @@
 /turf/open/floor/tile/darkgreen/darkgreen2,
 /area/ice_colony/underground/medical/lobby/garbledradio)
 "iPK" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/ice_colony/exterior/surface/clearing/north)
 "iPL" = (
@@ -22230,7 +22230,7 @@
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "iVh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall/indestructible,
 /area/space)
 "iVA" = (
@@ -22349,12 +22349,12 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "jcV" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "jcZ" = (
@@ -22379,7 +22379,7 @@
 /turf/open/floor/wood,
 /area/ice_colony/surface/bar/bar)
 "jeb" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "jei" = (
@@ -22495,8 +22495,8 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/ice_colony/exterior/surface/valley/northeast)
 "jmX" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/tyranid_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "jne" = (
@@ -22835,7 +22835,7 @@
 /turf/open/floor/plating,
 /area/ice_colony/underground/hallway/north_west/garbledradio)
 "jJD" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
 "jJX" = (
@@ -23055,7 +23055,7 @@
 	},
 /area/ice_colony/surface/engineering/tool)
 "kaD" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "kaF" = (
@@ -23065,7 +23065,7 @@
 	},
 /area/ice_colony/surface/command)
 "kcf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/hallway/south_east)
 "kcS" = (
@@ -23081,7 +23081,7 @@
 	},
 /area/ice_colony/surface/dorms)
 "kcY" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "kdn" = (
@@ -23120,7 +23120,7 @@
 	},
 /area/ice_colony/surface/hangar/beta)
 "kfE" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -23347,7 +23347,7 @@
 /area/ice_colony/surface/substation)
 "ktL" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
 	dir = 2
 	},
@@ -23551,7 +23551,7 @@
 "kFo" = (
 /obj/effect/turf_underlay/icefloor,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "kFu" = (
@@ -23644,8 +23644,8 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/hallway/north_west/garbledradio)
 "kOZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "kPn" = (
@@ -23752,7 +23752,7 @@
 "kWL" = (
 /obj/structure/window_frame/colony,
 /obj/item/shard,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating,
 /area/ice_colony/surface/clinic/treatment)
 "kWN" = (
@@ -23772,8 +23772,8 @@
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering/garbledradio)
 "kXM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "kZp" = (
@@ -23953,8 +23953,8 @@
 	},
 /area/ice_colony/exterior/surface/taxiway)
 "lpV" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "lqg" = (
@@ -24025,7 +24025,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/requesition/lobby)
 "ltl" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/down,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/down,
 /turf/open/floor/tile/dark/blue2/corner{
 	dir = 8
 	},
@@ -24054,7 +24054,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/south)
 "luz" = (
@@ -24073,7 +24073,7 @@
 "lvQ" = (
 /obj/item/shard,
 /obj/structure/window_frame/colony,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating,
 /area/ice_colony/surface/clinic/lobby)
 "lwr" = (
@@ -24083,7 +24083,7 @@
 /turf/open/floor/tile/white,
 /area/ice_colony/underground/medical/treatment/garbledradio)
 "lwF" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/hangar/checkpoint)
 "lxL" = (
@@ -24121,8 +24121,8 @@
 "lBI" = (
 /obj/effect/turf_underlay/icefloor,
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "lBY" = (
@@ -24136,7 +24136,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/maintenance/central)
 "lCB" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/ice_w)
 "lCH" = (
@@ -24296,7 +24296,7 @@
 /turf/open/floor/tile/red/whitered,
 /area/ice_colony/underground/medical/lobby/garbledradio)
 "lKo" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "lKU" = (
@@ -24386,7 +24386,7 @@
 /turf/open/floor/wood,
 /area/ice_colony/underground/crew/dorm_l)
 "lPh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves)
 "lPw" = (
@@ -24406,7 +24406,7 @@
 /turf/open/floor/plating/icefloor,
 /area/ice_colony/exterior/surface/landing_pad)
 "lPE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/requesition/sec_storage)
 "lPM" = (
@@ -24504,7 +24504,7 @@
 /area/ice_colony/underground/crew/library)
 "lTt" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
 "lTD" = (
@@ -24699,7 +24699,7 @@
 /turf/closed/wall,
 /area/ice_colony/surface/hydroponics/lobby)
 "mfV" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/wood,
 /area/ice_colony/surface/dorms)
 "mgS" = (
@@ -24991,8 +24991,8 @@
 /turf/open/floor/wood,
 /area/ice_colony/underground/crew/bball/garbledradio)
 "mCM" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "mDM" = (
@@ -25235,8 +25235,8 @@
 /area/ice_colony/underground/medical/treatment/garbledradio)
 "mTa" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "mTI" = (
@@ -25439,7 +25439,7 @@
 /area/ice_colony/underground/storage/highsec)
 "njR" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/hangar/checkpoint)
 "njX" = (
@@ -25466,7 +25466,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/dorms)
 "nlW" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/down,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/down,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/south/excavation)
 "nmw" = (
@@ -25545,7 +25545,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/dorms)
 "nqu" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/central)
 "nqF" = (
@@ -25684,7 +25684,7 @@
 	id = "req_sec_storage";
 	name = "Requesition Secure Storage"
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -25714,7 +25714,7 @@
 "nym" = (
 /obj/effect/turf_underlay/icefloor,
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "nyp" = (
@@ -25806,7 +25806,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -25822,9 +25822,9 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/hallway/south_east/garbledradio)
 "nGZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "nHf" = (
@@ -25837,7 +25837,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/crew/bball/garbledradio)
 "nHz" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/central)
 "nIe" = (
@@ -26259,7 +26259,7 @@
 /turf/open/floor/tile/dark/brown2,
 /area/ice_colony/exterior/surface/landing_pad2)
 "oji" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -26509,8 +26509,8 @@
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/ice_w)
 "oCw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "oCC" = (
@@ -26564,8 +26564,8 @@
 /turf/open/floor/tile/darkgreen/darkgreen2,
 /area/ice_colony/underground/crew/bball/garbledradio)
 "oEi" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "oEu" = (
@@ -26649,8 +26649,8 @@
 /area/ice_colony/exterior/surface/valley/southeast)
 "oHh" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "oHm" = (
@@ -26934,7 +26934,7 @@
 /area/ice_colony/underground/crew/bball/garbledradio)
 "pcw" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
 "pcy" = (
@@ -26968,7 +26968,7 @@
 /obj/structure/bed/chair/wood/normal{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/light,
 /turf/open/floor/wood,
 /area/ice_colony/surface/clinic/treatment)
@@ -26979,7 +26979,7 @@
 	},
 /area/ice_colony/surface/substation/smes)
 "pgF" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
@@ -27029,14 +27029,14 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/ice_colony/exterior/surface/clearing/pass)
 "plh" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/maintenance/central)
 "pmj" = (
 /obj/effect/turf_underlay/icefloor,
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "pmQ" = (
@@ -27098,8 +27098,8 @@
 /turf/open/floor/tile/dark,
 /area/ice_colony/surface/hangar/checkpoint)
 "psJ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "psT" = (
@@ -27109,12 +27109,12 @@
 	},
 /area/ice_colony/surface/dorms)
 "pty" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/crew/leisure)
 "ptN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "pux" = (
@@ -27164,7 +27164,7 @@
 /area/ice_colony/underground/command/checkpoint)
 "pzp" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/item/storage/donut_box,
 /obj/machinery/firealarm,
 /obj/structure/noticeboard{
@@ -27484,7 +27484,7 @@
 /turf/open/floor/wood,
 /area/ice_colony/surface/bar/bar)
 "pVK" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/wood,
 /area/ice_colony/surface/bar/bar)
@@ -27693,7 +27693,7 @@
 /area/ice_colony/surface/excavation/storage)
 "qij" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/hallway/south_east)
 "qjb" = (
@@ -27739,7 +27739,7 @@
 /turf/open/floor/wood,
 /area/ice_colony/underground/crew/leisure)
 "qnN" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/ice_colony/underground/requesition/sec_storage)
 "qnR" = (
@@ -27761,7 +27761,7 @@
 /area/ice_colony/exterior/surface/valley/north)
 "qpr" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
@@ -27899,7 +27899,7 @@
 /turf/open/floor/freezer,
 /area/ice_colony/surface/bar/bar)
 "qyK" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "qzn" = (
@@ -28582,7 +28582,7 @@
 /area/ice_colony/underground/medical/treatment/garbledradio)
 "rrC" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "rrU" = (
@@ -28727,7 +28727,7 @@
 /turf/open/floor/tile/white,
 /area/ice_colony/underground/medical/hallway/garbledradio)
 "ryW" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/wood,
 /area/ice_colony/surface/bar/bar)
 "rzD" = (
@@ -28843,7 +28843,7 @@
 	},
 /area/ice_colony/surface/hangar/alpha)
 "rGe" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/open)
 "rGo" = (
@@ -28893,8 +28893,8 @@
 	},
 /area/ice_colony/surface/hydroponics/lobby)
 "rJk" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/south/excavation)
 "rJF" = (
@@ -28922,7 +28922,7 @@
 /area/ice_colony/exterior/underground/caves/open)
 "rLB" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "rLV" = (
@@ -28937,7 +28937,7 @@
 /area/ice_colony/underground/hallway/south_east/garbledradio)
 "rMl" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "rMB" = (
@@ -29104,18 +29104,18 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
 /area/ice_colony/underground/requesition/sec_storage)
 "rXg" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/underground/maintenance/south)
 "rXh" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/down,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/down,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 1
 	},
@@ -29383,13 +29383,13 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/gibs/xeno,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/south/excavation)
 "sns" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
 "sox" = (
@@ -29500,7 +29500,7 @@
 "suN" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/hallway/north_west)
 "svt" = (
@@ -29523,8 +29523,8 @@
 /area/ice_colony/surface/excavation/storage)
 "swc" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "swD" = (
@@ -29688,7 +29688,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/southwest)
 "sHO" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/central)
 "sHR" = (
@@ -30022,7 +30022,7 @@
 /turf/open/floor/plating/icefloor,
 /area/ice_colony/underground/hangar)
 "tbJ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "tbQ" = (
@@ -30252,7 +30252,7 @@
 /turf/open/ground/grass,
 /area/ice_colony/surface/hydroponics/lobby)
 "trS" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "trX" = (
@@ -30275,8 +30275,8 @@
 /area/ice_colony/surface/bar/bar)
 "tsK" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "tsU" = (
@@ -30506,7 +30506,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/medical/lobby/garbledradio)
 "tFB" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "tGL" = (
@@ -30584,8 +30584,8 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/substation/smes)
 "tMO" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "tNF" = (
@@ -30655,7 +30655,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/dorms)
 "tQV" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "tRa" = (
@@ -30670,7 +30670,7 @@
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/open/garbledradio)
 "tRU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/open)
@@ -30968,8 +30968,8 @@
 /area/ice_colony/surface/command)
 "uoT" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "upa" = (
@@ -31006,7 +31006,7 @@
 /area/ice_colony/exterior/surface/valley/west)
 "urb" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "urw" = (
@@ -31548,7 +31548,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/security/interrogation)
 "uZI" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -31794,7 +31794,7 @@
 	},
 /area/ice_colony/underground/medical/lobby/garbledradio)
 "vmC" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/open)
 "vmX" = (
@@ -31893,8 +31893,8 @@
 /turf/open/floor/freezer,
 /area/ice_colony/surface/bar/bar)
 "vvy" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "vwA" = (
@@ -31949,7 +31949,7 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/clinic/treatment)
 "vAV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "vBe" = (
@@ -31957,11 +31957,11 @@
 /turf/open/floor/tile/dark/brown2,
 /area/ice_colony/surface/research)
 "vBk" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves)
 "vBp" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/open)
 "vBs" = (
@@ -32117,7 +32117,7 @@
 /area/ice_colony/surface/bar/canteen)
 "vNJ" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/underground/maintenance/south)
 "vOX" = (
@@ -32274,7 +32274,7 @@
 /area/ice_colony/surface/hydroponics/lobby)
 "vZP" = (
 /obj/structure/table/wood,
-/obj/item/book/manual/marine_law,
+/obj/item/book/manual/guardsman_law,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -32355,7 +32355,7 @@
 /turf/open/floor/tile/green/whitegreen,
 /area/ice_colony/surface/clinic/treatment)
 "wgE" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -32666,7 +32666,7 @@
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/engineering)
 "wye" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/exterior/underground/caves/ice_w)
 "wyo" = (
@@ -32680,7 +32680,7 @@
 /area/ice_colony/underground/security/interrogation)
 "wzC" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/central)
@@ -32738,7 +32738,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "wEL" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/open)
 "wFi" = (
@@ -32821,7 +32821,7 @@
 /turf/open/floor/plating,
 /area/ice_colony/exterior/underground/caves/open)
 "wJb" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -32877,7 +32877,7 @@
 /turf/open/floor/tile/white,
 /area/ice_colony/underground/medical/treatment/garbledradio)
 "wOy" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/maintenance/south)
 "wOB" = (
@@ -33018,7 +33018,7 @@
 	},
 /area/ice_colony/underground/medical/treatment/garbledradio)
 "wWA" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/south)
 "wWT" = (
@@ -33299,7 +33299,7 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/ice_colony/exterior/surface/valley/south/excavation)
 "xqA" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -33443,7 +33443,7 @@
 	},
 /area/ice_colony/underground/security/brig)
 "xxV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves)
 "xyf" = (
@@ -33507,8 +33507,8 @@
 /area/ice_colony/underground/maintenance/central)
 "xAD" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/ice_se)
 "xAO" = (
@@ -33667,7 +33667,7 @@
 /turf/open/floor/plating,
 /area/ice_colony/underground/crew/disposals)
 "xFc" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/white,
@@ -33677,7 +33677,7 @@
 /turf/open/floor/tile/dark/yellow2,
 /area/ice_colony/surface/substation/smes)
 "xFw" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/wood,
 /area/ice_colony/surface/clinic/treatment)
 "xFG" = (
@@ -33844,7 +33844,7 @@
 /area/ice_colony/underground/responsehangar)
 "xQb" = (
 /obj/effect/turf_underlay/icefloor,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/underground/maintenance/south)
 "xQD" = (
@@ -33888,7 +33888,7 @@
 /area/ice_colony/underground/crew/chapel)
 "xVo" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves)
 "xVv" = (
@@ -34006,7 +34006,7 @@
 /area/ice_colony/surface/hangar/beta)
 "xYB" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/rock)
 "xYQ" = (
@@ -34016,8 +34016,8 @@
 /area/ice_colony/underground/maintenance/north)
 "yba" = (
 /obj/effect/landmark/lv624/fog_blocker,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/engineering)
 "ybc" = (
@@ -34172,7 +34172,7 @@
 /obj/machinery/door/airlock/multi_tile/mainship/comdoor/free_access{
 	name = "\improper Colony Administration"
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/command/checkpoint)
 "yiL" = (

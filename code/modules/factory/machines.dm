@@ -1,11 +1,11 @@
 /obj/machinery/factory
 	name = "generic root heater"
 	desc = "You shouldnt be seeing this."
-	icon = 'icons/obj/factory/factory_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/factory/factory_machines.dmi'
 	icon_state = "heater_inactive"
 	density = TRUE
 	anchored = FALSE // start off unanchored so its easier to move
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	atom_flags = PREVENT_CONTENTS_EXPLOSION
 	///process type we will use to determine what step of the production process this machine will do
 	var/process_type = FACTORY_MACHINE_HEATER

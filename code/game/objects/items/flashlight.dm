@@ -1,11 +1,11 @@
 /obj/item/flashlight
 	name = "flashlight"
 	desc = "A hand-held emergency light."
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "flashlight"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/lights_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/lights_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/lights_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/lights_right.dmi',
 	)
 	worn_icon_state = "flashlight"
 	w_class = WEIGHT_CLASS_SMALL
@@ -40,12 +40,12 @@
 	update_action_button_icons()
 	update_icon()
 
-/obj/item/flashlight/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(turn_light(xeno_attacker, FALSE) != CHECKS_PASSED)
+/obj/item/flashlight/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(turn_light(tyranid_attacker, FALSE) != CHECKS_PASSED)
 		return
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	to_chat(xeno_attacker, span_warning("We disable the metal thing's lights.") )
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	to_chat(tyranid_attacker, span_warning("We disable the metal thing's lights.") )
 
 /obj/item/flashlight/update_icon_state()
 	. = ..()
@@ -167,7 +167,7 @@
 /obj/item/device/flashlight/lamp/tripod
 	name = "tripod lamp"
 	desc = "An emergency light tube mounted onto a tripod. It seemingly lasts forever."
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "tripod_lamp"
 	light_range = 6//pretty good
 
@@ -179,19 +179,19 @@
 	set category = "Object"
 	set src in oview(1)
 
-	if(istype(usr, /mob/living/carbon/xenomorph)) //Sneaky xenos turning off the lights
+	if(istype(usr, /mob/living/carbon/tyranid)) //Sneaky tyranids turning off the lights
 		attack_alien(usr)
 		return
 
 	if(!usr.stat)
 		attack_self(usr)
 
-/obj/item/flashlight/lamp/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/item/flashlight/lamp/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
 	playsound(loc, 'sound/effects/metalhit.ogg', 20, TRUE)
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] smashes [src]!"), \
+	tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] smashes [src]!"), \
 	span_danger("We smash [src]!"), null, 5)
 	deconstruct(FALSE)
 
@@ -199,7 +199,7 @@
 	gender = PLURAL
 	name = "glowing slime"
 	desc = "A glowing ball of what appears to be amber."
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "floor1" //not a slime extract sprite but... something close enough!
 	worn_icon_state = "slime"
 	w_class = WEIGHT_CLASS_TINY

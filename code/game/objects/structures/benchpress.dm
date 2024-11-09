@@ -1,7 +1,7 @@
 /obj/structure/benchpress
 	name = "weight training bench"
 	desc = "Just looking at this thing makes you feel tired.<br>Left click to bench, right click to change weights."
-	icon = 'icons/obj/structures/benchpress.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/benchpress.dmi'
 	icon_state = "benchpress_0"
 	base_icon_state = "benchpress"
 	density = FALSE
@@ -64,11 +64,11 @@
 		flick("unswap_[oldplates]", src)
 		return
 	var/list/radial_options = list(
-		"1" = image(icon = 'icons/obj/structures/benchpress.dmi', icon_state = "benchpress_1"),
-		"2" = image(icon = 'icons/obj/structures/benchpress.dmi', icon_state = "benchpress_2"),
-		"3" = image(icon = 'icons/obj/structures/benchpress.dmi', icon_state = "benchpress_3"),
-		"4" = image(icon = 'icons/obj/structures/benchpress.dmi', icon_state = "benchpress_4"),
-		"5" = image(icon = 'icons/obj/structures/benchpress.dmi', icon_state = "benchpress_5"),
+		"1" = image(icon = 'modular_imperium/master_files/icons/obj/structures/benchpress.dmi', icon_state = "benchpress_1"),
+		"2" = image(icon = 'modular_imperium/master_files/icons/obj/structures/benchpress.dmi', icon_state = "benchpress_2"),
+		"3" = image(icon = 'modular_imperium/master_files/icons/obj/structures/benchpress.dmi', icon_state = "benchpress_3"),
+		"4" = image(icon = 'modular_imperium/master_files/icons/obj/structures/benchpress.dmi', icon_state = "benchpress_4"),
+		"5" = image(icon = 'modular_imperium/master_files/icons/obj/structures/benchpress.dmi', icon_state = "benchpress_5"),
 	)
 	var/choice = show_radial_menu(user, src, radial_options, null, 64, null, TRUE, TRUE)
 	if(!choice)
@@ -85,11 +85,11 @@
 		return
 	do_workout_set(user)
 
-/obj/structure/benchpress/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/structure/benchpress/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	. = ..()
 	if(.)
 		return
-	do_workout_set(xeno_attacker)
+	do_workout_set(tyranid_attacker)
 
 ///checks if possible and if yes performs a workout set for this mob
 /obj/structure/benchpress/proc/do_workout_set(mob/living/user)

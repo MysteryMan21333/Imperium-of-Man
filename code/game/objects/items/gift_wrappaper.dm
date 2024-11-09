@@ -1,7 +1,7 @@
 /obj/item/gift
 	name = "gift"
 	desc = "Presents!"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "gift1"
 	worn_icon_state = "gift1"
 
@@ -63,10 +63,10 @@
 	qdel(src)
 
 
-/obj/item/gift/marine
+/obj/item/gift/guardsman
 	name = "Present"
 	desc = "One, standard issue TGMC Present"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "gift1"
 	worn_icon_state = "gift1"
 
@@ -87,13 +87,13 @@
 	)
 
 
-/obj/item/gift/marine/Initialize(mapload, ...)
+/obj/item/gift/guardsman/Initialize(mapload, ...)
 	. = ..()
 	fancy_chance = rand(1, 30)
 	fancy_type = rand(1, 20)
 
 
-/obj/item/gift/marine/attack_self(mob/user)
+/obj/item/gift/guardsman/attack_self(mob/user)
 	if(!prob(fancy_chance))
 		return ..()
 
@@ -179,7 +179,7 @@
 /obj/item/wrapping_paper
 	name = "wrapping paper"
 	desc = "You can use this to wrap items in."
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stack_objects.dmi'
 	icon_state = "wrap_paper"
 	var/amount = 20
 

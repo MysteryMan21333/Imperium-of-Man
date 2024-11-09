@@ -169,11 +169,11 @@
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/rocinante_base/surface/building/living/prep
-	name = "Marine Preparations"
+	name = "Guardsman Preparations"
 	minimap_color = MINIMAP_AREA_PREP
 
 /area/rocinante_base/surface/building/living/barracks
-	name = "Marine barracks"
+	name = "Guardsman barracks"
 	minimap_color = MINIMAP_AREA_PREP
 
 /area/rocinante_base/surface/building/living/west_barracks
@@ -228,7 +228,7 @@
 
 /area/rocinante_base/surface/building/science/bio_lab
 	name = "Biological Research Labs"
-	icon_state = "xeno_lab"
+	icon_state = "tyranid_lab"
 
 /area/rocinante_base/surface/building/science/complex_hall
 	name = "Western Research Complex Hallway"

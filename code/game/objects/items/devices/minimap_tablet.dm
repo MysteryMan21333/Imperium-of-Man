@@ -22,7 +22,7 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 	/// the Zlevel that this tablet will be allowed to edit
 	var/editing_z = 2
 	/// The minimap flag we will be allowing to edit
-	var/minimap_flag = MINIMAP_FLAG_MARINE
+	var/minimap_flag = MINIMAP_FLAG_GUARDSMAN
 
 /obj/item/minimap_tablet/Initialize(mapload)
 	. = ..()

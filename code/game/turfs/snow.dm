@@ -10,7 +10,7 @@
 	hull_floor = TRUE
 	shoefootstep = FOOTSTEP_SNOW
 	barefootstep = FOOTSTEP_SNOW
-	mediumxenofootstep = FOOTSTEP_SNOW
+	mediumtyranidfootstep = FOOTSTEP_SNOW
 	minimap_color = MINIMAP_SNOW
 
 /turf/open/floor/plating/ground/snow/Initialize(mapload)
@@ -34,8 +34,8 @@
 	update_appearance()
 	update_sides()
 
-//Xenos digging up snow
-/turf/open/floor/plating/ground/snow/attack_alien(mob/living/carbon/xenomorph/M, damage_amount = M.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+//Tyranids digging up snow
+/turf/open/floor/plating/ground/snow/attack_alien(mob/living/carbon/tyranid/M, damage_amount = M.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
 	if(M.status_flags & INCORPOREAL)
 		return
 
@@ -89,9 +89,9 @@
 
 
 /turf/open/floor/plating/ground/snow/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
-	if(slayer > 0 && isxeno(arrived))
-		var/mob/living/carbon/xenomorph/xeno = arrived
-		if(xeno.is_charging >= CHARGE_ON) // chargers = snow plows
+	if(slayer > 0 && istyranid(arrived))
+		var/mob/living/carbon/tyranid/tyranid = arrived
+		if(tyranid.is_charging >= CHARGE_ON) // chargers = snow plows
 			slayer = 0
 			update_appearance()
 			update_sides()

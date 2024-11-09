@@ -1,11 +1,11 @@
 /obj/item/binoculars
 	name = "binoculars"
 	desc = "A pair of binoculars."
-	icon = 'icons/obj/items/binoculars.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/binoculars.dmi'
 	icon_state = "binoculars"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/binoculars_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/binoculars_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/binoculars_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/binoculars_right.dmi',
 	)
 	atom_flags = CONDUCT
 	force = 5
@@ -261,7 +261,7 @@
 				to_chat(user, span_notice("ERROR. NO LINKED RAILGUN DETECTED. UNABLE TO FIRE."))
 				return
 			to_chat(user, span_notice("ACQUIRING TARGET. RAILGUN TRIANGULATING. DON'T MOVE."))
-			if((GLOB.marine_main_ship?.rail_gun?.last_firing + COOLDOWN_RAILGUN_FIRE) > world.time)
+			if((GLOB.guardsman_main_ship?.rail_gun?.last_firing + COOLDOWN_RAILGUN_FIRE) > world.time)
 				to_chat(user, "[icon2html(src, user)] [span_warning("The Rail Gun hasn't cooled down yet!")]")
 			else if(!targ_area)
 				to_chat(user, "[icon2html(src, user)] [span_warning("No target detected!")]")
@@ -275,7 +275,7 @@
 				to_chat(user, span_notice("TARGET ACQUIRED. RAILGUN IS FIRING. DON'T MOVE."))
 				log_game("[key_name(user)] has lased a railgun mission at [AREACOORD(TU)].")
 				while(laser)
-					GLOB.marine_main_ship?.rail_gun?.fire_rail_gun(TU,user)
+					GLOB.guardsman_main_ship?.rail_gun?.fire_rail_gun(TU,user)
 					if(!do_after(user, 3 SECONDS, NONE, laser, BUSY_ICON_GENERIC))
 						QDEL_NULL(laser)
 						break
@@ -310,8 +310,8 @@
 	var/x_offset = rand(-2,2) //Little bit of randomness.
 	var/y_offset = rand(-2,2)
 	var/turf/target = locate(current_turf.x + x_offset,current_turf.y + y_offset,current_turf.z)
-	GLOB.marine_main_ship?.orbital_cannon?.fire_ob_cannon(target, user)
-	var/warhead_type = GLOB.marine_main_ship.orbital_cannon.tray.warhead.name
+	GLOB.guardsman_main_ship?.orbital_cannon?.fire_ob_cannon(target, user)
+	var/warhead_type = GLOB.guardsman_main_ship.orbital_cannon.tray.warhead.name
 	for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
 		to_chat(AI, span_warning("NOTICE - Orbital bombardment triggered by ground operator. Warhead type: [warhead_type]. Target: [AREACOORD_NO_Z(current_turf)]"))
 		playsound(AI,'sound/machines/triple_beep.ogg', 25, 1, 20)

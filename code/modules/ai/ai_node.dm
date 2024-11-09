@@ -21,7 +21,7 @@
 
 	///List of weights for scoring stuff happening here; ultilizes "identifiers" to differentiate different kinds of AI types looking at the same node.
 	var/list/weights = list(
-		IDENTIFIER_XENO = list(NODE_LAST_VISITED = 0),
+		IDENTIFIER_TYRANID = list(NODE_LAST_VISITED = 0),
 		IDENTIFIER_ZOMBIE = list(NODE_LAST_VISITED = 0),
 		)
 
@@ -73,7 +73,7 @@
  * Generally the number that the weight has before being multiplied by weight modifiers is the "user friendly" edition; NODE_LAST_VISITED represents in deciseconds the time before
  * the node has been visited by a particular thing, while something like NODE_ENEMY_COUNT represents the amount of enemies
  * Parameter call example
- * GetBestAdjNode(list(NODE_LAST_VISITED = -1), IDENTIFIER_XENO)
+ * GetBestAdjNode(list(NODE_LAST_VISITED = -1), IDENTIFIER_TYRANID)
  * Returns an adjacent node that was last visited; when a AI chose to visit a node, it will set NODE_LAST_VISITED to world.time
  */
 /obj/effect/ai_node/proc/get_best_adj_node(list/weight_modifiers, identifier)

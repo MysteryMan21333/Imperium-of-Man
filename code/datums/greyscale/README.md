@@ -74,7 +74,7 @@ While the amount of dm code required to make a greyscale sprite was minimized as
 As an example:
 ```c
 /datum/greyscale_config/canister
-	icon_file = 'icons/obj/atmospherics/canisters/default.dmi'
+	icon_file = 'modular_imperium/master_files/icons/obj/atmospherics/canisters/default.dmi'
 	json_config = 'code/datums/greyscale/json_configs/canister_default.json'
 ```
 And that's all you need to make it usable by other code:

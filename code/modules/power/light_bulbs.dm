@@ -3,10 +3,10 @@
 // will fit into empty /obj/machinery/light of the corresponding type
 
 /obj/item/light_bulb
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/lights_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/lights_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/lights_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/lights_right.dmi',
 	)
 	force = 2
 	throwforce = 5

@@ -80,7 +80,7 @@
 	if(L.fire_stacks > -20)
 		L.fire_stacks = max(-20, L.fire_stacks - 1)
 		if(prob(20))
-			if(isrobot(L) || isxeno(L))
+			if(isrobot(L) || istyranid(L))
 				return
 			var/wetmessage = pick( "You're drenched in water!",
 			"You're completely soaked by rainfall!",

@@ -9,7 +9,7 @@
 	///ID to link with an associated start point
 	var/id = null
 	///Faction this belongs to for minimap purposes
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	///minimap icon state
 	var/minimap_icon = "patrol_1"
 	///List of open turfs around the point to deploy onto
@@ -110,25 +110,25 @@
 	icon_state = "blue_2"
 	minimap_icon = "patrol_2"
 
-/obj/effect/landmark/patrol_point/som
-	faction = FACTION_SOM
+/obj/effect/landmark/patrol_point/chaos
+	faction = FACTION_CHAOS
 
-/obj/effect/landmark/patrol_point/som/som_11
-	name = "SOM exit point 1"
+/obj/effect/landmark/patrol_point/chaos/chaos_11
+	name = "CHAOS exit point 1"
 	icon_state = "red_1"
-	id = "SOM_1"
-	minimap_icon = "som_patrol_1"
+	id = "CHAOS_1"
+	minimap_icon = "chaos_patrol_1"
 
-/obj/effect/landmark/patrol_point/som/som_21
-	name = "SOM exit point 2"
-	id = "SOM_2"
+/obj/effect/landmark/patrol_point/chaos/chaos_21
+	name = "CHAOS exit point 2"
+	id = "CHAOS_2"
 	icon_state = "red_2"
-	minimap_icon = "som_patrol_2"
+	minimap_icon = "chaos_patrol_2"
 
 
 /atom/movable/effect/rappel_rope
 	name = "rope"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "rope"
 	layer = ABOVE_MOB_LAYER
 	anchored = TRUE

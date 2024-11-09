@@ -2,7 +2,7 @@
 	density = TRUE
 	anchored = TRUE
 	name = "Computer-frame"
-	icon = 'icons/obj/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stock_parts.dmi'
 	icon_state = "0"
 	var/state = 0
 	var/obj/item/circuitboard/computer/circuit

@@ -3,11 +3,11 @@
 /obj/structure/reagent_dispensers
 	name = "dispenser"
 	desc = "..."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "watertank"
 	density = TRUE
 	anchored = FALSE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	interaction_flags = INTERACT_OBJ_DEFAULT|INTERACT_POWERLOADER_PICKUP_ALLOWED
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	max_integrity = 100
@@ -64,7 +64,7 @@
 /obj/structure/reagent_dispensers/watertank
 	name = "watertank"
 	desc = "A watertank"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "watertank"
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/water = 1000)
@@ -74,7 +74,7 @@
 /obj/structure/reagent_dispensers/fueltank
 	name = "fueltank"
 	desc = "A fueltank"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "weldtank"
 	list_reagents = list(/datum/reagent/fuel = 1000)
 	///Whether this tank is modded to drip fuel when its moved
@@ -221,7 +221,7 @@
 /obj/structure/reagent_dispensers/fueltank/barrel
 	name = "red barrel"
 	desc = "A red fuel barrel"
-	icon = 'icons/obj/structures/crates.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/crates.dmi'
 	icon_state = "barrel_red"
 
 /obj/structure/reagent_dispensers/fueltank/xfuel
@@ -251,13 +251,13 @@
 /obj/structure/reagent_dispensers/fueltank/spacefuel
 	name = "spacecraft fuel-mix tank"
 	desc = "A fuel tank mix with fuel designed for various spacecraft, very combustible.";
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi';
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi';
 
 /obj/structure/reagent_dispensers/water_cooler
 	name = "water cooler"
 	desc = "A machine that dispenses water to drink."
 	amount_per_transfer_from_this = 5
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "water_cooler"
 	possible_transfer_amounts = null
 	anchored = TRUE
@@ -271,14 +271,14 @@
 /obj/structure/reagent_dispensers/beerkeg
 	name = "beer keg"
 	desc = "A beer keg"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "beertankTEMP"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 1000)
 	coverage = 30
 
 
 /obj/structure/reagent_dispensers/wallmounted
-	icon = 'icons/obj/wallframes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/wallframes.dmi'
 	icon_state = "generic_tank"
 	pixel_x = -16
 	pixel_y = -16

@@ -22,7 +22,7 @@
 	/// speed of the bullets
 	var/speed = 2
 	/// ammo type to shoot out: can be ANY ammo type
-	var/datum/ammo/ammo_type = /datum/ammo/energy/lasgun/marine/heavy_laser
+	var/datum/ammo/ammo_type = /datum/ammo/energy/lasgun/guardsman/heavy_laser
 
 /obj/item/explosive/grenade/bullet/prime()
 	var/list/bullets = list()

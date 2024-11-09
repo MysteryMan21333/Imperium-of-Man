@@ -1,7 +1,7 @@
 //Items labled as 'trash' for the trash bag.
 
 /obj/item/trash
-	icon = 'icons/obj/items/trash.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/trash.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	desc = "This is rubbish."
 
@@ -12,7 +12,7 @@
 /obj/item/trash/pillpacket
 	name = "crumpled pill packet"
 	desc = "After healing a lot of damage, the empty packet is laid to rest"
-	icon = 'icons/obj/items/trash.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/trash.dmi'
 	icon_state = "pillpacketempty"
 
 /obj/item/trash/candy
@@ -65,7 +65,7 @@
 
 /obj/item/trash/candle
 	name = "candle"
-	icon = 'icons/obj/items/candle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/candle.dmi'
 	icon_state = "candle4"
 
 /obj/item/trash/can
@@ -106,12 +106,12 @@
 
 /obj/item/trash/fortunecookie/Initialize(mapload, ...)
 	. = ..()
-	desc = "The fortune reads. <br>[span_tip("[pick(SSstrings.get_list_from_file("tips/marine"))]")]"
+	desc = "The fortune reads. <br>[span_tip("[pick(SSstrings.get_list_from_file("tips/guardsman"))]")]"
 
 /obj/item/trash/c_tube
 	name = "cardboard tube"
 	desc = "A tube... of cardboard."
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stack_objects.dmi'
 	icon_state = "c_tube"
 	throwforce = 1
 	throw_speed = 4
@@ -121,7 +121,7 @@
 /obj/item/trash/cigbutt
 	name = "cigarette butt"
 	desc = "A manky old cigarette butt."
-	icon = 'icons/obj/clothing/masks.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/masks.dmi'
 	icon_state = "cigbutt"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
@@ -166,13 +166,13 @@
 /obj/item/trash/mre
 	name = "\improper crumbled TGMC MRE"
 	desc = "It has done its part for the TGMC. Have you?"
-	icon = 'icons/obj/items/trash.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/trash.dmi'
 	icon_state = "mealpackempty"
 
-/obj/item/trash/mre/som
-	name = "\improper crumbled SOM MFR"
-	desc = "It has done its part for the SOM. Have you?"
-	icon_state = "som_mealpackempty"
+/obj/item/trash/mre/chaos
+	name = "\improper crumbled CHAOS MFR"
+	desc = "It has done its part for the CHAOS. Have you?"
+	icon_state = "chaos_mealpackempty"
 
 /obj/item/trash/nt_chips
 	name = "\improper Nanotrasen Pepper Chips"

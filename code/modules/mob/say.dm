@@ -108,7 +108,7 @@
 		return MODE_HEADSET
 	else if((length(message) > (length(key) + 1)) && (key in GLOB.department_radio_prefixes))
 		var/key_symbol = lowertext(message[length(key) + 1])
-		if(faction == FACTION_SOM)
+		if(faction == FACTION_CHAOS)
 			return GLOB.department_radio_keys_som[key_symbol]
 		return GLOB.department_radio_keys[key_symbol]
 

@@ -1,7 +1,7 @@
 /obj/machinery/computer/emails
 	name = "Personal Computer"
 	desc = "A personal computer used to view emails"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "terminal"
 	screen_overlay = "terminal1"
 	var/screen = 0

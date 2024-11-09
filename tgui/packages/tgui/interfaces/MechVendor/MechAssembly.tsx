@@ -291,7 +291,7 @@ export const MechAssembly = (props) => {
                 color={'transparent'}
                 title={'Energy Armor: ' + current_stats.armor['energy'] + '%'}
               >
-                <Box maxWidth={'160px'}>Protection against SOM weapons.</Box>
+                <Box maxWidth={'160px'}>Protection against CHAOS weapons.</Box>
               </Collapsible>
               <Collapsible
                 color={'transparent'}

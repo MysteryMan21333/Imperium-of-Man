@@ -1,7 +1,7 @@
 // ***************************************
 // *********** Resin building
 // ***************************************
-/datum/action/ability/activable/xeno/secrete_resin/widow
+/datum/action/ability/activable/tyranid/secrete_resin/widow
 	ability_cost = 100
 	buildable_structures = list(
 		/turf/closed/wall/resin/regenerating/thick,
@@ -13,20 +13,20 @@
 // *********** Web Spit
 // ***************************************
 
-/datum/action/ability/activable/xeno/web_spit
+/datum/action/ability/activable/tyranid/web_spit
 	name = "Web Spit"
 	desc = "Spit a web to your target, this causes different effects depending on where you hit. Spitting the head causes the target to be temporarily blind, body and arms will cause the target to be weakened, and legs will snare the target for a brief while."
 	action_icon_state = "web_spit"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 125
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_WEB_SPIT,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_WEB_SPIT,
 	)
 
-/datum/action/ability/activable/xeno/web_spit/use_ability(atom/target)
-	var/mob/living/carbon/xenomorph/X = owner
-	var/datum/ammo/xeno/web/web_spit = GLOB.ammo_list[/datum/ammo/xeno/web]
+/datum/action/ability/activable/tyranid/web_spit/use_ability(atom/target)
+	var/mob/living/carbon/tyranid/X = owner
+	var/datum/ammo/tyranid/web/web_spit = GLOB.ammo_list[/datum/ammo/tyranid/web]
 	var/obj/projectile/newspit = new /obj/projectile(get_turf(X))
 
 	newspit.generate_bullet(web_spit, web_spit.damage * SPIT_UPGRADE_BONUS(X))
@@ -40,24 +40,24 @@
 // *********** Leash Ball
 // ***************************************
 
-/datum/action/ability/activable/xeno/leash_ball
+/datum/action/ability/activable/tyranid/leash_ball
 	name = "Leash Ball"
 	desc = "Spit a huge web ball that snares groups of targets for a brief while."
 	action_icon_state = "leash_ball"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 250
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_LEASH_BALL,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_LEASH_BALL,
 	)
 
-/datum/action/ability/activable/xeno/leash_ball/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/leash_ball/use_ability(atom/A)
 	var/turf/target = get_turf(A)
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	X.face_atom(target)
 	if(!do_after(X, 1 SECONDS, NONE, X, BUSY_ICON_DANGER))
 		return fail_activate()
-	var/datum/ammo/xeno/leash_ball = GLOB.ammo_list[/datum/ammo/xeno/leash_ball]
+	var/datum/ammo/tyranid/leash_ball = GLOB.ammo_list[/datum/ammo/tyranid/leash_ball]
 	leash_ball.hivenumber = X.hivenumber
 	var/obj/projectile/newspit = new (get_turf(X))
 
@@ -66,9 +66,9 @@
 	succeed_activate()
 	add_cooldown()
 
-/obj/structure/xeno/aoe_leash
+/obj/structure/tyranid/aoe_leash
 	name = "Snaring Web"
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "aoe_leash"
 	desc = "Sticky and icky. Destroy it when you are stuck!"
 	destroy_sound = SFX_ALIEN_RESIN_BREAK
@@ -88,7 +88,7 @@
 	var/list/mob/living/carbon/human/leash_victims = list()
 
 /// Humans caught get beamed and registered for proc/check_dist, aoe_leash also gains increased integrity for each caught human
-/obj/structure/xeno/aoe_leash/Initialize(mapload, _hivenumber)
+/obj/structure/tyranid/aoe_leash/Initialize(mapload, _hivenumber)
 	. = ..()
 	for(var/mob/living/carbon/human/victim in GLOB.humans_by_zlevel["[z]"])
 		if(get_dist(src, victim) > leash_radius)
@@ -109,7 +109,7 @@
 	QDEL_IN(src, leash_life)
 
 /// To remove beams after the leash_ball is destroyed and also unregister all victims
-/obj/structure/xeno/aoe_leash/Destroy()
+/obj/structure/tyranid/aoe_leash/Destroy()
 	for(var/mob/living/carbon/human/victim AS in leash_victims)
 		UnregisterSignal(victim, COMSIG_MOVABLE_PRE_MOVE)
 		REMOVE_TRAIT(victim, TRAIT_LEASHED, src)
@@ -118,22 +118,22 @@
 	return ..()
 
 /// Humans caught in the aoe_leash will be pulled back if they leave it's radius
-/obj/structure/xeno/aoe_leash/proc/check_dist(datum/leash_victim, atom/newloc)
+/obj/structure/tyranid/aoe_leash/proc/check_dist(datum/leash_victim, atom/newloc)
 	SIGNAL_HANDLER
 	if(get_dist(newloc, src) >= leash_radius)
 		return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
 
-/// This is so that xenos can remove leash balls
-/obj/structure/xeno/aoe_leash/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/// This is so that tyranids can remove leash balls
+/obj/structure/tyranid/aoe_leash/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
-	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] starts tearing down \the [src]!"), \
-	span_xenonotice("We start to tear down \the [src]."))
-	if(!do_after(xeno_attacker, 1 SECONDS, NONE, xeno_attacker, BUSY_ICON_GENERIC) || QDELETED(src))
+	tyranid_attacker.visible_message(span_tyranidnotice("\The [tyranid_attacker] starts tearing down \the [src]!"), \
+	span_tyranidnotice("We start to tear down \the [src]."))
+	if(!do_after(tyranid_attacker, 1 SECONDS, NONE, tyranid_attacker, BUSY_ICON_GENERIC) || QDELETED(src))
 		return
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] tears down \the [src]!"), \
-	span_xenonotice("We tear down \the [src]."))
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	tyranid_attacker.visible_message(span_tyranidnotice("\The [tyranid_attacker] tears down \the [src]!"), \
+	span_tyranidnotice("We tear down \the [src]."))
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	take_damage(max_integrity)
 
@@ -141,42 +141,42 @@
 // *********** Spiderling Section
 // ***************************************
 
-/datum/action/ability/xeno_action/create_spiderling
+/datum/action/ability/tyranid_action/create_spiderling
 	name = "Birth Spiderling"
 	desc = "Give birth to a spiderling after a short charge-up. The spiderlings will follow you until death. You can only deploy 5 spiderlings at one time. On alt-use, if any charges of Cannibalise are stored, create a spiderling at no plasma cost or cooldown."
 	action_icon_state = "spawn_spiderling"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 100
 	cooldown_duration = 15 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_CREATE_SPIDERLING,
-		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_CREATE_SPIDERLING_USING_CC,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_CREATE_SPIDERLING,
+		KEYBINDING_ALTERNATE = COMSIG_TYRANIDABILITY_CREATE_SPIDERLING_USING_CC,
 	)
 	use_state_flags = ABILITY_USE_LYING
 
 	/// List of all our spiderlings
-	var/list/mob/living/carbon/xenomorph/spiderling/spiderlings = list()
+	var/list/mob/living/carbon/tyranid/spiderling/spiderlings = list()
 	/// Current amount of cannibalise charges
 	var/cannibalise_charges = 0
 
-/datum/action/ability/xeno_action/create_spiderling/give_action(mob/living/L)
+/datum/action/ability/tyranid_action/create_spiderling/give_action(mob/living/L)
 	. = ..()
-	var/mob/living/carbon/xenomorph/X = L
-	var/max_spiderlings = X?.xeno_caste.max_spiderlings ? X.xeno_caste.max_spiderlings : 5
+	var/mob/living/carbon/tyranid/X = L
+	var/max_spiderlings = X?.tyranid_caste.max_spiderlings ? X.tyranid_caste.max_spiderlings : 5
 	desc = "Give birth to a spiderling after a short charge-up. The spiderlings will follow you until death. You can only deploy [max_spiderlings] spiderlings at one time. On alt-use, if any charges of Cannibalise are stored, create a spiderling at no plasma cost or cooldown."
 
-/datum/action/ability/xeno_action/create_spiderling/can_use_action(silent = FALSE, override_flags)
+/datum/action/ability/tyranid_action/create_spiderling/can_use_action(silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
-	var/mob/living/carbon/xenomorph/X = owner
-	if(length(spiderlings) >= X.xeno_caste.max_spiderlings)
+	var/mob/living/carbon/tyranid/X = owner
+	if(length(spiderlings) >= X.tyranid_caste.max_spiderlings)
 		if(!silent)
 			X.balloon_alert(X, "Max Spiderlings")
 		return FALSE
 
 /// The action to create spiderlings
-/datum/action/ability/xeno_action/create_spiderling/action_activate()
+/datum/action/ability/tyranid_action/create_spiderling/action_activate()
 	. = ..()
 	if(!do_after(owner, 0.5 SECONDS, NONE, owner, BUSY_ICON_DANGER))
 		return fail_activate()
@@ -184,26 +184,26 @@
 	succeed_activate()
 	add_cooldown()
 
-/datum/action/ability/xeno_action/create_spiderling/alternate_action_activate()
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/create_spiderling/alternate_action_activate()
+	var/mob/living/carbon/tyranid/X = owner
 	if(cannibalise_charges <= 0)
 		X.balloon_alert(X, "No charges remaining!")
 		return
-	if(length(spiderlings) >= X.xeno_caste.max_spiderlings)
+	if(length(spiderlings) >= X.tyranid_caste.max_spiderlings)
 		X.balloon_alert(X, "Max Spiderlings")
 		return
 	INVOKE_ASYNC(src, PROC_REF(use_cannibalise))
 	return COMSIG_KB_ACTIVATED
 
 /// Birth a spiderling and use up a charge of cannibalise
-/datum/action/ability/xeno_action/create_spiderling/proc/use_cannibalise()
+/datum/action/ability/tyranid_action/create_spiderling/proc/use_cannibalise()
 	if(!do_after(owner, 0.5 SECONDS, NONE, owner, BUSY_ICON_DANGER))
 		return FALSE
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	if(cannibalise_charges <= 0)
 		X.balloon_alert(X, "No charges remaining!")
 		return
-	if(length(spiderlings) >= X.xeno_caste.max_spiderlings)
+	if(length(spiderlings) >= X.tyranid_caste.max_spiderlings)
 		X.balloon_alert(X, "Max Spiderlings")
 		return
 	add_spiderling()
@@ -211,9 +211,9 @@
 	owner.balloon_alert(owner, "[cannibalise_charges]/3 charges remaining")
 
 /// Adds spiderlings to spiderling list and registers them for death so we can remove them later
-/datum/action/ability/xeno_action/create_spiderling/proc/add_spiderling()
+/datum/action/ability/tyranid_action/create_spiderling/proc/add_spiderling()
 	/// This creates and stores the spiderling so we can reassign the owner for spider swarm and cap how many spiderlings you can have at once
-	var/mob/living/carbon/xenomorph/spiderling/new_spiderling = new(owner.loc, owner, owner)
+	var/mob/living/carbon/tyranid/spiderling/new_spiderling = new(owner.loc, owner, owner)
 	RegisterSignals(new_spiderling, list(COMSIG_MOB_DEATH, COMSIG_QDELETING), PROC_REF(remove_spiderling))
 	spiderlings += new_spiderling
 	new_spiderling.pixel_x = rand(-8, 8)
@@ -221,7 +221,7 @@
 	return TRUE
 
 /// Removes spiderling from spiderling list and unregisters death signal
-/datum/action/ability/xeno_action/create_spiderling/proc/remove_spiderling(datum/source)
+/datum/action/ability/tyranid_action/create_spiderling/proc/remove_spiderling(datum/source)
 	SIGNAL_HANDLER
 	spiderlings -= source
 	UnregisterSignal(source, list(COMSIG_MOB_DEATH, COMSIG_QDELETING))
@@ -230,22 +230,22 @@
 // *********** Spiderling mark
 // ***************************************
 
-/datum/action/ability/activable/xeno/spiderling_mark
+/datum/action/ability/activable/tyranid/spiderling_mark
 	name = "Spiderling Mark"
 	desc = "Send your spawn on a valid target, they will automatically destroy themselves out of sheer fury after 15 seconds."
 	action_icon_state = "spiderling_mark"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 50
 	cooldown_duration = 5 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SPIDERLING_MARK,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_SPIDERLING_MARK,
 	)
 
-/datum/action/ability/activable/xeno/spiderling_mark/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/spiderling_mark/use_ability(atom/A)
 	. = ..()
 	// So the spiderlings can actually attack
 	owner.unbuckle_all_mobs(TRUE)
-	var/datum/action/ability/xeno_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/xeno_action/create_spiderling]
+	var/datum/action/ability/tyranid_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/tyranid_action/create_spiderling]
 	if(length(create_spiderling_action.spiderlings) <= 0)
 		owner.balloon_alert(owner, "No spiderlings")
 		return fail_activate()
@@ -270,39 +270,39 @@
 // *********** Burrow
 // ***************************************
 
-/datum/action/ability/xeno_action/burrow
+/datum/action/ability/tyranid_action/burrow
 	name = "Burrow"
 	desc = "Burrow into the ground, allowing you and your active spiderlings to hide in plain sight. You cannot use abilities, attack nor move while burrowed. Use the ability again to unburrow if you're already burrowed."
 	action_icon_state = "burrow"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 0
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BURROW,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_BURROW,
 	)
 	use_state_flags = ABILITY_USE_BURROWED
 
-/datum/action/ability/xeno_action/burrow/action_activate()
+/datum/action/ability/tyranid_action/burrow/action_activate()
 	. = ..()
 	/// We need the list of spiderlings so that we can burrow them
-	var/datum/action/ability/xeno_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/xeno_action/create_spiderling]
+	var/datum/action/ability/tyranid_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/tyranid_action/create_spiderling]
 	/// Here we make every single spiderling that we have also burrow and assign a signal so that they unburrow too
-	for(var/mob/living/carbon/xenomorph/spiderling/spiderling AS in create_spiderling_action?.spiderlings)
+	for(var/mob/living/carbon/tyranid/spiderling/spiderling AS in create_spiderling_action?.spiderlings)
 		/// Here we trigger the burrow proc, the registering happens there
-		var/datum/action/ability/xeno_action/burrow/spiderling_burrow = spiderling.actions_by_path[/datum/action/ability/xeno_action/burrow]
-		spiderling_burrow.xeno_burrow()
-	xeno_burrow()
+		var/datum/action/ability/tyranid_action/burrow/spiderling_burrow = spiderling.actions_by_path[/datum/action/ability/tyranid_action/burrow]
+		spiderling_burrow.tyranid_burrow()
+	tyranid_burrow()
 	succeed_activate()
 
-/// Burrow code for xenomorphs
-/datum/action/ability/xeno_action/burrow/proc/xeno_burrow()
+/// Burrow code for tyranids
+/datum/action/ability/tyranid_action/burrow/proc/tyranid_burrow()
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	if(!HAS_TRAIT(X, TRAIT_BURROWED))
-		to_chat(X, span_xenowarning("We start burrowing into the ground..."))
-		INVOKE_ASYNC(src, PROC_REF(xeno_burrow_doafter))
+		to_chat(X, span_tyranidwarning("We start burrowing into the ground..."))
+		INVOKE_ASYNC(src, PROC_REF(tyranid_burrow_doafter))
 		return
-	UnregisterSignal(X, COMSIG_XENOMORPH_TAKING_DAMAGE)
+	UnregisterSignal(X, COMSIG_TYRANID_TAKING_DAMAGE)
 	ADD_TRAIT(X, TRAIT_NON_FLAMMABLE, initial(name))
 	X.soft_armor = X.soft_armor.modifyRating(fire = 100)
 	X.hard_armor = X.hard_armor.modifyRating(fire = 100)
@@ -316,58 +316,58 @@
 	add_cooldown()
 	owner.unbuckle_all_mobs(TRUE)
 
-/// Called by xeno_burrow only when burrowing
-/datum/action/ability/xeno_action/burrow/proc/xeno_burrow_doafter()
+/// Called by tyranid_burrow only when burrowing
+/datum/action/ability/tyranid_action/burrow/proc/tyranid_burrow_doafter()
 	if(!do_after(owner, 3 SECONDS, NONE, null, BUSY_ICON_DANGER))
 		return
-	to_chat(owner, span_xenowarning("We are now burrowed, hidden in plain sight and ready to strike."))
-	// This part here actually burrows the xeno
+	to_chat(owner, span_tyranidwarning("We are now burrowed, hidden in plain sight and ready to strike."))
+	// This part here actually burrows the tyranid
 	owner.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	owner.density = FALSE
 	owner.allow_pass_flags |= PASSABLE
-	// Here we prevent the xeno from moving or attacking or using abilities until they unburrow by clicking the ability
+	// Here we prevent the tyranid from moving or attacking or using abilities until they unburrow by clicking the ability
 	ADD_TRAIT(owner, TRAIT_IMMOBILE, WIDOW_ABILITY_TRAIT)
 	ADD_TRAIT(owner, TRAIT_BURROWED, WIDOW_ABILITY_TRAIT)
 	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, WIDOW_ABILITY_TRAIT)
 	// We register for movement so that we unburrow if bombed
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	X.soft_armor = X.soft_armor.modifyRating(fire = -100)
 	X.hard_armor = X.hard_armor.modifyRating(fire = -100)
 	REMOVE_TRAIT(X, TRAIT_NON_FLAMMABLE, initial(name))
 	// Update here without waiting for life
 	X.update_icons()
-	RegisterSignal(X, COMSIG_XENOMORPH_TAKING_DAMAGE, PROC_REF(xeno_burrow))
+	RegisterSignal(X, COMSIG_TYRANID_TAKING_DAMAGE, PROC_REF(tyranid_burrow))
 
 // ***************************************
 // *********** Attach Spiderlings
 // ***************************************
-/datum/action/ability/xeno_action/attach_spiderlings
+/datum/action/ability/tyranid_action/attach_spiderlings
 	name = "Attach Spiderlings"
 	desc = "Attach your current spiderlings to you "
 	action_icon_state = "attach_spiderling"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 0
 	cooldown_duration = 0 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_ATTACH_SPIDERLINGS,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_ATTACH_SPIDERLINGS,
 	)
 	///the attached spiderlings
-	var/list/mob/living/carbon/xenomorph/spiderling/attached_spiderlings = list()
+	var/list/mob/living/carbon/tyranid/spiderling/attached_spiderlings = list()
 	///how many times we attempt to attach adjacent spiderligns
 	var/attach_attempts = 5
 
-/datum/action/ability/xeno_action/attach_spiderlings/action_activate()
+/datum/action/ability/tyranid_action/attach_spiderlings/action_activate()
 	. = ..()
 	if(owner.buckled_mobs)
 		/// yeet off all spiderlings if we are carrying any
 		owner.unbuckle_all_mobs(TRUE)
 		return
-	var/mob/living/carbon/xenomorph/widow/X = owner
-	var/datum/action/ability/xeno_action/create_spiderling/create_spiderling_action = X.actions_by_path[/datum/action/ability/xeno_action/create_spiderling]
+	var/mob/living/carbon/tyranid/widow/X = owner
+	var/datum/action/ability/tyranid_action/create_spiderling/create_spiderling_action = X.actions_by_path[/datum/action/ability/tyranid_action/create_spiderling]
 	if(!(length(create_spiderling_action.spiderlings)))
 		X.balloon_alert(X, "No spiderlings")
 		return fail_activate()
-	var/list/mob/living/carbon/xenomorph/spiderling/remaining_spiderlings = create_spiderling_action.spiderlings.Copy()
+	var/list/mob/living/carbon/tyranid/spiderling/remaining_spiderlings = create_spiderling_action.spiderlings.Copy()
 	// First make the spiderlings stop what they are doing and return to the widow
 	for(var/mob/spider in remaining_spiderlings)
 		var/datum/component/ai_controller/AI = spider.GetComponent(/datum/component/ai_controller)
@@ -376,10 +376,10 @@
 	succeed_activate()
 
 /// this proc scoops up adjacent spiderlings and then calls ride_widow on them
-/datum/action/ability/xeno_action/attach_spiderlings/proc/grab_spiderlings(list/mob/living/carbon/xenomorph/spiderling/remaining_list, number_of_attempts_left)
+/datum/action/ability/tyranid_action/attach_spiderlings/proc/grab_spiderlings(list/mob/living/carbon/tyranid/spiderling/remaining_list, number_of_attempts_left)
 	if(number_of_attempts_left <= 0)
 		return
-	for(var/mob/living/carbon/xenomorph/spiderling/remaining_spiderling AS in remaining_list)
+	for(var/mob/living/carbon/tyranid/spiderling/remaining_spiderling AS in remaining_list)
 		SEND_SIGNAL(owner, COMSIG_SPIDERLING_RETURN) //So spiderlings move towards the buckle
 		if(!owner.Adjacent(remaining_spiderling))
 			continue
@@ -391,36 +391,36 @@
 // ***************************************
 // *********** Cannibalise
 // ***************************************
-/datum/action/ability/activable/xeno/cannibalise
+/datum/action/ability/activable/tyranid/cannibalise
 	name = "Cannibalise Spiderling"
 	desc = "Consume one of your children, storing their biomass for future use. If any charges of Cannibalise are stored, alt-use of Birth Spiderling will create one spiderling in exchange for one charge of Cannibalise. Up to three charges of Cannibalise may be stored at once."
 	action_icon_state = "cannibalise_spiderling"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 150
 	cooldown_duration = 2 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_CANNIBALISE_SPIDERLING,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_CANNIBALISE_SPIDERLING,
 	)
 
-/datum/action/ability/activable/xeno/cannibalise/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/cannibalise/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
 	if(!owner.Adjacent(A))
 		owner.balloon_alert(owner, "Not adjacent")
 		return FALSE
-	if(!istype(A, /mob/living/carbon/xenomorph/spiderling))
+	if(!istype(A, /mob/living/carbon/tyranid/spiderling))
 		owner.balloon_alert(owner, "We can't cannibalise this")
 		return FALSE
 	return TRUE
 
-/datum/action/ability/activable/xeno/cannibalise/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/cannibalise/use_ability(atom/A)
 	if(!do_after(owner, 0.5 SECONDS, NONE, A, BUSY_ICON_DANGER))
 		return fail_activate()
 
-	var/mob/living/carbon/xenomorph/spiderling/to_cannibalise = A
+	var/mob/living/carbon/tyranid/spiderling/to_cannibalise = A
 	QDEL_NULL(to_cannibalise)
-	var/datum/action/ability/xeno_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/xeno_action/create_spiderling]
+	var/datum/action/ability/tyranid_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/tyranid_action/create_spiderling]
 	if(!create_spiderling_action)
 		return
 
@@ -436,20 +436,20 @@
 // ***************************************
 // *********** Web Hook
 // ***************************************
-/datum/action/ability/activable/xeno/web_hook
+/datum/action/ability/activable/tyranid/web_hook
 	name = "Web Hook"
 	desc = "Shoot out a web and pull it to traverse forward"
 	action_icon_state = "web_hook"
-	action_icon = 'icons/Xeno/actions/widow.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/widow.dmi'
 	ability_cost = 200
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_WEB_HOOK,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_WEB_HOOK,
 	)
 	//ref to beam for web hook
 	var/datum/beam/web_beam
 
-/datum/action/ability/activable/xeno/web_hook/can_use_ability(atom/A)
+/datum/action/ability/activable/tyranid/web_hook/can_use_ability(atom/A)
 	. = ..()
 	if(!.)
 		return
@@ -468,7 +468,7 @@
 		return FALSE
 	current = get_step_towards(current, target_turf)
 
-/datum/action/ability/activable/xeno/web_hook/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/web_hook/use_ability(atom/A)
 	var/atom/movable/web_hook/web_hook = new (get_turf(owner))
 	web_beam = owner.beam(web_hook,"beam_web",'icons/effects/beam.dmi')
 	RegisterSignals(web_hook, list(COMSIG_MOVABLE_POST_THROW, COMSIG_MOVABLE_IMPACT), PROC_REF(drag_widow), TRUE)
@@ -477,7 +477,7 @@
 	add_cooldown()
 
 /// This throws widow wherever the web_hook landed, distance is dependant on if the web_hook hit a wall or just ground
-/datum/action/ability/activable/xeno/web_hook/proc/drag_widow(datum/source, turf/target_turf)
+/datum/action/ability/activable/tyranid/web_hook/proc/drag_widow(datum/source, turf/target_turf)
 	SIGNAL_HANDLER
 	QDEL_NULL(web_beam)
 	if(target_turf)
@@ -489,7 +489,7 @@
 	RegisterSignal(owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(delete_beam))
 
 ///signal handler to delete the web_hook after we are done draggging owner along
-/datum/action/ability/activable/xeno/web_hook/proc/delete_beam(datum/source)
+/datum/action/ability/activable/tyranid/web_hook/proc/delete_beam(datum/source)
 	SIGNAL_HANDLER
 	UnregisterSignal(source, COMSIG_MOVABLE_POST_THROW)
 	QDEL_NULL(web_beam)

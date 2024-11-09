@@ -1,13 +1,13 @@
 /obj/structure/janitorialcart
 	name = "janitorial cart"
 	desc = "The ultimate in janitorial carts! Has space for water, mops, signs, trash bags, and more!"
-	icon = 'icons/obj/janitor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
 	icon_state = "cart"
 	anchored = FALSE
 	density = TRUE
 	drag_delay = 1
 	coverage = 20
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 100
 	//copypaste sorry
 	var/amount_per_transfer_from_this = 5 //shit I dunno, adding this so syringes stop runtime erroring. --NeoFite

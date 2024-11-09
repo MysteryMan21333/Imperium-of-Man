@@ -2,7 +2,7 @@
 	name = "plastic explosives"
 	desc = "Used to put holes in specific areas without too much extra hole."
 	gender = PLURAL
-	icon = 'icons/obj/det.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/det.dmi'
 	icon_state = "plastic-explosive"
 	worn_icon_state = "plasticx"
 	item_flags = NOBLUDGEON

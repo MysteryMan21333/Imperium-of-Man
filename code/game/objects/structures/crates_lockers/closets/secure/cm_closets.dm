@@ -1,7 +1,7 @@
-//MARINE COMMAND CLOSET
+//GUARDSMAN COMMAND CLOSET
 /obj/structure/closet/secure_closet/captain
 	name = "captain's locker"
-	req_access = list(ACCESS_MARINE_CAPTAIN)
+	req_access = list(ACCESS_GUARDSMAN_CAPTAIN)
 	icon_state = "secure_locked_commander"
 	icon_closed = "secure_unlocked_commander"
 	icon_locked = "secure_locked_commander"
@@ -11,21 +11,21 @@
 
 /obj/structure/closet/secure_closet/captain/PopulateContents()
 	new /obj/item/storage/backpack/captain(src)
-	new /obj/item/clothing/shoes/marinechief/captain(src)
-	new /obj/item/clothing/gloves/marine/techofficer/captain(src)
-	new /obj/item/clothing/under/marine/officer/command(src)
-	new /obj/item/clothing/head/beret/marine/captain(src)
+	new /obj/item/clothing/shoes/guardsmanchief/captain(src)
+	new /obj/item/clothing/gloves/guardsman/techofficer/captain(src)
+	new /obj/item/clothing/under/guardsman/officer/command(src)
+	new /obj/item/clothing/head/beret/guardsman/captain(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
-	new /obj/item/storage/backpack/marine/satchel/captain_cloak_red(src)
+	new /obj/item/storage/backpack/guardsman/satchel/captain_cloak_red(src)
 	new /obj/item/storage/holster/belt/mateba/officer/full(src)
 
 /obj/structure/closet/secure_closet/securecom
 	name = "captain's secure box"
-	req_access = list(ACCESS_MARINE_CAPTAIN)
+	req_access = list(ACCESS_GUARDSMAN_CAPTAIN)
 	desc = "You could probably get court-marshaled just by looking at this..."
 	icon_state = "commander_safe"
 	icon_opened = "commander_safe_open"
@@ -34,7 +34,7 @@
 
 /obj/structure/closet/secure_closet/staff_officer
 	name = "staff officer's locker"
-	req_access = list(ACCESS_MARINE_LOGISTICS)
+	req_access = list(ACCESS_GUARDSMAN_LOGISTICS)
 	icon_state = "secure_locked_staff"
 	icon_closed = "secure_unlocked_staff"
 	icon_locked = "secure_locked_staff"
@@ -47,20 +47,20 @@
 	new /obj/item/clothing/head/tgmcberet/tan(src)
 	new /obj/item/clothing/head/tgmccap/ro(src)
 	new /obj/item/clothing/head/tgmccap/ro/navy(src)
-	new /obj/item/clothing/under/marine/officer/bridge(src)
-	new /obj/item/clothing/shoes/marine(src)
-	new /obj/item/clothing/suit/storage/marine/officer(src)
-	new /obj/item/clothing/suit/storage/marine/officer(src)
-	new /obj/item/storage/belt/marine(src)
+	new /obj/item/clothing/under/guardsman/officer/bridge(src)
+	new /obj/item/clothing/shoes/guardsman(src)
+	new /obj/item/clothing/suit/storage/guardsman/officer(src)
+	new /obj/item/clothing/suit/storage/guardsman/officer(src)
+	new /obj/item/storage/belt/guardsman(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
-	new /obj/item/storage/backpack/marine/satchel/officer_cloak(src)
+	new /obj/item/storage/backpack/guardsman/satchel/officer_cloak(src)
 
 /obj/structure/closet/secure_closet/pilot_officer
 	name = "pilot officer's locker"
-	req_access = list(ACCESS_MARINE_PILOT)
+	req_access = list(ACCESS_GUARDSMAN_PILOT)
 	icon_state = "secure_locked_pilot"
 	icon_closed = "secure_unlocked_pilot"
 	icon_locked = "secure_locked_pilot"
@@ -69,17 +69,17 @@
 	icon_off = "secure_closed_pilot"
 
 /obj/structure/closet/secure_closet/pilot_officer/PopulateContents()
-	new /obj/item/clothing/head/helmet/marine/pilot(src)
-	new /obj/item/clothing/under/marine/officer/pilot(src)
-	new /obj/item/clothing/shoes/marine(src)
-	new /obj/item/clothing/suit/storage/marine/pilot(src)
+	new /obj/item/clothing/head/helmet/guardsman/pilot(src)
+	new /obj/item/clothing/under/guardsman/officer/pilot(src)
+	new /obj/item/clothing/shoes/guardsman(src)
+	new /obj/item/clothing/suit/storage/guardsman/pilot(src)
 	new /obj/item/storage/holster/m25/full(src)
-	new /obj/item/storage/backpack/marine/satchel(src)
+	new /obj/item/storage/backpack/guardsman/satchel(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/glasses/sunglasses/aviator/yellow(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
 	if(SSmapping.configs[GROUND_MAP].environment_traits[MAP_COLD])
 		new /obj/item/clothing/mask/rebreather/scarf(src)
@@ -88,7 +88,7 @@
 /**********************Military Police Gear**************************/
 /obj/structure/closet/secure_closet/military_police
 	name = "military police's locker"
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 	icon_state = "secure_locked_police"
 	icon_closed = "secure_unlocked_police"
 	icon_locked = "secure_locked_police"
@@ -102,8 +102,8 @@
 	new /obj/item/clothing/gloves/black(src)
 	new /obj/item/clothing/gloves/black(src)
 	new /obj/item/armor_module/storage/uniform/holster/armpit(src)
-	new /obj/item/clothing/shoes/marine(src)
-	new /obj/item/clothing/under/marine/mp(src)
+	new /obj/item/clothing/shoes/guardsman(src)
+	new /obj/item/clothing/under/guardsman/mp(src)
 	new /obj/item/flashlight(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/weapon/gun/energy/taser(src)
@@ -111,13 +111,13 @@
 	new /obj/item/storage/backpack/security (src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
 
-//MARINE SHIP MEDICAL CLOSET
+//GUARDSMAN SHIP MEDICAL CLOSET
 /obj/structure/closet/secure_closet/medical_doctor
 	name = "medical doctor's locker"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 	icon_state = "secure_locked_medical"
 	icon_closed = "secure_unlocked_medical"
 	icon_locked = "secure_locked_medical"
@@ -126,7 +126,7 @@
 	icon_off = "secure_closed_medical"
 
 /obj/structure/closet/secure_closet/medical_doctor/PopulateContents()
-	new /obj/item/storage/backpack/marine/satchel(src)
+	new /obj/item/storage/backpack/guardsman/satchel(src)
 	if(!is_ground_level(z))
 		new /obj/item/radio/headset/mainship/doc(src)
 	new /obj/item/clothing/shoes/white(src)
@@ -146,7 +146,7 @@
 //ALAMAYER CARGO CLOSET
 /obj/structure/closet/secure_closet/req_officer
 	name = "\improper RO's Locker"
-	req_access = list(ACCESS_MARINE_RO)
+	req_access = list(ACCESS_GUARDSMAN_RO)
 	icon_state = "secure_locked_cargo"
 	icon_closed = "secure_unlocked_cargo"
 	icon_locked = "secure_locked_cargo"
@@ -156,23 +156,23 @@
 
 /obj/structure/closet/secure_closet/req_officer/PopulateContents()
 	new /obj/item/supplytablet(src)
-	new /obj/item/clothing/under/marine/officer/ro_suit(src)
-	new /obj/item/clothing/shoes/marine(src)
-	new /obj/item/storage/belt/marine(src)
+	new /obj/item/clothing/under/guardsman/officer/ro_suit(src)
+	new /obj/item/clothing/shoes/guardsman(src)
+	new /obj/item/storage/belt/guardsman(src)
 	new /obj/item/clothing/head/tgmccap/req(src)
 	new /obj/item/flashlight(src)
-	new /obj/item/storage/backpack/marine/satchel(src)
+	new /obj/item/storage/backpack/guardsman/satchel(src)
 	new /obj/item/armor_module/storage/uniform/webbing(src)
-	new /obj/item/clothing/suit/storage/marine/officer/req(src)
+	new /obj/item/clothing/suit/storage/guardsman/officer/req(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
 	new /obj/item/flash(src)
 
 /obj/structure/closet/secure_closet/shiptech
 	name = "Requisitions' Locker"
-	req_access = list(ACCESS_MARINE_CARGO)
+	req_access = list(ACCESS_GUARDSMAN_CARGO)
 	icon_state = "secure_locked_cargo"
 	icon_closed = "secure_unlocked_cargo"
 	icon_locked = "secure_locked_cargo"
@@ -182,15 +182,15 @@
 
 /obj/structure/closet/secure_closet/shiptech/PopulateContents()
 	new /obj/item/clothing/under/rank/cargotech(src)
-	new /obj/item/clothing/shoes/marine(src)
+	new /obj/item/clothing/shoes/guardsman(src)
 	new /obj/item/radio/headset/mainship/ct(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/head/beanie(src)
 	new /obj/item/flashlight(src)
-	new /obj/item/storage/backpack/marine/satchel(src)
+	new /obj/item/storage/backpack/guardsman/satchel(src)
 	new /obj/item/armor_module/storage/uniform/webbing(src)
 	new /obj/item/clothing/shoes/white(src)
 	new /obj/item/clothing/gloves/white(src)
-	new /obj/item/clothing/under/marine/whites(src)
+	new /obj/item/clothing/under/guardsman/whites(src)
 	new /obj/item/clothing/head/white_dress(src)
 	new /obj/item/clothing/head/beanie(src)

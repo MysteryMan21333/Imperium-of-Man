@@ -1,5 +1,5 @@
 /obj/item/ashtray
-	icon = 'icons/obj/items/ashtray.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ashtray.dmi'
 	var/max_butts = 0
 	var/empty_desc = ""
 	var/icon_empty = ""

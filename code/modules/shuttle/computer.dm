@@ -43,7 +43,7 @@
 	if(.)
 		return
 
-	if(isxeno(usr))
+	if(istyranid(usr))
 		return
 
 	if(!allowed(usr))

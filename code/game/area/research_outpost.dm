@@ -332,7 +332,7 @@
 	icon_state="purple"
 	ceiling = CEILING_METAL
 
-/area/outpost/science/xenobiology
+/area/outpost/science/tyranidbiology
 	/*
 	One day there was a lonely, overworked scientist.
 	The company he worked for did not care at all about their employees.
@@ -341,13 +341,13 @@
 	He just stopped working.
 	His boss quickly entered, having been watching the cameras to ensure he was working.
 	"HEY, GET BACK TO WORK, YOU DONT GET BREAKS!"
-	"Hey, Boss, what do you get when you cross a pissed of scientist with xenomorph specimines?
+	"Hey, Boss, what do you get when you cross a pissed of scientist with tyranid specimines?
 	"DO I NEED TO CALL SECURITY TO GET YOUR ASS BACK TO WORK!?"
 	"YOU GET WHAT YOU FUCKING DESERVE!"
 	*SMASH*
-	*WARNING, CONTAINMENT BREACH DETECTED IN XENOBIOLOGY LAB*
+	*WARNING, CONTAINMENT BREACH DETECTED IN TYRANIDBIOLOGY LAB*
 	*/
-	name = "Xenobiology"
+	name = "Tyranidbiology"
 	icon_state="purple"
 	ceiling = CEILING_METAL
 	outside = FALSE

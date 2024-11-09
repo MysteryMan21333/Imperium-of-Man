@@ -1,5 +1,5 @@
-#define TRACKING_ID_MARINE_COMMANDER "marine-commander"
-#define TRACKING_ID_SOM_COMMANDER "som-commander"
+#define TRACKING_ID_GUARDSMAN_COMMANDER "guardsman-commander"
+#define TRACKING_ID_CHAOS_COMMANDER "chaos-commander"
 
 SUBSYSTEM_DEF(direction)
 	name = "Direction"
@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(direction)
 	var/list/leader_mapping = list()
 
 	/// this is a two d list of defines to lists of mobs tracking that leader
-	/// eg; list(CHARLIE_SL = list(<list of references to squad marines), XENO_NORMAL_QUEEN = list(<list of xeno mob refs))
+	/// eg; list(CHARLIE_SL = list(<list of references to squad guardsmans), TYRANID_NORMAL_QUEEN = list(<list of tyranid mob refs))
 	var/list/list/processing_mobs = list()
 
 	///Lookup for list(<mob ref> = squad_id)
@@ -38,11 +38,11 @@ SUBSYSTEM_DEF(direction)
 
 /datum/controller/subsystem/direction/Initialize()
 	// Static squads/factions can be defined here for tracking
-	init_squad(TRACKING_ID_MARINE_COMMANDER)
-	init_squad(TRACKING_ID_SOM_COMMANDER)
+	init_squad(TRACKING_ID_GUARDSMAN_COMMANDER)
+	init_squad(TRACKING_ID_CHAOS_COMMANDER)
 	for (var/hivenumber in GLOB.hive_datums)
 		var/datum/hive_status/HS = GLOB.hive_datums[hivenumber]
-		init_squad(hivenumber, HS.living_xeno_ruler)
+		init_squad(hivenumber, HS.living_tyranid_ruler)
 	return SS_INIT_SUCCESS
 
 
@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(direction)
 
 	for(var/squad_id in currentrun)
 		var/mob/living/tracked_leader = leader_mapping[squad_id]
-		if (QDELETED(tracked_leader) && !isxenohive(squad_id))
+		if (QDELETED(tracked_leader) && !istyranidhive(squad_id))
 			untrack_all_in_squad(squad_id) // clear and reset all the squad members
 			continue
 		var/mob/living/tracker

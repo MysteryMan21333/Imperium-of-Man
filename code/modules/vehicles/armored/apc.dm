@@ -1,9 +1,9 @@
 /obj/vehicle/sealed/armored/multitile/apc
 	name = "\improper APC - Athena"
 	desc = "An unarmed command APC designed to command and transport troops in the battlefield."
-	icon = 'icons/obj/armored/3x3/apc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/apc.dmi'
 	icon_state = "apc"
-	damage_icon_path = 'icons/obj/armored/3x3/apc_damage_overlay.dmi'
+	damage_icon_path = 'modular_imperium/master_files/icons/obj/armored/3x3/apc_damage_overlay.dmi'
 	interior = /datum/interior/armored/transport
 	armored_flags = ARMORED_HAS_HEADLIGHTS|ARMORED_PURCHASABLE_TRANSPORT
 	permitted_weapons = list(/obj/item/armored_weapon/secondary_weapon)

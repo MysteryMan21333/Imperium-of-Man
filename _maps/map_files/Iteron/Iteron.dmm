@@ -309,7 +309,7 @@
 	},
 /area/mainship/patrol_base)
 "dY" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -583,7 +583,7 @@
 /turf/open/floor/mainship/blue,
 /area/mainship/patrol_base/command)
 "iF" = (
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	pixel_y = 18
 	},
 /obj/structure/table/mainship/nometal,
@@ -856,7 +856,7 @@
 	},
 /area/mainship/patrol_base)
 "lO" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -1161,7 +1161,7 @@
 	},
 /area/mainship/patrol_base/command)
 "qr" = (
-/obj/docking_port/mobile/marine_dropship/minidropship,
+/obj/docking_port/mobile/guardsman_dropship/minidropship,
 /obj/structure/bed/chair/dropship/pilot{
 	dir = 1
 	},
@@ -2115,7 +2115,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/patrol_base)
 "Dy" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -3290,7 +3290,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/patrol_base/barracks)
 "Ti" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/mainship/mono,
 /area/mainship/patrol_base/barracks)
 "Tq" = (
@@ -3760,7 +3760,7 @@
 /area/mainship/patrol_base)
 "ZA" = (
 /obj/structure/bed/chair/office/dark,
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	pixel_y = 18
 	},
 /turf/open/floor/mainship/blue{

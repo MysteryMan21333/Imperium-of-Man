@@ -37,7 +37,7 @@
 
 /obj/effect/overlay/danger
 	name = "Danger"
-	icon = 'icons/obj/items/grenade.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/grenade.dmi'
 	icon_state = "danger"
 	layer = ABOVE_FLY_LAYER
 
@@ -122,54 +122,54 @@
 /obj/effect/overlay/blinking_laser/bomblet
 	icon_state = "bomblet_target"
 
-//Marine-only visuals. Prediction HUD, etc. Does not show without marine headset
-/obj/effect/overlay/blinking_laser/marine
+//Guardsman-only visuals. Prediction HUD, etc. Does not show without guardsman headset
+/obj/effect/overlay/blinking_laser/guardsman
 	name = "prediction matrix"
 	icon = 'icons/effects/lases.dmi'
 	icon_state = "nothing"
 	var/icon_state_on = "nothing"
-	hud_possible = list(SQUAD_HUD_TERRAGOV)
+	hud_possible = list(SQUAD_HUD_IMPERIUM)
 
-/obj/effect/overlay/blinking_laser/marine/Initialize(mapload)
+/obj/effect/overlay/blinking_laser/guardsman/Initialize(mapload)
 	. = ..()
 	prepare_huds()
-	var/datum/atom_hud/squad/squad_hud = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+	var/datum/atom_hud/squad/squad_hud = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 	squad_hud.add_to_hud(src)
 	set_visuals()
 
-/obj/effect/overlay/blinking_laser/marine/proc/set_visuals()
-	var/image/new_hud_list = hud_list[SQUAD_HUD_TERRAGOV]
+/obj/effect/overlay/blinking_laser/guardsman/proc/set_visuals()
+	var/image/new_hud_list = hud_list[SQUAD_HUD_IMPERIUM]
 	if(!new_hud_list)
 		return
 
 	new_hud_list.icon = 'icons/effects/lases.dmi'
 	new_hud_list.icon_state = icon_state_on
-	hud_list[SQUAD_HUD_TERRAGOV] = new_hud_list
+	hud_list[SQUAD_HUD_IMPERIUM] = new_hud_list
 
 //Prediction lines. Those horizontal blue lines you see when CAS fires something
-/obj/effect/overlay/blinking_laser/marine/lines
+/obj/effect/overlay/blinking_laser/guardsman/lines
 	layer = WALL_OBJ_LAYER //Above walls/items, not above mobs
 	icon_state_on = "middle"
 
-/obj/effect/overlay/blinking_laser/marine/lines/Initialize(mapload)
+/obj/effect/overlay/blinking_laser/guardsman/lines/Initialize(mapload)
 	. = ..()
 	dir = pick(CARDINAL_DIRS) //Randomises type, for variation
 
 
 //Drop pod.
-/obj/effect/overlay/blinking_laser/marine/pod_warning
+/obj/effect/overlay/blinking_laser/guardsman/pod_warning
 	name = "pod warning"
 	icon = 'icons/effects/lases.dmi'
 	icon_state_on = "pod_laser"
 
-/obj/effect/overlay/blinking_laser/marine/pod_warning/set_visuals()
-	var/image/new_hud_list = hud_list[SQUAD_HUD_TERRAGOV]
+/obj/effect/overlay/blinking_laser/guardsman/pod_warning/set_visuals()
+	var/image/new_hud_list = hud_list[SQUAD_HUD_IMPERIUM]
 	if(!new_hud_list)
 		return
 
 	new_hud_list.icon = 'icons/effects/lases.dmi'
 	new_hud_list.icon_state = icon_state_on
-	hud_list[SQUAD_HUD_TERRAGOV] = new_hud_list
+	hud_list[SQUAD_HUD_IMPERIUM] = new_hud_list
 
 /obj/effect/overlay/temp/Initialize(mapload, effect_duration)
 	. = ..()
@@ -179,7 +179,7 @@
 /obj/effect/overlay/temp/point
 	name = "arrow"
 	desc = "It's an arrow hanging in mid-air. There may be a wizard about."
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	icon_state = "arrow"
 	layer = POINT_LAYER
 	anchored = TRUE
@@ -194,7 +194,7 @@
 	name = "laser"
 	anchored = TRUE
 	mouse_opacity = 1
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "laser_target_coordinate"
 	effect_duration = 600
 	var/obj/item/binoculars/tactical/source_binoc
@@ -209,7 +209,7 @@
 	name = "laser"
 	anchored = TRUE
 	mouse_opacity = 1
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "laser_target_blue"
 	effect_duration = 600
 	var/target_id
@@ -292,14 +292,14 @@
 	anchored = TRUE
 	effect_duration = 10
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "laser_target3"
 
 
 /obj/effect/overlay/temp/sniper_laser
 	name = "laser"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "sniper_laser"
 
 
@@ -324,7 +324,7 @@
 	name = "tanklaser"
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "laser_target3"
 	effect_duration = 20
 
@@ -332,7 +332,7 @@
 
 //gib animation
 /obj/effect/overlay/temp/gib_animation
-	icon = 'icons/mob/mob.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/mob.dmi'
 	effect_duration = 14
 
 /obj/effect/overlay/temp/gib_animation/Initialize(mapload, effect_duration, mob/source_mob, gib_icon)
@@ -345,26 +345,26 @@
 	return
 
 /obj/effect/overlay/temp/gib_animation/human
-	icon = 'icons/mob/human_gib.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human_gib.dmi'
 	pixel_x = -16
 	pixel_y = -16
 
 /obj/effect/overlay/temp/gib_animation/animal
-	icon = 'icons/mob/animal.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/animal.dmi'
 	effect_duration = 12
 
-/obj/effect/overlay/temp/gib_animation/xeno
-	icon = 'icons/Xeno/64x64_Xeno_overlays.dmi'
+/obj/effect/overlay/temp/gib_animation/tyranid
+	icon = 'modular_imperium/master_files/icons/tyranid/64x64_xeno_overlays.dmi'
 	effect_duration = 10
 
-/obj/effect/overlay/temp/gib_animation/xeno/Initialize(mapload, effect_duration, mob/source_mob, gib_icon, new_icon)
+/obj/effect/overlay/temp/gib_animation/tyranid/Initialize(mapload, effect_duration, mob/source_mob, gib_icon, new_icon)
 	icon = new_icon
 	return ..()
 
 //dust animation
 
 /obj/effect/overlay/temp/dust_animation
-	icon = 'icons/mob/mob.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/mob.dmi'
 	effect_duration = 12
 
 /obj/effect/overlay/temp/dust_animation/Initialize(mapload, effect_duration, mob/source_mob, gib_icon)

@@ -196,7 +196,7 @@
 /mob/living/proc/get_blood_color()
 	return "#A10808"
 
-/mob/living/carbon/xenomorph/get_blood_color()
+/mob/living/carbon/tyranid/get_blood_color()
 	return "#dffc00"
 
 /mob/living/carbon/human/get_blood_color()
@@ -208,8 +208,8 @@
 /mob/proc/get_blood_id()
 	return
 
-/mob/living/carbon/xenomorph/get_blood_id()
-	return "xenoblood"
+/mob/living/carbon/tyranid/get_blood_id()
+	return "tyranidblood"
 
 /mob/living/carbon/human/get_blood_id()
 	if((species.species_flags & NO_BLOOD))
@@ -315,13 +315,13 @@
 
 	..()
 
-/mob/living/carbon/xenomorph/add_splatter_floor(turf/T, small_drip, b_color)
+/mob/living/carbon/tyranid/add_splatter_floor(turf/T, small_drip, b_color)
 	if(!T)
 		T = get_turf(src)
 
 	if(!T.can_bloody)
 		return
 
-	var/obj/effect/decal/cleanable/blood/xeno/XB = locate() in T.contents
+	var/obj/effect/decal/cleanable/blood/tyranid/XB = locate() in T.contents
 	if(!XB)
 		XB = new(T)

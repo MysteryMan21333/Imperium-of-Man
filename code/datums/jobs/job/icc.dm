@@ -1,5 +1,5 @@
 /datum/job/icc
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/craftier
@@ -25,13 +25,13 @@
 
 	id = /obj/item/card/id/silver
 	w_uniform = /obj/item/clothing/under/icc/webbing
-	belt = /obj/item/storage/belt/marine/icc
+	belt = /obj/item/storage/belt/guardsman/icc
 	ears = /obj/item/radio/headset/distress/icc
 	w_uniform = /obj/item/clothing/under/icc/webbing
-	shoes = /obj/item/clothing/shoes/marine/icc/knife
-	wear_suit = /obj/item/clothing/suit/storage/marine/icc
-	gloves = /obj/item/clothing/gloves/marine/icc
-	head = /obj/item/clothing/head/helmet/marine/icc
+	shoes = /obj/item/clothing/shoes/guardsman/icc/knife
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/icc
+	gloves = /obj/item/clothing/gloves/guardsman/icc
+	head = /obj/item/clothing/head/helmet/guardsman/icc
 	mask = /obj/item/clothing/mask/gas/icc
 
 // Basic standard equipment
@@ -40,7 +40,7 @@
 	jobtype = /datum/job/icc
 
 	id = /obj/item/card/id/silver
-	gloves = /obj/item/clothing/gloves/marine/icc/insulated
+	gloves = /obj/item/clothing/gloves/guardsman/icc/insulated
 	r_store = /obj/item/storage/pouch/pistol/icc
 	l_store = /obj/item/storage/pouch/medical_injectors/icc/firstaid
 	back = /obj/item/storage/backpack/lightpack/icc
@@ -51,11 +51,11 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/barcaridine, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/barcaridine, SLOT_IN_SUIT)
 
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/icc_dpistol, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/icc_dpistol, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/icc_dpistol, SLOT_IN_BACKPACK)
@@ -137,10 +137,10 @@
 	name = "ICC Guard"
 	jobtype = /datum/job/icc/guard
 
-	shoes = /obj/item/clothing/shoes/marine/icc/guard/knife
-	wear_suit = /obj/item/clothing/suit/storage/marine/icc/guard
-	gloves = /obj/item/clothing/gloves/marine/icc/guard
-	head = /obj/item/clothing/head/helmet/marine/icc/guard
+	shoes = /obj/item/clothing/shoes/guardsman/icc/guard/knife
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/icc/guard
+	gloves = /obj/item/clothing/gloves/guardsman/icc/guard
+	head = /obj/item/clothing/head/helmet/guardsman/icc/guard
 
 
 /datum/outfit/job/icc/guard/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -149,12 +149,12 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/barcaridine, SLOT_IN_SUIT)
 
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_BACKPACK)
 
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/russian_red, SLOT_IN_ACCESSORY)
@@ -213,8 +213,8 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_autoshotgun/frag, SLOT_IN_L_POUCH)
 
 /datum/outfit/job/icc/guard/icc_bagmg
-	wear_suit = /obj/item/clothing/suit/storage/marine/icc/guard/heavy
-	head = /obj/item/clothing/head/helmet/marine/icc/guard/heavy
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/icc/guard/heavy
+	head = /obj/item/clothing/head/helmet/guardsman/icc/guard/heavy
 	suit_store = /obj/item/weapon/gun/rifle/icc_coilgun
 	back = /obj/item/storage/holster/icc_mg/full
 	belt = /obj/item/ammo_magazine/icc_mg/belt
@@ -248,7 +248,7 @@
 	jobtype = /datum/job/icc/medic
 
 	id = /obj/item/card/id/silver
-	gloves = /obj/item/clothing/gloves/marine/icc
+	gloves = /obj/item/clothing/gloves/guardsman/icc
 	back = /obj/item/storage/backpack/lightpack/icc
 	belt = /obj/item/storage/belt/lifesaver/icc/ert
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -259,12 +259,12 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/barcaridine, SLOT_IN_SUIT)
 
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/defibrillator, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_BACKPACK)
 
@@ -325,10 +325,10 @@
 	name = "ICC Leader"
 	jobtype = /datum/job/icc/leader
 
-	shoes = /obj/item/clothing/shoes/marine/icc/knife
-	wear_suit = /obj/item/clothing/suit/storage/marine/icc/guard
-	gloves = /obj/item/clothing/gloves/marine/icc/guard
-	head = /obj/item/clothing/head/helmet/marine/icc/guard
+	shoes = /obj/item/clothing/shoes/guardsman/icc/knife
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/icc/guard
+	gloves = /obj/item/clothing/gloves/guardsman/icc/guard
+	head = /obj/item/clothing/head/helmet/guardsman/icc/guard
 	back = /obj/item/storage/backpack/lightpack/icc/guard
 	l_store = /obj/item/storage/pouch/medical_injectors/icc/firstaid
 	r_store = /obj/item/storage/pouch/construction/icc/full
@@ -340,12 +340,12 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/barcaridine, SLOT_IN_SUIT)
 
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_BACKPACK)
 
 	H.equip_to_slot_or_del(new /obj/item/binoculars/tactical/range, SLOT_IN_ACCESSORY)
@@ -359,7 +359,7 @@
 	belt = /obj/item/storage/belt/shotgun/icc/mixed
 
 /datum/outfit/job/icc/leader/icc_confrontationrifle
-	belt = /obj/item/storage/belt/marine/icc
+	belt = /obj/item/storage/belt/guardsman/icc
 	suit_store = /obj/item/weapon/gun/rifle/icc_confrontationrifle/leader
 
 /datum/outfit/job/icc/leader/icc_confrontationrifle/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

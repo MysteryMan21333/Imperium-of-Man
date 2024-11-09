@@ -1,7 +1,7 @@
 /obj/machinery/computer/droppod_control
 	name = "Droppod launch computer"
 	desc = "A computer managing the ships drop pods."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "terminal"
 	screen_overlay = "terminal1"
 	interaction_flags = INTERACT_MACHINE_TGUI

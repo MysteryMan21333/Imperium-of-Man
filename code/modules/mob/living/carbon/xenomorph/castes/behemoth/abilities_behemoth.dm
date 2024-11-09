@@ -58,7 +58,7 @@
 	animate(alpha = 0, time = 1 SECONDS)
 
 /obj/effect/temp_visual/behemoth/warning
-	icon = 'icons/xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "generic_warning"
 	layer = BELOW_MOB_LAYER
 	color = COLOR_ORANGE
@@ -79,7 +79,7 @@
 // ***************************************
 #define BEHEMOTH_ROLL_WIND_UP 2 SECONDS
 
-/datum/action/ability/xeno_action/ready_charge/behemoth_roll
+/datum/action/ability/tyranid_action/ready_charge/behemoth_roll
 	name = "Roll"
 	desc = "Toggles Rolling on or off. This can be used to displace talls but won't deal any damage."
 	charge_type = CHARGE_BEHEMOTH
@@ -91,10 +91,10 @@
 	agile_charge = TRUE
 	should_start_on = FALSE
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BEHEMOTH_ROLL,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_BEHEMOTH_ROLL,
 	)
 
-/datum/action/ability/xeno_action/ready_charge/behemoth_roll/action_activate()
+/datum/action/ability/tyranid_action/ready_charge/behemoth_roll/action_activate()
 	if(charge_ability_on)
 		charge_off()
 		return
@@ -102,22 +102,22 @@
 		return
 	charge_on()
 
-/datum/action/ability/xeno_action/ready_charge/behemoth_roll/charge_off(verbose = TRUE)
+/datum/action/ability/tyranid_action/ready_charge/behemoth_roll/charge_off(verbose = TRUE)
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.behemoth_charging = FALSE
-	REMOVE_TRAIT(xeno_owner, TRAIT_SILENT_FOOTSTEPS, XENO_TRAIT)
-	xeno_owner.update_icons()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.behemoth_charging = FALSE
+	REMOVE_TRAIT(tyranid_owner, TRAIT_SILENT_FOOTSTEPS, TYRANID_TRAIT)
+	tyranid_owner.update_icons()
 	add_cooldown(15 SECONDS)
 
-/datum/action/ability/xeno_action/ready_charge/behemoth_roll/charge_on(verbose = TRUE)
+/datum/action/ability/tyranid_action/ready_charge/behemoth_roll/charge_on(verbose = TRUE)
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.behemoth_charging = TRUE
-	ADD_TRAIT(xeno_owner, TRAIT_SILENT_FOOTSTEPS, XENO_TRAIT)
-	xeno_owner.update_icons()
-	for(var/mob/living/rider AS in xeno_owner.buckled_mobs)
-		xeno_owner.unbuckle_mob(rider)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.behemoth_charging = TRUE
+	ADD_TRAIT(tyranid_owner, TRAIT_SILENT_FOOTSTEPS, TYRANID_TRAIT)
+	tyranid_owner.update_icons()
+	for(var/mob/living/rider AS in tyranid_owner.buckled_mobs)
+		tyranid_owner.unbuckle_mob(rider)
 
 
 // ***************************************
@@ -226,17 +226,17 @@
 	pixel_x += pixel_modifier
 	pixel_y += pixel_modifier
 
-/datum/action/ability/activable/xeno/landslide
+/datum/action/ability/activable/tyranid/landslide
 	name = "Landslide"
 	action_icon_state = "landslide"
-	action_icon = 'icons/Xeno/actions/behemoth.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/behemoth.dmi'
 	desc = "Rush forward in the selected direction, damaging enemies caught in a wide path."
 	ability_cost = 3 // This is deducted per step taken during the ability.
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_TURF_TARGET
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_LANDSLIDE,
-		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_CANCEL_LANDSLIDE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_LANDSLIDE,
+		KEYBINDING_ALTERNATE = COMSIG_TYRANIDABILITY_CANCEL_LANDSLIDE,
 	)
 	/// Whether this ability is currently active or not.
 	var/ability_active = FALSE
@@ -245,11 +245,11 @@
 	/// The maximum amount of charges we can have.
 	var/maximum_charges = 1
 
-/datum/action/ability/activable/xeno/landslide/alternate_action_activate()
+/datum/action/ability/activable/tyranid/landslide/alternate_action_activate()
 	if(can_use_ability(null, FALSE, ABILITY_IGNORE_SELECTED_ABILITY))
 		INVOKE_ASYNC(src, PROC_REF(use_ability))
 
-/datum/action/ability/activable/xeno/landslide/give_action(mob/living/L)
+/datum/action/ability/activable/tyranid/landslide/give_action(mob/living/L)
 	. = ..()
 	var/mutable_appearance/counter_maptext = mutable_appearance(icon = null, icon_state = null, layer = ACTION_LAYER_MAPTEXT)
 	counter_maptext.pixel_x = 16
@@ -257,12 +257,12 @@
 	counter_maptext.maptext = MAPTEXT("[current_charges]/[maximum_charges]")
 	visual_references[VREF_MUTABLE_LANDSLIDE] = counter_maptext
 
-/datum/action/ability/activable/xeno/landslide/remove_action(mob/living/carbon/xenomorph/X)
+/datum/action/ability/activable/tyranid/landslide/remove_action(mob/living/carbon/tyranid/X)
 	. = ..()
 	button.cut_overlay(visual_references[VREF_MUTABLE_LANDSLIDE])
 	visual_references[VREF_MUTABLE_LANDSLIDE] = null
 
-/datum/action/ability/activable/xeno/landslide/update_button_icon()
+/datum/action/ability/activable/tyranid/landslide/update_button_icon()
 	button.cut_overlay(visual_references[VREF_MUTABLE_LANDSLIDE])
 	var/mutable_appearance/number = visual_references[VREF_MUTABLE_LANDSLIDE]
 	number.maptext = MAPTEXT("[current_charges]/[maximum_charges]")
@@ -270,7 +270,7 @@
 	button.add_overlay(visual_references[VREF_MUTABLE_LANDSLIDE])
 	return ..()
 
-/datum/action/ability/activable/xeno/landslide/can_use_action(silent, override_flags, selecting)
+/datum/action/ability/activable/tyranid/landslide/can_use_action(silent, override_flags, selecting)
 	if(ability_active)
 		if(cooldown_timer)
 			return FALSE
@@ -279,7 +279,7 @@
 		return TRUE
 	return ..()
 
-/datum/action/ability/activable/xeno/landslide/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/landslide/on_cooldown_finish()
 	if(ability_active)
 		owner.balloon_alert(owner, "Use [initial(name)] again to cancel")
 		return ..()
@@ -291,7 +291,7 @@
 		return
 	return ..()
 
-/datum/action/ability/activable/xeno/landslide/use_ability(atom/target)
+/datum/action/ability/activable/tyranid/landslide/use_ability(atom/target)
 	if(ability_active)
 		end_charge(LANDSLIDE_ENDED_CANCELLED)
 		return
@@ -302,30 +302,30 @@
 	if(LinkBlocked(owner_turf, get_step(owner, direction)) || owner_turf == get_turf(target))
 		owner.balloon_alert(owner, "No space")
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/xeno_action/ready_charge/behemoth_roll/behemoth_roll_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/ready_charge/behemoth_roll]
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/tyranid_action/ready_charge/behemoth_roll/behemoth_roll_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/ready_charge/behemoth_roll]
 	if(behemoth_roll_action?.charge_ability_on)
 		behemoth_roll_action.charge_off()
 	ability_active = TRUE
 	current_charges--
 	update_button_icon()
-	xeno_owner.face_atom(target)
-	xeno_owner.set_canmove(FALSE)
-	xeno_owner.behemoth_charging = TRUE
-	ADD_TRAIT(xeno_owner, TRAIT_SILENT_FOOTSTEPS, XENO_TRAIT)
-	playsound(xeno_owner, 'sound/effects/alien/behemoth/landslide_roar.ogg', 40, TRUE)
+	tyranid_owner.face_atom(target)
+	tyranid_owner.set_canmove(FALSE)
+	tyranid_owner.behemoth_charging = TRUE
+	ADD_TRAIT(tyranid_owner, TRAIT_SILENT_FOOTSTEPS, TYRANID_TRAIT)
+	playsound(tyranid_owner, 'sound/effects/alien/behemoth/landslide_roar.ogg', 40, TRUE)
 	var/which_step = pick(0, 1)
 	new /obj/effect/temp_visual/behemoth/landslide/dust(owner_turf, direction, which_step)
-	do_warning(xeno_owner, get_affected_turfs(owner_turf, direction, LANDSLIDE_RANGE), LANDSLIDE_WIND_UP + 0.5 SECONDS)
-	var/charge_damage = (xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier) * LANDSLIDE_DAMAGE_MULTIPLIER
-	var/datum/action/ability/xeno_action/primal_wrath/primal_wrath_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/primal_wrath]
+	do_warning(tyranid_owner, get_affected_turfs(owner_turf, direction, LANDSLIDE_RANGE), LANDSLIDE_WIND_UP + 0.5 SECONDS)
+	var/charge_damage = (tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier) * LANDSLIDE_DAMAGE_MULTIPLIER
+	var/datum/action/ability/tyranid_action/primal_wrath/primal_wrath_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/primal_wrath]
 	if(primal_wrath_action?.ability_active)
 		var/animation_time = LANDSLIDE_RANGE * LANDSLIDE_ENHANCED_STEP_DELAY
 		addtimer(CALLBACK(src, PROC_REF(enhanced_do_charge), direction, charge_damage, LANDSLIDE_ENHANCED_STEP_DELAY, LANDSLIDE_RANGE), LANDSLIDE_ENHANCED_WIND_UP)
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), xeno_owner, 'sound/effects/alien/behemoth/landslide_enhanced_charge.ogg', 30, TRUE), LANDSLIDE_ENHANCED_WIND_UP)
-		animate(xeno_owner, time = LANDSLIDE_ENHANCED_WIND_UP, flags = ANIMATION_END_NOW)
-		animate(pixel_y = xeno_owner.pixel_y + (LANDSLIDE_RANGE / 2), time = animation_time / 2, easing = CIRCULAR_EASING|EASE_OUT)
-		animate(pixel_y = initial(xeno_owner.pixel_y), time = animation_time / 2, easing = CIRCULAR_EASING|EASE_IN)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), tyranid_owner, 'sound/effects/alien/behemoth/landslide_enhanced_charge.ogg', 30, TRUE), LANDSLIDE_ENHANCED_WIND_UP)
+		animate(tyranid_owner, time = LANDSLIDE_ENHANCED_WIND_UP, flags = ANIMATION_END_NOW)
+		animate(pixel_y = tyranid_owner.pixel_y + (LANDSLIDE_RANGE / 2), time = animation_time / 2, easing = CIRCULAR_EASING|EASE_OUT)
+		animate(pixel_y = initial(tyranid_owner.pixel_y), time = animation_time / 2, easing = CIRCULAR_EASING|EASE_IN)
 		return
 	add_cooldown(LANDSLIDE_WIND_UP)
 	addtimer(CALLBACK(src, PROC_REF(do_charge), owner_turf, direction, charge_damage, which_step), LANDSLIDE_WIND_UP)
@@ -336,7 +336,7 @@
  * * direction: The direction to check in.
  * * range: The range in tiles to limit our checks to.
 */
-/datum/action/ability/activable/xeno/landslide/proc/get_affected_turfs(turf/origin_turf, direction, range)
+/datum/action/ability/activable/tyranid/landslide/proc/get_affected_turfs(turf/origin_turf, direction, range)
 	if(!origin_turf || !direction || !range)
 		return
 	var/list/turf/turfs_list = list(origin_turf)
@@ -364,7 +364,7 @@
  * * damage: The damage we will deal to valid targets.
  * * which_step: Used to determine the initial positioning of visual effects.
 */
-/datum/action/ability/activable/xeno/landslide/proc/do_charge(turf/owner_turf, direction, damage, which_step)
+/datum/action/ability/activable/tyranid/landslide/proc/do_charge(turf/owner_turf, direction, damage, which_step)
 	if(!ability_active || !direction)
 		return
 	if(owner.stat || owner.lying_angle)
@@ -372,30 +372,30 @@
 		return
 	if(owner.pulling)
 		owner.stop_pulling()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(xeno_owner.plasma_stored < ability_cost)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(tyranid_owner.plasma_stored < ability_cost)
 		end_charge(LANDSLIDE_ENDED_NO_PLASMA)
 		return
 	succeed_activate()
 	var/turf/direct_turf = get_step(owner, direction)
 	var/list/turf/target_turfs = list(direct_turf)
-	target_turfs += get_step(xeno_owner, turn(direction, 45))
-	target_turfs += get_step(xeno_owner, turn(direction, -45))
+	target_turfs += get_step(tyranid_owner, turn(direction, 45))
+	target_turfs += get_step(tyranid_owner, turn(direction, -45))
 	for(var/turf/target_turf AS in target_turfs)
 		for(var/atom/movable/affected_atom AS in target_turf)
 			if(isliving(affected_atom))
 				var/mob/living/affected_living = affected_atom
 				if(affected_living.stat == DEAD)
 					continue
-				if(xeno_owner.issamexenohive(affected_living) && !affected_living.lying_angle)
+				if(tyranid_owner.issametyranidhive(affected_living) && !affected_living.lying_angle)
 					if(affected_living in direct_turf)
-						step_away(affected_living, xeno_owner, 2, 1)
+						step_away(affected_living, tyranid_owner, 2, 1)
 					continue
 				hit_living(affected_living, damage)
 			if(isobj(affected_atom))
 				if(isearthpillar(affected_atom))
 					var/obj/structure/earth_pillar/affected_pillar = affected_atom
-					affected_pillar.throw_pillar(get_ranged_target_turf(xeno_owner, xeno_owner.dir, 7), TRUE)
+					affected_pillar.throw_pillar(get_ranged_target_turf(tyranid_owner, tyranid_owner.dir, 7), TRUE)
 					continue
 				if(isvehicle(affected_atom))
 					var/obj/vehicle/veh_victim = affected_atom
@@ -407,15 +407,15 @@
 				hit_object(affected_object)
 	if(LinkBlocked(owner_turf, direct_turf))
 		playsound(direct_turf, 'sound/effects/alien/behemoth/stomp.ogg', 40, TRUE)
-		xeno_owner.do_attack_animation(direct_turf)
+		tyranid_owner.do_attack_animation(direct_turf)
 		addtimer(CALLBACK(src, PROC_REF(end_charge)), LANDSLIDE_ENDING_COLLISION_DELAY)
 		return
 	which_step = !which_step
-	step(xeno_owner, direction, 1)
+	step(tyranid_owner, direction, 1)
 	playsound(owner_turf, SFX_BEHEMOTH_STEP_SOUNDS, 40)
 	new /obj/effect/temp_visual/behemoth/crack/landslide(owner_turf, direction, which_step)
 	new /obj/effect/temp_visual/behemoth/landslide/dust/charge(owner_turf, direction)
-	addtimer(CALLBACK(src, PROC_REF(do_charge), get_turf(xeno_owner), direction, damage, which_step), LANDSLIDE_STEP_DELAY)
+	addtimer(CALLBACK(src, PROC_REF(do_charge), get_turf(tyranid_owner), direction, damage, which_step), LANDSLIDE_STEP_DELAY)
 
 /**
  * Moves the user in the specified direction. This simulates movement by using step() and repeatedly calling itself.
@@ -425,7 +425,7 @@
  * * speed: The speed at which we move. This is reduced when we're nearing our destination, to simulate a slow-down effect.
  * * steps_to_take: The amount of steps needed to reach our destination. This is used to determine when to end the charge,
 */
-/datum/action/ability/activable/xeno/landslide/proc/enhanced_do_charge(direction, damage, speed, steps_to_take)
+/datum/action/ability/activable/tyranid/landslide/proc/enhanced_do_charge(direction, damage, speed, steps_to_take)
 	if(!ability_active || !direction)
 		return
 	if(owner.stat || owner.lying_angle)
@@ -435,29 +435,29 @@
 		owner.stop_pulling()
 	var/owner_turf = get_turf(owner)
 	var/direct_turf = get_step(owner, direction)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(steps_to_take <= 0 || xeno_owner.wrath_stored < ability_cost)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(steps_to_take <= 0 || tyranid_owner.wrath_stored < ability_cost)
 		if(LinkBlocked(owner_turf, direct_turf))
 			playsound(direct_turf, 'sound/effects/alien/behemoth/stomp.ogg', 40, TRUE)
-			xeno_owner.do_attack_animation(direct_turf)
+			tyranid_owner.do_attack_animation(direct_turf)
 		new /obj/effect/temp_visual/behemoth/crack/landslide(get_turf(owner), direction, pick(1, 2))
 		end_charge()
 		return
 	succeed_activate()
 	var/list/turf/target_turfs = list(direct_turf)
-	target_turfs += get_step(xeno_owner, turn(direction, 45))
-	target_turfs += get_step(xeno_owner, turn(direction, -45))
+	target_turfs += get_step(tyranid_owner, turn(direction, 45))
+	target_turfs += get_step(tyranid_owner, turn(direction, -45))
 	for(var/turf/target_turf AS in target_turfs)
 		for(var/atom/movable/affected_atom AS in target_turf)
 			if(isliving(affected_atom))
 				var/mob/living/affected_living = affected_atom
-				if(xeno_owner.issamexenohive(affected_living) || affected_living.stat == DEAD)
+				if(tyranid_owner.issametyranidhive(affected_living) || affected_living.stat == DEAD)
 					continue
 				hit_living(affected_living, damage)
 			if(isobj(affected_atom))
 				if(isearthpillar(affected_atom))
 					var/obj/structure/earth_pillar/affected_pillar = affected_atom
-					affected_pillar.throw_pillar(get_ranged_target_turf(xeno_owner, xeno_owner.dir, 7), TRUE)
+					affected_pillar.throw_pillar(get_ranged_target_turf(tyranid_owner, tyranid_owner.dir, 7), TRUE)
 					continue
 				if(isvehicle(affected_atom))
 					var/obj/vehicle/veh_victim = affected_atom
@@ -468,7 +468,7 @@
 					continue
 				hit_object(affected_object)
 	steps_to_take--
-	step(xeno_owner, direction, 1)
+	step(tyranid_owner, direction, 1)
 	if(steps_to_take <= 2)
 		speed += 0.5
 		new /obj/effect/temp_visual/behemoth/landslide/dust/charge(owner_turf, direction)
@@ -478,26 +478,26 @@
  * Ends the charge.
  * * reason: If specified, determines the reason why the charge ended, and does the respective balloon alert. Leave empty for no reason.
 */
-/datum/action/ability/activable/xeno/landslide/proc/end_charge(reason)
+/datum/action/ability/activable/tyranid/landslide/proc/end_charge(reason)
 	ability_active = FALSE
-	REMOVE_TRAIT(owner, TRAIT_SILENT_FOOTSTEPS, XENO_TRAIT)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.behemoth_charging = FALSE
-	if(!xeno_owner.lying_angle)
-		xeno_owner.set_canmove(TRUE)
+	REMOVE_TRAIT(owner, TRAIT_SILENT_FOOTSTEPS, TYRANID_TRAIT)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.behemoth_charging = FALSE
+	if(!tyranid_owner.lying_angle)
+		tyranid_owner.set_canmove(TRUE)
 	add_cooldown()
 	switch(reason)
 		if(LANDSLIDE_ENDED_CANCELLED) // The user manually cancelled the ability at some point during its use.
-			xeno_owner.balloon_alert(xeno_owner, "Cancelled")
+			tyranid_owner.balloon_alert(tyranid_owner, "Cancelled")
 		if(LANDSLIDE_ENDED_NO_PLASMA) // During the charge, the user did not have enough plasma to maintain the ability.
-			xeno_owner.balloon_alert(xeno_owner, "Insufficient plasma")
+			tyranid_owner.balloon_alert(tyranid_owner, "Insufficient plasma")
 
 /**
  * Applies several effects to a living target.
  * * living_target: The targeted living mob.
  * * damage: The damage inflicted by related effects.
 */
-/datum/action/ability/activable/xeno/landslide/proc/hit_living(mob/living/living_target, damage)
+/datum/action/ability/activable/tyranid/landslide/proc/hit_living(mob/living/living_target, damage)
 	if(!living_target || !damage)
 		return
 	if(living_target.buckled)
@@ -514,7 +514,7 @@
  * Attempts to deconstruct the object in question if possible.
  * * object_target: The targeted object.
 */
-/datum/action/ability/activable/xeno/landslide/proc/hit_object(obj/object_target)
+/datum/action/ability/activable/tyranid/landslide/proc/hit_object(obj/object_target)
 	if(!object_target)
 		return
 	var/object_turf = get_turf(object_target)
@@ -546,7 +546,7 @@
  * This will also adjust the current amount of charges to account for the new difference, be it positive or negative.
  * * amount: The new amount of maximum charges.
 */
-/datum/action/ability/activable/xeno/landslide/proc/change_maximum_charges(amount)
+/datum/action/ability/activable/tyranid/landslide/proc/change_maximum_charges(amount)
 	if(!amount)
 		return
 	maximum_charges = amount
@@ -583,27 +583,27 @@
 			pixel_x += 32
 			pixel_y -= 13
 
-/datum/action/ability/activable/xeno/earth_riser
+/datum/action/ability/activable/tyranid/earth_riser
 	name = "Earth Riser"
 	action_icon_state = "earth_riser"
-	action_icon = 'icons/Xeno/actions/behemoth.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/behemoth.dmi'
 	desc = "Raise a pillar of earth at the selected location. This solid structure can be used for defense, and it interacts with other abilities for offensive usage. The pillar can be launched by click-dragging it in a direction. Alternate use destroys active pillars, starting with the oldest one."
 	ability_cost = 20
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_EARTH_RISER,
-		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_EARTH_RISER_ALTERNATE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_EARTH_RISER,
+		KEYBINDING_ALTERNATE = COMSIG_TYRANIDABILITY_EARTH_RISER_ALTERNATE,
 	)
 	/// Maximum amount of Earth Pillars that this ability can have.
 	var/maximum_pillars = 3
 	/// List that contains all Earth Pillars created by this ability.
 	var/list/obj/structure/earth_pillar/active_pillars = list()
 
-/datum/action/ability/activable/xeno/earth_riser/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/earth_riser/on_cooldown_finish()
 	owner.balloon_alert(owner, "[initial(name)] ready[maximum_pillars > 1 ? " ([length(active_pillars)]/[maximum_pillars])" : ""]")
 	return ..()
 
-/datum/action/ability/activable/xeno/earth_riser/give_action(mob/living/L)
+/datum/action/ability/activable/tyranid/earth_riser/give_action(mob/living/L)
 	. = ..()
 	var/mutable_appearance/counter_maptext = mutable_appearance(icon = null, icon_state = null, layer = ACTION_LAYER_MAPTEXT)
 	counter_maptext.pixel_x = 16
@@ -611,15 +611,15 @@
 	counter_maptext.maptext = MAPTEXT("[length(active_pillars)]/[maximum_pillars]")
 	visual_references[VREF_MUTABLE_EARTH_PILLAR] = counter_maptext
 
-/datum/action/ability/activable/xeno/earth_riser/remove_action(mob/living/carbon/xenomorph/X)
+/datum/action/ability/activable/tyranid/earth_riser/remove_action(mob/living/carbon/tyranid/X)
 	. = ..()
 	button.cut_overlay(visual_references[VREF_MUTABLE_EARTH_PILLAR])
 	visual_references[VREF_MUTABLE_EARTH_PILLAR] = null
 	for(var/pillar in active_pillars)
-		UnregisterSignal(pillar, list(COMSIG_QDELETING, COMSIG_XENOABILITY_EARTH_PILLAR_THROW))
+		UnregisterSignal(pillar, list(COMSIG_QDELETING, COMSIG_TYRANIDABILITY_EARTH_PILLAR_THROW))
 	QDEL_LIST(active_pillars)
 
-/datum/action/ability/activable/xeno/earth_riser/update_button_icon()
+/datum/action/ability/activable/tyranid/earth_riser/update_button_icon()
 	button.cut_overlay(visual_references[VREF_MUTABLE_EARTH_PILLAR])
 	var/mutable_appearance/number = visual_references[VREF_MUTABLE_EARTH_PILLAR]
 	number.maptext = MAPTEXT("[maximum_pillars ? "[length(active_pillars)]/[maximum_pillars]" : ""]")
@@ -627,29 +627,29 @@
 	button.add_overlay(visual_references[VREF_MUTABLE_EARTH_PILLAR])
 	return ..()
 
-/datum/action/ability/activable/xeno/earth_riser/alternate_action_activate()
+/datum/action/ability/activable/tyranid/earth_riser/alternate_action_activate()
 	if(!length(active_pillars))
-		var/mob/living/carbon/xenomorph/xeno_owner = owner
-		xeno_owner.balloon_alert(xeno_owner, "No active pillars")
+		var/mob/living/carbon/tyranid/tyranid_owner = owner
+		tyranid_owner.balloon_alert(tyranid_owner, "No active pillars")
 		return
 	add_cooldown(1.5 SECONDS)
 	var/obj/structure/earth_pillar/oldest_pillar = popleft(active_pillars)
 	qdel(oldest_pillar)
 	update_button_icon()
 
-/datum/action/ability/activable/xeno/earth_riser/use_ability(atom/target)
+/datum/action/ability/activable/tyranid/earth_riser/use_ability(atom/target)
 	. = ..()
 	if(maximum_pillars && length(active_pillars) >= maximum_pillars)
 		owner.balloon_alert(owner, "Maximum amount of pillars reached")
 		return
 	var/turf/owner_turf = get_turf(owner)
 	var/turf/target_turf = get_turf(target)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/xeno_action/primal_wrath/primal_wrath_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/primal_wrath]
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/tyranid_action/primal_wrath/primal_wrath_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/primal_wrath]
 	if(!line_of_sight(owner, target, primal_wrath_action?.ability_active? EARTH_RISER_ENHANCED_RANGE : EARTH_RISER_RANGE))
 		owner.balloon_alert(owner, "Out of range")
 		return
-	var/datum/action/ability/xeno_action/ready_charge/behemoth_roll/behemoth_roll_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/ready_charge/behemoth_roll]
+	var/datum/action/ability/tyranid_action/ready_charge/behemoth_roll/behemoth_roll_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/ready_charge/behemoth_roll]
 	if(behemoth_roll_action?.charge_ability_on)
 		behemoth_roll_action.charge_off()
 	playsound(target_turf, 'sound/effects/alien/behemoth/stomp.ogg', 30, TRUE)
@@ -660,48 +660,48 @@
 	if(primal_wrath_action?.ability_active)
 		wind_up_duration = EARTH_RISER_ENHANCED_WIND_UP
 		affected_turfs = RANGE_TURFS(EARTH_RISER_ENHANCED_RADIUS, target_turf)
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(behemoth_area_attack), xeno_owner, affected_turfs), wind_up_duration + 0.5 SECONDS)
-	do_warning(xeno_owner, affected_turfs, wind_up_duration)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(behemoth_area_attack), tyranid_owner, affected_turfs), wind_up_duration + 0.5 SECONDS)
+	do_warning(tyranid_owner, affected_turfs, wind_up_duration)
 	addtimer(CALLBACK(src, PROC_REF(do_ability), target_turf, primal_wrath_action?.ability_active), wind_up_duration)
 	add_cooldown(primal_wrath_action?.ability_active? EARTH_RISER_PRIMAL_WRATH_COOLDOWN : wind_up_duration + 0.1 SECONDS)
 	succeed_activate()
 
 /// Checks if there's any living mobs in the target turf, displaces them if so, then creates a new Earth Pillar and adds it to the list of active pillars.
-/datum/action/ability/activable/xeno/earth_riser/proc/do_ability(turf/target_turf, enhanced)
+/datum/action/ability/activable/tyranid/earth_riser/proc/do_ability(turf/target_turf, enhanced)
 	if(!target_turf)
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/new_pillar = new /obj/structure/earth_pillar(target_turf, xeno_owner, enhanced)
-	RegisterSignal(new_pillar, COMSIG_XENOABILITY_EARTH_PILLAR_THROW, PROC_REF(pillar_thrown))
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/new_pillar = new /obj/structure/earth_pillar(target_turf, tyranid_owner, enhanced)
+	RegisterSignal(new_pillar, COMSIG_TYRANIDABILITY_EARTH_PILLAR_THROW, PROC_REF(pillar_thrown))
 	RegisterSignal(new_pillar, COMSIG_QDELETING, PROC_REF(pillar_destroyed))
 	active_pillars += new_pillar
 	update_button_icon()
 	if(enhanced)
 		return
 	for(var/mob/living/affected_living in target_turf)
-		if(xeno_owner.issamexenohive(affected_living) || affected_living.stat == DEAD)
+		if(tyranid_owner.issametyranidhive(affected_living) || affected_living.stat == DEAD)
 			continue
-		affected_living.knockback(xeno_owner, EARTH_RISER_KNOCKBACK_DISTANCE, EARTH_RISER_KNOCKBACK_SPEED)
+		affected_living.knockback(tyranid_owner, EARTH_RISER_KNOCKBACK_DISTANCE, EARTH_RISER_KNOCKBACK_SPEED)
 
 ///Handles the cooldown when a pillar is actually thrown
-/datum/action/ability/activable/xeno/earth_riser/proc/pillar_thrown(obj/structure/earth_pillar/source)
+/datum/action/ability/activable/tyranid/earth_riser/proc/pillar_thrown(obj/structure/earth_pillar/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(source, COMSIG_XENOABILITY_EARTH_PILLAR_THROW)
+	UnregisterSignal(source, COMSIG_TYRANIDABILITY_EARTH_PILLAR_THROW)
 	deltimer(cooldown_timer)
 	cooldown_timer = null
 	add_cooldown()
 
 ///removes the pillar from active_pillars
-/datum/action/ability/activable/xeno/earth_riser/proc/pillar_destroyed(obj/structure/earth_pillar/source)
+/datum/action/ability/activable/tyranid/earth_riser/proc/pillar_destroyed(obj/structure/earth_pillar/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(source, list(COMSIG_QDELETING, COMSIG_XENOABILITY_EARTH_PILLAR_THROW))
+	UnregisterSignal(source, list(COMSIG_QDELETING, COMSIG_TYRANIDABILITY_EARTH_PILLAR_THROW))
 	active_pillars -= source
 
 /**
  * Changes the maximum amount of Earth Pillars that can be had.
  * If the user has more Earth Pillars active than the new maximum, it will destroy them, from oldest to newest, until meeting the new amount.
 */
-/datum/action/ability/activable/xeno/earth_riser/proc/change_maximum_pillars(amount)
+/datum/action/ability/activable/tyranid/earth_riser/proc/change_maximum_pillars(amount)
 	maximum_pillars = amount ? amount : null
 	if(!length(active_pillars))
 		return
@@ -774,35 +774,35 @@
 			pixel_x += 18
 			pixel_y -= 8
 
-/datum/action/ability/xeno_action/seismic_fracture
+/datum/action/ability/tyranid_action/seismic_fracture
 	name = "Seismic Fracture"
 	action_icon_state = "seismic_fracture"
-	action_icon = 'icons/Xeno/actions/behemoth.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/behemoth.dmi'
 	ability_cost = 50
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SEISMIC_FRACTURE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_SEISMIC_FRACTURE,
 	)
 
-/datum/action/ability/xeno_action/seismic_fracture/New(Target)
+/datum/action/ability/tyranid_action/seismic_fracture/New(Target)
 	. = ..()
 	desc = "Blast the earth around you, inflicting heavy damage within [SEISMIC_FRACTURE_ATTACK_RADIUS] tiles. Earth Pillars will repeat this ability around them if hit by it."
 
-/datum/action/ability/xeno_action/seismic_fracture/on_cooldown_finish()
+/datum/action/ability/tyranid_action/seismic_fracture/on_cooldown_finish()
 	owner.balloon_alert(owner, "[initial(name)] ready")
 	return ..()
 
-/datum/action/ability/xeno_action/seismic_fracture/action_activate()
+/datum/action/ability/tyranid_action/seismic_fracture/action_activate()
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/xeno_action/ready_charge/behemoth_roll/behemoth_roll_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/ready_charge/behemoth_roll]
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/tyranid_action/ready_charge/behemoth_roll/behemoth_roll_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/ready_charge/behemoth_roll]
 	if(behemoth_roll_action?.charge_ability_on)
 		behemoth_roll_action.charge_off()
-	var/owner_turf = get_turf(xeno_owner)
+	var/owner_turf = get_turf(tyranid_owner)
 	new /obj/effect/temp_visual/behemoth/stomp/east(owner_turf, owner.dir)
 	new /obj/effect/temp_visual/behemoth/crack(owner_turf, owner.dir)
 	playsound(owner_turf, 'sound/effects/alien/behemoth/stomp.ogg', 30, TRUE)
-	var/datum/action/ability/xeno_action/primal_wrath/primal_wrath_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/primal_wrath]
+	var/datum/action/ability/tyranid_action/primal_wrath/primal_wrath_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/primal_wrath]
 	do_ability(owner_turf, SEISMIC_FRACTURE_WIND_UP, primal_wrath_action?.ability_active)
 
 /**
@@ -814,7 +814,7 @@
  * * enhanced: Whether this is enhanced by Primal Wrath or not.
  * * earth_riser: If this proc was called by an Earth Pillar, its attack radius is reduced.
 */
-/datum/action/ability/xeno_action/seismic_fracture/proc/do_ability(turf/target_turf, wind_up, enhanced)
+/datum/action/ability/tyranid_action/seismic_fracture/proc/do_ability(turf/target_turf, wind_up, enhanced)
 	if(!target_turf)
 		return
 	var/list/turf/turfs_to_attack = filled_turfs(target_turf, SEISMIC_FRACTURE_ATTACK_RADIUS, include_edge = FALSE, bypass_window = TRUE, projectile = TRUE)
@@ -853,7 +853,7 @@
  * * range: The range to cover.
  * * iteration: The current iteration.
 */
-/datum/action/ability/xeno_action/seismic_fracture/proc/do_attack_extra(turf/origin_turf, list/turf/extra_turfs, list/turf/excepted_turfs, enhanced, range, iteration)
+/datum/action/ability/tyranid_action/seismic_fracture/proc/do_attack_extra(turf/origin_turf, list/turf/extra_turfs, list/turf/excepted_turfs, enhanced, range, iteration)
 	if(!origin_turf || !range || !iteration || iteration > range)
 		return
 	var/list/turfs_to_attack = list()
@@ -917,18 +917,18 @@
 			pixel_y += 6
 
 /atom/movable/vis_obj/wrath_block
-	icon = 'icons/Xeno/castes/behemoth.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/behemoth.dmi'
 	icon_state = "Behemoth Flashing"
 
-/datum/action/ability/xeno_action/primal_wrath
+/datum/action/ability/tyranid_action/primal_wrath
 	name = "Primal Wrath"
 	action_icon_state = "primal_wrath"
-	action_icon = 'icons/Xeno/actions/behemoth.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/behemoth.dmi'
 	desc = "Unleash your wrath. Enhances your abilities, changing their functionality and allowing them to apply a damage over time debuff."
 	cooldown_duration = 1 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY|ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PRIMAL_WRATH,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_PRIMAL_WRATH,
 	)
 	/// Whether Primal Wrath is active or not.
 	var/ability_active = FALSE
@@ -943,54 +943,54 @@
 	/// The overlay used when Primal Wrath blocks fatal damage.
 	var/atom/movable/vis_obj/block_overlay
 
-/datum/action/ability/xeno_action/primal_wrath/give_action(mob/living/L)
+/datum/action/ability/tyranid_action/primal_wrath/give_action(mob/living/L)
 	. = ..()
 	block_overlay = new(null, src)
 	owner.vis_contents += block_overlay
 	START_PROCESSING(SSprocessing, src)
-	RegisterSignals(owner, list(COMSIG_MOB_DEATH, COMSIG_XENOMORPH_EVOLVED, COMSIG_XENOMORPH_DEEVOLVED), PROC_REF(stop_ability))
-	RegisterSignals(owner, list(COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE), PROC_REF(taking_damage))
+	RegisterSignals(owner, list(COMSIG_MOB_DEATH, COMSIG_TYRANID_EVOLVED, COMSIG_TYRANID_DEEVOLVED), PROC_REF(stop_ability))
+	RegisterSignals(owner, list(COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE), PROC_REF(taking_damage))
 
-/datum/action/ability/xeno_action/primal_wrath/process()
+/datum/action/ability/tyranid_action/primal_wrath/process()
 	if(!owner)
 		return PROCESS_KILL
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(xeno_owner.hivenumber == XENO_HIVE_FALLEN)
-		if(xeno_owner.wrath_stored < xeno_owner.xeno_caste.wrath_max)
-			xeno_owner.wrath_stored = xeno_owner.xeno_caste.wrath_max
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(tyranid_owner.hivenumber == TYRANID_HIVE_FALLEN)
+		if(tyranid_owner.wrath_stored < tyranid_owner.tyranid_caste.wrath_max)
+			tyranid_owner.wrath_stored = tyranid_owner.tyranid_caste.wrath_max
 		return
 	if(decay_time > 0)
 		decay_time -= 1 SECONDS
 		return
 	if(ability_active)
-		if(xeno_owner.wrath_stored <= 0)
+		if(tyranid_owner.wrath_stored <= 0)
 			toggle_buff(FALSE)
 			return
-		xeno_owner.wrath_stored = clamp(xeno_owner.wrath_stored - round(xeno_owner.xeno_caste.wrath_max / PRIMAL_WRATH_ACTIVE_DECAY_DIVISION), 0, xeno_owner.xeno_caste.wrath_max)
+		tyranid_owner.wrath_stored = clamp(tyranid_owner.wrath_stored - round(tyranid_owner.tyranid_caste.wrath_max / PRIMAL_WRATH_ACTIVE_DECAY_DIVISION), 0, tyranid_owner.tyranid_caste.wrath_max)
 		return
-	if(xeno_owner.wrath_stored <= 0)
+	if(tyranid_owner.wrath_stored <= 0)
 		return
-	xeno_owner.wrath_stored = clamp(xeno_owner.wrath_stored - decay_amount, 0, xeno_owner.xeno_caste.wrath_max)
+	tyranid_owner.wrath_stored = clamp(tyranid_owner.wrath_stored - decay_amount, 0, tyranid_owner.tyranid_caste.wrath_max)
 	decay_amount = round(decay_amount * PRIMAL_WRATH_DECAY_MULTIPLIER)
 
-/datum/action/ability/xeno_action/primal_wrath/action_activate()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(xeno_owner.hivenumber != XENO_HIVE_FALLEN)
+/datum/action/ability/tyranid_action/primal_wrath/action_activate()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(tyranid_owner.hivenumber != TYRANID_HIVE_FALLEN)
 		if(ability_active || currently_roaring)
 			return
-		if(xeno_owner.wrath_stored < xeno_owner.xeno_caste.wrath_max - (xeno_owner.xeno_caste.wrath_max * 0.2))
-			xeno_owner.balloon_alert(xeno_owner, "Not enough Wrath")
+		if(tyranid_owner.wrath_stored < tyranid_owner.tyranid_caste.wrath_max - (tyranid_owner.tyranid_caste.wrath_max * 0.2))
+			tyranid_owner.balloon_alert(tyranid_owner, "Not enough Wrath")
 			return
-	else if(xeno_owner.hivenumber == XENO_HIVE_FALLEN && ability_active)
+	else if(tyranid_owner.hivenumber == TYRANID_HIVE_FALLEN && ability_active)
 		toggle_buff(FALSE)
 		return
 	toggle_buff(TRUE)
 	currently_roaring = TRUE
-	xeno_owner.status_flags |= GODMODE
-	xeno_owner.fortify = TRUE
-	xeno_owner.face_atom(target)
-	xeno_owner.set_canmove(FALSE)
-	var/owner_turf = get_turf(xeno_owner)
+	tyranid_owner.status_flags |= GODMODE
+	tyranid_owner.fortify = TRUE
+	tyranid_owner.face_atom(target)
+	tyranid_owner.set_canmove(FALSE)
+	var/owner_turf = get_turf(tyranid_owner)
 	playsound(owner_turf, 'sound/effects/alien/behemoth/primal_wrath_roar.ogg', 75, TRUE)
 	do_ability(owner_turf)
 	addtimer(CALLBACK(src, PROC_REF(end_ability)), PRIMAL_WRATH_ACTIVATION_DURATION)
@@ -1001,7 +1001,7 @@
  * Distorts the view of every valid living mob in range.
  * * origin_turf: The source location of this ability.
 */
-/datum/action/ability/xeno_action/primal_wrath/proc/do_ability()
+/datum/action/ability/tyranid_action/primal_wrath/proc/do_ability()
 	if(!currently_roaring)
 		return
 	new /obj/effect/temp_visual/shockwave/primal_wrath(get_turf(owner), 4, owner.dir)
@@ -1021,41 +1021,41 @@
 	addtimer(CALLBACK(src, PROC_REF(do_ability)), 0.1 SECONDS)
 
 /// Ends the ability.
-/datum/action/ability/xeno_action/primal_wrath/proc/end_ability()
+/datum/action/ability/tyranid_action/primal_wrath/proc/end_ability()
 	currently_roaring = FALSE
 	owner.status_flags &= ~GODMODE
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.fortify = FALSE
-	xeno_owner.set_canmove(TRUE)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.fortify = FALSE
+	tyranid_owner.set_canmove(TRUE)
 
 /**
  * Checks if the affected target should no longer be affected by the ability.
  * * affected_living: The affected living mob.
- * * xeno_source: The source of the effects.
+ * * tyranid_source: The source of the effects.
 */
-/datum/action/ability/xeno_action/primal_wrath/proc/ability_check(mob/living/affected_living, mob/living/carbon/xenomorph/xeno_source)
-	if(!affected_living || !xeno_source)
+/datum/action/ability/tyranid_action/primal_wrath/proc/ability_check(mob/living/affected_living, mob/living/carbon/tyranid/tyranid_source)
+	if(!affected_living || !tyranid_source)
 		return
 	var/atom/movable/screen/plane_master/floor/floor_plane = affected_living.hud_used.plane_masters["[FLOOR_PLANE]"]
 	var/atom/movable/screen/plane_master/game_world/world_plane = affected_living.hud_used.plane_masters["[GAME_PLANE]"]
 	if(!floor_plane.get_filter("primal_wrath") || !world_plane.get_filter("primal_wrath"))
 		return
-	if(!currently_roaring || get_dist(affected_living, xeno_source) > PRIMAL_WRATH_RANGE)
+	if(!currently_roaring || get_dist(affected_living, tyranid_source) > PRIMAL_WRATH_RANGE)
 		var/resolve_time = 0.2 SECONDS
 		animate(floor_plane.get_filter("primal_wrath"), size = 0, time = resolve_time, flags = ANIMATION_PARALLEL)
 		animate(world_plane.get_filter("primal_wrath"), size = 0, time = resolve_time, flags = ANIMATION_PARALLEL)
 		addtimer(CALLBACK(floor_plane, TYPE_PROC_REF(/datum, remove_filter), "primal_wrath"), resolve_time)
 		addtimer(CALLBACK(world_plane, TYPE_PROC_REF(/datum, remove_filter), "primal_wrath"), resolve_time)
 		return
-	addtimer(CALLBACK(src, PROC_REF(ability_check), affected_living, xeno_source), 0.1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(ability_check), affected_living, tyranid_source), 0.1 SECONDS)
 
 /// Changes the cost of all actions to use Wrath instead of plasma.
-/datum/action/ability/xeno_action/primal_wrath/proc/change_cost(datum/source, datum/action/source_action, action_cost)
+/datum/action/ability/tyranid_action/primal_wrath/proc/change_cost(datum/source, datum/action/source_action, action_cost)
 	SIGNAL_HANDLER
 	if(!ability_active || source_action == src)
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.wrath_stored = clamp(xeno_owner.wrath_stored - (action_cost / 2), 0, xeno_owner.xeno_caste.wrath_max)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.wrath_stored = clamp(tyranid_owner.wrath_stored - (action_cost / 2), 0, tyranid_owner.tyranid_caste.wrath_max)
 	return SUCCEED_ACTIVATE_CANCEL
 
 /**
@@ -1065,71 +1065,71 @@
  * * amount: The RAW amount of damage taken.
  * * amount_mod: If provided, this list includes modifiers applied to the damage. This, for example, can be useful for reducing the damage.
 */
-/datum/action/ability/xeno_action/primal_wrath/proc/taking_damage(datum/source, amount, list/amount_mod)
+/datum/action/ability/tyranid_action/primal_wrath/proc/taking_damage(datum/source, amount, list/amount_mod)
 	SIGNAL_HANDLER
 	if(amount <= 0 || owner.stat || owner.lying_angle)
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 	if(ability_active)
-		if(amount >= xeno_owner.health)
-			var/damage_amount = (amount - xeno_owner.health)
-			xeno_owner.wrath_stored = clamp(xeno_owner.wrath_stored - damage_amount, 0, xeno_owner.xeno_caste.wrath_max)
+		if(amount >= tyranid_owner.health)
+			var/damage_amount = (amount - tyranid_owner.health)
+			tyranid_owner.wrath_stored = clamp(tyranid_owner.wrath_stored - damage_amount, 0, tyranid_owner.tyranid_caste.wrath_max)
 			amount_mod += damage_amount + 1
-		if(xeno_owner.wrath_stored <= 0)
+		if(tyranid_owner.wrath_stored <= 0)
 			toggle_buff(FALSE)
 		return
 	decay_time = initial(decay_time)
 	decay_amount = initial(decay_amount)
-	if(xeno_owner.wrath_stored < xeno_owner.xeno_caste.wrath_max)
-		xeno_owner.wrath_stored = clamp(xeno_owner.wrath_stored + (amount * PRIMAL_WRATH_GAIN_MULTIPLIER), 0, xeno_owner.xeno_caste.wrath_max)
+	if(tyranid_owner.wrath_stored < tyranid_owner.tyranid_caste.wrath_max)
+		tyranid_owner.wrath_stored = clamp(tyranid_owner.wrath_stored + (amount * PRIMAL_WRATH_GAIN_MULTIPLIER), 0, tyranid_owner.tyranid_caste.wrath_max)
 
 /**
  * Toggles the buff, which increases the owner's damage based on a multiplier, and gives them a particle effect.
  * * toggle: Whether to toggle it on or off.
  * * multiplier: The multiplier applied to the owner's damage.
 */
-/datum/action/ability/xeno_action/primal_wrath/proc/toggle_buff(toggle)
+/datum/action/ability/tyranid_action/primal_wrath/proc/toggle_buff(toggle)
 	ability_active = !ability_active
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/activable/xeno/landslide/landslide_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/landslide]
-	var/datum/action/ability/activable/xeno/earth_riser/earth_riser_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/earth_riser]
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/activable/tyranid/landslide/landslide_action = tyranid_owner.actions_by_path[/datum/action/ability/activable/tyranid/landslide]
+	var/datum/action/ability/activable/tyranid/earth_riser/earth_riser_action = tyranid_owner.actions_by_path[/datum/action/ability/activable/tyranid/earth_riser]
 	if(!toggle)
 		set_toggle(FALSE)
 		QDEL_NULL(particle_holder)
 		decay_time = initial(decay_time)
-		xeno_owner.xeno_melee_damage_modifier = initial(xeno_owner.xeno_melee_damage_modifier)
-		xeno_owner.remove_movespeed_modifier(MOVESPEED_ID_BEHEMOTH_PRIMAL_WRATH)
+		tyranid_owner.tyranid_melee_damage_modifier = initial(tyranid_owner.tyranid_melee_damage_modifier)
+		tyranid_owner.remove_movespeed_modifier(MOVESPEED_ID_BEHEMOTH_PRIMAL_WRATH)
 		landslide_action?.change_maximum_charges(initial(landslide_action.maximum_charges))
 		earth_riser_action?.cooldown_duration = initial(earth_riser_action?.cooldown_duration)
 		earth_riser_action?.change_maximum_pillars(initial(earth_riser_action.maximum_pillars))
 		owner.balloon_alert(owner, "Primal Wrath ended")
-		UnregisterSignal(xeno_owner, COMSIG_ABILITY_SUCCEED_ACTIVATE)
+		UnregisterSignal(tyranid_owner, COMSIG_ABILITY_SUCCEED_ACTIVATE)
 		return
 	set_toggle(TRUE)
 	decay_time = 4 SECONDS
 	decay_amount = initial(decay_amount)
-	particle_holder = new(xeno_owner, /particles/primal_wrath)
+	particle_holder = new(tyranid_owner, /particles/primal_wrath)
 	particle_holder.pixel_x = 3
 	particle_holder.pixel_y = -20
-	xeno_owner.xeno_melee_damage_modifier = PRIMAL_WRATH_DAMAGE_MULTIPLIER
-	xeno_owner.add_movespeed_modifier(MOVESPEED_ID_BEHEMOTH_PRIMAL_WRATH, TRUE, 0, NONE, TRUE, PRIMAL_WRATH_SPEED_BONUS)
+	tyranid_owner.tyranid_melee_damage_modifier = PRIMAL_WRATH_DAMAGE_MULTIPLIER
+	tyranid_owner.add_movespeed_modifier(MOVESPEED_ID_BEHEMOTH_PRIMAL_WRATH, TRUE, 0, NONE, TRUE, PRIMAL_WRATH_SPEED_BONUS)
 	landslide_action?.change_maximum_charges(PRIMAL_WRATH_LANDSLIDE_CHARGES)
 	landslide_action?.clear_cooldown()
 	earth_riser_action?.cooldown_duration = EARTH_RISER_PRIMAL_WRATH_COOLDOWN
 	earth_riser_action?.change_maximum_pillars()
 	earth_riser_action?.clear_cooldown()
-	var/datum/action/ability/xeno_action/seismic_fracture/seismic_fracture_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/seismic_fracture]
+	var/datum/action/ability/tyranid_action/seismic_fracture/seismic_fracture_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/seismic_fracture]
 	seismic_fracture_action?.clear_cooldown()
-	RegisterSignal(xeno_owner, COMSIG_ABILITY_SUCCEED_ACTIVATE, PROC_REF(change_cost))
+	RegisterSignal(tyranid_owner, COMSIG_ABILITY_SUCCEED_ACTIVATE, PROC_REF(change_cost))
 
 /// Stops processing, and unregisters related signals.
-/datum/action/ability/xeno_action/primal_wrath/proc/stop_ability(datum/source)
+/datum/action/ability/tyranid_action/primal_wrath/proc/stop_ability(datum/source)
 	SIGNAL_HANDLER
 	if(ability_active)
 		toggle_buff(FALSE)
 	STOP_PROCESSING(SSprocessing, src)
 	if(owner)
-		UnregisterSignal(owner, list(COMSIG_QDELETING, COMSIG_MOB_DEATH, COMSIG_XENOMORPH_EVOLVED, COMSIG_XENOMORPH_DEEVOLVED, COMSIG_XENOMORPH_BRUTE_DAMAGE, COMSIG_XENOMORPH_BURN_DAMAGE))
+		UnregisterSignal(owner, list(COMSIG_QDELETING, COMSIG_MOB_DEATH, COMSIG_TYRANID_EVOLVED, COMSIG_TYRANID_DEEVOLVED, COMSIG_TYRANID_BRUTE_DAMAGE, COMSIG_TYRANID_BURN_DAMAGE))
 
 
 // ***************************************
@@ -1208,19 +1208,19 @@
 	soft_armor = list(MELEE = 25, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 0, BIO = 100, FIRE = 100, ACID = 0)
 	destroy_sound = 'sound/effects/alien/behemoth/earth_pillar_destroyed.ogg'
 	coverage = 128
-	/// The xeno owner of this object.
-	var/mob/living/carbon/xenomorph/xeno_owner
+	/// The tyranid owner of this object.
+	var/mob/living/carbon/tyranid/tyranid_owner
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
-	/// The amount of times a xeno needs to attack this to destroy it.
+	/// The amount of times a tyranid needs to attack this to destroy it.
 	var/attacks_to_destroy = 2
 	/// The amount of times an Earth Pillar flashes before executing its interaction with Seismic Fracture.
 	var/warning_flashes = 2
 
-/obj/structure/earth_pillar/Initialize(mapload, mob/living/carbon/xenomorph/new_owner, enhanced)
+/obj/structure/earth_pillar/Initialize(mapload, mob/living/carbon/tyranid/new_owner, enhanced)
 	. = ..()
-	xeno_owner = new_owner
-	RegisterSignal(xeno_owner, COMSIG_QDELETING, PROC_REF(owner_deleted))
+	tyranid_owner = new_owner
+	RegisterSignal(tyranid_owner, COMSIG_QDELETING, PROC_REF(owner_deleted))
 	if(enhanced)
 		icon_state = "[icon_state]e"
 		var/random_x = generator("num", -100, 100, NORMAL_RAND)
@@ -1239,7 +1239,7 @@
 /obj/structure/earth_pillar/Destroy()
 	playsound(loc, 'sound/effects/alien/behemoth/earth_pillar_destroyed.ogg', 40, TRUE)
 	new /obj/effect/temp_visual/behemoth/earth_pillar/broken(loc)
-	xeno_owner = null
+	tyranid_owner = null
 	return ..()
 
 /obj/structure/earth_pillar/update_icon_state()
@@ -1259,33 +1259,33 @@
 	playsound(src, SFX_BEHEMOTH_EARTH_PILLAR_HIT, 40)
 	new /obj/effect/temp_visual/behemoth/landslide/hit(get_turf(src))
 
-// Attacking an Earth Pillar as a xeno has a few possible interactions, based on intent:
-// - Harm intent will reduce a counter in this structure. When the counter hits zero, the structure is destroyed, meaning it is much easier to break it as a xeno.
+// Attacking an Earth Pillar as a tyranid has a few possible interactions, based on intent:
+// - Harm intent will reduce a counter in this structure. When the counter hits zero, the structure is destroyed, meaning it is much easier to break it as a tyranid.
 // - Help intent as a Behemoth will trigger an easter egg. Does nothing, just fluff.
-/obj/structure/earth_pillar/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/structure/earth_pillar/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	var/current_turf = get_turf(src)
-	switch(xeno_attacker.a_intent)
+	switch(tyranid_attacker.a_intent)
 		if(INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 			if(attacks_to_destroy <= 1)
-				xeno_attacker.do_attack_animation(src)
-				xeno_attacker.balloon_alert(xeno_attacker, "Destroyed")
+				tyranid_attacker.do_attack_animation(src)
+				tyranid_attacker.balloon_alert(tyranid_attacker, "Destroyed")
 				new /obj/effect/temp_visual/behemoth/landslide/hit(current_turf)
 				qdel(src)
 				return TRUE
 			attacks_to_destroy--
-			xeno_attacker.do_attack_animation(src)
+			tyranid_attacker.do_attack_animation(src)
 			do_jitter_animation(jitter_loops = 1)
 			playsound(src, SFX_BEHEMOTH_EARTH_PILLAR_HIT, 40)
-			xeno_attacker.balloon_alert(xeno_attacker, "Attack [attacks_to_destroy] more time(s) to destroy")
+			tyranid_attacker.balloon_alert(tyranid_attacker, "Attack [attacks_to_destroy] more time(s) to destroy")
 			new /obj/effect/temp_visual/behemoth/landslide/hit(current_turf)
 			return TRUE
 		if(INTENT_HELP)
-			if(isxenobehemoth(xeno_attacker))
-				xeno_attacker.do_attack_animation(src)
+			if(istyranidbehemoth(tyranid_attacker))
+				tyranid_attacker.do_attack_animation(src)
 				do_jitter_animation(jitter_loops = 1)
 				playsound(src, 'sound/effects/alien/behemoth/earth_pillar_eating.ogg', 30, TRUE)
-				xeno_attacker.visible_message(span_xenowarning("\The [xeno_attacker] eats away at the [src.name]!"), \
-				span_xenonotice(pick(
+				tyranid_attacker.visible_message(span_tyranidwarning("\The [tyranid_attacker] eats away at the [src.name]!"), \
+				span_tyranidnotice(pick(
 					"We eat away at the stone. It tastes good, as expected of our primary diet.",
 					"Mmmmm... Delicious rock. A fitting meal for the hardiest of creatures.",
 					"This boulder -- its flavor fills us with glee. Our palate is thoroughly satisfied.",
@@ -1312,11 +1312,11 @@
 /obj/structure/earth_pillar/MouseDrop(atom/over_atom)
 	throw_pillar(over_atom)
 
-/// Called when the registered xeno_owner is deleted and cleans up the var.
+/// Called when the registered tyranid_owner is deleted and cleans up the var.
 /obj/structure/earth_pillar/proc/owner_deleted()
 	SIGNAL_HANDLER
-	UnregisterSignal(xeno_owner, COMSIG_QDELETING)
-	xeno_owner = null
+	UnregisterSignal(tyranid_owner, COMSIG_QDELETING)
+	tyranid_owner = null
 
 /// Calls update_appearance, this exists to discard the arguments we get from the signals.
 /obj/structure/earth_pillar/proc/call_update_icon_state()
@@ -1325,14 +1325,14 @@
 
 /// Deletes the pillar and creates a projectile on the same tile, to be fired at the target atom.
 /obj/structure/earth_pillar/proc/throw_pillar(atom/target_atom, landslide)
-	if(!isxeno(usr) || !in_range(src, usr) || target_atom == src || warning_flashes < initial(warning_flashes))
+	if(!istyranid(usr) || !in_range(src, usr) || target_atom == src || warning_flashes < initial(warning_flashes))
 		return
-	SEND_SIGNAL(src, COMSIG_XENOABILITY_EARTH_PILLAR_THROW)
+	SEND_SIGNAL(src, COMSIG_TYRANIDABILITY_EARTH_PILLAR_THROW)
 	var/source_turf = get_turf(src)
 	playsound(source_turf, SFX_BEHEMOTH_EARTH_PILLAR_HIT, 40)
 	new /obj/effect/temp_visual/behemoth/landslide/hit(source_turf)
 	qdel(src)
-	var/datum/ammo/xeno/earth_pillar/projectile = landslide? GLOB.ammo_list[/datum/ammo/xeno/earth_pillar/landslide] : GLOB.ammo_list[/datum/ammo/xeno/earth_pillar]
+	var/datum/ammo/tyranid/earth_pillar/projectile = landslide? GLOB.ammo_list[/datum/ammo/tyranid/earth_pillar/landslide] : GLOB.ammo_list[/datum/ammo/tyranid/earth_pillar]
 	var/obj/projectile/new_projectile = new /obj/projectile(source_turf)
 	new_projectile.generate_bullet(projectile)
 	new_projectile.fire_at(get_turf(target_atom), usr, source_turf, new_projectile.ammo.max_range)
@@ -1342,7 +1342,7 @@
 /obj/structure/earth_pillar/proc/call_area_attack()
 	if(warning_flashes <= 0)
 		new /obj/effect/temp_visual/behemoth/earth_pillar/destroyed(loc)
-		var/datum/action/ability/activable/xeno/earth_riser/earth_riser_action = xeno_owner?.actions_by_path[/datum/action/ability/activable/xeno/earth_riser]
+		var/datum/action/ability/activable/tyranid/earth_riser/earth_riser_action = tyranid_owner?.actions_by_path[/datum/action/ability/activable/tyranid/earth_riser]
 		earth_riser_action?.add_cooldown()
 		qdel(src)
 		return
@@ -1353,25 +1353,25 @@
 
 // Earth Riser is capable of interacting with existing Earth Pillars to fire a projectile.
 // See the Earth Riser ability for specifics.
-/datum/ammo/xeno/earth_pillar
+/datum/ammo/tyranid/earth_pillar
 	name = "earth pillar"
 	icon_state = "earth_pillar"
 	ping = null
 	bullet_color = COLOR_LIGHT_ORANGE
-	ammo_behavior_flags = AMMO_XENO|AMMO_SKIPS_ALIENS
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_SKIPS_ALIENS
 	shell_speed = 1
 	max_range = 10
 	damage_falloff = 0
 	damage_type = BRUTE
 	armor_type = MELEE
 
-/datum/ammo/xeno/earth_pillar/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	return rock_broke(target_turf, proj)
 
-/datum/ammo/xeno/earth_pillar/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	return rock_broke(target_turf, proj)
 
-/datum/ammo/xeno/earth_pillar/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	if(istype(target_obj, /obj/structure/reagent_dispensers/fueltank))
 		var/obj/structure/reagent_dispensers/fueltank/hit_tank = target_obj
 		hit_tank.explode()
@@ -1379,35 +1379,35 @@
 		return on_hit_anything(get_turf(target_obj), proj)
 	return rock_broke(get_turf(target_obj), proj)
 
-/datum/ammo/xeno/earth_pillar/on_hit_mob(mob/target_mob, obj/projectile/proj)
-	if(!isxeno(proj.firer) || !isliving(target_mob))
+/datum/ammo/tyranid/earth_pillar/on_hit_mob(mob/target_mob, obj/projectile/proj)
+	if(!istyranid(proj.firer) || !isliving(target_mob))
 		return
-	var/mob/living/carbon/xenomorph/xeno_firer = proj.firer
+	var/mob/living/carbon/tyranid/tyranid_firer = proj.firer
 	var/mob/living/hit_living = target_mob
-	if(xeno_firer.issamexenohive(hit_living) || hit_living.stat == DEAD)
+	if(tyranid_firer.issametyranidhive(hit_living) || hit_living.stat == DEAD)
 		return on_hit_anything(get_turf(target_mob), proj)
 	step_away(hit_living, proj, 1, 1)
 	return on_hit_anything(get_turf(target_mob), proj)
 
 /// VFX + SFX for when the rock doesn't hit anything.
-/datum/ammo/xeno/earth_pillar/proc/rock_broke(turf/hit_turf, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/proc/rock_broke(turf/hit_turf, obj/projectile/proj)
 	new /obj/effect/temp_visual/behemoth/earth_pillar/broken(hit_turf)
 	playsound(hit_turf, 'sound/effects/alien/behemoth/earth_pillar_destroyed.ogg', 30, TRUE)
 
 /// Does some stuff if the rock DOES hit something.
-/datum/ammo/xeno/earth_pillar/proc/on_hit_anything(turf/hit_turf, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/proc/on_hit_anything(turf/hit_turf, obj/projectile/proj)
 	playsound(hit_turf, 'sound/effects/alien/behemoth/earth_pillar_destroyed.ogg', 40, TRUE)
 	new /obj/effect/temp_visual/behemoth/earth_pillar/destroyed(hit_turf)
 	var/list/turf/affected_turfs = filled_turfs(hit_turf, EARTH_PILLAR_SPREAD_RADIUS, include_edge = FALSE, bypass_window = TRUE, projectile = TRUE)
 	behemoth_area_attack(proj.firer, affected_turfs, damage_multiplier = EARTH_PILLAR_SPREAD_DAMAGE_MULTIPLIER)
 
-/datum/ammo/xeno/earth_pillar/landslide/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/landslide/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	return on_hit_anything(target_turf, proj)
 
-/datum/ammo/xeno/earth_pillar/landslide/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/landslide/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	return on_hit_anything(target_turf, proj)
 
-/datum/ammo/xeno/earth_pillar/landslide/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/earth_pillar/landslide/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	. = ..()
 	return on_hit_anything(get_turf(target_obj), proj)
 
@@ -1426,10 +1426,10 @@
 /proc/behemoth_area_attack(owner, list/turf/affected_turfs, enhanced, damage_multiplier = 1.5, paralyze_duration = 0.8 SECONDS)
 	if(!owner || !length(affected_turfs))
 		CRASH("behemoth_area_attack([owner], [length(affected_turfs)], ...) called with improper arguments")
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/attack_damage = (xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier) * damage_multiplier
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/attack_damage = (tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier) * damage_multiplier
 	for(var/turf/affected_turf AS in affected_turfs)
 		if(isclosedturf(affected_turf))
 			continue
@@ -1440,7 +1440,7 @@
 		for(var/atom/movable/affected_atom AS in affected_turf)
 			if(isliving(affected_atom))
 				var/mob/living/affected_living = affected_atom
-				if(xeno_owner.issamexenohive(affected_living) || affected_living.stat == DEAD || CHECK_BITFIELD(affected_living.status_flags, INCORPOREAL|GODMODE))
+				if(tyranid_owner.issametyranidhive(affected_living) || affected_living.stat == DEAD || CHECK_BITFIELD(affected_living.status_flags, INCORPOREAL|GODMODE))
 					continue
 				affected_living.emote("scream")
 				shake_camera(affected_living, 1, 0.8)
@@ -1457,8 +1457,8 @@
 					affected_pillar.call_area_attack()
 					var/list/turf/spread_turfs = filled_turfs(affected_pillar.loc, EARTH_PILLAR_SPREAD_RADIUS, include_edge = FALSE, bypass_window = TRUE, projectile = TRUE)
 					var/wind_up_duration = initial(affected_pillar.warning_flashes) * 10
-					do_warning(xeno_owner, spread_turfs, wind_up_duration)
-					addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(behemoth_area_attack), xeno_owner, spread_turfs, enhanced), wind_up_duration)
+					do_warning(tyranid_owner, spread_turfs, wind_up_duration)
+					addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(behemoth_area_attack), tyranid_owner, spread_turfs, enhanced), wind_up_duration)
 					continue
 				if(isvehicle(affected_atom) || ishitbox(affected_atom))
 					var/obj/obj_victim = affected_atom
@@ -1476,14 +1476,14 @@
 /proc/do_warning(owner, list/turf/target_turfs, duration)
 	if(!owner || !length(target_turfs) || !duration)
 		CRASH("do_warning([owner], [length(target_turfs)], [duration]) called with improper arguments")
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/xeno_action/primal_wrath/primal_wrath_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/primal_wrath]
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/tyranid_action/primal_wrath/primal_wrath_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/primal_wrath]
 	var/warning_type = primal_wrath_action?.ability_active? /obj/effect/temp_visual/behemoth/warning/enhanced : /obj/effect/temp_visual/behemoth/warning
 	for(var/turf/target_turf AS in target_turfs)
 		new warning_type(target_turf, duration)
 		playsound(target_turf, 'sound/effects/alien/behemoth/rumble.ogg', 15, TRUE)
 		for(var/mob/living/target_living in target_turf)
-			if(xeno_owner.issamexenohive(target_living) || target_living.stat == DEAD || CHECK_BITFIELD(target_living.status_flags, INCORPOREAL|GODMODE))
+			if(tyranid_owner.issametyranidhive(target_living) || target_living.stat == DEAD || CHECK_BITFIELD(target_living.status_flags, INCORPOREAL|GODMODE))
 				continue

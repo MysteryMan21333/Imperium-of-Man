@@ -48,9 +48,9 @@
 /mob/dead/observer/can_wait_in_larva_queue()
 	return TRUE
 
-/mob/living/carbon/xenomorph/can_wait_in_larva_queue()
+/mob/living/carbon/tyranid/can_wait_in_larva_queue()
 	. = FALSE
-	if (xeno_caste.tier == XENO_TIER_MINION)
+	if (tyranid_caste.tier == TYRANID_TIER_MINION)
 		return TRUE
 
 /**
@@ -67,7 +67,7 @@
 			action.set_toggle(TRUE)
 	else
 		// Leave the queue since they logged into an ineligible mob
-		var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
+		var/datum/hive_status/normal/HS = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 		HS.remove_from_larva_candidate_queue(waiter)
 
 /**
@@ -91,9 +91,9 @@
 /datum/component/larva_queue/proc/set_queue_position(waiter, new_position)
 	SIGNAL_HANDLER
 	position = new_position
-	var/datum/hive_status/the_hive = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/hive_status/the_hive = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 	if(!the_hive)
-		stack_trace("Where's the main hive? (XENO_HIVE_NORMAL NOT FOUND)")
+		stack_trace("Where's the main hive? (TYRANID_HIVE_NORMAL NOT FOUND)")
 		return
 	action.button.maptext = MAPTEXT_TINY_UNICODE(span_center("[position]/[LAZYLEN(the_hive.candidates)]"))
 	action.button.maptext_x = 1
@@ -117,7 +117,7 @@
 	return FALSE
 
 /datum/action/join_larva_queue/action_activate()
-	var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/hive_status/normal/HS = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 	if(HS.add_to_larva_candidate_queue(owner.client))
 		set_toggle(TRUE)
 		return

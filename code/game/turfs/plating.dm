@@ -6,7 +6,7 @@
 	intact_tile = FALSE
 	shoefootstep = FOOTSTEP_PLATING
 	barefootstep = FOOTSTEP_HARD
-	mediumxenofootstep = FOOTSTEP_PLATING
+	mediumtyranidfootstep = FOOTSTEP_PLATING
 
 /turf/open/floor/plating/broken_states()
 	return pick("platingdmg1", "platingdmg2", "platingdmg3")
@@ -79,7 +79,7 @@
 	var/covered = TRUE
 	shoefootstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
-	mediumxenofootstep = FOOTSTEP_CATWALK
+	mediumtyranidfootstep = FOOTSTEP_CATWALK
 
 
 /turf/open/floor/plating/plating_catwalk/Initialize(mapload)
@@ -136,7 +136,7 @@
 	desc = "Cats really don't like these things."
 	shoefootstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
-	mediumxenofootstep = FOOTSTEP_CATWALK
+	mediumtyranidfootstep = FOOTSTEP_CATWALK
 	layer = CATWALK_LAYER
 
 /turf/open/floor/plating/catwalk/ex_act(severity)

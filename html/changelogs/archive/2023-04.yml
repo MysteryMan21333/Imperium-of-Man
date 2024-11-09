@@ -64,7 +64,7 @@
   - balance: Barricade repair time and fuel use cut in half. Repair amount reduced
       from 150 to 85
   Pariah919:
-  - bugfix: ICC and some SoM armors not having their onmobs show up properly.
+  - bugfix: ICC and some Chaos armors not having their onmobs show up properly.
   ivanmixo:
   - bugfix: Sentinel spit now travels properly instead of stopping at the tile you
       aimed

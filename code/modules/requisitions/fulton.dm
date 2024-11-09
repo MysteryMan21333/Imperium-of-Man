@@ -1,12 +1,12 @@
 /obj/item/fulton_extraction_pack
 	name = "fulton extraction pack"
 	desc = "A balloon that can be used to extract equipment or personnel. Anything not bolted down can be moved."
-	icon = 'icons/obj/items/fulton.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/fulton.dmi'
 	icon_state = "extraction_pack"
 	worn_icon_state = "fulton"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_NORMAL
 	tool_behaviour = TOOL_FULTON
@@ -119,7 +119,7 @@
 
 
 //Overrides.
-/mob/living/carbon/xenomorph/fulton_act(mob/living/user, obj/item/I)
+/mob/living/carbon/tyranid/fulton_act(mob/living/user, obj/item/I)
 	if(!SSpoints)
 		balloon_alert(user, "Failed to link with destination")
 		return TRUE
@@ -239,7 +239,7 @@
 /obj/structure/fulton_extraction_point
 	name = "fulton recovery beacon"
 	desc = "A beacon for the fulton recovery system. Activate a pack in your hand to link it to a beacon."
-	icon = 'icons/obj/items/fulton.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/fulton.dmi'
 	icon_state = "extraction_point"
 	anchored = TRUE
 	density = FALSE

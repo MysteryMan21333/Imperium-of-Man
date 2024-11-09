@@ -21,36 +21,36 @@
 	smoke.start()
 	qdel(src)
 
-/obj/item/explosive/grenade/smokebomb/som
+/obj/item/explosive/grenade/smokebomb/chaos
 	name = "\improper S30-S smoke grenade"
-	desc = "The S30-S is a small, but powerful smoke grenade. Based off the S30 platform shared by most SOM grenades. It is set to detonate in 2 seconds."
+	desc = "The S30-S is a small, but powerful smoke grenade. Based off the S30 platform shared by most CHAOS grenades. It is set to detonate in 2 seconds."
 	icon_state = "grenade_smoke_som"
 	worn_icon_state = "grenade_smoke_som"
 
 /obj/item/explosive/grenade/smokebomb/neuro
 	name = "\improper M40-N Neurotoxin smoke grenade"
-	desc = "A smoke grenade containing a concentrated neurotoxin developed by Nanotrasen, supposedly derived from xenomorphs. Banned in some sectors as a chemical weapon, but classed as a less lethal riot control tool by the TGMC."
+	desc = "A smoke grenade containing a concentrated neurotoxin developed by Nanotrasen, supposedly derived from tyranids. Banned in some sectors as a chemical weapon, but classed as a less lethal riot control tool by the TGMC."
 	icon_state = "grenade_neuro"
 	worn_icon_state = "grenade_neuro"
 	hud_state = "grenade_neuro"
 	det_time = 4 SECONDS
 	dangerous = TRUE
-	smoketype = /datum/effect_system/smoke_spread/xeno/neuro/medium
+	smoketype = /datum/effect_system/smoke_spread/tyranid/neuro/medium
 
 /obj/item/explosive/grenade/smokebomb/acid
 	name = "\improper M40-A Acid smoke grenade"
-	desc = "A grenade set to release a cloud of extremely acidic smoke developed by Nanotrasen, supposedly derived from xenomorphs. Has a shiny acid resistant shell. Its use is considered a warcrime under several treaties, none of which Terra Gov is a signatory to."
+	desc = "A grenade set to release a cloud of extremely acidic smoke developed by Nanotrasen, supposedly derived from tyranids. Has a shiny acid resistant shell. Its use is considered a warcrime under several treaties, none of which Terra Gov is a signatory to."
 	icon_state = "grenade_acid"
 	worn_icon_state = "grenade_acid"
 	hud_state = "grenade_acid"
 	det_time = 4 SECONDS
 	dangerous = TRUE
-	smoketype = /datum/effect_system/smoke_spread/xeno/acid/opaque
+	smoketype = /datum/effect_system/smoke_spread/tyranid/acid/opaque
 	smokeradius = 5
 
 /obj/item/explosive/grenade/smokebomb/satrapine
 	name = "satrapine smoke grenade"
-	desc = "A smoke grenade containing a nerve agent that can debilitate victims with severe pain, while purging common painkillers. Employed heavily by the SOM."
+	desc = "A smoke grenade containing a nerve agent that can debilitate victims with severe pain, while purging common painkillers. Employed heavily by the CHAOS."
 	icon_state = "grenade_nerve"
 	worn_icon_state = "grenade_nerve"
 	hud_state = "grenade_nerve"
@@ -75,7 +75,7 @@
 	smoke_duration = 11
 	smokeradius = 7
 
-/obj/item/explosive/grenade/smokebomb/cloak/som
+/obj/item/explosive/grenade/smokebomb/cloak/chaos
 	name = "\improper S30-C smoke grenade"
 	desc = "A sophisticated version of the S30-S with a slighty improved smoke screen payload. It's set to detonate in 2 seconds."
 	icon_state = "grenade_cloak_som"

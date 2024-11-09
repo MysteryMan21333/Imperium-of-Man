@@ -9,7 +9,7 @@
 
 /turf/closed/interior/apc
 	name = "\improper Athena tank interior"
-	icon = 'icons/obj/armored/3x3/apc_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/apc_interior.dmi'
 
 /turf/closed/interior/apc/one
 	icon_state = "apc_interior_1"
@@ -49,7 +49,7 @@
 
 /turf/open/interior/apc
 	name = "\improper Athena tank interior"
-	icon = 'icons/obj/armored/3x3/apc_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/apc_interior.dmi'
 
 /turf/open/interior/apc/eight
 	icon_state = "apc_interior_8"

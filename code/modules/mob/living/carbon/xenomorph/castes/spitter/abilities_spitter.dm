@@ -1,14 +1,14 @@
 // ***************************************
 // *********** Acid spray
 // ***************************************
-/datum/action/ability/activable/xeno/spray_acid/line
+/datum/action/ability/activable/tyranid/spray_acid/line
 	name = "Spray Acid"
 	desc = "Spray a line of dangerous acid at your target."
 	ability_cost = 250
 	cooldown_duration = 30 SECONDS
 
-/datum/action/ability/activable/xeno/spray_acid/line/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/spray_acid/line/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/X = owner
 	var/turf/target = get_turf(A)
 
 	if(!istype(target)) //Something went horribly wrong. Clicked off edge of map probably
@@ -33,7 +33,7 @@
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "spitter_acid_sprays")
 
 
-/datum/action/ability/activable/xeno/spray_acid/line/proc/spray_turfs(list/turflist)
+/datum/action/ability/activable/tyranid/spray_acid/line/proc/spray_turfs(list/turflist)
 	set waitfor = FALSE
 
 	if(isnull(turflist))
@@ -91,27 +91,27 @@
 		prev_turf = T
 		sleep(0.2 SECONDS)
 
-/datum/action/ability/activable/xeno/spray_acid/line/on_cooldown_finish() //Give acid spray a proper cooldown notification
-	to_chat(owner, span_xenodanger("Our dermal pouches bloat with fresh acid; we can use acid spray again."))
+/datum/action/ability/activable/tyranid/spray_acid/line/on_cooldown_finish() //Give acid spray a proper cooldown notification
+	to_chat(owner, span_tyraniddanger("Our dermal pouches bloat with fresh acid; we can use acid spray again."))
 	owner.playsound_local(owner, 'sound/voice/alien/drool2.ogg', 25, 0, 1)
 	return ..()
 
 // ***************************************
 // *********** Scatterspit
 // ***************************************
-/datum/action/ability/activable/xeno/scatter_spit
+/datum/action/ability/activable/tyranid/scatter_spit
 	name = "Scatter Spit"
 	action_icon_state = "scatter_spit"
-	action_icon = 'icons/Xeno/actions/spitter.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/spitter.dmi'
 	desc = "Spits a spread of acid projectiles that splatter on the ground."
 	ability_cost = 280
 	cooldown_duration = 5 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SCATTER_SPIT,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_SCATTER_SPIT,
 	)
 
-/datum/action/ability/activable/xeno/scatter_spit/use_ability(atom/target)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/scatter_spit/use_ability(atom/target)
+	var/mob/living/carbon/tyranid/X = owner
 
 	if(!do_after(X, 0.5 SECONDS, NONE, target, BUSY_ICON_DANGER))
 		return fail_activate()
@@ -119,7 +119,7 @@
 	//Shoot at the thing
 	playsound(X.loc, 'sound/effects/blobattack.ogg', 50, 1)
 
-	var/datum/ammo/xeno/acid/heavy/scatter/scatter_spit = GLOB.ammo_list[/datum/ammo/xeno/acid/heavy/scatter]
+	var/datum/ammo/tyranid/acid/heavy/scatter/scatter_spit = GLOB.ammo_list[/datum/ammo/tyranid/acid/heavy/scatter]
 
 	var/obj/projectile/newspit = new /obj/projectile(get_turf(X))
 	newspit.generate_bullet(scatter_spit, scatter_spit.damage * SPIT_UPGRADE_BONUS(X))
@@ -133,7 +133,7 @@
 	GLOB.round_statistics.spitter_scatter_spits++ //Statistics
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "spitter_scatter_spits")
 
-/datum/action/ability/activable/xeno/scatter_spit/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("Our auxiliary sacks fill to bursting; we can use scatter spit again."))
+/datum/action/ability/activable/tyranid/scatter_spit/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("Our auxiliary sacks fill to bursting; we can use scatter spit again."))
 	owner.playsound_local(owner, 'sound/voice/alien/drool1.ogg', 25, 0, 1)
 	return ..()

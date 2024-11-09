@@ -11,7 +11,7 @@
 */
 
 /obj/item/storage/donut_box
-	icon = 'icons/obj/items/food/donuts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/donuts.dmi'
 	icon_state = "donutbox"
 	name = "\improper Yum! donuts"
 	desc = "A box of mouth watering \"<i>Yum!</i>\" brand donuts."
@@ -52,7 +52,7 @@
 	var/i = 0
 	for(var/obj/item/reagent_containers/food/snacks/donut/D in contents)
 		i++
-		var/image/img = image('icons/obj/items/food/donuts.dmi', "[D.overlay_state]-[i]")
+		var/image/img = image('modular_imperium/master_files/icons/obj/items/food/donuts.dmi', "[D.overlay_state]-[i]")
 		. += img // wtf
 
 /obj/item/storage/donut_box/empty

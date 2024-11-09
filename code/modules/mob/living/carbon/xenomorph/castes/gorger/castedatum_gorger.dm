@@ -1,13 +1,13 @@
-/datum/xeno_caste/gorger
+/datum/tyranid_caste/gorger
 	caste_name = "Gorger"
 	display_name = "Gorger"
 	upgrade_name = ""
 	caste_desc = "A frightening looking, bulky alien creature that drips with a familiar red fluid."
-	caste_type_path = /mob/living/carbon/xenomorph/gorger
+	caste_type_path = /mob/living/carbon/tyranid/gorger
 	primordial_message = "There is nothing we can't withstand."
 
-	tier = XENO_TIER_THREE
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_THREE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "gorger" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -29,7 +29,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/warrior
+	deevolves_to = /datum/tyranid_caste/warrior
 
 	// *** Flags *** //
 	caste_flags = CASTE_INNATE_PLASMA_REGEN|CASTE_PLASMADRAIN_IMMUNE|CASTE_EVOLUTION_ALLOWED
@@ -49,34 +49,34 @@
 	feast_plasma_drain = 20
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain/free,
-		/datum/action/ability/activable/xeno/psychic_link,
-		/datum/action/ability/activable/xeno/drain,
-		/datum/action/ability/activable/xeno/transfusion,
-		/datum/action/ability/activable/xeno/carnage,
-		/datum/action/ability/activable/xeno/feast,
-		/datum/action/ability/activable/xeno/devour,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain/free,
+		/datum/action/ability/activable/tyranid/psychic_link,
+		/datum/action/ability/activable/tyranid/drain,
+		/datum/action/ability/activable/tyranid/transfusion,
+		/datum/action/ability/activable/tyranid/carnage,
+		/datum/action/ability/activable/tyranid/feast,
+		/datum/action/ability/activable/tyranid/devour,
 	)
 
-/datum/xeno_caste/gorger/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/gorger/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/gorger/primordial
+/datum/tyranid_caste/gorger/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "Being within mere eyeshot of this hulking monstrosity fills you with a deep, unshakeable sense of unease. You are unsure if you can even harm it."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain/free,
-		/datum/action/ability/activable/xeno/psychic_link,
-		/datum/action/ability/activable/xeno/drain,
-		/datum/action/ability/activable/xeno/transfusion,
-		/datum/action/ability/activable/xeno/oppose,
-		/datum/action/ability/activable/xeno/carnage,
-		/datum/action/ability/activable/xeno/feast,
-		/datum/action/ability/activable/xeno/devour,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain/free,
+		/datum/action/ability/activable/tyranid/psychic_link,
+		/datum/action/ability/activable/tyranid/drain,
+		/datum/action/ability/activable/tyranid/transfusion,
+		/datum/action/ability/activable/tyranid/oppose,
+		/datum/action/ability/activable/tyranid/carnage,
+		/datum/action/ability/activable/tyranid/feast,
+		/datum/action/ability/activable/tyranid/devour,
 	)

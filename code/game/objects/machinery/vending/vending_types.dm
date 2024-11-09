@@ -20,7 +20,7 @@
 /obj/machinery/vending/atmospherics //Commenting this out until someone ponies up some actual working, broken, and unpowered sprites - Quarxink
 	name = "Tank Vendor"
 	desc = "A vendor with a wide variety of masks and gas tanks."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "dispenser"
 	product_paths = "/obj/item/tank/oxygen;/obj/item/tank/phoron;/obj/item/tank/emergency_oxygen;/obj/item/tank/emergency_oxygen/engi;/obj/item/clothing/mask/breath"
 	product_amounts = "10;10;10;5;25"
@@ -152,7 +152,7 @@
 	icon_deny = "med-deny"
 	icon_vend = "med-vend"
 	//product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
-	req_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY) //only doctors and researchers can access these
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY) //only doctors and researchers can access these
 	products = list(
 		"Pill Bottle" = list(
 			/obj/item/storage/pill_bottle/bicaridine = -1,
@@ -205,7 +205,7 @@
 			/obj/item/storage/reagent_tank/bktt = 1,
 		),
 		"Misc" = list(
-			/obj/item/tool/research/xeno_analyzer = 2,
+			/obj/item/tool/research/tyranid_analyzer = 2,
 			/obj/item/tool/research/excavation_tool = -1,
 			/obj/item/storage/pouch/surgery = -1,
 			/obj/item/armor_module/storage/uniform/surgery_webbing = -1,
@@ -279,7 +279,7 @@
 			/obj/item/stack/medical/splint = -1,
 		),
 		"Misc" = list(
-			/obj/item/tool/research/xeno_analyzer = -1,
+			/obj/item/tool/research/tyranid_analyzer = -1,
 			/obj/item/tool/research/excavation_tool = -1,
 			/obj/item/storage/pouch/surgery = -1,
 			/obj/item/armor_module/storage/uniform/surgery_webbing = -1,
@@ -413,7 +413,7 @@
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	icon_vend = "sec-vend"
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 	products = list(
 		/obj/item/restraints/handcuffs = 8,
 		/obj/item/restraints/handcuffs/zip = 10,
@@ -587,7 +587,7 @@
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
 	icon_vend = "robotics-vend"
-	req_access = list(ACCESS_MARINE_RESEARCH)
+	req_access = list(ACCESS_GUARDSMAN_RESEARCH)
 	products = list(
 		/obj/item/clothing/suit/storage/labcoat = 4,
 		/obj/item/clothing/under/rank/roboticist = 4,

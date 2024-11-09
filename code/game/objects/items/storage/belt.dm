@@ -3,7 +3,7 @@
 /obj/item/storage/belt
 	name = "belt"
 	desc = "Can hold various things."
-	icon = 'icons/obj/clothing/belts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/belts.dmi'
 	icon_state = "utilitybelt"
 	worn_icon_state = "utility"
 	item_state_worn = TRUE
@@ -32,7 +32,7 @@
 	worn_icon_state = "champion"
 	storage_type = /datum/storage/belt/champion
 
-/*============================//MARINE BELTS\\==================================
+/*============================//GUARDSMAN BELTS\\==================================
 =======================================================================*/
 
 /obj/item/storage/belt/utility
@@ -62,7 +62,7 @@
 
 /obj/item/storage/belt/medical_small
 	name = "\improper M276 pattern light medical rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This lightweight configuration is often used for bulk carrying of medical supplies by marines."
+	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This lightweight configuration is often used for bulk carrying of medical supplies by guardsmans."
 	icon_state = "medicalbelt_small"
 	worn_icon_state = "medicbag"
 	storage_type = /datum/storage/belt/medical_small
@@ -153,13 +153,13 @@
 	worn_icon_state = "medicbag_upp"
 
 
-/obj/item/storage/belt/lifesaver/som
+/obj/item/storage/belt/lifesaver/chaos
 	name = "\improper S17 lifesaver bag"
 	desc = "A belt with heavy origins from the belt used by paramedics and doctors in the old mining colonies."
 	icon_state = "medicbag_som"
 	worn_icon_state = "medicbag_som"
 
-/obj/item/storage/belt/lifesaver/som/ert/PopulateContents()
+/obj/item/storage/belt/lifesaver/chaos/ert/PopulateContents()
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/kelotane(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
@@ -182,7 +182,7 @@
 	new /obj/item/stack/medical/heal_pack/advanced/bruise_pack(src)
 	new /obj/item/healthanalyzer(src)
 
-/obj/item/storage/belt/lifesaver/som/quick/PopulateContents()
+/obj/item/storage/belt/lifesaver/chaos/quick/PopulateContents()
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/kelotane(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
@@ -344,15 +344,15 @@
 	worn_icon_state = "swatbelt"
 	storage_type = /datum/storage/belt/security/tactical
 
-/obj/item/storage/belt/marine
+/obj/item/storage/belt/guardsman
 	name = "\improper M276 pattern ammo load rig"
 	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is the standard variant designed for bulk ammunition-carrying operations."
-	icon_state = "marinebelt"
-	worn_icon_state = "marinebelt"
+	icon_state = "guardsmanbelt"
+	worn_icon_state = "guardsmanbelt"
 	w_class = WEIGHT_CLASS_BULKY
-	storage_type = /datum/storage/belt/marine
+	storage_type = /datum/storage/belt/guardsman
 
-/obj/item/storage/belt/marine/t18/PopulateContents()
+/obj/item/storage/belt/guardsman/t18/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
@@ -360,7 +360,7 @@
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 
-/obj/item/storage/belt/marine/t12/PopulateContents()
+/obj/item/storage/belt/guardsman/t12/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
@@ -368,7 +368,7 @@
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 
-/obj/item/storage/belt/marine/standard_skirmishrifle/PopulateContents()
+/obj/item/storage/belt/guardsman/standard_skirmishrifle/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/standard_skirmishrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_skirmishrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_skirmishrifle(src)
@@ -376,7 +376,7 @@
 	new /obj/item/ammo_magazine/rifle/standard_skirmishrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_skirmishrifle(src)
 
-/obj/item/storage/belt/marine/standard_battlerifle/PopulateContents()
+/obj/item/storage/belt/guardsman/standard_battlerifle/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/standard_br(src)
 	new /obj/item/ammo_magazine/rifle/standard_br(src)
 	new /obj/item/ammo_magazine/rifle/standard_br(src)
@@ -384,7 +384,7 @@
 	new /obj/item/ammo_magazine/rifle/standard_br(src)
 	new /obj/item/ammo_magazine/rifle/standard_br(src)
 
-/obj/item/storage/belt/marine/t90/PopulateContents()
+/obj/item/storage/belt/guardsman/t90/PopulateContents()
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
@@ -392,7 +392,7 @@
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
 
-/obj/item/storage/belt/marine/secondary/PopulateContents()
+/obj/item/storage/belt/guardsman/secondary/PopulateContents()
 	new /obj/item/ammo_magazine/smg/m25(src)
 	new /obj/item/ammo_magazine/smg/m25(src)
 	new /obj/item/ammo_magazine/smg/m25(src)
@@ -400,7 +400,7 @@
 	new /obj/item/ammo_magazine/smg/m25(src)
 	new /obj/item/ammo_magazine/smg/m25(src)
 
-/obj/item/storage/belt/marine/antimaterial/PopulateContents()
+/obj/item/storage/belt/guardsman/antimaterial/PopulateContents()
 	new /obj/item/ammo_magazine/sniper/flak(src)
 	new /obj/item/ammo_magazine/sniper/flak(src)
 	new /obj/item/ammo_magazine/sniper/incendiary(src)
@@ -408,7 +408,7 @@
 	new /obj/item/ammo_magazine/sniper(src)
 	new /obj/item/ammo_magazine/sniper(src)
 
-/obj/item/storage/belt/marine/tx8/PopulateContents()
+/obj/item/storage/belt/guardsman/tx8/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/tx8/impact(src)
 	new /obj/item/ammo_magazine/rifle/tx8/impact(src)
 	new /obj/item/ammo_magazine/rifle/tx8/incendiary(src)
@@ -416,7 +416,7 @@
 	new /obj/item/ammo_magazine/rifle/tx8(src)
 	new /obj/item/ammo_magazine/rifle/tx8(src)
 
-/obj/item/storage/belt/marine/combat_rifle/PopulateContents()
+/obj/item/storage/belt/guardsman/combat_rifle/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/tx11(src)
 	new /obj/item/ammo_magazine/rifle/tx11(src)
 	new /obj/item/ammo_magazine/rifle/tx11(src)
@@ -424,7 +424,7 @@
 	new /obj/item/ammo_magazine/rifle/tx11(src)
 	new /obj/item/ammo_magazine/rifle/tx11(src)
 
-/obj/item/storage/belt/marine/alf_machinecarbine/PopulateContents()
+/obj/item/storage/belt/guardsman/alf_machinecarbine/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/alf_machinecarbine(src)
 	new /obj/item/ammo_magazine/rifle/alf_machinecarbine(src)
 	new /obj/item/ammo_magazine/rifle/alf_machinecarbine(src)
@@ -432,7 +432,7 @@
 	new /obj/item/ammo_magazine/rifle/alf_machinecarbine(src)
 	new /obj/item/ammo_magazine/rifle/alf_machinecarbine(src)
 
-/obj/item/storage/belt/marine/auto_shotgun/PopulateContents()
+/obj/item/storage/belt/guardsman/auto_shotgun/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/tx15_slug(src)
 	new /obj/item/ammo_magazine/rifle/tx15_slug(src)
 	new /obj/item/ammo_magazine/rifle/tx15_slug(src)
@@ -440,7 +440,7 @@
 	new /obj/item/ammo_magazine/rifle/tx15_flechette(src)
 	new /obj/item/ammo_magazine/rifle/tx15_flechette(src)
 
-/obj/item/storage/belt/marine/te_cells/PopulateContents()
+/obj/item/storage/belt/guardsman/te_cells/PopulateContents()
 	new /obj/item/cell/lasgun/lasrifle(src)
 	new /obj/item/cell/lasgun/lasrifle(src)
 	new /obj/item/cell/lasgun/lasrifle(src)
@@ -448,7 +448,7 @@
 	new /obj/item/cell/lasgun/lasrifle(src)
 	new /obj/item/cell/lasgun/lasrifle(src)
 
-/obj/item/storage/belt/marine/oicw/PopulateContents()
+/obj/item/storage/belt/guardsman/oicw/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/tx54/incendiary(src)
@@ -456,7 +456,7 @@
 	new /obj/item/ammo_magazine/rifle/tx54(src)
 	new /obj/item/ammo_magazine/rifle/tx54(src)
 
-/obj/item/storage/belt/marine/smartgun/PopulateContents()
+/obj/item/storage/belt/guardsman/smartgun/PopulateContents()
 	new /obj/item/ammo_magazine/standard_smartmachinegun(src)
 	new /obj/item/ammo_magazine/standard_smartmachinegun(src)
 	new /obj/item/ammo_magazine/standard_smartmachinegun(src)
@@ -464,7 +464,7 @@
 	new /obj/item/ammo_magazine/standard_smartmachinegun(src)
 	new /obj/item/ammo_magazine/standard_smartmachinegun(src)
 
-/obj/item/storage/belt/marine/target_rifle/PopulateContents()
+/obj/item/storage/belt/guardsman/target_rifle/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/standard_smarttargetrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_smarttargetrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_smarttargetrifle(src)
@@ -472,14 +472,14 @@
 	new /obj/item/ammo_magazine/rifle/standard_smarttargetrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_smarttargetrifle(src)
 
-/obj/item/storage/belt/marine/upp
+/obj/item/storage/belt/guardsman/upp
 	name = "\improper Type 41 pattern load rig"
 	desc = "The Type 41 load rig is the standard-issue LBE of the USL pirates. The primary function of this belt is to provide easy access to mags for the Type 71 during operations. Despite being designed for the Type 71 weapon system, the pouches are modular enough to fit other types of ammo and equipment."
 	icon_state = "upp_belt"
 	worn_icon_state = "upp_belt"
 
 //version full of type 71 mags
-/obj/item/storage/belt/marine/upp/full/PopulateContents()
+/obj/item/storage/belt/guardsman/upp/full/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/type71(src)
 	new /obj/item/ammo_magazine/rifle/type71(src)
 	new /obj/item/ammo_magazine/rifle/type71(src)
@@ -487,45 +487,45 @@
 	new /obj/item/ammo_magazine/rifle/type71(src)
 	new /obj/item/ammo_magazine/rifle/type71(src)
 
-/obj/item/storage/belt/marine/som
+/obj/item/storage/belt/guardsman/chaos
 	name = "\improper S18 ammo belt"
 	desc = "A belt with origins traced to the M276 ammo belt and some old colony security."
-	icon_state = "som_belt"
-	worn_icon_state = "som_belt"
+	icon_state = "chaos_belt"
+	worn_icon_state = "chaos_belt"
 
-/obj/item/storage/belt/marine/som/som_rifle/PopulateContents()
-	new /obj/item/ammo_magazine/rifle/som(src)
-	new /obj/item/ammo_magazine/rifle/som(src)
-	new /obj/item/ammo_magazine/rifle/som(src)
-	new /obj/item/ammo_magazine/rifle/som(src)
-	new /obj/item/ammo_magazine/rifle/som(src)
-	new /obj/item/ammo_magazine/rifle/som(src)
+/obj/item/storage/belt/guardsman/chaos/chaos_rifle/PopulateContents()
+	new /obj/item/ammo_magazine/rifle/chaos(src)
+	new /obj/item/ammo_magazine/rifle/chaos(src)
+	new /obj/item/ammo_magazine/rifle/chaos(src)
+	new /obj/item/ammo_magazine/rifle/chaos(src)
+	new /obj/item/ammo_magazine/rifle/chaos(src)
+	new /obj/item/ammo_magazine/rifle/chaos(src)
 
-/obj/item/storage/belt/marine/som/som_rifle_ap/PopulateContents()
-	new /obj/item/ammo_magazine/rifle/som/ap(src)
-	new /obj/item/ammo_magazine/rifle/som/ap(src)
-	new /obj/item/ammo_magazine/rifle/som/ap(src)
-	new /obj/item/ammo_magazine/rifle/som/ap(src)
-	new /obj/item/ammo_magazine/rifle/som/ap(src)
-	new /obj/item/ammo_magazine/rifle/som/ap(src)
+/obj/item/storage/belt/guardsman/chaos/chaos_rifle_ap/PopulateContents()
+	new /obj/item/ammo_magazine/rifle/chaos/ap(src)
+	new /obj/item/ammo_magazine/rifle/chaos/ap(src)
+	new /obj/item/ammo_magazine/rifle/chaos/ap(src)
+	new /obj/item/ammo_magazine/rifle/chaos/ap(src)
+	new /obj/item/ammo_magazine/rifle/chaos/ap(src)
+	new /obj/item/ammo_magazine/rifle/chaos/ap(src)
 
-/obj/item/storage/belt/marine/som/som_smg/PopulateContents()
-	new /obj/item/ammo_magazine/smg/som(src)
-	new /obj/item/ammo_magazine/smg/som(src)
-	new /obj/item/ammo_magazine/smg/som(src)
-	new /obj/item/ammo_magazine/smg/som(src)
-	new /obj/item/ammo_magazine/smg/som(src)
-	new /obj/item/ammo_magazine/smg/som(src)
+/obj/item/storage/belt/guardsman/chaos/chaos_smg/PopulateContents()
+	new /obj/item/ammo_magazine/smg/chaos(src)
+	new /obj/item/ammo_magazine/smg/chaos(src)
+	new /obj/item/ammo_magazine/smg/chaos(src)
+	new /obj/item/ammo_magazine/smg/chaos(src)
+	new /obj/item/ammo_magazine/smg/chaos(src)
+	new /obj/item/ammo_magazine/smg/chaos(src)
 
-/obj/item/storage/belt/marine/som/som_smg_ap/PopulateContents()
-	new /obj/item/ammo_magazine/smg/som/ap(src)
-	new /obj/item/ammo_magazine/smg/som/ap(src)
-	new /obj/item/ammo_magazine/smg/som/ap(src)
-	new /obj/item/ammo_magazine/smg/som/ap(src)
-	new /obj/item/ammo_magazine/smg/som/ap(src)
-	new /obj/item/ammo_magazine/smg/som/ap(src)
+/obj/item/storage/belt/guardsman/chaos/chaos_smg_ap/PopulateContents()
+	new /obj/item/ammo_magazine/smg/chaos/ap(src)
+	new /obj/item/ammo_magazine/smg/chaos/ap(src)
+	new /obj/item/ammo_magazine/smg/chaos/ap(src)
+	new /obj/item/ammo_magazine/smg/chaos/ap(src)
+	new /obj/item/ammo_magazine/smg/chaos/ap(src)
+	new /obj/item/ammo_magazine/smg/chaos/ap(src)
 
-/obj/item/storage/belt/marine/som/volkite/PopulateContents()
+/obj/item/storage/belt/guardsman/chaos/volkite/PopulateContents()
 	new /obj/item/cell/lasgun/volkite(src)
 	new /obj/item/cell/lasgun/volkite(src)
 	new /obj/item/cell/lasgun/volkite(src)
@@ -533,7 +533,7 @@
 	new /obj/item/cell/lasgun/volkite(src)
 	new /obj/item/cell/lasgun/volkite(src)
 
-/obj/item/storage/belt/marine/som/mpi_plum/PopulateContents()
+/obj/item/storage/belt/guardsman/chaos/mpi_plum/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/mpi_km/plum(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/plum(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/plum(src)
@@ -541,7 +541,7 @@
 	new /obj/item/ammo_magazine/rifle/mpi_km/plum(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/plum(src)
 
-/obj/item/storage/belt/marine/som/mpi_black/PopulateContents()
+/obj/item/storage/belt/guardsman/chaos/mpi_black/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/mpi_km/black(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/black(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/black(src)
@@ -549,7 +549,7 @@
 	new /obj/item/ammo_magazine/rifle/mpi_km/black(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/black(src)
 
-/obj/item/storage/belt/marine/som/carbine/PopulateContents()
+/obj/item/storage/belt/guardsman/chaos/carbine/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine(src)
@@ -557,7 +557,7 @@
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine(src)
 
-/obj/item/storage/belt/marine/som/carbine_black/PopulateContents()
+/obj/item/storage/belt/guardsman/chaos/carbine_black/PopulateContents()
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine/black(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine/black(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine/black(src)
@@ -565,17 +565,17 @@
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine/black(src)
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine/black(src)
 
-/obj/item/storage/belt/marine/icc
+/obj/item/storage/belt/guardsman/icc
 	name = "\improper Modello/120 ammo belt"
 	desc = "A belt purpose made to carry ammo, made with a tan synthetic fibre."
 	icon_state = "icc_belt"
 
-/obj/item/storage/belt/marine/sectoid
+/obj/item/storage/belt/guardsman/sectoid
 	name = "\improper strange ammo belt"
 	desc = "A belt made of a strong but unusual fabric, with clips to hold your equipment."
 	icon_state = "swatbelt"
 	worn_icon_state = "swatbelt"
-	storage_type = /datum/storage/belt/marine/sectoid
+	storage_type = /datum/storage/belt/guardsman/sectoid
 
 /obj/item/storage/belt/shotgun
 	name = "\improper shotgun shell load rig"
@@ -649,11 +649,11 @@
 	new /obj/item/ammo_magazine/handful/flechette(src)
 	new /obj/item/ammo_magazine/handful/flechette(src)
 
-/obj/item/storage/belt/shotgun/som
-	desc = "An ammunition belt designed to hold shotgun shells or individual bullets. Made with traditional SOM leather."
+/obj/item/storage/belt/shotgun/chaos
+	desc = "An ammunition belt designed to hold shotgun shells or individual bullets. Made with traditional CHAOS leather."
 	icon_state = "shotgunbelt_som"
 
-/obj/item/storage/belt/shotgun/som/flechette/Initialize(mapload, ...)
+/obj/item/storage/belt/shotgun/chaos/flechette/Initialize(mapload, ...)
 	. = ..()
 	new /obj/item/ammo_magazine/handful/flechette(src)
 	new /obj/item/ammo_magazine/handful/flechette(src)
@@ -670,7 +670,7 @@
 	new /obj/item/ammo_magazine/handful/flechette(src)
 	new /obj/item/ammo_magazine/handful/flechette(src)
 
-/obj/item/storage/belt/shotgun/som/mixed/Initialize(mapload, ...)
+/obj/item/storage/belt/shotgun/chaos/mixed/Initialize(mapload, ...)
 	. = ..()
 	new /obj/item/ammo_magazine/handful/buckshot(src)
 	new /obj/item/ammo_magazine/handful/buckshot(src)
@@ -825,20 +825,20 @@
 	new /obj/item/explosive/grenade(src)
 	new /obj/item/explosive/grenade(src)
 
-/obj/item/storage/belt/grenade/som
+/obj/item/storage/belt/grenade/chaos
 	name = "\improper S16 pattern grenade rig"
 	desc = "A simple harness system available in many configurations. This version is designed to carry bulk quantities of grenades."
 	icon_state = "grenadebelt_som"
 
-/obj/item/storage/belt/grenade/som/standard/PopulateContents()
-	new /obj/item/explosive/grenade/incendiary/som(src)
-	new /obj/item/explosive/grenade/incendiary/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
+/obj/item/storage/belt/grenade/chaos/standard/PopulateContents()
+	new /obj/item/explosive/grenade/incendiary/chaos(src)
+	new /obj/item/explosive/grenade/incendiary/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
 
 /obj/item/storage/belt/grenade/b17
 	name = "\improper M276 pattern M40 HEDP rig Mk II"
@@ -871,15 +871,15 @@
 	worn_icon_state = "sparepouch"
 	storage_type = /datum/storage/belt/sparepouch
 
-/obj/item/storage/belt/sparepouch/som
+/obj/item/storage/belt/sparepouch/chaos
 	name = "standard utility pouch"
-	desc = "A small, lightweight pouch that can be clipped onto armor or your belt to provide additional storage for miscellaneous gear or box and drum magazines. Made from genuine SOM leather."
+	desc = "A small, lightweight pouch that can be clipped onto armor or your belt to provide additional storage for miscellaneous gear or box and drum magazines. Made from genuine CHAOS leather."
 	icon_state = "sparepouch_som"
-	worn_icon_state = "som_belt"
+	worn_icon_state = "chaos_belt"
 
 /obj/item/storage/belt/protein_pack
 	name = "\improper protein pack load rig"
-	desc = "A storage belt designed to hold mass amounts of protein packs for those particuarly hungry marines."
+	desc = "A storage belt designed to hold mass amounts of protein packs for those particuarly hungry guardsmans."
 	icon_state = "p_belt"
 	worn_icon_state = "shotgunbelt"
 	storage_type = /datum/storage/belt/protein_pack

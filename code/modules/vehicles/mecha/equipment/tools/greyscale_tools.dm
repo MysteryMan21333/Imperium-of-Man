@@ -166,7 +166,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/ability/smoke/tanglefoot
 	name = "tanglefoot generator"
-	desc = "A tanglefoot smoke generator capable of dispensing large amounts of non-lethal gas that saps the energy from any xenoform creatures it touches."
+	desc = "A tanglefoot smoke generator capable of dispensing large amounts of non-lethal gas that saps the energy from any tyranidform creatures it touches."
 	icon_state = "tfoot_gas"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/mech_smoke

@@ -25,9 +25,9 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 
 	MODE_KEY_DEPARTMENT = MODE_DEPARTMENT,
 
-	RADIO_KEY_MEDICAL = RADIO_CHANNEL_MEDICAL_SOM,
-	RADIO_KEY_ENGINEERING = RADIO_CHANNEL_ENGINEERING_SOM,
-	RADIO_KEY_COMMAND = RADIO_CHANNEL_COMMAND_SOM,
+	RADIO_KEY_MEDICAL = RADIO_CHANNEL_MEDICAL_CHAOS,
+	RADIO_KEY_ENGINEERING = RADIO_CHANNEL_ENGINEERING_CHAOS,
+	RADIO_KEY_COMMAND = RADIO_CHANNEL_COMMAND_CHAOS,
 	RADIO_KEY_ALPHA = RADIO_CHANNEL_ZULU,
 	RADIO_KEY_BRAVO = RADIO_CHANNEL_YANKEE,
 	RADIO_KEY_CHARLIE = RADIO_CHANNEL_XRAY,
@@ -126,7 +126,7 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 	// language comma detection.
 	var/datum/language/message_language = get_message_language(message)
 	if(message_language)
-		// No, you cannot speak in xenocommon just because you know the key
+		// No, you cannot speak in tyranidcommon just because you know the key
 		if(can_speak_in_language(message_language))
 			language = message_language
 		message = copytext_char(message, 3)
@@ -301,7 +301,7 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 	for(var/mob/M in listening)
 		if(M.client)
 			speech_bubble_recipients.Add(M.client)
-	var/image/I = image('icons/mob/effects/talk.dmi', src, "[bubble_type][say_test(message_raw)]", FLY_LAYER)
+	var/image/I = image('modular_imperium/master_files/icons/mob/effects/talk.dmi', src, "[bubble_type][say_test(message_raw)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
 
@@ -314,7 +314,7 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 	if(HAS_TRAIT(src, TRAIT_MUTED))
 		return FALSE
 
-/mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno channels
+/mob/living/proc/can_speak_vocal(message) //Check AFTER handling of tyranid channels
 	if(istype(wear_mask, /obj/item/clothing/mask/muzzle))
 		return FALSE
 
@@ -421,7 +421,7 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 		return TRUE
 
 
-/mob/living/proc/can_speak_basic(message, ignore_spam = FALSE) //Check BEFORE handling of xeno and ling channels
+/mob/living/proc/can_speak_basic(message, ignore_spam = FALSE) //Check BEFORE handling of tyranid and ling channels
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, span_danger("You cannot speak in IC (muted)."))

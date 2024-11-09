@@ -1,8 +1,8 @@
 /obj/structure/prop/urban/vehicles
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "SUV"
 	max_integrity = 100
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	density = TRUE
 	///used to determine the probability that a car will detonate upon being destroyed
 	var/explosion_probability = 1
@@ -31,12 +31,12 @@
 /obj/structure/prop/urban/vehicles/meridian
 	name = "\improper Mono-Spectra"
 	desc = "The 'Mono-Spectra', a mass-produced civilian vehicle for extraterrestrial markets, in and outside of Terra controlled space. Produced by 'Meridian' a car marque and associated operating division of the Nanotrasen Corporation."
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_red.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_red.dmi'
 	icon_state = "meridian_red"
 	bound_height = 32
 	bound_width = 64
 	layer = ABOVE_MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	coverage = 40
 	base_icon_state = "meridian_red"
 	max_integrity = 60
@@ -72,7 +72,7 @@
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/structure/prop/urban/vehicles/meridian/red
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_red.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_red.dmi'
 	icon_state = "meridian_red"
 	base_icon_state = "meridian_red"
 
@@ -97,7 +97,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/black
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_black.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_black.dmi'
 	icon_state = "meridian_black"
 	base_icon_state = "meridian_black"
 
@@ -122,7 +122,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/blue
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_blue.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_blue.dmi'
 	icon_state = "meridian_blue"
 	base_icon_state = "meridian_blue"
 
@@ -147,7 +147,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/brown
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_brown.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_brown.dmi'
 	icon_state = "meridian_brown"
 	base_icon_state = "meridian_brown"
 
@@ -172,7 +172,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/cop
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_cop.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_cop.dmi'
 	icon_state = "meridian_cop"
 	base_icon_state = "meridian_cop"
 
@@ -197,7 +197,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/desat_blue
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_desatblue.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_desatblue.dmi'
 	icon_state = "meridian_desatblue"
 	base_icon_state = "meridian_desatblue"
 
@@ -222,7 +222,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/green
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_green.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_green.dmi'
 	icon_state = "meridian_green"
 	base_icon_state = "meridian_green"
 
@@ -247,7 +247,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/light_blue
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_lightblue.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_lightblue.dmi'
 	icon_state = "meridian_lightblue"
 	base_icon_state = "meridian_lightblue"
 
@@ -272,7 +272,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/pink
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_pink.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_pink.dmi'
 	icon_state = "meridian_pink"
 	base_icon_state = "meridian_pink"
 
@@ -297,7 +297,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/purple
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_purple.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_purple.dmi'
 	icon_state = "meridian_purple"
 	base_icon_state = "meridian_purple"
 
@@ -322,7 +322,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/turquoise
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_turquoise.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_turquoise.dmi'
 	icon_state = "meridian_turquoise"
 	base_icon_state = "meridian_turquoise"
 
@@ -347,7 +347,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/orange
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_orange.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_orange.dmi'
 	icon_state = "meridian_orange"
 	base_icon_state = "meridian_orange"
 
@@ -372,7 +372,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/generic
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_wy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_wy.dmi'
 	icon_state = "meridian_wy"
 	base_icon_state = "meridian_wy"
 
@@ -397,7 +397,7 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/taxi
-	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_taxi.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban_vehicles/meridian_taxi.dmi'
 	icon_state = "meridian_taxi"
 	base_icon_state = "meridian_taxi"
 
@@ -424,7 +424,7 @@
 /obj/structure/prop/urban/vehicles/meridian/marshalls
 	name = "colonial marshalls rapid response SUV"
 	desc = "Seems to be broken down."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "marshalls2"
 
 /obj/structure/prop/urban/vehicles/meridian/marshalls/update_icon_state()
@@ -434,7 +434,7 @@
 /obj/structure/prop/urban/vehicles/meridian/chassis
 	name = "\improper Mono-Spectra Chassis"
 	desc = "A Mono-Spectra chassis in the early stages of assembly."
-	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "MeridianCar_shell"
 
 /obj/structure/prop/urban/vehicles/meridian/chassis/update_icon_state()

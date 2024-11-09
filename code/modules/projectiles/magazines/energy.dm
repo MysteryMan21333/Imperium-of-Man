@@ -3,10 +3,10 @@
 /obj/item/cell/lasgun
 	name = "\improper lasgun Battery"
 	desc = "A specialized high density battery used to power lasguns."
-	icon = 'icons/obj/items/ammo/energy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/energy.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/ammo_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/ammo_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/ammo_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/ammo_right.dmi',
 		)
 	icon_state = "m43"
 	worn_icon_state = null
@@ -52,7 +52,7 @@
 
 /obj/item/cell/lasgun/lasrifle
 	name = "\improper Terra Experimental standard battery"
-	desc = "A specialized high density battery used to power most standard marine laser guns. It is simply known as the TE power cell."
+	desc = "A specialized high density battery used to power most standard guardsman laser guns. It is simply known as the TE power cell."
 	charge_overlay = "te"
 	icon_state = "te"
 	icon_state_mini = "mag_cell_te"
@@ -70,7 +70,7 @@
 
 /obj/item/cell/lasgun/plasma
 	name = "\improper WML plasma energy cell"
-	desc = "A plasma containment cell used by the TerraGov Marine Corps for plasma guns. It doesn't seem to have an expiry date on it."
+	desc = "A plasma containment cell used by the Imperium Guardsman Corps for plasma guns. It doesn't seem to have an expiry date on it."
 	icon_state = "plasma"
 	maxcharge = 900
 	icon_state_mini = "mag_plasma"
@@ -96,7 +96,7 @@
 
 /obj/item/cell/lasgun/volkite/turret
 	name = "volkite nuclear energy cell"
-	desc = "A nuclear powered battery designed for certain heavy SOM machinery like sentries. Slowly charges over time."
+	desc = "A nuclear powered battery designed for certain heavy CHAOS machinery like sentries. Slowly charges over time."
 	icon_state = "volkite_turret"
 	maxcharge = 1800
 	icon_state_mini = "mag_cell"
@@ -113,11 +113,11 @@
 	name = "\improper M-70 powerpack"
 	desc = "A heavy reinforced backpack with an array of ultradensity energy cells, linked to a miniature radioisotope thermoelectric generator for continuous power generation. Used to power the largest man portable volkite weaponry. Click drag cells to the powerpack to recharge."
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
 	icon_state = "volkite_powerpack"
-	icon = 'icons/obj/items/ammo/powerpack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/powerpack.dmi'
 	charge_overlay = null
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BACK
@@ -192,7 +192,7 @@
 	else
 		to_chat(user, span_warning("This cell is already at maximum charge!"))
 
-/obj/item/cell/lasgun/volkite/powerpack/marine
+/obj/item/cell/lasgun/volkite/powerpack/guardsman
 	name = "\improper TE powerpack"
 	desc = "A recently developed mass produced side pouch which charges any TE technological achievement."
 	icon_state = "lasgun_pouch"
@@ -206,7 +206,7 @@
 	cell_type = /obj/item/cell/lasgun/lasrifle
 	self_recharge = FALSE
 
-/obj/item/cell/lasgun/volkite/powerpack/marine/backpack
+/obj/item/cell/lasgun/volkite/powerpack/guardsman/backpack
 	name = "\improper TE powerbackpack"
 	desc = "A recently developed mass produced backpack which charges any TE technological achievement."
 	icon_state = "lasgun_backpack"

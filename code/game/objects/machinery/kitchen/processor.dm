@@ -1,6 +1,6 @@
 /obj/machinery/processor
 	name = "Food Processor"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/kitchen.dmi'
 	icon_state = "processor"
 	layer = ABOVE_TABLE_LAYER
 	density = TRUE
@@ -66,7 +66,7 @@
 /obj/machinery/processor/grab_interact(obj/item/grab/grab, mob/user, base_damage = BASE_OBJ_SLAM_DAMAGE, is_sharp = FALSE)
 	if(!is_operational())
 		return ..()
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(!isliving(grab.grabbed_thing))
 		return

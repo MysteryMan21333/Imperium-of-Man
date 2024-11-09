@@ -717,7 +717,7 @@
 
 		"}
 
-/obj/item/book/manual/marine_law
+/obj/item/book/manual/guardsman_law
 	name = "Space Law"
 	desc = "A set of universal guidelines for keeping law and order on civilian, private and military vessels alike."
 	icon_state = "bookSpaceLaw"

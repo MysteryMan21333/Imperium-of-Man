@@ -3,7 +3,7 @@
 */
 /obj/item/book
 	name = "book"
-	icon = 'icons/obj/items/books.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/books.dmi'
 	icon_state ="book"
 	throw_speed = 1
 	throw_range = 5

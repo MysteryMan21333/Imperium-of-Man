@@ -1,28 +1,28 @@
 
-/datum/action/ability/xeno_action
+/datum/action/ability/tyranid_action
 	///If you are going to add an explanation for an ability. don't use stats, give a very brief explanation of how to use it.
 	desc = "This ability can not be found in codex."
-	action_icon = 'icons/Xeno/actions/general.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/general.dmi'
 
-/datum/action/ability/xeno_action/New(Target)
+/datum/action/ability/tyranid_action/New(Target)
 	. = ..()
-	var/mutable_appearance/empowered_appearence = mutable_appearance('icons/Xeno/actions/general.dmi', "borders_center", ACTION_LAYER_EMPOWERED, FLOAT_PLANE)
+	var/mutable_appearance/empowered_appearence = mutable_appearance('modular_imperium/master_files/icons/tyranid/actions/general.dmi', "borders_center", ACTION_LAYER_EMPOWERED, FLOAT_PLANE)
 	visual_references[VREF_MUTABLE_EMPOWERED_FRAME] = empowered_appearence
 
-/datum/action/ability/xeno_action/give_action(mob/living/L)
+/datum/action/ability/tyranid_action/give_action(mob/living/L)
 	. = ..()
-	RegisterSignal(L, COMSIG_XENOMORPH_ABILITY_ON_UPGRADE, TYPE_PROC_REF(/datum/action/ability, on_xeno_upgrade))
+	RegisterSignal(L, COMSIG_TYRANID_ABILITY_ON_UPGRADE, TYPE_PROC_REF(/datum/action/ability, on_tyranid_upgrade))
 
-/datum/action/ability/xeno_action/remove_action(mob/living/L)
-	UnregisterSignal(L, COMSIG_XENOMORPH_ABILITY_ON_UPGRADE)
+/datum/action/ability/tyranid_action/remove_action(mob/living/L)
+	UnregisterSignal(L, COMSIG_TYRANID_ABILITY_ON_UPGRADE)
 	return ..()
 
-/datum/action/ability/xeno_action/can_use_action(silent = FALSE, override_flags)
+/datum/action/ability/tyranid_action/can_use_action(silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
 
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	if(!X)
 		return FALSE
 	var/to_check_flags = use_state_flags|override_flags
@@ -45,25 +45,25 @@
 	return TRUE
 
 //activatable
-/datum/action/ability/activable/xeno/New(Target)
+/datum/action/ability/activable/tyranid/New(Target)
 	. = ..()
-	var/mutable_appearance/empowered_appearence = mutable_appearance('icons/Xeno/actions/general.dmi', "borders_center", ACTION_LAYER_EMPOWERED, FLOAT_PLANE)
+	var/mutable_appearance/empowered_appearence = mutable_appearance('modular_imperium/master_files/icons/tyranid/actions/general.dmi', "borders_center", ACTION_LAYER_EMPOWERED, FLOAT_PLANE)
 	visual_references[VREF_MUTABLE_EMPOWERED_FRAME] = empowered_appearence
 
-/datum/action/ability/activable/xeno/give_action(mob/living/L)
+/datum/action/ability/activable/tyranid/give_action(mob/living/L)
 	. = ..()
-	RegisterSignal(L, COMSIG_XENOMORPH_ABILITY_ON_UPGRADE, TYPE_PROC_REF(/datum/action/ability, on_xeno_upgrade))
+	RegisterSignal(L, COMSIG_TYRANID_ABILITY_ON_UPGRADE, TYPE_PROC_REF(/datum/action/ability, on_tyranid_upgrade))
 
-/datum/action/ability/activable/xeno/remove_action(mob/living/L)
-	UnregisterSignal(L, COMSIG_XENOMORPH_ABILITY_ON_UPGRADE)
+/datum/action/ability/activable/tyranid/remove_action(mob/living/L)
+	UnregisterSignal(L, COMSIG_TYRANID_ABILITY_ON_UPGRADE)
 	return ..()
 
-/datum/action/ability/activable/xeno/can_use_action(silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/can_use_action(silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
 
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 	if(!X)
 		return FALSE
 	var/to_check_flags = use_state_flags|override_flags

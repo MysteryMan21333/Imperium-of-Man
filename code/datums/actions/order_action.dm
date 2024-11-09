@@ -1,6 +1,6 @@
 /datum/action/innate/order
 	background_icon_state = "template2"
-	///the word used to describe the action when notifying marines
+	///the word used to describe the action when notifying guardsmans
 	var/verb_name
 	///the type of arrow used in the order
 	var/arrow_type
@@ -44,11 +44,11 @@
 	if(owner.stat != CONSCIOUS || TIMER_COOLDOWN_CHECK(owner, COOLDOWN_CIC_ORDERS))
 		return FALSE
 
-///Print order visual to all marines squad hud and give them an arrow to follow the waypoint
-/datum/action/innate/order/proc/send_order(atom/target, datum/squad/squad, faction = FACTION_TERRAGOV)
+///Print order visual to all guardsmans squad hud and give them an arrow to follow the waypoint
+/datum/action/innate/order/proc/send_order(atom/target, datum/squad/squad, faction = FACTION_IMPERIUM)
 	if(!can_use_action())
 		return
-	to_chat(owner ,span_ordercic("You ordered marines to [verb_name] [get_area(target.loc)]!"))
+	to_chat(owner ,span_ordercic("You ordered guardsmans to [verb_name] [get_area(target.loc)]!"))
 	owner.playsound_local(owner, "sound/effects/CIC_order.ogg", 10, 1)
 	if(visual_type)
 		target = get_turf(target)
@@ -57,8 +57,8 @@
 	SEND_SIGNAL(owner, COMSIG_CIC_ORDER_SENT)
 	addtimer(CALLBACK(src, PROC_REF(on_cooldown_finish)), CIC_ORDER_COOLDOWN + 1)
 	if(squad)
-		for(var/mob/living/carbon/human/marine AS in squad.marines_list)
-			marine.receive_order(target, arrow_type, verb_name, faction)
+		for(var/mob/living/carbon/human/guardsman AS in squad.guardsmans_list)
+			guardsman.receive_order(target, arrow_type, verb_name, faction)
 		return TRUE
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 		if(human.faction == faction)
@@ -70,9 +70,9 @@
 	SEND_SIGNAL(owner, COMSIG_CIC_ORDER_OFF_CD, src)
 
 /**
- * Proc to give a marine an order
+ * Proc to give a guardsman an order
  * target : what atom to track
- * arrow_type : what kind of visual arrow will be spawned on the marine
+ * arrow_type : what kind of visual arrow will be spawned on the guardsman
  * verb_name : a word / sentence to describe the order
  */
 /mob/living/carbon/human/proc/receive_order(atom/target, arrow_type, verb_name = "rally", faction)
@@ -86,10 +86,10 @@
 		return
 	var/hud_type
 	switch(faction)
-		if(FACTION_TERRAGOV)
-			hud_type = DATA_HUD_SQUAD_TERRAGOV
-		if(FACTION_SOM)
-			hud_type = DATA_HUD_SQUAD_SOM
+		if(FACTION_IMPERIUM)
+			hud_type = DATA_HUD_SQUAD_IMPERIUM
+		if(FACTION_CHAOS)
+			hud_type = DATA_HUD_SQUAD_CHAOS
 		else
 			return
 	var/datum/atom_hud/squad/squad_hud = GLOB.huds[hud_type]
@@ -122,7 +122,7 @@
 /datum/action/innate/order/attack_order/personal/action_activate()
 	var/mob/living/carbon/human/human = owner
 	if(send_order(human, human.assigned_squad, human.faction))
-		var/message = pick(";MARINES, FIGHT! SHOOT! KILL!!", ";BLAST THEM!", ";MAKE THEM EAT LEAD!", ";END THEM!", ";ATTACK HERE!", ";CHARGE!", ";RUN THEM OVER!")
+		var/message = pick(";GUARDSMANS, FIGHT! SHOOT! KILL!!", ";BLAST THEM!", ";MAKE THEM EAT LEAD!", ";END THEM!", ";ATTACK HERE!", ";CHARGE!", ";RUN THEM OVER!")
 		owner.say(message)
 
 /datum/action/innate/order/defend_order

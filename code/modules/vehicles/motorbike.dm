@@ -7,7 +7,7 @@
 	icon_state = "motorbike"
 	max_integrity = 300
 	soft_armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 0, BOMB = 30, FIRE = 60, ACID = 60)
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	atom_flags = PREVENT_CONTENTS_EXPLOSION
 	key_type = null
 	integrity_failure = 0.5
@@ -105,7 +105,7 @@
 		attached_sidecar = I
 		cut_overlay(motorbike_cover)
 		motorbike_cover.icon_state = "sidecar_cover"
-		motorbike_cover.icon = 'icons/obj/motorbike_sidecar.dmi'
+		motorbike_cover.icon = 'modular_imperium/master_files/icons/obj/motorbike_sidecar.dmi'
 		motorbike_cover.pixel_x = -9
 		sidecar_dir_change(newdir = dir)
 		RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, PROC_REF(sidecar_dir_change))
@@ -147,7 +147,7 @@
 	max_occupants = 1
 	cut_overlay(motorbike_cover)
 	motorbike_cover.icon_state = "motorbike_cover"
-	motorbike_cover.icon = 'icons/obj/vehicles.dmi'
+	motorbike_cover.icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	motorbike_cover.pixel_x = 0
 	pixel_x = initial(pixel_x)
 	add_overlay(motorbike_cover)
@@ -188,7 +188,7 @@
 /obj/item/sidecar
 	name = "motorbike sidecar"
 	desc = "A detached sidecar for TGMC motorbikes, which can be attached to them, allowing a second passenger. Use a wrench to dettach the sidecar."
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "sidecar"
 
 #undef FUEL_PER_CAN_POUR

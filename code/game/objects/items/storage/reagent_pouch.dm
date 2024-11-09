@@ -3,11 +3,11 @@
 /obj/item/reagent_containers/glass/reagent_canister // See the Reagent Canister Pouch, this is just the container
 	name = "pressurized reagent container"
 	desc = "A pressurized container. The inner part of a pressurized reagent canister pouch. Too large to fit in anything but the pouch it comes with."
-	icon = 'icons/obj/clothing/pouches.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/pouches.dmi'
 	icon_state = "r_canister"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tanks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tanks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tanks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tanks_right.dmi',
 	)
 	worn_icon_state = "anesthetic"
 	possible_transfer_amounts = null
@@ -20,7 +20,7 @@
 
 ///Used on examine for properly skilled people to see contents.
 /obj/item/reagent_containers/glass/reagent_canister/proc/get_examine_info(mob/user)
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(!(user.skills.getRating(SKILL_MEDICAL) >= SKILL_MEDICAL_NOVICE)) //Failed skill check
 		return span_notice("You don't know what's in it.")
@@ -92,19 +92,19 @@
 /obj/item/storage/pouch/pressurized_reagent_pouch/update_overlays()
 	. = ..()
 	if(!inner)
-		. += image('icons/obj/clothing/pouches.dmi', src, "reagent_pouch_0")
+		. += image('modular_imperium/master_files/icons/obj/clothing/pouches.dmi', src, "reagent_pouch_0")
 		return
-	. += image('icons/obj/clothing/pouches.dmi', src, "reagent_canister")
+	. += image('modular_imperium/master_files/icons/obj/clothing/pouches.dmi', src, "reagent_canister")
 	var/percentage = round((inner.reagents.total_volume/inner.reagents.maximum_volume)*100)
 	switch(percentage)
 		if(0)
-			. += image('icons/obj/clothing/pouches.dmi', src, "reagent_pouch_0")
+			. += image('modular_imperium/master_files/icons/obj/clothing/pouches.dmi', src, "reagent_pouch_0")
 		if(1 to 33)
-			. += image('icons/obj/clothing/pouches.dmi', src, "reagent_pouch_1")
+			. += image('modular_imperium/master_files/icons/obj/clothing/pouches.dmi', src, "reagent_pouch_1")
 		if(34 to 66)
-			. += image('icons/obj/clothing/pouches.dmi', src, "reagent_pouch_2")
+			. += image('modular_imperium/master_files/icons/obj/clothing/pouches.dmi', src, "reagent_pouch_2")
 		if(67 to 100)
-			. += image('icons/obj/clothing/pouches.dmi', src, "reagent_pouch_3")
+			. += image('modular_imperium/master_files/icons/obj/clothing/pouches.dmi', src, "reagent_pouch_3")
 
 /obj/item/storage/pouch/pressurized_reagent_pouch/AltClick(mob/user)
 	if(!remove_canister(user))
@@ -162,7 +162,7 @@
 
 ///Used on examine for properly skilled people to see contents.
 /obj/item/storage/pouch/pressurized_reagent_pouch/proc/get_display_contents(mob/user)
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(!(user.skills.getRating(SKILL_MEDICAL) >= SKILL_MEDICAL_NOVICE)) //Failed skill check
 		return span_notice("You don't know what's in it.")

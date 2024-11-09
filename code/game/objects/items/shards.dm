@@ -2,7 +2,7 @@
 
 /obj/item/shard
 	name = "glass shard"
-	icon = 'icons/obj/items/shards.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/shards.dmi'
 	icon_state = ""
 	sharp = IS_SHARP_ITEM_SIMPLE
 	edge = 1
@@ -11,8 +11,8 @@
 	force = 5
 	throwforce = 8
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "shard-glass"
 	attack_verb = list("stabbed", "slashed", "sliced", "cut")
@@ -91,13 +91,13 @@
 
 	pick(playsound(loc, 'sound/effects/shard1.ogg', 35, TRUE), playsound(loc, 'sound/effects/shard2.ogg', 35, TRUE), playsound(loc, 'sound/effects/shard3.ogg', 35, TRUE), playsound(loc, 'sound/effects/shard4.ogg', 35, TRUE), playsound(loc, 'sound/effects/shard5.ogg', 35, TRUE))
 	if(prob(20))
-		to_chat(M, span_danger("[isxeno(M) ? "We" : "You"] step on \the [src], shattering it!"))
+		to_chat(M, span_danger("[istyranid(M) ? "We" : "You"] step on \the [src], shattering it!"))
 		qdel(src)
 		return
 
 	if(M.buckled)
 		return
-	to_chat(M, span_danger("[isxeno(M) ? "We" : "You"] step on \the [src]!"))
+	to_chat(M, span_danger("[istyranid(M) ? "We" : "You"] step on \the [src]!"))
 	if(!ishuman(M))
 		return
 	var/mob/living/carbon/human/H = M

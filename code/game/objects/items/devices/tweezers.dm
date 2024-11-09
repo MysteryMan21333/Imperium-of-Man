@@ -1,7 +1,7 @@
 /obj/item/tweezers
 	name = "medical tweezers"
 	desc = "Medical tweezers intended to remove shrapnel from patients."
-	icon = 'icons/obj/items/surgery_tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/surgery_tools.dmi'
 	icon_state = "tweezers"
 	worn_icon_state = "tweezers"
 	item_flags = NOBLUDGEON
@@ -14,7 +14,7 @@
 /obj/item/tweezers_advanced
 	name = "\improper ESR-12"
 	desc = "The Energised Shrapnel Removal tool is designed to rapidly remove large quantities of shrapnel from a victim's body. Extremely painful."
-	icon = 'icons/obj/items/surgery_tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/surgery_tools.dmi'
 	icon_state = "predator_bone-gel"
 	worn_icon_state = "predator_bone-gel"
 	item_flags = NOBLUDGEON

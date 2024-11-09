@@ -1,14 +1,14 @@
-/datum/xeno_caste/spiderling
+/datum/tyranid_caste/spiderling
 	caste_name = "spiderling"
 	display_name = "spiderling"
 	upgrade_name = ""
-	caste_desc = "An anthropod xenomorph without any qualms to obey their widow, even if it will never grow up and will face death."
+	caste_desc = "An anthropod tyranid without any qualms to obey their widow, even if it will never grow up and will face death."
 	wound_type = ""
 
-	caste_type_path = /mob/living/carbon/xenomorph/spiderling
+	caste_type_path = /mob/living/carbon/tyranid/spiderling
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	// *** Melee Attacks *** //
 	melee_damage = 8
@@ -34,5 +34,5 @@
 	soft_armor = list(MELEE = 15, BULLET = 0, LASER = 5, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 
 	actions = list(
-		/datum/action/ability/xeno_action/burrow,
+		/datum/action/ability/tyranid_action/burrow,
 	)

@@ -85,7 +85,7 @@
 
 /datum/ammo/rocket/ltb/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	drop_nade(get_turf(target_mob))
-	if(!isxeno(target_mob))
+	if(!istyranid(target_mob))
 		target_mob.gib()
 
 /datum/ammo/rocket/ltb/heavy/drop_nade(turf/target_turf)
@@ -178,7 +178,7 @@
 	playsound(T, 'sound/weapons/guns/fire/flamethrower2.ogg', 50, 1, 4)
 	flame_radius(effect_radius, T, 27, 27, 27, 17)
 
-/datum/ammo/rocket/wp/quad/som
+/datum/ammo/rocket/wp/quad/chaos
 	name = "white phosphorous RPG"
 	hud_state = "rpg_fire"
 	icon_state = "rpg_incendiary"
@@ -318,7 +318,7 @@
 	sundering = 100
 	max_range = 30
 
-/datum/ammo/rocket/som
+/datum/ammo/rocket/chaos
 	name = "high explosive RPG"
 	icon_state = "rpg_he"
 	hud_state = "rpg_he"
@@ -329,10 +329,10 @@
 	penetration = 20
 	sundering = 20
 
-/datum/ammo/rocket/som/drop_nade(turf/T)
+/datum/ammo/rocket/chaos/drop_nade(turf/T)
 	explosion(T, 0, 3, 6, 0, 2)
 
-/datum/ammo/rocket/som/light
+/datum/ammo/rocket/chaos/light
 	name = "low impact RPG"
 	icon_state = "rpg_le"
 	hud_state = "rpg_le"
@@ -341,19 +341,19 @@
 	damage = 60
 	penetration = 10
 
-/datum/ammo/rocket/som/light/drop_nade(turf/T)
+/datum/ammo/rocket/chaos/light/drop_nade(turf/T)
 	explosion(T, 0, 2, 7, 0, 2)
 
-/datum/ammo/rocket/som/thermobaric
+/datum/ammo/rocket/chaos/thermobaric
 	name = "thermobaric RPG"
 	icon_state = "rpg_thermobaric"
 	hud_state = "rpg_thermobaric"
 	damage = 30
 
-/datum/ammo/rocket/som/thermobaric/drop_nade(turf/T)
+/datum/ammo/rocket/chaos/thermobaric/drop_nade(turf/T)
 	explosion(T, 0, 4, 5, 0, 4, 4)
 
-/datum/ammo/rocket/som/heat //Anti tank, or mech
+/datum/ammo/rocket/chaos/heat //Anti tank, or mech
 	name = "HEAT RPG"
 	icon_state = "rpg_heat"
 	hud_state = "rpg_heat"
@@ -364,15 +364,15 @@
 	scatter = 7
 	ammo_behavior_flags = AMMO_SNIPER|AMMO_UNWIELDY
 
-/datum/ammo/rocket/som/heat/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/rocket/chaos/heat/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	drop_nade(get_turf(target_obj))
 	if(isvehicle(target_obj) || ishitbox(target_obj))
 		proj.damage *= 3 //this is specifically designed to hurt vehicles
 
-/datum/ammo/rocket/som/heat/drop_nade(turf/T)
+/datum/ammo/rocket/chaos/heat/drop_nade(turf/T)
 	explosion(T, 0, 1, 0, 0, 1)
 
-/datum/ammo/rocket/som/rad
+/datum/ammo/rocket/chaos/rad
 	name = "irrad RPG"
 	icon_state = "rpg_rad"
 	hud_state = "rpg_rad"
@@ -387,7 +387,7 @@
 	///Range for the minimal rad effects
 	var/outer_range = 8
 
-/datum/ammo/rocket/som/rad/drop_nade(turf/T)
+/datum/ammo/rocket/chaos/rad/drop_nade(turf/T)
 	playsound(T, 'sound/effects/portal_opening.ogg', 50, 1)
 	for(var/mob/living/victim in hearers(outer_range, T))
 		var/strength

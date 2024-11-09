@@ -1,7 +1,7 @@
 /obj/item/ammo_magazine/packet
 	name = "box of some kind of ammo"
 	desc = "A packet containing some kind of ammo."
-	icon = 'icons/obj/items/ammo/packet.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/packet.dmi'
 	icon_state_mini = "ammo_packet"
 	w_class = WEIGHT_CLASS_NORMAL
 	fill_delay = 1.5 SECONDS

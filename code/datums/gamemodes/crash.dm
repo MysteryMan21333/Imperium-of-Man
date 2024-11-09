@@ -1,8 +1,8 @@
 /datum/game_mode/infestation/crash
 	name = "Crash"
 	config_tag = "Crash"
-	round_type_flags = MODE_INFESTATION|MODE_XENO_SPAWN_PROTECT|MODE_DEAD_GRAB_FORBIDDEN|MODE_DISALLOW_RAILGUN
-	xeno_abilities_flags = ABILITY_CRASH
+	round_type_flags = MODE_INFESTATION|MODE_TYRANID_SPAWN_PROTECT|MODE_DEAD_GRAB_FORBIDDEN|MODE_DISALLOW_RAILGUN
+	tyranid_abilities_flags = ABILITY_CRASH
 	valid_job_types = list(
 		/datum/job/terragov/squad/standard = -1,
 		/datum/job/terragov/squad/engineer = 1,
@@ -12,20 +12,20 @@
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
-		/datum/job/xenomorph = FREE_XENO_AT_START
+		/datum/job/tyranid = FREE_TYRANID_AT_START
 	)
 	job_points_needed_by_job_type = list(
 		/datum/job/terragov/squad/smartgunner = 20,
 		/datum/job/terragov/squad/corpsman = 5,
 		/datum/job/terragov/squad/engineer = 5,
-		/datum/job/xenomorph = CRASH_LARVA_POINTS_NEEDED,
+		/datum/job/tyranid = CRASH_LARVA_POINTS_NEEDED,
 	)
-	xenorespawn_time = 3 MINUTES
+	tyranidrespawn_time = 3 MINUTES
 	blacklist_ground_maps = list(MAP_BIG_RED, MAP_DELTA_STATION, MAP_PRISON_STATION, MAP_LV_624, MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_LAVA_OUTPOST, MAP_CORSAT, MAP_KUTJEVO_REFINERY, MAP_BLUESUMMERS)
 
 	// Round end conditions
 	var/shuttle_landed = FALSE
-	var/marines_evac = CRASH_EVAC_NONE
+	var/guardsmans_evac = CRASH_EVAC_NONE
 
 	// Shuttle details
 	var/shuttle_id = SHUTTLE_CANTERBURY
@@ -77,9 +77,9 @@
 
 /datum/game_mode/infestation/crash/post_setup()
 	. = ..()
-	for(var/i in GLOB.xeno_resin_silo_turfs)
-		new /obj/structure/xeno/silo(i)
-		new /obj/structure/xeno/pherotower(i)
+	for(var/i in GLOB.tyranid_resin_silo_turfs)
+		new /obj/structure/tyranid/silo(i)
+		new /obj/structure/tyranid/pherotower(i)
 
 	for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
 		corpse.create_mob()
@@ -102,20 +102,20 @@
 	if(!(round_type_flags & MODE_INFESTATION))
 		return
 
-	for(var/i in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
-		if(isxenolarva(i)) // Larva
-			var/mob/living/carbon/xenomorph/larva/X = i
-			X.evolution_stored = X.xeno_caste.evolution_threshold //Immediate roundstart evo for larva.
+	for(var/i in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
+		if(istyranidlarva(i)) // Larva
+			var/mob/living/carbon/tyranid/larva/X = i
+			X.evolution_stored = X.tyranid_caste.evolution_threshold //Immediate roundstart evo for larva.
 		else // Handles Shrike etc
-			var/mob/living/carbon/xenomorph/X = i
-			X.upgrade_stored = X.xeno_caste.upgrade_threshold
+			var/mob/living/carbon/tyranid/X = i
+			X.upgrade_stored = X.tyranid_caste.upgrade_threshold
 
 
 /datum/game_mode/infestation/crash/announce()
 	to_chat(world, span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
 	priority_announce(
-		message = "Scheduled for landing in T-10 Minutes. Prepare for landing. Known hostiles near LZ. Detonation Protocol Active, planet disposable. Marines disposable.",
-		title = "Good morning, marines.",
+		message = "Scheduled for landing in T-10 Minutes. Prepare for landing. Known hostiles near LZ. Detonation Protocol Active, planet disposable. Guardsmans disposable.",
+		title = "Good morning, guardsmans.",
 		type = ANNOUNCEMENT_PRIORITY,
 		color_override = "red"
 	)
@@ -142,66 +142,66 @@
 	if(!shuttle_landed && !force_end)
 		return FALSE
 
-	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_HUMAN_SSD)
+	var/list/living_player_list = count_humans_and_tyranids(count_flags = COUNT_IGNORE_HUMAN_SSD)
 	var/num_humans = living_player_list[1]
 
-	if(num_humans && planet_nuked == INFESTATION_NUKE_NONE && marines_evac == CRASH_EVAC_NONE && !force_end)
+	if(num_humans && planet_nuked == INFESTATION_NUKE_NONE && guardsmans_evac == CRASH_EVAC_NONE && !force_end)
 		return FALSE
 
 	switch(planet_nuked)
 
 		if(INFESTATION_NUKE_NONE)
 			if(!num_humans)
-				message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //xenos wiped out ALL the marines
+				message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //tyranids wiped out ALL the guardsmans
 				round_finished = MODE_INFESTATION_X_MAJOR
 				return TRUE
-			if(marines_evac == CRASH_EVAC_COMPLETED || (!length(GLOB.active_nuke_list) && marines_evac != CRASH_EVAC_NONE))
-				message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //marines evaced without a nuke
+			if(guardsmans_evac == CRASH_EVAC_COMPLETED || (!length(GLOB.active_nuke_list) && guardsmans_evac != CRASH_EVAC_NONE))
+				message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //guardsmans evaced without a nuke
 				round_finished = MODE_INFESTATION_X_MINOR
 				return TRUE
 
 		if(INFESTATION_NUKE_COMPLETED)
-			if(marines_evac == CRASH_EVAC_NONE)
-				message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //marines nuked the planet but didn't evac
+			if(guardsmans_evac == CRASH_EVAC_NONE)
+				message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //guardsmans nuked the planet but didn't evac
 				round_finished = MODE_INFESTATION_M_MINOR
 				return TRUE
-			message_admins("Round finished: [MODE_INFESTATION_M_MAJOR]") //marines nuked the planet and managed to evac
+			message_admins("Round finished: [MODE_INFESTATION_M_MAJOR]") //guardsmans nuked the planet and managed to evac
 			round_finished = MODE_INFESTATION_M_MAJOR
 			return TRUE
 
 		if(INFESTATION_NUKE_COMPLETED_SHIPSIDE, INFESTATION_NUKE_COMPLETED_OTHER)
-			message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //marines nuked themselves somehow
+			message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //guardsmans nuked themselves somehow
 			round_finished = MODE_INFESTATION_X_MAJOR
 			return TRUE
 
 	return FALSE
 
 
-/datum/game_mode/infestation/crash/on_nuclear_diffuse(obj/machinery/nuclearbomb/bomb, mob/living/carbon/xenomorph/X)
-	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_HUMAN_SSD)
+/datum/game_mode/infestation/crash/on_nuclear_diffuse(obj/machinery/nuclearbomb/bomb, mob/living/carbon/tyranid/X)
+	var/list/living_player_list = count_humans_and_tyranids(count_flags = COUNT_IGNORE_HUMAN_SSD)
 	var/num_humans = living_player_list[1]
 	if(!num_humans) // no humans left on planet to try and restart it.
-		addtimer(VARSET_CALLBACK(src, marines_evac, CRASH_EVAC_COMPLETED), 10 SECONDS)
+		addtimer(VARSET_CALLBACK(src, guardsmans_evac, CRASH_EVAC_COMPLETED), 10 SECONDS)
 
 /datum/game_mode/infestation/crash/can_summon_dropship(mob/user)
 	to_chat(src, span_warning("This power doesn't work in this gamemode."))
 	return FALSE
 
 /datum/game_mode/infestation/crash/proc/balance_scales()
-	var/datum/hive_status/normal/xeno_hive = GLOB.hive_datums[XENO_HIVE_NORMAL]
-	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
-	var/stored_larva = xeno_job.total_positions - xeno_job.current_positions
+	var/datum/hive_status/normal/tyranid_hive = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
+	var/datum/job/tyranid_job = SSjob.GetJobType(/datum/job/tyranid)
+	var/stored_larva = tyranid_job.total_positions - tyranid_job.current_positions
 	if(stored_larva)
 		return //No need for respawns
-	var/num_xenos = xeno_hive.get_total_xeno_number() + stored_larva
-	if(!num_xenos)
-		xeno_job.add_job_positions(1)
+	var/num_tyranids = tyranid_hive.get_total_tyranid_number() + stored_larva
+	if(!num_tyranids)
+		tyranid_job.add_job_positions(1)
 		return
-	var/larva_surplus = (get_total_joblarvaworth() - (num_xenos * xeno_job.job_points_needed )) / xeno_job.job_points_needed
+	var/larva_surplus = (get_total_joblarvaworth() - (num_tyranids * tyranid_job.job_points_needed )) / tyranid_job.job_points_needed
 	if(larva_surplus < 1)
 		return //Things are balanced, no burrowed needed
-	xeno_job.add_job_positions(1)
-	xeno_hive.update_tier_limits()
+	tyranid_job.add_job_positions(1)
+	tyranid_hive.update_tier_limits()
 
 /datum/game_mode/infestation/crash/get_total_joblarvaworth(list/z_levels, count_flags)
 	. = 0
@@ -211,5 +211,5 @@
 			continue
 		if(isspaceturf(H.loc))
 			continue
-		. += H.job.jobworth[/datum/job/xenomorph]
+		. += H.job.jobworth[/datum/job/tyranid]
 

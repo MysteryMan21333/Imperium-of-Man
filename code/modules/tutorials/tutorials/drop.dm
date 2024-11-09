@@ -1,7 +1,7 @@
 #define TIME_TO_START_MOVING_DROP_ICON (0.5 SECONDS)
 
 #define STAGE_DROP_ITEM "STAGE_DROP_ITEM"
-#define STAGE_PICK_SOMETHING_UP "STAGE_PICK_SOMETHING_UP"
+#define STAGE_PICK_CHAOSETHING_UP "STAGE_PICK_CHAOSETHING_UP"
 
 /// Tutorial for showing how to drop items.
 /// Fired when clicking on an item with another item with a filled inactive hand.
@@ -54,17 +54,17 @@
 				"Press '%KEY%' to drop your current item",
 				"Click '<b>DROP</b>' to drop your current item",
 			))
-		if (STAGE_PICK_SOMETHING_UP)
+		if (STAGE_PICK_CHAOSETHING_UP)
 			show_instruction("Pick something up!")
 
 /datum/tutorial/drop/proc/on_swap_hands()
 	SIGNAL_HANDLER
 
 	if (isnull(user.get_active_held_item()))
-		if (stage != STAGE_PICK_SOMETHING_UP)
-			stage = STAGE_PICK_SOMETHING_UP
+		if (stage != STAGE_PICK_CHAOSETHING_UP)
+			stage = STAGE_PICK_CHAOSETHING_UP
 			show_instructions()
-	else if (stage == STAGE_PICK_SOMETHING_UP)
+	else if (stage == STAGE_PICK_CHAOSETHING_UP)
 		stage = STAGE_DROP_ITEM
 		show_instructions()
 
@@ -73,13 +73,13 @@
 /datum/tutorial/drop/proc/on_dropped_item()
 	SIGNAL_HANDLER
 
-	stage = STAGE_PICK_SOMETHING_UP
+	stage = STAGE_PICK_CHAOSETHING_UP
 	show_instructions()
 
 /datum/tutorial/drop/proc/on_pick_up_item()
 	SIGNAL_HANDLER
 
-	if (stage != STAGE_PICK_SOMETHING_UP)
+	if (stage != STAGE_PICK_CHAOSETHING_UP)
 		dismiss()
 		return
 
@@ -99,11 +99,11 @@
 /datum/tutorial/drop/proc/on_held_item_moved()
 	SIGNAL_HANDLER
 
-	if (stage == STAGE_PICK_SOMETHING_UP)
+	if (stage == STAGE_PICK_CHAOSETHING_UP)
 		return
 
 	dismiss()
 
 #undef STAGE_DROP_ITEM
-#undef STAGE_PICK_SOMETHING_UP
+#undef STAGE_PICK_CHAOSETHING_UP
 #undef TIME_TO_START_MOVING_DROP_ICON

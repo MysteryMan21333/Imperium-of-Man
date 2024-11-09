@@ -20,7 +20,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 10
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "ag" = (
 /obj/effect/landmark/sensor_tower,
 /turf/open/floor/tile/dark/purple2{
@@ -81,8 +81,8 @@
 	},
 /area/outpost/hallway/central)
 "at" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "au" = (
@@ -148,7 +148,7 @@
 /area/outpost/hallway/east)
 "aO" = (
 /turf/open/floor/tile/dark/purple2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "aP" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 8
@@ -220,7 +220,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 9
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "bj" = (
 /obj/structure/table,
 /obj/structure/cable,
@@ -288,9 +288,9 @@
 	},
 /area/outpost/arrivals/securitylz2)
 "by" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg1,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "bz" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump{
@@ -408,7 +408,7 @@
 	},
 /area/outpost/brig)
 "cm" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/south)
 "cn" = (
@@ -427,7 +427,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/brig/armoury)
 "ct" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "cu" = (
@@ -465,7 +465,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "cD" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -613,7 +613,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/brig/wardens_office)
 "dn" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/outpost/caves/west)
 "do" = (
@@ -738,7 +738,7 @@
 /turf/closed/mineral/smooth/bigred,
 /area/outpost/caves/east)
 "dW" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_west)
 "dY" = (
@@ -833,7 +833,7 @@
 	},
 /area/outpost/yard/south)
 "er" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 1
 	},
@@ -893,11 +893,11 @@
 /area/outpost/engineering/engine)
 "eG" = (
 /obj/structure/table,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "eH" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -979,11 +979,11 @@
 	},
 /area/outpost/medbay)
 "fc" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/tile/dark/purple2{
 	dir = 10
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "fd" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/drained{
@@ -1048,7 +1048,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 5
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "fq" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -1329,13 +1329,13 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 6
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "gz" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "gA" = (
 /turf/open/floor/tile/dark2,
 /area/outpost/cargo/engineering)
@@ -1360,7 +1360,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "gH" = (
 /obj/structure/largecrate/random/barrel,
 /obj/machinery/light{
@@ -1499,7 +1499,7 @@
 	},
 /area/outpost/lz2)
 "hn" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/north_west)
 "ho" = (
@@ -1541,7 +1541,7 @@
 	},
 /area/outpost/engineering)
 "hG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 4
 	},
@@ -1640,7 +1640,7 @@
 "id" = (
 /obj/machinery/light,
 /turf/open/floor/tile/dark/purple2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "ie" = (
 /obj/effect/ai_node,
 /obj/structure/cable,
@@ -1686,7 +1686,7 @@
 "im" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark/purple2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "in" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/asteroidwarning,
@@ -1719,7 +1719,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/outpost/caves/north)
 "it" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/dark/blue2{
 	dir = 1
 	},
@@ -1859,18 +1859,18 @@
 	},
 /area/outpost/hallway/west)
 "iY" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "iZ" = (
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 10
 	},
 /area/outpost/lz1)
 "ja" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "jc" = (
@@ -1934,7 +1934,7 @@
 /area/outpost/yard/east)
 "js" = (
 /obj/effect/decal/cleanable/blood/writing,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/north_east)
 "jt" = (
@@ -1952,7 +1952,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 4
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "jx" = (
 /obj/structure/largecrate/random/barrel,
 /turf/open/floor/tile/dark/brown2{
@@ -2116,7 +2116,7 @@
 /turf/open/floor/tile/dark2,
 /area/outpost/cargo)
 "kg" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/marking/asteroidwarning{
 	dir = 4
 	},
@@ -2360,11 +2360,11 @@
 	dir = 1
 	},
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "ll" = (
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "lm" = (
 /obj/structure/bed/chair/comfy,
 /turf/open/floor/tile/dark/brown2{
@@ -2389,7 +2389,7 @@
 	},
 /area/outpost/medbay/storage)
 "lr" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/brown2{
 	dir = 1
 	},
@@ -2516,7 +2516,7 @@
 "lO" = (
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "lP" = (
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark2,
@@ -2531,7 +2531,7 @@
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "lV" = (
@@ -2541,7 +2541,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "lX" = (
 /obj/structure/bed/chair/office{
 	dir = 4
@@ -2579,7 +2579,7 @@
 	},
 /area/outpost/lz2)
 "me" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/outpost/lz1)
 "mg" = (
@@ -2642,7 +2642,7 @@
 "mA" = (
 /obj/structure/table,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "mB" = (
 /obj/machinery/atmospherics/components/unary/tank/oxygen,
 /turf/open/floor/tile/dark/blue2{
@@ -2650,7 +2650,7 @@
 	},
 /area/outpost/medbay)
 "mF" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 1
 	},
@@ -2706,8 +2706,8 @@
 	},
 /area/outpost/medbay/storage)
 "mS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south)
 "mV" = (
@@ -2749,7 +2749,7 @@
 "ng" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "nh" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark/brown2{
@@ -2779,7 +2779,7 @@
 	dir = 1
 	},
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "nm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /turf/open/floor/tile/dark/brown2{
@@ -2790,7 +2790,7 @@
 /obj/structure/cable,
 /obj/machinery/light,
 /turf/open/floor/tile/dark/purple2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "np" = (
 /turf/open/floor/marking/asteroidwarning{
 	dir = 4
@@ -2812,7 +2812,7 @@
 	},
 /area/outpost/hallway/central)
 "nu" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 6
 	},
@@ -2882,7 +2882,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/cargo/security)
 "nG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg1,
 /area/outpost/medbay)
 "nL" = (
@@ -3083,7 +3083,7 @@
 /turf/open/floor/plating/ground/mars/dirttosand,
 /area/outpost/caves/north_west)
 "oA" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 5
 	},
@@ -3172,7 +3172,7 @@
 /turf/open/floor/tile/dark/brown2/corner,
 /area/outpost/hallway/central)
 "oS" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south_west)
 "oV" = (
@@ -3265,7 +3265,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 4
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "ps" = (
 /obj/machinery/light{
 	dir = 8
@@ -3355,9 +3355,9 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 4
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "pJ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "pK" = (
@@ -3710,7 +3710,7 @@
 "ro" = (
 /obj/structure/window/framed/colony/reinforced,
 /turf/open/floor/tile/dark2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "rq" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -3870,11 +3870,11 @@
 	},
 /area/outpost/science)
 "sb" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/tile/dark/purple2{
 	dir = 9
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "sc" = (
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark/red2,
@@ -4299,7 +4299,7 @@
 	},
 /area/outpost/cargo)
 "tZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/marking/asteroidwarning{
 	dir = 8
 	},
@@ -4377,7 +4377,7 @@
 	},
 /area/outpost/caves/north_west)
 "ux" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south_west)
 "uB" = (
@@ -4396,7 +4396,7 @@
 /area/outpost/lz2)
 "uD" = (
 /obj/structure/cable,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/brown2{
 	dir = 8
 	},
@@ -4480,7 +4480,7 @@
 "uY" = (
 /obj/structure/cable,
 /turf/open/floor/tile/dark/purple2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "uZ" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -4565,7 +4565,7 @@
 /turf/open/floor/tile/dark/brown2,
 /area/outpost/hallway/south_east)
 "vy" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 5
 	},
@@ -4618,7 +4618,7 @@
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "vJ" = (
 /obj/machinery/power/apc/drained{
 	dir = 4
@@ -4659,7 +4659,7 @@
 /turf/open/floor/plating,
 /area/outpost/engineering/engine)
 "vR" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
@@ -4732,7 +4732,7 @@
 	},
 /area/outpost/yard/south)
 "wk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north)
 "wl" = (
@@ -4829,7 +4829,7 @@
 	},
 /area/outpost/medbay/security)
 "wE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south_west)
 "wG" = (
@@ -4874,7 +4874,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 6
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "wQ" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -5001,7 +5001,7 @@
 	},
 /area/outpost/lz1)
 "xp" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 9
 	},
@@ -5243,7 +5243,7 @@
 	},
 /area/outpost/hallway/east)
 "yy" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south)
@@ -5366,7 +5366,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/hallway/central)
 "zd" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south)
 "ze" = (
@@ -5507,7 +5507,7 @@
 	},
 /area/outpost/lz2)
 "zJ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "zK" = (
@@ -5546,7 +5546,7 @@
 /obj/structure/table,
 /obj/effect/spawner/random/engineering/technology_scanner,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "zW" = (
 /obj/structure/table,
 /obj/effect/spawner/random/engineering/toolbox,
@@ -5669,7 +5669,7 @@
 	},
 /area/outpost/lz1)
 "Az" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/north)
 "AD" = (
@@ -5742,7 +5742,7 @@
 "AS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "AW" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone{
 	dir = 2
@@ -5955,7 +5955,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/hallway/south_cent)
 "BR" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "BU" = (
@@ -5973,7 +5973,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 5
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "BY" = (
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 9
@@ -6063,7 +6063,7 @@
 "Ct" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Cu" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 4
@@ -6206,7 +6206,7 @@
 /turf/closed/wall/r_wall,
 /area/outpost/lz2)
 "Dp" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/decal/cleanable/blood/writing,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
@@ -6240,7 +6240,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Dw" = (
 /obj/machinery/door/airlock/mainship/generic,
 /turf/open/floor/freezer,
@@ -6371,7 +6371,7 @@
 "Ec" = (
 /obj/structure/bed/chair/office/dark,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Ee" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell,
 /turf/open/floor/tile/dark/blue2{
@@ -6497,7 +6497,7 @@
 /turf/closed/mineral/smooth/bigred/indestructible,
 /area/bigredv2/caves/rock)
 "EF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south)
 "EG" = (
@@ -6669,7 +6669,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 5
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Fs" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -6775,7 +6775,7 @@
 /area/outpost/lz1)
 "FQ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north)
 "FR" = (
@@ -6785,7 +6785,7 @@
 	},
 /area/outpost/science/hydponics)
 "FT" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 5
 	},
@@ -7040,7 +7040,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south_east)
 "Hn" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "Hp" = (
@@ -7061,7 +7061,7 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/outpost/yard/south)
 "Ht" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south_east)
 "Hw" = (
@@ -7195,8 +7195,8 @@
 /turf/open/floor/tile/dark/brown2,
 /area/outpost/hallway/east)
 "Ic" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "If" = (
@@ -7327,7 +7327,7 @@
 /turf/open/floor/tile/dark/yellow2,
 /area/outpost/engineering/hallway)
 "IL" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_west)
 "IM" = (
@@ -7391,7 +7391,7 @@
 /area/outpost/arrivals)
 "Je" = (
 /turf/closed/wall/r_wall,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Jf" = (
 /turf/open/floor/plating/asteroidwarning{
 	dir = 8
@@ -7423,7 +7423,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 10
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Jo" = (
 /obj/effect/ai_node,
 /obj/machinery/landinglight/lz2{
@@ -7611,7 +7611,7 @@
 /area/outpost/hallway/south_west)
 "Kg" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 6
 	},
@@ -7659,7 +7659,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 9
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Ks" = (
 /obj/effect/landmark/sensor_tower,
 /turf/open/floor/tile/dark/blue2{
@@ -7675,7 +7675,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Kv" = (
 /turf/open/space/basic,
 /area/space)
@@ -7840,7 +7840,7 @@
 /area/outpost/caves/north_east)
 "Li" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "Ll" = (
@@ -7916,11 +7916,11 @@
 	},
 /area/outpost/cargo/engineering)
 "LA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/north_east)
 "LB" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg3,
 /area/outpost/medbay)
 "LC" = (
@@ -7932,7 +7932,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "LF" = (
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/east)
@@ -7959,7 +7959,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "LN" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -8121,7 +8121,7 @@
 	},
 /area/outpost/dormitories)
 "Mv" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/outpost/caves/north)
 "Mx" = (
@@ -8131,7 +8131,7 @@
 	},
 /area/outpost/arrivals/securitylz1)
 "My" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/outpost/caves/south_east)
 "Mz" = (
@@ -8216,7 +8216,7 @@
 	},
 /area/outpost/science/research)
 "MT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 8
 	},
@@ -8257,7 +8257,7 @@
 /area/outpost/brig/gear_room)
 "Na" = (
 /turf/open/floor/plating/dmg2,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Nb" = (
 /obj/machinery/computer/sleep_console,
 /turf/open/floor/tile/dark/blue2{
@@ -8265,8 +8265,8 @@
 	},
 /area/outpost/medbay)
 "Ne" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "Nf" = (
@@ -8510,7 +8510,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/blue2{
 	dir = 1
 	},
@@ -9056,7 +9056,7 @@
 	},
 /area/outpost/arrivals)
 "QP" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north)
 "QW" = (
@@ -9079,9 +9079,9 @@
 	},
 /area/outpost/yard/north)
 "Rb" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg3,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Rc" = (
 /turf/open/floor/tile/dark/red2{
 	dir = 10
@@ -9135,7 +9135,7 @@
 /area/outpost/science/research)
 "Rl" = (
 /turf/open/floor/tile/dark,
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Rn" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -9254,7 +9254,7 @@
 /area/outpost/brig/gear_room)
 "RI" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "RJ" = (
@@ -9268,7 +9268,7 @@
 	},
 /area/outpost/caves/north_east)
 "RM" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 4
 	},
@@ -9316,7 +9316,7 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/outpost/arrivals)
 "RZ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/south_east)
 "Sb" = (
@@ -9422,7 +9422,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Su" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -9474,7 +9474,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 4
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "SQ" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/asteroidfloor,
@@ -9867,7 +9867,7 @@
 /turf/open/floor/wood,
 /area/outpost/dormitories)
 "UI" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 4
 	},
@@ -10033,7 +10033,7 @@
 	},
 /area/outpost/medbay/surgery)
 "Vw" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/outpost/lz2)
 "Vx" = (
@@ -10044,8 +10044,8 @@
 /area/outpost/science/research)
 "Vy" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
 "Vz" = (
@@ -10249,7 +10249,7 @@
 	},
 /area/outpost/yard/south)
 "Wt" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/blood/writing,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
@@ -10305,7 +10305,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/engineering)
 "WL" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_east)
@@ -10483,7 +10483,7 @@
 	},
 /area/outpost/caves/north)
 "XE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/outpost/caves/north_east)
 "XG" = (
@@ -10713,7 +10713,7 @@
 	},
 /area/outpost/hallway/northern)
 "YE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 4
 	},
@@ -10821,7 +10821,7 @@
 	},
 /area/outpost/yard/south)
 "Zj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/outpost/caves/north_west)
 "Zk" = (
@@ -10863,7 +10863,7 @@
 /turf/open/floor/tile/dark/purple2{
 	dir = 6
 	},
-/area/outpost/science/xenobiology)
+/area/outpost/science/tyranidbiology)
 "Zr" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -10939,7 +10939,7 @@
 	},
 /area/outpost/hallway/south_cent)
 "ZF" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark,
 /area/outpost/science)
 "ZG" = (

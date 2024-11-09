@@ -1,8 +1,8 @@
 /// A cheap little roomba that runs around and keeps prep clean to decrease maptick and prep always being a fucking mess
 /obj/machinery/bot/roomba
 	name = "Nanotrasen roomba"
-	desc = "A robot vacuum cleaner designed by Nanotrasen. The roomba is designed to keep areas clean from dirty marines."
-	icon = 'icons/obj/aibots.dmi'
+	desc = "A robot vacuum cleaner designed by Nanotrasen. The roomba is designed to keep areas clean from dirty guardsmans."
+	icon = 'modular_imperium/master_files/icons/obj/aibots.dmi'
 	icon_state = "roomba"
 	voice_filter = "alimiter=0.9,acompressor=threshold=0.2:ratio=20:attack=10:release=50:makeup=2,highpass=f=1000"
 	///The mine we have attached to this roomba
@@ -12,12 +12,12 @@
 	sentences = list(
 		"Clean up your bloody mess you ANIMAL!",
 		"Who teached you to leave your trash behind you? Your mom should be ashamed!",
-		"I will kick the ass of the next marine that i see leaving objects unattended!",
-		"I will report your behaviour to your superior, marine",
-		"Another day, another trash. Gosh, i would have left these marines in the cryo.",
+		"I will kick the ass of the next guardsman that i see leaving objects unattended!",
+		"I will report your behaviour to your superior, guardsman",
+		"Another day, another trash. Gosh, i would have left these guardsmans in the cryo.",
 		"Another stinky sock. They really don't know the basics of hygiene",
 		"This is the most DISGUSTING room i have ever seen",
-		"Those marine bastards are gonna pay for trashing up my ship.",
+		"Those guardsman bastards are gonna pay for trashing up my ship.",
 		"Ughh, and I thought I was trashy.",
 		"Lucky you, cleaned by the best!",
 		"Time to start piling up the trash!",
@@ -33,7 +33,7 @@
 		"Damn, here I was minding my own business, just enjoying my clean ship and you people have to trash the place up on me.",
 		"This cant be good for me, but I feel great!",
 		"Gyah, I feel like I'll get robotic hepatitis if I touch anything on this ship.",
-		"I think I will need to keep an eye out for these marines, They are definetly hazardous to my mental health.",
+		"I think I will need to keep an eye out for these guardsmans, They are definetly hazardous to my mental health.",
 		"Sorry folks, the space bible backs me up on this one.",
 		"You just know there's gonna be some variety of pickled crayons in here somewhere.",
 	)

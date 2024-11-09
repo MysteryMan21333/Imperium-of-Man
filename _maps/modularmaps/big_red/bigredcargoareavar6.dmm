@@ -14,7 +14,7 @@
 	},
 /area/bigredv2/outside/nw)
 "an" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "ap" = (
@@ -305,7 +305,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northwest)
 "xh" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "xS" = (

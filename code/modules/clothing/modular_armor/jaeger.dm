@@ -4,7 +4,7 @@
 /obj/item/clothing/suit/modular/jaeger
 	name = "\improper Jaeger Infantry medium exoskeleton"
 	desc = "A Infantry-pattern Jaeger combat exoskeleton made to work with modular attachments for the ability to function in many enviroments. This one seems to have a moderate amount of armor plating. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_MEDIUM
+	soft_armor = GUARDSMAN_ARMOR_MEDIUM
 	icon_state = "chest"
 	worn_icon_state = "chest"
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
@@ -26,9 +26,9 @@
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
 		/obj/item/armor_module/storage/medical,
-		/obj/item/armor_module/storage/general/som,
-		/obj/item/armor_module/storage/engineering/som,
-		/obj/item/armor_module/storage/medical/som,
+		/obj/item/armor_module/storage/general/chaos,
+		/obj/item/armor_module/storage/engineering/chaos,
+		/obj/item/armor_module/storage/medical/chaos,
 		/obj/item/armor_module/storage/injector,
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,
@@ -65,7 +65,7 @@
 /obj/item/clothing/suit/modular/jaeger/light
 	name = "\improper Jaeger Scout light exoskeleton"
 	desc = "A Scout-pattern Jaeger combat exoskeleton made to work with modular attachments for the ability to function in many enviroments. This one seems to have a light amount of armor plating. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_LIGHT
+	soft_armor = GUARDSMAN_ARMOR_LIGHT
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	greyscale_config = /datum/greyscale_config/armor_mk2/scout
 
@@ -83,7 +83,7 @@
 /obj/item/clothing/suit/modular/jaeger/heavy
 	name = "\improper Jaeger Gungnir heavy exoskeleton"
 	desc = "A Gungnir-pattern Jaeger combat exoskeleton made to work with modular attachments for the ability to function in many enviroments. This one seems to have a high amount of armor plating. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_HEAVY
+	soft_armor = GUARDSMAN_ARMOR_HEAVY
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	greyscale_config = /datum/greyscale_config/armor_mk2/gugnir
 
@@ -98,17 +98,17 @@
 	greyscale_config = /datum/greyscale_config/armor_mk2/eod
 
 //jaeger hats
-/obj/item/clothing/head/modular/marine
+/obj/item/clothing/head/modular/guardsman
 	name = "Jaeger Pattern Infantry Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Infantry markings."
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	icon_state = "helmet"
 	worn_icon_state = "helmet"
 	icon_override = null
-	soft_armor = MARINE_ARMOR_HEAVY
+	soft_armor = GUARDSMAN_ARMOR_HEAVY
 
 	greyscale_colors = ARMOR_PALETTE_DRAB
 	colorable_allowed = PRESET_COLORS_ALLOWED
@@ -131,123 +131,123 @@
 		/obj/item/armor_module/module/night_vision,
 		/obj/item/armor_module/storage/helmet,
 		/obj/item/armor_module/armor/badge,
-		/obj/item/armor_module/armor/visor/marine,
-		/obj/item/armor_module/armor/visor/marine/skirmisher,
-		/obj/item/armor_module/armor/visor/marine/scout,
-		/obj/item/armor_module/armor/visor/marine/eva,
-		/obj/item/armor_module/armor/visor/marine/eva/skull,
-		/obj/item/armor_module/armor/visor/marine/gungnir,
-		/obj/item/armor_module/armor/visor/marine/eod,
-		/obj/item/armor_module/armor/visor/marine/assault,
-		/obj/item/armor_module/armor/visor/marine/helljumper,
-		/obj/item/armor_module/armor/visor/marine/ranger,
-		/obj/item/armor_module/armor/visor/marine/traditional,
-		/obj/item/armor_module/armor/visor/marine/mjolnir_open,
-		/obj/item/armor_module/armor/visor/marine/trooper,
-		/obj/item/armor_module/armor/visor/marine/fourvisor,
-		/obj/item/armor_module/armor/visor/marine/foureyevisor,
-		/obj/item/armor_module/armor/visor/marine/markonevisor,
+		/obj/item/armor_module/armor/visor/guardsman,
+		/obj/item/armor_module/armor/visor/guardsman/skirmisher,
+		/obj/item/armor_module/armor/visor/guardsman/scout,
+		/obj/item/armor_module/armor/visor/guardsman/eva,
+		/obj/item/armor_module/armor/visor/guardsman/eva/skull,
+		/obj/item/armor_module/armor/visor/guardsman/gungnir,
+		/obj/item/armor_module/armor/visor/guardsman/eod,
+		/obj/item/armor_module/armor/visor/guardsman/assault,
+		/obj/item/armor_module/armor/visor/guardsman/helljumper,
+		/obj/item/armor_module/armor/visor/guardsman/ranger,
+		/obj/item/armor_module/armor/visor/guardsman/traditional,
+		/obj/item/armor_module/armor/visor/guardsman/mjolnir_open,
+		/obj/item/armor_module/armor/visor/guardsman/trooper,
+		/obj/item/armor_module/armor/visor/guardsman/fourvisor,
+		/obj/item/armor_module/armor/visor/guardsman/foureyevisor,
+		/obj/item/armor_module/armor/visor/guardsman/markonevisor,
 	)
 
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman, /obj/item/armor_module/storage/helmet)
 
 	item_map_variant_flags = ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_DESERT_VARIANT
 
-/obj/item/clothing/head/modular/marine/eva
+/obj/item/clothing/head/modular/guardsman/eva
 	name = "Jaeger Pattern EVA Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has EVA markings."
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/eva, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/eva, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/eva
 
-/obj/item/clothing/head/modular/marine/eva/skull
+/obj/item/clothing/head/modular/guardsman/eva/skull
 	name = "Jaeger Pattern EVA 'Skull' Helmet"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/eva/skull, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/eva/skull, /obj/item/armor_module/storage/helmet)
 
-/obj/item/clothing/head/modular/marine/skirmisher
+/obj/item/clothing/head/modular/guardsman/skirmisher
 	name = "Jaeger Pattern Skirmisher Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Skirmisher markings."
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/skirmisher, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/skirmisher, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/skirmisher
 
-/obj/item/clothing/head/modular/marine/scout
+/obj/item/clothing/head/modular/guardsman/scout
 	name = "Jaeger Pattern Scout Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Scout markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/scout, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/scout, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/scout
 
-/obj/item/clothing/head/modular/marine/gungnir
+/obj/item/clothing/head/modular/guardsman/gungnir
 	name = "Jaeger Pattern Gungnir Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Gungnir markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/gungnir, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/gungnir, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/gugnir
 
-/obj/item/clothing/head/modular/marine/assault
+/obj/item/clothing/head/modular/guardsman/assault
 	name = "Jaeger Pattern Assault Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Assault markings."
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/assault, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/assault, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2
 
-/obj/item/clothing/head/modular/marine/eod
+/obj/item/clothing/head/modular/guardsman/eod
 	name = "Jaeger Pattern EOD Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has EOD markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/eod, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/eod, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/eod
 
-/obj/item/clothing/head/modular/marine/helljumper
+/obj/item/clothing/head/modular/guardsman/helljumper
 	name = "Jaeger Pattern Helljumper Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Helljumper markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/helljumper, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/helljumper, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/helljumper
 	visorless_offset_y = 0
 
-/obj/item/clothing/head/modular/marine/ranger
+/obj/item/clothing/head/modular/guardsman/ranger
 	name = "Jaeger Pattern Ranger Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Ranger markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/ranger, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/ranger, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/ranger
 
-/obj/item/clothing/head/modular/marine/traditional
+/obj/item/clothing/head/modular/guardsman/traditional
 	name = "Jaeger Pattern Traditional Ranger Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has traditional Ranger markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/traditional, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/traditional, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/traditional
 
-/obj/item/clothing/head/modular/marine/trooper
+/obj/item/clothing/head/modular/guardsman/trooper
 	name = "Jaeger Pattern Trooper Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Trooper markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/trooper, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/trooper, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/trooper
 
-/obj/item/clothing/head/modular/marine/mjolnir_open
+/obj/item/clothing/head/modular/guardsman/mjolnir_open
 	name = "Jaeger Mk.I Pattern Open Mjolnir Helmet"
 	desc = "Usually paired with the Jaeger Combat Exoskeleton. Can mount utility functions on the helmet hard points. Has Mjolnir markings but explosing the lower jaw."
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/mjolnir_open, /obj/item/armor_module/storage/helmet)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/mjolnir_open, /obj/item/armor_module/storage/helmet)
 	greyscale_config = /datum/greyscale_config/armor_mk2/mjolnir_open
 
 // Hardsuit Helmets
 
-/obj/item/clothing/head/modular/marine/hardsuit_helm
+/obj/item/clothing/head/modular/guardsman/hardsuit_helm
 	name = "FleckTex Base Hardsuit Helmet"
 	desc = "Usually paired with the FleckTex WY-01 modular exoskeleton. Can mount utility functions on the helmet hard points. Has Base markings"
 	greyscale_config = /datum/greyscale_config/hardsuit_variant
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
 
-/obj/item/clothing/head/modular/marine/hardsuit_helm/markfive
+/obj/item/clothing/head/modular/guardsman/hardsuit_helm/markfive
 	name = "FleckTex Mark V Breacher Helmet"
 	desc = "Usually paired with the FleckTex WY-01 modular exoskeleton. Can mount utility functions on the helmet hard points. Has Breacher markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/fourvisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/fourvisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
 	greyscale_config = /datum/greyscale_config/hardsuit_variant/syndicate_markfive
 
-/obj/item/clothing/head/modular/marine/hardsuit_helm/markthree
+/obj/item/clothing/head/modular/guardsman/hardsuit_helm/markthree
 	name = "FleckTex Mark III Marauder Helmet"
 	desc = "Usually paired with the FleckTex WY-01 modular exoskeleton. Can mount utility functions on the helmet hard points. Has Marauder markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/foureyevisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/foureyevisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
 	greyscale_config = /datum/greyscale_config/hardsuit_variant/syndicate_markthree
 
-/obj/item/clothing/head/modular/marine/hardsuit_helm/markone
+/obj/item/clothing/head/modular/guardsman/hardsuit_helm/markone
 	name = "FleckTex Mark I Raider Helmet"
 	desc = "Usually paired with the FleckTex WY-01 modular exoskeleton. Can mount utility functions on the helmet hard points. Has Raider markings"
-	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/markonevisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
+	starting_attachments = list(/obj/item/armor_module/armor/visor/guardsman/markonevisor, /obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/secondary_color/helm)
 	greyscale_config = /datum/greyscale_config/hardsuit_variant
 
 

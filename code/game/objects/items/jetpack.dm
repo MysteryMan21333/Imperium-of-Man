@@ -2,14 +2,14 @@
 #define FUEL_INDICATOR_FULL 35
 #define FUEL_INDICATOR_HALF_FULL 20
 
-/obj/item/jetpack_marine
-	name = "marine jetpack"
+/obj/item/jetpack_guardsman
+	name = "guardsman jetpack"
 	desc = "A high powered jetpack with enough fuel to send a person flying for a short while. It allows for fast and agile movement on the battlefield. <b>Alt right click or middleclick to fly to a destination when the jetpack is equipped.</b>"
-	icon = 'icons/obj/items/jetpack.dmi'
-	icon_state = "jetpack_marine"
+	icon = 'modular_imperium/master_files/icons/obj/items/jetpack.dmi'
+	icon_state = "jetpack_guardsman"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_BULKY
 	equip_slot_flags = ITEM_SLOT_BACK
@@ -29,12 +29,12 @@
 	///Controlling action
 	var/datum/action/ability/activable/item_toggle/jetpack/toggle_action
 
-/obj/item/jetpack_marine/Initialize(mapload)
+/obj/item/jetpack_guardsman/Initialize(mapload)
 	. = ..()
 	toggle_action = new(src)
 	update_icon()
 
-/obj/item/jetpack_marine/examine(mob/user, distance, infix, suffix)
+/obj/item/jetpack_guardsman/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if(!ishuman(user))
 		return
@@ -43,20 +43,20 @@
 	else
 		. += "The fuel gauge meter indicates it has [fuel_left/FUEL_USE] uses left."
 
-/obj/item/jetpack_marine/equipped(mob/user, slot)
+/obj/item/jetpack_guardsman/equipped(mob/user, slot)
 	. = ..()
 	if(slot == SLOT_BACK)
 		toggle_action.give_action(user)
 
-/obj/item/jetpack_marine/dropped(mob/user)
+/obj/item/jetpack_guardsman/dropped(mob/user)
 	. = ..()
 	toggle_action.remove_action(user)
 
-/obj/item/jetpack_marine/ui_action_click(mob/user, datum/action/item_action/action, target)
+/obj/item/jetpack_guardsman/ui_action_click(mob/user, datum/action/item_action/action, target)
 	return use_jetpack(target, user)
 
 ///remove the flame overlay
-/obj/item/jetpack_marine/proc/reset_flame(mob/living/carbon/human/human_user)
+/obj/item/jetpack_guardsman/proc/reset_flame(mob/living/carbon/human/human_user)
 	SIGNAL_HANDLER
 	UnregisterSignal(human_user, COMSIG_MOVABLE_POST_THROW)
 	lit = FALSE
@@ -64,7 +64,7 @@
 	human_user.update_inv_back()
 
 ///Make the user fly toward the target atom
-/obj/item/jetpack_marine/proc/use_jetpack(atom/A, mob/living/carbon/human/human_user)
+/obj/item/jetpack_guardsman/proc/use_jetpack(atom/A, mob/living/carbon/human/human_user)
 	if(human_user.buckled)
 		balloon_alert(human_user, "Cannot fly while buckled")
 		return FALSE
@@ -85,7 +85,7 @@
 	return TRUE
 
 ///Calculate the max range of the jetpack, changed by some item slowdown
-/obj/item/jetpack_marine/proc/calculate_range(mob/living/carbon/human/human_user)
+/obj/item/jetpack_guardsman/proc/calculate_range(mob/living/carbon/human/human_user)
 	var/range_limiting_factor = human_user.additive_flagged_slowdown(SLOWDOWN_IMPEDE_JETPACK)
 	switch(range_limiting_factor)
 		if(0 to 0.35) //light armor or above
@@ -97,27 +97,27 @@
 		if(1.2 to INFINITY)//heavy armor with shield and tyr mk2
 			return 2
 
-/obj/item/jetpack_marine/update_overlays()
+/obj/item/jetpack_guardsman/update_overlays()
 	. = ..()
 	switch(fuel_indicator)
 		if(FUEL_INDICATOR_FULL)
-			. += image('icons/obj/items/jetpack.dmi', src, "+jetpackfull")
+			. += image('modular_imperium/master_files/icons/obj/items/jetpack.dmi', src, "+jetpackfull")
 		if(FUEL_INDICATOR_HALF_FULL)
-			. += image('icons/obj/items/jetpack.dmi', src, "+jetpackhalffull")
+			. += image('modular_imperium/master_files/icons/obj/items/jetpack.dmi', src, "+jetpackhalffull")
 		if(FUEL_USE)
-			. += image('icons/obj/items/jetpack.dmi', src, "+jetpackalmostempty")
+			. += image('modular_imperium/master_files/icons/obj/items/jetpack.dmi', src, "+jetpackalmostempty")
 		else
-			. += image('icons/obj/items/jetpack.dmi', src, "+jetpackempty")
+			. += image('modular_imperium/master_files/icons/obj/items/jetpack.dmi', src, "+jetpackempty")
 
-/obj/item/jetpack_marine/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
+/obj/item/jetpack_guardsman/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
 	if(inhands)
 		return
 	. = ..()
 	if(lit)
-		standing.overlays += mutable_appearance('icons/mob/clothing/back.dmi',"+jetpack_lit")
+		standing.overlays += mutable_appearance('modular_imperium/master_files/icons/mob/clothing/back.dmi',"+jetpack_lit")
 
 ///Manage the fuel indicator overlay
-/obj/item/jetpack_marine/proc/change_fuel_indicator()
+/obj/item/jetpack_guardsman/proc/change_fuel_indicator()
 	if(fuel_left-fuel_indicator > 0)
 		return
 	if (fuel_left >= FUEL_INDICATOR_FULL)
@@ -131,7 +131,7 @@
 		return
 	fuel_indicator = 0
 
-/obj/item/jetpack_marine/afterattack(obj/target, mob/user, proximity_flag) //refuel at fueltanks when we run out of fuel
+/obj/item/jetpack_guardsman/afterattack(obj/target, mob/user, proximity_flag) //refuel at fueltanks when we run out of fuel
 	if(!istype(target, /obj/structure/reagent_dispensers/fueltank) || !proximity_flag)
 		return ..()
 	var/obj/structure/reagent_dispensers/fueltank/FT = target
@@ -148,7 +148,7 @@
 	playsound(loc, 'sound/effects/refill.ogg', 30, 1, 3)
 	balloon_alert(user, "Refilled")
 
-/obj/item/jetpack_marine/attackby(obj/item/I, mob/user, params)
+/obj/item/jetpack_guardsman/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(.)
 		return
@@ -177,26 +177,26 @@
 
 /datum/action/ability/activable/item_toggle/jetpack/New(Target, obj/item/holder)
 	. = ..()
-	var/obj/item/jetpack_marine/jetpack = Target
+	var/obj/item/jetpack_guardsman/jetpack = Target
 	cooldown_duration = jetpack.cooldown_time
 
 /datum/action/ability/activable/item_toggle/jetpack/can_use_ability(silent, override_flags, selecting)
 	var/mob/living/carbon/carbon_owner = owner
 	if(carbon_owner.incapacitated() || carbon_owner.lying_angle)
 		return FALSE
-	var/obj/item/jetpack_marine/jetpack = holder_item
+	var/obj/item/jetpack_guardsman/jetpack = holder_item
 	if(jetpack.fuel_left < FUEL_USE)
 		carbon_owner.balloon_alert(carbon_owner, "No fuel")
 		return
 	return ..()
 
-/obj/item/jetpack_marine/heavy
+/obj/item/jetpack_guardsman/heavy
 	name = "heavy lift jetpack"
 	desc = "An upgraded jetpack with enough fuel to send a person flying for a short while with extreme force. It provides better mobility for heavy users and enough thrust to be used in an aggressive manner. <b>Alt right click or middleclick to fly to a destination when the jetpack is equipped. Will collide with hostiles</b>"
 	cooldown_time = 5 SECONDS
 	speed = 2
 
-/obj/item/jetpack_marine/heavy/calculate_range(mob/living/carbon/human/human_user)
+/obj/item/jetpack_guardsman/heavy/calculate_range(mob/living/carbon/human/human_user)
 	var/range_limiting_factor = human_user.additive_flagged_slowdown(SLOWDOWN_IMPEDE_JETPACK)
 	switch(range_limiting_factor)
 		if(0 to 0.35) //light armor or above
@@ -208,7 +208,7 @@
 		if(1.2 to INFINITY)//heavy armor with shield and tyr mk2
 			return 4
 
-/obj/item/jetpack_marine/heavy/use_jetpack(atom/A, mob/living/carbon/human/human_user)
+/obj/item/jetpack_guardsman/heavy/use_jetpack(atom/A, mob/living/carbon/human/human_user)
 	. = ..()
 	if(!.)
 		return
@@ -216,12 +216,12 @@
 		human_user.pass_flags &= ~PASS_MOB //we explicitly want to hit people
 	RegisterSignal(human_user, COMSIG_MOVABLE_PREBUMP_MOVABLE, PROC_REF(mob_hit))
 
-/obj/item/jetpack_marine/heavy/reset_flame(mob/living/carbon/human/human_user)
+/obj/item/jetpack_guardsman/heavy/reset_flame(mob/living/carbon/human/human_user)
 	. = ..()
 	UnregisterSignal(human_user, COMSIG_MOVABLE_PREBUMP_MOVABLE)
 
 ///Handles the user colliding with a mob
-/obj/item/jetpack_marine/heavy/proc/mob_hit(mob/living/carbon/human/human_user, mob/living/hit_mob)
+/obj/item/jetpack_guardsman/heavy/proc/mob_hit(mob/living/carbon/human/human_user, mob/living/hit_mob)
 	SIGNAL_HANDLER
 	if(!istype(hit_mob))
 		return

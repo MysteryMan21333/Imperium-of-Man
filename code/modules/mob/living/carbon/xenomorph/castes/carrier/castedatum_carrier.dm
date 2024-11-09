@@ -1,13 +1,13 @@
-/datum/xeno_caste/carrier
+/datum/tyranid_caste/carrier
 	caste_name = "Carrier"
 	display_name = "Carrier"
 	upgrade_name = ""
 	caste_desc = "A carrier of huggies."
 
-	caste_type_path = /mob/living/carbon/xenomorph/carrier
+	caste_type_path = /mob/living/carbon/tyranid/carrier
 
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "carrier" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -27,7 +27,7 @@
 	evolution_threshold = 225
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/drone
+	deevolves_to = /datum/tyranid_caste/drone
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED
@@ -49,49 +49,49 @@
 	hugger_delay = 1.25 SECONDS
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/cocoon,
-		/datum/action/ability/activable/xeno/plant_weeds,
-		/datum/action/ability/activable/xeno/throw_hugger,
-		/datum/action/ability/activable/xeno/call_younger,
-		/datum/action/ability/xeno_action/lay_egg,
-		/datum/action/ability/xeno_action/place_trap,
-		/datum/action/ability/xeno_action/spawn_hugger,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/xeno_action/carrier_panic,
-		/datum/action/ability/xeno_action/choose_hugger_type,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/cocoon,
+		/datum/action/ability/activable/tyranid/plant_weeds,
+		/datum/action/ability/activable/tyranid/throw_hugger,
+		/datum/action/ability/activable/tyranid/call_younger,
+		/datum/action/ability/tyranid_action/lay_egg,
+		/datum/action/ability/tyranid_action/place_trap,
+		/datum/action/ability/tyranid_action/spawn_hugger,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/carrier_panic,
+		/datum/action/ability/tyranid_action/choose_hugger_type,
 	)
 
-/datum/xeno_caste/carrier/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/carrier/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/carrier/primodial
+/datum/tyranid_caste/carrier/primodial
 	upgrade_name = "Primordial"
 	caste_desc = "It's literally crawling with 11 huggers."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	primordial_message = "Not one tall will be left uninfected."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/cocoon,
-		/datum/action/ability/activable/xeno/plant_weeds,
-		/datum/action/ability/activable/xeno/throw_hugger,
-		/datum/action/ability/activable/xeno/call_younger,
-		/datum/action/ability/xeno_action/lay_egg,
-		/datum/action/ability/xeno_action/place_trap,
-		/datum/action/ability/xeno_action/spawn_hugger,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/xeno_action/carrier_panic,
-		/datum/action/ability/xeno_action/choose_hugger_type,
-		/datum/action/ability/xeno_action/build_hugger_turret,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/cocoon,
+		/datum/action/ability/activable/tyranid/plant_weeds,
+		/datum/action/ability/activable/tyranid/throw_hugger,
+		/datum/action/ability/activable/tyranid/call_younger,
+		/datum/action/ability/tyranid_action/lay_egg,
+		/datum/action/ability/tyranid_action/place_trap,
+		/datum/action/ability/tyranid_action/spawn_hugger,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/carrier_panic,
+		/datum/action/ability/tyranid_action/choose_hugger_type,
+		/datum/action/ability/tyranid_action/build_hugger_turret,
 	)

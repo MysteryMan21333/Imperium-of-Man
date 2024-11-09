@@ -1,10 +1,10 @@
 /obj/machinery/door/window
 	name = "interior door"
 	desc = "A strong door."
-	icon = 'icons/obj/doors/windoor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/windoor.dmi'
 	icon_state = "left"
 	layer = ABOVE_WINDOW_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	obj_flags = CAN_BE_HIT | BLOCKS_CONSTRUCTION_DIR
 	var/base_state = "left"
 	max_integrity = 50
@@ -205,7 +205,7 @@
 
 // Main ship brig doors
 /obj/machinery/door/window/secure/brig
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 	name = "Cell"
 	id = "Cell"
 
@@ -235,7 +235,7 @@
 
 // Bridge Doors
 /obj/machinery/door/window/secure/bridge
-	req_access = list(ACCESS_MARINE_BRIDGE)
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door/window/secure/bridge/right
 	icon_state = "rightsecure"
@@ -246,7 +246,7 @@
 
 // Req Doors
 /obj/machinery/door/window/secure/req
-	req_one_access = list(ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
+	req_one_access = list(ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO)
 
 /obj/machinery/door/window/secure/req/right
 	icon_state = "rightsecure"
@@ -254,7 +254,7 @@
 
 // Engi Doors
 /obj/machinery/door/window/secure/engineering
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 
 /obj/machinery/door/window/secure/engineering/right
 	icon_state = "rightsecure"
@@ -262,4 +262,4 @@
 
 // Med Doors
 /obj/machinery/door/window/secure/medical
-	req_access = list(ACCESS_MARINE_CHEMISTRY)
+	req_access = list(ACCESS_GUARDSMAN_CHEMISTRY)

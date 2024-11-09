@@ -1,11 +1,11 @@
 /obj/item/ammo_magazine
 	name = "generic ammo"
 	desc = "A box of ammo."
-	icon = 'icons/obj/items/ammo/handful.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/handful.dmi'
 	worn_icon_state = "ammo_mag" //PLACEHOLDER. This ensures the mag doesn't use the icon state instead.
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/ammo_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/ammo_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/ammo_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/ammo_right.dmi',
 		)
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT
@@ -335,7 +335,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 /obj/item/ammo_casing
 	name = "spent casing"
 	desc = "Empty and useless now."
-	icon = 'icons/obj/items/casings.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/casings.dmi'
 	icon_state = "casing_"
 	throwforce = 1
 	w_class = WEIGHT_CLASS_TINY
@@ -408,7 +408,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	name = "big ammo box (10x24mm)"
 	desc = "A large ammo box. It comes with a leather strap."
 	w_class = WEIGHT_CLASS_HUGE
-	icon = 'icons/obj/items/ammo/box.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/box.dmi'
 	icon_state = "big"
 	worn_icon_state = "big_ammo_box"
 	equip_slot_flags = ITEM_SLOT_BACK
@@ -494,7 +494,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 /obj/item/shotgunbox
 	name = "Slug Ammo Box"
 	desc = "A large, deployable ammo box."
-	icon = 'icons/obj/items/ammo/box.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/box.dmi'
 	icon_state = "slug"
 	worn_icon_state = "ammoboxslug"
 	base_icon_state = "slug"

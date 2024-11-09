@@ -16,7 +16,7 @@
 #define FIRESUPPORT_TYPE_SUPPLY_POD "supply_pod"
 ///Volkite gun run
 #define FIRESUPPORT_TYPE_VOLKITE "volkite_gun"
-///SOM Incendiary rocket barrage
+///CHAOS Incendiary rocket barrage
 #define FIRESUPPORT_TYPE_INCEND_ROCKETS "incend_rockets"
 ///Radioactive missile
 #define FIRESUPPORT_TYPE_RAD_MISSILE "rad_missile"
@@ -28,12 +28,12 @@
 #define FIRESUPPORT_TYPE_SMOKE_MORTAR "smoke_mortar"
 ///Acid smoke mortar barrage
 #define FIRESUPPORT_TYPE_ACID_SMOKE_MORTAR "acid_smoke_mortar"
-///SOM HE Mortar barrage
-#define FIRESUPPORT_TYPE_HE_MORTAR_SOM "he_mortar_som"
-///SOM Incendiary mortar barrage
-#define FIRESUPPORT_TYPE_INCENDIARY_MORTAR_SOM "incendiary_mortar_som"
-///SOM Smoke mortar barrage
-#define FIRESUPPORT_TYPE_SMOKE_MORTAR_SOM "smoke_mortar_som"
+///CHAOS HE Mortar barrage
+#define FIRESUPPORT_TYPE_HE_MORTAR_CHAOS "he_mortar_som"
+///CHAOS Incendiary mortar barrage
+#define FIRESUPPORT_TYPE_INCENDIARY_MORTAR_CHAOS "incendiary_mortar_som"
+///CHAOS Smoke mortar barrage
+#define FIRESUPPORT_TYPE_SMOKE_MORTAR_CHAOS "smoke_mortar_som"
 ///Satrapine smoke mortar barrage
 #define FIRESUPPORT_TYPE_SATRAPINE_SMOKE_MORTAR "satrapine_smoke_mortar"
 ///Teleported COPE sentry
@@ -65,9 +65,9 @@ GLOBAL_LIST_INIT(fire_support_types, list(
 	FIRESUPPORT_TYPE_INCENDIARY_MORTAR = new /datum/fire_support/mortar/incendiary,
 	FIRESUPPORT_TYPE_SMOKE_MORTAR = new /datum/fire_support/mortar/smoke,
 	FIRESUPPORT_TYPE_ACID_SMOKE_MORTAR = new /datum/fire_support/mortar/smoke/acid,
-	FIRESUPPORT_TYPE_HE_MORTAR_SOM = new /datum/fire_support/mortar/som,
-	FIRESUPPORT_TYPE_INCENDIARY_MORTAR_SOM = new /datum/fire_support/mortar/incendiary/som,
-	FIRESUPPORT_TYPE_SMOKE_MORTAR_SOM = new /datum/fire_support/mortar/smoke/som,
+	FIRESUPPORT_TYPE_HE_MORTAR_CHAOS = new /datum/fire_support/mortar/chaos,
+	FIRESUPPORT_TYPE_INCENDIARY_MORTAR_CHAOS = new /datum/fire_support/mortar/incendiary/chaos,
+	FIRESUPPORT_TYPE_SMOKE_MORTAR_CHAOS = new /datum/fire_support/mortar/smoke/chaos,
 	FIRESUPPORT_TYPE_SATRAPINE_SMOKE_MORTAR = new /datum/fire_support/mortar/smoke/satrapine,
 	FIRESUPPORT_TYPE_TELE_COPE = new /datum/fire_support/tele_cope,
 	))

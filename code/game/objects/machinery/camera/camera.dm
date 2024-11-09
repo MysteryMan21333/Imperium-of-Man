@@ -1,7 +1,7 @@
 /obj/machinery/camera
 	name = "security camera"
 	desc = "It's used to monitor rooms."
-	icon = 'icons/obj/machines/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/monitors.dmi'
 	icon_state = "camera_icon"
 	use_power = ACTIVE_POWER_USE
 	idle_power_usage = 5
@@ -11,7 +11,7 @@
 	light_power = 0
 
 	var/datum/cameranet/parent_cameranet
-	var/list/network = list("marinemainship")
+	var/list/network = list("guardsmanmainship")
 	var/c_tag = null
 	var/status = TRUE
 	var/area/myarea = null
@@ -45,8 +45,8 @@
 		network += lowertext(i)
 
 
-	if(SOM_CAMERA_NETWORK in network)
-		parent_cameranet = GLOB.som_cameranet
+	if(CHAOS_CAMERA_NETWORK in network)
+		parent_cameranet = GLOB.chaos_cameranet
 	else
 		parent_cameranet = GLOB.cameranet
 
@@ -166,16 +166,16 @@
 	return TRUE
 
 
-/obj/machinery/camera/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/camera/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
 	if(obj_integrity <= 0)
-		to_chat(xeno_attacker, span_warning("The camera is already disabled."))
+		to_chat(tyranid_attacker, span_warning("The camera is already disabled."))
 		return
 
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	tyranid_attacker.visible_message(span_danger("[tyranid_attacker] slashes \the [src]!"), \
 	span_danger("We slash \the [src]!"))
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
 
@@ -333,26 +333,26 @@
 
 /obj/machinery/camera/autoname/mainship
 	name = "military-grade camera"
-	network = list("marinemainship")
+	network = list("guardsmanmainship")
 
 /obj/machinery/camera/autoname/mainship/somship
-	network = list(SOM_CAMERA_NETWORK)
+	network = list(CHAOS_CAMERA_NETWORK)
 
 //cameras installed inside the dropships, accessible via both cockpit monitor and ship camera computers
 /obj/machinery/camera/autoname/mainship/dropship_one
-	network = list("marinemainship", "dropship1")
+	network = list("guardsmanmainship", "dropship1")
 
 
 /obj/machinery/camera/autoname/mainship/dropship_two
-	network = list("marinemainship", "dropship2")
+	network = list("guardsmanmainship", "dropship2")
 
 /obj/machinery/camera/headset
 	name = "headset camera"
-	network = list("marine")
+	network = list("guardsman")
 	resistance_flags = RESIST_ALL //If the containing headset is not destroyed, neither should this be.
 
-/obj/machinery/camera/headset/som
-	network = list(SOM_CAMERA_NETWORK)
+/obj/machinery/camera/headset/chaos
+	network = list(CHAOS_CAMERA_NETWORK)
 
 //used by the laser camera dropship equipment
 /obj/machinery/camera/laser_cam

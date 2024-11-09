@@ -43,7 +43,7 @@
 	name = "box"
 	desc = "It's just an ordinary box."
 	icon_state = "box"
-	icon = 'icons/obj/items/storage/box.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/box.dmi'
 	worn_icon_state = "syringe_kit"
 	w_class = WEIGHT_CLASS_BULKY //Changed becuase of in-game abuse
 	var/obj/item/spawn_type
@@ -156,7 +156,7 @@
 /obj/item/storage/box/monkeycubes
 	name = "monkey cube box"
 	desc = "Drymate brand monkey cubes. Just add water!"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "monkeycubebox"
 	spawn_type = /obj/item/reagent_containers/food/snacks/monkeycube/wrapped
 	spawn_number = 5
@@ -220,7 +220,7 @@
 /obj/item/storage/box/snappops
 	name = "snap pop box"
 	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
-	icon = 'icons/obj/items/toy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/toy.dmi'
 	icon_state = "spbox"
 	spawn_type = /obj/item/toy/snappop
 	spawn_number = 8
@@ -232,7 +232,7 @@
 /obj/item/storage/box/matches
 	name = "matchbox"
 	desc = "A small box of 'Space-Proof' premium matches."
-	icon = 'icons/obj/items/cigarettes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cigarettes.dmi'
 	icon_state = "matchbox"
 	worn_icon_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
@@ -338,7 +338,7 @@
 
 
 
-////////// MARINES BOXES //////////////////////////
+////////// GUARDSMANS BOXES //////////////////////////
 
 
 /obj/item/storage/box/explosive_mines
@@ -383,7 +383,7 @@
 
 /obj/item/storage/box/m94
 	name = "\improper M40 FLDP flare pack"
-	desc = "A packet of seven M40 FLDP Flares. Carried by TGMC marines to light dark areas that cannot be reached with the usual TNR Shoulder Lamp. Can be launched from an underslung grenade launcher."
+	desc = "A packet of seven M40 FLDP Flares. Carried by TGMC guardsmans to light dark areas that cannot be reached with the usual TNR Shoulder Lamp. Can be launched from an underslung grenade launcher."
 	icon_state = "m40"
 	w_class = WEIGHT_CLASS_SMALL
 	spawn_type = /obj/item/explosive/grenade/flare
@@ -421,7 +421,7 @@
 
 /obj/item/storage/box/MRE
 	name = "\improper TGMC MRE"
-	desc = "Meal Ready-to-Eat, meant to be consumed in the field, and has an expiration that is two decades past a marine's average combat life expectancy."
+	desc = "Meal Ready-to-Eat, meant to be consumed in the field, and has an expiration that is two decades past a guardsman's average combat life expectancy."
 	icon_state = "mealpack"
 	w_class = WEIGHT_CLASS_SMALL
 	///If our MRE is opened, it gets a new icon
@@ -445,14 +445,14 @@
 		isopened = 1
 		icon_state += "opened"
 
-/obj/item/storage/box/MRE/som
-	name = "\improper SOM MFR"
+/obj/item/storage/box/MRE/chaos
+	name = "\improper CHAOS MFR"
 	desc = "A Martian Field Ration, guaranteed to have a taste of Mars in every bite."
-	icon_state = "som_mealpack"
+	icon_state = "chaos_mealpack"
 
-/obj/item/storage/box/MRE/som/Initialize(mapload, ...)
+/obj/item/storage/box/MRE/chaos/Initialize(mapload, ...)
 	. = ..()
-	storage_datum.trash_item = /obj/item/trash/mre/som
+	storage_datum.trash_item = /obj/item/trash/mre/chaos
 
 /**
  * # fillable box
@@ -464,7 +464,7 @@
 /obj/item/storage/box/visual
 	name = "generic box"
 	desc = "This box is able to hold a wide variety of supplies."
-	icon = 'icons/obj/items/storage/storage_boxes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/storage_boxes.dmi'
 	icon_state = "mag_box"
 	worn_icon_state = "mag_box"
 	w_class = WEIGHT_CLASS_HUGE
@@ -595,11 +595,11 @@
 	if(!deployed)
 		icon_state = "[initial(icon_state)]"
 		if(closed_overlay)
-			. += image('icons/obj/items/storage/storage_boxes.dmi', icon_state = closed_overlay)
+			. += image('modular_imperium/master_files/icons/obj/items/storage/storage_boxes.dmi', icon_state = closed_overlay)
 		return // We early return here since we don't draw the insides when it's closed.
 
 	if(open_overlay)
-		. += image('icons/obj/items/storage/storage_boxes.dmi', icon_state = open_overlay)
+		. += image('modular_imperium/master_files/icons/obj/items/storage/storage_boxes.dmi', icon_state = open_overlay)
 
 	if(variety > max_overlays) // Too many items inside so lets make it cluttered
 		return
@@ -629,7 +629,7 @@
 			//Getting the mini icon_state to display
 			var/obj/item/relateditem = obj_typepath
 
-			. += image('icons/obj/items/items_mini.dmi', icon_state = initial(relateditem.icon_state_mini), pixel_x = imagepixel_x, pixel_y = imagepixel_y)
+			. += image('modular_imperium/master_files/icons/obj/items/items_mini.dmi', icon_state = initial(relateditem.icon_state_mini), pixel_x = imagepixel_x, pixel_y = imagepixel_y)
 			current_iteration++
 
 // --MAG BOXES--
@@ -982,19 +982,19 @@
 	spawn_number = 30
 	spawn_type = /obj/item/cell/lasgun/lasrifle
 
-/obj/item/storage/box/visual/magazine/compact/lasrifle/marine
+/obj/item/storage/box/visual/magazine/compact/lasrifle/guardsman
 	name = "Terra Experimental cell box"
 	desc = "A box specifically designed to hold a large amount of Terra Experimental cells."
 	closed_overlay = "mag_box_small_overlay_te"
 
-/obj/item/storage/box/visual/magazine/compact/lasrifle/marine/Initialize(mapload, ...)
+/obj/item/storage/box/visual/magazine/compact/lasrifle/guardsman/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.storage_slots = 30
 	storage_datum.set_holdable(can_hold_list = list(
 		/obj/item/cell/lasgun/lasrifle,
 	))
 
-/obj/item/storage/box/visual/magazine/compact/lasrifle/marine/full
+/obj/item/storage/box/visual/magazine/compact/lasrifle/guardsman/full
 	spawn_number = 30
 	spawn_type = /obj/item/cell/lasgun/lasrifle
 
@@ -1224,7 +1224,7 @@
 
 /obj/item/storage/box/visual/grenade/drain
 	name = "\improper M40-T grenade box"
-	desc = "A secure box holding 25 M40-T gas grenades. 100% safe to use around masked marines."
+	desc = "A secure box holding 25 M40-T gas grenades. 100% safe to use around masked guardsmans."
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/smokebomb/drain
 	closed_overlay = "grenade_box_overlay_drain"

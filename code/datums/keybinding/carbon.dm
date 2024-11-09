@@ -7,7 +7,7 @@
 	hotkey_keys = list("Alt")
 	name = "hold_run_move_intent"
 	full_name = "Hold to Sprint/Stalk"
-	description = "Hold down to sprint if human or stalk if xeno, release to return to previous mode."
+	description = "Hold down to sprint if human or stalk if tyranid, release to return to previous mode."
 	keybind_signal = COMSIG_KB_CARBON_HOLDRUNMOVEINTENT_DOWN
 
 /datum/keybinding/carbon/hold_run_move_intent/down(client/user)

@@ -11,7 +11,7 @@
 	var/obj/machinery/camera/active_camera
 	/// Used to keep a cache of the last location visible on the camera
 	var/turf/last_turf
-	var/list/network = list("marine")
+	var/list/network = list("guardsman")
 	// Stuff needed to render the map
 	var/map_name
 	var/const/default_map_size = 15
@@ -23,7 +23,7 @@
 /obj/item/hud_tablet/Initialize(mapload, rank, datum/squad/squad)
 	. = ..()
 	if(rank)
-		var/dat = "marine"
+		var/dat = "guardsman"
 		switch(rank)
 			if(/datum/job/terragov/squad/leader)
 				if(squad)
@@ -31,41 +31,41 @@
 						if("Alpha")
 							dat += " alpha"
 							network = list("alpha")
-							req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_ALPHA)
+							req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_ALPHA)
 						if("Bravo")
 							dat += " bravo"
 							network = list("bravo")
-							req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_BRAVO)
+							req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRAVO)
 						if("Charlie")
 							dat += " charlie"
 							network = list("charlie")
-							req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_CHARLIE)
+							req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_CHARLIE)
 						if("Delta")
 							dat += " delta"
 							network = list("delta")
-							req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DELTA)
+							req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DELTA)
 						else
 							var/lowername = lowertext(squad.name)
 							dat = dat + " " + lowername
 							network = list(lowername)
-							req_access = list(ACCESS_MARINE_LEADER)
+							req_access = list(ACCESS_GUARDSMAN_LEADER)
 				dat += " squad leader's"
 			if(/datum/job/terragov/command/captain)
 				dat += " captain's"
-				network = list("marinesl", "marine", "marinemainship")
-				req_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_LEADER, ACCESS_MARINE_CAPTAIN)
+				network = list("guardsmansl", "guardsman", "guardsmanmainship")
+				req_access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_CAPTAIN)
 			if(/datum/job/terragov/command/fieldcommander)
 				dat += " field commander's"
-				network = list("marinesl", "marine")
-				req_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_LEADER)
+				network = list("guardsmansl", "guardsman")
+				req_access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_LEADER)
 			if(/datum/job/terragov/command/pilot)
 				dat += " pilot's"
 				network = list("dropship1")
-				req_access = list(ACCESS_MARINE_PILOT, ACCESS_MARINE_DROPSHIP)
+				req_access = list(ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_DROPSHIP)
 			if(/datum/job/terragov/command/transportofficer)
 				dat += " transport officer's"
 				network = list("dropship2")
-				req_access = list(ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE)
+				req_access = list(ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_TADPOLE)
 		name = dat + " hud tablet"
 	// Convert networks to lowercase
 	for(var/i in network)
@@ -224,45 +224,45 @@
 /obj/item/hud_tablet/alpha
 	name = "alpha hud tablet"
 	network = list("alpha")
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_ALPHA)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_ALPHA)
 
 /obj/item/hud_tablet/bravo
 	name = "bravo hud tablet"
 	network = list("bravo")
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_BRAVO)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRAVO)
 
 /obj/item/hud_tablet/charlie
 	name = "charlie hud tablet"
 	network = list("charlie")
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_CHARLIE)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_CHARLIE)
 
 /obj/item/hud_tablet/delta
 	name = "delta hud tablet"
 	network = list("delta")
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DELTA)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DELTA)
 
 /obj/item/hud_tablet/leadership
 	name = "captain's hud tablet"
-	network = list("marinesl", "marine", "marinemainship")
-	req_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_LEADER, ACCESS_MARINE_CAPTAIN)
+	network = list("guardsmansl", "guardsman", "guardsmanmainship")
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_CAPTAIN)
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/fieldcommand
 	name = "field commander's hud tablet"
-	network = list("marinesl", "marine")
-	req_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_LEADER)
+	network = list("guardsmansl", "guardsman")
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_LEADER)
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/pilot
 	name = "pilot officers's hud tablet"
 	network = list("dropship1")
-	req_access = list(ACCESS_MARINE_PILOT, ACCESS_MARINE_DROPSHIP)
+	req_access = list(ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_DROPSHIP)
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/transportofficer
 	name = "transport officer's hud tablet"
 	network = list("dropship2")
-	req_access = list(ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE)
+	req_access = list(ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_TADPOLE)
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/artillery

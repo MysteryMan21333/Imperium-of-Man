@@ -58,7 +58,7 @@
 /obj/machinery/telecomms/bus/preset_two
 	id = "Bus 2"
 	network = "tcommsat"
-	freq_listening = list(FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_SOM, FREQ_SECTOID, FREQ_ECHO)
+	freq_listening = list(FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_CHAOS, FREQ_SECTOID, FREQ_ECHO)
 	autolinkers = list("processor2", "ert")
 
 
@@ -83,20 +83,20 @@
 	freq_listening = list(FREQ_COMMON)
 	autolinkers = list("processor4", "common")
 
-//SOM
-/obj/machinery/telecomms/bus/preset_one/som
-	id = "Bus 1 som"
-	freq_listening = list(FREQ_COMMAND_SOM, FREQ_MEDICAL_SOM, FREQ_ENGINEERING_SOM) //No need for extra channels at this stage
+//CHAOS
+/obj/machinery/telecomms/bus/preset_one/chaos
+	id = "Bus 1 chaos"
+	freq_listening = list(FREQ_COMMAND_CHAOS, FREQ_MEDICAL_CHAOS, FREQ_ENGINEERING_CHAOS) //No need for extra channels at this stage
 	autolinkers = list("processor1_som", "command_som", "medical_som", "engineering_som")
 
-/obj/machinery/telecomms/bus/preset_three/som
-	id = "Bus 3 som"
+/obj/machinery/telecomms/bus/preset_three/chaos
+	id = "Bus 3 chaos"
 	freq_listening = list(FREQ_ZULU, FREQ_YANKEE, FREQ_XRAY, FREQ_WHISKEY)
 	autolinkers = list("processor3_som", "zulu", "yankee", "xray", "whiskey")
 
-/obj/machinery/telecomms/bus/preset_four/som
-	id = "Bus 4 som"
-	freq_listening = list(FREQ_SOM) //same channel as SOM ert
+/obj/machinery/telecomms/bus/preset_four/chaos
+	id = "Bus 4 chaos"
+	freq_listening = list(FREQ_CHAOS) //same channel as CHAOS ert
 	autolinkers = list("processor4_som", "common_som")
 
 

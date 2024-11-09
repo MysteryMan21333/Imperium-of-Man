@@ -37,7 +37,7 @@
 	icon_state = "beach"
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
-	mediumxenofootstep = FOOTSTEP_SAND
+	mediumtyranidfootstep = FOOTSTEP_SAND
 	minimap_color = MINIMAP_WATER
 	smoothing_groups = list(
 		SMOOTH_GROUP_RIVER,
@@ -62,7 +62,7 @@
 	var/icon_spawn_state = "grass1"
 	shoefootstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
-	mediumxenofootstep = FOOTSTEP_GRASS
+	mediumtyranidfootstep = FOOTSTEP_GRASS
 
 
 /turf/open/ground/jungle/Initialize(mapload, ...)
@@ -73,16 +73,16 @@
 		if(prob(90))
 			var/image/I
 			if(prob(35))
-				I = image('icons/obj/structures/jungle.dmi',"plant[rand(1,7)]")
+				I = image('modular_imperium/master_files/icons/obj/structures/jungle.dmi',"plant[rand(1,7)]")
 			else
 				if(prob(30))
-					I = image('icons/obj/flora/ausflora.dmi',"reedbush_[rand(1,4)]")
+					I = image('modular_imperium/master_files/icons/obj/flora/ausflora.dmi',"reedbush_[rand(1,4)]")
 				else if(prob(33))
-					I = image('icons/obj/flora/ausflora.dmi',"leafybush_[rand(1,3)]")
+					I = image('modular_imperium/master_files/icons/obj/flora/ausflora.dmi',"leafybush_[rand(1,3)]")
 				else if(prob(50))
-					I = image('icons/obj/flora/ausflora.dmi',"fernybush_[rand(1,3)]")
+					I = image('modular_imperium/master_files/icons/obj/flora/ausflora.dmi',"fernybush_[rand(1,3)]")
 				else
-					I = image('icons/obj/flora/ausflora.dmi',"stalkybush_[rand(1,3)]")
+					I = image('modular_imperium/master_files/icons/obj/flora/ausflora.dmi',"stalkybush_[rand(1,3)]")
 			I.pixel_x = rand(-6,6)
 			I.pixel_y = rand(-6,6)
 			overlays += I

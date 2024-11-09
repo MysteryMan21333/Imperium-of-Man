@@ -4,8 +4,8 @@
 	icon_state = "jetpack"
 	w_class = WEIGHT_CLASS_BULKY
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
 	worn_icon_state = "jetpack"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD

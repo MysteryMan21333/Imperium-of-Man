@@ -4,7 +4,7 @@
 /obj/machinery/door_control
 	name = "remote door-control"
 	desc = "It controls doors, remotely."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "doorctrl0"
 	desc = "A remote control-switch for a door."
 	power_channel = ENVIRON
@@ -92,7 +92,7 @@
 	. = ..()
 	if(.)
 		return
-	if(istype(user,/mob/living/carbon/xenomorph))
+	if(istype(user,/mob/living/carbon/tyranid))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
 		to_chat(user, span_warning("[src] doesn't seem to be working."))
@@ -182,18 +182,18 @@
 /obj/machinery/door_control/mainship/ammo
 	name = "Ammunition Storage"
 	id = "ammo2"
-	req_one_access = list(ACCESS_MARINE_BRIG, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP)
+	req_one_access = list(ACCESS_GUARDSMAN_BRIG, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP)
 
 /obj/machinery/door_control/mainship/droppod
 	name = "Droppod bay"
 	id = "droppod"
-	req_one_access = list(ACCESS_MARINE_BRIG, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP)
+	req_one_access = list(ACCESS_GUARDSMAN_BRIG, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP)
 
 /obj/machinery/door_control/mainship/engineering
-	req_access = list(ACCESS_MARINE_ENGINEERING)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING)
 
 /obj/machinery/door_control/mainship/medbay
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/machinery/door_control/mainship/fuel
 	name = "Solid Fuel Storage"
@@ -206,7 +206,7 @@
 /obj/machinery/door_control/mainship/research
 	name = "Medical Research Wing"
 	id = "researchdoorext"
-	req_access = list(ACCESS_MARINE_RESEARCH)
+	req_access = list(ACCESS_GUARDSMAN_RESEARCH)
 
 /obj/machinery/door_control/mainship/research/lockdown
 	name = "Research Lockdown"
@@ -215,11 +215,11 @@
 /obj/machinery/door_control/mainship/brigarmory
 	name = "Brig Armory"
 	id = "brig_armory"
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 
 /obj/machinery/door_control/mainship/checkpoint
 	name = "Checkpoint Shutters"
-	req_one_access = list(ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIG, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE)
+	req_one_access = list(ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_BRIG, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door_control/mainship/checkpoint/north
 	id = "northcheckpoint"
@@ -230,7 +230,7 @@
 /obj/machinery/door_control/mainship/cic
 	name = "CIC Lockdown"
 	id = "cic_lockdown"
-	req_one_access = list(ACCESS_MARINE_BRIDGE)
+	req_one_access = list(ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door_control/mainship/cic/armory
 	name = "Armory Lockdown"
@@ -243,22 +243,22 @@
 /obj/machinery/door_control/mainship/mech
 	name = "\improper Mech Shutters"
 	id = "mech_shutters"
-	req_one_access = list(ACCESS_MARINE_MECH)
+	req_one_access = list(ACCESS_GUARDSMAN_MECH)
 
 /obj/machinery/door_control/mainship/vehicle
 	name = "\improper Vehicle Bay Shutters"
 	id = "vehicle_shutters"
-	req_one_access = list(ACCESS_MARINE_ARMORED, ACCESS_MARINE_MECH)
+	req_one_access = list(ACCESS_GUARDSMAN_ARMORED, ACCESS_GUARDSMAN_MECH)
 
 /obj/machinery/door_control/mainship/tcomms
 	name = "Telecommunications Entrance"
 	id = "tcomms"
-	req_one_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIDGE)
+	req_one_access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door_control/mainship/engineering/armory
 	name = "Engineering Armory Lockdown"
 	id = "engi_armory"
-	req_one_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIDGE)
+	req_one_access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_BRIDGE)
 
 
 /obj/machinery/door_control/mainship/corporate
@@ -269,12 +269,12 @@
 /obj/machinery/door_control/mainship/fc_shutters
 	name = "Privacy Shutters"
 	id = "fc_shutters"
-	req_access = list(ACCESS_MARINE_BRIDGE)
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door_control/mainship/req
 	name = "RO Line Shutters"
 	id = "ROlobby"
-	req_one_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	req_one_access = list(ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_LOGISTICS)
 
 /obj/machinery/door_control/mainship/req/ro1
 	name = "RO Line 1 Shutters"
@@ -306,7 +306,7 @@
 /obj/machinery/door_control/old/req
 	name = "RO Line Shutters"
 	id = "ROlobby"
-	req_one_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	req_one_access = list(ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_LOGISTICS)
 
 /obj/machinery/door_control/old/valhalla
 	name = "RO Line Shutters"
@@ -315,7 +315,7 @@
 /obj/machinery/door_control/old/cic
 	name = "CIC Lockdown"
 	id = "cic_lockdown"
-	req_one_access = list(ACCESS_MARINE_BRIDGE)
+	req_one_access = list(ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door_control/old/cic/hangar
 	name = "Hangar Lockdown"
@@ -330,11 +330,11 @@
 	id = "cic_armory"
 
 /obj/machinery/door_control/old/medbay
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/machinery/door_control/old/checkpoint
 	name = "Checkpoint Shutters"
-	req_one_access = list(ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIG, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE)
+	req_one_access = list(ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_BRIG, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/machinery/door_control/old/checkpoint/north
 	id = "northcheckpoint"

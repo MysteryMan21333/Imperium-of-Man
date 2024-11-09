@@ -400,7 +400,7 @@
 /turf/open/floor/tile/yellow/patch,
 /area/gelida/indoors/a_block/corpo)
 "anV" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "aob" = (
@@ -653,7 +653,7 @@
 /turf/open/floor/prison/cleanmarked,
 /area/gelida/landing_zone_1)
 "avl" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -1214,8 +1214,8 @@
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/security)
 "aQR" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "aQU" = (
@@ -2477,7 +2477,7 @@
 /area/gelida/cavestructuretwo)
 "bFY" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves)
 "bGr" = (
@@ -2546,7 +2546,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/c_block/cargo)
 "bHY" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/cavestructuretwo)
 "bIi" = (
@@ -2567,7 +2567,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/b_block/bar)
 "bJh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/ice,
@@ -2852,7 +2852,7 @@
 /area/gelida/landing_zone_1)
 "bSO" = (
 /obj/structure/table/mainship,
-/obj/item/reagent_containers/food/drinks/flask/marine,
+/obj/item/reagent_containers/food/drinks/flask/guardsman,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
 "bSY" = (
@@ -2990,7 +2990,7 @@
 /area/gelida/indoors/c_block/cargo)
 "bYr" = (
 /obj/effect/landmark/corpsespawner/prisoner,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "bYC" = (
@@ -3210,7 +3210,7 @@
 /turf/open/floor/prison,
 /area/gelida/cavestructuretwo)
 "cfP" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/powergen)
 "cgn" = (
@@ -3352,7 +3352,7 @@
 /turf/open/floor/wood,
 /area/gelida/indoors/a_block/fitness)
 "cmw" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -3412,7 +3412,7 @@
 /area/gelida/landing_zone_1)
 "cpa" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves/garbledradio)
 "cpg" = (
@@ -3540,7 +3540,7 @@
 	spawnkey = 0
 	},
 /obj/item/storage/fancy/cigar,
-/obj/item/clothing/head/helmet/marine/veteran/pmc,
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc,
 /obj/item/coin/diamond,
 /turf/open/floor/prison/sterilewhite,
 /area/gelida/indoors/a_block/corpo)
@@ -3967,7 +3967,7 @@
 	},
 /area/gelida/indoors/a_block/hallway)
 "cHi" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge/regular{
 	dir = 4
 	},
@@ -4132,7 +4132,7 @@
 	},
 /area/gelida/indoors/a_block/executive)
 "cMK" = (
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = -4;
@@ -4345,7 +4345,7 @@
 /area/gelida/indoors/a_block/dorms)
 "cTo" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/prison/green/full{
 	dir = 4
 	},
@@ -4357,7 +4357,7 @@
 /area/gelida/indoors/c_block/casino)
 "cTL" = (
 /obj/structure/inflatable/wall,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "cTW" = (
@@ -4561,7 +4561,7 @@
 /area/gelida/cavestructuretwo)
 "dag" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves/garbledradio)
 "dao" = (
@@ -4694,7 +4694,7 @@
 /area/gelida/indoors/a_block/dorms)
 "deu" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves/garbledradio)
 "deV" = (
@@ -4918,7 +4918,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/admin)
 "dmt" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -5013,7 +5013,7 @@
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/south_west_street)
 "dqw" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -5048,11 +5048,11 @@
 	},
 /area/gelida/outdoors/colony_streets/north_street)
 "drL" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "dsb" = (
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = -4;
@@ -5342,7 +5342,7 @@
 	pixel_x = -9;
 	pixel_y = 25
 	},
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "dCy" = (
@@ -5536,14 +5536,14 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/cargo)
 "dJt" = (
-/obj/item/book/manual/marine_law{
+/obj/item/book/manual/guardsman_law{
 	pixel_x = 7
 	},
-/obj/item/book/manual/marine_law{
+/obj/item/book/manual/guardsman_law{
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/book/manual/marine_law{
+/obj/item/book/manual/guardsman_law{
 	pixel_x = 7;
 	pixel_y = 6
 	},
@@ -5850,7 +5850,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorm_north)
 "dUn" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/machinery/power/apc/drained,
 /obj/structure/cable,
 /turf/open/floor/mainship/black/full,
@@ -5867,13 +5867,13 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/cavestructuretwo)
 "dUC" = (
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = -4;
 	pixel_y = 6
 	},
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = 3;
@@ -6035,7 +6035,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/dorms)
 "dYC" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -6263,7 +6263,7 @@
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/cavestructuretwo)
 "eeF" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
@@ -6416,7 +6416,7 @@
 /turf/open/floor/carpet,
 /area/gelida/indoors/c_block/garage)
 "elo" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "ems" = (
@@ -6839,7 +6839,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/dorms)
 "eyO" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison,
 /area/gelida/indoors/b_block/hydro)
 "eyU" = (
@@ -7609,7 +7609,7 @@
 /area/gelida/indoors/a_block/security)
 "eVB" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "eVG" = (
@@ -7793,7 +7793,7 @@
 /area/gelida/outdoors/colony_streets/north_street)
 "eZV" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "faa" = (
@@ -8020,7 +8020,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/security)
 "fie" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/prison/blue{
 	dir = 1
@@ -8522,7 +8522,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "fEZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
@@ -8985,7 +8985,7 @@
 /turf/closed/shuttle/dropship2/finback,
 /area/gelida/landing_zone_forecon/UD6_Typhoon)
 "fXJ" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "fYA" = (
@@ -9119,7 +9119,7 @@
 /turf/open/floor/carpet,
 /area/gelida/indoors/c_block/casino)
 "gbZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating,
 /area/gelida/powergen)
@@ -9356,7 +9356,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/bridges/corpo_fitness)
 "gkC" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "gkW" = (
@@ -9419,7 +9419,7 @@
 	dir = 8
 	},
 /obj/structure/fence,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/prison/plate,
 /area/gelida/outdoors/colony_streets/central_streets)
 "gmI" = (
@@ -9620,7 +9620,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/central_streets)
 "gtp" = (
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = 4;
@@ -9678,7 +9678,7 @@
 "guN" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/gibs,
-/obj/item/clothing/under/marine{
+/obj/item/clothing/under/guardsman{
 	pixel_x = 18;
 	pixel_y = 20
 	},
@@ -10046,7 +10046,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/prison/plate,
 /area/gelida/outdoors/colony_streets/central_streets)
 "gGl" = (
@@ -10259,7 +10259,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/mining)
 "gLO" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves/garbledradio)
 "gMe" = (
@@ -10319,7 +10319,7 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/gelida/outdoors/w_rockies)
 "gNS" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
@@ -10395,7 +10395,7 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/landing_zone_1)
 "gPO" = (
-/obj/item/reagent_containers/food/drinks/flask/marine,
+/obj/item/reagent_containers/food/drinks/flask/guardsman,
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /turf/open/floor/prison/blue/plate{
 	dir = 1
@@ -10676,8 +10676,8 @@
 	},
 /area/gelida/indoors/a_block/dorms)
 "hby" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -10805,15 +10805,15 @@
 /area/gelida/cavestructuretwo)
 "hgC" = (
 /obj/effect/spawner/random/engineering/structure/tank/waterweighted,
-/obj/item/reagent_containers/food/drinks/flask/marine{
+/obj/item/reagent_containers/food/drinks/flask/guardsman{
 	pixel_x = -6;
 	pixel_y = -11
 	},
-/obj/item/reagent_containers/food/drinks/flask/marine{
+/obj/item/reagent_containers/food/drinks/flask/guardsman{
 	pixel_x = -6;
 	pixel_y = 13
 	},
-/obj/item/reagent_containers/food/drinks/flask/marine{
+/obj/item/reagent_containers/food/drinks/flask/guardsman{
 	pixel_x = -2;
 	pixel_y = 7
 	},
@@ -11188,7 +11188,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/gelida/outdoors/colony_streets/east_central_street)
 "hsE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall/indestructible,
 /area/gelida/outdoors/rock)
 "hsH" = (
@@ -11340,7 +11340,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/kitchen)
 "hxH" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/dorms)
 "hxJ" = (
@@ -11524,7 +11524,7 @@
 /turf/closed/mineral/smooth/snowrock,
 /area/gelida/outdoors/rock)
 "hDd" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "hDe" = (
@@ -11717,7 +11717,7 @@
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/east_central_street)
 "hLP" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves/garbledradio)
 "hMn" = (
@@ -11762,7 +11762,7 @@
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "hNx" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/powergen)
 "hNA" = (
@@ -11897,7 +11897,7 @@
 	},
 /area/gelida/indoors/c_block/mining)
 "hSR" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -12094,11 +12094,11 @@
 /area/gelida/indoors/a_block/dorms)
 "hXI" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "hXS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "hYa" = (
@@ -12332,7 +12332,7 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "ieX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall,
 /area/gelida/outdoors/rock)
 "ieY" = (
@@ -12369,7 +12369,7 @@
 /turf/open/liquid/water/river,
 /area/gelida/indoors/a_block/fitness)
 "igB" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/gelida/powergen)
 "igD" = (
@@ -12460,7 +12460,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/bridges/op_centre)
 "iiH" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -12835,7 +12835,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/south_east_street)
 "ivx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "ivF" = (
@@ -13192,7 +13192,7 @@
 	},
 /obj/effect/landmark/start/job/survivor,
 /obj/structure/cable,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
 "iIK" = (
@@ -13233,7 +13233,7 @@
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "iJT" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/darkpurple{
 	dir = 1
 	},
@@ -13264,7 +13264,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/bridges/corpo)
 "iKs" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "iKI" = (
@@ -13360,7 +13360,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/b_block/hydro)
 "iNf" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/whitepurple/full{
 	dir = 4
 	},
@@ -13870,7 +13870,7 @@
 /area/gelida/outdoors/colony_streets/east_central_street)
 "jfW" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/b_block/hydro)
 "jfY" = (
@@ -13952,7 +13952,7 @@
 	},
 /area/gelida/indoors/a_block/dorms)
 "jkr" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -14009,7 +14009,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/south_east_street)
 "jlX" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/structure/platform{
 	dir = 5
 	},
@@ -14447,7 +14447,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/b_block/hydro)
 "jAG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/powergen)
 "jAU" = (
@@ -14676,7 +14676,7 @@
 /area/gelida/indoors/a_block/dorm_north)
 "jKV" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "jKW" = (
@@ -14708,7 +14708,7 @@
 /turf/open/floor/wood,
 /area/gelida/indoors/a_block/executive)
 "jLO" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge/regular{
 	dir = 1
 	},
@@ -15214,7 +15214,7 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/gelida/outdoors/colony_streets/east_central_street)
 "jZN" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -15237,7 +15237,7 @@
 /area/gelida/indoors/a_block/admin)
 "kaK" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves/garbledradio)
 "kaN" = (
@@ -15447,8 +15447,8 @@
 /turf/open/shuttle/dropship/floor,
 /area/gelida/landing_zone_forecon/UD6_Tornado)
 "khJ" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "kig" = (
@@ -15465,7 +15465,7 @@
 /area/gelida/landing_zone_2)
 "kio" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "kip" = (
@@ -15714,7 +15714,7 @@
 /turf/open/floor/prison/plate,
 /area/gelida/outdoors/colony_streets/south_street)
 "krP" = (
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/security)
 "krZ" = (
@@ -15867,7 +15867,7 @@
 /turf/open/floor/mainship/black/full,
 /area/gelida/indoors/c_block/mining)
 "kxO" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/kitchen)
 "kxZ" = (
@@ -16106,7 +16106,7 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/gelida/outdoors/colony_streets/south_street)
 "kGz" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/blue{
 	dir = 1
@@ -16173,7 +16173,7 @@
 /area/gelida/outdoors/colony_streets/north_west_street)
 "kIA" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/clothing/shoes/marine,
+/obj/item/clothing/shoes/guardsman,
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/bridges/corpo)
 "kIS" = (
@@ -16232,7 +16232,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/central_streets)
 "kKk" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /obj/effect/ai_node,
 /turf/open/floor/plating,
 /area/shuttle/drop2/gelida)
@@ -16401,7 +16401,7 @@
 /area/gelida/landing_zone_1)
 "kPH" = (
 /obj/effect/spawner/random/engineering/metal,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "kPS" = (
@@ -16716,7 +16716,7 @@
 /turf/open/floor/prison/plate,
 /area/gelida/landing_zone_2)
 "laW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "lbu" = (
@@ -16744,7 +16744,7 @@
 /area/gelida/indoors/a_block/garden)
 "lcm" = (
 /obj/structure/platform_decoration,
-/obj/item/reagent_containers/food/drinks/flask/marine,
+/obj/item/reagent_containers/food/drinks/flask/guardsman,
 /obj/effect/landmark/start/job/survivor,
 /turf/open/floor/prison/blue/plate{
 	dir = 1
@@ -16798,7 +16798,7 @@
 /area/gelida/indoors/a_block/medical)
 "ldC" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "lev" = (
@@ -16863,7 +16863,7 @@
 	},
 /area/gelida/indoors/a_block/medical)
 "lgh" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/structure/platform_decoration{
 	dir = 1
 	},
@@ -16901,7 +16901,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/mining)
 "lhb" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/gelida/outdoors/colony_streets/windbreaker)
 "lhk" = (
@@ -17024,8 +17024,8 @@
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/b_block/bar)
 "lkH" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "lkM" = (
@@ -17158,7 +17158,7 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/casino)
 "loD" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves)
 "loO" = (
@@ -17366,7 +17366,7 @@
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/indoors/a_block/fitness)
 "lwq" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	dir = 8;
 	name = "\improper Wildcatters Office"
@@ -17649,8 +17649,8 @@
 /turf/closed/mineral/smooth/snowrock,
 /area/gelida/outdoors/rock)
 "lGp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "lGx" = (
@@ -18478,7 +18478,7 @@
 /area/gelida/indoors/a_block/kitchen)
 "miP" = (
 /obj/structure/table/reinforced/prison,
-/obj/item/clothing/gloves/marine/insulated,
+/obj/item/clothing/gloves/guardsman/insulated,
 /obj/item/tool/weldingtool{
 	pixel_x = -4
 	},
@@ -18783,7 +18783,7 @@
 /area/gelida/indoors/a_block/fitness)
 "mqp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "mqu" = (
@@ -18933,9 +18933,9 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/mining)
 "muV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "mvy" = (
@@ -19068,7 +19068,7 @@
 /area/gelida/indoors/a_block/kitchen)
 "mAk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -19122,7 +19122,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/landing_zone_1)
 "mDh" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 9
 	},
@@ -19301,8 +19301,8 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/mining)
 "mKk" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "mKq" = (
@@ -19747,7 +19747,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/prison/plate,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "nab" = (
@@ -19839,7 +19839,7 @@
 /area/gelida/indoors/a_block/kitchen)
 "ndP" = (
 /obj/effect/turf_decal/tile/full/black,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/gelida/powergen)
@@ -20151,7 +20151,7 @@
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/north_east_street)
 "nnZ" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/security)
 "noe" = (
@@ -20191,8 +20191,8 @@
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/b_block/bar)
 "nqS" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "nqU" = (
@@ -20291,7 +20291,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/mining)
 "ntJ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves)
 "ntU" = (
@@ -20302,7 +20302,7 @@
 /area/gelida/powergen)
 "nue" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "nut" = (
@@ -20383,7 +20383,7 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "nwh" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -20429,12 +20429,12 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/kitchen)
 "nyC" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "nyI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/cavestructuretwo)
 "nyZ" = (
@@ -20507,7 +20507,7 @@
 "nBG" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "nBP" = (
@@ -20575,13 +20575,13 @@
 /area/gelida/indoors/a_block/admin)
 "nEg" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "nEw" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "nEF" = (
@@ -20628,7 +20628,7 @@
 "nFV" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/light,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -20707,7 +20707,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "nIu" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/prison/blue/plate{
 	dir = 1
 	},
@@ -20739,7 +20739,7 @@
 /area/gelida/indoors/c_block/cargo)
 "nJe" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "nJZ" = (
@@ -20803,7 +20803,7 @@
 	},
 /area/gelida/outdoors/colony_streets/north_east_street)
 "nLm" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/hallway)
 "nLw" = (
@@ -20837,7 +20837,7 @@
 /area/gelida/outdoors/colony_streets/north_west_street)
 "nLC" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "nMr" = (
@@ -20858,7 +20858,7 @@
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/landing_zone_2)
 "nMT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/powergen)
 "nNq" = (
@@ -20886,7 +20886,7 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/south_west_street)
 "nNL" = (
-/obj/effect/mapping_helpers/area_flag_injector/marine_base,
+/obj/effect/mapping_helpers/area_flag_injector/guardsman_base,
 /turf/open/floor/plating,
 /area/shuttle/drop2/gelida)
 "nNN" = (
@@ -21006,7 +21006,7 @@
 /area/gelida/indoors/a_block/dorm_north)
 "nRL" = (
 /obj/structure/table/mainship,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "nRP" = (
@@ -21551,13 +21551,13 @@
 /turf/closed/shuttle/dropship2/finright,
 /area/gelida/landing_zone_forecon/UD6_Tornado)
 "oiU" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "ojk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/powergen)
 "ojm" = (
@@ -21763,7 +21763,7 @@
 /turf/open/shuttle/dropship/three,
 /area/gelida/landing_zone_forecon/UD6_Typhoon)
 "otr" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/turf_decal/tile/full/black,
 /turf/open/floor/plating,
 /area/gelida/powergen)
@@ -21871,7 +21871,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/security)
 "owU" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/landmark/corpsespawner/colonist,
 /turf/open/floor/prison/blue{
 	dir = 1
@@ -21886,7 +21886,7 @@
 "oya" = (
 /obj/effect/ai_node,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "oyd" = (
@@ -21992,8 +21992,8 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/casino)
 "oBs" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/powergen)
 "oBw" = (
@@ -22121,7 +22121,7 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/north_street)
 "oEN" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/indoors/b_block/hydro)
@@ -22148,7 +22148,7 @@
 /area/gelida/landing_zone_forecon/UD6_Typhoon)
 "oFs" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves)
 "oFt" = (
@@ -22244,7 +22244,7 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/nw_rockies)
 "oHy" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "oHR" = (
@@ -22367,7 +22367,7 @@
 /area/gelida/indoors/b_block/bridge)
 "oMk" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "oMo" = (
@@ -22381,7 +22381,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/kitchen)
@@ -22391,7 +22391,7 @@
 	id = "E_B_Door";
 	name = "\improper Emergency Blast Door"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2,
 /area/gelida/outdoors/w_rockies)
 "oMF" = (
@@ -22564,7 +22564,7 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "oSV" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/structure/barricade/wooden{
 	dir = 1
 	},
@@ -22709,7 +22709,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/garage)
 "oWT" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "oXa" = (
@@ -22876,7 +22876,7 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "paR" = (
-/obj/effect/mapping_helpers/area_flag_injector/marine_base,
+/obj/effect/mapping_helpers/area_flag_injector/guardsman_base,
 /turf/open/floor/plating,
 /area/shuttle/drop1/gelida)
 "pbD" = (
@@ -22993,7 +22993,7 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "peR" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -23007,7 +23007,7 @@
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/south_west_street)
 "pfm" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "pfn" = (
@@ -23157,7 +23157,7 @@
 	},
 /area/gelida/outdoors/colony_streets/north_east_street)
 "piD" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/heatinggrate,
 /area/gelida/indoors/a_block/bridges)
 "piE" = (
@@ -23234,7 +23234,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/c_block/bridge)
 "pkH" = (
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = -4;
@@ -23373,7 +23373,7 @@
 /area/gelida/indoors/a_block/dorms)
 "prh" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "prk" = (
@@ -23391,8 +23391,8 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/casino)
 "prQ" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "prS" = (
@@ -23493,7 +23493,7 @@
 /area/gelida/caves/central_caves/garbledradio)
 "pvC" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "pwn" = (
@@ -23531,7 +23531,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/mining)
 "pwZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
@@ -23560,11 +23560,11 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "pyu" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "pyF" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_east_street)
 "pyI" = (
@@ -23576,7 +23576,7 @@
 /area/gelida/indoors/a_block/dorms)
 "pyS" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "pyY" = (
@@ -23915,7 +23915,7 @@
 	},
 /area/gelida/landing_zone_forecon/UD6_Tornado)
 "pJi" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "pJy" = (
@@ -24174,7 +24174,7 @@
 /area/gelida/indoors/c_block/mining)
 "pQM" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves/garbledradio)
 "pRa" = (
@@ -24475,13 +24475,13 @@
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/security)
 "qaV" = (
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = -4;
 	pixel_y = 6
 	},
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = 3;
@@ -24735,7 +24735,7 @@
 /turf/open/floor/prison/kitchen,
 /area/gelida/indoors/a_block/kitchen)
 "qjq" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/kitchen,
 /area/gelida/indoors/a_block/kitchen)
 "qjr" = (
@@ -24910,7 +24910,7 @@
 /area/gelida/indoors/a_block/dorms)
 "qoT" = (
 /obj/structure/stairs/seamless,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "qpm" = (
@@ -25042,7 +25042,7 @@
 "qvJ" = (
 /obj/structure/stairs/seamless,
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/gelida/powergen)
 "qwd" = (
@@ -25109,7 +25109,7 @@
 /area/gelida/outdoors/colony_streets/central_streets)
 "qxq" = (
 /obj/structure/stairs/seamless,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/powergen)
 "qxs" = (
@@ -25192,7 +25192,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorm_north)
 "qzk" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
@@ -25291,7 +25291,7 @@
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/indoors/a_block/fitness)
 "qEf" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves/garbledradio)
 "qEi" = (
@@ -25407,7 +25407,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/security)
 "qIJ" = (
@@ -25436,8 +25436,8 @@
 /area/gelida/indoors/a_block/dorms)
 "qIR" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "qIU" = (
@@ -25771,7 +25771,7 @@
 /turf/open/floor/wood,
 /area/gelida/indoors/a_block/security)
 "qTf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves)
 "qTk" = (
@@ -25960,7 +25960,7 @@
 	pixel_x = 2;
 	pixel_y = 6
 	},
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/whitepurple/full{
 	dir = 4
 	},
@@ -26555,7 +26555,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/casino)
 "roC" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/gelida/outdoors/colony_streets/north_east_street)
 "roD" = (
@@ -26608,7 +26608,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/gelida/outdoors/colony_streets/central_streets)
 "rra" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4
 	},
@@ -26710,7 +26710,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
 "rum" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "ruv" = (
@@ -27069,14 +27069,14 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/fitness)
 "rHv" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/light,
 /turf/open/floor/prison/whitepurple/full{
 	dir = 4
 	},
 /area/gelida/indoors/a_block/dorms)
 "rHw" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
@@ -27274,8 +27274,8 @@
 	},
 /area/gelida/landing_zone_forecon/UD6_Typhoon)
 "rPq" = (
-/obj/effect/decal/cleanable/blood/xeno,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "rPt" = (
@@ -27378,7 +27378,7 @@
 	},
 /area/gelida/outdoors/colony_streets/north_west_street)
 "rSo" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/prison/sterilewhite/full,
 /area/gelida/indoors/a_block/medical)
 "rSG" = (
@@ -27578,7 +27578,7 @@
 	name = "????";
 	stat = 2
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/prison/whitepurple/full{
 	dir = 4
 	},
@@ -27835,7 +27835,7 @@
 /turf/open/floor/prison/plate,
 /area/gelida/outdoors/colony_streets/central_streets)
 "sks" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -27955,7 +27955,7 @@
 /area/gelida/landing_zone_forecon/UD6_Typhoon)
 "snR" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "soc" = (
@@ -27975,7 +27975,7 @@
 	dir = 9
 	},
 /area/gelida/indoors/a_block/dorms)
-"som" = (
+"chaos" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison{
 	dir = 4
@@ -28798,7 +28798,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/garden)
 "sOU" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/south_west_street)
 "sPq" = (
@@ -29394,7 +29394,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "tiQ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "tjd" = (
@@ -29449,7 +29449,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/medical)
 "tkq" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/security)
 "tku" = (
@@ -29475,7 +29475,7 @@
 /turf/open/floor/wood,
 /area/gelida/indoors/b_block/bar)
 "tlH" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/blue,
 /area/gelida/indoors/a_block/admin)
 "tlU" = (
@@ -29547,7 +29547,7 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/mining)
 "tnB" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
 /turf/open/floor/prison,
@@ -29825,7 +29825,7 @@
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/a_block/admin)
 "tzF" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "tzW" = (
@@ -29990,7 +29990,7 @@
 /area/gelida/landing_zone_2)
 "tGa" = (
 /obj/structure/table/reinforced/prison,
-/obj/item/storage/backpack/marine/satchel{
+/obj/item/storage/backpack/guardsman/satchel{
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!";
 	name = "trash bag";
 	pixel_x = -4;
@@ -30109,7 +30109,7 @@
 /turf/closed/wall,
 /area/gelida/indoors/b_block/bridge)
 "tLr" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
@@ -30199,7 +30199,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "tOc" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves/garbledradio)
 "tOF" = (
@@ -30381,7 +30381,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/c_block/cargo)
 "tVH" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/central_caves/garbledradio)
 "tVK" = (
@@ -30569,7 +30569,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/landing_zone_2)
 "uce" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/effect/ai_node,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/kitchen,
@@ -31149,7 +31149,7 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
 "uzr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "uzv" = (
@@ -31526,7 +31526,7 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/gelida/outdoors/colony_streets/east_central_street)
 "uLo" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/rock)
 "uLr" = (
@@ -31842,7 +31842,7 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/mining)
 "uWx" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/prison/blue{
 	dir = 4
 	},
@@ -32348,7 +32348,7 @@
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/security)
 "vox" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "voF" = (
@@ -32425,7 +32425,7 @@
 	},
 /area/gelida/outdoors/colony_streets/north_street)
 "vrX" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating,
 /area/shuttle/drop1/gelida)
 "vsk" = (
@@ -32642,7 +32642,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/cargo)
 "vxv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/snowrock,
 /area/gelida/outdoors/rock)
 "vxz" = (
@@ -32740,7 +32740,7 @@
 /turf/open/floor/plating,
 /area/gelida/outdoors/colony_streets/south_east_street)
 "vBx" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves)
 "vBz" = (
@@ -33194,7 +33194,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/corpo)
 "vRt" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/powergen)
@@ -33276,7 +33276,7 @@
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/indoors/b_block/bridge)
 "vUQ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -33793,7 +33793,7 @@
 /obj/machinery/door/airlock/mainship/maint{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/outdoors/w_rockies)
 "wqy" = (
@@ -33954,7 +33954,7 @@
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/a_block/dorm_north)
 "wuw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/w_rockies)
 "wuC" = (
@@ -35027,7 +35027,7 @@
 	},
 /area/gelida/outdoors/colony_streets/north_street)
 "xnc" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/kitchen)
 "xnx" = (
@@ -35248,7 +35248,7 @@
 /turf/closed/shuttle/dropship2/enginetwo,
 /area/gelida/landing_zone_forecon/UD6_Tornado)
 "xvA" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
@@ -35297,7 +35297,7 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/security)
 "xxb" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /obj/effect/ai_node,
 /turf/open/floor/plating,
 /area/shuttle/drop1/gelida)
@@ -35492,7 +35492,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_east_street)
 "xDw" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/a_block/hallway)
 "xDF" = (
@@ -35843,7 +35843,7 @@
 	},
 /area/gelida/indoors/b_block/bridge)
 "xMA" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "xMV" = (
@@ -35884,7 +35884,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/landing_zone_2)
 "xNQ" = (
-/obj/item/clothing/shoes/marine/pmc{
+/obj/item/clothing/shoes/guardsman/pmc{
 	name = "steel toe boots"
 	},
 /obj/machinery/light,
@@ -35986,7 +35986,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/edge/regular,
 /area/gelida/landing_zone_2)
 "xPZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/south_west_street)
 "xQy" = (
@@ -36157,7 +36157,7 @@
 /turf/open/floor/mainship/black/full,
 /area/gelida/outdoors/rock)
 "xUF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/gelida/outdoors/rock)
 "xUH" = (
@@ -36240,7 +36240,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/central_streets)
 "xXi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/west_caves)
 "xXU" = (
@@ -54098,7 +54098,7 @@ nIN
 eqR
 gpR
 ibV
-som
+chaos
 gpR
 nkO
 giB

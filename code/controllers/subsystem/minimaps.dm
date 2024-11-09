@@ -12,7 +12,7 @@
  * tracking of the actual atoms you want to be drawn on is done by means of datums holding info pertaining to them with [/datum/hud_displays]
  *
  * Todo
- * *: add fetching of images to allow stuff like adding/removing xeno crowns easily
+ * *: add fetching of images to allow stuff like adding/removing tyranid crowns easily
  * *: add a system for viscontents so things like minimap draw are more responsive
  */
 SUBSYSTEM_DEF(minimaps)
@@ -468,7 +468,7 @@ SUBSYSTEM_DEF(minimaps)
 	)
 	///Flags to allow the owner to see others of this type
 	var/minimap_flags = MINIMAP_FLAG_ALL
-	///marker flags this will give the target, mostly used for marine minimaps
+	///marker flags this will give the target, mostly used for guardsman minimaps
 	var/marker_flags = MINIMAP_FLAG_ALL
 	///boolean as to whether the minimap is currently shown
 	var/minimap_displayed = FALSE
@@ -646,36 +646,36 @@ SUBSYSTEM_DEF(minimaps)
 
 
 
-/datum/action/minimap/xeno
-	minimap_flags = MINIMAP_FLAG_XENO|MINIMAP_FLAG_EXCAVATION_ZONE
+/datum/action/minimap/tyranid
+	minimap_flags = MINIMAP_FLAG_TYRANID|MINIMAP_FLAG_EXCAVATION_ZONE
 
 /datum/action/minimap/researcher
-	minimap_flags = MINIMAP_FLAG_MARINE|MINIMAP_FLAG_EXCAVATION_ZONE
-	marker_flags = MINIMAP_FLAG_MARINE
+	minimap_flags = MINIMAP_FLAG_GUARDSMAN|MINIMAP_FLAG_EXCAVATION_ZONE
+	marker_flags = MINIMAP_FLAG_GUARDSMAN
 
-/datum/action/minimap/marine
-	minimap_flags = MINIMAP_FLAG_MARINE
-	marker_flags = MINIMAP_FLAG_MARINE
+/datum/action/minimap/guardsman
+	minimap_flags = MINIMAP_FLAG_GUARDSMAN
+	marker_flags = MINIMAP_FLAG_GUARDSMAN
 
-/datum/action/minimap/marine/external //Avoids keybind conflicts between inherent mob minimap and bonus minimap from consoles, CAS or similar.
+/datum/action/minimap/guardsman/external //Avoids keybind conflicts between inherent mob minimap and bonus minimap from consoles, CAS or similar.
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_TOGGLE_EXTERNAL_MINIMAP,
 	)
 
-/datum/action/minimap/marine/external/som
-	minimap_flags = MINIMAP_FLAG_MARINE_SOM
-	marker_flags = MINIMAP_FLAG_MARINE_SOM
+/datum/action/minimap/guardsman/external/chaos
+	minimap_flags = MINIMAP_FLAG_GUARDSMAN_CHAOS
+	marker_flags = MINIMAP_FLAG_GUARDSMAN_CHAOS
 
 /datum/action/minimap/ai	//I'll keep this as seperate type despite being identical so it's easier if people want to make different aspects different.
-	minimap_flags = MINIMAP_FLAG_MARINE
-	marker_flags = MINIMAP_FLAG_MARINE
+	minimap_flags = MINIMAP_FLAG_GUARDSMAN
+	marker_flags = MINIMAP_FLAG_GUARDSMAN
 
-/datum/action/minimap/som
-	minimap_flags = MINIMAP_FLAG_MARINE_SOM
-	marker_flags = MINIMAP_FLAG_MARINE_SOM
+/datum/action/minimap/chaos
+	minimap_flags = MINIMAP_FLAG_GUARDSMAN_CHAOS
+	marker_flags = MINIMAP_FLAG_GUARDSMAN_CHAOS
 
 /datum/action/minimap/observer
-	minimap_flags = MINIMAP_FLAG_XENO|MINIMAP_FLAG_MARINE|MINIMAP_FLAG_MARINE_SOM|MINIMAP_FLAG_EXCAVATION_ZONE
+	minimap_flags = MINIMAP_FLAG_TYRANID|MINIMAP_FLAG_GUARDSMAN|MINIMAP_FLAG_GUARDSMAN_CHAOS|MINIMAP_FLAG_EXCAVATION_ZONE
 	marker_flags = NONE
 
 /datum/action/minimap/observer/action_activate()

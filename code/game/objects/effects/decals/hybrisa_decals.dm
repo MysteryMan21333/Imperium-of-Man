@@ -345,5 +345,5 @@
 
 /obj/effect/urban/decal/egg_base
 	name = "strange goop"
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "egg_base"

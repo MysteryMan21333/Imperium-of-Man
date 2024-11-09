@@ -52,16 +52,16 @@
 /atom/movable/screen/text/screen_text/picture/potrait/tgmc_mortar
 	image_to_play = "mortar_team"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_mortar
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_mortar
 	image_to_play = "mortar_team_som"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_over
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_over
 	image_to_play = "overwatch_som"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_req
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_req
 	image_to_play = "req_som"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_scientist
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_scientist
 	image_to_play = "scientist_som"
 
 /atom/movable/screen/text/screen_text/picture/potrait/unknown
@@ -70,7 +70,7 @@
 /atom/movable/screen/text/screen_text/picture/potrait/pilot
 	image_to_play = "cas"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_pilot
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_pilot
 	image_to_play = "cas_som"
 
 //
@@ -95,7 +95,7 @@
 /atom/movable/screen/text/screen_text/picture/potrait/icc_reinforcement
 	image_to_play = "reinforcement_icc"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_reinforcement
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_reinforcement
 	image_to_play = "reinforcement_som"
 
 /atom/movable/screen/text/screen_text/picture/potrait/vsd_reinforcement
@@ -104,5 +104,5 @@
 /atom/movable/screen/text/screen_text/picture/potrait/tgmc_distress
 	image_to_play = "distress_tgmc"
 
-/atom/movable/screen/text/screen_text/picture/potrait/som_distress
+/atom/movable/screen/text/screen_text/picture/potrait/chaos_distress
 	image_to_play = "distress_som"

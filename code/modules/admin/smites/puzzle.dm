@@ -10,7 +10,7 @@
 
 /obj/effect/sliding_puzzle
 	name = "Sliding puzzle generator"
-	icon = 'icons/obj/items/toy.dmi' //mapping
+	icon = 'modular_imperium/master_files/icons/obj/items/toy.dmi' //mapping
 	icon_state = "waterballoon-e"
 	invisibility = INVISIBILITY_ABSTRACT
 	anchored = TRUE
@@ -148,10 +148,10 @@
 	return sortTim(elements,cmp=/proc/cmp_xy_desc)
 
 /obj/effect/sliding_puzzle/proc/get_base_icon()
-	var/icon/I = new('icons/obj/puzzle.dmi')
+	var/icon/I = new('modular_imperium/master_files/icons/obj/puzzle.dmi')
 	var/list/puzzles = icon_states(I)
 	var/puzzle_state = pick(puzzles)
-	var/icon/P = new('icons/obj/puzzle.dmi',puzzle_state)
+	var/icon/P = new('modular_imperium/master_files/icons/obj/puzzle.dmi',puzzle_state)
 	return P
 
 /obj/effect/sliding_puzzle/proc/setup() //setup the puzzle
@@ -207,7 +207,7 @@
 /obj/structure/puzzle_element
 	name = "mysterious pillar"
 	desc = "puzzling..."
-	icon = 'icons/obj/artefacts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/artefacts.dmi'
 	icon_state = "puzzle_pillar"
 	anchored = FALSE
 	density = TRUE

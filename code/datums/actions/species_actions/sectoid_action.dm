@@ -1,6 +1,6 @@
 
 /datum/action/ability/activable/sectoid
-	action_icon = 'icons/mob/psionic_icons.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/psionic_icons.dmi'
 
 // ***************************************
 // *********** Mindmeld
@@ -364,7 +364,7 @@
 /datum/action/ability/activable/psionic_interact
 	name = "Telekinesis"
 	action_icon_state = "telekinesis"
-	action_icon = 'icons/mob/psionic_icons.dmi'
+	action_icon = 'modular_imperium/master_files/icons/mob/psionic_icons.dmi'
 	desc = "We manipulate things from a distance."
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_MOB_TARGET

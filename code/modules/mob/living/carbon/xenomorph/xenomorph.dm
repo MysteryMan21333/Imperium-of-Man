@@ -1,10 +1,10 @@
-//Xenomorph "generic" parent, does not actually appear in game
+//Tyranid "generic" parent, does not actually appear in game
 //Many of these defines aren't referenced in the castes and so are assumed to be defaulted
 //Castes are all merely subchildren of this parent
 //Just about ALL the procs are tied to the parent, not to the children
 //This is so they can be easily transferred between them without copypasta
 
-/mob/living/carbon/xenomorph/Initialize(mapload, do_not_set_as_ruler)
+/mob/living/carbon/tyranid/Initialize(mapload, do_not_set_as_ruler)
 	if(mob_size == MOB_SIZE_BIG)
 		move_resist = MOVE_FORCE_EXTREMELY_STRONG
 		move_force = MOVE_FORCE_EXTREMELY_STRONG
@@ -13,34 +13,34 @@
 	. = ..()
 	set_datum()
 	add_inherent_verbs()
-	var/datum/action/minimap/xeno/mini = new
+	var/datum/action/minimap/tyranid/mini = new
 	mini.give_action(src)
 	add_abilities()
 
 	create_reagents(1000)
 	gender = NEUTER
 
-	if(is_centcom_level(z) && hivenumber == XENO_HIVE_NORMAL)
-		hivenumber = XENO_HIVE_ADMEME //so admins can safely spawn xenos in Thunderdome for tests.
+	if(is_centcom_level(z) && hivenumber == TYRANID_HIVE_NORMAL)
+		hivenumber = TYRANID_HIVE_ADMEME //so admins can safely spawn tyranids in Thunderdome for tests.
 
 	set_initial_hivenumber(prevent_ruler=do_not_set_as_ruler)
 	voice = "Woman (Journalist)" // TODO when we get tagging make this pick female only
 
 	switch(stat)
 		if(CONSCIOUS)
-			GLOB.alive_xeno_list += src
-			LAZYADD(GLOB.alive_xeno_list_hive[hivenumber], src)
-			see_in_dark = xeno_caste.conscious_see_in_dark
+			GLOB.alive_tyranid_list += src
+			LAZYADD(GLOB.alive_tyranid_list_hive[hivenumber], src)
+			see_in_dark = tyranid_caste.conscious_see_in_dark
 		if(UNCONSCIOUS)
-			GLOB.alive_xeno_list += src
-			LAZYADD(GLOB.alive_xeno_list_hive[hivenumber], src)
-			see_in_dark = xeno_caste.unconscious_see_in_dark
+			GLOB.alive_tyranid_list += src
+			LAZYADD(GLOB.alive_tyranid_list_hive[hivenumber], src)
+			see_in_dark = tyranid_caste.unconscious_see_in_dark
 		if(DEAD)
-			see_in_dark = xeno_caste.unconscious_see_in_dark
+			see_in_dark = tyranid_caste.unconscious_see_in_dark
 
-	GLOB.xeno_mob_list += src
-	GLOB.round_statistics.total_xenos_created++
-	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_xenos_created")
+	GLOB.tyranid_mob_list += src
+	GLOB.round_statistics.total_tyranids_created++
+	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_tyranids_created")
 
 	wound_overlay = new(null, src)
 	vis_contents += wound_overlay
@@ -57,7 +57,7 @@
 
 	regenerate_icons()
 
-	toggle_xeno_mobhud() //This is a verb, but fuck it, it just werks
+	toggle_tyranid_mobhud() //This is a verb, but fuck it, it just werks
 
 	update_spits()
 
@@ -66,59 +66,59 @@
 	if(!job) //It might be setup on spawn.
 		setup_job()
 
-	ADD_TRAIT(src, TRAIT_BATONIMMUNE, XENO_TRAIT)
-	ADD_TRAIT(src, TRAIT_FLASHBANGIMMUNE, XENO_TRAIT)
-	if(xeno_caste.caste_flags & CASTE_STAGGER_RESISTANT)
-		ADD_TRAIT(src, TRAIT_STAGGER_RESISTANT, XENO_TRAIT)
+	ADD_TRAIT(src, TRAIT_BATONIMMUNE, TYRANID_TRAIT)
+	ADD_TRAIT(src, TRAIT_FLASHBANGIMMUNE, TYRANID_TRAIT)
+	if(tyranid_caste.caste_flags & CASTE_STAGGER_RESISTANT)
+		ADD_TRAIT(src, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT)
 	hive.update_tier_limits()
-	if(CONFIG_GET(flag/xenos_on_strike))
+	if(CONFIG_GET(flag/tyranids_on_strike))
 		replace_by_ai()
 	if(z) //Larva are initiated in null space
-		SSminimaps.add_marker(src, MINIMAP_FLAG_XENO, image('icons/UI_icons/map_blips.dmi', null, xeno_caste.minimap_icon))
+		SSminimaps.add_marker(src, MINIMAP_FLAG_TYRANID, image('icons/UI_icons/map_blips.dmi', null, tyranid_caste.minimap_icon))
 	handle_weeds_on_movement()
 
 	AddElement(/datum/element/footstep, footstep_type, mob_size >= MOB_SIZE_BIG ? 0.8 : 0.5)
 	set_jump_component()
 	AddComponent(/datum/component/seethrough_mob)
 
-/mob/living/carbon/xenomorph/register_init_signals()
+/mob/living/carbon/tyranid/register_init_signals()
 	. = ..()
 	RegisterSignal(src, COMSIG_LIVING_WEEDS_ADJACENT_REMOVED, PROC_REF(handle_weeds_adjacent_removed))
 	RegisterSignal(src, COMSIG_LIVING_WEEDS_AT_LOC_CREATED, PROC_REF(handle_weeds_on_movement))
 
-///Change the caste of the xeno. If restore health is true, then health is set to the new max health
-/mob/living/carbon/xenomorph/proc/set_datum(restore_health_and_plasma = TRUE)
+///Change the caste of the tyranid. If restore health is true, then health is set to the new max health
+/mob/living/carbon/tyranid/proc/set_datum(restore_health_and_plasma = TRUE)
 	if(!caste_base_type)
-		CRASH("xeno spawned without a caste_base_type set")
-	if(!GLOB.xeno_caste_datums[caste_base_type])
+		CRASH("tyranid spawned without a caste_base_type set")
+	if(!GLOB.tyranid_caste_datums[caste_base_type])
 		CRASH("error finding base type")
-	if(!GLOB.xeno_caste_datums[caste_base_type][upgrade])
+	if(!GLOB.tyranid_caste_datums[caste_base_type][upgrade])
 		CRASH("error finding datum")
-	if(xeno_caste)
-		xeno_caste.on_caste_removed(src)
+	if(tyranid_caste)
+		tyranid_caste.on_caste_removed(src)
 
-		soft_armor = soft_armor.detachArmor(getArmor(arglist(xeno_caste.soft_armor)))
-		hard_armor = hard_armor.detachArmor(getArmor(arglist(xeno_caste.hard_armor)))
+		soft_armor = soft_armor.detachArmor(getArmor(arglist(tyranid_caste.soft_armor)))
+		hard_armor = hard_armor.detachArmor(getArmor(arglist(tyranid_caste.hard_armor)))
 
-	var/datum/xeno_caste/X = GLOB.xeno_caste_datums[caste_base_type][upgrade]
+	var/datum/tyranid_caste/X = GLOB.tyranid_caste_datums[caste_base_type][upgrade]
 	if(!istype(X))
 		CRASH("error with caste datum")
-	xeno_caste = X
-	xeno_caste.on_caste_applied(src)
-	maxHealth = xeno_caste.max_health * GLOB.xeno_stat_multiplicator_buff
+	tyranid_caste = X
+	tyranid_caste.on_caste_applied(src)
+	maxHealth = tyranid_caste.max_health * GLOB.tyranid_stat_multiplicator_buff
 	if(restore_health_and_plasma)
-		// xenos that manage plasma through special means shouldn't gain it for free on aging
-		set_plasma(max(plasma_stored, xeno_caste.plasma_max * xeno_caste.plasma_regen_limit))
+		// tyranids that manage plasma through special means shouldn't gain it for free on aging
+		set_plasma(max(plasma_stored, tyranid_caste.plasma_max * tyranid_caste.plasma_regen_limit))
 		health = maxHealth
-	setXenoCasteSpeed(xeno_caste.speed)
+	setTyranidCasteSpeed(tyranid_caste.speed)
 
-	//detaching and attaching preserves any tempory armor modifiers on the xeno
-	soft_armor = soft_armor.attachArmor(getArmor(arglist(xeno_caste.soft_armor)))
-	hard_armor = hard_armor.attachArmor(getArmor(arglist(xeno_caste.hard_armor)))
+	//detaching and attaching preserves any tempory armor modifiers on the tyranid
+	soft_armor = soft_armor.attachArmor(getArmor(arglist(tyranid_caste.soft_armor)))
+	hard_armor = hard_armor.attachArmor(getArmor(arglist(tyranid_caste.hard_armor)))
 
-///Will multiply the base max health of this xeno by GLOB.xeno_stat_multiplicator_buff while maintaining current health percent.
-/mob/living/carbon/xenomorph/proc/apply_health_stat_buff()
-	var/new_max_health = max(xeno_caste.max_health * GLOB.xeno_stat_multiplicator_buff, 10)
+///Will multiply the base max health of this tyranid by GLOB.tyranid_stat_multiplicator_buff while maintaining current health percent.
+/mob/living/carbon/tyranid/proc/apply_health_stat_buff()
+	var/new_max_health = max(tyranid_caste.max_health * GLOB.tyranid_stat_multiplicator_buff, 10)
 	var/needed_healing = 0
 
 	if(health < 0) //In crit. Death threshold below 0 doesn't change with stat buff, so we can just apply damage equal to the max health change
@@ -137,25 +137,25 @@
 	maxHealth = new_max_health
 	updatehealth()
 
-/mob/living/carbon/xenomorph/proc/generate_nicknumber()
+/mob/living/carbon/tyranid/proc/generate_nicknumber()
 	//We don't have a nicknumber yet, assign one to stick with us
 	if(!nicknumber || nicknumber == "Undefined")
 		var/tempnumber = rand(1, 999)
-		var/list/xenolist = hive.get_all_xenos(FALSE)
-		while(tempnumber in xenolist)
+		var/list/tyranidlist = hive.get_all_tyranids(FALSE)
+		while(tempnumber in tyranidlist)
 			tempnumber = rand(1, 999)
 
 		nicknumber = tempnumber
 
 //Off-load this proc so it can be called freely
-//Since Xenos change names like they change shoes, we need somewhere to hammer in all those legos
+//Since Tyranids change names like they change shoes, we need somewhere to hammer in all those legos
 //We set their name first, then update their real_name AND their mind name
-/mob/living/carbon/xenomorph/proc/generate_name()
-	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
+/mob/living/carbon/tyranid/proc/generate_name()
+	var/playtime_mins = client?.get_exp(tyranid_caste.caste_name)
 	var/rank_name
-	var/prefix = (hive.prefix || xeno_caste.upgrade_name) ? "[hive.prefix][xeno_caste.upgrade_name] " : ""
-	if(!client?.prefs.show_xeno_rank || !client)
-		name = prefix + "[xeno_caste.display_name] ([nicknumber])"
+	var/prefix = (hive.prefix || tyranid_caste.upgrade_name) ? "[hive.prefix][tyranid_caste.upgrade_name] " : ""
+	if(!client?.prefs.show_tyranid_rank || !client)
+		name = prefix + "[tyranid_caste.display_name] ([nicknumber])"
 		real_name = name
 		if(mind)
 			mind.name = name
@@ -173,25 +173,25 @@
 			rank_name = "Prime"
 		else
 			rank_name = "Young"
-	name = prefix + "[rank_name ? "[rank_name] " : ""][xeno_caste.display_name] ([nicknumber])"
+	name = prefix + "[rank_name ? "[rank_name] " : ""][tyranid_caste.display_name] ([nicknumber])"
 
 	//Update linked data so they show up properly
 	real_name = name
 	if(mind)
 		mind.name = name
 
-/mob/living/carbon/xenomorph/proc/upgrade_as_number()
+/mob/living/carbon/tyranid/proc/upgrade_as_number()
 	switch(upgrade)
-		if(XENO_UPGRADE_INVALID)
+		if(TYRANID_UPGRADE_INVALID)
 			return -1
-		if(XENO_UPGRADE_NORMAL)
+		if(TYRANID_UPGRADE_NORMAL)
 			return 0
-		if(XENO_UPGRADE_PRIMO)
+		if(TYRANID_UPGRADE_PRIMO)
 			return 1
 
 ///Returns the playtime as a number, used for rank icons
-/mob/living/carbon/xenomorph/proc/playtime_as_number()
-	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
+/mob/living/carbon/tyranid/proc/playtime_as_number()
+	var/playtime_mins = client?.get_exp(tyranid_caste.caste_name)
 	switch(playtime_mins)
 		if(0 to 600)
 			return 0
@@ -206,49 +206,49 @@
 		else
 			return 0
 
-/mob/living/carbon/xenomorph/proc/upgrade_next()
-	if(!(upgrade in GLOB.xenoupgradetiers))
+/mob/living/carbon/tyranid/proc/upgrade_next()
+	if(!(upgrade in GLOB.tyranidupgradetiers))
 		CRASH("Invalid upgrade tier set for caste!")
 	switch(upgrade)
-		if(XENO_UPGRADE_INVALID)
-			return XENO_UPGRADE_INVALID
-		if(XENO_UPGRADE_NORMAL)
-			return XENO_UPGRADE_PRIMO
-		if(XENO_UPGRADE_PRIMO)
-			return XENO_UPGRADE_PRIMO
-		if(XENO_UPGRADE_BASETYPE)
-			return XENO_UPGRADE_BASETYPE
+		if(TYRANID_UPGRADE_INVALID)
+			return TYRANID_UPGRADE_INVALID
+		if(TYRANID_UPGRADE_NORMAL)
+			return TYRANID_UPGRADE_PRIMO
+		if(TYRANID_UPGRADE_PRIMO)
+			return TYRANID_UPGRADE_PRIMO
+		if(TYRANID_UPGRADE_BASETYPE)
+			return TYRANID_UPGRADE_BASETYPE
 		else
 			stack_trace("Logic for handling this Upgrade tier wasn't written")
 
-/mob/living/carbon/xenomorph/proc/upgrade_prev()
-	if(!(upgrade in GLOB.xenoupgradetiers))
+/mob/living/carbon/tyranid/proc/upgrade_prev()
+	if(!(upgrade in GLOB.tyranidupgradetiers))
 		CRASH("Invalid upgrade tier set for caste!")
 	switch(upgrade)
-		if(XENO_UPGRADE_INVALID)
-			return XENO_UPGRADE_INVALID
-		if(XENO_UPGRADE_NORMAL)
-			return XENO_UPGRADE_NORMAL
-		if(XENO_UPGRADE_PRIMO)
-			return XENO_UPGRADE_NORMAL
-		if(XENO_UPGRADE_BASETYPE)
-			return XENO_UPGRADE_BASETYPE
+		if(TYRANID_UPGRADE_INVALID)
+			return TYRANID_UPGRADE_INVALID
+		if(TYRANID_UPGRADE_NORMAL)
+			return TYRANID_UPGRADE_NORMAL
+		if(TYRANID_UPGRADE_PRIMO)
+			return TYRANID_UPGRADE_NORMAL
+		if(TYRANID_UPGRADE_BASETYPE)
+			return TYRANID_UPGRADE_BASETYPE
 		else
 			stack_trace("Logic for handling this Upgrade tier wasn't written")
 
-/mob/living/carbon/xenomorph/proc/setup_job()
-	var/datum/job/xenomorph/xeno_job = SSjob.type_occupations[xeno_caste.job_type]
-	if(!xeno_job)
-		CRASH("Unemployment has reached to a xeno, who has failed to become a [xeno_caste.job_type]")
-	apply_assigned_role_to_spawn(xeno_job)
+/mob/living/carbon/tyranid/proc/setup_job()
+	var/datum/job/tyranid/tyranid_job = SSjob.type_occupations[tyranid_caste.job_type]
+	if(!tyranid_job)
+		CRASH("Unemployment has reached to a tyranid, who has failed to become a [tyranid_caste.job_type]")
+	apply_assigned_role_to_spawn(tyranid_job)
 
-///Initiate of form changing on the xeno
-/mob/living/carbon/xenomorph/proc/change_form()
+///Initiate of form changing on the tyranid
+/mob/living/carbon/tyranid/proc/change_form()
 	return
 
-/mob/living/carbon/xenomorph/examine(mob/user)
+/mob/living/carbon/tyranid/examine(mob/user)
 	. = ..()
-	. += xeno_caste.caste_desc
+	. += tyranid_caste.caste_desc
 	. += "<span class='notice'>"
 
 	if(stat == DEAD)
@@ -271,20 +271,20 @@
 
 	. += "</span>"
 
-	if(hivenumber != XENO_HIVE_NORMAL)
+	if(hivenumber != TYRANID_HIVE_NORMAL)
 		var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 		. += "It appears to belong to the [hive.prefix]hive"
 	return
 
-/mob/living/carbon/xenomorph/Destroy()
-	if(mind) mind.name = name //Grabs the name when the xeno is getting deleted, to reference through hive status later.
-	if(xeno_flags & XENO_ZOOMED)
+/mob/living/carbon/tyranid/Destroy()
+	if(mind) mind.name = name //Grabs the name when the tyranid is getting deleted, to reference through hive status later.
+	if(tyranid_flags & TYRANID_ZOOMED)
 		zoom_out()
 
-	GLOB.alive_xeno_list -= src
-	LAZYREMOVE(GLOB.alive_xeno_list_hive[hivenumber], src)
-	GLOB.xeno_mob_list -= src
-	GLOB.dead_xeno_list -= src
+	GLOB.alive_tyranid_list -= src
+	LAZYREMOVE(GLOB.alive_tyranid_list_hive[hivenumber], src)
+	GLOB.tyranid_mob_list -= src
+	GLOB.dead_tyranid_list -= src
 
 	var/datum/hive_status/hive_placeholder = hive
 	remove_from_hive()
@@ -299,10 +299,10 @@
 	return ..()
 
 
-/mob/living/carbon/xenomorph/slip(slip_source_name, stun_level, weaken_level, run_only, override_noslip, slide_steps)
+/mob/living/carbon/tyranid/slip(slip_source_name, stun_level, weaken_level, run_only, override_noslip, slide_steps)
 	return FALSE
 
-/mob/living/carbon/xenomorph/start_pulling(atom/movable/AM, force = move_force, suppress_message = TRUE, bypass_crit_delay = FALSE)
+/mob/living/carbon/tyranid/start_pulling(atom/movable/AM, force = move_force, suppress_message = TRUE, bypass_crit_delay = FALSE)
 	if(do_actions)
 		return FALSE //We are already occupied with something.
 	if(!Adjacent(AM))
@@ -315,36 +315,36 @@
 		return //If the target is not a living mob and has a drag_windup defined, calls a do_after. If all conditions are met, it returns. If the user takes damage during the windup, it breaks the channel.
 	var/mob/living/L = AM
 	if(L.buckled)
-		return FALSE //to stop xeno from pulling marines on roller beds.
+		return FALSE //to stop tyranid from pulling guardsmans on roller beds.
 	if(ishuman(L))
 		if(L.stat == DEAD) //Can't drag dead human bodies.
-			to_chat(usr,span_xenowarning("This looks gross, better not touch it."))
+			to_chat(usr,span_tyranidwarning("This looks gross, better not touch it."))
 			return FALSE
-		pull_speed += XENO_DEADHUMAN_DRAG_SLOWDOWN
+		pull_speed += TYRANID_DEADHUMAN_DRAG_SLOWDOWN
 	do_attack_animation(L, ATTACK_EFFECT_GRAB)
-	SEND_SIGNAL(src, COMSIG_XENOMORPH_GRAB)
+	SEND_SIGNAL(src, COMSIG_TYRANID_GRAB)
 	return ..()
 
-/mob/living/carbon/xenomorph/stop_pulling()
+/mob/living/carbon/tyranid/stop_pulling()
 	if(ishuman(pulling))
-		pull_speed -= XENO_DEADHUMAN_DRAG_SLOWDOWN
+		pull_speed -= TYRANID_DEADHUMAN_DRAG_SLOWDOWN
 	return ..()
 
-/mob/living/carbon/xenomorph/pull_response(mob/puller)
-	if(stat != CONSCIOUS) // If the Xeno is unconscious, don't fight back against a grab/pull
+/mob/living/carbon/tyranid/pull_response(mob/puller)
+	if(stat != CONSCIOUS) // If the Tyranid is unconscious, don't fight back against a grab/pull
 		return TRUE
 	if(!ishuman(puller))
 		return TRUE
 	var/mob/living/carbon/human/H = puller
-	if(hivenumber == XENO_HIVE_CORRUPTED) // we can grab friendly benos
+	if(hivenumber == TYRANID_HIVE_CORRUPTED) // we can grab friendly benos
 		return TRUE
-	H.Paralyze(rand(xeno_caste.tacklemin,xeno_caste.tacklemax) * 20)
+	H.Paralyze(rand(tyranid_caste.tacklemin,tyranid_caste.tacklemax) * 20)
 	playsound(H.loc, 'sound/weapons/pierce.ogg', 25, 1)
 	H.visible_message(span_warning("[H] tried to pull [src] but instead gets a tail swipe to the head!"))
 	H.stop_pulling()
 	return FALSE
 
-/mob/living/carbon/xenomorph/resist_grab()
+/mob/living/carbon/tyranid/resist_grab()
 	if(pulledby.grab_state)
 		visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"), null, null, 5)
 	pulledby.stop_pulling()
@@ -352,7 +352,7 @@
 
 
 
-/mob/living/carbon/xenomorph/prepare_huds()
+/mob/living/carbon/tyranid/prepare_huds()
 	..()
 	//updating all the mob's hud images
 	med_hud_set_health()
@@ -361,40 +361,40 @@
 	//and display them
 	add_to_all_mob_huds()
 
-	var/datum/atom_hud/hud_to_add = GLOB.huds[DATA_HUD_XENO_INFECTION]
+	var/datum/atom_hud/hud_to_add = GLOB.huds[DATA_HUD_TYRANID_INFECTION]
 	hud_to_add.add_hud_to(src)
 
 	hud_to_add = GLOB.huds[DATA_HUD_BASIC]
 	hud_to_add.add_hud_to(src)
 
-	hud_to_add = GLOB.huds[DATA_HUD_XENO_REAGENTS]
+	hud_to_add = GLOB.huds[DATA_HUD_TYRANID_REAGENTS]
 	hud_to_add.add_hud_to(src)
-	hud_to_add = GLOB.huds[DATA_HUD_XENO_TACTICAL] //Allows us to see xeno tactical elements clearly via HUD elements
+	hud_to_add = GLOB.huds[DATA_HUD_TYRANID_TACTICAL] //Allows us to see tyranid tactical elements clearly via HUD elements
 	hud_to_add.add_hud_to(src)
 	hud_to_add = GLOB.huds[DATA_HUD_MEDICAL_PAIN]
 	hud_to_add.add_hud_to(src)
-	hud_to_add = GLOB.huds[DATA_HUD_XENO_DEBUFF]
+	hud_to_add = GLOB.huds[DATA_HUD_TYRANID_DEBUFF]
 	hud_to_add.add_hud_to(src)
 
-/mob/living/carbon/xenomorph/get_permeability_protection()
-	return XENO_PERM_COEFF
+/mob/living/carbon/tyranid/get_permeability_protection()
+	return TYRANID_PERM_COEFF
 
-/mob/living/carbon/xenomorph/get_eye_protection()
+/mob/living/carbon/tyranid/get_eye_protection()
 	return 2
 
-/mob/living/carbon/xenomorph/vomit()
+/mob/living/carbon/tyranid/vomit()
 	return
 
-/mob/living/carbon/xenomorph/reagent_check(datum/reagent/R) //For the time being they can't metabolize chemicals.
+/mob/living/carbon/tyranid/reagent_check(datum/reagent/R) //For the time being they can't metabolize chemicals.
 	return TRUE
 
-/mob/living/carbon/xenomorph/update_tracking(mob/living/carbon/xenomorph/X) //X is unused, but we keep that function so it can be called with marines one
+/mob/living/carbon/tyranid/update_tracking(mob/living/carbon/tyranid/X) //X is unused, but we keep that function so it can be called with guardsmans one
 	if(!hud_used?.locate_leader)
 		return
 	var/atom/movable/screen/LL_dir = hud_used.locate_leader
 	if(!tracked)
-		if(hive.living_xeno_ruler)
-			set_tracked(hive.living_xeno_ruler)
+		if(hive.living_tyranid_ruler)
+			set_tracked(hive.living_tyranid_ruler)
 		else
 			LL_dir.icon_state = "trackoff"
 			return
@@ -416,7 +416,7 @@
 	return
 
 
-/mob/living/carbon/xenomorph/clear_leader_tracking()
+/mob/living/carbon/tyranid/clear_leader_tracking()
 	if(!hud_used?.locate_leader)
 		return
 
@@ -424,47 +424,47 @@
 	LL_dir.icon_state = "trackoff"
 
 
-/mob/living/carbon/xenomorph/Moved(atom/old_loc, movement_dir)
-	if(xeno_flags & XENO_ZOOMED)
+/mob/living/carbon/tyranid/Moved(atom/old_loc, movement_dir)
+	if(tyranid_flags & TYRANID_ZOOMED)
 		zoom_out()
 	handle_weeds_on_movement()
 	return ..()
 
-/mob/living/carbon/xenomorph/CanAllowThrough(atom/movable/mover, turf/target)
-	if(mover.throwing && ismob(mover) && isxeno(mover.thrower)) //xenos can throw mobs past other xenos
+/mob/living/carbon/tyranid/CanAllowThrough(atom/movable/mover, turf/target)
+	if(mover.throwing && ismob(mover) && istyranid(mover.thrower)) //tyranids can throw mobs past other tyranids
 		return TRUE
 	return ..()
 
-/mob/living/carbon/xenomorph/set_stat(new_stat)
+/mob/living/carbon/tyranid/set_stat(new_stat)
 	. = ..()
 	if(isnull(.))
 		return
 	switch(stat)
 		if(UNCONSCIOUS)
-			see_in_dark = xeno_caste.unconscious_see_in_dark
+			see_in_dark = tyranid_caste.unconscious_see_in_dark
 		if(DEAD, CONSCIOUS)
 			if(. == UNCONSCIOUS)
-				see_in_dark = xeno_caste.conscious_see_in_dark
+				see_in_dark = tyranid_caste.conscious_see_in_dark
 
 ///Kick the player from this mob, replace it by a more competent ai
-/mob/living/carbon/xenomorph/proc/replace_by_ai()
+/mob/living/carbon/tyranid/proc/replace_by_ai()
 	to_chat(src, span_warning("Sorry, your skill level was deemed too low by our automatic skill check system. Your body has as such been given to a more capable brain, our state of the art AI technology piece. Do not hesitate to take back your body after you've improved!"))
 	ghostize(TRUE)//Can take back its body
 	GLOB.offered_mob_list -= src
-	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/tyranid)
 	a_intent = INTENT_HARM
 
-/// Handles logic for weeds nearby the xeno getting removed
-/mob/living/carbon/xenomorph/proc/handle_weeds_adjacent_removed(datum/source)
+/// Handles logic for weeds nearby the tyranid getting removed
+/mob/living/carbon/tyranid/proc/handle_weeds_adjacent_removed(datum/source)
 	SIGNAL_HANDLER
 	var/obj/alien/weeds/found_weed = locate(/obj/alien/weeds) in loc
 	if(!QDESTROYING(found_weed))
 		return
 	loc_weeds_type = null
 
-/**  Handles logic for the xeno moving to a new weeds tile.
+/**  Handles logic for the tyranid moving to a new weeds tile.
 Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change */
-/mob/living/carbon/xenomorph/proc/handle_weeds_on_movement(datum/source)
+/mob/living/carbon/tyranid/proc/handle_weeds_on_movement(datum/source)
 	SIGNAL_HANDLER
 	var/obj/alien/weeds/found_weed = locate(/obj/alien/weeds) in loc
 	if(loc_weeds_type == found_weed?.type)
@@ -472,34 +472,34 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
 	loc_weeds_type = found_weed?.type
 	return TRUE
 
-/mob/living/carbon/xenomorph/hivemind/handle_weeds_on_movement(datum/source)
+/mob/living/carbon/tyranid/hivemind/handle_weeds_on_movement(datum/source)
 	. = ..()
 	if(!.)
 		return
 	update_icon()
 
-/mob/living/carbon/xenomorph/toggle_resting()
-	var/datum/action/ability/xeno_action/xeno_resting/resting_action = actions_by_path[/datum/action/ability/xeno_action/xeno_resting]
+/mob/living/carbon/tyranid/toggle_resting()
+	var/datum/action/ability/tyranid_action/tyranid_resting/resting_action = actions_by_path[/datum/action/ability/tyranid_action/tyranid_resting]
 	if(!resting_action || !resting_action.can_use_action())
 		return
 	if(resting)
-		if(!COOLDOWN_CHECK(src, xeno_resting_cooldown))
+		if(!COOLDOWN_CHECK(src, tyranid_resting_cooldown))
 			balloon_alert(src, "Cannot get up so soon after resting!")
 			return
 
-	if(!COOLDOWN_CHECK(src, xeno_unresting_cooldown))
+	if(!COOLDOWN_CHECK(src, tyranid_unresting_cooldown))
 		balloon_alert(src, "Cannot rest so soon after getting up!")
 		return
 	return ..()
 
-/mob/living/carbon/xenomorph/set_resting()
+/mob/living/carbon/tyranid/set_resting()
 	. = ..()
 	if(resting)
-		COOLDOWN_START(src, xeno_resting_cooldown, XENO_RESTING_COOLDOWN)
+		COOLDOWN_START(src, tyranid_resting_cooldown, TYRANID_RESTING_COOLDOWN)
 	else
-		COOLDOWN_START(src, xeno_unresting_cooldown, XENO_UNRESTING_COOLDOWN)
+		COOLDOWN_START(src, tyranid_unresting_cooldown, TYRANID_UNRESTING_COOLDOWN)
 
-/mob/living/carbon/xenomorph/set_jump_component(duration = 0.5 SECONDS, cooldown = 1 SECONDS, cost = 0, height = 16, sound = null, flags = JUMP_SHADOW, jump_pass_flags = PASS_LOW_STRUCTURE|PASS_FIRE|PASS_TANK)
+/mob/living/carbon/tyranid/set_jump_component(duration = 0.5 SECONDS, cooldown = 1 SECONDS, cost = 0, height = 16, sound = null, flags = JUMP_SHADOW, jump_pass_flags = PASS_LOW_STRUCTURE|PASS_FIRE|PASS_TANK)
 	var/gravity = get_gravity()
 	if(gravity < 1) //low grav
 		duration *= 2.5 - gravity
@@ -514,7 +514,7 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
 
 	AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = 0, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = jump_pass_flags)
 
-/mob/living/carbon/xenomorph/equip_to_slot(obj/item/item_to_equip, slot, bitslot)
+/mob/living/carbon/tyranid/equip_to_slot(obj/item/item_to_equip, slot, bitslot)
 	. = ..()
 	switch(slot)
 		if(SLOT_BACK)
@@ -534,7 +534,7 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
 			item_to_equip.equipped(src, slot)
 			wear_mask_update(item_to_equip, TRUE)
 
-/mob/living/carbon/xenomorph/grabbed_self_attack(mob/living/user)
+/mob/living/carbon/tyranid/grabbed_self_attack(mob/living/user)
 	. = ..()
 	if(!can_mount(user))
 		return NONE
@@ -548,7 +548,7 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
  * * user - The mob trying to mount
  * * target_mounting - Is the target initiating the mounting process?
  */
-/mob/living/carbon/xenomorph/proc/can_mount(mob/living/user, target_mounting = FALSE)
+/mob/living/carbon/tyranid/proc/can_mount(mob/living/user, target_mounting = FALSE)
 	return FALSE
 
 /**
@@ -558,12 +558,12 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
  * * target - The mob being put on the back
  * * target_mounting - Is the target initiating the mounting process?
  */
-/mob/living/carbon/xenomorph/proc/carry_target(mob/living/carbon/target, target_mounting = FALSE)
+/mob/living/carbon/tyranid/proc/carry_target(mob/living/carbon/target, target_mounting = FALSE)
 	if(incapacitated(restrained_flags = RESTRAINED_NECKGRAB))
 		if(target_mounting)
-			to_chat(target, span_xenowarning("You cannot mount [src]!"))
+			to_chat(target, span_tyranidwarning("You cannot mount [src]!"))
 			return
-		to_chat(src, span_xenowarning("[target] cannot mount you!"))
+		to_chat(src, span_tyranidwarning("[target] cannot mount you!"))
 		return
 	visible_message(span_notice("[target_mounting ? "[target] starts to mount on [src]" : "[src] starts hoisting [target] onto [p_their()] back..."]"),
 	span_notice("[target_mounting ? "[target] starts to mount on your back" : "You start to lift [target] onto your back..."]"))
@@ -575,11 +575,11 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
 		return
 	buckle_mob(target, TRUE, TRUE, 90, 1, 1)
 
-/mob/living/carbon/xenomorph/MouseDrop_T(atom/dropping, mob/user)
+/mob/living/carbon/tyranid/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
-	if(isxeno(user))
-		var/mob/living/carbon/xenomorph/xeno_user = user
-		if(!(xeno_user.xeno_caste.can_flags & CASTE_CAN_RIDE_CRUSHER))
+	if(istyranid(user))
+		var/mob/living/carbon/tyranid/tyranid_user = user
+		if(!(tyranid_user.tyranid_caste.can_flags & CASTE_CAN_RIDE_CRUSHER))
 			return
 	if(!can_mount(user, TRUE))
 		return

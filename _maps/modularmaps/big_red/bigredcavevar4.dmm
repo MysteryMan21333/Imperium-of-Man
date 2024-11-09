@@ -30,7 +30,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "ai" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "aj" = (
@@ -41,8 +41,8 @@
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "al" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "am" = (
@@ -53,40 +53,40 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "ao" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/east/garbledradio)
 "ap" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "aq" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "ar" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "at" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "au" = (
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/east)
 "az" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "aA" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "aF" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "aI" = (
@@ -99,16 +99,16 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "aM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "aN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "aP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "aQ" = (
@@ -119,7 +119,7 @@
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "aS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/east/garbledradio)
 "aT" = (
@@ -139,12 +139,12 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "aY" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "aZ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "kb" = (
@@ -153,11 +153,11 @@
 /area/bigredv2/caves/rock)
 "rp" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "sT" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/east)
 "zN" = (
@@ -165,12 +165,12 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/se)
 "DH" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east/garbledradio)
 "PO" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "SF" = (

@@ -1,11 +1,11 @@
-/datum/xeno_caste/wraith
+/datum/tyranid_caste/wraith
 	caste_name = "Wraith"
 	display_name = "Wraith"
 	upgrade_name = ""
-	caste_desc = "A strange xeno that utilizes its psychic powers to move out of phase with reality."
-	caste_type_path = /mob/living/carbon/xenomorph/wraith
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_desc = "A strange tyranid that utilizes its psychic powers to move out of phase with reality."
+	caste_type_path = /mob/living/carbon/tyranid/wraith
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "wraith" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -25,7 +25,7 @@
 	evolution_threshold = 225
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/runner
+	deevolves_to = /datum/tyranid_caste/runner
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED
@@ -40,34 +40,34 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/blink,
-		/datum/action/ability/activable/xeno/banish,
-		/datum/action/ability/xeno_action/recall,
-		/datum/action/ability/activable/xeno/rewind,
-		/datum/action/ability/xeno_action/portal,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/blink,
+		/datum/action/ability/activable/tyranid/banish,
+		/datum/action/ability/tyranid_action/recall,
+		/datum/action/ability/activable/tyranid/rewind,
+		/datum/action/ability/tyranid_action/portal,
 	)
 
-/datum/xeno_caste/wraith/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/wraith/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/wraith/primordial
+/datum/tyranid_caste/wraith/primordial
 	upgrade_name = "Primordial"
-	caste_desc = "A xenomorph that has perfected the manipulation of space and time. Its movements appear quick and distorted."
+	caste_desc = "A tyranid that has perfected the manipulation of space and time. Its movements appear quick and distorted."
 	primordial_message = "Mastery is achieved when \'telling time\' becomes \'telling time what to do\'."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/blink,
-		/datum/action/ability/activable/xeno/banish,
-		/datum/action/ability/xeno_action/recall,
-		/datum/action/ability/xeno_action/portal,
-		/datum/action/ability/activable/xeno/rewind,
-		/datum/action/ability/xeno_action/timestop,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/blink,
+		/datum/action/ability/activable/tyranid/banish,
+		/datum/action/ability/tyranid_action/recall,
+		/datum/action/ability/tyranid_action/portal,
+		/datum/action/ability/activable/tyranid/rewind,
+		/datum/action/ability/tyranid_action/timestop,
 	)
 

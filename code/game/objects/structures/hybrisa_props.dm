@@ -7,7 +7,7 @@
 	name = "long rack"
 	icon_state = "longrack1"
 	desc = "A long shelf filled with various foodstuffs"
-	icon = 'icons/obj/structures/prop/urban/supermart.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/supermart.dmi'
 	density = TRUE
 
 /obj/structure/prop/urban/supermart/rack/longrackempty
@@ -110,9 +110,9 @@
 
 // Furniture
 /obj/structure/prop/urban/furniture
-	icon = 'icons/obj/structures/prop/urban/urbantables.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbantables.dmi'
 	icon_state = "blackmetaltable"
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/prop/urban/furniture/tables
 	icon_state = "table_pool"
@@ -164,8 +164,8 @@
 /obj/structure/bed/urban/chairs
 	name = "expensive chair"
 	desc = "An expensive looking chair"
-	resistance_flags = XENO_DAMAGEABLE
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	resistance_flags = TYRANID_DAMAGEABLE
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 
 /obj/structure/bed/urban/chairs/black
 	icon_state = "comfychair_zenithblack"
@@ -182,7 +182,7 @@
 // Beds
 
 /obj/structure/bed/urban
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "hybrisa"
 
 /obj/structure/bed/urban/prisonbed
@@ -228,105 +228,105 @@
 	desc = "A mattress seated on a rectangular metallic frame with wheels. This is used to support a lying person in a comfortable manner."
 	icon_state = "bigrollerempty3_up"
 
-// Xenobiology
+// Tyranidbiology
 
-/obj/structure/prop/urban/xenobiology
-	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics.dmi'
-	icon_state = "xenocellemptyon"
+/obj/structure/prop/urban/tyranidbiology
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanxenocryogenics.dmi'
+	icon_state = "tyranidcellemptyon"
 	layer = ABOVE_MOB_LAYER
 
 
-/obj/structure/prop/urban/xenobiology/small/empty
+/obj/structure/prop/urban/tyranidbiology/small/empty
 	name = "specimen containment cell"
 	desc = "It's empty."
-	icon_state = "xenocellemptyon"
+	icon_state = "tyranidcellemptyon"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/offempty
+/obj/structure/prop/urban/tyranidbiology/small/offempty
 	name = "specimen containment cell"
 	desc = "It's turned off and empty."
-	icon_state = "xenocellemptyoff"
+	icon_state = "tyranidcellemptyoff"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/larva
+/obj/structure/prop/urban/tyranidbiology/small/larva
 	name = "specimen containment cell"
 	desc = "There is something worm-like inside..."
-	icon_state = "xenocelllarva"
+	icon_state = "tyranidcelllarva"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/egg
+/obj/structure/prop/urban/tyranidbiology/small/egg
 	name = "specimen containment cell"
 	desc = "There is, what looks like some sort of egg inside..."
-	icon_state = "xenocellegg"
+	icon_state = "tyranidcellegg"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/hugger
+/obj/structure/prop/urban/tyranidbiology/small/hugger
 	name = "specimen containment cell"
 	desc = "There's something spider-like inside..."
-	icon_state = "xenocellhugger"
+	icon_state = "tyranidcellhugger"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/cracked1
+/obj/structure/prop/urban/tyranidbiology/small/cracked1
 	name = "specimen containment cell"
 	desc = "Looks like something broke it...from the inside."
-	icon_state = "xenocellcrackedempty"
+	icon_state = "tyranidcellcrackedempty"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/cracked2
+/obj/structure/prop/urban/tyranidbiology/small/cracked2
 	name = "specimen containment cell"
 	desc = "Looks like something broke it...from the inside."
-	icon_state = "xenocellcrackedempty2"
+	icon_state = "tyranidcellcrackedempty2"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/small/crackedegg
+/obj/structure/prop/urban/tyranidbiology/small/crackedegg
 	name = "specimen containment cell"
 	desc = "Looks like something broke it, there's a giant empty egg inside."
-	icon_state = "xenocellcrackedegg"
+	icon_state = "tyranidcellcrackedegg"
 	density = TRUE
 
-/obj/structure/prop/urban/xenobiology/big
+/obj/structure/prop/urban/tyranidbiology/big
 	name = "specimen containment cell"
 	desc = "A giant tube with a hulking monstrosity inside, is this thing alive?"
-	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
 	icon_state = "bigqueencryo1"
 
-/obj/structure/prop/urban/xenobiology/big/bigleft
-	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
+/obj/structure/prop/urban/tyranidbiology/big/bigleft
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
 	icon_state = "bigqueencryo1"
 	layer = ABOVE_MOB_LAYER
 
-/obj/structure/prop/urban/xenobiology/big/bigright
-	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
+/obj/structure/prop/urban/tyranidbiology/big/bigright
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
 	icon_state = "bigqueencryo2"
 	layer = ABOVE_MOB_LAYER
 
-/obj/structure/prop/urban/xenobiology/big/bigbottomleft
-	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
+/obj/structure/prop/urban/tyranidbiology/big/bigbottomleft
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
 	icon_state = "bigqueencryo3"
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 
-/obj/structure/prop/urban/xenobiology/big/bigbottomright
-	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
+/obj/structure/prop/urban/tyranidbiology/big/bigbottomright
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
 	icon_state = "bigqueencryo4"
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 
-/obj/structure/prop/urban/xenobiology/misc
+/obj/structure/prop/urban/tyranidbiology/misc
 	name = "strange egg"
 	desc = "A strange ancient looking egg, it seems to be inert."
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "inertegg"
 	layer = 2
 
 // Engineer
 /obj/structure/prop/urban/engineer
-	icon = 'icons/obj/structures/prop/urban/engineerjockey.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/engineerjockey.dmi'
 
 /obj/structure/prop/urban/engineer/spacejockey
 	name = "Giant Pilot"
 	desc = "A Giant Alien life form. Looks like it's been dead a long time. Fossilized. Looks like it's growing out of the chair. Bones are bent outward, like it exploded from inside."
-	icon = 'icons/obj/structures/prop/urban/engineerjockey.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/engineerjockey.dmi'
 	icon_state = "spacejockey"
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = RESIST_ALL
@@ -334,13 +334,13 @@
 /obj/structure/prop/urban/engineer/giantconsole
 	name = "Giant Alien Console"
 	desc = "A Giant Alien console of some kind, unlike anything you've ever seen before. Who knows the purpose of this strange technology..."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "engineerconsole"
 	bound_height = 32
 	bound_width = 32
 	density = TRUE
 /obj/structure/prop/urban/engineer/engineerpillar
-	icon = 'icons/obj/structures/prop/urban/urbanengineerpillarangled.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanengineerpillarangled.dmi'
 	icon_state = "engineerpillar_SW1fade"
 	bound_height = 64
 	bound_width = 128
@@ -369,7 +369,7 @@
 
 /obj/structure/prop/urban/airport
 	name = "nose cone"
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "dropshipfrontwhite1"
 
 /obj/structure/prop/urban/airport/dropshipnosecone
@@ -412,7 +412,7 @@
 /obj/structure/prop/urban/airport/dropshipenginedamage
 	name = "dropship damage"
 	desc = "the engine appears to have severe damage."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "dropship_engine_damage"
 	bound_height = 64
 	bound_width = 96
@@ -420,7 +420,7 @@
 /obj/structure/prop/urban/airport/dropshipenginedamagenofire
 	name = "dropship damage"
 	desc = "the engine appears to have severe damage."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "dropship_engine_damage_nofire"
 	bound_height = 64
 	bound_width = 96
@@ -428,7 +428,7 @@
 /obj/structure/prop/urban/airport/refuelinghose
 	name = "refueling hose"
 	desc = "A long refueling hose that connects to various types of dropships."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "fuelline1"
 	bound_height = 64
 	bound_width = 96
@@ -438,7 +438,7 @@
 /obj/structure/prop/urban/airport/refuelinghose2
 	name = "refueling hose"
 	desc = "A long refueling hose that connects to various types of dropships."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "fuelline2"
 	bound_height = 64
 	bound_width = 96
@@ -449,7 +449,7 @@
 /obj/structure/prop/urban/airport/deadpilot1
 	name = "decapitated Nanotrasen Pilot"
 	desc = "What remains of a Nanotrasen Pilot. Their entire head is missing. Where'd it roll off to?..."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "pilotbody_decap1"
 	bound_height = 64
 	bound_width = 96
@@ -457,7 +457,7 @@
 /obj/structure/prop/urban/airport/deadpilot2
 	name = "decapitated Nanotrasen Pilot"
 	desc = "What remains of a Nanotrasen Pilot. Their entire head is missing. Where'd it roll off to?..."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "pilotbody_decap2"
 	bound_height = 64
 	bound_width = 96
@@ -465,7 +465,7 @@
 // Misc
 
 /obj/structure/prop/urban/misc
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "roadbarrier"
 
 // Floor props
@@ -511,57 +511,57 @@
 
 /obj/structure/prop/urban/misc/graffiti
 	name = "graffiti"
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti4"
 	bound_height = 64
 	bound_width = 96
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/prop/urban/misc/graffiti/graffiti1
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti1"
 
 /obj/structure/prop/urban/misc/graffiti/graffiti2
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti2"
 
 /obj/structure/prop/urban/misc/graffiti/graffiti3
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti3"
 
 /obj/structure/prop/urban/misc/graffiti/graffiti4
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti4"
 
 /obj/structure/prop/urban/misc/graffiti/graffiti5
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti5"
 
 /obj/structure/prop/urban/misc/graffiti/graffiti6
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti6"
 
 /obj/structure/prop/urban/misc/graffiti/graffiti7
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti7"
 
 // Wall Blood
 
 /obj/structure/prop/urban/misc/blood
 	name = "blood"
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "wallblood_floorblood"
 
 /obj/structure/prop/urban/misc/blood/blood1
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "wallblood_floorblood"
 
 /obj/structure/prop/urban/misc/blood/blood2
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "wall_blood_1"
 
 /obj/structure/prop/urban/misc/blood/blood3
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "wall_blood_2"
 
 // Fire
@@ -569,7 +569,7 @@
 /obj/structure/prop/urban/misc/fire/fire1
 	name = "fire"
 	desc = "It's hot, smoking even."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zfire_smoke"
 	layer = 5
 	light_on = TRUE
@@ -579,7 +579,7 @@
 /obj/structure/prop/urban/misc/fire/fire2
 	name = "fire"
 	desc = "It's hot, smoking even."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zfire_smoke2"
 	layer = 5
 	light_on = TRUE
@@ -589,7 +589,7 @@
 /obj/structure/prop/urban/misc/fire/firebarrel
 	name = "barrel"
 	desc = "A flaming barrel filled with hazardous substances."
-	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zbarrelfireon"
 	layer = 5
 	light_on = TRUE
@@ -633,7 +633,7 @@
 /obj/structure/prop/urban/misc/slotmachine
 	name = "slot machine"
 	desc = "A slot machine."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "slotmachine"
 	bound_width = 32
 	bound_height = 32
@@ -644,7 +644,7 @@
 /obj/structure/prop/urban/misc/atm
 	name = "\improper NanoTrasen Automatic Teller Machine"
 	desc = "For all your monetary needs!"
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "atm"
 	bound_width = 32
 	bound_height = 32
@@ -655,7 +655,7 @@
 /obj/structure/prop/urban/misc/slotmachine_broken
 	name = "slot machine"
 	desc = "A broken slot machine."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "slotmachine_broken"
 	bound_width = 32
 	bound_height = 32
@@ -676,7 +676,7 @@
 /obj/structure/prop/urban/misc/machinery/computers
 	name = "computer"
 	icon_state = "mapping_comp"
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 80
 
 /obj/structure/prop/urban/misc/machinery/computers/computerwhite/computer1
@@ -714,7 +714,7 @@
 /obj/structure/prop/urban/misc/machinery/screens
 	name = "monitor"
 	desc = "A screen, useful for broadcasting events. It looks like it's seen better days."
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 50
 
 /obj/structure/prop/urban/misc/machinery/screens/frame
@@ -911,7 +911,7 @@
 /obj/structure/prop/urban/containersextended
 	name = "cargo container"
 	desc = "a cargo container."
-	icon = 'icons/obj/structures/prop/urban/containersextended.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/containersextended.dmi'
 	icon_state = "blackwyleft"
 	bound_width = 32
 	bound_height = 32
@@ -1074,7 +1074,7 @@
 /obj/structure/prop/urban/fakeplatforms
 	name = "platform"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 
 /obj/structure/prop/urban/fakeplatforms/platform1
 	icon_state = "engineer_platform"
@@ -1090,7 +1090,7 @@
 
 /obj/structure/prop/urban/fakeplatforms/rockplatform
 	icon_state = "kutjevo_rockdark_fake"
-	icon = 'icons/obj/structures/platforms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/platforms.dmi'
 
 // Grille
 
@@ -1101,7 +1101,7 @@
 /obj/structure/prop/urban/misc/buildinggreeblies
 	name = "machinery"
 	desc = "A strange piece of machinery attached to a wall..."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "buildingventbig1"
 	bound_width = 64
 	bound_height = 32
@@ -1183,7 +1183,7 @@
 /obj/structure/prop/urban/misc/concretestatue
 	name = "concrete statue"
 	desc = "A decorative statue with the Nanotrasen 'Wings' adorned on it, A corporate brutalist piece of art."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "concretesculpture"
 	bound_width = 64
 	bound_height = 64
@@ -1205,13 +1205,13 @@
 	icon_state = "firehydrant"
 	density = FALSE
 	anchored = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 150
 
 /obj/structure/prop/urban/misc/phonebox
 	name = "phonebox"
 	desc = "A phone-box, it doesn't seem to be working, the line must be down."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "phonebox_closed"
 	layer = ABOVE_MOB_LAYER
 	bound_width = 32
@@ -1230,7 +1230,7 @@
 /obj/structure/prop/urban/misc/bench
 	name = "bench"
 	desc = "A metal frame, with seats that are fitted with synthetic leather, they've faded in time."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "seatedbench"
 	bound_width = 32
 	bound_height = 64
@@ -1238,18 +1238,18 @@
 	density = FALSE
 	max_integrity = 200
 	anchored = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 // Signs
 
 /obj/structure/prop/urban/signs
 	name = "neon sign"
-	icon = 'icons/obj/structures/prop/urban/urban64x64_signs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urban64x64_signs.dmi'
 	icon_state = "jacksopen_on"
 	bound_height = 64
 	bound_width = 64
 	layer = ABOVE_MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 80
 
 /obj/structure/prop/urban/signs/casniosign
@@ -1291,13 +1291,13 @@
 /obj/structure/prop/urban/signs/high_voltage
 	name = "warning sign"
 	desc = "DANGER - HIGH VOLTAGE - DEATH!."
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "shockyBig"
 
 /obj/structure/prop/urban/signs/high_voltage/small
 	name = "warning sign"
 	desc = "DANGER - HIGH VOLTAGE - DEATH!."
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "shockyTiny"
 
 // billboards, Signs and Posters
@@ -1306,7 +1306,7 @@
 /obj/structure/prop/urban/billboardsandsigns/bigbillboards
 	name = "billboard"
 	desc = "A advertisement billboard."
-	icon = 'icons/obj/structures/prop/urban/32x64_urbanbillboards.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/32x64_urbanbillboards.dmi'
 	icon_state = "billboard_bigger"
 	density = FALSE
 	max_integrity = 200
@@ -1331,7 +1331,7 @@
 /obj/structure/prop/urban/billboardsandsigns/bigroadsigns
 	name = "road sign"
 	desc = "A road sign."
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "roadsign_1"
 	bound_width = 64
 	bound_height = 32
@@ -1349,7 +1349,7 @@
 // Car Factory
 
 /obj/structure/prop/urban/factory
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "factory_roboticarm"
 
 /obj/structure/prop/urban/factory/robotic_arm
@@ -1375,7 +1375,7 @@
 /obj/structure/prop/urban/lattice_prop
 	desc = "A support lattice."
 	name = "lattice"
-	icon = 'icons/obj/structures/prop/urban/urban_lattice.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urban_lattice.dmi'
 	icon_state = "lattice1"
 	density = FALSE
 	layer = RIPPLE_LAYER

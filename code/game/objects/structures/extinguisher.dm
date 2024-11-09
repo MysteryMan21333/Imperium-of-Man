@@ -1,7 +1,7 @@
 /obj/structure/extinguisher_cabinet
 	name = "extinguisher cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
-	icon = 'icons/obj/wallframes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/wallframes.dmi'
 	icon_state = "extinguisher"
 	pixel_x = -16
 	pixel_y = -16

@@ -1,9 +1,9 @@
 /obj/item/weapon/shield
 	name = "shield"
-	icon = 'icons/obj/items/weapons/shield.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/shield.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/shields_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/shields_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/shields_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/shields_right.dmi',
 	)
 	/// Does this shield have a strap?
 	var/strappable = FALSE
@@ -92,10 +92,10 @@
 		balloon_alert(user, "Too damaged. Use metal sheets.")
 
 
-/obj/item/weapon/shield/riot/marine
+/obj/item/weapon/shield/riot/guardsman
 	name = "\improper TL-172 defensive shield"
 	desc = "A heavy shield adept at blocking blunt or sharp objects from connecting with the shield wielder. Looks very robust. Alt click to tighten the strap."
-	icon_state = "marine_shield"
+	icon_state = "guardsman_shield"
 	equip_slot_flags = ITEM_SLOT_BACK
 	max_integrity = 400
 	integrity_failure = 100
@@ -105,7 +105,7 @@
 	slowdown = 0.5
 	strappable = TRUE
 
-/obj/item/weapon/shield/riot/marine/update_icon_state()
+/obj/item/weapon/shield/riot/guardsman/update_icon_state()
 	. = ..()
 	if(obj_integrity <= integrity_failure)
 		icon_state = initial(icon_state) + "_broken"
@@ -124,17 +124,17 @@
 		return
 	holder.update_inv_back()
 
-/obj/item/weapon/shield/riot/marine/metal
+/obj/item/weapon/shield/riot/guardsman/metal
 	icon_state = "riot_metal"
 
-/obj/item/weapon/shield/riot/marine/som
+/obj/item/weapon/shield/riot/guardsman/chaos
 	name = "\improper S-144 boarding shield"
-	desc = "A robust, heavy shield designed to be shot instead of the person holding it. Commonly employed by the SOM during boarding actions and other close quarter combat scenarios. This one has a SOM flag emblazoned on the front. Alt click to tighten the strap."
-	icon_state = "som_shield"
+	desc = "A robust, heavy shield designed to be shot instead of the person holding it. Commonly employed by the CHAOS during boarding actions and other close quarter combat scenarios. This one has a CHAOS flag emblazoned on the front. Alt click to tighten the strap."
+	icon_state = "chaos_shield"
 	soft_armor = list(MELEE = 35, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 30, BIO = 50, FIRE = 0, ACID = 15)
 
 //A shield that can be deployed as a barricade
-/obj/item/weapon/shield/riot/marine/deployable
+/obj/item/weapon/shield/riot/guardsman/deployable
 	name = "\improper TL-182 deployable shield"
 	desc = "A compact shield adept at blocking blunt or sharp objects from connecting with the shield wielder. Can be deployed as a barricade."
 	icon_state = "folding_shield"
@@ -155,11 +155,11 @@
 	///Whether it is wired
 	var/is_wired = FALSE
 
-/obj/item/weapon/shield/riot/marine/deployable/Initialize(mapload)
+/obj/item/weapon/shield/riot/guardsman/deployable/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/deployable_item, deployable_item, deploy_time, undeploy_time, null, TRUE)
 
-/obj/item/weapon/shield/riot/marine/deployable/set_shield()
+/obj/item/weapon/shield/riot/guardsman/deployable/set_shield()
 	AddComponent(/datum/component/shield, SHIELD_PARENT_INTEGRITY, list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 35, BOMB = 40, BIO = 15, FIRE = 30, ACID = 35))
 
 /obj/item/weapon/shield/energy

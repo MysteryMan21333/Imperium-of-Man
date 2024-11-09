@@ -1,7 +1,7 @@
 /obj/structure/platform
 	name = "platform"
 	desc = "A square metal surface resting on four legs."
-	icon = 'icons/obj/structures/platforms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/platforms.dmi'
 	icon_state = "platform"
 	coverage = 10
 	density = TRUE
@@ -11,7 +11,7 @@
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	climbable = TRUE
 	climb_delay = 10
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/platform/Initialize(mapload)
 	. = ..()
@@ -131,7 +131,7 @@
 /obj/structure/platform_decoration
 	name = "platform"
 	desc = "A square metal surface resting on four legs."
-	icon = 'icons/obj/structures/platforms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/platforms.dmi'
 	icon_state = "platform_deco"
 	atom_flags = ON_BORDER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

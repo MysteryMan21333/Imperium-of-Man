@@ -1,1 +1,1 @@
-#define COMSIG_XENOMORPH_UPDATE_ICONS "xenomorph_update_icons"
+#define COMSIG_TYRANID_UPDATE_ICONS "tyranid_update_icons"

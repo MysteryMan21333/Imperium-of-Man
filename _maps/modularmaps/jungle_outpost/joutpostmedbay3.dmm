@@ -226,7 +226,7 @@
 /turf/open/ground/grass/weedable,
 /area/campaign/jungle_outpost/ground/jungle)
 "qP" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/machinery/light{
 	dir = 8
 	},

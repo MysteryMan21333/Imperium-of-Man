@@ -299,7 +299,7 @@
 /area/slumbridge/caves/mining)
 "aoM" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/dirt,
@@ -380,7 +380,7 @@
 	},
 /area/slumbridge/inside/prison/outerringsouth)
 "arg" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/slumbridge/caves/rock)
 "arq" = (
@@ -729,7 +729,7 @@
 /area/slumbridge/inside/colony/bar)
 "aGw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/open/floor,
 /area/slumbridge/inside/engi/west)
@@ -933,7 +933,7 @@
 /area/slumbridge/inside/houses/surgery)
 "aOA" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/dirt,
@@ -967,12 +967,12 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/inside/zeta/south)
 "aPm" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship/gray,
 /area/slumbridge/inside/houses/dorms)
 "aPt" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/slumbridge/caves/rock)
 "aPv" = (
@@ -984,7 +984,7 @@
 "aPB" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/random/misc/plushie/fiftyfifty,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/slumbridge/inside/houses/dorms)
 "aPL" = (
@@ -1111,7 +1111,7 @@
 /obj/structure/platform/rockcliff{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt/dirt{
 	dir = 8
 	},
@@ -1266,7 +1266,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown{
 	dir = 4
 	},
@@ -1995,10 +1995,10 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/item/clothing/gloves/marine/som,
-/obj/item/clothing/under/som,
-/obj/item/clothing/shoes/marine/som,
-/obj/item/clothing/head/helmet/marine/som,
+/obj/item/clothing/gloves/guardsman/chaos,
+/obj/item/clothing/under/chaos,
+/obj/item/clothing/shoes/guardsman/chaos,
+/obj/item/clothing/head/helmet/guardsman/chaos,
 /turf/open/floor/plating/mainship/striped{
 	dir = 1
 	},
@@ -2228,7 +2228,7 @@
 /turf/open/floor/tile/green/whitegreencorner,
 /area/slumbridge/inside/medical/storage)
 "bHC" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/inside/sombase/east)
 "bHG" = (
@@ -2523,7 +2523,7 @@
 /turf/open/floor/plating/ground/snow,
 /area/slumbridge/landingzonetwo)
 "bQt" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "bQG" = (
@@ -2852,7 +2852,7 @@
 /area/slumbridge/inside/houses/recreational)
 "ces" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves/garbledradio)
 "ceW" = (
@@ -2876,7 +2876,7 @@
 	},
 /area/slumbridge/landingzonetwo)
 "cfj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/gm/dense,
 /area/slumbridge/caves/rock)
 "cfn" = (
@@ -3091,7 +3091,7 @@
 /area/slumbridge/outside/northwest/nearlz)
 "cmB" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/mono,
 /area/slumbridge/inside/houses/recreational)
 "cmY" = (
@@ -3114,7 +3114,7 @@
 "cni" = (
 /obj/structure/bed/fancy,
 /obj/effect/spawner/random/misc/bedsheet,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/slumbridge/inside/houses/dorms)
 "cnl" = (
@@ -3647,7 +3647,7 @@
 /turf/open/floor/plating/ground/concrete/edge,
 /area/slumbridge/outside/southwest)
 "cIy" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/ground/grass/weedable/patch,
@@ -3682,7 +3682,7 @@
 /turf/open/floor/prison/blackfloor,
 /area/slumbridge/inside/colony/vault)
 "cJM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/slumbridge/caves/rock)
 "cJY" = (
@@ -3765,7 +3765,7 @@
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/medical/foyer)
 "cNt" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/lavaland/basalt/glowing,
 /area/slumbridge/outside/northwest)
 "cNy" = (
@@ -4160,7 +4160,7 @@
 	},
 /area/slumbridge/inside/houses/surgery)
 "ddE" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/scorched,
 /area/slumbridge/inside/pmcdome)
 "ddR" = (
@@ -4207,7 +4207,7 @@
 /area/slumbridge/inside/sombase/east)
 "dgj" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "dgF" = (
@@ -4230,7 +4230,7 @@
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome/dorms)
 "dho" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -4483,11 +4483,11 @@
 /area/slumbridge/inside/houses/recreational)
 "dqo" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/slumbridge/outside/northeast)
 "dqB" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "dqC" = (
@@ -4625,7 +4625,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/colony/construction)
 "dxX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/slumbridge/outside/northwest)
 "dyi" = (
@@ -4819,7 +4819,7 @@
 /area/slumbridge/outside/northwest/nearlz)
 "dEV" = (
 /obj/structure/barricade/snow,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2,
 /area/slumbridge/outside/southwest)
 "dFf" = (
@@ -5101,7 +5101,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/slumbridge/outside/southwest)
 "dQu" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/dirt,
@@ -5571,7 +5571,7 @@
 /area/slumbridge/outside/northeast)
 "ejB" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating/mainship,
 /area/slumbridge/inside/sombase/east)
 "ekj" = (
@@ -5738,7 +5738,7 @@
 /area/slumbridge/inside/prison/outerringsouth)
 "eqG" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "eqL" = (
@@ -5807,7 +5807,7 @@
 /area/slumbridge/inside/medical/southern)
 "etZ" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown/corner{
 	dir = 4
 	},
@@ -5939,7 +5939,7 @@
 	},
 /area/slumbridge/inside/colony/bar)
 "exZ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "eyd" = (
@@ -6110,7 +6110,7 @@
 /obj/effect/turf_decal/siding{
 	dir = 5
 	},
-/turf/open/floor/mainship/som/nw,
+/turf/open/floor/mainship/chaos/nw,
 /area/slumbridge/inside/sombase/hangar)
 "eIl" = (
 /obj/effect/turf_decal/warning_stripes/stripedsquare/tile/border,
@@ -6133,7 +6133,7 @@
 /turf/open/floor/tile/dark/purple2,
 /area/slumbridge/inside/zeta/south)
 "eJF" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "eJV" = (
@@ -6161,7 +6161,7 @@
 /area/slumbridge/inside/prison/innerring)
 "eLC" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -6181,7 +6181,7 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/slumbridge/inside/houses/nwcargo)
 "eMn" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt/glowing,
 /area/slumbridge/outside/northwest)
 "eMW" = (
@@ -6313,7 +6313,7 @@
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/medical/surgery)
 "eSk" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "eSm" = (
@@ -6392,7 +6392,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 5
 	},
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/mainship/floor,
 /area/slumbridge/inside/sombase/west)
 "eVa" = (
@@ -6629,7 +6629,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown{
 	dir = 1
 	},
@@ -6745,8 +6745,8 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/pmcdome/weaponvault)
 "fkd" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "fkh" = (
@@ -6761,7 +6761,7 @@
 /area/slumbridge/caves/southeastcaves/garbledradio)
 "fla" = (
 /obj/structure/desertdam/decals/road,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/slumbridge/outside/southwest)
 "flk" = (
@@ -6801,7 +6801,7 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/inside/colony/orestorage)
 "fmO" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/dirt,
@@ -6861,7 +6861,7 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/slumbridge/outside/southwest)
 "foV" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -6914,7 +6914,7 @@
 /turf/open/floor/plating/fake_space,
 /area/slumbridge/outside/southwest)
 "fqa" = (
-/obj/structure/xenoautopsy/jar_shelf,
+/obj/structure/tyranidautopsy/jar_shelf,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -7303,7 +7303,7 @@
 /area/slumbridge/inside/engi/engineroom)
 "fFr" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/outside/northeast)
 "fFz" = (
@@ -7702,7 +7702,7 @@
 /area/slumbridge/outside/northeast)
 "fUm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor,
 /area/slumbridge/inside/engi/central)
 "fUo" = (
@@ -7952,7 +7952,7 @@
 /area/slumbridge/outside/southwest)
 "gea" = (
 /obj/structure/table,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/houses/recreational)
 "ger" = (
@@ -8046,7 +8046,7 @@
 /turf/open/floor/mainship/ai,
 /area/slumbridge/inside/houses/recreational)
 "giC" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "giG" = (
@@ -8249,7 +8249,7 @@
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 4
 	},
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/structure/cable,
 /turf/open/floor/tile/dark/purple2{
 	dir = 4
@@ -8266,7 +8266,7 @@
 /turf/open/floor/tile/blue/whitebluefull,
 /area/slumbridge/inside/colony/southerndome)
 "gpx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/slumbridge/outside/southwest)
 "gpK" = (
@@ -8284,7 +8284,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/houses/dorms)
 "gpX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "gpZ" = (
@@ -8342,7 +8342,7 @@
 /turf/open/floor/asteroidfloor,
 /area/slumbridge/landingzoneone)
 "gta" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome)
 "gtc" = (
@@ -8407,7 +8407,7 @@
 /turf/closed/wall/mainship/gray,
 /area/slumbridge/inside/houses/dorms)
 "gwc" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "gwe" = (
@@ -8894,7 +8894,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/slumbridge/inside/sombase/hangar)
 "gNg" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/scorched,
 /area/slumbridge/inside/pmcdome)
 "gNV" = (
@@ -9004,8 +9004,8 @@
 /turf/open/floor/plating/mainship,
 /area/slumbridge/landingzoneone)
 "gTH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/slumbridge/caves/rock)
 "gTS" = (
@@ -9156,7 +9156,7 @@
 	},
 /area/slumbridge/outside/northeast)
 "gYC" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2{
 	dir = 6
 	},
@@ -9295,7 +9295,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/pmcdome/dorms)
 "hdZ" = (
-/obj/item/weapon/energy/sword/som,
+/obj/item/weapon/energy/sword/chaos,
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/mainship/black{
 	dir = 5
@@ -9402,7 +9402,7 @@
 /turf/open/floor,
 /area/slumbridge/inside/hydrotreatment/mining)
 "hiF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 8
 	},
@@ -9419,7 +9419,7 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/slumbridge/inside/pmcdome)
 "hiJ" = (
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -9440,7 +9440,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 6
 	},
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/dark/blue2{
 	dir = 1
 	},
@@ -9472,7 +9472,7 @@
 /area/slumbridge/landingzoneone)
 "hld" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/slumbridge/outside/northeast)
 "hly" = (
@@ -9486,7 +9486,7 @@
 /turf/open/floor/prison,
 /area/slumbridge/inside/prison/outerringnorth)
 "hlB" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating/icefloor,
 /area/shuttle/drop1/lz1)
 "hlC" = (
@@ -9526,7 +9526,7 @@
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/medical/surgery)
 "hmM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "hno" = (
@@ -9728,7 +9728,7 @@
 /area/slumbridge/inside/medical/foyer)
 "htI" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves/garbledradio)
 "htL" = (
@@ -9826,7 +9826,7 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/inside/zeta/south)
 "hxh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/slumbridge/outside/northeast)
 "hxr" = (
@@ -9887,7 +9887,7 @@
 /obj/effect/turf_decal/siding{
 	dir = 1
 	},
-/turf/open/floor/mainship/som,
+/turf/open/floor/mainship/chaos,
 /area/slumbridge/inside/sombase/hangar)
 "hyz" = (
 /obj/effect/turf_decal/trimline/purple/warning{
@@ -9955,7 +9955,7 @@
 /area/slumbridge/inside/houses/recreational)
 "hAT" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/ground/grass/weedable/patch,
@@ -10050,7 +10050,7 @@
 	},
 /area/slumbridge/outside/northeast)
 "hDt" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "hDv" = (
@@ -10195,7 +10195,7 @@
 	dir = 9
 	},
 /obj/effect/ai_node,
-/turf/open/floor/mainship/som/ne,
+/turf/open/floor/mainship/chaos/ne,
 /area/slumbridge/inside/sombase/hangar)
 "hJd" = (
 /obj/effect/ai_node,
@@ -10296,7 +10296,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/houses/recreational)
 "hNk" = (
@@ -10354,11 +10354,11 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/slumbridge/caves/mining)
 "hOX" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome)
 "hPr" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/iron/freezer,
 /area/slumbridge/inside/sombase/west)
 "hPu" = (
@@ -10563,7 +10563,7 @@
 /turf/open/floor,
 /area/slumbridge/inside/engi/engineroom)
 "hWD" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/dark/purple2,
 /area/slumbridge/inside/zeta/north)
 "hWK" = (
@@ -10595,7 +10595,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/engi/central)
 "hXt" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "hXC" = (
@@ -11113,7 +11113,7 @@
 /turf/open/floor/mainship_hull,
 /area/slumbridge/inside/zeta/north)
 "iof" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/slumbridge/caves/rock)
 "ioi" = (
@@ -11315,7 +11315,7 @@
 /turf/open/floor/plating/dmg3,
 /area/slumbridge/caves/mining)
 "ius" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "iuJ" = (
@@ -11648,7 +11648,7 @@
 /area/slumbridge/caves/southeastcaves/garbledradio)
 "iGG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship/gray,
 /area/slumbridge/inside/houses/dorms)
 "iGK" = (
@@ -11663,7 +11663,7 @@
 /area/slumbridge/inside/prison/outerringnorth)
 "iHI" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "iHV" = (
@@ -11708,7 +11708,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/job/survivor,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 4
 	},
@@ -11935,7 +11935,7 @@
 /turf/open/floor/tile/green/greentaupe,
 /area/slumbridge/inside/medical/surgery)
 "iSf" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/slumbridge/caves/southeastcaves)
 "iSw" = (
@@ -12164,7 +12164,7 @@
 /turf/closed/wall,
 /area/slumbridge/inside/medical/morgue)
 "jdg" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /turf/open/floor/tile/green/full,
 /area/slumbridge/inside/colony/pharmacy)
 "jdl" = (
@@ -12175,7 +12175,7 @@
 /turf/open/floor/tile/blue,
 /area/slumbridge/inside/houses/surgery/garbledradio)
 "jdH" = (
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor,
 /area/slumbridge/inside/engi/west)
 "jen" = (
@@ -12226,7 +12226,7 @@
 	},
 /area/slumbridge/inside/medical/foyer)
 "jfI" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -12561,7 +12561,7 @@
 "jsn" = (
 /obj/structure/desertdam/decals/road,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/slumbridge/outside/southwest)
 "jso" = (
@@ -12749,7 +12749,7 @@
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome/dorms)
 "jyF" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
@@ -12775,7 +12775,7 @@
 /obj/effect/turf_decal/siding{
 	dir = 6
 	},
-/turf/open/floor/mainship/som/sw,
+/turf/open/floor/mainship/chaos/sw,
 /area/slumbridge/inside/sombase/hangar)
 "jzT" = (
 /obj/structure/prop/mainship/holobarrier/passthrough,
@@ -12875,7 +12875,7 @@
 	},
 /area/slumbridge/inside/medical/southern)
 "jDX" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/outside/southeast)
 "jEh" = (
@@ -12918,7 +12918,7 @@
 /area/slumbridge/caves/mining)
 "jFI" = (
 /obj/effect/turf_decal/siding,
-/turf/open/floor/mainship/som/s,
+/turf/open/floor/mainship/chaos/s,
 /area/slumbridge/inside/sombase/hangar)
 "jFK" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -13046,13 +13046,13 @@
 	dir = 4
 	},
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown/corner{
 	dir = 4
 	},
 /area/slumbridge/inside/houses/dorms)
 "jJU" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/outside/southeast)
 "jKd" = (
@@ -13102,7 +13102,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/slumbridge/inside/sombase/west)
 "jLs" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/slumbridge/outside/southwest)
 "jLU" = (
@@ -13148,7 +13148,7 @@
 	},
 /area/slumbridge/caves/minedrock)
 "jNA" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -13160,7 +13160,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/tile/dark/purple2{
 	dir = 9
 	},
@@ -13327,7 +13327,7 @@
 /area/slumbridge/outside/southwest)
 "jUF" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "jUL" = (
@@ -13408,8 +13408,8 @@
 	},
 /area/slumbridge/outside/southwest)
 "jYQ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -13696,7 +13696,7 @@
 /area/slumbridge/inside/sombase/west)
 "kkb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/dark/purple2{
 	dir = 5
 	},
@@ -13846,7 +13846,7 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/slumbridge/inside/houses/swcargo)
 "kqp" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves/garbledradio)
 "kqv" = (
@@ -14016,7 +14016,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown/corner{
 	dir = 1
 	},
@@ -14053,7 +14053,7 @@
 /area/slumbridge/inside/houses/dorms)
 "kyZ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "kzb" = (
@@ -14234,7 +14234,7 @@
 	dir = 4;
 	on = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown{
 	dir = 1
 	},
@@ -14529,7 +14529,7 @@
 /area/slumbridge/inside/medical/foyer)
 "kQL" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "kQS" = (
@@ -14601,7 +14601,7 @@
 /obj/effect/turf_decal/tracks/wheels/bloody{
 	dir = 4
 	},
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome)
 "kRG" = (
@@ -14732,7 +14732,7 @@
 "kVU" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/slumbridge/outside/southwest)
 "kWc" = (
@@ -15704,7 +15704,7 @@
 /area/slumbridge/outside/northeast)
 "lHZ" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "lIV" = (
@@ -15970,7 +15970,7 @@
 /area/slumbridge/outside/southwest)
 "lQz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -16124,11 +16124,11 @@
 "lVM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/mainship/floor,
 /area/slumbridge/inside/sombase/west)
 "lWc" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "lWp" = (
@@ -16137,7 +16137,7 @@
 /turf/open/floor,
 /area/slumbridge/inside/engi/south)
 "lWB" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall,
 /area/slumbridge/inside/colony/oreprocess)
 "lXi" = (
@@ -16247,7 +16247,7 @@
 	},
 /area/slumbridge/inside/engi/west)
 "mbz" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor,
 /area/slumbridge/inside/engi/west)
 "mbD" = (
@@ -16340,7 +16340,7 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/inside/colony/oreprocess)
 "mem" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/razorwire{
 	dir = 1
 	},
@@ -16547,7 +16547,7 @@
 /turf/closed/gm,
 /area/slumbridge/caves/rock)
 "mkV" = (
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/plating,
 /area/slumbridge/inside/sombase/east)
 "mll" = (
@@ -16701,7 +16701,7 @@
 /area/slumbridge/inside/prison/outerringsouth)
 "mqG" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "mqW" = (
@@ -16811,7 +16811,7 @@
 /turf/open/floor/wood/variable/mosaic,
 /area/slumbridge/inside/houses/dorms)
 "mwr" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor,
 /area/slumbridge/inside/engi/engineroom)
 "mwB" = (
@@ -16983,7 +16983,7 @@
 /area/slumbridge/outside/northeast)
 "mCh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/som,
+/obj/effect/landmark/corpsespawner/chaos,
 /turf/open/floor/wood/broken,
 /area/slumbridge/inside/sombase/east)
 "mCv" = (
@@ -17203,7 +17203,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/houses/recreational)
 "mMU" = (
@@ -17517,7 +17517,7 @@
 	},
 /area/slumbridge/outside/northwest/nearlz)
 "nad" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2{
 	dir = 1
 	},
@@ -17721,7 +17721,7 @@
 /area/slumbridge/inside/engi/west)
 "nhH" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "nhK" = (
@@ -17958,7 +17958,7 @@
 /area/slumbridge/inside/engi/south)
 "nof" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "noy" = (
@@ -18214,7 +18214,7 @@
 /area/slumbridge/inside/pmcdome/dorms)
 "nwR" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "nxb" = (
@@ -18412,14 +18412,14 @@
 /turf/open/floor/tile/green,
 /area/slumbridge/inside/houses/recreational)
 "nDi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2{
 	dir = 8
 	},
 /area/slumbridge/outside/southwest)
 "nDl" = (
 /obj/structure/window/framed/mainship/gray,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/slumbridge/inside/houses/dorms)
 "nDp" = (
@@ -18567,7 +18567,7 @@
 /turf/open/floor/prison/darkred/full,
 /area/slumbridge/inside/prison/outerringnorth)
 "nHL" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/outside/northeast)
 "nHW" = (
@@ -18767,7 +18767,7 @@
 	},
 /area/slumbridge/outside/northwest)
 "nPb" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "nPt" = (
@@ -18842,7 +18842,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/hydrotreatment)
 "nUb" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/slumbridge/outside/southwest)
 "nUr" = (
@@ -19211,7 +19211,7 @@
 "ogG" = (
 /obj/structure/flora/jungle/vines,
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "ogP" = (
@@ -19268,7 +19268,7 @@
 /area/slumbridge/inside/engi/central)
 "oin" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves/garbledradio)
 "oiu" = (
@@ -19485,7 +19485,7 @@
 "oqG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/mainship/secure/open/free_access,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -19801,7 +19801,7 @@
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/medical/foyer)
 "oEF" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/cult,
 /area/slumbridge/caves/northeastcaves)
 "oEM" = (
@@ -19907,7 +19907,7 @@
 /turf/open/floor/mainship/ai,
 /area/slumbridge/inside/houses/recreational)
 "oIk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2,
 /area/slumbridge/outside/southwest)
 "oIJ" = (
@@ -20215,7 +20215,7 @@
 /area/slumbridge/inside/sombase/hangar)
 "oVn" = (
 /obj/item/weapon/sword/machete,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/outside/southeast)
 "oVq" = (
@@ -20399,7 +20399,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/medical/southern)
 "pch" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2{
 	dir = 10
 	},
@@ -20547,7 +20547,7 @@
 	},
 /area/slumbridge/inside/medical/morgue)
 "piv" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/outside/northeast)
 "piQ" = (
@@ -20749,7 +20749,7 @@
 /area/slumbridge/caves/minedrock)
 "prb" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt,
 /area/slumbridge/outside/northwest)
 "prd" = (
@@ -21039,7 +21039,7 @@
 /area/slumbridge/caves/northwestcaves)
 "pzF" = (
 /obj/structure/flora/ausbushes/reedbush,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/outside/northeast)
 "pzJ" = (
@@ -21215,7 +21215,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/slumbridge/inside/hydrotreatment)
 "pIV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "pJX" = (
@@ -21530,7 +21530,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/iron/freezer,
 /area/slumbridge/inside/sombase/west)
 "pVb" = (
@@ -21645,7 +21645,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/engi/south)
 "pYm" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
 	},
@@ -21805,7 +21805,7 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/slumbridge/outside/southwest)
 "qdC" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/slumbridge/outside/northeast)
 "qdH" = (
@@ -21817,7 +21817,7 @@
 /turf/open/floor/prison/kitchen,
 /area/slumbridge/inside/colony/kitchen)
 "qdJ" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
 /turf/open/floor/tile/white,
@@ -21843,7 +21843,7 @@
 /area/slumbridge/inside/colony/vault)
 "qes" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor,
 /area/slumbridge/inside/engi/west)
 "qeD" = (
@@ -21998,9 +21998,9 @@
 /turf/open/floor/prison,
 /area/slumbridge/inside/prison/innerring)
 "qjL" = (
-/obj/item/weapon/gun/shotgun/som/standard,
-/obj/item/clothing/shoes/marine/som,
-/obj/item/clothing/gloves/marine/som,
+/obj/item/weapon/gun/shotgun/chaos/standard,
+/obj/item/clothing/shoes/guardsman/chaos,
+/obj/item/clothing/gloves/guardsman/chaos,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/vault,
@@ -22071,7 +22071,7 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/outside/southwest)
 "qmF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship/gray,
 /area/slumbridge/inside/houses/recreational)
 "qmG" = (
@@ -22116,7 +22116,7 @@
 /turf/open/floor/plating/catwalk,
 /area/slumbridge/caves/mining)
 "qoC" = (
-/obj/item/clothing/suit/modular/som/light,
+/obj/item/clothing/suit/modular/chaos/light,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/vault,
@@ -22233,8 +22233,8 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/inside/colony/dorms)
 "qtf" = (
-/obj/item/clothing/under/som,
-/obj/item/clothing/suit/storage/marine/som,
+/obj/item/clothing/under/chaos,
+/obj/item/clothing/suit/storage/guardsman/chaos,
 /obj/structure/rack,
 /turf/open/floor/vault,
 /area/slumbridge/inside/sombase/east)
@@ -22805,7 +22805,7 @@
 /turf/open/floor/wood/broken,
 /area/slumbridge/inside/sombase/east)
 "qNk" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating,
 /area/slumbridge/inside/engi/engine)
 "qNq" = (
@@ -22870,7 +22870,7 @@
 /turf/open/floor/prison/kitchen,
 /area/slumbridge/inside/colony/kitchen)
 "qPW" = (
-/obj/machinery/vending/marineFood/som,
+/obj/machinery/vending/guardsmanFood/chaos,
 /turf/open/floor/mainship/floor,
 /area/slumbridge/inside/sombase/east)
 "qPY" = (
@@ -23077,7 +23077,7 @@
 /obj/effect/turf_decal/siding{
 	dir = 10
 	},
-/turf/open/floor/mainship/som/se,
+/turf/open/floor/mainship/chaos/se,
 /area/slumbridge/inside/sombase/hangar)
 "qWv" = (
 /obj/effect/landmark/weed_node,
@@ -23221,7 +23221,7 @@
 /obj/structure/sign/safety/vacuum{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "rbI" = (
@@ -23438,7 +23438,7 @@
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome)
 "rkB" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/slumbridge/outside/southwest)
 "rkO" = (
@@ -23592,8 +23592,8 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/sombase/west)
 "rpA" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "rpC" = (
@@ -23607,9 +23607,9 @@
 /turf/open/floor,
 /area/slumbridge/inside/engi/engineroom)
 "rpI" = (
-/obj/item/weapon/gun/pistol/som/standard,
-/obj/item/clothing/gloves/marine/som,
-/obj/item/clothing/head/modular/som,
+/obj/item/weapon/gun/pistol/chaos/standard,
+/obj/item/clothing/gloves/guardsman/chaos,
+/obj/item/clothing/head/modular/chaos,
 /obj/structure/rack,
 /turf/open/floor/vault,
 /area/slumbridge/inside/sombase/east)
@@ -23690,7 +23690,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/slumbridge/outside/northeast)
 "rtv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred/indestructible,
 /area/slumbridge/caves/rock)
 "rul" = (
@@ -23851,7 +23851,7 @@
 /turf/open/floor/mainship/plate,
 /area/slumbridge/inside/sombase/east)
 "rzf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt,
 /area/slumbridge/outside/northwest)
 "rzy" = (
@@ -23994,7 +23994,7 @@
 /obj/structure/sign/securearea{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "rDy" = (
@@ -24324,7 +24324,7 @@
 /obj/machinery/status_display{
 	pixel_y = -1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship/gray,
 /area/slumbridge/inside/houses/recreational)
 "rQi" = (
@@ -24535,7 +24535,7 @@
 /turf/open/floor/plating/platebotc,
 /area/slumbridge/landingzoneone)
 "rXs" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
 "rXz" = (
@@ -24644,7 +24644,7 @@
 "sbk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/mono,
 /area/slumbridge/inside/houses/recreational)
 "sbr" = (
@@ -25101,7 +25101,7 @@
 /area/slumbridge/inside/medical/storage)
 "ssD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/structure/cable,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -25290,8 +25290,8 @@
 /area/slumbridge/outside/southwest)
 "sAX" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
-/obj/item/attachable/bayonetknife/som,
-/obj/item/weapon/gun/smg/som/basic,
+/obj/item/attachable/bayonetknife/chaos,
+/obj/item/weapon/gun/smg/chaos/basic,
 /turf/open/floor/plating,
 /area/slumbridge/inside/sombase/east)
 "sBn" = (
@@ -25539,7 +25539,7 @@
 /turf/open/floor/tile/dark/purple2,
 /area/slumbridge/inside/zeta/south)
 "sKH" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/open/floor,
 /area/slumbridge/inside/engi/west)
@@ -25782,7 +25782,7 @@
 /turf/open/floor/asteroidfloor,
 /area/slumbridge/landingzoneone)
 "sUj" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/inside/sombase/east)
 "sUw" = (
@@ -25891,7 +25891,7 @@
 "sXX" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer3{
-	name = "SOM Tank Monitoring"
+	name = "CHAOS Tank Monitoring"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -25933,7 +25933,7 @@
 /area/slumbridge/caves/mining/dropship)
 "sZi" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/ground/grass/weedable,
 /area/slumbridge/outside/southeast)
 "sZI" = (
@@ -26416,7 +26416,7 @@
 /area/slumbridge/inside/colony/dorms)
 "ttT" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "ttW" = (
@@ -26516,7 +26516,7 @@
 /area/slumbridge/inside/prison/outside)
 "txo" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/slumbridge/outside/southwest)
 "txA" = (
@@ -26751,7 +26751,7 @@
 /area/slumbridge/inside/medical/surgery)
 "tFk" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -26790,7 +26790,7 @@
 /turf/open/floor/wood,
 /area/slumbridge/inside/houses/dorms)
 "tHt" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/item/shard,
 /obj/effect/ai_node,
 /turf/open/floor/tile/white,
@@ -26972,7 +26972,7 @@
 	},
 /area/slumbridge/inside/medical/morgue)
 "tPY" = (
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -27184,7 +27184,7 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/outside/southwest)
 "tXA" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/rock)
 "tXM" = (
@@ -27470,12 +27470,12 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/slumbridge/outside/northeast)
 "ujh" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/slumbridge/caves/southeastcaves)
 "ujs" = (
@@ -27744,7 +27744,7 @@
 /turf/open/floor/asteroidfloor,
 /area/slumbridge/outside/northwest)
 "uuH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/brown{
 	dir = 1
 	},
@@ -27901,7 +27901,7 @@
 /turf/open/floor,
 /area/slumbridge/inside/engi/engineroom)
 "uBL" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /obj/effect/spawner/random/medical/pillbottle,
 /turf/open/floor/tile/green/full,
 /area/slumbridge/inside/colony/pharmacy)
@@ -27921,7 +27921,7 @@
 /turf/open/floor,
 /area/slumbridge/inside/engi/central)
 "uCw" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/tile/white,
 /area/slumbridge/inside/pmcdome)
@@ -27964,7 +27964,7 @@
 	},
 /area/slumbridge/inside/hydrotreatment)
 "uEu" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor,
 /area/slumbridge/inside/engi/central)
 "uEK" = (
@@ -28138,7 +28138,7 @@
 /turf/open/floor/prison,
 /area/slumbridge/inside/prison/outerringnorth)
 "uLL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/outside/northeast)
 "uMa" = (
@@ -28860,7 +28860,7 @@
 /area/slumbridge/inside/sombase/west)
 "vmw" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/slumbridge/caves/southeastcaves)
 "vmx" = (
@@ -28954,7 +28954,7 @@
 /turf/open/floor/plating,
 /area/slumbridge/inside/houses/swcargo)
 "voW" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/icefloor,
 /area/shuttle/drop2/lz2)
 "vpa" = (
@@ -29000,7 +29000,7 @@
 /turf/open/floor/plating/ground/ice,
 /area/slumbridge/caves/southwestcaves)
 "vrb" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -29051,7 +29051,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/food_or_drink/beer,
 /obj/effect/spawner/random/food_or_drink/beer,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/slumbridge/outside/northwest)
 "vsl" = (
@@ -29283,7 +29283,7 @@
 	},
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/slumbridge/outside/northeast)
 "vBm" = (
@@ -29674,7 +29674,7 @@
 /area/slumbridge/inside/medical/foyer)
 "vOI" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable/patch,
 /area/slumbridge/outside/northeast)
@@ -29715,7 +29715,7 @@
 /turf/open/floor/tile/green,
 /area/slumbridge/inside/medical/surgery)
 "vQx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
 	},
@@ -29908,7 +29908,7 @@
 /turf/open/floor,
 /area/slumbridge/inside/engi/west)
 "vVe" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating/icefloor,
 /area/shuttle/drop2/lz2)
 "vVk" = (
@@ -30133,7 +30133,7 @@
 /area/slumbridge/inside/colony/bar)
 "wdA" = (
 /obj/structure/flora/ausbushes/reedbush,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/outside/northeast)
 "wdB" = (
@@ -30785,7 +30785,7 @@
 /area/slumbridge/inside/pmcdome)
 "wzS" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "wAl" = (
@@ -30981,7 +30981,7 @@
 /area/slumbridge/outside/southeast)
 "wGS" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/slumbridge/outside/northwest)
 "wHj" = (
@@ -31203,7 +31203,7 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/slumbridge/inside/colony/northerndome)
 "wOH" = (
@@ -31448,8 +31448,8 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/slumbridge/inside/sombase/hangar)
 "wXa" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/slumbridge/caves/northeastcaves)
 "wXb" = (
@@ -31692,7 +31692,7 @@
 	},
 /area/slumbridge/inside/prison/innerring)
 "xgk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete/lines,
 /area/slumbridge/outside/northeast)
 "xgn" = (
@@ -31919,7 +31919,7 @@
 /turf/open/floor/tile/dark,
 /area/slumbridge/outside/southwest)
 "xrh" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -32214,7 +32214,7 @@
 "xDM" = (
 /obj/structure/cable,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/slumbridge/outside/northeast)
 "xDR" = (
@@ -32278,7 +32278,7 @@
 /turf/open/floor/tile/bar,
 /area/slumbridge/inside/medical/storage)
 "xFU" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/slumbridge/caves/southeastcaves)
 "xGd" = (

@@ -1,11 +1,11 @@
-#define ENCRYPT_CUSTOM_TERRAGOV (1<<0)
-#define ENCRYPT_CUSTOM_SOM (1<<1)
+#define ENCRYPT_CUSTOM_IMPERIUM (1<<0)
+#define ENCRYPT_CUSTOM_CHAOS (1<<1)
 GLOBAL_LIST_EMPTY_TYPED(custom_updating_encryptkeys, /obj/item/encryptionkey)
 
 /obj/item/encryptionkey
 	name = "Standard Encryption Key"
 	desc = "An encryption key for a radio headset."
-	icon = 'icons/obj/items/radio.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/radio.dmi'
 	icon_state = "cypherkey"
 	worn_icon_state = ""
 	w_class = WEIGHT_CLASS_TINY
@@ -44,10 +44,10 @@ GLOBAL_LIST_EMPTY_TYPED(custom_updating_encryptkeys, /obj/item/encryptionkey)
 	channels = list(RADIO_CHANNEL_CAS = TRUE)
 
 /obj/item/encryptionkey/mcom
-	name = "\improper Marine Command radio encryption key"
+	name = "\improper Guardsman Command radio encryption key"
 	icon_state = "cap_cypherkey"
 	channels = list(RADIO_CHANNEL_COMMAND = TRUE, RADIO_CHANNEL_CAS = TRUE, RADIO_CHANNEL_ALPHA = TRUE, RADIO_CHANNEL_BRAVO = TRUE, RADIO_CHANNEL_CHARLIE = TRUE, RADIO_CHANNEL_DELTA = TRUE, RADIO_CHANNEL_ENGINEERING = TRUE, RADIO_CHANNEL_MEDICAL = TRUE, RADIO_CHANNEL_REQUISITIONS = TRUE)
-	custom_squad_factions = ENCRYPT_CUSTOM_TERRAGOV
+	custom_squad_factions = ENCRYPT_CUSTOM_IMPERIUM
 
 /obj/item/encryptionkey/mcom/ai //AI only.
 	channels = list(RADIO_CHANNEL_COMMAND = TRUE, RADIO_CHANNEL_CAS = TRUE, RADIO_CHANNEL_ALPHA = TRUE, RADIO_CHANNEL_BRAVO = TRUE, RADIO_CHANNEL_CHARLIE = TRUE, RADIO_CHANNEL_DELTA = TRUE, RADIO_CHANNEL_ENGINEERING = TRUE, RADIO_CHANNEL_MEDICAL = TRUE, RADIO_CHANNEL_REQUISITIONS = TRUE)
@@ -114,9 +114,9 @@ GLOBAL_LIST_EMPTY_TYPED(custom_updating_encryptkeys, /obj/item/encryptionkey)
 	independent = TRUE
 
 
-/obj/item/encryptionkey/som
+/obj/item/encryptionkey/chaos
 	name = "\improper Sons of Mars encryption key"
-	channels = list(RADIO_CHANNEL_SOM = TRUE)
+	channels = list(RADIO_CHANNEL_CHAOS = TRUE)
 	independent = TRUE
 
 /obj/item/encryptionkey/icc
@@ -149,20 +149,20 @@ GLOBAL_LIST_EMPTY_TYPED(custom_updating_encryptkeys, /obj/item/encryptionkey)
 	channels = list(RADIO_CHANNEL_ERP = TRUE)
 	independent = TRUE
 
-//SOM
+//CHAOS
 
-/obj/item/encryptionkey/engi/som
-	channels = list(RADIO_CHANNEL_ENGINEERING_SOM = TRUE)
+/obj/item/encryptionkey/engi/chaos
+	channels = list(RADIO_CHANNEL_ENGINEERING_CHAOS = TRUE)
 
-/obj/item/encryptionkey/med/som
-	channels = list(RADIO_CHANNEL_MEDICAL_SOM = TRUE)
+/obj/item/encryptionkey/med/chaos
+	channels = list(RADIO_CHANNEL_MEDICAL_CHAOS = TRUE)
 
-/obj/item/encryptionkey/mcom/som
-	channels = list(RADIO_CHANNEL_SOM = TRUE, RADIO_CHANNEL_COMMAND_SOM = TRUE, RADIO_CHANNEL_ZULU = TRUE, RADIO_CHANNEL_YANKEE = TRUE, RADIO_CHANNEL_XRAY = TRUE, RADIO_CHANNEL_WHISKEY = TRUE, RADIO_CHANNEL_ENGINEERING_SOM = TRUE, RADIO_CHANNEL_MEDICAL_SOM = TRUE)
-	custom_squad_factions = ENCRYPT_CUSTOM_SOM
+/obj/item/encryptionkey/mcom/chaos
+	channels = list(RADIO_CHANNEL_CHAOS = TRUE, RADIO_CHANNEL_COMMAND_CHAOS = TRUE, RADIO_CHANNEL_ZULU = TRUE, RADIO_CHANNEL_YANKEE = TRUE, RADIO_CHANNEL_XRAY = TRUE, RADIO_CHANNEL_WHISKEY = TRUE, RADIO_CHANNEL_ENGINEERING_CHAOS = TRUE, RADIO_CHANNEL_MEDICAL_CHAOS = TRUE)
+	custom_squad_factions = ENCRYPT_CUSTOM_CHAOS
 
-/obj/item/encryptionkey/squadlead/som
-	channels = list(RADIO_CHANNEL_COMMAND_SOM = TRUE)
+/obj/item/encryptionkey/squadlead/chaos
+	channels = list(RADIO_CHANNEL_COMMAND_CHAOS = TRUE)
 
 /obj/item/encryptionkey/zulu
 	name = "\improper Zulu Squad radio encryption key"
@@ -184,7 +184,7 @@ GLOBAL_LIST_EMPTY_TYPED(custom_updating_encryptkeys, /obj/item/encryptionkey)
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_WHISKEY = TRUE)
 
-/obj/item/encryptionkey/general/som
-	name = "\improper SOM general radio encryption key"
+/obj/item/encryptionkey/general/chaos
+	name = "\improper CHAOS general radio encryption key"
 	icon_state = "cypherkey"
-	channels = list(RADIO_CHANNEL_SOM = TRUE)
+	channels = list(RADIO_CHANNEL_CHAOS = TRUE)

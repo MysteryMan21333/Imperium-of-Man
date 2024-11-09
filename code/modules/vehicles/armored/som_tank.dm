@@ -1,17 +1,17 @@
 ///pixel_y offset for drop shadow filter
-#define SOM_TANK_HOVER_HEIGHT -8
+#define CHAOS_TANK_HOVER_HEIGHT -8
 
-/obj/vehicle/sealed/armored/multitile/som_tank
+/obj/vehicle/sealed/armored/multitile/chaos_tank
 	name = "\improper Malleus hover tank"
-	desc = "A terrifying behemoth, the Malleus pattern hover tank is the SOM's main battle tank. Combining excellent mobility and formidable weaponry, it has earned a fearsome reputation among TerraGov forces that have faced it."
-	icon = 'icons/obj/armored/3x4/som_tank.dmi'
-	turret_icon = 'icons/obj/armored/3x4/som_tank_gun.dmi'
-	damage_icon_path = 'icons/obj/armored/3x4/tank_damage.dmi'
+	desc = "A terrifying behemoth, the Malleus pattern hover tank is the CHAOS's main battle tank. Combining excellent mobility and formidable weaponry, it has earned a fearsome reputation among Imperium forces that have faced it."
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_tank.dmi'
+	turret_icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_tank_gun.dmi'
+	damage_icon_path = 'modular_imperium/master_files/icons/obj/armored/3x4/tank_damage.dmi'
 	icon_state = "tank"
-	hitbox = /obj/hitbox/rectangle/som_tank
-	interior = /datum/interior/armored/som
-	minimap_icon_state = "som_tank"
-	minimap_flags = MINIMAP_FLAG_MARINE_SOM
+	hitbox = /obj/hitbox/rectangle/chaos_tank
+	interior = /datum/interior/armored/chaos
+	minimap_icon_state = "chaos_tank"
+	minimap_flags = MINIMAP_FLAG_GUARDSMAN_CHAOS
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	armored_flags = ARMORED_HAS_PRIMARY_WEAPON|ARMORED_HAS_SECONDARY_WEAPON|ARMORED_HAS_HEADLIGHTS|ARMORED_WRECKABLE
 	pass_flags = PASS_LOW_STRUCTURE|PASS_DEFENSIVE_STRUCTURE|PASS_FIRE
@@ -33,24 +33,24 @@
 	engine_sound = SFX_HOVER_TANK
 	engine_sound_length = 1.2 SECONDS
 	vis_range_mod = 4
-	faction = FACTION_SOM
+	faction = FACTION_CHAOS
 
-/obj/vehicle/sealed/armored/multitile/som_tank/Initialize(mapload)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/Initialize(mapload)
 	. = ..()
-	add_filter("shadow", 2, drop_shadow_filter(0, SOM_TANK_HOVER_HEIGHT, 1))
+	add_filter("shadow", 2, drop_shadow_filter(0, CHAOS_TANK_HOVER_HEIGHT, 1))
 	animate_hover()
 	var/obj/item/tank_module/module = new /obj/item/tank_module/ability/smoke_launcher()
 	module.on_equip(src)
 
-/obj/vehicle/sealed/armored/multitile/som_tank/generate_actions()
+/obj/vehicle/sealed/armored/multitile/chaos_tank/generate_actions()
 	. = ..()
 	initialize_controller_action_type(/datum/action/vehicle/sealed/armored/strafe, VEHICLE_CONTROL_DRIVE)
 
-/obj/vehicle/sealed/armored/multitile/som_tank/setDir(newdir)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/setDir(newdir)
 	. = ..()
 	swivel_turret(null, newdir)
 
-/obj/vehicle/sealed/armored/multitile/som_tank/swivel_turret(atom/A, new_weapon_dir)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/swivel_turret(atom/A, new_weapon_dir)
 	if(new_weapon_dir != dir)
 		return FALSE
 	if(turret_overlay.dir == new_weapon_dir)
@@ -58,14 +58,14 @@
 	turret_overlay.setDir(new_weapon_dir)
 	return TRUE
 
-/obj/vehicle/sealed/armored/multitile/som_tank/play_engine_sound(freq_vary = TRUE, sound_freq = 32000) //arg override
+/obj/vehicle/sealed/armored/multitile/chaos_tank/play_engine_sound(freq_vary = TRUE, sound_freq = 32000) //arg override
 	return ..()
 
-/obj/vehicle/sealed/armored/multitile/som_tank/lava_act()
+/obj/vehicle/sealed/armored/multitile/chaos_tank/lava_act()
 	return //we flying baby
 
 ///Animates the bob for the tank and its desants
-/obj/vehicle/sealed/armored/multitile/som_tank/proc/animate_hover()
+/obj/vehicle/sealed/armored/multitile/chaos_tank/proc/animate_hover()
 	var/list/hover_list = list(src)
 	if(length(hitbox.tank_desants))
 		hover_list += hitbox.tank_desants
@@ -79,29 +79,29 @@
 		animate(atom, time = 1.2 SECONDS, loop = -1, easing = SINE_EASING, flags = ANIMATION_RELATIVE|ANIMATION_END_NOW, pixel_y = 3)
 		animate(time = 1.2 SECONDS, easing = SINE_EASING, flags = ANIMATION_RELATIVE, pixel_y = -3)
 
-/obj/vehicle/sealed/armored/multitile/som_tank/add_desant(mob/living/new_desant)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/add_desant(mob/living/new_desant)
 	. = ..()
 	if(armored_flags & ARMORED_IS_WRECK)
 		return
 	animate_hover()
 
-/obj/vehicle/sealed/armored/multitile/som_tank/remove_desant(mob/living/old_desant)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/remove_desant(mob/living/old_desant)
 	. = ..()
 	if(armored_flags & ARMORED_IS_WRECK)
 		return
 	animate(old_desant)
 
-/obj/vehicle/sealed/armored/multitile/som_tank/wreck_vehicle()
+/obj/vehicle/sealed/armored/multitile/chaos_tank/wreck_vehicle()
 	. = ..()
 	animate_hover()
 	modify_filter("shadow", list(y = -3))
 
-/obj/vehicle/sealed/armored/multitile/som_tank/unwreck_vehicle(restore = FALSE)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/unwreck_vehicle(restore = FALSE)
 	. = ..()
 	animate_hover()
-	modify_filter("shadow", list(y = SOM_TANK_HOVER_HEIGHT))
+	modify_filter("shadow", list(y = CHAOS_TANK_HOVER_HEIGHT))
 
-/obj/vehicle/sealed/armored/multitile/som_tank/update_smoke_dir(datum/source, dir, newdir)
+/obj/vehicle/sealed/armored/multitile/chaos_tank/update_smoke_dir(datum/source, dir, newdir)
 	switch(newdir)
 		if(SOUTH)
 			smoke_holder.particles.position = list(63, 75, 0)
@@ -112,4 +112,4 @@
 		if(WEST)
 			smoke_holder.particles.position = list(50, 73, 0)
 
-#undef SOM_TANK_HOVER_HEIGHT
+#undef CHAOS_TANK_HOVER_HEIGHT

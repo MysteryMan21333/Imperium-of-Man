@@ -13,7 +13,7 @@
 */
 
 /obj/item/storage/fancy
-	icon = 'icons/obj/items/food/food.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food.dmi'
 	icon_state = "donutbox6"
 	name = "donut box"
 	var/icon_type = "donut"
@@ -46,7 +46,7 @@
 * Egg Box
 */
 /obj/item/storage/fancy/egg_box
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "eggbox"
 	icon_type = "egg"
 	name = "egg box"
@@ -64,7 +64,7 @@
 /obj/item/storage/fancy/candle_box
 	name = "candle pack"
 	desc = "A pack of red candles."
-	icon = 'icons/obj/items/candle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/candle.dmi'
 	icon_state = "candlebox5"
 	icon_type = "candle"
 	worn_icon_state = "candlebox5"
@@ -83,7 +83,7 @@
 /obj/item/storage/fancy/crayons
 	name = "box of crayons"
 	desc = "A box of crayons for all your rune drawing needs."
-	icon = 'icons/obj/items/crayons.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/crayons.dmi'
 	icon_state = "crayonbox"
 	w_class = WEIGHT_CLASS_SMALL
 	icon_type = "crayon"
@@ -104,9 +104,9 @@
 
 /obj/item/storage/fancy/crayons/update_overlays()
 	. = ..()
-	. += image('icons/obj/items/crayons.dmi',"crayonbox")
+	. += image('modular_imperium/master_files/icons/obj/items/crayons.dmi',"crayonbox")
 	for(var/obj/item/toy/crayon/crayon in contents)
-		. += image('icons/obj/items/crayons.dmi',crayon.colourName)
+		. += image('modular_imperium/master_files/icons/obj/items/crayons.dmi',crayon.colourName)
 
 /obj/item/storage/fancy/crayons/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -127,7 +127,7 @@
 /obj/item/storage/fancy/cigarettes
 	name = "cigarette packet"
 	desc = "The most popular brand of Space Cigarettes, sponsors of the Space Olympics."
-	icon = 'icons/obj/items/cigarettes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cigarettes.dmi'
 	icon_state = "cigpacket"
 	worn_icon_state = "cigpacket"
 	w_class = WEIGHT_CLASS_TINY
@@ -167,7 +167,7 @@
 /obj/item/storage/fancy/chemrettes
 	name = "Chemrette packet"
 	desc = "Terragov, chem filled, cigarettes. Now with extra Flavors!"
-	icon = 'icons/obj/items/cigarettes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cigarettes.dmi'
 	icon_state = "chempacketbox"
 	worn_icon_state = "chempacketbox"
 	w_class = WEIGHT_CLASS_TINY
@@ -229,7 +229,7 @@
 	desc = "A case for holding your cigars when you are not smoking them."
 	icon_state = "cigarcase"
 	worn_icon_state = "cigarcase"
-	icon = 'icons/obj/items/cigarettes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/cigarettes.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 2
 	w_class = WEIGHT_CLASS_SMALL
@@ -264,7 +264,7 @@
 * Vial Box
 */
 /obj/item/storage/fancy/vials
-	icon = 'icons/obj/items/storage/vialbox.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/vialbox.dmi'
 	icon_state = "vialbox6"
 	icon_type = "vial"
 	name = "vial storage box"
@@ -284,15 +284,15 @@
 	icon_state = "vialbox[length(contents)]"
 
 /obj/item/storage/fancy/vials/prison
-	icon = 'icons/obj/machines/virology.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/virology.dmi'
 
 /obj/item/storage/lockbox/vials
 	name = "secure vial storage box"
 	desc = "A locked box for keeping things away from children."
-	icon = 'icons/obj/items/storage/vialbox.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/vialbox.dmi'
 	icon_state = "vialbox0"
 	worn_icon_state = "syringe_kit"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/item/storage/lockbox/vials/Initialize(mapload, ...)
 	. = ..()

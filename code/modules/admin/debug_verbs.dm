@@ -2,7 +2,7 @@
 	set category = "Debug"
 	set name = "Delete Instances"
 
-	var/blocked = list(/obj, /obj/item, /obj/effect, /obj/machinery, /mob, /mob/living, /mob/living/carbon, /mob/living/carbon/xenomorph, /mob/living/carbon/human, /mob/dead, /mob/dead/observer, /mob/living/silicon, /mob/living/silicon/ai)
+	var/blocked = list(/obj, /obj/item, /obj/effect, /obj/machinery, /mob, /mob/living, /mob/living/carbon, /mob/living/carbon/tyranid, /mob/living/carbon/human, /mob/dead, /mob/dead/observer, /mob/living/silicon, /mob/living/silicon/ai)
 	var/chosen_deletion = input(usr, "Type the path of the object you want to delete", "Delete:") as null|text
 
 	if(!chosen_deletion)
@@ -60,7 +60,7 @@
 
 	var/dat
 
-	var/choice = input("Which list?") as null|anything in list("Players", "Observers", "New Players", "Admins", "Clients", "Mobs", "Living Mobs", "Alive Living Mobs", "Dead Mobs", "Xenos", "Alive Xenos", "Dead Xenos", "Humans", "Alive Humans", "Dead Humans")
+	var/choice = input("Which list?") as null|anything in list("Players", "Observers", "New Players", "Admins", "Clients", "Mobs", "Living Mobs", "Alive Living Mobs", "Dead Mobs", "Tyranids", "Alive Tyranids", "Dead Tyranids", "Humans", "Alive Humans", "Dead Humans")
 	if(!choice)
 		return
 
@@ -101,16 +101,16 @@
 			for(var/i in GLOB.dead_mob_list)
 				var/mob/M = i
 				dat += "[M] [ADMIN_VV(M)]<br>"
-		if("Xenos")
-			for(var/i in GLOB.xeno_mob_list)
+		if("Tyranids")
+			for(var/i in GLOB.tyranid_mob_list)
 				var/mob/M = i
 				dat += "[M] [ADMIN_VV(M)]<br>"
-		if("Alive Xenos")
-			for(var/i in GLOB.alive_xeno_list)
+		if("Alive Tyranids")
+			for(var/i in GLOB.alive_tyranid_list)
 				var/mob/M = i
 				dat += "[M] [ADMIN_VV(M)]<br>"
-		if("Dead Xenos")
-			for(var/i in GLOB.dead_xeno_list)
+		if("Dead Tyranids")
+			for(var/i in GLOB.dead_tyranid_list)
 				var/mob/M = i
 				dat += "[M] [ADMIN_VV(M)]<br>"
 		if("Humans")

@@ -1,10 +1,10 @@
 // Streetlights
 /obj/machinery/streetlight/street
 	name = "Colony Streetlight"
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "street_off"
 	layer = ABOVE_LYING_MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 220
 	density = FALSE
 
@@ -25,14 +25,14 @@
 /obj/machinery/streetlight/traffic
 	name = "traffic light"
 	desc = "A traffic light"
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "trafficlight"
 	bound_width = 32
 	bound_height = 32
 	density = FALSE
 	max_integrity = 200
 	layer = ABOVE_LYING_MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/machinery/streetlight/traffic/update_icon_state()
 	var/area/traffic_light_area = get_area(src)
@@ -49,14 +49,14 @@
 /obj/machinery/streetlight/traffic_alt
 	name = "traffic light"
 	desc = "A traffic light"
-	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "trafficlight_alt"
 	bound_width = 32
 	bound_height = 32
 	density = FALSE
 	max_integrity = 200
 	layer = ABOVE_MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/machinery/streetlight/traffic_alt/update_icon_state()
 	if(obj_integrity != initial(max_integrity))
@@ -73,7 +73,7 @@
 	name = "circular light"
 	icon_state = "engineerlight_off"
 	desc = "A huge circular light"
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	density = FALSE
 	resistance_flags = RESIST_ALL
 	wrenchable = FALSE

@@ -1,8 +1,8 @@
-/mob/living/carbon/xenomorph/boiler
-	caste_base_type = /datum/xeno_caste/boiler
+/mob/living/carbon/tyranid/boiler
+	caste_base_type = /datum/tyranid_caste/boiler
 	name = "Boiler"
-	desc = "A huge, grotesque xenomorph covered in glowing, oozing acid slime."
-	icon = 'icons/Xeno/castes/boiler.dmi'
+	desc = "A huge, grotesque tyranid covered in glowing, oozing acid slime."
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/boiler.dmi'
 	icon_state = "Boiler Walking"
 	bubble_icon = "alienroyal"
 	health = 200
@@ -10,20 +10,20 @@
 	plasma_stored = 450
 	pixel_x = -16
 	mob_size = MOB_SIZE_BIG
-	tier = XENO_TIER_THREE
-	upgrade = XENO_UPGRADE_NORMAL
+	tier = TYRANID_TIER_THREE
+	upgrade = TYRANID_UPGRADE_NORMAL
 	gib_chance = 100
-	drag_delay = 6 //pulling a big dead xeno is hard
-	var/datum/effect_system/smoke_spread/xeno/smoke
+	drag_delay = 6 //pulling a big dead tyranid is hard
+	var/datum/effect_system/smoke_spread/tyranid/smoke
 	//Boiler ammo
 	var/corrosive_ammo = 0
 	var/neuro_ammo = 0
 
-/mob/living/carbon/xenomorph/boiler/get_liquid_slowdown()
+/mob/living/carbon/tyranid/boiler/get_liquid_slowdown()
 	return BOILER_WATER_SLOWDOWN
 
 ///updates the boiler's glow, based on its base glow/color, and its ammo reserves. More green ammo = more green glow; more yellow = more yellow.
-/mob/living/carbon/xenomorph/boiler/proc/update_boiler_glow()
+/mob/living/carbon/tyranid/boiler/proc/update_boiler_glow()
 	var/current_ammo = corrosive_ammo + neuro_ammo
 	var/ammo_glow = BOILER_LUMINOSITY_AMMO * current_ammo
 	var/glow = CEILING(BOILER_LUMINOSITY_BASE + ammo_glow, 1)
@@ -41,17 +41,17 @@
 // ***************************************
 // *********** Init
 // ***************************************
-/mob/living/carbon/xenomorph/boiler/Initialize(mapload)
+/mob/living/carbon/tyranid/boiler/Initialize(mapload)
 	. = ..()
-	smoke = new /datum/effect_system/smoke_spread/xeno/acid/opaque(src)
-	ammo = GLOB.ammo_list[/datum/ammo/xeno/boiler_gas]
+	smoke = new /datum/effect_system/smoke_spread/tyranid/acid/opaque(src)
+	ammo = GLOB.ammo_list[/datum/ammo/tyranid/boiler_gas]
 	update_boiler_glow()
-	RegisterSignal(src, COMSIG_XENOMORPH_GIBBING, PROC_REF(gib_explode))
+	RegisterSignal(src, COMSIG_TYRANID_GIBBING, PROC_REF(gib_explode))
 
 // ***************************************
 // *********** Gibbing behaviour
 // ***************************************
-/mob/living/carbon/xenomorph/boiler/proc/gib_explode()
+/mob/living/carbon/tyranid/boiler/proc/gib_explode()
 	SIGNAL_HANDLER
 	visible_message(span_danger("[src] begins to bulge grotesquely, and explodes in a cloud of corrosive gas!"))
 	smoke.set_up(2, get_turf(src))

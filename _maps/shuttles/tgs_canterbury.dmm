@@ -11,7 +11,7 @@
 /area/shuttle/canterbury/cic)
 "ad" = (
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marine_network,
+/obj/machinery/computer/security/guardsman_network,
 /turf/open/floor/mainship/blue{
 	dir = 9
 	},
@@ -39,7 +39,7 @@
 /area/shuttle/canterbury/cic)
 "ah" = (
 /obj/structure/table/mainship,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/mainship/blue{
 	dir = 5
 	},
@@ -100,14 +100,14 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/marine_selector/clothes/commander,
+/obj/machinery/guardsman_selector/clothes/commander,
 /turf/open/floor/mainship/blue,
 /area/shuttle/canterbury/cic)
 "at" = (
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/marine_selector/gear/commander,
+/obj/machinery/guardsman_selector/gear/commander,
 /turf/open/floor/mainship/blue{
 	dir = 6
 	},
@@ -187,7 +187,7 @@
 /area/shuttle/canterbury)
 "aB" = (
 /obj/structure/bed/chair/dropship/passenger,
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "aC" = (
@@ -223,7 +223,7 @@
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "aL" = (
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /obj/structure/bed/chair/dropship/passenger,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
@@ -268,7 +268,7 @@
 /obj/structure/window/reinforced/toughened{
 	dir = 4
 	},
-/obj/machinery/marine_selector/clothes/leader,
+/obj/machinery/guardsman_selector/clothes/leader,
 /turf/open/floor/mainship/cargo,
 /area/shuttle/canterbury)
 "aZ" = (
@@ -302,7 +302,7 @@
 /turf/open/floor/mainship/cargo,
 /area/shuttle/canterbury)
 "be" = (
-/obj/machinery/marine_selector/clothes/synth,
+/obj/machinery/guardsman_selector/clothes/synth,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "bg" = (
@@ -329,7 +329,7 @@
 /obj/structure/window/reinforced/toughened{
 	dir = 4
 	},
-/obj/machinery/marine_selector/gear/leader,
+/obj/machinery/guardsman_selector/gear/leader,
 /turf/open/floor/mainship/cargo,
 /area/shuttle/canterbury)
 "bl" = (
@@ -378,7 +378,7 @@
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "bu" = (
-/obj/machinery/marine_selector/gear/engi,
+/obj/machinery/guardsman_selector/gear/engi,
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "bv" = (
@@ -421,7 +421,7 @@
 /turf/open/floor/mainship/sterile,
 /area/shuttle/canterbury/medical)
 "bB" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "bC" = (
@@ -448,7 +448,7 @@
 /turf/open/floor/mainship/red,
 /area/shuttle/canterbury)
 "bF" = (
-/obj/machinery/marine_selector/clothes/smartgun,
+/obj/machinery/guardsman_selector/clothes/smartgun,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -498,21 +498,21 @@
 /turf/open/floor/mainship/sterile,
 /area/shuttle/canterbury/medical)
 "bU" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/dark,
 /area/shuttle/canterbury/medical)
 "bV" = (
 /obj/structure/bed/chair/dropship/passenger{
 	dir = 4
 	},
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "bW" = (
 /obj/structure/bed/chair/dropship/passenger{
 	dir = 8
 	},
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "bZ" = (
@@ -557,7 +557,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/shuttle/canterbury/medical)
 "cg" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/sterile,
 /area/shuttle/canterbury/medical)
 "cl" = (
@@ -607,7 +607,7 @@
 /turf/open/floor/mainship/orange/full,
 /area/shuttle/canterbury)
 "cw" = (
-/obj/machinery/marine_selector/gear/medic,
+/obj/machinery/guardsman_selector/gear/medic,
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "cy" = (
@@ -623,17 +623,17 @@
 	},
 /area/shuttle/canterbury)
 "cz" = (
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /turf/open/floor/mainship/red{
 	dir = 4
 	},
 /area/shuttle/canterbury)
 "cA" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "cE" = (
-/obj/machinery/marine_selector/gear/smartgun,
+/obj/machinery/guardsman_selector/gear/smartgun,
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "cF" = (
@@ -642,7 +642,7 @@
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "cH" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "cI" = (
@@ -652,7 +652,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/shuttle/canterbury/medical)
 "cK" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "cN" = (
@@ -749,7 +749,7 @@
 /turf/open/floor/mainship/red/full,
 /area/shuttle/canterbury)
 "pY" = (
-/obj/machinery/door/airlock/mainship/marine/canterbury{
+/obj/machinery/door/airlock/mainship/guardsman/canterbury{
 	dir = 8
 	},
 /turf/open/floor/mainship/mono,
@@ -777,7 +777,7 @@
 /obj/structure/bed/chair/dropship/passenger{
 	dir = 1
 	},
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /obj/machinery/light/small,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
@@ -796,7 +796,7 @@
 /turf/open/floor/mainship/cargo,
 /area/shuttle/canterbury)
 "KE" = (
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /turf/open/floor/mainship/mono,
 /area/shuttle/canterbury)
 "RS" = (

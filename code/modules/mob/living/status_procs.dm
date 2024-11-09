@@ -816,10 +816,10 @@
 		adjust_slowdown(-STANDARD_SLOWDOWN_REGEN)
 	return slowdown
 
-/mob/living/carbon/xenomorph/add_slowdown(amount)
+/mob/living/carbon/tyranid/add_slowdown(amount)
 	if(HAS_TRAIT(src, TRAIT_SLOWDOWNIMMUNE) || is_charging >= CHARGE_ON)
 		return
-	adjust_slowdown(amount * XENO_SLOWDOWN_REGEN)
+	adjust_slowdown(amount * TYRANID_SLOWDOWN_REGEN)
 
 ////////////////////////////// MUTE ////////////////////////////////////
 

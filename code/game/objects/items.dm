@@ -1,11 +1,11 @@
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", WELDING_TOOL_EFFECT_LAYER, ABOVE_LIGHTING_PLANE))
 GLOBAL_DATUM_INIT(welding_sparks_multitiledoor_vertical, /mutable_appearance, mutable_appearance('icons/effects/welding_effect_multitile_door.dmi', "welding_sparks_vertical", WELDING_TOOL_EFFECT_LAYER, ABOVE_LIGHTING_PLANE))
 GLOBAL_DATUM_INIT(welding_sparks_multitiledoor_horizontal, /mutable_appearance, mutable_appearance('icons/effects/welding_effect_multitile_door.dmi', "welding_sparks_horizontal", WELDING_TOOL_EFFECT_LAYER, ABOVE_LIGHTING_PLANE))
-GLOBAL_DATUM_INIT(welding_sparks_prepdoor, /mutable_appearance, mutable_appearance('icons/effects/welding_effect_multitile_door.dmi', "welding_sparks_marinedoor", WELDING_TOOL_EFFECT_LAYER, ABOVE_LIGHTING_PLANE))
+GLOBAL_DATUM_INIT(welding_sparks_prepdoor, /mutable_appearance, mutable_appearance('icons/effects/welding_effect_multitile_door.dmi', "welding_sparks_guardsmandoor", WELDING_TOOL_EFFECT_LAYER, ABOVE_LIGHTING_PLANE))
 
 /obj/item
 	name = "item"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 	light_system = MOVABLE_LIGHT
@@ -20,7 +20,7 @@ GLOBAL_DATUM_INIT(welding_sparks_prepdoor, /mutable_appearance, mutable_appearan
 
 	///Icon state for mob worn overlays, if null the normal icon_state will be used.
 	var/worn_icon_state = null
-	///The icon state used to represent this image in "icons/obj/items/items_mini.dmi" Used in /obj/item/storage/box/visual to display tiny items in the box
+	///The icon state used to represent this image in "modular_imperium/master_files/icons/obj/items/items_mini.dmi" Used in /obj/item/storage/box/visual to display tiny items in the box
 	var/icon_state_mini = "item"
 	///Byond tick delay between left click attacks
 	var/attack_speed = 11
@@ -110,7 +110,7 @@ GLOBAL_DATUM_INIT(welding_sparks_prepdoor, /mutable_appearance, mutable_appearan
 
 	var/reach = 1
 
-	/// Species-specific sprites, concept stolen from Paradise//vg/. Ex: sprite_sheets = list("Combat Robot" = 'icons/mob/species/robot/backpack.dmi') If index term exists and icon_override is not set, this sprite sheet will be used.
+	/// Species-specific sprites, concept stolen from Paradise//vg/. Ex: sprite_sheets = list("Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi') If index term exists and icon_override is not set, this sprite sheet will be used.
 	var/list/sprite_sheets = null
 
 	//** These specify item/icon overrides for _slots_
@@ -1021,9 +1021,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 
 
-//This proc is here to prevent Xenomorphs from picking up objects (default attack_hand behaviour)
+//This proc is here to prevent Tyranids from picking up objects (default attack_hand behaviour)
 //Note that this is overriden by every proc concerning a child of obj unless inherited
-/obj/item/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	return FALSE
 
 

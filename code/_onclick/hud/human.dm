@@ -8,7 +8,7 @@
 	SEND_SIGNAL(usr, COMSIG_CLICK_QUICKEQUIP)
 
 
-/datum/hud/human/New(mob/living/carbon/human/owner, ui_style='icons/mob/screen/White.dmi', ui_color = "#ffffff", ui_alpha = 230)
+/datum/hud/human/New(mob/living/carbon/human/owner, ui_style='modular_imperium/master_files/icons/mob/screen/White.dmi', ui_color = "#ffffff", ui_alpha = 230)
 	. = ..()
 	owner.overlay_fullscreen("see_through_darkness", /atom/movable/screen/fullscreen/see_through_darkness)
 

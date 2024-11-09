@@ -155,7 +155,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/lazarus/sandtemple/garbledradio)
 "td" = (
-/obj/effect/decal/remains/xeno{
+/obj/effect/decal/remains/tyranid{
 	pixel_x = -1;
 	pixel_y = 31
 	},
@@ -434,7 +434,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/lazarus/sandtemple/garbledradio)
 "NU" = (
-/obj/effect/decal/remains/xeno{
+/obj/effect/decal/remains/tyranid{
 	pixel_x = 1;
 	pixel_y = 31
 	},

@@ -6,7 +6,7 @@
 	singular_name = "flag"
 	amount = 10
 	max_amount = 10
-	icon = 'icons/obj/mining.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/mining.dmi'
 	var/upright = 0
 	var/base_state
 

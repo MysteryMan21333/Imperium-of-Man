@@ -329,8 +329,8 @@
 	robotic = ORGAN_ROBOT
 	removed_type = /obj/item/organ/brain/prosthetic
 
-/datum/internal_organ/brain/xeno
-	removed_type = /obj/item/organ/brain/xeno
+/datum/internal_organ/brain/tyranid
+	removed_type = /obj/item/organ/brain/tyranid
 	robotic_type = null
 
 /datum/internal_organ/brain/zombie

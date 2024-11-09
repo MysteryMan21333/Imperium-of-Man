@@ -80,8 +80,8 @@ export const GameSettings = (props) => {
               />
               <ToggleFieldPreference
                 label="Mute xeno health alert messages"
-                value="mute_xeno_health_alert_messages"
-                action="mute_xeno_health_alert_messages"
+                value="mute_tyranid_health_alert_messages"
+                action="mute_tyranidnid_health_alert_messages"
                 leftLabel={'Muted'}
                 rightLabel={'Enabled'}
               />
@@ -258,8 +258,8 @@ export const GameSettings = (props) => {
               />
               <ToggleFieldPreference
                 label="Show xeno rank"
-                value="show_xeno_rank"
-                action="show_xeno_rank"
+                value="show_tyranidnid_rank"
+                action="show_tyranidnid_rank"
                 leftValue={1}
                 leftLabel={'Enabled'}
                 rightValue={0}

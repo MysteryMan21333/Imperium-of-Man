@@ -15,7 +15,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/train_yard)
 "an" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveN)
 "ao" = (
@@ -43,7 +43,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/orion_outpost/ground/outpostsw)
 "av" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/sterile/dark,
 /area/orion_outpost/surface/building/medbay)
 "ax" = (
@@ -195,7 +195,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outposts)
 "bd" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/vehicledepot)
@@ -260,7 +260,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/armory)
 "bs" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/item/ammo_casing/bullet,
 /obj/effect/spawner/random/weaponry/gun/rifles,
 /turf/open/floor/prison,
@@ -306,7 +306,7 @@
 /turf/open/floor/mainship/sterile/corner,
 /area/orion_outpost/surface/building/medbay)
 "bF" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveE)
 "bG" = (
@@ -344,7 +344,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/prep)
 "bL" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/blue,
 /area/orion_outpost/surface/building/administration)
 "bN" = (
@@ -358,7 +358,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/orion_outpost/surface/building/medbay)
 "bR" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveE)
 "bS" = (
@@ -581,7 +581,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostse)
 "cU" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveN/garbledradio)
 "cV" = (
@@ -595,7 +595,7 @@
 /turf/open/floor/mainship/blue,
 /area/orion_outpost/surface/building/administration)
 "cY" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveS/garbledradio)
 "cZ" = (
@@ -838,7 +838,7 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outposte)
 "eg" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/spawner/random/weaponry/gun/rifles,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/bunker)
@@ -1162,7 +1162,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outposte)
 "fF" = (
@@ -1424,7 +1424,7 @@
 /turf/open/floor/plating/ground/concrete/lines,
 /area/orion_outpost/ground/outpostcent)
 "gQ" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/orion_outpost/surface/landing_pad_2)
 "gR" = (
@@ -1693,7 +1693,7 @@
 /turf/open/floor/wood,
 /area/orion_outpost/surface/building/dorms)
 "iq" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostn)
 "ir" = (
@@ -1850,7 +1850,7 @@
 	},
 /area/orion_outpost/surface/building/engineering)
 "jg" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine/general{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/general{
 	dir = 2
 	},
 /turf/open/floor/mainship/mono,
@@ -2060,7 +2060,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/train_yard)
 "kb" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostse)
 "kc" = (
@@ -2133,7 +2133,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/nebuilding)
 "kr" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outposte)
 "ks" = (
@@ -2364,7 +2364,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/engineering)
 "lv" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/spawner/random/weaponry/gun/rifles,
 /turf/open/floor/mainship/sterile/dark,
@@ -2381,7 +2381,7 @@
 	},
 /area/orion_outpost/surface/building/atc)
 "ly" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostsw)
 "lA" = (
@@ -2394,7 +2394,7 @@
 /area/orion_outpost/surface/building/vehicledepot)
 "lC" = (
 /obj/machinery/light,
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/administration)
 "lD" = (
@@ -2441,7 +2441,7 @@
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/outposte)
 "lP" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveE)
 "lQ" = (
@@ -2766,7 +2766,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/cargo)
 "nq" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/engineering)
@@ -3112,7 +3112,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostw)
 "pa" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/outpostn)
 "pb" = (
@@ -3200,7 +3200,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/nebuilding)
 "pw" = (
-/obj/docking_port/mobile/marine_dropship/minidropship,
+/obj/docking_port/mobile/guardsman_dropship/minidropship,
 /obj/structure/bed/chair/dropship/pilot{
 	dir = 1
 	},
@@ -3209,7 +3209,7 @@
 	},
 /area/orion_outpost/surface/building/tadpolepad)
 "px" = (
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
 	},
@@ -3264,7 +3264,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostcent)
 "pI" = (
@@ -3402,7 +3402,7 @@
 	},
 /area/orion_outpost/ground/outpostw)
 "qo" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/administration)
 "qp" = (
@@ -3670,7 +3670,7 @@
 	},
 /area/orion_outpost/ground/outpostcent)
 "rA" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/prep)
 "rB" = (
@@ -3719,7 +3719,7 @@
 /area/orion_outpost/ground/outpostse)
 "rM" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/administration)
 "rN" = (
@@ -3833,7 +3833,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/building/vehicledepot)
 "sl" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/underground/caveN)
 "sm" = (
@@ -3932,7 +3932,7 @@
 	},
 /area/orion_outpost/surface/building/command)
 "sJ" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/wood,
 /area/orion_outpost/surface/building/barracks)
 "sK" = (
@@ -3973,7 +3973,7 @@
 	},
 /area/orion_outpost/surface/building/engineering)
 "sR" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveS/garbledradio)
 "sS" = (
@@ -3993,7 +3993,7 @@
 	color = "#7a8c54";
 	dir = 10
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostn)
 "sV" = (
@@ -4004,7 +4004,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/bunker)
 "sZ" = (
@@ -4221,7 +4221,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostsw)
 "ua" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/underground/caveE)
 "ub" = (
@@ -4324,7 +4324,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/prep)
 "uG" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/bunker)
@@ -4335,7 +4335,7 @@
 /turf/closed/wall/mainship/gray,
 /area/orion_outpost/surface/building/bunker)
 "uJ" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/sterile/side{
 	dir = 9
 	},
@@ -4620,7 +4620,7 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostcent)
 "vW" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostsw)
 "vX" = (
@@ -4754,7 +4754,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outposts)
 "wL" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -4774,7 +4774,7 @@
 	color = "#7a8c54";
 	dir = 9
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostse)
 "wQ" = (
@@ -4960,7 +4960,7 @@
 	},
 /area/orion_outpost/surface/building/vehicledepot)
 "xL" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 6
 	},
@@ -5060,7 +5060,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostcent)
 "yi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveN)
 "yj" = (
@@ -5323,7 +5323,7 @@
 	},
 /area/orion_outpost/surface/building/cargo)
 "zy" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/building/vehicledepot)
 "zz" = (
@@ -5484,7 +5484,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outposts)
 "An" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostse)
 "Ao" = (
@@ -5612,7 +5612,7 @@
 	color = "#7a8c54";
 	dir = 10
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostse)
 "AU" = (
@@ -5672,7 +5672,7 @@
 /turf/open/floor/mainship/blue,
 /area/orion_outpost/surface/building/administration)
 "Bj" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveS)
 "Bk" = (
@@ -5757,7 +5757,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostnw)
 "BH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/underground/caveS)
 "BK" = (
@@ -5842,7 +5842,7 @@
 	},
 /area/orion_outpost/surface/building/atc)
 "Ci" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/outpostsw)
 "Cj" = (
@@ -6021,7 +6021,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/item/ammo_casing/bullet,
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostcent)
@@ -6124,7 +6124,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/orion_outpost/ground/outpostsw)
 "Ds" = (
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /obj/effect/spawner/random/weaponry/gun/rifles,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/vehicledepot)
@@ -6165,7 +6165,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/armory)
 "DF" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostnw)
 "DH" = (
@@ -6281,7 +6281,7 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/surface/train_yard)
 "Ei" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/tadpolepad)
@@ -6306,7 +6306,7 @@
 /turf/open/floor/mainship/black,
 /area/orion_outpost/surface/building/atc)
 "En" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveN)
 "Eo" = (
@@ -6451,7 +6451,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostsw)
 "EW" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/canteen)
 "Fa" = (
@@ -6710,7 +6710,7 @@
 /turf/closed/mineral/smooth,
 /area/orion_outpost/surface/train_yard)
 "Gt" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveS)
 "Gu" = (
@@ -6816,7 +6816,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostn)
 "GU" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostn)
 "GV" = (
@@ -6953,7 +6953,7 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outposte)
 "HB" = (
-/obj/docking_port/mobile/marine_dropship/minidropship,
+/obj/docking_port/mobile/guardsman_dropship/minidropship,
 /obj/structure/bed/chair/dropship/pilot{
 	dir = 1
 	},
@@ -7229,7 +7229,7 @@
 	},
 /area/orion_outpost/surface/building/tadpolepad)
 "IY" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 1
@@ -7287,7 +7287,7 @@
 	},
 /area/orion_outpost/surface/building/cargo)
 "Jj" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/spawner/random/weaponry/gun/rifles,
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/building/vehicledepot)
@@ -7438,7 +7438,7 @@
 /turf/open/floor/mainship/orange,
 /area/orion_outpost/surface/building/tadpolepad)
 "JY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/outpostse)
 "JZ" = (
@@ -7483,7 +7483,7 @@
 /turf/open/floor/plating/ground/concrete/lines,
 /area/orion_outpost/ground/outpostcent)
 "Kk" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/ai_node,
 /turf/open/floor/mainship/floor,
 /area/orion_outpost/surface/building/tadpolepad)
@@ -7495,7 +7495,7 @@
 /area/orion_outpost/surface/building/crashedufo)
 "Kn" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostse)
 "Ko" = (
@@ -7571,7 +7571,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/bunker)
 "KE" = (
-/obj/effect/landmark/corpsespawner/marine/corpsman,
+/obj/effect/landmark/corpsespawner/guardsman/corpsman,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/spawner/random/weaponry/gun/rifles,
 /turf/open/floor/mainship/sterile/dark,
@@ -7637,7 +7637,7 @@
 	},
 /area/orion_outpost/ground/outposte)
 "KS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/orion_outpost/ground/outpostnw)
 "KT" = (
@@ -7862,7 +7862,7 @@
 	},
 /area/orion_outpost/surface/building/command)
 "LQ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostse)
 "LR" = (
@@ -8257,7 +8257,7 @@
 /turf/open/floor/mainship/orange/full,
 /area/orion_outpost/surface/building/cargo)
 "NC" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/ai_node,
 /turf/open/floor/mainship/blue,
 /area/orion_outpost/surface/building/administration)
@@ -8373,7 +8373,7 @@
 /area/orion_outpost/surface/building/vehicledepot)
 "Oe" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/plating/ground/concrete/lines{
 	dir = 4
 	},
@@ -8465,7 +8465,7 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/administration)
 "OF" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /obj/structure/desertdam/decals/road/line{
 	dir = 1
@@ -8483,7 +8483,7 @@
 	},
 /area/orion_outpost/surface/building/administration)
 "OI" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine/general,
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/general,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/prep)
 "OJ" = (
@@ -8499,7 +8499,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/train_yard)
 "OL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostn)
 "OM" = (
@@ -8611,7 +8611,7 @@
 /turf/open/floor/plating/ground/concrete/lines,
 /area/orion_outpost/surface/building/tadpolepad)
 "Pm" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveN/garbledradio)
 "Pn" = (
@@ -9159,7 +9159,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/sterile/dark,
 /area/orion_outpost/surface/building/medbay)
 "RZ" = (
@@ -9230,7 +9230,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outposte)
 "Sq" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/concrete/lines,
 /area/orion_outpost/ground/outposte)
 "Ss" = (
@@ -9334,7 +9334,7 @@
 /area/orion_outpost/surface/building/engineering)
 "SU" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/prison,
 /area/orion_outpost/surface/building/engineering)
 "SV" = (
@@ -9375,7 +9375,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/brig)
 "Te" = (
@@ -9387,7 +9387,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/train_yard)
 "Th" = (
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/engineering)
 "Ti" = (
@@ -9427,7 +9427,7 @@
 /area/orion_outpost/ground/outpostcent)
 "Tq" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostn)
 "Tr" = (
@@ -9556,7 +9556,7 @@
 /area/orion_outpost/ground/outpostcent)
 "TP" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/ground/concrete/edge{
 	dir = 4
 	},
@@ -9635,11 +9635,11 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/ground/outpostsw)
 "Um" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveN/garbledradio)
 "Un" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostnw)
 "Uo" = (
@@ -9747,7 +9747,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/building/nebuilding)
 "UL" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/mono,
@@ -10007,7 +10007,7 @@
 /area/orion_outpost/surface/building/crashedufo)
 "VW" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/outpostn)
 "VX" = (
@@ -10036,7 +10036,7 @@
 	},
 /area/orion_outpost/surface/building/engineering)
 "Wh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveS)
 "Wi" = (
@@ -10143,7 +10143,7 @@
 /area/orion_outpost/surface/landing_pad2_external)
 "WC" = (
 /obj/structure/cable,
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/mainship/sterile/dark,
 /area/orion_outpost/surface/building/medbay)
 "WE" = (
@@ -10388,7 +10388,7 @@
 	},
 /area/orion_outpost/ground/outpostsw)
 "XO" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveS/garbledradio)
 "XP" = (
@@ -10621,7 +10621,7 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostsw)
 "YL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/orion_outpost/ground/underground/caveE)
 "YM" = (
@@ -10632,7 +10632,7 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostse)
 "YO" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/vehicledepot)
 "YP" = (
@@ -10787,7 +10787,7 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/bunker)
 "ZB" = (
@@ -10854,7 +10854,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/orion_outpost/surface/train_yard)
 "ZT" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/floor,
 /area/orion_outpost/surface/building/tadpolepad)
 "ZU" = (
@@ -10868,7 +10868,7 @@
 	},
 /area/orion_outpost/surface/building/command)
 "ZW" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/concrete,

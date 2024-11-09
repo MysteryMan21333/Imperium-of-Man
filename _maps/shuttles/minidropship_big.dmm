@@ -59,7 +59,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/shuttle/minidropship)
 "o" = (
-/obj/docking_port/mobile/marine_dropship/minidropship,
+/obj/docking_port/mobile/guardsman_dropship/minidropship,
 /turf/open/floor/plating/plating_catwalk,
 /area/shuttle/minidropship)
 "r" = (

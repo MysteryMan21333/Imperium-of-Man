@@ -37,12 +37,12 @@
 	update_action_button_icons()
 	update_icon()
 
-/obj/item/clothing/head/hardhat/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(turn_light(xeno_attacker, FALSE) != CHECKS_PASSED)
+/obj/item/clothing/head/hardhat/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(turn_light(tyranid_attacker, FALSE) != CHECKS_PASSED)
 		return
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	to_chat(xeno_attacker, span_warning("We disable the metal thing's lights.") )
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	to_chat(tyranid_attacker, span_warning("We disable the metal thing's lights.") )
 
 /obj/item/clothing/head/hardhat/update_icon_state()
 	. = ..()

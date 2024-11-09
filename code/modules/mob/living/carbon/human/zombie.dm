@@ -1,7 +1,7 @@
 /datum/action/rally_zombie
 	name = "Rally Zombies"
 	action_icon_state = "rally_minions"
-	action_icon = 'icons/Xeno/actions/leader.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/leader.dmi'
 
 /datum/action/rally_zombie/action_activate()
 	owner.emote("roar")
@@ -83,12 +83,12 @@
 /datum/action/ability/emit_gas
 	name = "Emit Gas"
 	action_icon_state = "emit_neurogas"
-	action_icon = 'icons/Xeno/actions/defiler.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defiler.dmi'
 	desc = "Use to emit a cloud of blinding smoke."
 	cooldown_duration = 40 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY|ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_EMIT_NEUROGAS,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_EMIT_NEUROGAS,
 	)
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
@@ -101,7 +101,7 @@
 
 /datum/action/ability/emit_gas/on_cooldown_finish()
 	playsound(owner.loc, 'sound/effects/alien/new_larva.ogg', 50, 0)
-	to_chat(owner, span_xenodanger("We feel our smoke filling us once more. We can emit gas again."))
+	to_chat(owner, span_tyraniddanger("We feel our smoke filling us once more. We can emit gas again."))
 	toggle_particles(TRUE)
 	return ..()
 

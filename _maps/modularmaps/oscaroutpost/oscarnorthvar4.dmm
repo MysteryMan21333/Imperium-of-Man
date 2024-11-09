@@ -387,7 +387,7 @@
 /turf/open/floor,
 /area/oscar_outpost)
 "dF" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/dirt,
 /area/oscar_outpost/outside/north)
 "dN" = (
@@ -449,7 +449,7 @@
 /turf/open/floor,
 /area/oscar_outpost)
 "eB" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/dirt,
 /area/oscar_outpost/outside/north)
 "eC" = (
@@ -1725,7 +1725,7 @@
 /turf/open/floor/plating/ground/dirt2,
 /area/oscar_outpost/outside/east)
 "qL" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /obj/machinery/camera/autoname/mainship{
 	dir = 1
 	},
@@ -2420,7 +2420,7 @@
 	},
 /area/oscar_outpost)
 "xX" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/machinery/light,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost)
@@ -2904,7 +2904,7 @@
 	},
 /area/oscar_outpost)
 "Dl" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost)
 "Dm" = (
@@ -3277,7 +3277,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/corner,
 /area/oscar_outpost/outside/northwest)
 "Gs" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost)
 "GA" = (

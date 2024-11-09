@@ -651,7 +651,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/landing)
 "axs" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/magmoor/cave/north)
 "axt" = (
@@ -1061,7 +1061,7 @@
 /area/magmoor/cargo/processing/south)
 "aMi" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "aMv" = (
@@ -1124,11 +1124,11 @@
 /turf/open/floor/mainship/sterile/corner,
 /area/magmoor/medical/chemistry)
 "aOY" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/west)
 "aPs" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "aPv" = (
@@ -1242,7 +1242,7 @@
 /turf/closed/wall/r_wall,
 /area/magmoor/volcano)
 "aSt" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/northwest)
 "aSR" = (
@@ -1742,7 +1742,7 @@
 /turf/open/floor/freezer,
 /area/magmoor/civilian/bar)
 "bgH" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
@@ -1843,7 +1843,7 @@
 /obj/effect/decal/cleanable/blood/writing{
 	dir = 5
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "blj" = (
@@ -2129,7 +2129,7 @@
 /area/magmoor/engi/atmos)
 "bvA" = (
 /obj/structure/closet/radiation,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/magmoor/research/containment)
 "bvE" = (
@@ -2262,7 +2262,7 @@
 	},
 /area/magmoor/command/lobby)
 "bAI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
@@ -2354,7 +2354,7 @@
 	},
 /area/magmoor/engi/storage)
 "bDD" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/northeast)
 "bDF" = (
@@ -2538,8 +2538,8 @@
 	},
 /area/magmoor/command/commandroom)
 "bKz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/lavawall,
 /area/magmoor/cave/rock)
 "bKR" = (
@@ -2975,7 +2975,7 @@
 /turf/open/floor/wood,
 /area/magmoor/medical/cmo)
 "cao" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "cau" = (
@@ -3114,7 +3114,7 @@
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/northwest)
 "cfh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -3178,8 +3178,8 @@
 /area/magmoor/research)
 "chB" = (
 /obj/effect/landmark/corpsespawner/colonist,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "chG" = (
@@ -3488,7 +3488,7 @@
 /area/magmoor/cave/southeast)
 "crA" = (
 /obj/effect/turf_decal/warning_stripes/thin,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "crS" = (
@@ -3661,7 +3661,7 @@
 /turf/open/floor/mainship/cargo,
 /area/magmoor/landing/two)
 "cvS" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating,
 /area/magmoor/landing/two)
 "cws" = (
@@ -3824,7 +3824,7 @@
 /turf/open/floor/mainship,
 /area/magmoor/engi/storage)
 "cFc" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "cFo" = (
@@ -4311,7 +4311,7 @@
 	id = "basketball";
 	side = "left"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "cXM" = (
@@ -4530,7 +4530,7 @@
 /turf/open/floor/tile/bar,
 /area/magmoor/civilian/clean)
 "deR" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/northeast)
 "dff" = (
@@ -4551,7 +4551,7 @@
 /area/magmoor/mining/storage)
 "dgo" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/northeast)
 "dgp" = (
@@ -4740,7 +4740,7 @@
 	},
 /area/magmoor/compound/west)
 "dlF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/door/airlock/multi_tile/mainship/research{
 	name = "\improper Research Storage"
 	},
@@ -4843,7 +4843,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/dorms)
 "dpk" = (
@@ -4854,7 +4854,7 @@
 /area/magmoor/volcano)
 "dpu" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/research/containment)
 "dpO" = (
@@ -5376,7 +5376,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "dFf" = (
@@ -5840,8 +5840,8 @@
 	},
 /area/magmoor/compound/southwest)
 "dXz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall,
 /area/magmoor/research/containment)
 "dXC" = (
@@ -6031,8 +6031,8 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "efM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "efQ" = (
@@ -6053,7 +6053,7 @@
 /turf/open/floor/plating,
 /area/magmoor/cave/north)
 "ehk" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "ehH" = (
@@ -6420,7 +6420,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "euZ" = (
@@ -6433,7 +6433,7 @@
 /area/magmoor/compound/north)
 "evv" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "evV" = (
@@ -7124,7 +7124,7 @@
 /area/magmoor/research/containment)
 "eNz" = (
 /obj/structure/window/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "eOl" = (
@@ -7202,7 +7202,7 @@
 /turf/open/floor/mainship,
 /area/magmoor/landing/two)
 "eQY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall,
 /area/magmoor/research/containment)
 "eRs" = (
@@ -7419,7 +7419,7 @@
 	dir = 9
 	},
 /obj/structure/window/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "eYO" = (
@@ -7694,7 +7694,7 @@
 /turf/open/floor/mainship/floor,
 /area/magmoor/civilian/cryostasis)
 "fjJ" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/white,
 /area/magmoor/medical/surgery)
 "fjK" = (
@@ -7879,7 +7879,7 @@
 /turf/open/floor/mainship/orange/corner,
 /area/magmoor/engi/atmos)
 "fpI" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/magmoor/landing/two)
 "frh" = (
@@ -7942,19 +7942,19 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/carpet/side{
 	dir = 1
 	},
 /area/magmoor/command/conference)
 "fuw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "fuI" = (
 /obj/effect/decal/cleanable/rune,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "fvb" = (
@@ -8812,7 +8812,7 @@
 /turf/open/floor/engine,
 /area/magmoor/engi/atmos)
 "fYi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
@@ -9036,8 +9036,8 @@
 	},
 /area/magmoor/compound/southeast)
 "ghf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "ghh" = (
@@ -9219,12 +9219,12 @@
 "gnd" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "gns" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "gnI" = (
@@ -9766,7 +9766,7 @@
 /obj/machinery/floodlight{
 	name = "Spotlight"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "gGn" = (
@@ -9867,7 +9867,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/magmoor/compound/north)
 "gKu" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/item/shard{
 	pixel_x = -9
 	},
@@ -9938,7 +9938,7 @@
 /area/magmoor/cargo/storage/south)
 "gMC" = (
 /obj/item/shard/phoron,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/magmoor/research/containment)
 "gMI" = (
@@ -10150,7 +10150,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/landing)
 "hby" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/item/shard,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
@@ -10195,7 +10195,7 @@
 /turf/open/floor/mainship/blue,
 /area/magmoor/civilian/arrival/east)
 "hdk" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "hdl" = (
@@ -10237,7 +10237,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/item/shard,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
@@ -10250,7 +10250,7 @@
 	},
 /area/magmoor/landing)
 "heQ" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
 	},
@@ -10303,7 +10303,7 @@
 /turf/open/floor/plating,
 /area/magmoor/medical/chemistry)
 "hin" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/magmoor/research/containment)
 "hiG" = (
@@ -10359,7 +10359,7 @@
 /area/magmoor/civilian/bar)
 "hko" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "hkH" = (
@@ -10493,8 +10493,8 @@
 /area/magmoor/cave/north)
 "hpH" = (
 /obj/effect/decal/cleanable/rune,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "hpN" = (
@@ -10970,7 +10970,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/cargo/storage/secure/south)
 "hHy" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/closed/wall/cult,
 /area/magmoor/cave/north)
 "hHK" = (
@@ -11205,7 +11205,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/treatment)
 "hSE" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
@@ -11231,8 +11231,8 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/engi/storage)
 "hTB" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "hTH" = (
@@ -11287,7 +11287,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/treatment)
 "hVJ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/mainship/mono,
 /area/magmoor/command/commandroom)
@@ -12266,7 +12266,7 @@
 	},
 /area/magmoor/research/rnd/lobby)
 "iCx" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
@@ -12351,7 +12351,7 @@
 /turf/open/floor/wood,
 /area/magmoor/command/conference)
 "iGu" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/west)
 "iGy" = (
@@ -12936,7 +12936,7 @@
 /turf/open/floor/wood,
 /area/magmoor/civilian/bar)
 "jed" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/item/shard/phoron,
 /turf/open/floor/plating/platebotc,
 /area/magmoor/research/containment)
@@ -13321,7 +13321,7 @@
 	},
 /area/magmoor/security/infocenter)
 "jps" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/northwest)
 "jpC" = (
@@ -14505,7 +14505,7 @@
 /turf/open/floor/plating,
 /area/magmoor/engi/thermal)
 "kds" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/effect/decal/cleanable/cobweb{
 	dir = 4
 	},
@@ -15769,7 +15769,7 @@
 	},
 /area/magmoor/civilian/jani)
 "kWj" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/magmoor/landing)
 "kWk" = (
@@ -15976,7 +15976,7 @@
 	},
 /area/magmoor/command/office/main)
 "lcx" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "lcI" = (
@@ -16028,7 +16028,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/mainship/mono,
 /area/magmoor/engi/power)
 "leY" = (
@@ -16395,7 +16395,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "lsQ" = (
@@ -16502,7 +16502,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "lyn" = (
@@ -16714,8 +16714,8 @@
 /area/magmoor/command/commandroom)
 "lFS" = (
 /obj/effect/decal/cleanable/rune,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "lGa" = (
@@ -17028,7 +17028,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/civilian/arrival/east)
 "lRD" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/cult,
 /area/magmoor/cave/north)
 "lRV" = (
@@ -17065,7 +17065,7 @@
 	},
 /area/magmoor/compound/north)
 "lST" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "lTp" = (
@@ -17098,7 +17098,7 @@
 	},
 /area/magmoor/engi/power)
 "lTR" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/northeast)
 "lTV" = (
@@ -17633,7 +17633,7 @@
 /area/magmoor/medical/lobby)
 "mpa" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "mpr" = (
@@ -17862,7 +17862,7 @@
 /turf/open/floor/prison/kitchen,
 /area/magmoor/civilian/cook)
 "mBf" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "mBj" = (
@@ -17958,8 +17958,8 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/surgery)
 "mDT" = (
-/obj/structure/xenoautopsy/tank/escaped,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/structure/tyranidautopsy/tank/escaped,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/magmoor/research/containment)
 "mDZ" = (
@@ -17984,7 +17984,7 @@
 /turf/open/floor/mainship/cargo,
 /area/magmoor/cargo/storage/south)
 "mEN" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "mEV" = (
@@ -18006,7 +18006,7 @@
 	},
 /area/magmoor/medical/treatment)
 "mFF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/lavawall,
 /area/magmoor/cave/rock)
 "mFV" = (
@@ -18477,7 +18477,7 @@
 	id = "basketball";
 	side = "right"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "mXv" = (
@@ -18720,7 +18720,7 @@
 /turf/closed/mineral/smooth/lavawall/indestructible,
 /area/magmoor/cave/rock)
 "ngw" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
 	},
@@ -18953,7 +18953,7 @@
 /obj/machinery/floodlight{
 	name = "Spotlight"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "nrd" = (
@@ -19032,7 +19032,7 @@
 /area/magmoor/command/lobby/east)
 "ntC" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "ntN" = (
@@ -19419,7 +19419,7 @@
 	},
 /area/magmoor/research/rnd/lobby)
 "nLt" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/northwest)
 "nLF" = (
@@ -20215,7 +20215,7 @@
 	},
 /area/magmoor/cargo/storage/secure/south)
 "orN" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/barricade/wooden{
 	dir = 1
 	},
@@ -21507,7 +21507,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
 	},
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/plating/platebotc,
 /area/magmoor/research/containment)
 "pgJ" = (
@@ -21794,7 +21794,7 @@
 /area/magmoor/engi/storage)
 "prw" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "prG" = (
@@ -21875,7 +21875,7 @@
 /turf/open/floor/tile/bar,
 /area/magmoor/civilian/clean)
 "ptJ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/red/redtaupe{
 	dir = 8
 	},
@@ -21902,7 +21902,7 @@
 /obj/machinery/air_alarm{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/mainship/orange{
 	dir = 6
 	},
@@ -22324,7 +22324,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/magmoor/compound/southwest)
 "pLJ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/magmoor/compound/northeast)
 "pLK" = (
@@ -22365,7 +22365,7 @@
 	},
 /area/magmoor/research/containment)
 "pMw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
@@ -22633,7 +22633,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/surgery)
 "pUu" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "pUx" = (
@@ -22816,7 +22816,7 @@
 /area/magmoor/civilian/jani)
 "qdo" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "qdB" = (
@@ -23486,7 +23486,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "qys" = (
@@ -24091,7 +24091,7 @@
 /area/magmoor/compound/northwest)
 "rap" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -24431,7 +24431,7 @@
 "rnE" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mainship/blue{
 	dir = 8
@@ -24822,7 +24822,7 @@
 /turf/closed/wall/r_wall,
 /area/magmoor/command/conference)
 "rBn" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/plating/platebotc,
 /area/magmoor/research/containment)
 "rBq" = (
@@ -24956,7 +24956,7 @@
 	},
 /area/magmoor/compound/west)
 "rEV" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "rEZ" = (
@@ -25230,7 +25230,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/medical/treatment)
 "rQK" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "rRK" = (
@@ -25451,9 +25451,9 @@
 /turf/open/floor/wood,
 /area/magmoor/command/office)
 "rYP" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/magmoor/research/containment)
 "rZi" = (
@@ -25499,7 +25499,7 @@
 /area/magmoor/cargo/storage/secure/south)
 "scd" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/mainship/sterile/purple,
 /area/magmoor/research/rnd)
 "scf" = (
@@ -25549,7 +25549,7 @@
 /area/magmoor/civilian/dorms)
 "sds" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "sdx" = (
@@ -25868,7 +25868,7 @@
 /obj/structure/largecrate/goat,
 /turf/open/floor/mainship/mono,
 /area/magmoor/cargo/processing/south)
-"som" = (
+"chaos" = (
 /obj/structure/closet/walllocker/hydrant/extinguisher{
 	dir = 8
 	},
@@ -25982,7 +25982,7 @@
 "srX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "ssf" = (
@@ -26207,7 +26207,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/cargo/processing/south)
 "sAQ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/mainship/sterile/dark,
 /area/magmoor/research/containment)
 "sAV" = (
@@ -26234,7 +26234,7 @@
 /turf/open/floor/plating,
 /area/magmoor/volcano)
 "sBd" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "sBk" = (
@@ -26405,7 +26405,7 @@
 /turf/open/floor/wood,
 /area/magmoor/command/office/main)
 "sGv" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/plating/platebotc,
 /area/magmoor/research/containment)
 "sGD" = (
@@ -26473,7 +26473,7 @@
 /area/magmoor/engi/atmos)
 "sIO" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "sIZ" = (
@@ -26716,7 +26716,7 @@
 	},
 /area/magmoor/command/commandroom)
 "sUk" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "sUt" = (
@@ -26916,7 +26916,7 @@
 /area/magmoor/cave/west)
 "tbD" = (
 /obj/structure/closet/open,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/magmoor/research/containment)
 "tbO" = (
@@ -27110,7 +27110,7 @@
 	},
 /area/magmoor/security/arrivals/east)
 "tik" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "tit" = (
@@ -27245,7 +27245,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/civilian/rnr)
 "tmo" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "tmt" = (
@@ -27406,12 +27406,12 @@
 	},
 /area/magmoor/civilian/arrival)
 "tsL" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "ttt" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/cult,
 /area/magmoor/cave/northeast)
 "ttJ" = (
@@ -27422,7 +27422,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 5
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/item/shard,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
@@ -27585,7 +27585,7 @@
 /turf/open/floor/mainship/cargo,
 /area/magmoor/cargo/processing/south)
 "tAG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/decal/cleanable/blood/writing,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
@@ -27855,7 +27855,7 @@
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "tKD" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
 	},
@@ -28191,7 +28191,7 @@
 /obj/machinery/scoreboard{
 	pixel_y = 34
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/magmoor/civilian/basket)
 "tXy" = (
@@ -29112,7 +29112,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/civilian/cryostasis)
 "uyJ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "uyO" = (
@@ -29497,7 +29497,7 @@
 /area/magmoor/engi)
 "uOD" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "uOU" = (
@@ -29641,7 +29641,7 @@
 /area/magmoor/compound/north)
 "uUg" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "uUt" = (
@@ -29656,7 +29656,7 @@
 /turf/open/floor/freezer,
 /area/magmoor/cargo/freezer)
 "uUD" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/concrete/lines,
 /area/magmoor/compound/north)
 "uUN" = (
@@ -29816,7 +29816,7 @@
 /turf/open/floor/mainship/mono,
 /area/magmoor/mining)
 "uZj" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/northeast)
 "uZx" = (
@@ -29981,7 +29981,7 @@
 /turf/open/floor/plating/mainship,
 /area/magmoor/engi/storage)
 "vfy" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/northeast)
 "vfM" = (
@@ -30374,7 +30374,7 @@
 /turf/open/floor/freezer,
 /area/magmoor/civilian/clean/shower)
 "vzh" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "vzs" = (
@@ -30512,7 +30512,7 @@
 /turf/open/floor/mainship/silver,
 /area/magmoor/civilian/arrival)
 "vDt" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/plating/platebotc,
 /area/magmoor/research/containment)
 "vEo" = (
@@ -31128,7 +31128,7 @@
 /turf/open/floor/plating,
 /area/magmoor/engi/garage)
 "vZF" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -32121,8 +32121,8 @@
 	},
 /area/magmoor/mining)
 "wKg" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
 "wKB" = (
@@ -32204,7 +32204,7 @@
 /turf/open/floor/mainship/cargo,
 /area/magmoor/engi/storage)
 "wOe" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "wOh" = (
@@ -32625,7 +32625,7 @@
 	},
 /area/magmoor/mining)
 "xaY" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/wood,
 /area/magmoor/command/conference)
 "xbb" = (
@@ -33158,7 +33158,7 @@
 	},
 /area/magmoor/research/containment)
 "xrI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/purple{
 	dir = 1
 	},
@@ -33358,8 +33358,8 @@
 	},
 /area/magmoor/command/lobby)
 "xwy" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northwest)
 "xwP" = (
@@ -33736,7 +33736,7 @@
 /turf/open/floor/wood,
 /area/magmoor/civilian/dorms)
 "xIA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/cult,
 /area/magmoor/cave/north)
 "xIH" = (
@@ -33934,7 +33934,7 @@
 /turf/open/floor/plating,
 /area/magmoor/command/lobby)
 "xPI" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/northeast)
 "xPN" = (
@@ -57989,7 +57989,7 @@ iyf
 fht
 iNL
 vyy
-som
+chaos
 lqI
 kdG
 vLa

@@ -25,9 +25,9 @@
 	targetitem = /obj/item/blueprints
 	difficulty = 10
 
-/datum/objective_item/steal/xenofinance
-	name = "the confidential xeno financial papers."
-	targetitem = /obj/item/paper/xenofinance
+/datum/objective_item/steal/tyranidfinance
+	name = "the confidential tyranid financial papers."
+	targetitem = /obj/item/paper/tyranidfinance
 	difficulty = 10
 
 /datum/objective_item/steal/hypercell
@@ -65,9 +65,9 @@
 	targetitem = /obj/item/clothing/shoes/clown_shoes
 	difficulty = 10
 
-/datum/objective_item/steal/xenosuit
-	name = "the xenomorph disguise."
-	targetitem = /obj/item/clothing/suit/xenos
+/datum/objective_item/steal/tyranidsuit
+	name = "the tyranid disguise."
+	targetitem = /obj/item/clothing/suit/tyranids
 	difficulty = 10
 
 /datum/objective_item/steal/fireproofjelly

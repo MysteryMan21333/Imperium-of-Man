@@ -165,7 +165,7 @@
 	set name = "Remove Fire Axe"
 	set category = "Object"
 
-	if (istype(usr, /mob/living/carbon/xenomorph))
+	if (istype(usr, /mob/living/carbon/tyranid))
 		return
 
 	if (localopened)

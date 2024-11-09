@@ -38,7 +38,7 @@
 /obj/structure/chigusa_sign
 	name = "Chigusa Sign"
 	desc = "A large sign reading 'lazarus landing pop. 73', there's blood smeared on it."
-	icon = 'icons/obj/landing_signs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/landing_signs.dmi'
 	icon_state = "laz_sign"
 	bound_width = 64
 	bound_height = 64

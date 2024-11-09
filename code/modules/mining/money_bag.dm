@@ -1,5 +1,5 @@
 /obj/item/moneybag
-	icon = 'icons/obj/items/storage/bag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/bag.dmi'
 	name = "Money bag"
 	icon_state = "moneybag"
 	force = 10

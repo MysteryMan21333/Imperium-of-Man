@@ -1,7 +1,7 @@
 /obj/item/tool/hand_labeler
 	name = "hand labeler"
 	desc = "A hand labeler used to label objects"
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "labeler0"
 	worn_icon_state = "flight"
 	w_class = WEIGHT_CLASS_SMALL
@@ -77,11 +77,11 @@
 /obj/item/tool/pen
 	desc = "It's a normal black ink pen."
 	name = "pen"
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "pen"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "pen"
 	equip_slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_EARS
@@ -167,11 +167,11 @@
 /obj/item/tool/stamp
 	name = "rubber stamp"
 	desc = "A rubber stamp for stamping important documents."
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "stamp-qm"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "stamp"
 	w_class = WEIGHT_CLASS_TINY

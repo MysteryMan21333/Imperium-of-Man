@@ -9,9 +9,9 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 */
 /datum/ammo
 	var/name = "generic bullet"
-	var/icon = 'icons/obj/items/projectiles.dmi'
+	var/icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	var/icon_state = "bullet"
-	///used in icons/obj/items/ammo for use in generating handful sprites
+	///used in modular_imperium/master_files/icons/obj/items/ammo for use in generating handful sprites
 	var/handful_icon_state = "bullet"
 	///how much of this ammo you can carry in a handful
 	var/handful_amount = 8
@@ -125,18 +125,18 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 	if(get_dist_euclidean(proj.starting_turf, victim) > max_range)
 		return
 	var/impact_message = ""
-	if(isxeno(victim))
-		var/mob/living/carbon/xenomorph/xeno_victim = victim
-		if(xeno_victim.fortify) //If we're fortified we don't give a shit about staggerstun.
-			impact_message += span_xenodanger("Your fortified stance braces you against the impact.")
+	if(istyranid(victim))
+		var/mob/living/carbon/tyranid/tyranid_victim = victim
+		if(tyranid_victim.fortify) //If we're fortified we don't give a shit about staggerstun.
+			impact_message += span_tyraniddanger("Your fortified stance braces you against the impact.")
 			return
 
-		if(xeno_victim.endure) //Endure allows us to ignore staggerstun.
-			impact_message += span_xenodanger("You endure the impact from [proj], shrugging off its effects.")
+		if(tyranid_victim.endure) //Endure allows us to ignore staggerstun.
+			impact_message += span_tyraniddanger("You endure the impact from [proj], shrugging off its effects.")
 			return
 
-		if(xeno_victim.crest_defense) //Crest defense halves all effects, and protects us from the stun.
-			impact_message += span_xenodanger("Your crest protects you against some of the impact.")
+		if(tyranid_victim.crest_defense) //Crest defense halves all effects, and protects us from the stun.
+			impact_message += span_tyraniddanger("Your crest protects you against some of the impact.")
 			slowdown *= 0.5
 			stagger *= 0.5
 			stun = 0
@@ -158,8 +158,8 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 			living_victim.apply_effects(stun,weaken)
 
 		if(knockback)
-			if(isxeno(victim))
-				impact_message += span_xenodanger("The blast knocks you off your feet!")
+			if(istyranid(victim))
+				impact_message += span_tyraniddanger("The blast knocks you off your feet!")
 			else
 				impact_message += span_highdanger("The blast knocks you off your feet!")
 			victim.knockback(proj, knockback, 5)
@@ -192,7 +192,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 		if(proj.firer == victim)
 			continue
 		victim.visible_message(span_danger("[victim] is hit by backlash from \a [proj.name]!"),
-			isxeno(victim) ? span_xenodanger("We are hit by backlash from \a </b>[proj.name]</b>!") : span_highdanger("You are hit by backlash from \a </b>[proj.name]</b>!"))
+			istyranid(victim) ? span_tyraniddanger("We are hit by backlash from \a </b>[proj.name]</b>!") : span_highdanger("You are hit by backlash from \a </b>[proj.name]</b>!"))
 		victim.apply_damage(proj.damage * airburst_multiplier, proj.ammo.damage_type, blocked = armor_type, updating_health = TRUE)
 
 ///handles the probability of a projectile hit to trigger fire_burst, based off actual damage done
@@ -218,7 +218,7 @@ GLOBAL_LIST_INIT(no_sticky_resin, typecacheof(list(/obj/item/clothing/mask/faceh
 			victim.visible_message(span_danger("[victim] bursts into flames as they are deflagrated by \a [proj.name]!"))
 		else
 			victim.visible_message(span_danger("[victim] is scorched by [target] as they burst into flames!"),
-				isxeno(victim) ? span_xenodanger("We are scorched by [target] as they burst into flames!") : span_highdanger("you are scorched by [target] as they burst into flames!"))
+				istyranid(victim) ? span_tyraniddanger("We are scorched by [target] as they burst into flames!") : span_highdanger("you are scorched by [target] as they burst into flames!"))
 		//Damages the victims, inflicts brief stagger+slow, and ignites
 		victim.apply_damage(fire_burst_damage, BURN, blocked = FIRE, updating_health = TRUE)
 

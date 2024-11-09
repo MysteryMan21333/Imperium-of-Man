@@ -11,7 +11,7 @@
 	INVOKE_ASYNC(src, PROC_REF(on_attack), source, M, user)
 
 /datum/element/scalping/proc/on_attack(datum/source, mob/living/M, mob/living/user)
-	if(!isxeno(M) || (M.stat != DEAD))
+	if(!istyranid(M) || (M.stat != DEAD))
 		return NONE
 	if(M.a_intent == INTENT_HARM)
 		return NONE
@@ -25,7 +25,7 @@
 
 /obj/item/scalp
 	name = "scalp"
-	desc = "The mutilated scalp of a slain xeno, proof of a great victory!"
-	icon = 'icons/Xeno/xeno_materials.dmi'
+	desc = "The mutilated scalp of a slain tyranid, proof of a great victory!"
+	icon = 'modular_imperium/master_files/icons/tyranid/xeno_materials.dmi'
 	icon_state = "chitin-chunk"
 	w_class = WEIGHT_CLASS_TINY

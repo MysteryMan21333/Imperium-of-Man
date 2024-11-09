@@ -14,9 +14,9 @@
 /turf/open/floor/plating/dmg3,
 /area/icy_caves/caves/crashed_ship)
 "ae" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /obj/item/alien_embryo,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/dmg1,
 /area/icy_caves/caves/crashed_ship)
 "af" = (
@@ -27,7 +27,7 @@
 /turf/open/floor/cult,
 /area/icy_caves/caves/chapel)
 "ag" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/landmark/nuke_spawn,
 /turf/open/floor/plating/dmg3,
 /area/icy_caves/caves/crashed_ship)
@@ -45,7 +45,7 @@
 /area/icy_caves/caves/crashed_ship)
 "ak" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "al" = (
@@ -60,8 +60,8 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "an" = (
-/obj/structure/xenoautopsy/tank/broken,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/structure/tyranidautopsy/tank/broken,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "ao" = (
@@ -70,7 +70,7 @@
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "aq" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "ar" = (
@@ -104,7 +104,7 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/mining/west)
 "av" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "aw" = (
@@ -253,7 +253,7 @@
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "be" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating,
 /area/icy_caves/outpost/LZ1)
 "bf" = (
@@ -390,7 +390,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/garage)
 "bC" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "bE" = (
@@ -424,7 +424,7 @@
 	},
 /area/icy_caves/outpost/refinery)
 "bQ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
@@ -437,7 +437,7 @@
 /area/icy_caves/outpost/LZ1)
 "bV" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
@@ -449,7 +449,7 @@
 /area/icy_caves/caves/northwestmonorail)
 "cb" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "ch" = (
@@ -517,11 +517,11 @@
 /turf/open/floor/tile/purple/whitepurplefull,
 /area/icy_caves/caves/northwestmonorail/medbay)
 "cv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/icy_caves/caves/northwestmonorail)
 "cw" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail/breakroom)
 "cx" = (
@@ -536,7 +536,7 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/icy_caves/outpost/LZ2)
 "cz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "cA" = (
@@ -585,7 +585,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/icy_caves/caves/northwestmonorail)
 "cJ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/icy_caves/caves/northwestmonorail/breakroom)
 "cK" = (
@@ -597,7 +597,7 @@
 /turf/open/floor/mainship_hull,
 /area/icy_caves/caves/northwestmonorail)
 "cM" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/crashed_ship)
 "cO" = (
@@ -739,7 +739,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "dM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
@@ -870,7 +870,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/outside/center)
 "eq" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/power/apc/drained,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
@@ -1193,7 +1193,7 @@
 /area/icy_caves/caves/chapel)
 "gr" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "gx" = (
@@ -1285,7 +1285,7 @@
 /area/icy_caves/caves/south)
 "gY" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "gZ" = (
@@ -1356,7 +1356,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "hD" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/landmark/sensor_tower,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/south)
@@ -1368,7 +1368,7 @@
 	},
 /area/icy_caves/caves/northwestmonorail/medbay)
 "hI" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/east)
@@ -1487,7 +1487,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/garage)
 "ij" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/south)
 "il" = (
@@ -1515,7 +1515,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "iq" = (
@@ -1607,7 +1607,7 @@
 	},
 /area/icy_caves/outpost/garage)
 "iM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2,
 /area/icy_caves/caves/west)
 "iN" = (
@@ -1660,7 +1660,7 @@
 /area/icy_caves/caves/west)
 "jb" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "jd" = (
@@ -1688,7 +1688,7 @@
 /area/icy_caves/outpost/garage)
 "jo" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "jq" = (
@@ -1778,7 +1778,7 @@
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "jP" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "jQ" = (
@@ -1841,7 +1841,7 @@
 	dir = 4;
 	on = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "kf" = (
@@ -1878,7 +1878,7 @@
 /area/icy_caves/caves/northwestmonorail)
 "kp" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/plating_catwalk,
 /area/icy_caves/caves/northwestmonorail)
 "kr" = (
@@ -1894,7 +1894,7 @@
 /area/icy_caves/outpost/outside/center)
 "kt" = (
 /obj/effect/spawner/random/weaponry/gun,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark/green2{
 	dir = 8
 	},
@@ -1941,7 +1941,7 @@
 /area/icy_caves/outpost/LZ2)
 "kE" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "kF" = (
@@ -1977,7 +1977,7 @@
 	},
 /area/icy_caves/outpost/research)
 "kN" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
@@ -2237,7 +2237,7 @@
 /turf/open/floor/mainship/tcomms,
 /area/icy_caves/caves/northwestmonorail)
 "mk" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/icy_caves/outpost/LZ2)
 "ml" = (
@@ -2343,7 +2343,7 @@
 /turf/open/floor/tile/dark/brown2,
 /area/icy_caves/outpost/garage)
 "mL" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/plating/mainship,
 /area/icy_caves/caves/crashed_ship)
 "mM" = (
@@ -2442,7 +2442,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/weapon_vault)
 "no" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
@@ -2544,7 +2544,7 @@
 /area/icy_caves/outpost/LZ2)
 "nK" = (
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "nL" = (
@@ -2827,7 +2827,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/LZ1)
 "ps" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg1,
 /area/icy_caves/caves/crashed_ship)
 "pt" = (
@@ -3272,7 +3272,7 @@
 /area/icy_caves/caves/northwestmonorail/morgue)
 "rk" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 1
 	},
@@ -3342,7 +3342,7 @@
 	},
 /area/icy_caves/outpost/medbay)
 "ry" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
@@ -3402,7 +3402,7 @@
 	},
 /area/icy_caves/outpost/engineering)
 "rI" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/wood,
 /area/icy_caves/caves/underground_cafeteria)
 "rJ" = (
@@ -3571,7 +3571,7 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/refinery)
 "sm" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/dark/green2{
 	dir = 8
 	},
@@ -3732,7 +3732,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail/morgue)
 "sY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
@@ -3805,7 +3805,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/west)
 "tq" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "tr" = (
@@ -4098,7 +4098,7 @@
 	},
 /area/icy_caves/caves/alienstuff)
 "uN" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "uO" = (
@@ -4327,7 +4327,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/dorms)
 "vJ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/icy_caves/caves)
 "vL" = (
@@ -4356,7 +4356,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/dorms)
 "vT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall,
 /area/icy_caves/caves/alienstuff)
 "vV" = (
@@ -4491,7 +4491,7 @@
 	},
 /area/icy_caves/outpost/medbay)
 "wD" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/icy_caves/caves)
 "wE" = (
@@ -4674,7 +4674,7 @@
 "xt" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/alienstuff)
 "xu" = (
@@ -4813,7 +4813,7 @@
 	},
 /area/icy_caves/outpost/office)
 "yh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "yi" = (
@@ -5442,7 +5442,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/research)
 "AY" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/item/ammo_casing,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark,
@@ -5583,7 +5583,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/LZ2)
 "BM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/icy_caves/caves/northern)
 "BO" = (
@@ -5633,7 +5633,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail/breakroom)
 "BX" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -5750,7 +5750,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark/green2{
 	dir = 4
 	},
@@ -5817,7 +5817,7 @@
 /area/icy_caves/outpost/outside)
 "CW" = (
 /obj/item/ammo_casing,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/brown2{
 	dir = 9
 	},
@@ -5846,7 +5846,7 @@
 	},
 /area/icy_caves/caves/northern)
 "Dc" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/up,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/up,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/refinery)
 "Dd" = (
@@ -6551,7 +6551,7 @@
 "Gn" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "Go" = (
@@ -6590,7 +6590,7 @@
 /area/icy_caves/caves/northern)
 "GB" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "GD" = (
@@ -6760,11 +6760,11 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "Hx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer1,
 /area/icy_caves/outpost/outside)
 "HA" = (
@@ -6806,7 +6806,7 @@
 /turf/open/floor/mainship/red/full,
 /area/icy_caves/caves/northern)
 "HJ" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/dark/green2{
 	dir = 4
 	},
@@ -6933,7 +6933,7 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/garage)
 "Ii" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/icy_caves/outpost/outside)
 "Ij" = (
@@ -6950,7 +6950,7 @@
 	},
 /area/icy_caves/outpost/security)
 "In" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/refinery)
@@ -7101,7 +7101,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail/breakroom)
 "IX" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/refinery)
 "IZ" = (
@@ -7176,7 +7176,7 @@
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "Ju" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -7459,7 +7459,7 @@
 /turf/open/floor/wood,
 /area/icy_caves/outpost/dorms)
 "KD" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "KH" = (
@@ -7637,7 +7637,7 @@
 /turf/open/floor/wood,
 /area/icy_caves/outpost/dorms)
 "LD" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -7736,7 +7736,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/security)
 "LX" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden,
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -7756,7 +7756,7 @@
 /turf/closed/shuttle/dropship2/wallthree,
 /area/icy_caves/caves/northwestmonorail)
 "Md" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northern)
@@ -7770,7 +7770,7 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
 "Mh" = (
@@ -7806,7 +7806,7 @@
 /turf/open/floor/tile/dark/green2,
 /area/icy_caves/outpost/medbay)
 "Mr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/darkfrostwall/indestructible,
 /area/icy_caves/caves/rock)
 "Ms" = (
@@ -7868,7 +7868,7 @@
 /area/icy_caves/caves/chapel)
 "MI" = (
 /obj/machinery/door/airlock/multi_tile/mainship/personalglass{
-	name = "\improper Xenobiology Airlock"
+	name = "\improper Tyranidbiology Airlock"
 	},
 /turf/open/floor/tile/dark/green2{
 	dir = 10
@@ -7954,7 +7954,7 @@
 /turf/open/floor/wood,
 /area/icy_caves/outpost/office)
 "Na" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "Nb" = (
@@ -8409,7 +8409,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northern)
 "Pl" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/item/ammo_casing,
 /turf/open/floor/wood,
 /area/icy_caves/outpost/dorms)
@@ -8488,7 +8488,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/weapon_vault)
 "PI" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "PJ" = (
@@ -8797,7 +8797,7 @@
 /turf/open/floor/cult,
 /area/icy_caves/caves/alienstuff)
 "Rd" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northern)
 "Rf" = (
@@ -8976,7 +8976,7 @@
 /turf/open/floor/wood,
 /area/icy_caves/outpost/dorms)
 "Sb" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/icy_caves/caves/rock)
 "Sc" = (
@@ -9058,7 +9058,7 @@
 /area/icy_caves/outpost/outside/center)
 "SB" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/icy_caves/caves/northwestmonorail)
@@ -9070,7 +9070,7 @@
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/outpost/outside)
 "SF" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "SG" = (
@@ -9119,7 +9119,7 @@
 /turf/open/floor/cult,
 /area/icy_caves/caves/south)
 "SU" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/snow/layer2,
 /area/icy_caves/outpost/outside)
 "SV" = (
@@ -9218,7 +9218,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/icy_caves/caves/northwestmonorail/hallway)
 "Tr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/east)
 "Ts" = (
@@ -9261,7 +9261,7 @@
 /obj/structure/barricade/guardrail{
 	dir = 4
 	},
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -9432,7 +9432,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/LZ2)
 "Uz" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/wood,
 /area/icy_caves/outpost/dorms)
 "UB" = (
@@ -9555,7 +9555,7 @@
 /area/icy_caves/caves/northwestmonorail)
 "Vb" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/northern)
 "Vd" = (
@@ -9618,7 +9618,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/dorms)
 "Vp" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/west)
 "Vq" = (
@@ -9684,7 +9684,7 @@
 /obj/structure/barricade/guardrail{
 	dir = 8
 	},
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/shuttle/dropship/seven,
 /area/icy_caves/caves/northwestmonorail)
 "VK" = (
@@ -9803,7 +9803,7 @@
 /obj/structure/barricade/guardrail{
 	dir = 4
 	},
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /turf/open/shuttle/dropship/seven,
 /area/icy_caves/caves/northwestmonorail)
 "Wi" = (
@@ -9907,11 +9907,11 @@
 /turf/closed/wall/r_wall,
 /area/icy_caves/caves/northern)
 "WH" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/ice,
 /area/icy_caves/caves/rock)
 "WK" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/icy_caves/outpost/LZ1)
 "WN" = (
@@ -10078,7 +10078,7 @@
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/LZ1)
 "Xr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg3,
 /area/icy_caves/caves/crashed_ship)
 "Xt" = (

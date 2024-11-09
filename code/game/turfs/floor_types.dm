@@ -188,7 +188,7 @@
 //Others
 /turf/open/floor/mainship/terragov
 	icon_state = "logo_central"
-	name = "\improper TerraGov logo"
+	name = "\improper Imperium logo"
 
 /turf/open/floor/mainship/terragov/west
 	icon_state = "logo_directional_west"
@@ -202,22 +202,22 @@
 /turf/open/floor/mainship/terragov/north
 	icon_state = "logo_directional_north"
 
-/turf/open/floor/mainship/som
+/turf/open/floor/mainship/chaos
 	icon_state = "somn"
 
-/turf/open/floor/mainship/som/nw
+/turf/open/floor/mainship/chaos/nw
 	icon_state = "somnw"
 
-/turf/open/floor/mainship/som/ne
+/turf/open/floor/mainship/chaos/ne
 	icon_state = "somne"
 
-/turf/open/floor/mainship/som/s
+/turf/open/floor/mainship/chaos/s
 	icon_state = "soms"
 
-/turf/open/floor/mainship/som/se
+/turf/open/floor/mainship/chaos/se
 	icon_state = "somse"
 
-/turf/open/floor/mainship/som/sw
+/turf/open/floor/mainship/chaos/sw
 	icon_state = "somsw"
 
 // RESEARCH STUFF
@@ -327,7 +327,7 @@
 	floor_tile = /obj/item/stack/tile/wood
 	shoefootstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD
-	mediumxenofootstep = FOOTSTEP_WOOD
+	mediumtyranidfootstep = FOOTSTEP_WOOD
 	var/damaged_states = 7
 
 /turf/open/floor/wood/broken_states()
@@ -543,7 +543,7 @@
 	floor_tile = /obj/item/stack/tile/grass
 	shoefootstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
-	mediumxenofootstep = FOOTSTEP_GRASS
+	mediumtyranidfootstep = FOOTSTEP_GRASS
 	icon_variants = 4
 
 
@@ -1073,7 +1073,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_CARPET)
 	shoefootstep = FOOTSTEP_CARPET
 	barefootstep = FOOTSTEP_CARPET
-	mediumxenofootstep = FOOTSTEP_CARPET
+	mediumtyranidfootstep = FOOTSTEP_CARPET
 	floor_tile = /obj/item/stack/tile/carpet
 
 /turf/open/floor/carpet/broken_states()
@@ -2162,7 +2162,7 @@
 /turf/open/urbanshale
 	name = "shale"
 	icon = 'icons/turf/auto_shaledesaturated.dmi'
-	mediumxenofootstep = FOOTSTEP_GRAVEL
+	mediumtyranidfootstep = FOOTSTEP_GRAVEL
 	barefootstep = FOOTSTEP_GRAVEL
 	shoefootstep = FOOTSTEP_GRAVEL
 	minimap_color = MINIMAP_SHALE

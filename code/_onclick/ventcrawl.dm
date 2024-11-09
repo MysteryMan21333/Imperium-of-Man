@@ -66,7 +66,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 
 			visible_message(span_notice("[stealthy ? "[src] scrambles into the ventilation ducts!" : ""]"),span_notice("You climb into the ventilation ducts."))
 
-			if(!stealthy) //Xenos with stealth vent crawling can silently enter/exit vents.
+			if(!stealthy) //Tyranids with stealth vent crawling can silently enter/exit vents.
 				playsound(src, SFX_ALIEN_VENTPASS, 35, TRUE)
 
 			forceMove(vent_found)

@@ -60,14 +60,14 @@
 	penetration = 10
 	sundering = 0.75
 
-/datum/ammo/bullet/rifle/som_machinegun
+/datum/ammo/bullet/rifle/chaos_machinegun
 	name = "machinegun bullet"
 	hud_state = "rifle_heavy"
 	damage = 28
 	penetration = 12.5
 	sundering = 1
 
-/datum/ammo/bullet/rifle/som_machinegun/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/bullet/rifle/chaos_machinegun/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	staggerstun(target_mob, proj, max_range = 20, slowdown = 0.5)
 
 /datum/ammo/bullet/rifle/tx8

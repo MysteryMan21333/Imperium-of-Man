@@ -96,37 +96,37 @@
 
 
 
-//marine cap
+//guardsman cap
 
-/obj/item/clothing/head/soft/marine
-	name = "marine sergeant cap"
+/obj/item/clothing/head/soft/guardsman
+	name = "guardsman sergeant cap"
 	desc = "It's a soft cap made from advanced ballistic-resistant fibres. Fails to prevent lumps in the head."
 	icon_state = "greysoft"
 	cap_color = "grey"
 	soft_armor = list(MELEE = 35, BULLET = 35, LASER = 35, ENERGY = 15, BOMB = 10, BIO = 0, FIRE = 15, ACID = 15)
 	inventory_flags = BLOCKSHARPOBJ
 
-/obj/item/clothing/head/soft/marine/alpha
+/obj/item/clothing/head/soft/guardsman/alpha
 	name = "alpha squad sergeant cap"
 	icon_state = "redsoft"
 	cap_color = "red"
 
-/obj/item/clothing/head/soft/marine/beta
+/obj/item/clothing/head/soft/guardsman/beta
 	name = "beta squad sergeant cap"
 	icon_state = "yellowsoft"
 	cap_color = "yellow"
 
-/obj/item/clothing/head/soft/marine/charlie
+/obj/item/clothing/head/soft/guardsman/charlie
 	name = "charlie squad sergeant cap"
 	icon_state = "purplesoft"
 	cap_color = "purple"
 
-/obj/item/clothing/head/soft/marine/delta
+/obj/item/clothing/head/soft/guardsman/delta
 	name = "delta squad sergeant cap"
 	icon_state = "bluesoft"
 	cap_color = "blue"
 
-/obj/item/clothing/head/soft/marine/mp
-	name = "marine police sergeant cap"
+/obj/item/clothing/head/soft/guardsman/mp
+	name = "guardsman police sergeant cap"
 	icon_state = "greensoft"
 	cap_color = "green"

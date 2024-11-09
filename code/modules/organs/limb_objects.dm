@@ -1,9 +1,9 @@
 
 /obj/item/limb
-	icon = 'icons/mob/human_races/r_human.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human_races/r_human.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/bodyparts_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/bodyparts_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/bodyparts_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/bodyparts_right.dmi',
 	)
 
 /obj/item/limb/Initialize(mapload, mob/living/carbon/human/H)
@@ -17,7 +17,7 @@
 	if(H.species && H.species.icobase)
 		base = icon(H.species.icobase)
 	else
-		base = icon('icons/mob/human_races/r_human.dmi')
+		base = icon('modular_imperium/master_files/icons/mob/human_races/r_human.dmi')
 
 
 	icon = base

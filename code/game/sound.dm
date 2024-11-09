@@ -188,10 +188,10 @@ A good representation is: 'byond applies a volume reduction to the sound every X
 		if(O.client)
 			SEND_SOUND(O, soundin)
 
-///Play a sound for all cliented xenos and ghosts by hive on a zlevel
-/proc/playsound_z_xenos(z, soundin, _volume, hive_type = XENO_HIVE_NORMAL)
+///Play a sound for all cliented tyranids and ghosts by hive on a zlevel
+/proc/playsound_z_tyranids(z, soundin, _volume, hive_type = TYRANID_HIVE_NORMAL)
 	soundin = sound(get_sfx(soundin), channel = SSsounds.random_available_channel(), volume = _volume)
-	for(var/mob/living/carbon/xenomorph/X AS in GLOB.hive_datums[hive_type].xenos_by_zlevel["[z]"])
+	for(var/mob/living/carbon/tyranid/X AS in GLOB.hive_datums[hive_type].tyranids_by_zlevel["[z]"])
 		if(X.client)
 			SEND_SOUND(X, soundin)
 	for(var/mob/dead/observer/O AS in SSmobs.dead_players_by_zlevel[z])
@@ -277,7 +277,7 @@ A good representation is: 'byond applies a volume reduction to the sound every X
 			soundin = pick('sound/weapons/guns/fire/tgmc/kinetic/gun_ar12_1.ogg','sound/weapons/guns/fire/tgmc/kinetic/gun_ar12_2.ogg','sound/weapons/guns/fire/tgmc/kinetic/gun_ar12_3.ogg')
 		if(SFX_GUN_FB12) // idk why i called it "fb-12", ah too late now
 			soundin = pick('sound/weapons/guns/fire/tgmc/kinetic/gun_fb12_1.ogg','sound/weapons/guns/fire/tgmc/kinetic/gun_fb12_2.ogg','sound/weapons/guns/fire/tgmc/kinetic/gun_fb12_3.ogg')
-		if(SFX_SHOTGUN_SOM)
+		if(SFX_SHOTGUN_CHAOS)
 			soundin = pick('sound/weapons/guns/fire/v51_1.ogg','sound/weapons/guns/fire/v51_2.ogg','sound/weapons/guns/fire/v51_3.ogg','sound/weapons/guns/fire/v51_4.ogg')
 		if(SFX_GUN_PULSE)
 			soundin = pick('sound/weapons/guns/fire/m41a_1.ogg','sound/weapons/guns/fire/m41a_2.ogg','sound/weapons/guns/fire/m41a_3.ogg','sound/weapons/guns/fire/m41a_4.ogg','sound/weapons/guns/fire/m41a_5.ogg','sound/weapons/guns/fire/m41a_6.ogg')
@@ -294,7 +294,7 @@ A good representation is: 'byond applies a volume reduction to the sound every X
 		if(SFX_SLAM)
 			soundin = pick('sound/effects/slam1.ogg', 'sound/effects/slam2.ogg', 'sound/effects/slam3.ogg')
 
-		// Xeno
+		// Tyranid
 		if(SFX_ACID_HIT)
 			soundin = pick('sound/bullets/acid_impact1.ogg')
 		if(SFX_ACID_BOUNCE)

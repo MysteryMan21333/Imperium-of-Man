@@ -13,13 +13,13 @@
 		return new /datum/export_report(0, name, faction_selling)
 	return ..()
 
-/mob/living/carbon/xenomorph/supply_export(faction_selling)
+/mob/living/carbon/tyranid/supply_export(faction_selling)
 	. = ..()
 	if(!.)
 		return FALSE
 
 	var/list/points = get_export_value()
-	GLOB.round_statistics.points_from_xenos += points[1]
+	GLOB.round_statistics.points_from_tyranids += points[1]
 
 /**
  * Getter proc for the point value of this object
@@ -34,7 +34,7 @@
 	switch(job.job_category)
 		if(JOB_CAT_ENGINEERING, JOB_CAT_MEDICAL, JOB_CAT_REQUISITIONS)
 			. = list(200, 20)
-		if(JOB_CAT_MARINE)
+		if(JOB_CAT_GUARDSMAN)
 			. = list(300, 30)
 		if(JOB_CAT_SILICON)
 			. = list(800, 80)
@@ -42,24 +42,24 @@
 			. = list(1000, 100)
 	return
 
-/mob/living/carbon/xenomorph/get_export_value()
+/mob/living/carbon/tyranid/get_export_value()
 	switch(tier)
-		if(XENO_TIER_MINION)
+		if(TYRANID_TIER_MINION)
 			. = list(50, 5)
-		if(XENO_TIER_ZERO)
+		if(TYRANID_TIER_ZERO)
 			. = list(70, 7)
-		if(XENO_TIER_ONE)
+		if(TYRANID_TIER_ONE)
 			. = list(150, 15)
-		if(XENO_TIER_TWO)
+		if(TYRANID_TIER_TWO)
 			. = list(350, 30)
-		if(XENO_TIER_THREE)
+		if(TYRANID_TIER_THREE)
 			. = list(600, 50)
-		if(XENO_TIER_FOUR)
+		if(TYRANID_TIER_FOUR)
 			. = list(1100, 100)
 	return
 
 //I hate it but it's how it was so I'm not touching it further than this
-/mob/living/carbon/xenomorph/shrike/get_export_value()
+/mob/living/carbon/tyranid/shrike/get_export_value()
 	return list(600, 50)
 
 /obj/item/reagent_containers/food/snacks/req_pizza/get_export_value()

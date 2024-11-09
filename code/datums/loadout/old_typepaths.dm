@@ -5,38 +5,38 @@
 
 
 /obj/item/clothing/suit/modular/pas11x
-/obj/item/clothing/head/modular/marine/m10x/tech
-/obj/item/clothing/head/modular/marine/m10x/corpsman
-/obj/item/clothing/head/modular/marine/m10x/standard
+/obj/item/clothing/head/modular/guardsman/m10x/tech
+/obj/item/clothing/head/modular/guardsman/m10x/corpsman
+/obj/item/clothing/head/modular/guardsman/m10x/standard
 
-/obj/item/clothing/head/helmet/marine/robot
-/obj/item/clothing/head/helmet/marine/robot/light
-/obj/item/clothing/head/helmet/marine/robot/heavy
+/obj/item/clothing/head/helmet/guardsman/robot
+/obj/item/clothing/head/helmet/guardsman/robot/light
+/obj/item/clothing/head/helmet/guardsman/robot/heavy
 
-/obj/item/clothing/suit/storage/marine/robot
-/obj/item/clothing/suit/storage/marine/robot/light
-/obj/item/clothing/suit/storage/marine/robot/heavy
+/obj/item/clothing/suit/storage/guardsman/robot
+/obj/item/clothing/suit/storage/guardsman/robot/light
+/obj/item/clothing/suit/storage/guardsman/robot/heavy
 
 
 /obj/item/armor_module/greyscale/badge
-/obj/item/armor_module/greyscale/visor/marine
-/obj/item/armor_module/greyscale/visor/marine/skirmisher
-/obj/item/armor_module/greyscale/visor/marine/scout
-/obj/item/armor_module/greyscale/visor/marine/eva
-/obj/item/armor_module/greyscale/visor/marine/eva/skull
-/obj/item/armor_module/greyscale/visor/marine/gungnir
-/obj/item/armor_module/greyscale/visor/marine/eod
-/obj/item/armor_module/greyscale/visor/marine/assault
-/obj/item/armor_module/greyscale/visor/marine/helljumper
-/obj/item/armor_module/greyscale/visor/marine/ranger
-/obj/item/armor_module/greyscale/visor/marine/traditional
-/obj/item/armor_module/greyscale/visor/marine/old
-/obj/item/armor_module/greyscale/visor/marine/old/skirmisher
-/obj/item/armor_module/greyscale/visor/marine/old/scout
-/obj/item/armor_module/greyscale/visor/marine/old/eva
-/obj/item/armor_module/greyscale/visor/marine/old/eva/skull
-/obj/item/armor_module/greyscale/visor/marine/old/eod
-/obj/item/armor_module/greyscale/visor/marine/old/assault
+/obj/item/armor_module/greyscale/visor/guardsman
+/obj/item/armor_module/greyscale/visor/guardsman/skirmisher
+/obj/item/armor_module/greyscale/visor/guardsman/scout
+/obj/item/armor_module/greyscale/visor/guardsman/eva
+/obj/item/armor_module/greyscale/visor/guardsman/eva/skull
+/obj/item/armor_module/greyscale/visor/guardsman/gungnir
+/obj/item/armor_module/greyscale/visor/guardsman/eod
+/obj/item/armor_module/greyscale/visor/guardsman/assault
+/obj/item/armor_module/greyscale/visor/guardsman/helljumper
+/obj/item/armor_module/greyscale/visor/guardsman/ranger
+/obj/item/armor_module/greyscale/visor/guardsman/traditional
+/obj/item/armor_module/greyscale/visor/guardsman/old
+/obj/item/armor_module/greyscale/visor/guardsman/old/skirmisher
+/obj/item/armor_module/greyscale/visor/guardsman/old/scout
+/obj/item/armor_module/greyscale/visor/guardsman/old/eva
+/obj/item/armor_module/greyscale/visor/guardsman/old/eva/skull
+/obj/item/armor_module/greyscale/visor/guardsman/old/eod
+/obj/item/armor_module/greyscale/visor/guardsman/old/assault
 /obj/item/armor_module/greyscale/cape
 /obj/item/armor_module/greyscale/cape/half
 /obj/item/armor_module/greyscale/cape/short

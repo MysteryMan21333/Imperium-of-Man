@@ -85,7 +85,7 @@
 		/obj/item/reagent_containers/food/snacks/burger/roburger,
 		/obj/item/reagent_containers/food/snacks/burger/roburgerbig,
 		/obj/item/reagent_containers/food/snacks/burger/appendix,
-		/obj/item/reagent_containers/food/snacks/burger/xeno,
+		/obj/item/reagent_containers/food/snacks/burger/tyranid,
 		/obj/item/reagent_containers/food/snacks/burger/human,
 		/obj/item/reagent_containers/food/snacks/burger/bearger,
 		/obj/item/reagent_containers/food/snacks/burger/clown,
@@ -290,7 +290,7 @@
 		/obj/item/reagent_containers/food/snacks/loadedbakedpotato,
 		/obj/item/reagent_containers/food/snacks/burger/tofu,
 		/obj/item/reagent_containers/food/snacks/burger/fishburger,
-		/obj/item/reagent_containers/food/snacks/burger/xeno,
+		/obj/item/reagent_containers/food/snacks/burger/tyranid,
 		/obj/item/reagent_containers/food/snacks/fishfingers,
 	)
 

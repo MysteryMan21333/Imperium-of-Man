@@ -1,5 +1,5 @@
 /datum/job/upp
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/crafty
@@ -20,12 +20,12 @@
 	jobtype = /datum/job/upp/standard
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine/upp/full
+	belt = /obj/item/storage/belt/guardsman/upp/full
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/helmet/UPP
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	suit_store = /obj/item/weapon/gun/rifle/type71
@@ -88,10 +88,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/lifesaver/full/upp
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP/medic
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP/medic
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/uppcap
 	glasses = /obj/item/clothing/glasses/hud/health
 	suit_store = /obj/item/weapon/gun/smg/skorpion
@@ -149,12 +149,12 @@
 	jobtype = /datum/job/upp/heavy
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine/upp/full
+	belt = /obj/item/storage/belt/guardsman/upp/full
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/heavy
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/helmet/UPP/heavy
 	suit_store = /obj/item/weapon/gun/rifle/type71/flamer
 	r_store = /obj/item/storage/pouch/explosive
@@ -210,10 +210,10 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/korovin/standard
 	ears = /obj/item/radio/headset/distress/usl
-	w_uniform = /obj/item/clothing/under/marine/veteran/UPP
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/UPP
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/heavy
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/uppcap/beret
 	suit_store = /obj/item/weapon/gun/rifle/type71
 	r_store = /obj/item/storage/pouch/general/large

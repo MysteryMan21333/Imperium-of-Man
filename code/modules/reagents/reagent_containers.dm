@@ -1,11 +1,11 @@
 /obj/item/reagent_containers
 	name = "Container"
 	desc = ""
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = null
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medical_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medical_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_right.dmi',
 	)
 	throwforce = 3
 	w_class = WEIGHT_CLASS_SMALL
@@ -40,7 +40,7 @@
 	/// If not set, uses the current icon state.
 	var/fill_icon_state = null
 	/// The icon file to take fill icon appearances from
-	var/fill_icon = 'icons/obj/reagents/reagent_fillings.dmi'
+	var/fill_icon = 'modular_imperium/master_files/icons/obj/reagents/reagent_fillings.dmi'
 
 /obj/item/reagent_containers/Initialize(mapload)
 	. = ..()

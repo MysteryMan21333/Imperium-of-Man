@@ -1,7 +1,7 @@
 /obj/item/storage/box/crate
 	name = "crate"
 	desc = "It's just an ordinary wooden crate."
-	icon = 'icons/obj/items/storage/marine_box.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/marine_box.dmi'
 	icon_state = "case"
 
 /obj/item/storage/box/crate/Initialize(mapload, ...)
@@ -24,9 +24,9 @@
 	storage_datum.max_storage_space = 0
 
 /obj/item/storage/box/crate/heavy_armor/PopulateContents()
-	new /obj/item/clothing/gloves/marine/specialist(src)
-	new /obj/item/clothing/suit/storage/marine/specialist(src)
-	new /obj/item/clothing/head/helmet/marine/specialist(src)
+	new /obj/item/clothing/gloves/guardsman/specialist(src)
+	new /obj/item/clothing/suit/storage/guardsman/specialist(src)
+	new /obj/item/clothing/head/helmet/guardsman/specialist(src)
 
 /obj/item/storage/box/crate/grenade_system
 	name = "\improper M92 grenade launcher case"
@@ -79,8 +79,8 @@
 /obj/item/storage/box/crate/heavy_grenadier/PopulateContents()
 	new /obj/item/weapon/gun/grenade_launcher/multinade_launcher(src)
 	new /obj/item/storage/belt/grenade/b17(src)
-	new /obj/item/clothing/suit/storage/marine/B17(src)
-	new /obj/item/clothing/head/helmet/marine/grenadier(src)
+	new /obj/item/clothing/suit/storage/guardsman/B17(src)
+	new /obj/item/clothing/head/helmet/guardsman/grenadier(src)
 	new /obj/item/storage/box/visual/grenade/frag(src)
 	new /obj/item/storage/box/visual/grenade/frag(src)
 	new /obj/item/storage/box/visual/grenade/incendiary(src)
@@ -98,11 +98,11 @@
 	storage_datum.max_storage_space = 0
 
 /obj/item/storage/box/crate/heavy_gunner/PopulateContents()
-	new /obj/item/clothing/gloves/marine/specialist(src)
-	new /obj/item/clothing/suit/storage/marine/specialist(src)
-	new /obj/item/clothing/head/helmet/marine/specialist(src)
+	new /obj/item/clothing/gloves/guardsman/specialist(src)
+	new /obj/item/clothing/suit/storage/guardsman/specialist(src)
+	new /obj/item/clothing/head/helmet/guardsman/specialist(src)
 	new /obj/item/weapon/gun/minigun(src)
-	new /obj/item/belt_harness/marine(src)
+	new /obj/item/belt_harness/guardsman(src)
 	new /obj/item/ammo_magazine/minigun_powerpack(src)
 
 /obj/item/storage/box/crate/m42c_system
@@ -125,7 +125,7 @@
 	new /obj/item/ammo_magazine/sniper/incendiary(src)
 	new /obj/item/ammo_magazine/sniper/flak(src)
 	new /obj/item/binoculars/tactical(src)
-	new /obj/item/storage/backpack/marine/smock(src)
+	new /obj/item/storage/backpack/guardsman/smock(src)
 	new /obj/item/weapon/gun/pistol/vp70(src)
 	new /obj/item/ammo_magazine/pistol/vp70(src)
 	new /obj/item/ammo_magazine/pistol/vp70(src)
@@ -153,10 +153,10 @@
 	new /obj/item/ammo_magazine/sniper/incendiary(src)
 	new /obj/item/weapon/gun/rifle/sniper/antimaterial(src)
 	if(SSmapping.configs[GROUND_MAP].environment_traits[MAP_COLD])
-		new /obj/item/clothing/under/marine/camo/snow(src)
-		new /obj/item/storage/backpack/marine/satchel(src)
+		new /obj/item/clothing/under/guardsman/camo/snow(src)
+		new /obj/item/storage/backpack/guardsman/satchel(src)
 		new /obj/item/bodybag/tarp/snow(src)
 	else
 		new /obj/item/facepaint/sniper(src)
-		new /obj/item/storage/backpack/marine/smock(src)
+		new /obj/item/storage/backpack/guardsman/smock(src)
 		new /obj/item/bodybag/tarp(src)

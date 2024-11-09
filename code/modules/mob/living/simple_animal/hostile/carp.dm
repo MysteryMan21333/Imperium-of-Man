@@ -26,7 +26,7 @@
 	speak_emote = list("gnashes")
 
 /mob/living/simple_animal/hostile/carp/megacarp
-	icon = 'icons/mob/broadMobs.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/broadMobs.dmi'
 	name = "Mega Space Carp"
 	desc = "A ferocious, fang bearing creature that resembles a shark. This one seems especially ticked off."
 	icon_state = "megacarp"

@@ -230,7 +230,7 @@
 /***************************IBeam*********************************/
 /obj/effect/beam/i_beam
 	name = "infrared beam"
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = "ibeam"
 	var/obj/item/assembly/infra/master
 	anchored = TRUE

@@ -8,7 +8,7 @@
 /obj/item/storage/holster
 	name = "holster"
 	desc = "Holds stuff, and sometimes goes swoosh."
-	icon = 'icons/obj/items/storage/holster.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/holster.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	equip_slot_flags = ITEM_SLOT_BACK
 	storage_type = /datum/storage/holster
@@ -91,17 +91,17 @@
 /obj/item/storage/holster/backholster
 	name = "backpack holster"
 	desc = "You wear this on your back and put items into it. Usually one special item too."
-	icon = 'icons/obj/items/storage/backholster.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/backholster.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
 		)
 	storage_type = /datum/storage/holster/backholster
 
@@ -122,7 +122,7 @@
 /obj/item/storage/holster/backholster/rpg
 	name = "\improper TGMC rocket bag"
 	desc = "This backpack can hold 4 67mm shells, in addition to a recoiless launcher."
-	icon_state = "marine_rocket"
+	icon_state = "guardsman_rocket"
 	w_class = WEIGHT_CLASS_HUGE
 	storage_type = /datum/storage/holster/backholster/rpg
 	holsterable_allowed = list(
@@ -130,11 +130,11 @@
 		/obj/item/weapon/gun/launcher/rocket/recoillessrifle/low_impact,
 	)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
 		)
 
 /obj/item/storage/holster/backholster/rpg/full/PopulateContents()
@@ -161,54 +161,54 @@
 	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/recoillessrifle/heam(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_item)
 
-/obj/item/storage/holster/backholster/rpg/som
-	name = "\improper SOM RPG bag"
+/obj/item/storage/holster/backholster/rpg/chaos
+	name = "\improper CHAOS RPG bag"
 	desc = "This backpack can hold 4 RPGs, in addition to a RPG launcher."
-	icon_state = "som_rocket"
+	icon_state = "chaos_rocket"
 	holsterable_allowed = list(
-		/obj/item/weapon/gun/launcher/rocket/som,
-		/obj/item/weapon/gun/launcher/rocket/som/rad,
+		/obj/item/weapon/gun/launcher/rocket/chaos,
+		/obj/item/weapon/gun/launcher/rocket/chaos/rad,
 	)
-	storage_type = /datum/storage/holster/backholster/rpg/som
+	storage_type = /datum/storage/holster/backholster/rpg/chaos
 
-/obj/item/storage/holster/backholster/rpg/som/war_crimes/PopulateContents()
-	new /obj/item/ammo_magazine/rocket/som/incendiary(src)
-	new /obj/item/ammo_magazine/rocket/som/incendiary(src)
-	new /obj/item/ammo_magazine/rocket/som/rad(src)
-	new /obj/item/ammo_magazine/rocket/som/rad(src)
-	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/som/rad(src)
+/obj/item/storage/holster/backholster/rpg/chaos/war_crimes/PopulateContents()
+	new /obj/item/ammo_magazine/rocket/chaos/incendiary(src)
+	new /obj/item/ammo_magazine/rocket/chaos/incendiary(src)
+	new /obj/item/ammo_magazine/rocket/chaos/rad(src)
+	new /obj/item/ammo_magazine/rocket/chaos/rad(src)
+	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/chaos/rad(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_item)
 
-/obj/item/storage/holster/backholster/rpg/som/ert/PopulateContents()
-	new /obj/item/ammo_magazine/rocket/som/thermobaric(src)
-	new /obj/item/ammo_magazine/rocket/som/thermobaric(src)
-	new /obj/item/ammo_magazine/rocket/som/heat(src)
-	new /obj/item/ammo_magazine/rocket/som/rad(src)
-	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/som/rad(src)
+/obj/item/storage/holster/backholster/rpg/chaos/ert/PopulateContents()
+	new /obj/item/ammo_magazine/rocket/chaos/thermobaric(src)
+	new /obj/item/ammo_magazine/rocket/chaos/thermobaric(src)
+	new /obj/item/ammo_magazine/rocket/chaos/heat(src)
+	new /obj/item/ammo_magazine/rocket/chaos/rad(src)
+	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/chaos/rad(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_item)
 
-/obj/item/storage/holster/backholster/rpg/som/heat/PopulateContents()
-	new /obj/item/ammo_magazine/rocket/som/heat(src)
-	new /obj/item/ammo_magazine/rocket/som/heat(src)
-	new /obj/item/ammo_magazine/rocket/som/heat(src)
-	new /obj/item/ammo_magazine/rocket/som/heat(src)
-	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/som/heat(src)
+/obj/item/storage/holster/backholster/rpg/chaos/heat/PopulateContents()
+	new /obj/item/ammo_magazine/rocket/chaos/heat(src)
+	new /obj/item/ammo_magazine/rocket/chaos/heat(src)
+	new /obj/item/ammo_magazine/rocket/chaos/heat(src)
+	new /obj/item/ammo_magazine/rocket/chaos/heat(src)
+	var/obj/item/new_item = new /obj/item/weapon/gun/launcher/rocket/chaos/heat(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_item)
 
 /obj/item/storage/holster/backholster/mortar
 	name = "\improper TGMC mortar bag"
 	desc = "This backpack can hold 11 80mm mortar shells, in addition to the mortar itself."
-	icon_state = "marinepackt"
+	icon_state = "guardsmanpackt"
 	w_class = WEIGHT_CLASS_BULKY
 	holsterable_allowed = list(/obj/item/mortar_kit)
 	storage_type = /datum/storage/holster/backholster/mortar
 
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
 		)
 
 /obj/item/storage/holster/backholster/mortar/full/PopulateContents()
@@ -220,17 +220,17 @@
 	desc = "This backpack can carry its accompanying flamethrower as well as a modest general storage capacity. Automatically refuels it's accompanying flamethrower."
 	icon_state = "pyro_bag"
 	w_class = WEIGHT_CLASS_BULKY
-	holsterable_allowed = list(/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer)
+	holsterable_allowed = list(/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer)
 	storage_type = /datum/storage/holster/backholster/flamer
 	///The internal fuel tank
 	var/obj/item/ammo_magazine/flamer_tank/internal/tank
 
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
 		)
 
 /obj/item/storage/holster/backholster/flamer/Initialize(mapload)
@@ -279,7 +279,7 @@
 	. += "[tank.current_rounds] units of fuel left!"
 
 /obj/item/storage/holster/backholster/flamer/full/PopulateContents()
-	var/flamer = new /obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer(src)
+	var/flamer = new /obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), flamer)
 
 //one slot holsters
@@ -430,9 +430,9 @@
 	name = "flare pouch"
 	desc = "A pouch designed to hold flares and a single flaregun. Refillable with a M94 flare pack."
 	equip_slot_flags = ITEM_SLOT_POCKET
-	icon = 'icons/obj/clothing/pouches.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/pouches.dmi'
 	icon_state = "flare"
-	holsterable_allowed = list(/obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine)
+	holsterable_allowed = list(/obj/item/weapon/gun/grenade_launcher/single_shot/flare/guardsman)
 	storage_type = /datum/storage/holster/flarepouch
 
 /obj/item/storage/holster/flarepouch/attackby_alternate(obj/item/I, mob/user, params)
@@ -448,7 +448,7 @@
 		return
 
 /obj/item/storage/holster/flarepouch/full/PopulateContents()
-	var/obj/item/flare_gun = new /obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine(src)
+	var/obj/item/flare_gun = new /obj/item/weapon/gun/grenade_launcher/single_shot/flare/guardsman(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), flare_gun)
 	for(var/i in 1 to (storage_datum.storage_slots-flare_gun.w_class))
 		new /obj/item/explosive/grenade/flare(src)
@@ -458,7 +458,7 @@
 	name = "\improper ML-41 scabbard (10x26mm)"
 	desc = "A backpack holster allowing the storage of any a ML-41 Assault Machinegun, also carries ammo for the other portion of the system."
 	icon_state = "icc_bagmg"
-	icon = 'icons/obj/items/storage/backholster.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/backholster.dmi'
 	holsterable_allowed = list(
 		/obj/item/weapon/gun/rifle/icc_mg,
 	)
@@ -560,24 +560,24 @@
 	new /obj/item/ammo_magazine/pistol/vp78(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_gun)
 
-/obj/item/storage/holster/belt/pistol/m4a3/som
+/obj/item/storage/holster/belt/pistol/m4a3/chaos
 	name = "\improper S19 holster rig"
 	desc = "A belt with origins dating back to old colony security holster rigs."
-	icon_state = "som_belt_pistol"
+	icon_state = "chaos_belt_pistol"
 
-/obj/item/storage/holster/belt/pistol/m4a3/som/Initialize(mapload, ...)
+/obj/item/storage/holster/belt/pistol/m4a3/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.set_holdable(can_hold_list = list(
 		/obj/item/weapon/gun/pistol,
 		/obj/item/ammo_magazine/pistol,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta,
 		/obj/item/cell/lasgun/lasrifle,
 		/obj/item/cell/lasgun/volkite/small,
 		/obj/item/cell/lasgun/plasma,
 	))
 
-/obj/item/storage/holster/belt/pistol/m4a3/som/serpenta/PopulateContents()
+/obj/item/storage/holster/belt/pistol/m4a3/chaos/serpenta/PopulateContents()
 	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta(src)
 	new /obj/item/cell/lasgun/volkite/small(src)
 	new /obj/item/cell/lasgun/volkite/small(src)
@@ -587,12 +587,12 @@
 	new /obj/item/cell/lasgun/volkite/small(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_gun)
 
-/obj/item/storage/holster/belt/pistol/m4a3/som/fancy
+/obj/item/storage/holster/belt/pistol/m4a3/chaos/fancy
 	name = "\improper S19-B holster rig"
-	desc = "A quality pistol belt of a style typically seen worn by SOM officers. It looks old, but well looked after."
-	icon_state = "som_belt_pistol_fancy"
+	desc = "A quality pistol belt of a style typically seen worn by CHAOS officers. It looks old, but well looked after."
+	icon_state = "chaos_belt_pistol_fancy"
 
-/obj/item/storage/holster/belt/pistol/m4a3/som/fancy/fieldcommander/PopulateContents()
+/obj/item/storage/holster/belt/pistol/m4a3/chaos/fancy/fieldcommander/PopulateContents()
 	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta/custom(src)
 	new /obj/item/cell/lasgun/volkite/small(src)
 	new /obj/item/cell/lasgun/volkite/small(src)
@@ -671,11 +671,11 @@
 	new /obj/item/ammo_magazine/revolver/mateba(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_gun)
 
-/obj/item/storage/holster/belt/mateba/notmarine/Initialize(mapload)
+/obj/item/storage/holster/belt/mateba/notguardsman/Initialize(mapload)
 	. = ..()
 	icon_state = "a_mateba_holster"
 
-/obj/item/storage/holster/belt/mateba/notmarine/PopulateContents()
+/obj/item/storage/holster/belt/mateba/notguardsman/PopulateContents()
 	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/revolver/mateba/(src)
 	new /obj/item/ammo_magazine/revolver/mateba(src)
 	new /obj/item/ammo_magazine/revolver/mateba(src)
@@ -717,10 +717,10 @@
 	icon_state = "ts34_holster"
 	w_class = WEIGHT_CLASS_BULKY
 	storage_type = /datum/storage/holster/belt/ts34
-	holsterable_allowed = list(/obj/item/weapon/gun/shotgun/double/marine)
+	holsterable_allowed = list(/obj/item/weapon/gun/shotgun/double/guardsman)
 
 /obj/item/storage/holster/belt/ts34/full/PopulateContents()
-	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/shotgun/double/marine(src)
+	var/obj/item/weapon/gun/new_gun = new /obj/item/weapon/gun/shotgun/double/guardsman(src)
 	new /obj/item/ammo_magazine/shotgun/buckshot(src)
 	INVOKE_ASYNC(storage_datum, TYPE_PROC_REF(/datum/storage, handle_item_insertion), new_gun)
 

@@ -20,7 +20,7 @@ GLOBAL_LIST_INIT(pod_styles, list(\
 /obj/structure/closet/supplypod
 	name = "supply pod"
 	desc = "A Nanotrasen supply drop pod."
-	icon = 'icons/obj/supplypods.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/supplypods.dmi'
 	icon_state = "supplypod"
 	pixel_x = -16
 	pixel_y = -5
@@ -240,7 +240,7 @@ GLOBAL_LIST_INIT(pod_styles, list(\
 
 /obj/effect/DPfall
 	name = ""
-	icon = 'icons/obj/supplypods.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/supplypods.dmi'
 	pixel_x = -16
 	pixel_y = -5
 	pixel_z = 200
@@ -270,9 +270,9 @@ GLOBAL_LIST_INIT(pod_styles, list(\
 /obj/effect/DPtarget
 	name = "Landing Zone Indicator"
 	desc = "A holographic projection designating the landing zone of something. It's probably best to stand back."
-	icon = 'icons/mob/actions.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/actions.dmi'
 	icon_state = "sniper_zoom"
-	layer = XENO_HIDING_LAYER
+	layer = TYRANID_HIDING_LAYER
 	var/obj/effect/temp_visual/fallingPod
 	var/obj/structure/closet/supplypod/pod
 

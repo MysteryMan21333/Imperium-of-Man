@@ -4,7 +4,7 @@
 	icon_state = "computer_small"
 	screen_overlay = "security"
 	broken_icon = "computer_small_red_broken"
-	req_one_access = list(ACCESS_MARINE_BRIG, ACCESS_NT_CORPORATE, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_LOGISTICS)
+	req_one_access = list(ACCESS_GUARDSMAN_BRIG, ACCESS_NT_CORPORATE, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_LOGISTICS)
 	circuit = /obj/item/circuitboard/computer/secure_data
 	var/obj/item/card/id/scan = null
 	var/authenticated = null
@@ -577,6 +577,6 @@ What a mess.*/
 	return ..()
 
 /obj/machinery/computer/secure_data/detective_computer
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "messyfiles"
 	screen_overlay = "messyfiles_screen"

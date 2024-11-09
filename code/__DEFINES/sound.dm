@@ -99,7 +99,7 @@
 #define SFX_GUN_FLAMETHROWER "gun_flamethrower"
 #define SFX_GUN_AR12 "gun_ar12"
 #define SFX_GUN_FB12 "gun_fb12"
-#define SFX_SHOTGUN_SOM "shotgun_som"
+#define SFX_SHOTGUN_CHAOS "shotgun_som"
 #define SFX_GUN_PULSE "gun_pulse"
 #define SFX_RPG_FIRE "rpg_fire"
 #define SFX_AC_FIRE "ac_fire"

@@ -6,18 +6,18 @@
 	name = "backpack"
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
-	icon = 'icons/obj/items/storage/backpack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/backpack.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
 	worn_icon_state = "backpack"
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/backpack.dmi',
 		)
 	w_class = WEIGHT_CLASS_BULKY
 	equip_slot_flags = ITEM_SLOT_BACK	//ERROOOOO
@@ -137,11 +137,11 @@
 	. = ..()
 	new /obj/item/storage/wallet/random( src )
 
-/obj/item/storage/backpack/satchel/som
+/obj/item/storage/backpack/satchel/chaos
 	name = "mining satchel"
 	desc = "A satchel with origins dating back to the mining colonies."
-	icon_state = "som_satchel"
-	worn_icon_state = "som_satchel"
+	icon_state = "chaos_satchel"
+	worn_icon_state = "chaos_satchel"
 
 /obj/item/storage/backpack/satchel/norm
 	name = "satchel"
@@ -228,34 +228,34 @@
 	icon_state = "ert_medical"
 
 
-/*========================== MARINE BACKPACKS ================================
+/*========================== GUARDSMAN BACKPACKS ================================
 ==========================================================================*/
 
-/obj/item/storage/backpack/marine
+/obj/item/storage/backpack/guardsman
 	name = "\improper lightweight IMP backpack"
 	desc = "The standard-issue pack of the TGMC forces. Designed to slug gear into the battlefield."
-	icon_state = "marinepack"
-	worn_icon_state = "marinepack"
+	icon_state = "guardsmanpack"
+	worn_icon_state = "guardsmanpack"
 
-/obj/item/storage/backpack/marine/standard
+/obj/item/storage/backpack/guardsman/standard
 	name = "\improper lightweight IMP backpack"
 	desc = "The standard-issue pack of the TGMC forces. Designed to slug gear into the battlefield."
 
-/obj/item/storage/backpack/marine/corpsman
+/obj/item/storage/backpack/guardsman/corpsman
 	name = "\improper TGMC corpsman backpack"
 	desc = "The standard-issue backpack worn by TGMC corpsmen. You can recharge defibrillators by plugging them in."
-	icon_state = "marinepackm"
-	worn_icon_state = "marinepackm"
+	icon_state = "guardsmanpackm"
+	worn_icon_state = "guardsmanpackm"
 	var/obj/item/cell/high/cell //Starts with a high capacity energy cell.
 	var/icon_skin
 
-/obj/item/storage/backpack/marine/corpsman/Initialize(mapload, ...)
+/obj/item/storage/backpack/guardsman/corpsman/Initialize(mapload, ...)
 	. = ..()
 	cell = new
 	icon_skin = icon_state
 	update_icon()
 
-/obj/item/storage/backpack/marine/corpsman/proc/use_charge(mob/user, amount = 0, mention_charge = TRUE)
+/obj/item/storage/backpack/guardsman/corpsman/proc/use_charge(mob/user, amount = 0, mention_charge = TRUE)
 	var/warning = ""
 	if(amount > cell.charge)
 		playsound(src, 'sound/machines/buzz-two.ogg', 25, 1)
@@ -271,14 +271,14 @@
 		to_chat(user, span_notice("[warning]<b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
 	update_icon()
 
-/obj/item/storage/backpack/marine/corpsman/examine(mob/user)
+/obj/item/storage/backpack/guardsman/corpsman/examine(mob/user)
 	. = ..()
 	if(cell)
 		. += span_notice("Its defibrillator recharge unit has a loaded power cell and its readout counter is active. <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>")
 	else
 		. += span_warning("Its defibrillator recharge unit does not have a power cell installed!")
 
-/obj/item/storage/backpack/marine/corpsman/update_icon_state()
+/obj/item/storage/backpack/guardsman/corpsman/update_icon_state()
 	. = ..()
 	icon_state = icon_skin
 	if(cell?.charge >= 0)
@@ -294,7 +294,7 @@
 	else
 		icon_state += "_0"
 
-/obj/item/storage/backpack/marine/corpsman/MouseDrop_T(obj/item/W, mob/living/user) //Dragging the defib/power cell onto the backpack will trigger its special functionality.
+/obj/item/storage/backpack/guardsman/corpsman/MouseDrop_T(obj/item/W, mob/living/user) //Dragging the defib/power cell onto the backpack will trigger its special functionality.
 	var/obj/item/defibrillator/defib
 	if(istype(W, /obj/item/defibrillator))
 		defib = W
@@ -328,55 +328,55 @@
 	return ..()
 
 
-/obj/item/storage/backpack/marine/tech
+/obj/item/storage/backpack/guardsman/tech
 	name = "\improper TGMC technician backpack"
 	desc = "The standard-issue backpack worn by TGMC technicians. Specially equipped to hold sentry gun and HSG-102 emplacement parts."
-	icon_state = "marinepackt"
-	worn_icon_state = "marinepackt"
+	icon_state = "guardsmanpackt"
+	worn_icon_state = "guardsmanpackt"
 	storage_type = /datum/storage/backpack/tech
 
-/obj/item/storage/backpack/marine/satchel
+/obj/item/storage/backpack/guardsman/satchel
 	name = "\improper TGMC satchel"
 	desc = "A heavy-duty satchel carried by some TGMC soldiers and support personnel."
-	icon_state = "marinesat"
-	worn_icon_state = "marinesat"
+	icon_state = "guardsmansat"
+	worn_icon_state = "guardsmansat"
 	storage_type = /datum/storage/backpack/satchel
 
-/obj/item/storage/backpack/marine/satchel/green
+/obj/item/storage/backpack/guardsman/satchel/green
 	name = "\improper TGMC satchel"
-	icon_state = "marinesat_green"
+	icon_state = "guardsmansat_green"
 
-/obj/item/storage/backpack/marine/corpsman/satchel
+/obj/item/storage/backpack/guardsman/corpsman/satchel
 	name = "\improper TGMC corpsman satchel"
 	desc = "A heavy-duty satchel carried by some TGMC corpsmen. You can recharge defibrillators by plugging them in."
-	icon_state = "marinesatm"
-	worn_icon_state = "marinesatm"
+	icon_state = "guardsmansatm"
+	worn_icon_state = "guardsmansatm"
 	storage_type = /datum/storage/backpack/satchel
 	cell = /obj/item/cell/apc
 
-/obj/item/storage/backpack/marine/satchel/tech
+/obj/item/storage/backpack/guardsman/satchel/tech
 	name = "\improper TGMC technician satchel"
 	desc = "A heavy-duty satchel carried by some TGMC technicians. Can hold the ST-580 point defense sentry and ammo."
-	icon_state = "marinesatt"
-	worn_icon_state = "marinesatt"
+	icon_state = "guardsmansatt"
+	worn_icon_state = "guardsmansatt"
 	storage_type = /datum/storage/backpack/satchel/tech
 
-/obj/item/storage/backpack/marine/smock
+/obj/item/storage/backpack/guardsman/smock
 	name = "\improper M3 sniper's smock"
 	desc = "A specially designed smock with pockets for all your sniper needs."
 	icon_state = "smock"
 	storage_type = /datum/storage/backpack/no_delay
 
-/obj/item/storage/backpack/marine/duffelbag
+/obj/item/storage/backpack/guardsman/duffelbag
 	name = "\improper TGMC Duffelbag"
 	desc = "A hard to reach backpack with no draw delay but is hard to access. \
 	Any squadmates can easily access the storage with right-click."
-	icon = 'icons/obj/items/storage/duffelbag.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/duffelbag.dmi'
 	icon_state = "duffel"
 	worn_icon_state = "duffel"
 	storage_type = /datum/storage/backpack/duffelbag
 
-/obj/item/storage/backpack/marine/duffelbag/equipped(mob/equipper, slot)
+/obj/item/storage/backpack/guardsman/duffelbag/equipped(mob/equipper, slot)
 	. = ..()
 	if(slot == SLOT_BACK)
 		RegisterSignal(equipper, COMSIG_CLICK_RIGHT, PROC_REF(on_rclick_duffel_wearer))
@@ -384,24 +384,24 @@
 		for(var/mob/M AS in storage_datum.content_watchers)
 			storage_datum.close(M)
 
-/obj/item/storage/backpack/marine/duffelbag/unequipped(mob/unequipper, slot)
+/obj/item/storage/backpack/guardsman/duffelbag/unequipped(mob/unequipper, slot)
 	. = ..()
 	UnregisterSignal(unequipper, list(COMSIG_CLICK_RIGHT, COMSIG_MOVABLE_MOVED))
 
-/obj/item/storage/backpack/marine/duffelbag/Adjacent(atom/neighbor, atom/target, atom/movable/mover)
+/obj/item/storage/backpack/guardsman/duffelbag/Adjacent(atom/neighbor, atom/target, atom/movable/mover)
 	if(item_flags & IN_INVENTORY && loc.Adjacent(neighbor)) //Special check to ensure that worn duffels are adjacent
 		return TRUE
 	return ..()
 
 ///Allows non-wearers to access this inventory
-/obj/item/storage/backpack/marine/duffelbag/proc/on_rclick_duffel_wearer(datum/source, mob/clicker)
+/obj/item/storage/backpack/guardsman/duffelbag/proc/on_rclick_duffel_wearer(datum/source, mob/clicker)
 	SIGNAL_HANDLER
 	if(clicker == loc || !source.Adjacent(clicker)) //Wearer can't use this to bypass restrictions
 		return
 	storage_datum.open(clicker)
 
 ///Closes the duffelbag when our wearer moves if it's worn on user's back
-/obj/item/storage/backpack/marine/duffelbag/proc/on_wearer_move(datum/source)
+/obj/item/storage/backpack/guardsman/duffelbag/proc/on_wearer_move(datum/source)
 	SIGNAL_HANDLER
 	if(!iscarbon(source))
 		return
@@ -439,25 +439,25 @@
 
 //CLOAKS
 
-/obj/item/storage/backpack/marine/satchel/officer_cloak
+/obj/item/storage/backpack/guardsman/satchel/officer_cloak
 	name = "Officer Cloak"
 	desc = "A dashing cloak as befitting an officer."
 	icon_state = "officer_cloak" //with thanks to Baystation12
 	worn_icon_state = "officer_cloak" //with thanks to Baystation12
 
-/obj/item/storage/backpack/marine/satchel/captain_cloak
+/obj/item/storage/backpack/guardsman/satchel/captain_cloak
 	name = "Captain's Cloak"
 	desc = "An opulent cloak detailed with your many accomplishments."
 	icon_state = "commander_cloak" //with thanks to Baystation12
 	worn_icon_state = "commander_cloak" //with thanks to Baystation12
 
-/obj/item/storage/backpack/marine/satchel/officer_cloak_red
+/obj/item/storage/backpack/guardsman/satchel/officer_cloak_red
 	name = "Officer Cloak - Red"
 	desc = "A dashing cloak as befitting an officer, with fancy red trim."
 	icon_state = "officer_cloak_red" //with thanks to Baystation12
 	worn_icon_state = "officer_cloak_red" //with thanks to Baystation12
 
-/obj/item/storage/backpack/marine/satchel/captain_cloak_red
+/obj/item/storage/backpack/guardsman/satchel/captain_cloak_red
 	name = "Captain's Cloak - Red"
 	desc = "An opulent cloak detailed with your many accomplishments, with fancy red trim."
 	icon_state = "commander_cloak_red" //with thanks to Baystation12
@@ -465,7 +465,7 @@
 
 
 // Scout Cloak
-/obj/item/storage/backpack/marine/satchel/scout_cloak
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak
 	name = "\improper M68 Thermal Cloak"
 	desc = "The lightweight thermal dampeners and optical camouflage provided by this cloak are weaker than those found in standard TGMC ghillie suits. In exchange, the cloak can be worn over combat armor and offers the wearer high manueverability and adaptability to many environments. Serves as a satchel."
 	icon_state = "scout_cloak"
@@ -480,21 +480,21 @@
 	var/stealth_delay = null
 	actions_types = list(/datum/action/item_action/toggle)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/Destroy()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/Destroy()
 	camo_off()
 	return ..()
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/dropped(mob/user)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/dropped(mob/user)
 	camo_off(user)
 	wearer = null
 	STOP_PROCESSING(SSprocessing, src)
 	return ..()
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/attack_self(mob/user)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/attack_self(mob/user)
 	. = ..()
 	camouflage()
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/process()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/process()
 	if(!wearer)
 		camo_off()
 		return
@@ -514,7 +514,7 @@
 		camo_adjust_energy(wearer, SCOUT_CLOAK_ACTIVE_RECOVERY)
 
 ///Handles the wearer moving with the cloak active
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/handle_movement(mob/living/carbon/human/source, atom/old_loc, movement_dir, forced, list/old_locs)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/handle_movement(mob/living/carbon/human/source, atom/old_loc, movement_dir, forced, list/old_locs)
 	SIGNAL_HANDLER
 	if(!camo_active)
 		return
@@ -532,7 +532,7 @@
 		camo_adjust_energy(source, SCOUT_CLOAK_RUN_DRAIN)
 
 ///Activates the cloak
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/camouflage()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/camouflage()
 	if (usr.incapacitated(TRUE))
 		return
 
@@ -575,8 +575,8 @@
 	else
 		GLOB.huds[DATA_HUD_SECURITY_ADVANCED].remove_from_hud(M)
 		GLOB.huds[DATA_HUD_BASIC].remove_from_hud(M)
-		GLOB.huds[DATA_HUD_XENO_INFECTION].remove_from_hud(M)
-		GLOB.huds[DATA_HUD_XENO_HEART].remove_from_hud(M)
+		GLOB.huds[DATA_HUD_TYRANID_INFECTION].remove_from_hud(M)
+		GLOB.huds[DATA_HUD_TYRANID_HEART].remove_from_hud(M)
 
 	addtimer(CALLBACK(src, PROC_REF(on_cloak)), 1)
 	RegisterSignal(M, COMSIG_HUMAN_DAMAGE_TAKEN, PROC_REF(damage_taken))
@@ -593,20 +593,20 @@
 	return TRUE
 
 ///Sig handler for other sources of cloaking
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/on_other_activate()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/on_other_activate()
 	SIGNAL_HANDLER
 	return STEALTH_ALREADY_ACTIVE
 
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/on_cloak()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/on_cloak()
 	if(wearer)
-		anim(wearer.loc,wearer,'icons/mob/mob.dmi',,"cloak",,wearer.dir)
+		anim(wearer.loc,wearer,'modular_imperium/master_files/icons/mob/mob.dmi',,"cloak",,wearer.dir)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/on_decloak()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/on_decloak()
 	if(wearer)
-		anim(wearer.loc,wearer,'icons/mob/mob.dmi',,"uncloak",,wearer.dir)
+		anim(wearer.loc,wearer,'modular_imperium/master_files/icons/mob/mob.dmi',,"uncloak",,wearer.dir)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/camo_off(mob/user)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/camo_off(mob/user)
 	if(wearer)
 		UnregisterSignal(wearer, COMSIG_MOB_ENABLE_STEALTH)
 	if(!user)
@@ -626,8 +626,8 @@
 
 	GLOB.huds[DATA_HUD_SECURITY_ADVANCED].add_to_hud(user)
 	GLOB.huds[DATA_HUD_BASIC].add_to_hud(user)
-	GLOB.huds[DATA_HUD_XENO_INFECTION].add_to_hud(user)
-	GLOB.huds[DATA_HUD_XENO_HEART].add_to_hud(user)
+	GLOB.huds[DATA_HUD_TYRANID_INFECTION].add_to_hud(user)
+	GLOB.huds[DATA_HUD_TYRANID_HEART].add_to_hud(user)
 
 	addtimer(CALLBACK(src, PROC_REF(on_decloak)), 1)
 
@@ -648,19 +648,19 @@
 		))
 	STOP_PROCESSING(SSprocessing, src)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/process_camo_cooldown(mob/living/user, cooldown)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/process_camo_cooldown(mob/living/user, cooldown)
 	if(!camo_cooldown_timer)
 		return
 	addtimer(CALLBACK(src, PROC_REF(cooldown_finished)), cooldown)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/cooldown_finished()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/cooldown_finished()
 	camo_cooldown_timer = null
 	camo_energy = initial(camo_energy)
 	playsound(loc,'sound/effects/EMPulse.ogg', 25, 0, 1)
 	if(wearer)
 		to_chat(wearer, span_danger("Your thermal cloak has recalibrated and is ready to cloak again."))
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/examine(mob/user)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/examine(mob/user)
 	. = ..()
 	if(user != wearer) //Only the wearer can see these details.
 		return
@@ -675,48 +675,48 @@
 
 	. += span_warning("[details.Join(" ")]")
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/item_action_slot_check(mob/user, slot)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/item_action_slot_check(mob/user, slot)
 	if(!ishuman(user))
 		return FALSE
 	if(slot != SLOT_BACK)
 		return FALSE
 	return TRUE
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/camo_adjust_energy(mob/user, drain = SCOUT_CLOAK_WALK_DRAIN)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/camo_adjust_energy(mob/user, drain = SCOUT_CLOAK_WALK_DRAIN)
 	camo_energy = clamp(camo_energy - drain,0,initial(camo_energy))
 
 	if(!camo_energy) //Turn off the camo if we run out of energy.
 		to_chat(user, span_danger("Your thermal cloak lacks sufficient energy to remain active."))
 		camo_off(user)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/damage_taken(datum/source, damage)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/damage_taken(datum/source, damage)
 	SIGNAL_HANDLER
 	var/mob/living/carbon/human/wearer = source
 	if(damage >= 15)
 		to_chat(wearer, span_danger("Your cloak shimmers from the damage!"))
 		apply_shimmer()
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/action_taken() //This is used by multiple signals passing different parameters.
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/action_taken() //This is used by multiple signals passing different parameters.
 	SIGNAL_HANDLER
 	to_chat(wearer, span_danger("Your cloak shimmers from your actions!"))
 	apply_shimmer()
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/proc/apply_shimmer()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/proc/apply_shimmer()
 	camo_last_shimmer = world.time //Reduces transparency to 50%
 	wearer.alpha = max(wearer.alpha,shimmer_alpha)
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/sniper
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/sniper
 	name = "\improper M68-B Thermal Cloak"
 	icon_state = "smock"
 	desc = "The M68-B thermal cloak is a variant custom-purposed for snipers, allowing for faster, superior, stationary concealment at the expense of mobile concealment. It is designed to be paired with the lightweight M3 recon battle armor. Serves as a satchel."
 	shimmer_alpha = SCOUT_CLOAK_RUN_ALPHA * 0.5 //Half the normal shimmer transparency.
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/sniper/handle_movement(mob/living/carbon/human/source, atom/old_loc, movement_dir, forced, list/old_locs)
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/sniper/handle_movement(mob/living/carbon/human/source, atom/old_loc, movement_dir, forced, list/old_locs)
 	if(!camo_active)
 		return
 	source.alpha = initial(source.alpha) //Sniper variant has *no* mobility stealth, but no drain on movement either
 
-/obj/item/storage/backpack/marine/satchel/scout_cloak/sniper/process()
+/obj/item/storage/backpack/guardsman/satchel/scout_cloak/sniper/process()
 	if(!wearer)
 		camo_off()
 		return
@@ -734,7 +734,7 @@
 
 // Welder Backpacks //
 
-/obj/item/storage/backpack/marine/engineerpack
+/obj/item/storage/backpack/guardsman/engineerpack
 	name = "\improper TGMC technician welderpack"
 	desc = "A specialized backpack worn by TGMC technicians. It carries a fueltank for quick welder refueling."
 	icon_state = "engineerpack"
@@ -742,7 +742,7 @@
 	var/max_fuel = 260
 	storage_type = /datum/storage/backpack/satchel
 
-/obj/item/storage/backpack/marine/engineerpack/Initialize(mapload, ...)
+/obj/item/storage/backpack/guardsman/engineerpack/Initialize(mapload, ...)
 	. = ..()
 	var/datum/reagents/R = new/datum/reagents(max_fuel) //Lotsa refills
 	reagents = R
@@ -750,7 +750,7 @@
 	R.add_reagent(/datum/reagent/fuel, max_fuel)
 
 
-/obj/item/storage/backpack/marine/engineerpack/attackby(obj/item/I, mob/user, params)
+/obj/item/storage/backpack/guardsman/engineerpack/attackby(obj/item/I, mob/user, params)
 	if(iswelder(I))
 		var/obj/item/tool/weldingtool/T = I
 		if(T.welding)
@@ -807,7 +807,7 @@
 	else
 		return ..()
 
-/obj/item/storage/backpack/marine/engineerpack/afterattack(obj/O as obj, mob/user as mob, proximity)
+/obj/item/storage/backpack/guardsman/engineerpack/afterattack(obj/O as obj, mob/user as mob, proximity)
 	if(!proximity) // this replaces and improves the get_dist(src,O) <= 1 checks used previously
 		return
 	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && src.reagents.total_volume < max_fuel)
@@ -820,15 +820,15 @@
 		return
 	..()
 
-/obj/item/storage/backpack/marine/engineerpack/examine(mob/user)
+/obj/item/storage/backpack/guardsman/engineerpack/examine(mob/user)
 	. = ..()
 	. += "[reagents.total_volume] units of fuel left!"
 
-/obj/item/storage/backpack/marine/engineerpack/som
-	name = "\improper SOM technician welderpack"
-	desc = "A specialized backpack worn by SOM technicians. It carries a fueltank for quick welder refueling."
-	icon_state = "som_engineer_pack"
-	worn_icon_state = "som_engineer_pack"
+/obj/item/storage/backpack/guardsman/engineerpack/chaos
+	name = "\improper CHAOS technician welderpack"
+	desc = "A specialized backpack worn by CHAOS technicians. It carries a fueltank for quick welder refueling."
+	icon_state = "chaos_engineer_pack"
+	worn_icon_state = "chaos_engineer_pack"
 	storage_type = /datum/storage/backpack/satchel
 
 /obj/item/storage/backpack/lightpack
@@ -844,16 +844,16 @@
 	storage_type = /datum/storage/backpack/commando
 
 /obj/item/storage/backpack/captain
-	name = "marine captain backpack"
+	name = "guardsman captain backpack"
 	desc = "The contents of this backpack are top secret."
-	icon_state = "marinepack"
+	icon_state = "guardsmanpack"
 	storage_type = /datum/storage/backpack/captain
 
-/obj/item/storage/backpack/lightpack/som
+/obj/item/storage/backpack/lightpack/chaos
 	name = "mining rucksack"
 	desc = "A rucksack with origins dating back to the mining colonies."
-	icon_state = "som_lightpack"
-	worn_icon_state = "som_lightpack"
+	icon_state = "chaos_lightpack"
+	worn_icon_state = "chaos_lightpack"
 
 /obj/item/storage/backpack/lightpack/icc
 	name = "\improper Modello/190"

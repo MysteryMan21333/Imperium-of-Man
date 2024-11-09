@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/machinery/door_display
 	name = "Door Display"
-	icon = 'icons/obj/status_display.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/status_display.dmi'
 	icon_state = "frame"
 	desc = "A remote control for a door."
 	anchored = TRUE

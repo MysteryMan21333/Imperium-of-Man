@@ -48,12 +48,12 @@
 	id = "Receiver A"
 	network = "tcommsat"
 	autolinkers = list("receiverA") // link to relay
-	freq_listening = list(FREQ_MEDICAL, FREQ_REQUISITIONS, FREQ_ALPHA, FREQ_BRAVO, FREQ_CHARLIE, FREQ_DELTA, FREQ_COMMAND, FREQ_ENGINEERING, FREQ_CAS, FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_SOM, FREQ_SECTOID, FREQ_ECHO)
+	freq_listening = list(FREQ_MEDICAL, FREQ_REQUISITIONS, FREQ_ALPHA, FREQ_BRAVO, FREQ_CHARLIE, FREQ_DELTA, FREQ_COMMAND, FREQ_ENGINEERING, FREQ_CAS, FREQ_PMC, FREQ_COLONIST, FREQ_USL, FREQ_DEATHSQUAD, FREQ_IMPERIAL, FREQ_CHAOS, FREQ_SECTOID, FREQ_ECHO)
 
-/obj/machinery/telecomms/receiver/preset_left/som
-	id = "Receiver A som"
+/obj/machinery/telecomms/receiver/preset_left/chaos
+	id = "Receiver A chaos"
 	autolinkers = list("receiverA_som") // link to relay
-	freq_listening = list(FREQ_MEDICAL_SOM, FREQ_ZULU, FREQ_YANKEE, FREQ_XRAY, FREQ_WHISKEY, FREQ_COMMAND_SOM, FREQ_ENGINEERING_SOM) //ert channels shouldn't be needed. Probably.
+	freq_listening = list(FREQ_MEDICAL_CHAOS, FREQ_ZULU, FREQ_YANKEE, FREQ_XRAY, FREQ_WHISKEY, FREQ_COMMAND_CHAOS, FREQ_ENGINEERING_CHAOS) //ert channels shouldn't be needed. Probably.
 
 
 //--PRESET RIGHT--//
@@ -71,10 +71,10 @@
 	autolinkers = list("receiverB") // link to relay
 	freq_listening = list(FREQ_COMMON)
 
-/obj/machinery/telecomms/receiver/preset_right/som
-	id = "Receiver B som"
+/obj/machinery/telecomms/receiver/preset_right/chaos
+	id = "Receiver B chaos"
 	autolinkers = list("receiverB_som") // link to relay
-	freq_listening = list(FREQ_SOM)
+	freq_listening = list(FREQ_CHAOS)
 
 
 //Common and other radio frequencies for people to freely use

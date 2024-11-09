@@ -2,7 +2,7 @@
 /obj/effect/spresent
 	name = "strange present"
 	desc = "It's a ... present?"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "strangepresent"
 	density = TRUE
 	anchored = FALSE
@@ -16,7 +16,7 @@
 
 /obj/effect/begin
 	name = "begin"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "begin"
 	anchored = TRUE
 
@@ -124,8 +124,8 @@
 	return TRUE
 
 
-/obj/effect/forcefield/fog/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	return attack_hand(xeno_attacker)
+/obj/effect/forcefield/fog/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	return attack_hand(tyranid_attacker)
 
 
 /obj/effect/forcefield/fog/attack_animal(M)
@@ -136,7 +136,7 @@
 	. = ..()
 	if(isobj(mover)) //No grenades/bullets should cross this
 		return FALSE
-	if(isxeno(mover))
+	if(istyranid(mover))
 		return TRUE
 	if(ishuman(mover) && !issynth(mover))
 		var/mob/living/carbon/human/H = mover

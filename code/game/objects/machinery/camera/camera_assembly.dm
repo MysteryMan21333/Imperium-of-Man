@@ -7,7 +7,7 @@
 /obj/item/frame/camera
 	name = "camera assembly"
 	desc = "The basic construction for cameras."
-	icon = 'icons/obj/machines/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/monitors.dmi'
 	icon_state = "cameracase"
 
 /obj/item/frame/camera/proc/try_build(turf/wall, mob/user)
@@ -42,7 +42,7 @@
 /obj/structure/camera_assembly
 	name = "camera assembly"
 	desc = "The basic construction for cameras."
-	icon = 'icons/obj/machines/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/monitors.dmi'
 	icon_state = "camera_assembly"
 	max_integrity = 150
 	var/state = STATE_WRENCHED
@@ -125,7 +125,7 @@
 		return FALSE
 
 	tool.play_tool_sound(src)
-	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: marinemainship, marine, dropship1, dropship2", "Set Network", "marinemainship")
+	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: guardsmanmainship, guardsman, dropship1, dropship2", "Set Network", "guardsmanmainship")
 	if(!input)
 		to_chat(user, span_warning("No network entered."))
 		return

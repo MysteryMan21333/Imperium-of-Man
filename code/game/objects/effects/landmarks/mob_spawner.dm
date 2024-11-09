@@ -14,14 +14,14 @@
 
 /obj/effect/landmark/mob_spawner/monkey
 	name = "monkey spawner"
-	icon = 'icons/mob/human_races/r_monkey.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human_races/r_monkey.dmi'
 	icon_state = "monke"
 	mob_spawn = /mob/living/carbon/human/species/monkey
 	spawn_prob = 50
 
 /obj/effect/landmark/mob_spawner/farwa
 	name = "farwa spawner"
-	icon = 'icons/mob/human_races/r_farwa.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human_races/r_farwa.dmi'
 	icon_state = "monke"
 	mob_spawn = /mob/living/carbon/human/species/monkey/farwa
 	spawn_prob = 50

@@ -1,5 +1,5 @@
 /obj/machinery/mining
-	icon = 'icons/obj/mining_drill.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/mining_drill.dmi'
 	anchored = FALSE
 	use_power = 0 //The drill takes power directly from a cell.
 	density = TRUE

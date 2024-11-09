@@ -2,11 +2,11 @@
 	name = "\improper M40 HEDP grenade"
 	desc = "A small, but deceptively strong high explosive grenade that has been phasing out the M15 fragmentation grenades. Capable of being loaded in the any grenade launcher, or thrown by hand."
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/items/grenade.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/grenade.dmi'
 	icon_state = "grenade"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/grenades_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/grenades_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/grenades_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/grenades_right.dmi',
 	)
 	worn_icon_state = "grenade"
 	throw_speed = 3
@@ -56,7 +56,7 @@
 		for(var/mob/living/carbon/human/H in hearers(6,user))
 			H.playsound_local(user, nade_sound, 35)
 
-		var/image/grenade = image('icons/mob/talk.dmi', user, "grenade")
+		var/image/grenade = image('modular_imperium/master_files/icons/mob/talk.dmi', user, "grenade")
 		user.add_emote_overlay(grenade)
 
 /obj/item/explosive/grenade/afterattack(atom/target, mob/user, has_proximity, click_parameters)

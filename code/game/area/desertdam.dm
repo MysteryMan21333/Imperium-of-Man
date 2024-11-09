@@ -93,8 +93,8 @@
 	icon_state = "armory"
 	minimap_color = MINIMAP_AREA_SEC_CAVE
 
-/area/desert_dam/interior/lab_northeast/east_lab_xenobiology
-	name = "East Lab Xenobiology"
+/area/desert_dam/interior/lab_northeast/east_lab_tyranidbiology
+	name = "East Lab Tyranidbiology"
 	icon_state = "red"
 
 //Dam Interior
@@ -843,8 +843,8 @@
 	name = "West Lab Meeting Room"
 	icon_state = "purple"
 
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora
-	name = "West Lab Xenoflora"
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora
+	name = "West Lab Tyranidflora"
 	icon_state = "purple"
 
 /area/desert_dam/building/lab_northeast/checkpoint

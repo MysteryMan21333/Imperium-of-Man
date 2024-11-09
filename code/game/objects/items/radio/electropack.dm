@@ -1,11 +1,11 @@
 /obj/item/electropack
 	name = "electropack"
 	desc = "Dance my monkeys! DANCE!!!"
-	icon = 'icons/obj/items/radio.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/radio.dmi'
 	icon_state = "electropack0"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/security_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/security_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/security_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/security_right.dmi',
 	)
 	worn_icon_state = "electropack"
 	atom_flags = CONDUCT

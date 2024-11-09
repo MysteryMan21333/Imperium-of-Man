@@ -3,7 +3,7 @@
 //say based modes like binary are in living/say.dm
 
 #define RADIO_CHANNEL_COMMON "Common"
-#define RADIO_CHANNEL_SOM "Common SOM"
+#define RADIO_CHANNEL_CHAOS "Common CHAOS"
 #define RADIO_KEY_COMMON ";"
 
 #define RADIO_CHANNEL_REQUISITIONS "Requisitions"
@@ -11,17 +11,17 @@
 #define RADIO_TOKEN_REQUISITIONS ":u"
 
 #define RADIO_CHANNEL_ENGINEERING "Engineering"
-#define RADIO_CHANNEL_ENGINEERING_SOM "Engineering SOM"
+#define RADIO_CHANNEL_ENGINEERING_CHAOS "Engineering CHAOS"
 #define RADIO_KEY_ENGINEERING "e"
 #define RADIO_TOKEN_ENGINEERING ":e"
 
 #define RADIO_CHANNEL_MEDICAL "Medical"
-#define RADIO_CHANNEL_MEDICAL_SOM "Medical SOM"
+#define RADIO_CHANNEL_MEDICAL_CHAOS "Medical CHAOS"
 #define RADIO_KEY_MEDICAL "m"
 #define RADIO_TOKEN_MEDICAL ":m"
 
 #define RADIO_CHANNEL_COMMAND "Command"
-#define RADIO_CHANNEL_COMMAND_SOM "Command SOM"
+#define RADIO_CHANNEL_COMMAND_CHAOS "Command CHAOS"
 #define RADIO_KEY_COMMAND "v"
 #define RADIO_TOKEN_COMMAND ":v"
 
@@ -68,10 +68,10 @@
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
-//SOM squads
-#define FREQ_COMMAND_SOM 1235
-#define FREQ_MEDICAL_SOM 1237
-#define FREQ_ENGINEERING_SOM 1239
+//CHAOS squads
+#define FREQ_COMMAND_CHAOS 1235
+#define FREQ_MEDICAL_CHAOS 1237
+#define FREQ_ENGINEERING_CHAOS 1239
 
 #define FREQ_ZULU 1241
 #define FREQ_YANKEE 1243
@@ -85,7 +85,7 @@
 #define FREQ_USL 1337
 #define FREQ_DEATHSQUAD 1339
 #define FREQ_IMPERIAL 1341
-#define FREQ_SOM 1343
+#define FREQ_CHAOS 1343
 #define FREQ_ICC 1345
 #define FREQ_SECTOID 1347
 #define FREQ_ECHO 1349

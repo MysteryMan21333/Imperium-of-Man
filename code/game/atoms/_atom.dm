@@ -362,7 +362,7 @@ directive is properly returned.
 			else
 				. += span_warning("It's empty.")
 		else if(CHECK_BITFIELD(reagents.reagent_flags, AMOUNT_SKILLCHECK))
-			if(isxeno(user))
+			if(istyranid(user))
 				return
 			if(user.skills.getRating(SKILL_MEDICAL) >= SKILL_MEDICAL_NOVICE)
 				. += "It contains these reagents:"
@@ -976,7 +976,7 @@ directive is properly returned.
 			if(HUD_LIST_LIST)
 				hud_list[hud] = list()
 			else
-				var/image/I = image('icons/mob/hud/human.dmi', src, "")
+				var/image/I = image('modular_imperium/master_files/icons/mob/hud/human.dmi', src, "")
 				I.appearance_flags = RESET_COLOR|RESET_TRANSFORM|KEEP_APART
 				hud_list[hud] = I
 
@@ -1052,7 +1052,7 @@ directive is properly returned.
 	* def_zone: What part of the body we want to check the armor of (optional)
 	* attack_dir: What direction the attack was from (optional)
 
-	Hard armor reduces penetration by a flat amount, and sunder in the case of xenos
+	Hard armor reduces penetration by a flat amount, and sunder in the case of tyranids
 	Penetration reduces soft armor by a flat amount.
 	Damage cannot go into the negative, or exceed the original amount.
 */
@@ -1092,12 +1092,12 @@ directive is properly returned.
 /atom/proc/should_apply_acid(acid_strength)
 	if(resistance_flags & UNACIDABLE || !dissolvability(acid_strength))
 		return ATOM_CANNOT_ACID
-	var/obj/effect/xenomorph/acid/current_acid = get_self_acid()
+	var/obj/effect/tyranid/acid/current_acid = get_self_acid()
 	if(acid_strength <= current_acid?.acid_strength)
 		return ATOM_STRONGER_ACID
 	return ATOM_CAN_ACID
 
 ///What happens when with atom is melted by acid
 /atom/proc/do_acid_melt()
-	visible_message(span_xenodanger("[src] collapses under its own weight into a puddle of goop and undigested debris!"))
+	visible_message(span_tyraniddanger("[src] collapses under its own weight into a puddle of goop and undigested debris!"))
 	playsound(src, SFX_ACID_HIT, 25)

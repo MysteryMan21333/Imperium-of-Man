@@ -1,7 +1,7 @@
 /obj/item/folder
 	name = "folder"
 	desc = "A folder."
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "folder"
 	w_class = WEIGHT_CLASS_SMALL
 	var/updateicon = 0//If they spawn with premade papers, update icon

@@ -98,8 +98,8 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	var/detach_delay = 1.5 SECONDS
 	///Changes aim mode movement delay multiplicatively
 	var/aim_mode_movement_mult = 0
-	///Modifies projectile damage by a % when a marine gets passed, but not hit
-	var/shot_marine_damage_falloff = 0
+	///Modifies projectile damage by a % when a guardsman gets passed, but not hit
+	var/shot_guardsman_damage_falloff = 0
 	///Modifies aim mode fire rate debuff by a %
 	var/aim_mode_delay_mod = 0
 	///adds aim mode to the gun
@@ -204,7 +204,7 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		master_gun.min_scatter                  += min_scatter_mod
 		master_gun.min_scatter_unwielded        += min_scatter_unwielded_mod
 		master_gun.aim_speed_modifier			+= initial(master_gun.aim_speed_modifier)*aim_mode_movement_mult
-		master_gun.iff_marine_damage_falloff	+= shot_marine_damage_falloff
+		master_gun.iff_guardsman_damage_falloff	+= shot_guardsman_damage_falloff
 		master_gun.add_aim_mode_fire_delay(name, initial(master_gun.aim_fire_delay) * aim_mode_delay_mod)
 		if(add_aim_mode)
 			var/datum/action/item_action/aim_mode/A = new (master_gun)
@@ -257,7 +257,7 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		master_gun.min_scatter                  -= min_scatter_mod
 		master_gun.min_scatter_unwielded        -= min_scatter_unwielded_mod
 		master_gun.aim_speed_modifier			-= initial(master_gun.aim_speed_modifier)*aim_mode_movement_mult
-		master_gun.iff_marine_damage_falloff	-= shot_marine_damage_falloff
+		master_gun.iff_guardsman_damage_falloff	-= shot_guardsman_damage_falloff
 		master_gun.remove_aim_mode_fire_delay(name)
 		if(add_aim_mode)
 			var/datum/action/item_action/aim_mode/action_to_delete = locate() in master_gun.actions

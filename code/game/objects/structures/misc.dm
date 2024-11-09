@@ -1,6 +1,6 @@
 /obj/structure/showcase
 	name = "Showcase"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "showcase_1"
 	desc = "A stand with the empty body of a cyborg bolted to it."
 	density = TRUE
@@ -47,7 +47,7 @@
 
 /obj/structure/monorail
 	name = "monorail track"
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "monorail"
 	density = FALSE
 	anchored = TRUE
@@ -56,10 +56,10 @@
 /obj/structure/mopbucket
 	name = "mop bucket"
 	desc = "Fill it with water, but don't forget a mop!"
-	icon = 'icons/obj/janitor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
 	icon_state = "mopbucket"
 	anchored = FALSE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 40
 	var/amount_per_transfer_from_this = 5 //Shit I dunno, adding this so syringes stop runtime erroring. --NeoFite
 
@@ -87,7 +87,7 @@
 
 /obj/structure/shipmast
 	name = "Ships Mast"
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "shipmast" //Thank you to Spyroshark and Arachnidnexus
 	desc = "A piece of old earth that was. The plaque reads<br><br><span class='name'>HMS Victory Sailed 1765 to 1922.</span><br><span class='name'>Relaunched 2393.</span><br><span class='name'>On loan from the First Sea Lord.</span><br><br>"
 	layer = ABOVE_MOB_LAYER
@@ -110,22 +110,22 @@
 
 //ICE COLONY RESEARCH DECORATION-----------------------//
 //Most of icons made by ~Morrinn
-/obj/structure/xenoautopsy
+/obj/structure/tyranidautopsy
 	name = "Research thingies"
-	icon = 'icons/obj/alien_autopsy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/alien_autopsy.dmi'
 	icon_state = "jarshelf_9"
 
-/obj/structure/xenoautopsy/jar_shelf
+/obj/structure/tyranidautopsy/jar_shelf
 	name = "jar shelf"
 	icon_state = "jarshelf_0"
 	var/randomise = 1 //Random icon
 
-/obj/structure/xenoautopsy/jar_shelf/Initialize(mapload)
+/obj/structure/tyranidautopsy/jar_shelf/Initialize(mapload)
 	. = ..()
 	if(randomise)
 		icon_state = "jarshelf_[rand(0,9)]"
 
-/obj/structure/xenoautopsy/tank
+/obj/structure/tyranidautopsy/tank
 	name = "cryo tank"
 	icon_state = "tank_empty"
 	desc = "It is empty."
@@ -137,10 +137,10 @@
 	///Whatever is contained in the tank
 	var/obj/occupant
 	///What this tank is replaced by when broken
-	var/obj/structure/broken_state = /obj/structure/xenoautopsy/tank/escaped
+	var/obj/structure/broken_state = /obj/structure/tyranidautopsy/tank/escaped
 
 
-/obj/structure/xenoautopsy/tank/deconstruct(disassembled = TRUE, mob/living/blame_mob)
+/obj/structure/tyranidautopsy/tank/deconstruct(disassembled = TRUE, mob/living/blame_mob)
 	if(!broken_state)
 		return ..()
 
@@ -151,7 +151,7 @@
 
 	return ..()
 
-/obj/structure/xenoautopsy/tank/ex_act(severity)
+/obj/structure/tyranidautopsy/tank/ex_act(severity)
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
 			qdel(src)
@@ -163,51 +163,51 @@
 			take_damage(25, BRUTE, BOMB)
 
 ///Releases whatever is inside the tank
-/obj/structure/xenoautopsy/tank/proc/release_occupant()
+/obj/structure/tyranidautopsy/tank/proc/release_occupant()
 	if(occupant)
 		new occupant(loc)
 
-/obj/structure/xenoautopsy/tank/escaped
+/obj/structure/tyranidautopsy/tank/escaped
 	name = "broken cryo tank"
 	icon_state = "tank_escaped"
 	desc = "Something broke it..."
 	broken_state = null
 
-/obj/structure/xenoautopsy/tank/broken
+/obj/structure/tyranidautopsy/tank/broken
 	icon_state = "tank_broken"
 	desc = "Something broke it..."
 	broken_state = null
 
-/obj/structure/xenoautopsy/tank/alien
+/obj/structure/tyranidautopsy/tank/alien
 	icon_state = "tank_alien"
 	desc = "There is something big inside..."
 	occupant = /obj/item/alien_embryo
 
-/obj/structure/xenoautopsy/tank/hugger
+/obj/structure/tyranidautopsy/tank/hugger
 	icon_state = "tank_hugger"
 	desc = "There is something spider-like inside..."
 	occupant = /obj/item/clothing/mask/facehugger
 
-/obj/structure/xenoautopsy/tank/hugger/release_occupant()
+/obj/structure/tyranidautopsy/tank/hugger/release_occupant()
 	var/obj/item/clothing/mask/facehugger/hugger = new occupant(loc)
 	hugger.go_active()
 
-/obj/structure/xenoautopsy/tank/larva
+/obj/structure/tyranidautopsy/tank/larva
 	icon_state = "tank_larva"
 	desc = "There is something worm-like inside..."
 	occupant = /obj/item/alien_embryo
-	broken_state = /obj/structure/xenoautopsy/tank/broken
+	broken_state = /obj/structure/tyranidautopsy/tank/broken
 
 /obj/item/alienjar
 	name = "sample jar"
-	icon = 'icons/obj/alien_autopsy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/alien_autopsy.dmi'
 	icon_state = "jar_sample"
 	desc = "Used to store organic samples inside for preservation."
 
 /obj/item/alienjar/Initialize(mapload)
 	. = ..()
 
-	var/image/sample_image = image('icons/obj/alien_autopsy.dmi', "sample_[rand(0,11)]")
+	var/image/sample_image = image('modular_imperium/master_files/icons/obj/alien_autopsy.dmi', "sample_[rand(0,11)]")
 	sample_image.layer = layer - 0.1
 	add_overlay(sample_image)
 	pixel_x += rand(-3,3)
@@ -220,7 +220,7 @@
 
 /obj/structure/stairs
 	name = "Stairs"
-	icon = 'icons/obj/structures/stairs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/stairs.dmi'
 	desc = "Stairs.  You walk up and down them."
 	icon_state = "rampbottom"
 	layer = TURF_LAYER
@@ -326,12 +326,12 @@
 /obj/structure/plasticflaps //HOW DO YOU CALL THOSE THINGS ANYWAY
 	name = "\improper plastic flaps"
 	desc = "Completely impassable - or are they?"
-	icon = 'icons/obj/stationobjs.dmi' //Change this.
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi' //Change this.
 	icon_state = "plasticflaps"
 	density = TRUE
 	anchored = TRUE
 	layer = MOB_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 100
 
 /obj/structure/plasticflaps/CanAllowThrough(atom/movable/mover, turf/T)
@@ -344,7 +344,7 @@
 			return TRUE
 		if(M.mob_size <= MOB_SIZE_SMALL)
 			return TRUE
-		if(isxenorunner(M)) //alas, snowflake
+		if(istyranidrunner(M)) //alas, snowflake
 			return TRUE
 		return FALSE
 
@@ -376,30 +376,30 @@
 /obj/structure/plasticflaps/sturdy //Anti-unga flaps
 	desc = "Plastic flaps for transporting supplies."
 	obj_flags = null
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 
 	//Magmoor Cryopods
 
 /obj/structure/cryopods
 	name = "hypersleep chamber"
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scanner"
 	desc = "A large automated capsule with LED displays intended to put anyone inside into 'hypersleep'."
 	density = TRUE
 	anchored = TRUE
 	coverage = 15
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/tankholder
 	name = "tank holder"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "holder"
 	desc = "A metallic frame that can hold tanks and extinguishers."
 	density = TRUE
 	anchored = TRUE
 	coverage = 15
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/tankholder/oxygen
 	icon_state = "holder_oxygen"

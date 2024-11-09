@@ -43,7 +43,7 @@
 /turf/open/ground/grass/weedable,
 /area/campaign/jungle_outpost/ground/jungle)
 "cH" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 9
 	},
@@ -571,7 +571,7 @@
 	},
 /area/campaign/jungle_outpost/outpost/medbay)
 "KR" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/blue/whiteblue{
 	dir = 5
 	},

@@ -1,7 +1,7 @@
 /obj/item/factory_refill
 	name = "generic refiller"
 	desc = "you shouldnt be seeing this."
-	icon = 'icons/obj/factory/factoryparts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/factory/factoryparts.dmi'
 	icon_state = "refillbox"
 	///Typepath for the output machine we want to be ejecting
 	var/obj/item/factory_part/refill_type = /obj/item/factory_part
@@ -23,9 +23,9 @@
 /obj/machinery/unboxer
 	name = "Unboxer"
 	desc = "An industrial resourcing unboxer."
-	icon = 'icons/obj/factory/factory_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/factory/factory_machines.dmi'
 	icon_state = "unboxer_inactive"
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	density = TRUE
 	anchored = FALSE
 	///the amount of resouce we have left to output factory_parts

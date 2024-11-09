@@ -1,17 +1,17 @@
 #define VENDOR_BROKEN "vendor_broken"
 #define VENDOR_BLANK "vendor_blank"
-//----- Marine ship machinery file -----//
+//----- Guardsman ship machinery file -----//
 // Put any new machines in here before map is released and everything moved to their proper positions.
 
 
 
-//----- Marine ship props -----//
+//----- Guardsman ship props -----//
 //Put any props that don't function properly, they could function in the future but for now are for looks. This system could be expanded for other maps too. ~Art
 
 /obj/item/prop/mainship
 	name = "GENERIC SHIP PROP"
 	desc = "THIS SHOULDN'T BE VISIBLE, AHELP 'ART-P03' IF SEEN IN ROUND WITH LOCATION"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "hangarbox"
 
 /obj/machinery/prop/mainship
@@ -22,21 +22,21 @@
 /obj/machinery/prop/structurelattice
 	name = "structural lattice"
 	desc = "Like rebar, but in space."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "structure_lattice"
 	coverage = 50
 	max_integrity = 750
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 
 /obj/machinery/prop/fuel_enhancer
 	name = "fuel enhancer"
 	desc = "A fuel enhancement system for dropships. It improves the thrust produced by the fuel combustion for faster travels. Fits inside the engine attach points. You need a powerloader to lift it."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "fuel_enhancer"
 	coverage = 25
 	max_integrity = 350
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 
 /obj/machinery/prop/mainship/hangar/dropship_part_fabricator
@@ -50,7 +50,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	light_range = 1
 	light_power = 0.5
@@ -132,37 +132,37 @@
 /obj/structure/prop/mainship/massdiver
 	name = "mass driver"
 	desc = "The finest in spring-loaded piston toy technology, now on a space station near you."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "mass_driver"
 
 /obj/structure/prop/mainship/shieldwall
 	name = "shield wall generator"
 	desc = "A shield generator."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "shield_wall_gen"
 
 /obj/structure/prop/mainship/dnascanner
 	name = "\improper DNA scanner"
 	desc = "It scans DNA structures."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "scanner"
 
 /obj/structure/prop/mainship/gateway
 	name = "gateway"
 	desc = "A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations."
-	icon = 'icons/obj/gateway.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/gateway.dmi'
 	icon_state = "portal_frame"
 
 /obj/structure/prop/mainship/gravitygenerator
 	name = "gravitational generator"
 	desc = "A device which produces a graviton field when set up."
-	icon = 'icons/obj/gravity_generator.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/gravity_generator.dmi'
 	icon_state = "on_8"
 
 /obj/structure/prop/mainship/holobarrier
 	name = "\improper Engineering holobarrier"
 	desc = "A wonder of subsidized corporate design, this holographic barrier is almost entirely resistant to atmos loss and degradation by melee or ballistic damage. It's also made of space asbestos and is illegal under the new Geneva conventions."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "holosign_engi"
 	density = TRUE
 	resistance_flags = RESIST_ALL
@@ -176,7 +176,7 @@
 /obj/structure/prop/mainship/deadai
 	name = "\improper deactivated AI"
 	desc = "A standard silicon unit assigned to manage the research duties of NT stations. This one is completely deactivated."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "ai_dead"
 	density = TRUE
 	resistance_flags = RESIST_ALL
@@ -203,20 +203,20 @@
 /obj/structure/prop/mainship/weapon_recharger
 	name = "recharger"
 	desc = "A charging dock for energy based weaponry, PDAs, and other devices. A small blinking light indicates that this recharger isn't functional."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "weapon_recharger"
 	density = FALSE
 
 //RND Props
 /obj/machinery/prop/r_n_d/protolathe
 	name = "Protolathe"
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/research.dmi'
 	desc = "Protolathe, used to be used to print tools and such."
 	icon_state = "protolathe"
 
 /obj/machinery/prop/computer/rdconsole
 	name = "R&D Console"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	desc = "A research console."
 	icon_state = "computer"
 	screen_overlay = "rdcomp"
@@ -224,13 +224,13 @@
 
 /obj/machinery/prop/r_n_d/server
 	name = "R&D Server"
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/research.dmi'
 	desc = "A research server"
 	icon_state = "server"
 
 /obj/machinery/prop/computer/rdservercontrol
 	name = "R&D Server Controller"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	desc = "Oversees all research"
 	icon_state = "computer"
 	screen_overlay = "rdcomp"
@@ -240,18 +240,18 @@
 	name = "communications console"
 	desc = "This can be used for various important functions."
 	screen_overlay = "comm"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 
 /obj/machinery/prop/computer/crew
 	name = "Crew monitoring computer"
 	desc = "Used to monitor active health sensors built into most of the crew's uniforms."
 	icon_state = "computer"
 	screen_overlay = "crew"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 
 /obj/machinery/prop/r_n_d/server/alt
 	name = "Alternate R&D Server"
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/research.dmi'
 	desc = "A research server"
 	icon_state = "server_alt"
 //End RND props
@@ -276,14 +276,14 @@
 /obj/structure/prop/mainship/minigun_crate
 	name = "30mm ammo crate"
 	desc = "A crate full of 30mm bullets used on one of the weapon pod types for the dropship. Moving this will require some sort of lifter."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "30mm_crate"
 
 
 /obj/structure/prop/mainship/mission_planning_system
 	name = "\improper MPS IV computer"
 	desc = "The Mission Planning System IV (MPS IV), a enhancement in mission planning and charting for dropship pilots across the TGMC. Fully capable of customizing their flight paths and loadouts to suit their combat needs."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "mps"
 
 /obj/structure/prop/mainship/mission_planning_system/white
@@ -295,7 +295,7 @@
 /obj/structure/prop/mainship/mapping_computer
 	name = "\improper CMPS II computer"
 	desc = "The Common Mapping Production System version II allows for sensory imput from satellites and ship systems to derive planetary maps in a standardized fashion for all TGMC pilots."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "mapping_comp"
 
 /obj/structure/prop/mainship/mapping_computer/white
@@ -307,7 +307,7 @@
 /obj/structure/prop/mainship/sensor_computer1
 	name = "sensor computer"
 	desc = "The IBM series 10 computer retrofitted to work as a sensor computer for the ship. While somewhat dated it still serves its purpose."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "sensor_comp1"
 
 /obj/structure/prop/mainship/sensor_computer1/white
@@ -322,7 +322,7 @@
 /obj/structure/prop/mainship/sensor_computer2
 	name = "sensor computer"
 	desc = "The IBM series 10 computer retrofitted to work as a sensor computer for the ship. While somewhat dated it still serves its purpose."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "sensor_comp2"
 
 /obj/structure/prop/mainship/sensor_computer2/white
@@ -337,7 +337,7 @@
 /obj/structure/prop/mainship/sensor_computer3
 	name = "sensor computer"
 	desc = "The IBM series 10 computer retrofitted to work as a sensor computer for the ship. While somewhat dated it still serves its purpose."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "sensor_comp3"
 
 /obj/structure/prop/mainship/sensor_computer3/white
@@ -352,7 +352,7 @@
 /obj/structure/prop/mainship/missile_tube
 	name = "\improper Mk 33 ASAT launcher system"
 	desc = "Cold launch tubes that can fire a few varieties of missiles out of them The most common being the ASAAR-21 Rapier IV missile used against satellites and other spacecraft and the BGM-227 Sledgehammer missile which is used for ground attack."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "missiletubenorth"
 	bound_width = 32
 	bound_height = 96
@@ -363,8 +363,8 @@
 
 /obj/structure/prop/mainship/ship_memorial
 	name = "slab of victory"
-	desc = "A ship memorial dedicated to the triumphs of the TGMC and the fallen marines of this ship. On the left there are grand tales of victory etched into the slab. On the right there is a list of famous marines who have fallen in combat serving the TGMC."
-	icon = 'icons/obj/structures/prop//mainship_64.dmi'
+	desc = "A ship memorial dedicated to the triumphs of the TGMC and the fallen guardsmans of this ship. On the left there are grand tales of victory etched into the slab. On the right there is a list of famous guardsmans who have fallen in combat serving the TGMC."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop//mainship_64.dmi'
 	icon_state = "ship_memorial"
 	bound_width = 64
 	bound_height = 32
@@ -393,21 +393,21 @@
 				faltext += "[fallen_list[i]], "
 			else
 				faltext += fallen_list[i]
-		. += "[span_notice("To our fallen marines:")] <b>[faltext]</b>."
+		. += "[span_notice("To our fallen guardsmans:")] <b>[faltext]</b>."
 
 
 /obj/structure/prop/mainship/particle_cannon
 	name = "\improper 75cm/140 Mark 74 General Atomics railgun"
 	desc = "The Mark 74 Railgun is top of the line for space based weaponry. Capable of firing a round with a diameter of 3/4ths of a meter at 24 kilometers per second. It also is capable of using a variety of round types which can be interchanged at anytime with its newly designed feed system."
-	icon = 'icons/obj/machines/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/artillery.dmi'
 	icon_state = "1"
 	resistance_flags = UNACIDABLE
 
 
 /obj/structure/prop/mainship/name_stencil
-	name = "\improper The TGMC, a TGMC-Class Marine Carrier Arsenal Ship"
+	name = "\improper The TGMC, a TGMC-Class Guardsman Carrier Arsenal Ship"
 	desc = "The name of the ship stenciled on the hull."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	icon_state = "TGMC1"
 	density = FALSE
 	resistance_flags = UNACIDABLE
@@ -433,7 +433,7 @@
 /obj/structure/prop/mainship/hangar_stencil
 	name = "floor"
 	desc = "A large number stenciled on the hangar floor used to designate which dropship it is."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "dropship1"
 	density = FALSE
 	layer = ABOVE_TURF_LAYER
@@ -454,7 +454,7 @@
 /obj/structure/prop/mainship/cannon_cables
 	name = "\improper Cannon cables"
 	desc = "Some large cables."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "cannon_cables"
 	density = FALSE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -463,7 +463,7 @@
 /obj/structure/prop/mainship/supermatter //functionally inert, but will consume mobs and objects
 	name = "supermatter crystal"
 	desc = "A strangely translucent and iridescent crystal."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	icon_state = "darkmatter"
 	layer = LADDER_LAYER
 	light_range = 4
@@ -494,7 +494,7 @@
 /obj/structure/prop/mainship/radiationcollector
 	name = "Radiation Collector Array"
 	desc = "A device which uses radiation and plasma to produce power."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "radcollector"
 	layer = LADDER_LAYER
 	resistance_flags = RESIST_ALL
@@ -502,7 +502,7 @@
 /obj/structure/prop/mainship/invincibleshutter
 	name = "\improper heavy shutters"
 	desc = "A heavy set of blast resistant shutters."
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	icon_state = "shutter1"
 	density = TRUE
 	layer = LADDER_LAYER
@@ -513,7 +513,7 @@
 
 /obj/structure/prop/mainship/doorblocker //doors that exist only to block access, used mostly for valhalla omegastation
 	name = "\improper Barred Airlock"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	resistance_flags = RESIST_ALL
 	allow_pass_flags = NONE
 	desc = "It opens and closes."
@@ -543,7 +543,7 @@
 	name = "\improper Main Airlock"
 	icon_state = "command_locked"
 
-/obj/structure/prop/mainship/doorblocker/patrol_base/som
+/obj/structure/prop/mainship/doorblocker/patrol_base/chaos
 	icon_state = "security_locked"
 
 /obj/structure/prop/mainship/doorblocker/patrol_base/wide_left
@@ -555,56 +555,56 @@
 /obj/structure/prop/mainship/telecomms
 	name = "subspace broadcaster"
 	desc = "A mighty piece of hardware used to broadcast processed subspace signals."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "broadcaster_send"
 
 /obj/structure/prop/mainship/telecomms/hub
 	name = "subspace broadcaster"
 	desc = "A mighty piece of hardware used to send/receive massive amounts of data."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "hub"
 
 /obj/structure/prop/mainship/telecomms/processor
 	name = "processor unit"
 	desc = "This machine is used to process large quantities of information."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "processor"
 
 /obj/structure/prop/mainship/telecomms/bus
 	name = "bus mainframe"
 	desc = "A mighty piece of hardware used to send massive amounts of data quickly."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "bus"
 
 /obj/structure/prop/mainship/telecomms/broadcaster
 	name = "subspace broadcaster"
 	desc = "This machine has a dish-like shape and green lights. It is designed to detect and process subspace radio activity."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "broadcaster"
 
 /obj/structure/prop/mainship/telecomms/receiver
 	name = "subspace receiver"
 	desc = "A dish-shaped machine used to broadcast processed subspace signals."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "broadcast receiver"
 
 /obj/structure/prop/mainship/telecomms/relay
 	name = "telecomms relay"
 	desc = "A mighty piece of hardware used to send massive amounts of data far away."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "relay"
 
 
 /obj/structure/prop/mainship/suit_storage_prop
 	name = "Suit Storage Unit"
 	desc = "An industrial U-Stor-It Storage unit designed to accomodate all kinds of space suits. Its on-board equipment also allows the user to decontaminate the contents through a UV-ray purging cycle. There's a warning label dangling from the control pad, reading \"STRICTLY NO BIOLOGICALS IN THE CONFINES OF THE UNIT\". This one appears to be magnetically locked."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "suitstorageclose"
 
 /obj/structure/prop/mainship/protolathe
 	name = "Suit Storage Unit"
 	desc = "A giant machine for processing data and producing department specific tools. A small warning light labeled 'server connection' is flashing red"
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/research.dmi'
 	icon_state = "protolathe"
 
 /obj/structure/prop/mainship/protolathe/engi
@@ -629,7 +629,7 @@
 	return
 
 /obj/structure/prop/mainship/research
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/research.dmi'
 
 /obj/structure/prop/mainship/research/circuit_imprinter
 	name = "Circuit Imprinter"
@@ -664,7 +664,7 @@
 /obj/structure/prop/mainship/generator
 	name = "field generator"
 	desc = "A large thermal battery that projects a high amount of energy when powered."
-	icon = 'icons/obj/machines/field_generator.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/field_generator.dmi'
 	icon_state = "Field_Gen"
 	anchored = FALSE
 	density = TRUE
@@ -676,36 +676,36 @@
 /obj/structure/prop/mainship/generator/shieldgen
 	name = "anti-breach shielding projector"
 	desc = "Used to seal minor hull breaches."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "shieldoff"
 
 /obj/structure/prop/mainship/generator/tesla_coil
 	name = "tesla coil"
 	desc = "For the union!"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "coil_open0"
 
 /obj/structure/prop/mainship/generator/ground_rod
 	name = "grounding rod"
 	desc = "Keeps an area from being fried by Edison's Bane, does not work against handheld Tesla cannons commonly issued by paramilitaries."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "grounding_rod_open0"
 
 /obj/structure/prop/mainship/cannon_cable_connector
 	name = "\improper Cannon cable connector"
 	desc = "A connector for the large cannon cables."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "cannon_cable_connector"
 	density = TRUE
 
 /obj/structure/prop/mainship/reflector
 	name = "\improper reflector"
 	desc = "An angled mirror for reflecting laser beams."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "reflector_prop"
 	density = TRUE
 	anchored = FALSE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/prop/mainship/cannon_cable_connector/ex_act()
 	return
@@ -713,7 +713,7 @@
 /obj/structure/prop/mainship/prop_sec
 	name = "Security Officer"
 	desc = "A NT security officer guarding the perimeter. They look rather busy and pays no attention to you."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "secprop"
 	resistance_flags = RESIST_ALL
 	density = TRUE
@@ -721,87 +721,87 @@
 /obj/structure/prop/mainship/prop_so
 	name = "Officer"
 	desc = "A staff officer in charge of the ongoing operation, either too busy operating the observation consoles or simply looking at you and your comrades and hoping that you will succeed, that being said, it's best to leave them be."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "officerprop"
 	resistance_flags = RESIST_ALL
 	density = TRUE
 
-/obj/structure/prop/mainship/prop_so/som
+/obj/structure/prop/mainship/prop_so/chaos
 	icon_state = "officersomprop"
 
 /obj/structure/prop/mainship/prop_tech
 	name = "Technician"
 	desc = "A hard working technician maintaining the vehicles of the base, as well as the base itself. They seem to be very busy investigating something right now."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "techieprop"
 	resistance_flags = RESIST_ALL
 	density = TRUE
 
-/obj/structure/prop/mainship/prop_tech/som
-	name = "SOM technician"
-	desc = "A hard working SOM technician maintaining the vehicles of the base, as well as the base itself. They seem to be very busy investigating something right now."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
-	icon_state = "SOM_technician"
+/obj/structure/prop/mainship/prop_tech/chaos
+	name = "CHAOS technician"
+	desc = "A hard working CHAOS technician maintaining the vehicles of the base, as well as the base itself. They seem to be very busy investigating something right now."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
+	icon_state = "CHAOS_technician"
 
-/obj/structure/prop/mainship/prop_tech/som/alt
-	icon_state = "SOM_technician_2"
+/obj/structure/prop/mainship/prop_tech/chaos/alt
+	icon_state = "CHAOS_technician_2"
 
 /obj/structure/prop/mainship/prop_sominf
-	name = "SOM Infantry"
+	name = "CHAOS Infantry"
 	desc = "Standard Sons of Mars infantry with a V-31 assault rifle on hand. While their face is obscured by the visor, it feels like you should keep going instead of loitering around."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
-	icon_state = "som_inf"
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
+	icon_state = "chaos_inf"
 	resistance_flags = RESIST_ALL
 	density = TRUE
 
 /obj/structure/prop/mainship/prop_sominf/heavy
-	name = "SOM heavy infantry"
+	name = "CHAOS heavy infantry"
 	desc = "Heavy Sons of Mars infantry with a VX-32 charger on hand. While their face is obscured by the visor, it feels like you should keep going instead of loitering around."
-	icon_state = "SOM_heavy_armed"
+	icon_state = "CHAOS_heavy_armed"
 
 /obj/structure/prop/mainship/prop_sominf/heavy/unarmed
-	name = "SOM heavy infantry"
+	name = "CHAOS heavy infantry"
 	desc = "Heavy Sons of Mars infantry. Better leave them to whatever it is they're doing"
-	icon_state = "SOM_heavy"
+	icon_state = "CHAOS_heavy"
 
 /obj/structure/prop/mainship/prop_sominf/lorica
-	name = "SOM heavy infantry"
+	name = "CHAOS heavy infantry"
 	desc = "Sons of Mars infantry in heavy duty Lorica armor, with a VX-32 charger on hand. They don't look like they're messing around."
 	icon_state = "lorica_armed"
 
 /obj/structure/prop/mainship/prop_sominf/lorica/unarmed
-	name = "SOM heavy infantry"
+	name = "CHAOS heavy infantry"
 	desc = "Sons of Mars infantry in heavy duty Lorica armor. They look pretty tough."
 	icon_state = "lorica"
 
-/obj/structure/prop/mainship/som_scientist
-	name = "SOM scientist"
-	desc = "A hard working SOM scientist type. They look like they're doing something important."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
-	icon_state = "SOM_scientist"
+/obj/structure/prop/mainship/chaos_scientist
+	name = "CHAOS scientist"
+	desc = "A hard working CHAOS scientist type. They look like they're doing something important."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
+	icon_state = "CHAOS_scientist"
 	resistance_flags = RESIST_ALL
 	density = TRUE
 
-/obj/structure/prop/mainship/som_scientist/alt
-	icon_state = "SOM_scientist_2"
+/obj/structure/prop/mainship/chaos_scientist/alt
+	icon_state = "CHAOS_scientist_2"
 
 /obj/structure/prop/templedoor
 	name = "Strange Temple"
-	icon = 'icons/obj/doors/Doorsand.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/Doorsand.dmi'
 	icon_state = "door_open"
 	density = FALSE
 
 /obj/structure/prop/oresilo
 	name = "ore silo"
 	desc = "An all-in-one bluespace storage and transmission system for the colony's mineral distribution needs. This one appears to be deactivated."
-	icon = 'icons/obj/machines/mining_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/mining_machines.dmi'
 	icon_state = "silo"
 	density = TRUE
 
 /obj/structure/prop/mainship/propcarp
 	name = "space carp"
 	desc = "A ferocious, fang-bearing creature that resembles a fish."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "carpprop"
 	density = TRUE
 
@@ -830,7 +830,7 @@
 /obj/structure/prop/mainship/aislipprop
 	name = "foam dispenser"
 	desc = "A remotely-activatable dispenser for crowd-controlling foam."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "aislipper"
 	density = FALSE
 	resistance_flags = RESIST_ALL
@@ -838,20 +838,20 @@
 /obj/structure/prop/mainship/turretprop
 	name = "laser turret"
 	desc = "A point-defense laser turret supplied by NanoTrasen. This one looks inactive"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "turretprop"
 	resistance_flags = RESIST_ALL
 
 /obj/structure/prop/mainship/tubeprop
 	name = "pneumatic tube"
 	desc = "A pneumatic tube commonly used for transportation on NanoTrasen research stations."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "tubepropstraight"
 	resistance_flags = RESIST_ALL
 	layer = ABOVE_OBJ_LAYER //so our fake prop can visually pass under glass panels
 
 /obj/structure/prop/mainship/tubeprop/decorative
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "decorative"
 	resistance_flags = RESIST_ALL
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -874,7 +874,7 @@
 /obj/structure/prop/mainship/meterprop/
 	name = "meter"
 	desc = "That's a gas flow meter. It measures something."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "propmeterempty"
 	resistance_flags = RESIST_ALL
 	density = FALSE
@@ -903,7 +903,7 @@
 /obj/structure/prop/mainship/pipeprop //does not init and so doesn't generate lag at all
 	name = "pipe"
 	desc = "A one meter section of regular pipe."
-	icon = 'icons/obj/atmospherics/pipes/simple.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/atmospherics/pipes/simple.dmi'
 	icon_state = "pipe11-2"
 	density = FALSE
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -911,13 +911,13 @@
 /obj/structure/prop/mainship/pipeprop/manifold
 	name = "pipe manifold"
 	desc = "A manifold composed of regular pipes."
-	icon = 'icons/obj/atmospherics/pipes/manifold.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/atmospherics/pipes/manifold.dmi'
 	icon_state = "manifold-2"
 
 /obj/structure/prop/mainship/pipeprop/pump
 	name = "pipe manifold"
 	desc = "A pump that moves gas by pressure."
-	icon = 'icons/obj/atmospherics/components/binary_devices.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/atmospherics/components/binary_devices.dmi'
 	icon_state = "pump_map-2"
 
 /obj/structure/prop/mainship/pipeprop/pump/on
@@ -982,17 +982,17 @@
 /obj/structure/prop/mainship/chimney
 	name = "fireplace"
 	desc = "A large stone brick fireplace."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	icon_state = "fireplace"
 
 /obj/structure/prop/mainship/vat
 	name = "Stasis Vat"
 	desc = "A large vat used to store humans."
-	icon = 'icons/obj/machines/cryogenics2.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics2.dmi'
 	icon_state = "cell_off"
 	hit_sound = 'sound/effects/Glasshit.ogg'
 	max_integrity = 120
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/mainship/vat/full
@@ -1010,13 +1010,13 @@
 /obj/item/prop
 	name = "GENERIC SHIP PROP"
 	desc = "THIS SHOULDN'T BE VISIBLE, AHELP 'ART-P03' IF SEEN IN ROUND WITH LOCATION"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "hangarbox"
 
 /obj/item/prop/organ
 	name = "organ"
 	desc = "It looks like it probably just plopped out. It's too decayed to be reinserted in a patient."
-	icon = 'icons/obj/items/organs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/organs.dmi'
 	icon_state = "heart"
 
 /obj/item/prop/organ/heart
@@ -1094,14 +1094,14 @@
 
 /obj/item/prop/dogtag
 	name = "John Doe" //generic name
-	desc = "The remains of a marine long dead, you hope they found peace."
-	icon = 'icons/obj/items/card.dmi'
+	desc = "The remains of a guardsman long dead, you hope they found peace."
+	icon = 'modular_imperium/master_files/icons/obj/items/card.dmi'
 	icon_state = "dogtag"
 
 /obj/item/prop/dogtag/pfcjim
 	name = "PFC Jim's dog tag"
 	desc = "Whoever PFC Jim is, you hope made it out alive."
-	icon = 'icons/obj/items/card.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/card.dmi'
 	icon_state = "dogtag"
 
 /obj/item/prop/dogtag/random/Initialize(mapload)
@@ -1112,7 +1112,7 @@
 	name = "paint bucket"
 	desc = "It's a paint bucket."
 	icon_state = "paint_empty"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 
 /obj/item/prop/paint/red
 	icon_state = "paint_red"
@@ -1138,21 +1138,21 @@
 /obj/item/prop/paint/violet
 	icon_state = "paint_violet"
 
-///BROKEN MARINE VENDOR PROPS
+///BROKEN GUARDSMAN VENDOR PROPS
 
 /obj/structure/prop/brokenvendor
 	name = "\improper Broken vendor"
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	desc = "The insides of this vendor are visible and rusted through, you get the feeling there's no fixing this machine."
 	density = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 
 /obj/structure/prop/brokenvendor/brokenweaponsrack
-	icon_state = "marinearmory-broken"
+	icon_state = "guardsmanarmory-broken"
 
 /obj/structure/prop/brokenvendor/brokenuniformvendor
 	name = "\improper Broken automated uniform closet"
-	icon_state = "marineuniform-broken"
+	icon_state = "guardsmanuniform-broken"
 
 /obj/structure/prop/brokenvendor/brokenuniformvendor/specialist
 	name = "\improper Broken specialist equipment rack"
@@ -1161,22 +1161,22 @@
 
 /obj/structure/prop/brokenvendor/brokenspecialistvendor/sg
 	name = "\improper Broken automated smart gunner closet"
-	icon_state = "marineuniform-broken"
+	icon_state = "guardsmanuniform-broken"
 
 /obj/structure/prop/brokenvendor/brokenspecialistvendor/leader
 	name = "\improper Broken automated leader closet"
-	icon_state = "marineuniform-broken"
+	icon_state = "guardsmanuniform-broken"
 
 /obj/structure/prop/brokenvendor/brokenspecialistvendor/corpsman
 	name = "\improper Broken automated corpsman closet"
-	icon_state = "marineuniform-broken"
+	icon_state = "guardsmanuniform-broken"
 
 /obj/structure/prop/brokenvendor/brokenspecialistvendor/engineer
 	name = "\improper Broken automated engineer closet"
-	icon_state = "marineuniform-broken"
+	icon_state = "guardsmanuniform-broken"
 
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor
-	icon_state = "marinemed-broken"
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor
+	icon_state = "guardsmanmed-broken"
 
 /obj/structure/prop/brokenvendor/brokennanomedvendor
 	icon_state = "med-broken"
@@ -1197,10 +1197,10 @@
 
 ///BROKEN VEHICLE PROPS
 /obj/structure/prop/vehicle
-	icon = 'icons/obj/vehicles/64x64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/64x64.dmi'
 	layer = ABOVE_MOB_PROP_LAYER
 	density = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 300
 	coverage = 80
 	soft_armor = list(MELEE = 0, BULLET = 50, LASER = 50, ENERGY = 65, BOMB = 30, BIO = 100, FIRE = 75, ACID = 0)
@@ -1303,7 +1303,7 @@
 /obj/structure/prop/vehicle/big_truck
 	name = "military truck"
 	desc = "A military truck, made for transporting equipment or personnel in bulk."
-	icon = 'icons/obj/vehicles/large_truck.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles/large_truck.dmi'
 	icon_state = "truck"
 	bound_height = 128
 	bound_width = 128
@@ -1367,14 +1367,14 @@
 /obj/structure/prop/vehicle/tank
 	name = "Decommissioned TAV - Rhino"
 	desc = "A decomissioned tank, all methods of propulsion have been disabled and the entrances sealed."
-	icon = 'icons/obj/structures/prop/tank_vertical.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/tank_vertical.dmi'
 	icon_state = "tank_complete"
 	bound_height = 128
 	bound_width = 128
 	resistance_flags = RESIST_ALL
 
 /obj/structure/prop/vehicle/tank/north
-	icon = 'icons/obj/structures/prop/tank_vertical.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/tank_vertical.dmi'
 	icon_state = "tank_complete"
 	bound_height = 128
 	bound_width = 96
@@ -1388,7 +1388,7 @@
 	icon_state = "tank_complete_alt"
 
 /obj/structure/prop/vehicle/tank/east
-	icon = 'icons/obj/structures/prop/tank_horizontal.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/tank_horizontal.dmi'
 	icon_state = "tank_complete"
 	bound_height = 96
 	bound_width = 128
@@ -1656,7 +1656,7 @@
 /obj/structure/prop/vehicle/apc
 	name = "Decommissioned TAV - Athena"
 	desc = "A decomissioned APC, all methods of propulsion have been disabled and the entrances sealed."
-	icon = 'icons/obj/structures/prop/apc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/apc.dmi'
 	icon_state = "apc_base"
 	bound_height = 128
 	bound_width = 128
@@ -1756,27 +1756,27 @@
 /obj/structure/prop/propplaceholder
 	name = "prop placeholder"
 	desc = "Somebody fucked up, ping the map creator on Discord with the location of this object."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "placeholderprop"
 
 /obj/structure/prop/mainship/gelida/smallwire
 	name = "small wire"
 	desc = "A small patch of wiring used for cordoning off areas."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "small_wire"
 	density = FALSE
 
 /obj/structure/prop/mainship/gelida/lightstick
 	name = "light stick"
 	desc = "A post with an empty bulb at the top, used for lighting areas of dense snow."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "lightstick_spoke1"
 	density = FALSE
 
 /obj/structure/prop/mainship/gelida/planterbox
 	name = "plant box"
 	desc = "A metallic box used for holding growing plants, this one is empty."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "planter_box_empty"
 	layer = BELOW_OBJ_LAYER
 	density = FALSE
@@ -1784,7 +1784,7 @@
 /obj/structure/prop/mainship/gelida/planterboxsoil
 	name = "plant box"
 	desc = "A metallic box used for holding growing plants, this one is filled with soil."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "planter_box_soil"
 	layer = BELOW_OBJ_LAYER
 
@@ -1796,7 +1796,7 @@
 /obj/structure/prop/mainship/gelida/planterboxsoilgrid
 	name = "plant box"
 	desc = "A metallic box used for holding growing plants, this one is empty."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "soil_grid"
 	layer = BELOW_OBJ_LAYER
 
@@ -1808,34 +1808,34 @@
 /obj/structure/prop/mainship/gelida/propserver
 	name = "colony research server"
 	desc = "This machine sits quietly, you can see a warning light faintly shining on its diagnostic panel."
-	icon = 'icons/obj/machines/telecomms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/telecomms.dmi'
 	icon_state = "comm_server_off"
 
 /obj/structure/prop/mainship/gelida/propserveralt
 	name = "colony research server"
 	desc = "This machine sits quietly, you can see a warning light faintly shining on its diagnostic panel."
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/research.dmi'
 	icon_state = "server_alt"
 
 /obj/structure/prop/mainship/gelida/barrier
 	name = "security barrier"
 	desc = "A deployable barrier used by security forces to cordone off an area."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "barrier0"
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 100
 
 /obj/structure/prop/mainship/gelida/heavycablenode
 	name = "heavy cable node"
 	desc = "A heavy cable node used for linking high performance cables between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "node"
 	density = FALSE
 
 /obj/structure/prop/mainship/gelida/powerconnector
 	name = "heavy cable power connector"
 	desc = "A heavy cable node used for connecting high performance cables between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "powerconnector"
 	layer = ATMOS_PIPE_LAYER
 	density = FALSE
@@ -1843,7 +1843,7 @@
 /obj/structure/prop/mainship/gelida/powerccable
 	name = "heavy cable wiring"
 	desc = "A heavy cable wire used rapid data transfer between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "powercableheavy"
 	layer = ATMOS_PIPE_LAYER
 	density = FALSE
@@ -1851,7 +1851,7 @@
 /obj/structure/prop/mainship/gelida/powercconnectortwoside
 	name = "heavy cable wiring"
 	desc = "A heavy cable wire used rapid data transfer between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "powerconnectortwoside"
 	layer = ATMOS_PIPE_LAYER
 	density = FALSE
@@ -1859,7 +1859,7 @@
 /obj/structure/prop/mainship/gelida/powercconnectortwosidealt
 	name = "heavy cable wiring"
 	desc = "A heavy cable wire used rapid data transfer between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "powerconnectortwosidealt"
 	layer = ATMOS_PIPE_LAYER
 	density = FALSE
@@ -1867,7 +1867,7 @@
 /obj/structure/prop/mainship/gelida/powercconnectorthreeside
 	name = "heavy cable wiring"
 	desc = "A heavy cable wire used rapid data transfer between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "powerconnectorthreeside"
 	layer = ATMOS_PIPE_LAYER
 	density = FALSE
@@ -1875,7 +1875,7 @@
 /obj/structure/prop/mainship/gelida/powercconnectorfourside
 	name = "heavy cable wiring"
 	desc = "A heavy cable wire used rapid data transfer between buildings."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "powerconnectorfourside"
 	layer = ATMOS_PIPE_LAYER
 	density = FALSE
@@ -1883,7 +1883,7 @@
 /obj/structure/prop/mainship/gelida/rails
 	name = "minecart rails"
 	desc = "Metal rails used for guiding a minecart."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "rail"
 	layer = BELOW_TABLE_LAYER
 	density = FALSE
@@ -1891,7 +1891,7 @@
 /obj/structure/prop/mainship/gelida/railbumper
 	name = "minecart rail bumper"
 	desc = "A metal bumper designed to catch out of control minecarts."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "rail_bumpers"
 	layer = BELOW_TABLE_LAYER
 	density = FALSE
@@ -1899,26 +1899,26 @@
 /obj/structure/prop/mainship/gelida/register
 	name = "register"
 	desc = "An antique cash register, it accepts only hard currency, not spacecredits."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "register_static"
 	density = FALSE
 
 /obj/structure/prop/mainship/gelida/propladder
 	name = "ladder"
 	desc = "The ladder sways precariously, its connection to the upper floor severed by a large chunk of sharp metal."
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "ladder11"
 
 /obj/structure/prop/mainship/gelida/miner
 	name = "miner"
 	desc = "The machine stands inert, waiting for the command to begin extracting natural resources from the earth below."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "thumper"
 
 /obj/structure/prop/radio_prop
 	name = "radio"
 	desc = "A standard military radio."
-	icon = 'icons/obj/items/radio.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/radio.dmi'
 	icon_state = "beacon"
 	var/datum/looping_sound/radio/chatter_loop
 
@@ -1934,7 +1934,7 @@
 /obj/structure/prop/mainship/railing
 	name = "railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	density = FALSE
 	icon_state = "railing"
 
@@ -1947,7 +1947,7 @@
 /obj/structure/prop/mainship/solar
 	name = "Solar Array"
 	desc = "A solar panel. Generates electricity when in contact with sunlight."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "sp_base"
 
 /obj/structure/prop/mainship/solar/tracker
@@ -1955,11 +1955,11 @@
 	desc = "A solar directional tracker."
 	icon_state = "tracker_base"
 
-/obj/structure/prop/vehicle/som_mech
+/obj/structure/prop/vehicle/chaos_mech
 	name = "Marauder assault mech"
-	desc = "A heavily armed mech used by the SOM to spearhead an assault, this one seems to be non-functional."
-	icon = 'icons/obj/structures/prop/mech.dmi'
-	icon_state = "som_mech"
+	desc = "A heavily armed mech used by the CHAOS to spearhead an assault, this one seems to be non-functional."
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mech.dmi'
+	icon_state = "chaos_mech"
 	coverage = 70
 	bound_width = 32
 	pixel_x = -15
@@ -1970,19 +1970,19 @@
 /obj/structure/prop/machine_frame3
 	name = "machine frame"
 	desc = "That's a constructable machine frame."
-	icon = 'icons/obj/stock_parts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stock_parts.dmi'
 	icon_state = "box_2"
 
 /obj/structure/prop/keycardauth
 	name = "Keycard Authentication Device"
 	desc = "This device is used to trigger station functions, which require more than one ID card to authenticate."
-	icon = 'icons/obj/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/monitors.dmi'
 	icon_state = "auth_off"
 
 /obj/structure/prop/turbine
 	name = "power turbine"
 	desc = "A gigantic turbine that runs on who knows what. It could probably be turned on by someone with the correct know-how."
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "biomass_turbine"
 	density = TRUE
 
@@ -1992,7 +1992,7 @@
 
 /obj/structure/prop/tgbrokenvendor
 	name = "\improper Broken vendor"
-	icon = 'icons/obj/tg_vending_props.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/tg_vending_props.dmi'
 	desc = "The insides of this vendor are visible and rusted through, you get the feeling there's no fixing this machine."
 	density = TRUE
 	///var to control vendor appearance, can be vendor_broken, vendor_working or vendor_blank
@@ -2183,7 +2183,7 @@
 /obj/structure/prop/camera
 	name = "broken security camera"
 	desc = "It's used to monitor rooms."
-	icon = 'icons/obj/machines/monitors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/monitors.dmi'
 	icon_state = "camera_icon"
 	layer = WALL_OBJ_LAYER
 	anchored = TRUE
@@ -2200,7 +2200,7 @@
 	resistance_flags = RESIST_ALL
 
 /obj/structure/prop/computer
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 
 /obj/structure/prop/computer/cryopod
 	name = "hypersleep bay console"
@@ -2211,9 +2211,9 @@
 /obj/structure/prop/computer/broken
 	name = "broken computer"
 	desc = "A busted PC, the internals look fried, there's no fixing this one."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "broken_computer1"
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	density = TRUE
 	max_integrity = 120
 
@@ -2274,7 +2274,7 @@
 /obj/structure/prop/sandman
 	name = "sandman"
 	desc = "Like a snowman except it gets everywhere."
-	icon = 'icons/obj/structures/jungle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/jungle.dmi'
 	icon_state = "sandman"
 
 /obj/machinery/computer/solars
@@ -2287,7 +2287,7 @@
 /obj/machinery/filtration_pipes
 	name = "Disinfection Filter"
 	desc = "A water filter specifically designed to separate micro-organisms, such as viruses and bacteria, from water."
-	icon = 'icons/obj/structures/pipe_multiple.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/pipe_multiple.dmi'
 	icon_state = "solo_tank_water"
 	density = TRUE
 
@@ -2321,13 +2321,13 @@
 /obj/structure/prop/mainship/errorprop
 	name = "ERROR"
 	desc = "If you see this object in game you should ahelp, something has broken."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "error"
 
 /obj/prop/mainship/prop/news_tv
 	name = "TV"
 	desc = "Suprisingly still relevant, this one is set to the news channel."
-	icon = 'icons/obj/status_display.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/status_display.dmi'
 	icon_state = "news"
 	density = FALSE
 	///List for the news stories
@@ -2348,46 +2348,46 @@
 	say(selected_story)
 
 /obj/prop/mainship/prop/news_tv/tg
-	news_stories = "The peace of the Persatuan system was broken as missiles, lasers and coilguns are fired in a fierce naval battle with TerraGov and the SOM, the navy was able to secure the jump points being used by the SOM cutting off the remaining SOM ships left in the system.;\
+	news_stories = "The peace of the Persatuan system was broken as missiles, lasers and coilguns are fired in a fierce naval battle with Imperium and the CHAOS, the navy was able to secure the jump points being used by the CHAOS cutting off the remaining CHAOS ships left in the system.;\
 		TDF releases headcam footage being nicknamed 'Martian Bushcutting' showing an infantryman wiping a squad of MMC using only a machete. Nanotrasen pharmaceutical division used the video as a showcase of their advanced combat cocktail mix.;\
 		In a recent press conference Terrabound Mechanics CEO Korol Smith broke down after a question regarding the recently finished mech program 'Mech program is 154 billion overbudget and should have been canned since the start!', shouted Korol Smith. This is after the Rhino light tank program got cancelled over the more advanced mech program.;\
 		A recent skirmish against the ICCN and the TGN results in a TGN victory. Both sides with 5 ships each are head on in a brachistochrone trajectory TG fires first firing a salvo of 200 torch missiles, the ICCN being primarily a laser star focused fleet makes them very effective in point defense allows them to intercept most, 3 missiles impact killing 2 ships and disabling 1. ICC ships fire off their lasers and a beam is able to focus enough to melt through the armor of a TG ship disabling them then being completely melted down with focused fire before counter fire from the remaining TG ships is able to vaporize the remaining ships.;\
-		Nano-toys, releases the rouny plush line based off the runner xenomorph, some concerned parents criticizes the toy saying, 'Its outrageous that it's ok to sell a plush depicting a killer alien that has killed hundreds of colonists as a toy for children!'.;\
+		Nano-toys, releases the rouny plush line based off the runner tyranid, some concerned parents criticizes the toy saying, 'Its outrageous that it's ok to sell a plush depicting a killer alien that has killed hundreds of colonists as a toy for children!'.;\
 		Viral footage shows a mech racing against the colonists of LV-235, with the mech making extensive use of its boosters to outpace the other vehicles to the point of overheating. We ask mech freelancer John Sauter what his story is, 'We had a contract here but it was over pretty fast, so me and my comrades decided to see what kinda activities the locals have, apparently they have a racing event. One of the guys joked about bringing the mech to the race and i said fuck it, lets do it and man what a ride it was, won an entire basket of oranges for getting 1st place, not the best prize but ill take it, im pretty sure im a pioneer in this field too. John Sauter first mech racer, thats a good title.'.;\
-		TG Transportation Safety Board has recently released a new list of locations marked as quarantine which includes LV-462, Big Red, and Chigusa. TGMC have been sent to enforce the quarantine and clear the infestation of the recent xenomorph outbreaks, a statement is also included stating the situation is currently under control.;\
+		TG Transportation Safety Board has recently released a new list of locations marked as quarantine which includes LV-462, Big Red, and Chigusa. TGMC have been sent to enforce the quarantine and clear the infestation of the recent tyranid outbreaks, a statement is also included stating the situation is currently under control.;\
 		Tadpole class dropships land dropping off more rescue teams to rescue the civilians out of the Hope-3 O'Neill cylinder colony situated on lagrange 1 of Lakota as yesterday a cargo liner collision suspected to be manned by CLF operatives crashed into the colony. Death tolls are currently 45k+ dead and 15k+ injured. This is likely a reprisal attack after the navy began to clamp down on the CLF, more combat ships are being sent to protect especially high value targets.;\
-		War correspondent Tim Sholk on the ground in Lolokal station, take it away 'It's a very tense situation here, as you can see most of the stations population have taken refuge near the medical wing caught in the middle of battle against MMC forces and the TGMC, while TG controls the station for now and preparing for evacuation of the-' 'BREACHING CHARGE ON ENGINEERING MARINES MOVE IN AND REEINFORCE, CUT THE FEED NOW!'.;\
+		War correspondent Tim Sholk on the ground in Lolokal station, take it away 'It's a very tense situation here, as you can see most of the stations population have taken refuge near the medical wing caught in the middle of battle against MMC forces and the TGMC, while TG controls the station for now and preparing for evacuation of the-' 'BREACHING CHARGE ON ENGINEERING GUARDSMANS MOVE IN AND REEINFORCE, CUT THE FEED NOW!'.;\
 		Famous photographer Will Navidson goes missing after going on a short break with his family on the planet of New Vingrina, local authorities ask for any information on whereabouts. Was last seen buying camping supplies in a Leafes Outdoor Equipment store.;\
 		3rd generation bluespace drive. 1500kN of thrust. 200km+ Delta V. Liquid Droplet Radiators. Protection. Luxury. Luna Shipworks proudly presents the Marik Class Yacht with 4 large hardpoints for any of your needs whether it be transport or light cargo hauling or even racing.;\
-		Mars, a place that has been completely devastated by the independence war. Mine fields and rows of trenches litter the landscape with colonies wiped off the map completely, you can stop this tragedy from happening again, join the marine corps today.;\
+		Mars, a place that has been completely devastated by the independence war. Mine fields and rows of trenches litter the landscape with colonies wiped off the map completely, you can stop this tragedy from happening again, join the guardsman corps today.;\
 		'This material will change the course of our species and its time to rise from the rubble, look upon the stars and grasp them!' DIRECTED BY ALEXANDER BREEN 'It's a race against time we have Onmark Fusion stating that they will get their bluespace drive test on the 15th, we have to rush this prototype Paul.' 'Paul me and the kids haven't seen you in 5 months! You have to take a break sometime.' THIS REMEMBRANCE DAY 'This is Armstrong-1 we have reached jump point anomaly. Begin ignition in 5 4 3 2 1' BLUESPACE In theaters 15th of July.;\
 		'Hey Alex, got you the coffee you asked for' 'This doesn't seem like the usual' 'It's a new chain they got a classic pre strife era France vibe in their cafe, was founded by the Rushin Engines band' 'This is nice, wakes you up instantly and it's got a really rich flavour i haven't felt before' 'Yup that would be the special Java organically grown coffee beans, they also use the newest tech in chemistry, i swear it looked more like a lab back there than a cafe' Baron Cafe. 'Taste the future of coffee, today. No gimmicks. Pure quality'.;\
 		TGMC enforces the peace here in the recently liberated Tiberius from the ICC, as you can see it has been very peacefu- 'FUCK YOU IMPERIALISTS! YOU AND THE CORPOS HAVE TAKEN EVERYTHING FROM ME, WHAT ELSE DO YOU WANT!' 'Shut that man up! Alec, escort that camera crew out of here things are about to get heated here'."
 
-/obj/prop/mainship/prop/news_tv/som
+/obj/prop/mainship/prop/news_tv/chaos
 	news_stories = "Our navy makes a foothold on the Persatuan system as we destroy the imperialists holds in the system, using a mass amount of drones and carrier ships allows us to easily project force everywhere in the system in a matter of a few hours.;\
-		Shang-12 Research Station has had constant fighting for the past 2 days and only has recently ended now thanks to the bravery of Shokk Platoon marine Ming, bodycam footage shows him fearlessly charging enemy holdouts with his boarding axe putting full faith in his equipment allowing for a breakthrough, we can all aspire to go to these lengths of bravery.;\
+		Shang-12 Research Station has had constant fighting for the past 2 days and only has recently ended now thanks to the bravery of Shokk Platoon guardsman Ming, bodycam footage shows him fearlessly charging enemy holdouts with his boarding axe putting full faith in his equipment allowing for a breakthrough, we can all aspire to go to these lengths of bravery.;\
 		We recently encountered a full squad of TG mechs, although it was no match for our mech boys, a single volkite lance and a good hit is all it takes to take down their mechs, they may have a lot of it but it doesn't match the quality of our equipment.;\
 		New Malay Shipyards advanced casaba drone gets put to the test in it's first real combat engagement against two TG frigates and 3 cargo freighters, MNV Tex class frigate launches 24 drones and the AI sets a course to rendezvous with the targets, with its high amount of thrust they are able to close in to an effective range fast and use their casaba howitzers to intercept incoming missiles, 6 drones are able to get through quickly dispatching the enemy ships as they get in effective casaba range, they use their advanced RCS thrusters to dodge enemy coilgun fire and as they pass the destroyed ships they turn on their engines to irradiate the area leaving no survivors.;\
 		Are you ready to take your Verf warfare to the next level? Introducing the Verf Volkite Caliver toy, simply connect it with the battery backpack and start releasing the full rapid fire of the Verf Volkite Caliver, everything you need to mow down your friends. Helmet sold seperately, batteries not included. VERF.;\
 		The Independent Colonies Trade Admin would like to remind you that moving alien animals and plants without a permit to another star system is illegal and may land you up to 2 years in jail and a 1 million kreto fine, recently we have had issues with cartels trying to ship exotic animals by using unsuspecting passangers, do not accept any offers from anyone for help with carrying.;\
-		TerraGov suffers a massive disaster as a cargo liner goes out of control and collides into an O'Neill cylinder colony with many casualties and billions of dollars in cargo lost, a few ship analysts say that the TerraGov claim that it was a terrorist attack is false, the maint logs of the ship suggested instead it was a mechanical failure.;\
+		Imperium suffers a massive disaster as a cargo liner goes out of control and collides into an O'Neill cylinder colony with many casualties and billions of dollars in cargo lost, a few ship analysts say that the Imperium claim that it was a terrorist attack is false, the maint logs of the ship suggested instead it was a mechanical failure.;\
 		We have here Boris Kilo on the frontline of an armed rebellion against TG on the moon of Harvest 'These rebels are sick and tired of the horrible working conditions Nanotrasen has set and the tariff increases TG has done' 'With our wages were just working from meal to meal with no prospect of advancing and they want to increase the damn import tariffs? No enough is enough!' 'Look at this footage we captured so called TDF peacekeepers executing suspected collaborators and shooting into protestors, show it to the whole damn galaxy that they rule this place with fear'.;\
 		Insmoth ocean planet colony population mysteriously vanishes. Colony Newport-212 known for its export of exotic fish has completely vanished with no conclusive evidence of what happened to the colonists, according to flight logs no shuttle was ever nearby the colony, a few leads are possible cultist activity on the planet as investigators and crews who often carry cargo to the planet report odd behaviour and gold statues of unknown idols littering the colonies.;\
 		Today we remember the battle of Olympus Mons, a day to remind ourselves of the sacrifice our forefathers made to escape from the tyranny and imperialist ambitions of Terra and on that day 25152 brave Martians died to secure our future to assault and capture a prototype bluespace drive leading us to our destiny among the stars and preserving Mars, even if Terra holds our holy land. Mars shall not be forgotten.;\
-		Tonight's execution! A TerraGov spy has been caught and tried today deemed guilty, it shall be a special execution showcasing the MMC's new radiation grenades if everything goes as planned this spy will meet a very painful demise! Execution tonight at 6 on all channels.;\
+		Tonight's execution! A Imperium spy has been caught and tried today deemed guilty, it shall be a special execution showcasing the MMC's new radiation grenades if everything goes as planned this spy will meet a very painful demise! Execution tonight at 6 on all channels.;\
 		An extinct alien civilization found? An exploratory team had set down on Lakita-984, a very hot Terra like planet with bizzare weather patterns. Scans indicate high amounts of greenhouse gasses and areas with high amounts of radiation perhaps a small scale nuclear conflict along with global warming had been their end? A lot of debris was found in orbit that have damage similar to laser fire, they also found wildly varied technological level and design of machinery seemingly as they were from entirely different worlds. Destroyed and decaying buildings are scattered across the planet with only a few major clusters of them, showing an isolationist culture. The more gruesome discovery was of bones of corpses found in massive piles like a massacre had happened, some say it was a religious ritual.;\
-		Mariner Aerospace M350 SSTO family, the most widely used civilian SSTO family in SOM space. The latest generation hybrid engines, air-breathing hypersonic turbines into a radiation free NTR in a vacuum. 800 carrying capacity with flexible cargo capacity. M350 the technical benchmark in its field.;\
+		Guardsmanr Aerospace M350 SSTO family, the most widely used civilian SSTO family in CHAOS space. The latest generation hybrid engines, air-breathing hypersonic turbines into a radiation free NTR in a vacuum. 800 carrying capacity with flexible cargo capacity. M350 the technical benchmark in its field.;\
 		Orbital ring construction on Catakan continues smoothly with no major incidents, Phobos Manufacturing plays the biggest part of construction with its massive mobile construction platform able to produce any parts needed locally and housing a good amount of the construction workers, the orbital ring is expected to be finished in 3 years with 9 space elevators and 12 stations connecting to it along with dome gardens and cities along the skyhooks.;\
 		Shipyard work more attractive to young adults than office work? More and more young adults are flocking to shipyard and space related work as they want an escape from the monotony and rat race of the office world, here we are at New Malay Shipyards with Austin Li a 20 year old who gave up his managerial position for shipyard work 'I wanted to just escape from the boredom, feel challenged and accomplished from the work i do and i found that in shipyard work, it's a tough job and the pay is not as good but nothing beats the view from up here and the feeling of freedom from zero g, atleast thats my perspective. Sorry i gotta get to my EVA mech now, work calls."
 
 /obj/structure/prop/coagulation_arm
 	name = "coagulation arm"
 	desc = "An axel with four sides, made to spin to help filter the water."
-	icon = 'icons/obj/structures/coagulation_arm.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/coagulation_arm.dmi'
 	icon_state = "arm"
 	anchored = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	bound_height = 96
 	bound_width = 96
 	max_integrity = 1000
@@ -2395,7 +2395,7 @@
 /obj/structure/prop/filtration_exit
 	name = "Waste Exit Pipe"
 	desc = "This machine separates the leftover waste from the purification processes to be discarded into space, recycled for supplies, or used for research."
-	icon = 'icons/obj/structures/waste_pipe.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/waste_pipe.dmi'
 	icon_state = "pipe"
 	anchored = TRUE
 	bound_height = 96

@@ -266,11 +266,11 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 				for(var/i in GLOB.alive_human_list)
 					var/mob/M = i
 					M.forceMove(T)
-			if("getxenos")
-				log_admin("[key_name(usr)] mass-teleported all Xenos.")
-				message_admins("[ADMIN_TPMONTY(usr)] mass-teleported all Xenos.")
-				to_chat(GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL], span_highdanger("[key_name_admin(usr, FALSE)] mass-teleported all xenos."))
-				for(var/i in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
+			if("gettyranids")
+				log_admin("[key_name(usr)] mass-teleported all Tyranids.")
+				message_admins("[ADMIN_TPMONTY(usr)] mass-teleported all Tyranids.")
+				to_chat(GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL], span_highdanger("[key_name_admin(usr, FALSE)] mass-teleported all tyranids."))
+				for(var/i in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
 					var/mob/M = i
 					M.forceMove(T)
 			if("getall")
@@ -397,59 +397,59 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 				if(location)
 					newmob.forceMove(location)
 			if("larva")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/larva, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/larva, location, null, delmob)
 			if("defender")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/defender, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/defender, location, null, delmob)
 			if("warrior")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/warrior, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/warrior, location, null, delmob)
 			if("runner")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/runner, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/runner, location, null, delmob)
 			if("drone")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/drone, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/drone, location, null, delmob)
 			if("sentinel")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/sentinel, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/sentinel, location, null, delmob)
 			if("bull")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/bull, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/bull, location, null, delmob)
 			if("hunter")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/hunter, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/hunter, location, null, delmob)
 			if("carrier")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/carrier, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/carrier, location, null, delmob)
 			if("hivelord")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/hivelord, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/hivelord, location, null, delmob)
 			if("praetorian")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/praetorian, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/praetorian, location, null, delmob)
 			if("ravager")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/ravager, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/ravager, location, null, delmob)
 			if("spitter")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/spitter, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/spitter, location, null, delmob)
 			if("boiler")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/boiler, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/boiler, location, null, delmob)
 			if("crusher")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/crusher, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/crusher, location, null, delmob)
 			if("widow")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/widow, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/widow, location, null, delmob)
 			if("defiler")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/defiler, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/defiler, location, null, delmob)
 			if("gorger")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/gorger, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/gorger, location, null, delmob)
 			if("warlock")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/warlock, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/warlock, location, null, delmob)
 			if("shrike")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/shrike, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/shrike, location, null, delmob)
 			if("hivemind")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/hivemind, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/hivemind, location, null, delmob)
 			if("queen")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/queen, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/queen, location, null, delmob)
 			if("king")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/king, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/king, location, null, delmob)
 			if("wraith")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/wraith, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/wraith, location, null, delmob)
 			if("puppeteer")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/puppeteer, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/puppeteer, location, null, delmob)
 			if("pyrogen")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/pyrogen, location,null , delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/pyrogen, location,null , delmob)
 			if("behemoth")
-				newmob = M.change_mob_type(/mob/living/carbon/xenomorph/behemoth, location, null, delmob)
+				newmob = M.change_mob_type(/mob/living/carbon/tyranid/behemoth, location, null, delmob)
 			if("human")
 				newmob = M.change_mob_type(/mob/living/carbon/human, location, null, delmob)
 			if("synthetic")
@@ -566,12 +566,12 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 				return
 			var/turf/T = get_turf(M)
 			new /obj/item/reagent_containers/food/snacks/fortunecookie(T)
-		else if(isxeno(M))
-			if(alert("Are you sure you want to tell the Xeno a Xeno tip?", "Confirmation", "Yes", "No") != "Yes")
+		else if(istyranid(M))
+			if(alert("Are you sure you want to tell the Tyranid a Tyranid tip?", "Confirmation", "Yes", "No") != "Yes")
 				return
-			to_chat(M, span_tip("[pick(SSstrings.get_list_from_file("tips/xeno"))]"))
+			to_chat(M, span_tip("[pick(SSstrings.get_list_from_file("tips/tyranid"))]"))
 
-		if(isxeno(M))
+		if(istyranid(M))
 			to_chat(M, span_boldnotice("Your prayers have been answered!! Hope the advice helped."))
 		else
 			to_chat(M, span_boldnotice("Your prayers have been answered!! You received the best fortune cookie!"))
@@ -1899,7 +1899,7 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 				var/datum/job/J = SSjob.GetJob(change)
 				previous = H.job?.title
 				var/squad_to_insert_into
-				if(ismarinejob(J) || issommarinejob(J))
+				if(isguardsmanjob(J) || issomguardsmanjob(J))
 					if(H.assigned_squad)
 						squad_to_insert_into = H.assigned_squad
 					else
@@ -1966,11 +1966,11 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 				H.equip_to_slot_or_del(new /obj/item/card/id(H), SLOT_WEAR_ID)
 			if("squad")
 				previous = H.assigned_squad
-				change = input("Choose the marine's new squad.", "Change Squad") as null|anything in SSjob.squads
+				change = input("Choose the guardsman's new squad.", "Change Squad") as null|anything in SSjob.squads
 				if(!change || !istype(H))
 					return
-				if(!ismarinejob(H.job) && !issommarinejob(H.job))
-					to_chat(usr, span_warning("Only marine jobs may be part of squads."))
+				if(!isguardsmanjob(H.job) && !issomguardsmanjob(H.job))
+					to_chat(usr, span_warning("Only guardsman jobs may be part of squads."))
 					return
 				H.change_squad(change)
 			if("equipment")
@@ -2015,11 +2015,11 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 			Topic(usr.client.holder, list("admin_token" = RawHrefToken(TRUE), "rank" = "equipment", "mob" = REF(H)))
 
 
-	else if(href_list["xeno"])
+	else if(href_list["tyranid"])
 		if(!check_rights(R_FUN))
 			return
 
-		var/mob/living/carbon/xenomorph/X = locate(href_list["mob"]) in GLOB.xeno_mob_list
+		var/mob/living/carbon/tyranid/X = locate(href_list["mob"]) in GLOB.tyranid_mob_list
 		if(!istype(X))
 			to_chat(usr, span_warning("Target is no longer valid."))
 			return
@@ -2028,11 +2028,11 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 		var/previous
 		var/old_keyname = key_name(X)
 
-		switch(href_list["xeno"])
+		switch(href_list["tyranid"])
 			if("hive")
 				previous = X.hivenumber
 
-				var/newhive = input("Select a hive.", "Xeno Panel") as null|anything in GLOB.hive_datums
+				var/newhive = input("Select a hive.", "Tyranid Panel") as null|anything in GLOB.hive_datums
 				if(!newhive)
 					return
 
@@ -2051,7 +2051,7 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 			if("nicknumber")
 				previous = X.nicknumber
 
-				change = input("Select a nicknumber.", "Xeno Panel", previous)
+				change = input("Select a nicknumber.", "Tyranid Panel", previous)
 				if(!change || change == previous)
 					return
 
@@ -2063,9 +2063,9 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 				X.generate_name()
 
 			if("upgrade")
-				previous = X.xeno_caste.upgrade
+				previous = X.tyranid_caste.upgrade
 
-				change = input("Select a new upgrade tier.", "Xeno Panel") as null|anything in (GLOB.xenoupgradetiers - XENO_UPGRADE_BASETYPE - XENO_UPGRADE_INVALID - XENO_UPGRADE_MANIFESTATION)
+				change = input("Select a new upgrade tier.", "Tyranid Panel") as null|anything in (GLOB.tyranidupgradetiers - TYRANID_UPGRADE_BASETYPE - TYRANID_UPGRADE_INVALID - TYRANID_UPGRADE_MANIFESTATION)
 				if(!change || change == previous)
 					return
 
@@ -2073,16 +2073,16 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 					to_chat(usr, span_warning("Target is no longer valid."))
 					return
 
-				X.upgrade_xeno(change)
-				if(change != XENO_UPGRADE_NORMAL)
-					var/datum/xeno_caste/previous_maturity = GLOB.xeno_caste_datums[X.caste_base_type][X.upgrade_prev()]
+				X.upgrade_tyranid(change)
+				if(change != TYRANID_UPGRADE_NORMAL)
+					var/datum/tyranid_caste/previous_maturity = GLOB.tyranid_caste_datums[X.caste_base_type][X.upgrade_prev()]
 					X.upgrade_stored = previous_maturity.upgrade_threshold
 
-		DIRECT_OUTPUT(usr, browse(null, "window=xeno_panel_[old_keyname]"))
-		usr.client.holder.xeno_panel(X)
+		DIRECT_OUTPUT(usr, browse(null, "window=tyranid_panel_[old_keyname]"))
+		usr.client.holder.tyranid_panel(X)
 
-		log_admin("[key_name(usr)] changed [href_list["xeno"]] of [X] from [previous] to [change].")
-		message_admins("[ADMIN_TPMONTY(usr)] changed [href_list["xeno"]] of [ADMIN_TPMONTY(X)] from [previous] to [change].")
+		log_admin("[key_name(usr)] changed [href_list["tyranid"]] of [X] from [previous] to [change].")
+		message_admins("[ADMIN_TPMONTY(usr)] changed [href_list["tyranid"]] of [ADMIN_TPMONTY(X)] from [previous] to [change].")
 	else if(href_list["adminapproval"])
 		var/approval_id = href_list["adminapproval"] // Already text at this point
 		if(GLOB.admin_approvals[approval_id] != -1)

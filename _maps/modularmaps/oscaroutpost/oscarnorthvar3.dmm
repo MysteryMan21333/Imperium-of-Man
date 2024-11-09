@@ -3490,7 +3490,7 @@
 /turf/open/ground/grass,
 /area/oscar_outpost/outside/northwest)
 "xX" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost)
 "xZ" = (
@@ -3865,7 +3865,7 @@
 	},
 /area/oscar_outpost/outside/road)
 "Bi" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/dirt,
 /area/oscar_outpost/outside/north)
 "Bm" = (
@@ -4259,7 +4259,7 @@
 /obj/structure/sign/nosmoking_2{
 	pixel_x = 28
 	},
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost)
 "Dn" = (
@@ -4973,7 +4973,7 @@
 	},
 /area/oscar_outpost/outside/east)
 "IP" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/dirt,
 /area/oscar_outpost/outside/north)
 "IQ" = (

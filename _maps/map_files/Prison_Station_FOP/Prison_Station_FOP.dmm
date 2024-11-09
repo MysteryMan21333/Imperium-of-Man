@@ -208,7 +208,7 @@
 /turf/open/space/sea,
 /area/space)
 "acE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/research/secret/biolab)
 "acF" = (
@@ -224,7 +224,7 @@
 	},
 /area/prison/cellblock/highsec/north/north)
 "acH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison,
 /area/prison/research/secret/biolab)
 "acI" = (
@@ -318,7 +318,7 @@
 	dir = 2;
 	id = "biological_testing_1"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "acV" = (
@@ -332,8 +332,8 @@
 	dir = 2;
 	id = "biological_testing_1"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "acW" = (
@@ -344,8 +344,8 @@
 	dir = 2;
 	id = "biological_testing_1"
 	},
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "acX" = (
@@ -1168,11 +1168,11 @@
 /turf/open/floor/plating,
 /area/prison/research/secret/bioengineering)
 "afv" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/prison/marked,
 /area/prison/research/secret/bioengineering)
 "afw" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/prison/marked,
 /area/prison/research/secret/bioengineering)
 "afx" = (
@@ -1626,7 +1626,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/research/secret/biolab)
 "agO" = (
@@ -1642,7 +1642,7 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/research/secret/biolab)
 "agQ" = (
@@ -3185,7 +3185,7 @@
 /turf/open/floor/prison/darkred/full,
 /area/prison/cellblock/maxsec/south)
 "alr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/north)
 "als" = (
@@ -3517,7 +3517,7 @@
 	dir = 2;
 	name = "Medium-Security Monitoring"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /turf/open/floor/prison/darkred/full,
 /area/prison/security/monitoring/maxsec/panopticon)
@@ -4832,7 +4832,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/south)
 "aqt" = (
@@ -4932,7 +4932,7 @@
 "aqM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/north)
 "aqN" = (
@@ -8760,7 +8760,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/south)
 "aCc" = (
@@ -10565,7 +10565,7 @@
 	},
 /area/prison/chapel)
 "aHH" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/south)
 "aHI" = (
@@ -10843,7 +10843,7 @@
 "aIy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "aIz" = (
@@ -10854,7 +10854,7 @@
 /turf/open/floor/prison/sterilewhite,
 /area/prison/residential/north)
 "aIA" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/prison/bright_clean,
@@ -11101,7 +11101,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitepurple{
 	dir = 1
 	},
@@ -16920,7 +16920,7 @@
 	},
 /area/prison/cellblock/lowsec/ne)
 "bbs" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/red{
 	dir = 8
 	},
@@ -17219,7 +17219,7 @@
 /turf/open/floor/plating,
 /area/prison/hangar/main)
 "bcF" = (
-/obj/docking_port/stationary/marine_dropship/lz1/prison,
+/obj/docking_port/stationary/guardsman_dropship/lz1/prison,
 /turf/open/floor/plating,
 /area/prison/hangar/main)
 "bcH" = (
@@ -17456,7 +17456,7 @@
 	},
 /area/prison/security/monitoring/maxsec/panopticon)
 "bdt" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/yard)
 "bdu" = (
@@ -17470,7 +17470,7 @@
 /area/prison/kitchen)
 "bdv" = (
 /obj/structure/window/framed/prison/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/security/monitoring/maxsec/panopticon)
 "bdw" = (
@@ -17497,7 +17497,7 @@
 	dir = 2;
 	name = "Medium-Security Monitoring"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/prison/darkred/full,
@@ -17862,7 +17862,7 @@
 "bez" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "beB" = (
@@ -18827,7 +18827,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/red{
 	dir = 4
 	},
@@ -19479,7 +19479,7 @@
 	},
 /area/prison/cellblock/lowsec/nw)
 "bjf" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/red{
 	dir = 8
 	},
@@ -20557,7 +20557,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/cleanmarked,
 /area/prison/yard)
 "bmA" = (
@@ -21307,7 +21307,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "boJ" = (
@@ -21654,7 +21654,7 @@
 /obj/structure/table/reinforced/flipped{
 	dir = 4
 	},
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "bpT" = (
@@ -22123,7 +22123,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/red{
 	dir = 4
 	},
@@ -22975,7 +22975,7 @@
 /turf/open/floor/prison/kitchen,
 /area/prison/kitchen)
 "bux" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitepurple,
 /area/prison/quarters/research)
 "buy" = (
@@ -26551,7 +26551,7 @@
 /area/prison/hallway/east)
 "bGB" = (
 /obj/machinery/light,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/hallway/east)
 "bGC" = (
@@ -29558,7 +29558,7 @@
 	dir = 1;
 	on = 1
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/residential/south)
 "bQI" = (
@@ -30105,7 +30105,7 @@
 /turf/open/floor/prison/bright_clean,
 /area/prison/laundry)
 "bSF" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/green{
 	dir = 1
 	},
@@ -30471,7 +30471,7 @@
 /turf/open/floor/prison/red/full,
 /area/prison/recreation/highsec/s)
 "bUb" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/hallway/staff)
 "bUc" = (
@@ -32171,7 +32171,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/green,
 /area/prison/hallway/staff)
 "cam" = (
@@ -33598,7 +33598,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/security)
 "cew" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/ne)
 "cex" = (
@@ -35514,7 +35514,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/ne)
 "ckV" = (
@@ -36040,7 +36040,7 @@
 	},
 /area/prison/cellblock/highsec/south/south)
 "cmq" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitegreen{
 	dir = 1
 	},
@@ -36145,7 +36145,7 @@
 /turf/open/floor/wood,
 /area/prison/parole/protective_custody)
 "cmI" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/blue{
 	dir = 1
 	},
@@ -37926,7 +37926,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mainship/maint/free_access,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/cellblock/mediumsec/south)
 "csZ" = (
@@ -37999,7 +37999,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mainship/maint/free_access,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/cellblock/mediumsec/south)
 "ctg" = (
@@ -39340,7 +39340,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/cellblock/mediumsec/south)
 "cyN" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/sterilewhite,
 /area/prison/residential/central)
 "cyO" = (
@@ -39845,7 +39845,7 @@
 /turf/open/floor/plating,
 /area/prison/hangar/main)
 "cMq" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/residential/south)
 "cMI" = (
@@ -39863,7 +39863,7 @@
 /turf/closed/wall/r_wall/prison,
 /area/prison/maintenance/residential/sw)
 "cOL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/cellblock/mediumsec/west)
 "cON" = (
@@ -39999,7 +39999,7 @@
 /area/prison/maintenance/residential/access/north)
 "dmh" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "dni" = (
@@ -40095,7 +40095,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/south)
 "dxh" = (
@@ -40151,7 +40151,7 @@
 /turf/open/floor/prison/darkpurple/full,
 /area/prison/research)
 "dDs" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /obj/structure/cable,
 /turf/open/floor/prison/darkred{
 	dir = 8
@@ -40200,7 +40200,7 @@
 /obj/machinery/door/airlock/mainship/maint/free_access{
 	dir = 2
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/cellblock/mediumsec/west)
 "dQA" = (
@@ -40361,7 +40361,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/red{
 	dir = 4
 	},
@@ -40558,7 +40558,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/hallway/central)
 "eAr" = (
@@ -40639,7 +40639,7 @@
 /turf/open/floor/prison/whitepurple,
 /area/prison/quarters/research)
 "ePe" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/access/south)
 "ePC" = (
@@ -41106,7 +41106,7 @@
 /turf/open/floor/prison,
 /area/prison/hangar/main)
 "gdU" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "gfK" = (
@@ -41210,7 +41210,7 @@
 /turf/open/floor/prison/darkred/full,
 /area/prison/hangar/main)
 "gtU" = (
-/obj/docking_port/stationary/marine_dropship/lz2/prison,
+/obj/docking_port/stationary/guardsman_dropship/lz2/prison,
 /turf/open/floor/plating,
 /area/prison/hangar/civilian)
 "gux" = (
@@ -41340,7 +41340,7 @@
 /turf/open/floor/prison/yellow,
 /area/prison/cellblock/mediumsec/north)
 "gIY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/prison/cellblock/mediumsec/west)
 "gJR" = (
@@ -41353,7 +41353,7 @@
 	dir = 2;
 	name = "Residential Apartment"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/prison/residential/south)
 "gKC" = (
@@ -41377,7 +41377,7 @@
 /turf/open/floor/prison/plate,
 /area/prison/cellblock/mediumsec/south)
 "gMf" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating,
 /area/prison/cellblock/mediumsec/south)
 "gMU" = (
@@ -41439,7 +41439,7 @@
 /turf/open/floor/wood,
 /area/prison/residential/central)
 "gSj" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison,
 /area/prison/cellblock/vip)
 "gSk" = (
@@ -42133,7 +42133,7 @@
 /turf/open/floor/prison,
 /area/prison/research/secret/dissection)
 "iFe" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "iFC" = (
@@ -42323,7 +42323,7 @@
 /turf/open/floor/prison/whitegreen,
 /area/prison/medbay)
 "jax" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/blue,
 /area/prison/cellblock/vip)
 "jbN" = (
@@ -42384,7 +42384,7 @@
 	},
 /area/prison/storage/medsec)
 "jgG" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/hallway/central)
 "jgI" = (
@@ -42739,7 +42739,7 @@
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/holding/holding1)
 "jSF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/prison/cellblock/mediumsec/east)
 "jVP" = (
@@ -42839,7 +42839,7 @@
 /obj/machinery/door/airlock/mainship/maint/free_access{
 	dir = 2
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/prison/cellblock/mediumsec/east)
 "kla" = (
@@ -42851,7 +42851,7 @@
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/hallway/staff)
 "klH" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitegreen,
 /area/prison/residential/central)
 "klS" = (
@@ -42859,7 +42859,7 @@
 /turf/open/floor/prison/red/corner,
 /area/prison/cellblock/highsec/south/north)
 "klX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/prison/residential/south)
 "kmq" = (
@@ -42916,7 +42916,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/cleanmarked,
 /area/prison/yard)
 "ksV" = (
@@ -42942,7 +42942,7 @@
 /area/prison/parole/main)
 "kva" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "kxc" = (
@@ -43138,7 +43138,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/hallway/east)
 "kXh" = (
@@ -43595,7 +43595,7 @@
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/toilet/security)
 "mng" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "mnx" = (
@@ -43750,7 +43750,7 @@
 /turf/open/floor/prison/red/full,
 /area/prison/cellblock/highsec/south/north)
 "mBf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/cellblock/mediumsec/south)
 "mBn" = (
@@ -43809,7 +43809,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/se)
 "mKE" = (
@@ -43819,7 +43819,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/sterilewhite,
 /area/prison/residential/south)
 "mKH" = (
@@ -44434,7 +44434,7 @@
 /turf/open/floor/plating,
 /area/prison/hangar_storage/research)
 "oaU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/red{
 	dir = 8
 	},
@@ -44648,7 +44648,7 @@
 /obj/effect/landmark/corpsespawner/prisoner,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
 "oAY" = (
@@ -44838,7 +44838,7 @@
 	dir = 2;
 	id = "biological_testing_1"
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/prison/research/secret/biolab)
@@ -45224,7 +45224,7 @@
 /turf/open/floor/wood,
 /area/prison/residential/north)
 "qcr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/cellblock/mediumsec/east)
 "qcw" = (
@@ -45389,7 +45389,7 @@
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/hallway/central)
 "qAa" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean/two,
 /area/prison/residential/south)
 "qAw" = (
@@ -45458,7 +45458,7 @@
 	},
 /area/prison/maintenance/residential/ne)
 "qGW" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/prison/hallway/east)
 "qJf" = (
@@ -45839,7 +45839,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/access/south)
 "rtU" = (
@@ -45953,7 +45953,7 @@
 /area/prison/execution)
 "rFk" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitepurple/full,
 /area/prison/research/secret/biolab)
 "rFn" = (
@@ -45983,7 +45983,7 @@
 /turf/open/floor/prison/sterilewhite,
 /area/prison/cellblock/highsec/north/south)
 "rGV" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
 "rIf" = (
@@ -46045,7 +46045,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison,
 /area/prison/cellblock/vip)
 "rPZ" = (
@@ -46160,8 +46160,8 @@
 /turf/open/floor/plating,
 /area/prison/maintenance/hangar_barracks)
 "saw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/research/secret/biolab)
 "saN" = (
@@ -46171,7 +46171,7 @@
 	},
 /area/prison/security/monitoring/medsec/south)
 "see" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/prison/sterilewhite,
 /area/prison/research/secret/biolab)
 "seK" = (
@@ -46473,11 +46473,11 @@
 /turf/open/floor/carpet,
 /area/prison/command/secretary_office)
 "sMp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/prison/security/monitoring/maxsec/panopticon)
 "sMr" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/hallway/central)
 "sME" = (
@@ -46492,7 +46492,7 @@
 /turf/open/floor/prison/blue,
 /area/prison/cellblock/protective)
 "sNa" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/prison/bright_clean,
 /area/prison/yard)
@@ -46668,7 +46668,7 @@
 /turf/open/floor/plating,
 /area/prison/maintenance/hangar_barracks)
 "tme" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
@@ -46707,7 +46707,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/whitepurple/full,
 /area/prison/research/secret/biolab)
 "tsb" = (
@@ -46920,7 +46920,7 @@
 /turf/open/floor/prison/plate,
 /area/prison/cellblock/maxsec/north)
 "tWb" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/prison/maintenance/residential/se)
 "tWC" = (
@@ -47568,7 +47568,7 @@
 /turf/open/floor/prison/kitchen,
 /area/prison/kitchen)
 "vEU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/cleanmarked,
 /area/prison/yard)
 "vFq" = (
@@ -47775,7 +47775,7 @@
 /turf/open/floor/plating,
 /area/prison/hangar/main)
 "wcy" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/bright_clean,
 /area/prison/hallway/east)
 "wcU" = (
@@ -48057,7 +48057,7 @@
 /area/prison/maintenance/staff_research)
 "wNs" = (
 /obj/item/ammo_casing,
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/platebot,
 /area/prison/pirate)
 "wOs" = (
@@ -48142,7 +48142,7 @@
 /turf/open/floor/prison/sterilewhite,
 /area/prison/research)
 "xar" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/prison/cellblock/mediumsec/south)
 "xbg" = (
@@ -48252,7 +48252,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/sterilewhite,
 /area/prison/residential/central)
 "xtg" = (

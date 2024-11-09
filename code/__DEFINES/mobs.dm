@@ -84,7 +84,7 @@
 
 
 #define LIVING_PERM_COEFF 0
-#define XENO_PERM_COEFF 0.8
+#define TYRANID_PERM_COEFF 0.8
 //=================================================
 
 #define HUMAN_STRIP_DELAY 40 //takes 40ds = 4s to strip someone.
@@ -100,7 +100,7 @@
 #define CARBON_RECOVERY_OXYLOSS -5
 
 #define CARBON_KO_OXYLOSS 50
-#define HUMAN_CRITDRAG_OXYLOSS 3 //the amount of oxyloss taken per tile a human is dragged by a xeno while unconscious
+#define HUMAN_CRITDRAG_OXYLOSS 3 //the amount of oxyloss taken per tile a human is dragged by a tyranid while unconscious
 
 #define HEAT_DAMAGE_LEVEL_1 1 //Amount of damage applied when your body temperature just passes the 360.15k safety point
 #define HEAT_DAMAGE_LEVEL_2 2 //Amount of damage applied when your body temperature passes the 400K point
@@ -171,7 +171,7 @@
 #define GODMODE (1<<4)
 #define FAKEDEATH (1<<5)	//Unused
 #define DISFIGURED (1<<6)	//I'll probably move this elsewhere if I ever get wround to writing a bitflag mob-damage system
-#define XENO_HOST (1<<7)	//Tracks whether we're gonna be a baby alien's mummy.
+#define TYRANID_HOST (1<<7)	//Tracks whether we're gonna be a baby alien's mummy.
 #define TK_USER (1<<8)
 #define CANUNCONSCIOUS (1<<9)
 #define CANCONFUSE (1<<10)
@@ -180,39 +180,39 @@
 // =============================
 // hive types
 
-#define XENO_HIVE_NONE "none_hive"
-#define XENO_HIVE_NORMAL "normal_hive"
-#define XENO_HIVE_CORRUPTED "corrupted_hive"
-#define XENO_HIVE_ALPHA "alpha_hive"
-#define XENO_HIVE_BETA "beta_hive"
-#define XENO_HIVE_ZETA "zeta_hive"
-#define XENO_HIVE_ADMEME "admeme_hive"
-#define XENO_HIVE_FALLEN "fallen_hive"
+#define TYRANID_HIVE_NONE "none_hive"
+#define TYRANID_HIVE_NORMAL "normal_hive"
+#define TYRANID_HIVE_CORRUPTED "corrupted_hive"
+#define TYRANID_HIVE_ALPHA "alpha_hive"
+#define TYRANID_HIVE_BETA "beta_hive"
+#define TYRANID_HIVE_ZETA "zeta_hive"
+#define TYRANID_HIVE_ADMEME "admeme_hive"
+#define TYRANID_HIVE_FALLEN "fallen_hive"
 
 // =============================
-// xeno tiers
+// tyranid tiers
 
-#define XENO_TIER_MINION "ai"
-#define XENO_TIER_ZERO "zero" // god forgive me because i wont forgive myself
-#define XENO_TIER_ONE "one"
-#define XENO_TIER_TWO "two"
-#define XENO_TIER_THREE "three"
-#define XENO_TIER_FOUR "four"
+#define TYRANID_TIER_MINION "ai"
+#define TYRANID_TIER_ZERO "zero" // god forgive me because i wont forgive myself
+#define TYRANID_TIER_ONE "one"
+#define TYRANID_TIER_TWO "two"
+#define TYRANID_TIER_THREE "three"
+#define TYRANID_TIER_FOUR "four"
 
-GLOBAL_LIST_INIT(xenotiers, list(XENO_TIER_MINION, XENO_TIER_ZERO, XENO_TIER_ONE, XENO_TIER_TWO, XENO_TIER_THREE, XENO_TIER_FOUR))
-GLOBAL_LIST_INIT(tier_as_number, list(XENO_TIER_MINION = -1, XENO_TIER_ZERO = 0, XENO_TIER_ONE = 1, XENO_TIER_TWO = 2, XENO_TIER_THREE = 3, XENO_TIER_FOUR = 4))
+GLOBAL_LIST_INIT(tyranidtiers, list(TYRANID_TIER_MINION, TYRANID_TIER_ZERO, TYRANID_TIER_ONE, TYRANID_TIER_TWO, TYRANID_TIER_THREE, TYRANID_TIER_FOUR))
+GLOBAL_LIST_INIT(tier_as_number, list(TYRANID_TIER_MINION = -1, TYRANID_TIER_ZERO = 0, TYRANID_TIER_ONE = 1, TYRANID_TIER_TWO = 2, TYRANID_TIER_THREE = 3, TYRANID_TIER_FOUR = 4))
 
 // =============================
-// xeno upgrades
+// tyranid upgrades
 
-#define XENO_UPGRADE_BASETYPE "basetype"
-#define XENO_UPGRADE_INVALID "invalid" // not applicable, the old -1
-#define XENO_UPGRADE_NORMAL "zero"	// god forgive me again
-#define XENO_UPGRADE_PRIMO "one"
+#define TYRANID_UPGRADE_BASETYPE "basetype"
+#define TYRANID_UPGRADE_INVALID "invalid" // not applicable, the old -1
+#define TYRANID_UPGRADE_NORMAL "zero"	// god forgive me again
+#define TYRANID_UPGRADE_PRIMO "one"
 
-#define XENO_UPGRADE_MANIFESTATION "manifestation" //just for the hivemind
+#define TYRANID_UPGRADE_MANIFESTATION "manifestation" //just for the hivemind
 
-GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVALID, XENO_UPGRADE_NORMAL, XENO_UPGRADE_PRIMO, XENO_UPGRADE_MANIFESTATION))
+GLOBAL_LIST_INIT(tyranidupgradetiers, list(TYRANID_UPGRADE_BASETYPE, TYRANID_UPGRADE_INVALID, TYRANID_UPGRADE_NORMAL, TYRANID_UPGRADE_PRIMO, TYRANID_UPGRADE_MANIFESTATION))
 
 //=================================================
 
@@ -241,7 +241,7 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 /////////////////MOVE DEFINES//////////////////////
 #define MOVE_INTENT_WALK 0
 #define MOVE_INTENT_RUN 1
-#define XENO_HUMAN_PUSHED_DELAY 5
+#define TYRANID_HUMAN_PUSHED_DELAY 5
 
 ///////////////////INTERNAL ORGANS DEFINES///////////////////
 
@@ -396,7 +396,7 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 
 //Some on_mob_life() procs check for alien races.
 #define IS_HUMAN (1<<0)
-#define IS_XENO (1<<1)
+#define IS_TYRANID (1<<1)
 #define IS_MOTH (1<<3)
 #define IS_SECTOID (1<<4)
 #define IS_MONKEY (1<<5)
@@ -411,7 +411,7 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 //Mob sizes
 #define MOB_SIZE_SMALL 0
 #define MOB_SIZE_HUMAN 1
-#define MOB_SIZE_XENO 2
+#define MOB_SIZE_TYRANID 2
 #define MOB_SIZE_BIG 3
 
 // Height defines
@@ -510,87 +510,87 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define LIVING_SHOCK_EFFECT_COOLDOWN 10 SECONDS
 
 
-//Xeno Defines
-//Xeno flags
-///Xeno is currently performing a leap/dash attack
-#define XENO_LEAPING (1<<0)
+//Tyranid Defines
+//Tyranid flags
+///Tyranid is currently performing a leap/dash attack
+#define TYRANID_LEAPING (1<<0)
 ///Hive leader
-#define XENO_LEADER (1<<1)
+#define TYRANID_LEADER (1<<1)
 ///Zoomed out
-#define XENO_ZOOMED (1<<2)
+#define TYRANID_ZOOMED (1<<2)
 ///mobhud on
-#define XENO_MOBHUD (1<<3)
+#define TYRANID_MOBHUD (1<<3)
 ///rouny mode
-#define XENO_ROUNY (1<<4)
+#define TYRANID_ROUNY (1<<4)
 
 
-#define XENO_DEFAULT_VENT_ENTER_TIME 4.5 SECONDS //Standard time for a xeno to enter a vent.
-#define XENO_DEFAULT_VENT_EXIT_TIME 2 SECONDS //Standard time for a xeno to exit a vent.
-#define XENO_DEFAULT_ACID_PUDDLE_DAMAGE 14 //Standard damage dealt by acid puddles
-#define XENO_ACID_WELL_FILL_TIME 2 SECONDS //How long it takes to add a charge to an acid pool
-#define XENO_ACID_WELL_FILL_COST 150 //Cost in plasma to apply a charge to an acid pool
-#define XENO_ACID_WELL_MAX_CHARGES 5 //Maximum number of charges for the acid well
+#define TYRANID_DEFAULT_VENT_ENTER_TIME 4.5 SECONDS //Standard time for a tyranid to enter a vent.
+#define TYRANID_DEFAULT_VENT_EXIT_TIME 2 SECONDS //Standard time for a tyranid to exit a vent.
+#define TYRANID_DEFAULT_ACID_PUDDLE_DAMAGE 14 //Standard damage dealt by acid puddles
+#define TYRANID_ACID_WELL_FILL_TIME 2 SECONDS //How long it takes to add a charge to an acid pool
+#define TYRANID_ACID_WELL_FILL_COST 150 //Cost in plasma to apply a charge to an acid pool
+#define TYRANID_ACID_WELL_MAX_CHARGES 5 //Maximum number of charges for the acid well
 
 #define HIVE_CAN_HIJACK (1<<0)
 
-#define XENO_PULL_CHARGE_TIME 2 SECONDS
-#define XENO_SLOWDOWN_REGEN 0.4
+#define TYRANID_PULL_CHARGE_TIME 2 SECONDS
+#define TYRANID_SLOWDOWN_REGEN 0.4
 
-#define XENO_DEADHUMAN_DRAG_SLOWDOWN 2
-#define XENO_EXPLOSION_GIB_THRESHOLD 0.95 //if your effective bomb armour is less than 5, devestating explosions will gib xenos
+#define TYRANID_DEADHUMAN_DRAG_SLOWDOWN 2
+#define TYRANID_EXPLOSION_GIB_THRESHOLD 0.95 //if your effective bomb armour is less than 5, devestating explosions will gib tyranids
 
-#define SPIT_UPGRADE_BONUS(Xenomorph) (Xenomorph.upgrade_as_number() ?  0.6 : 0.45 ) //Primo damage increase
+#define SPIT_UPGRADE_BONUS(Tyranid) (Tyranid.upgrade_as_number() ?  0.6 : 0.45 ) //Primo damage increase
 
 #define PLASMA_TRANSFER_AMOUNT 100
 
-#define XENO_NEURO_AMOUNT_RECURRING 5
-#define XENO_NEURO_CHANNEL_TIME 0.25 SECONDS
+#define TYRANID_NEURO_AMOUNT_RECURRING 5
+#define TYRANID_NEURO_CHANNEL_TIME 0.25 SECONDS
 
-#define XENO_HEALTH_ALERT_TRIGGER_PERCENT 0.25 //If a xeno is damaged while its current hit points are less than this percent of its maximum, we send out an alert to the hive
-#define XENO_HEALTH_ALERT_TRIGGER_THRESHOLD 50 //If a xeno is damaged while its current hit points are less than this amount, we send out an alert to the hive
-#define XENO_HEALTH_ALERT_COOLDOWN 60 SECONDS //The cooldown on these xeno damage alerts
-#define XENO_SILO_HEALTH_ALERT_COOLDOWN 30 SECONDS //The cooldown on these xeno damage alerts
-#define XENO_HEALTH_ALERT_POINTER_DURATION 6 SECONDS //How long the alert directional pointer lasts.
-#define XENO_RALLYING_POINTER_DURATION 15 SECONDS //How long the rally hive pointer lasts
-#define XENO_SILO_DAMAGE_POINTER_DURATION 10 SECONDS //How long the alert directional pointer lasts when silos are damaged
-#define XENO_SILO_DETECTION_COOLDOWN 1 MINUTES
-#define XENO_SILO_DETECTION_RANGE 10//How far silos can detect hostiles
-#define XENO_GARGOYLE_DETECTION_COOLDOWN 30 SECONDS
-#define XENO_GARGOYLE_DETECTION_RANGE 10//How far gargoyles can detect hostiles
-#define XENO_RESTING_COOLDOWN 2 SECONDS
-#define XENO_UNRESTING_COOLDOWN 0.5 SECONDS
+#define TYRANID_HEALTH_ALERT_TRIGGER_PERCENT 0.25 //If a tyranid is damaged while its current hit points are less than this percent of its maximum, we send out an alert to the hive
+#define TYRANID_HEALTH_ALERT_TRIGGER_THRESHOLD 50 //If a tyranid is damaged while its current hit points are less than this amount, we send out an alert to the hive
+#define TYRANID_HEALTH_ALERT_COOLDOWN 60 SECONDS //The cooldown on these tyranid damage alerts
+#define TYRANID_SILO_HEALTH_ALERT_COOLDOWN 30 SECONDS //The cooldown on these tyranid damage alerts
+#define TYRANID_HEALTH_ALERT_POINTER_DURATION 6 SECONDS //How long the alert directional pointer lasts.
+#define TYRANID_RALLYING_POINTER_DURATION 15 SECONDS //How long the rally hive pointer lasts
+#define TYRANID_SILO_DAMAGE_POINTER_DURATION 10 SECONDS //How long the alert directional pointer lasts when silos are damaged
+#define TYRANID_SILO_DETECTION_COOLDOWN 1 MINUTES
+#define TYRANID_SILO_DETECTION_RANGE 10//How far silos can detect hostiles
+#define TYRANID_GARGOYLE_DETECTION_COOLDOWN 30 SECONDS
+#define TYRANID_GARGOYLE_DETECTION_RANGE 10//How far gargoyles can detect hostiles
+#define TYRANID_RESTING_COOLDOWN 2 SECONDS
+#define TYRANID_UNRESTING_COOLDOWN 0.5 SECONDS
 
-#define XENO_HIVEMIND_DETECTION_RANGE 10 //How far out (in tiles) can the hivemind detect hostiles
-#define XENO_HIVEMIND_DETECTION_COOLDOWN 1 MINUTES
+#define TYRANID_HIVEMIND_DETECTION_RANGE 10 //How far out (in tiles) can the hivemind detect hostiles
+#define TYRANID_HIVEMIND_DETECTION_COOLDOWN 1 MINUTES
 
-#define XENO_PARALYZE_NORMALIZATION_MULTIPLIER 5 //Multiplies an input to normalize xeno paralyze duration times.
-#define XENO_STUN_NORMALIZATION_MULTIPLIER 2 //Multiplies an input to normalize xeno stun duration times.
+#define TYRANID_PARALYZE_NORMALIZATION_MULTIPLIER 5 //Multiplies an input to normalize tyranid paralyze duration times.
+#define TYRANID_STUN_NORMALIZATION_MULTIPLIER 2 //Multiplies an input to normalize tyranid stun duration times.
 
 #define CANNOT_HOLD_EGGS 0
 #define CAN_HOLD_TWO_HANDS 1
 #define CAN_HOLD_ONE_HAND 2
 
 //TODO a lot of caste and caste_can flags should just be traits using caste_traits instead
-#define CASTE_INNATE_HEALING (1<<0) // Xenomorphs heal outside of weeds. Larvas, for example.
+#define CASTE_INNATE_HEALING (1<<0) // Tyranids heal outside of weeds. Larvas, for example.
 #define CASTE_FIRE_IMMUNE (1<<1) //Are we immune to fire
 #define CASTE_EVOLUTION_ALLOWED (1<<2) //If we're allowed to evolve (also affects the gain of evo points)
 #define CASTE_IS_INTELLIGENT (1<<3) // A hive leader or able to use more human controls
 #define CASTE_DO_NOT_ALERT_LOW_LIFE (1<<4) //Doesn't alert the hive when at low life, and is quieter when dying
 #define CASTE_HIDE_IN_STATUS (1<<5)
-#define CASTE_QUICK_HEAL_STANDING (1<<6) // Xenomorphs heal standing same if they were resting.
-#define CASTE_INNATE_PLASMA_REGEN (1<<7) // Xenos get full plasma regardless if they are on weeds or not
-#define CASTE_ACID_BLOOD (1<<8) //The acid blood effect which damages humans near xenos that take damage
+#define CASTE_QUICK_HEAL_STANDING (1<<6) // Tyranids heal standing same if they were resting.
+#define CASTE_INNATE_PLASMA_REGEN (1<<7) // Tyranids get full plasma regardless if they are on weeds or not
+#define CASTE_ACID_BLOOD (1<<8) //The acid blood effect which damages humans near tyranids that take damage
 #define CASTE_IS_STRONG (1<<9)//can tear open acided walls without being big
 #define CASTE_IS_BUILDER (1<<10) //whether we are classified as a builder caste
 #define CASTE_IS_A_MINION (1<<11) //That's a dumb ai
 #define CASTE_PLASMADRAIN_IMMUNE (1<<12)
-#define CASTE_NOT_IN_BIOSCAN (1<<13) // xenos with this flag aren't registered towards bioscan
-#define CASTE_DO_NOT_ANNOUNCE_DEATH (1<<14) // xenos with this flag wont be announced to hive when dying
+#define CASTE_NOT_IN_BIOSCAN (1<<13) // tyranids with this flag aren't registered towards bioscan
+#define CASTE_DO_NOT_ANNOUNCE_DEATH (1<<14) // tyranids with this flag wont be announced to hive when dying
 #define CASTE_STAGGER_RESISTANT (1<<15) //Resistant to some forms of stagger, such as projectiles
 #define CASTE_HAS_WOUND_MASK (1<<16) //uses an alpha mask for wounded states
 #define CASTE_EXCLUDE_STRAINS (1<<17) // denotes castes/basetypes that should be excluded from being evoable as a strain
 
-// Xeno defines that affect evolution, considering making a new var for these
+// Tyranid defines that affect evolution, considering making a new var for these
 #define CASTE_LEADER_TYPE (1<<16) //Whether we are a leader type caste, such as the queen, shrike or ?king?, and is affected by queen ban and playtime restrictions
 #define CASTE_CANNOT_EVOLVE_IN_CAPTIVITY (1<<17) //Whether we cannot evolve in the research lab
 #define CASTE_REQUIRES_FREE_TILE (1<<18) //Whether we require a free tile to evolve
@@ -600,7 +600,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define CASTE_CAN_BE_QUEEN_HEALED (1<<1)
 #define CASTE_CAN_BE_GIVEN_PLASMA (1<<2)
 #define CASTE_CAN_BE_LEADER (1<<3)
-#define CASTE_CAN_HEAL_WITHOUT_QUEEN (1<<4) // Xenomorphs can heal even without a queen on the same z level
+#define CASTE_CAN_HEAL_WITHOUT_QUEEN (1<<4) // Tyranids can heal even without a queen on the same z level
 #define CASTE_CAN_HOLD_JELLY (1<<5)//whether we can hold fireproof jelly in our hands
 #define CASTE_CAN_CORRUPT_GENERATOR (1<<6) //Can corrupt a generator
 #define CASTE_CAN_RIDE_CRUSHER (1<<7) //Can ride a crusher
@@ -662,7 +662,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define GORGER_REGURGITATE_DELAY 1 SECONDS
 #define GORGER_DEVOUR_DELAY 2 SECONDS
 #define GORGER_DRAIN_INSTANCES 2 // amuont of times the target is drained
-#define GORGER_DRAIN_DELAY 1 SECONDS // time needed to drain a marine once
+#define GORGER_DRAIN_DELAY 1 SECONDS // time needed to drain a guardsman once
 #define GORGER_DRAIN_HEAL 40 // overheal gained each time the target is drained
 #define GORGER_DRAIN_BLOOD_DRAIN 20 // amount of plasma drained when feeding on something
 #define GORGER_TRANSFUSION_HEAL 0.3 // in %
@@ -691,7 +691,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define DEFILER_DEFILE_CHANNEL_TIME 0.5 SECONDS //Wind up time for the Defile ability
 #define DEFILER_DEFILE_FAIL_COOLDOWN 5 SECONDS //Time Defile goes on cooldown for when it fails
 #define DEFILER_DEFILE_STRENGTH_MULTIPLIER 0.5 //Base multiplier for determining the power of Defile
-#define DEFILER_SANGUINAL_DAMAGE 1 //Damage dealt per tick per xeno toxin by the sanguinal toxin
+#define DEFILER_SANGUINAL_DAMAGE 1 //Damage dealt per tick per tyranid toxin by the sanguinal toxin
 #define DEFILER_SANGUINAL_SMOKE_MULTIPLIER 0.03 //Amount the defile power is multiplied by which determines sanguinal smoke strength/size
 #define TENTACLE_ABILITY_RANGE 5
 
@@ -749,9 +749,9 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 
 //Drone defines
 #define DRONE_HEAL_RANGE 1
-#define AUTO_WEEDING_MIN_DIST 4 //How far the xeno must be from the last spot to auto weed
+#define AUTO_WEEDING_MIN_DIST 4 //How far the tyranid must be from the last spot to auto weed
 #define RESIN_SELF_TIME 2 SECONDS //Time it takes to apply resin jelly on themselves
-#define RESIN_OTHER_TIME 1 SECONDS //Time it takes to apply resin jelly to other xenos
+#define RESIN_OTHER_TIME 1 SECONDS //Time it takes to apply resin jelly to other tyranids
 
 //Boiler defines
 #define BOILER_LUMINOSITY_BASE 0
@@ -781,9 +781,9 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 //Drone defines
 #define DRONE_BASE_SALVE_HEAL 50
 #define DRONE_ESSENCE_LINK_WINDUP 3 SECONDS
-#define DRONE_ESSENCE_LINK_RANGE 6 // How far apart the linked xenos can be, in tiles. Going past this deactivates the buff.
+#define DRONE_ESSENCE_LINK_RANGE 6 // How far apart the linked tyranids can be, in tiles. Going past this deactivates the buff.
 #define DRONE_ESSENCE_LINK_REGEN 0.012 // Amount of health regen given as a percentage.
-#define DRONE_ESSENCE_LINK_SHARED_HEAL 0.1 // The effectiveness of heals when applied to the other linked xeno, as a percentage
+#define DRONE_ESSENCE_LINK_SHARED_HEAL 0.1 // The effectiveness of heals when applied to the other linked tyranid, as a percentage
 
 //Defender defines
 #define DEFENDER_CHARGE_RANGE 4
@@ -938,25 +938,25 @@ GLOBAL_LIST_INIT(human_body_parts, list(BODY_ZONE_HEAD,
 
 // Pheromones and buff orders
 
-#define AURA_XENO_RECOVERY "recovery"
-#define AURA_XENO_WARDING "warding"
-#define AURA_XENO_FRENZY "frenzy"
+#define AURA_TYRANID_RECOVERY "recovery"
+#define AURA_TYRANID_WARDING "warding"
+#define AURA_TYRANID_FRENZY "frenzy"
 
 #define AURA_HUMAN_MOVE "move"
 #define AURA_HUMAN_HOLD "hold"
 #define AURA_HUMAN_FOCUS "focus"
 #define AURA_HUMAN_FLAG "flag"
 
-#define AURA_XENO_BLESSWARDING "Blessing Of Warding"
-#define AURA_XENO_BLESSFRENZY "Blessing Of Frenzy"
-#define AURA_XENO_BLESSFURY "Blessing Of Fury"
+#define AURA_TYRANID_BLESSWARDING "Blessing Of Warding"
+#define AURA_TYRANID_BLESSFRENZY "Blessing Of Frenzy"
+#define AURA_TYRANID_BLESSFURY "Blessing Of Fury"
 
 //slowdown defines for liquid turfs
 
 ///Default slowdown for mobs moving through liquid
 #define MOB_WATER_SLOWDOWN 1.75
-///Slowdown for xenos moving through liquid
-#define XENO_WATER_SLOWDOWN 1.3
+///Slowdown for tyranids moving through liquid
+#define TYRANID_WATER_SLOWDOWN 1.3
 ///Slowdown for boilers moving through liquid
 #define BOILER_WATER_SLOWDOWN 0
 ///Slowdown for warlocks moving through liquid

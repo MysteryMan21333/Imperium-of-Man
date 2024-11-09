@@ -45,7 +45,7 @@
 	return take_overall_damage(ram_damage, BRUTE, MELEE, FALSE, FALSE, TRUE, 0, 4)
 
 
-/mob/living/carbon/xenomorph/larva/vehicle_collision(obj/vehicle/sealed/armored/veh, facing, mob/pilot, ram_damage = veh.ram_damage)
+/mob/living/carbon/tyranid/larva/vehicle_collision(obj/vehicle/sealed/armored/veh, facing, mob/pilot, ram_damage = veh.ram_damage)
 	gib() //fuck you
 
 /obj/effect/alien/vehicle_collision(obj/vehicle/sealed/armored/veh, facing, mob/pilot, ram_damage = veh.ram_damage)

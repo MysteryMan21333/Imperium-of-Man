@@ -26,7 +26,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/eastbeach)
 "abZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/sulaco,
 /area/riptide/caves/north)
 "acr" = (
@@ -79,7 +79,7 @@
 	},
 /area/riptide/caves/central/garbledradio)
 "aed" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "aer" = (
@@ -191,7 +191,7 @@
 /turf/open/floor/prison/marked,
 /area/riptide/inside/syndicatefoyer)
 "aih" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine/general{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/general{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -229,7 +229,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/riptide/caves/pmc/toxins)
 "ajI" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/shuttle/dropship/floor/alt,
 /area/riptide/caves/tram)
 "akp" = (
@@ -255,7 +255,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
 "akV" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north2)
 "akW" = (
@@ -316,7 +316,7 @@
 /area/riptide/inside/medical/surgery)
 "amF" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "amU" = (
@@ -979,7 +979,7 @@
 "aMq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/tram)
 "aMu" = (
@@ -1039,7 +1039,7 @@
 /turf/open/floor/tile/darkish,
 /area/riptide/caves/sea)
 "aOc" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner{
 	dir = 8
 	},
@@ -1130,7 +1130,7 @@
 /turf/closed/wall/variable/adobe,
 /area/riptide/inside/beachbar)
 "aQC" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -1284,7 +1284,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/pmc/lobby)
 "aVD" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/riptide/outside/southislands)
 "aVR" = (
@@ -1298,7 +1298,7 @@
 /area/riptide/caves/piratecove)
 "aWf" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/pmc/warehouse)
@@ -1389,7 +1389,7 @@
 /area/riptide/outside/eastbeach)
 "aZX" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/rustyplating,
 /area/riptide/caves/pmc/warehouse)
@@ -1413,7 +1413,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/riptide/inside/hydroponics)
 "bbm" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 1
 	},
@@ -1440,7 +1440,7 @@
 /area/riptide/caves/checkpoint)
 "bdu" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/tile/cmo,
 /area/riptide/inside/medical/offices)
 "bdH" = (
@@ -1486,7 +1486,7 @@
 /area/riptide/inside/medical)
 "bfb" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpsespawner/marine/regular,
+/obj/effect/landmark/corpsespawner/guardsman/regular,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "bfg" = (
@@ -1640,7 +1640,7 @@
 	},
 /area/riptide/caves/pmc/prison)
 "blu" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine/general,
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman/general,
 /turf/open/floor/plating,
 /area/riptide/inside/medical)
 "blz" = (
@@ -1826,8 +1826,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/detpack,
 /obj/structure/closet/crate/explosives,
-/obj/item/explosive/grenade/incendiary/som,
-/obj/item/explosive/grenade/incendiary/som,
+/obj/item/explosive/grenade/incendiary/chaos,
+/obj/item/explosive/grenade/incendiary/chaos,
 /turf/open/floor/dark2,
 /area/riptide/inside/warehouse)
 "brx" = (
@@ -1951,7 +1951,7 @@
 /turf/open/ground,
 /area/riptide/outside/southjungle)
 "bvI" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/drought/alt,
@@ -2070,7 +2070,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/riptide/outside/southbeach)
 "bzo" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/prison/darkred{
 	dir = 4
 	},
@@ -2489,7 +2489,7 @@
 	},
 /area/riptide/outside/volcano)
 "bMt" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 10
 	},
@@ -2601,7 +2601,7 @@
 "bQx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/weapon/gun/shotgun/double/marine,
+/obj/item/weapon/gun/shotgun/double/guardsman,
 /obj/item/ammo_casing/shell{
 	pixel_x = -7;
 	pixel_y = 5
@@ -2706,7 +2706,7 @@
 /obj/machinery/light_construct{
 	dir = 1
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
@@ -3118,7 +3118,7 @@
 /area/riptide/outside/volcano)
 "cij" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
@@ -3465,7 +3465,7 @@
 	},
 /area/riptide/inside/medical)
 "cuZ" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
@@ -3480,7 +3480,7 @@
 /turf/open/floor/wood/darker,
 /area/riptide/inside/beachshop)
 "cvo" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -3527,7 +3527,7 @@
 /turf/open/floor/wood/variable/mosaic,
 /area/riptide/inside/beachden)
 "cwD" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
@@ -3751,11 +3751,11 @@
 /obj/machinery/door/airlock/multi_tile/mainship/secdoor/glass{
 	dir = 2
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/syndicateport)
 "cDu" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
 "cDv" = (
@@ -3824,7 +3824,7 @@
 /area/riptide/inside/syndicatecheckpoint)
 "cGI" = (
 /obj/effect/turf_decal/riverdecal,
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/riptide/caves/north2)
 "cGS" = (
@@ -3914,7 +3914,7 @@
 /area/riptide/inside/beachsushi)
 "cJH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/southislands)
 "cJV" = (
@@ -3969,7 +3969,7 @@
 /area/riptide/inside/syndicatestarboard)
 "cMa" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/tram)
 "cMb" = (
@@ -4150,7 +4150,7 @@
 /area/riptide/caves/pmc/prison)
 "cTj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/plate,
 /area/riptide/caves/syndicatemining)
 "cTA" = (
@@ -4204,7 +4204,7 @@
 /turf/open/floor/tile/white,
 /area/riptide/inside/medical/offices)
 "cVP" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/northjungle)
 "cWa" = (
@@ -4268,7 +4268,7 @@
 /turf/open/floor/wood/variable/wide,
 /area/riptide/inside/beachmotel)
 "cYb" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north/garbledradio)
 "cYl" = (
@@ -4287,7 +4287,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/southjungle)
 "cYF" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
 "cYJ" = (
@@ -4341,7 +4341,7 @@
 /area/riptide/caves/pmc/prison)
 "cZX" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/riptide/caves/pmc/warehouse)
@@ -4471,7 +4471,7 @@
 /area/riptide/inside/warehouse)
 "ddY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/heatinggrate,
@@ -4703,7 +4703,7 @@
 	},
 /area/riptide/inside/engineering)
 "dnC" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
 "dnX" = (
@@ -4725,7 +4725,7 @@
 "doI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "dpj" = (
@@ -4813,7 +4813,7 @@
 /turf/open/floor/iron/dark/small,
 /area/riptide/caves/pmc/rnd)
 "dus" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -4842,7 +4842,7 @@
 /turf/open/floor/wood/alt_four,
 /area/riptide/inside/abandonedcottage)
 "duN" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "dvc" = (
@@ -4857,12 +4857,12 @@
 /area/riptide/outside/river)
 "dvN" = (
 /obj/structure/mine_structure/wooden/support_wall/t_bar,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "dwa" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/grime,
 /area/riptide/caves/pmc/warehouse)
 "dwe" = (
@@ -5042,7 +5042,7 @@
 /turf/open/floor/wood/thatch,
 /area/riptide/inside/tikihut)
 "dzX" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -5063,7 +5063,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/southjungle)
 "dAL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner2{
 	dir = 8
 	},
@@ -5200,7 +5200,7 @@
 /area/riptide/caves/central)
 "dFP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg1,
 /area/riptide/caves/tram)
 "dGi" = (
@@ -5418,7 +5418,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "dNP" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/scorched,
 /area/riptide/caves/pmc/warehouse)
 "dNW" = (
@@ -5471,7 +5471,7 @@
 	},
 /area/riptide/caves/checkpoint)
 "dPS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/riptide/inside/syndicateport)
 "dQc" = (
@@ -5744,7 +5744,7 @@
 /area/riptide/outside/volcano)
 "dXq" = (
 /obj/structure/platform_decoration,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river,
 /area/riptide/outside/westislands)
 "dYj" = (
@@ -5792,7 +5792,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/open,
 /area/riptide/inside/engineering/cave)
 "dZW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner{
 	dir = 1
 	},
@@ -5860,7 +5860,7 @@
 "ecn" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "ecK" = (
@@ -6082,7 +6082,7 @@
 /turf/open/floor/plating,
 /area/riptide/inside/southtower)
 "ejV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner2,
 /area/riptide/outside/westislands)
 "ekh" = (
@@ -6189,7 +6189,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/riptide/outside/southbeach)
 "eot" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/syndicatemining)
@@ -6300,7 +6300,7 @@
 /turf/open/ground,
 /area/riptide/outside/eastbeach)
 "ese" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river,
 /area/riptide/outside/river)
 "esj" = (
@@ -6466,7 +6466,7 @@
 /turf/open/ground,
 /area/riptide/outside/beachlzone)
 "eyg" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
 "eyC" = (
@@ -6577,7 +6577,7 @@
 	},
 /area/riptide/outside/river)
 "eCH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner2{
 	dir = 1
 	},
@@ -7065,7 +7065,7 @@
 /obj/structure/platform_decoration{
 	dir = 8
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge,
 /area/riptide/outside/westislands)
 "eVi" = (
@@ -7206,7 +7206,7 @@
 /turf/open/floor/tile/dark2,
 /area/riptide/inside/southtower)
 "eYP" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker{
@@ -7259,7 +7259,7 @@
 /obj/structure/barricade/wooden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/curtain/open/temple,
 /turf/open/floor/wood/thatch,
 /area/riptide/inside/tikihut)
@@ -7427,7 +7427,7 @@
 /turf/open/ground,
 /area/riptide/caves/central)
 "fgZ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/grime,
 /area/riptide/caves/pmc/warehouse)
 "fhC" = (
@@ -7566,7 +7566,7 @@
 /turf/open/floor/wood/alt_six,
 /area/riptide/outside/northislands)
 "fns" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 8
 	},
@@ -7596,7 +7596,7 @@
 	},
 /area/riptide/outside/beachlzone)
 "fox" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/wood,
 /area/riptide/outside/southislands)
@@ -7625,7 +7625,7 @@
 	},
 /area/riptide/inside/chapel)
 "foS" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/grimy,
 /area/riptide/caves/central/garbledradio)
 "foU" = (
@@ -7675,7 +7675,7 @@
 /area/riptide/outside/volcano)
 "fqt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
@@ -7772,7 +7772,7 @@
 	},
 /area/riptide/outside/northislands)
 "fuS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 1
 	},
@@ -7821,7 +7821,7 @@
 /turf/open/floor/mainship/ai,
 /area/riptide/inside/landingzoneone)
 "fxa" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/structure/platform_decoration{
 	dir = 4
 	},
@@ -7919,7 +7919,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/riptide/caves/pmc/toxins)
 "fzw" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
 "fzz" = (
@@ -7988,7 +7988,7 @@
 "fAY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/marine/regular,
+/obj/effect/landmark/corpsespawner/guardsman/regular,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "fBD" = (
@@ -8166,7 +8166,7 @@
 /area/riptide/outside/southbeach)
 "fHz" = (
 /obj/structure/window/framed/prison/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/syndicateport)
 "fHD" = (
@@ -8262,7 +8262,7 @@
 	},
 /area/riptide/caves/central)
 "fKi" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -8308,7 +8308,7 @@
 "fKM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/southbeach)
 "fLc" = (
@@ -8362,7 +8362,7 @@
 "fMD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg1,
 /area/riptide/caves/tram)
 "fMN" = (
@@ -8415,7 +8415,7 @@
 /turf/open/liquid/water/river,
 /area/riptide/inside/medical)
 "fNH" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 4
 	},
@@ -8538,11 +8538,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/marine/regular,
+/obj/effect/landmark/corpsespawner/guardsman/regular,
 /turf/open/floor/plating/dmg1,
 /area/riptide/caves/tram)
 "fSJ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/riptide/outside/westislands)
 "fSY" = (
@@ -8737,7 +8737,7 @@
 /area/riptide/outside/westbeach)
 "gaz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "gaU" = (
@@ -9044,7 +9044,7 @@
 /turf/open/floor/wood/alt_one,
 /area/riptide/caves/piratecove)
 "gmg" = (
-/obj/machinery/door/airlock/mainship/marine/general{
+/obj/machinery/door/airlock/mainship/guardsman/general{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -9096,7 +9096,7 @@
 /area/riptide/caves/north2)
 "gos" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "gov" = (
@@ -9261,7 +9261,7 @@
 /turf/open/ground,
 /area/riptide/outside/volcano)
 "gtN" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north/garbledradio)
 "gtQ" = (
@@ -9346,7 +9346,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "gwc" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/syndicatemining)
 "gwg" = (
@@ -9398,7 +9398,7 @@
 /area/riptide/outside/southjungle)
 "gyQ" = (
 /obj/item/ammo_casing/bullet,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/wood,
 /area/riptide/caves/piratecove)
 "gyT" = (
@@ -9436,7 +9436,7 @@
 /turf/open/floor/wood/variable,
 /area/riptide/inside/luxurybaroverlook)
 "gAo" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/tile/green/whitegreenfull,
 /area/riptide/inside/hydroponics)
 "gAN" = (
@@ -9731,7 +9731,7 @@
 /turf/open/floor/prison/plate,
 /area/riptide/inside/syndicateport)
 "gOy" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 8
 	},
@@ -9860,7 +9860,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/riptide/inside/landingzoneone)
 "gTD" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/prison/plate,
 /area/riptide/caves/syndicatemining)
 "gUd" = (
@@ -9899,7 +9899,7 @@
 	},
 /area/riptide/inside/medical)
 "gVk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 1
 	},
@@ -9932,7 +9932,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "gWv" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
@@ -10011,7 +10011,7 @@
 /area/riptide/inside/medical)
 "hbm" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/riptide/caves/syndicatemining)
 "hbs" = (
@@ -10106,7 +10106,7 @@
 /area/riptide/outside/southislands)
 "hei" = (
 /obj/structure/window/framed/prison/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/scorched,
 /area/riptide/inside/syndicateport)
 "hex" = (
@@ -10360,7 +10360,7 @@
 /turf/closed/gm/dense,
 /area/riptide/caves/rock)
 "hnJ" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/ground,
 /area/riptide/outside/southislands)
 "hnW" = (
@@ -10584,7 +10584,7 @@
 /turf/open/floor/wood/thatch,
 /area/riptide/inside/canteen)
 "huT" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north2)
 "hvn" = (
@@ -11296,7 +11296,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/riptide/outside/westislands)
 "hXj" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/prison/sterilewhite/full,
 /area/riptide/inside/syndicatestarboard)
 "hXr" = (
@@ -11318,7 +11318,7 @@
 	},
 /area/riptide/inside/beachmotel)
 "hXK" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/riptide/outside/southislands)
 "hXU" = (
@@ -11343,7 +11343,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/riptide/outside/northbeach)
 "hYK" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -11372,7 +11372,7 @@
 /area/riptide/caves/pmc/toxins)
 "ibV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/inside/warehouse)
 "ibZ" = (
@@ -11478,7 +11478,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/eastbeach)
 "ieK" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner{
 	dir = 4
 	},
@@ -11547,7 +11547,7 @@
 /obj/structure/monorail{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/shuttle/dropship/floor/alt,
 /area/riptide/caves/tram)
 "iju" = (
@@ -11673,7 +11673,7 @@
 /turf/open/floor/wood/darker,
 /area/riptide/inside/beachshop)
 "inT" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
@@ -11896,7 +11896,7 @@
 /turf/open/floor/wood/alt_one,
 /area/riptide/caves/piratecove)
 "iuv" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/riptide/caves/north)
 "iuW" = (
@@ -12104,7 +12104,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/open,
 /area/riptide/inside/engineering/cave)
 "iDQ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north2)
 "iEd" = (
@@ -12117,7 +12117,7 @@
 /turf/open/floor/prison/plate,
 /area/riptide/caves/syndicatemining)
 "iEm" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/syndicateport)
 "iEo" = (
@@ -12234,7 +12234,7 @@
 /obj/structure/monorail{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/shuttle/dropship/floor/alt,
 /area/riptide/caves/tram)
 "iLa" = (
@@ -12734,7 +12734,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "jcl" = (
@@ -12765,7 +12765,7 @@
 /turf/open/floor/wood/alt_two,
 /area/riptide/inside/cargoboat)
 "jdh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/lavaland/basalt,
 /area/riptide/inside/syndicatehead)
 "jdi" = (
@@ -12959,7 +12959,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "jkB" = (
@@ -13308,7 +13308,7 @@
 /area/riptide/caves/syndicatemining)
 "jzb" = (
 /obj/effect/ai_node,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/westislands)
 "jzi" = (
@@ -13345,7 +13345,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "jAx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
@@ -13368,7 +13368,7 @@
 /turf/open/floor,
 /area/riptide/caves/pmc/lobby)
 "jBi" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "jBk" = (
@@ -13420,7 +13420,7 @@
 /obj/structure/monorail{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/shuttle/dropship/floor/alt,
 /area/riptide/caves/tram)
 "jDA" = (
@@ -13630,7 +13630,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/riptide/inside/lighttower)
 "jJs" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north2/garbledradio)
 "jJx" = (
@@ -13814,7 +13814,7 @@
 /turf/open/floor/wood/variable/mosaic/damaged,
 /area/riptide/inside/beachden)
 "jOu" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river,
 /area/riptide/outside/westislands)
 "jOz" = (
@@ -13891,7 +13891,7 @@
 /area/riptide/outside/volcano)
 "jRJ" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/rustyplating,
 /area/riptide/caves/pmc/warehouse)
 "jRQ" = (
@@ -13957,7 +13957,7 @@
 /turf/open/floor/plating,
 /area/riptide/caves/pmc/lobby)
 "jVl" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
 "jVn" = (
@@ -14149,7 +14149,7 @@
 /area/riptide/inside/luxurybar)
 "kcc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "kce" = (
@@ -14331,7 +14331,7 @@
 /area/riptide/outside/beachlzone)
 "kiM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/marine/regular,
+/obj/effect/landmark/corpsespawner/guardsman/regular,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/dmg1,
 /area/riptide/caves/tram)
@@ -14454,7 +14454,7 @@
 /turf/open/floor/tile/green,
 /area/riptide/inside/lighttowermaint)
 "klh" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/prison/plate,
 /area/riptide/caves/syndicatemining)
 "klM" = (
@@ -14815,7 +14815,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/inside/syndicatefoyer)
 "kyM" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/heatinggrate,
@@ -14825,7 +14825,7 @@
 /area/riptide/caves/piratecove)
 "kzi" = (
 /obj/structure/mine_structure/wooden/support_wall/t_bar,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
@@ -14975,7 +14975,7 @@
 /turf/open/floor/prison/blackfloor,
 /area/riptide/inside/lighttower)
 "kEr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "kEt" = (
@@ -14985,7 +14985,7 @@
 /turf/open/floor/wood/thatch,
 /area/riptide/inside/canteen/two)
 "kEA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river,
 /area/riptide/outside/southislands)
 "kED" = (
@@ -15179,8 +15179,8 @@
 /turf/open/floor/wood,
 /area/riptide/outside/southjungle)
 "kLX" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 1
 	},
@@ -15204,7 +15204,7 @@
 /turf/open/floor/plating/ground/dirt_alt,
 /area/riptide/outside/northjungle)
 "kMO" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -15240,7 +15240,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/syndicatehead)
 "kNo" = (
@@ -15563,12 +15563,12 @@
 /turf/open/floor/wood/alt_one,
 /area/riptide/caves/piratecove)
 "kWH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/riptide/outside/northislands)
 "kWL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/heatinggrate,
 /area/riptide/caves/tram)
 "kWT" = (
@@ -16313,7 +16313,7 @@
 /turf/open/floor/tile/dark2,
 /area/riptide/inside/guardcheck)
 "lxo" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 1
 	},
@@ -16362,12 +16362,12 @@
 /area/riptide/inside/syndicatecheckpoint)
 "lza" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/riptide/caves/pmc/warehouse)
 "lzg" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker{
@@ -16556,7 +16556,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/northjungle)
 "lFC" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/wood/alt_four,
 /area/riptide/inside/abandonedcottage)
 "lFD" = (
@@ -16739,7 +16739,7 @@
 /area/riptide/inside/syndicatestarboard)
 "lMA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/prison,
 /area/riptide/inside/syndicateport)
 "lNa" = (
@@ -16829,7 +16829,7 @@
 /area/riptide/caves/tram)
 "lPH" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground,
 /area/riptide/outside/southislands)
 "lPP" = (
@@ -17047,7 +17047,7 @@
 /area/riptide/caves/central)
 "lVW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/prison/plate,
 /area/riptide/caves/syndicatemining)
 "lVY" = (
@@ -17203,8 +17203,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/detpack,
 /obj/structure/closet/crate/explosives,
-/obj/item/explosive/grenade/som,
-/obj/item/explosive/grenade/som,
+/obj/item/explosive/grenade/chaos,
+/obj/item/explosive/grenade/chaos,
 /turf/open/floor/dark2,
 /area/riptide/inside/warehouse)
 "mcW" = (
@@ -17249,7 +17249,7 @@
 /turf/open/floor/tile/blue,
 /area/riptide/inside/medical/offices)
 "mfG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 8
 	},
@@ -17342,7 +17342,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "mjf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner{
 	dir = 4
 	},
@@ -17464,7 +17464,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/riptide/outside/southjungle)
 "mny" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -17551,7 +17551,7 @@
 	},
 /area/riptide/inside/medical/offices)
 "mqQ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge,
 /area/riptide/outside/westislands)
 "mrf" = (
@@ -17653,7 +17653,7 @@
 /turf/open/floor/wood/alt_nine,
 /area/riptide/outside/northislands)
 "mut" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/wood,
 /area/riptide/caves/piratecove)
 "muD" = (
@@ -17735,7 +17735,7 @@
 /turf/open/floor/tile/blue,
 /area/riptide/inside/medical/offices)
 "mwE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -17877,7 +17877,7 @@
 "mBP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "mBY" = (
@@ -18190,7 +18190,7 @@
 /turf/open/floor/tile/blue/whiteblue,
 /area/riptide/inside/medical/surgery)
 "mKU" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -18271,7 +18271,7 @@
 /area/riptide/caves/pmc/warehouse)
 "mOo" = (
 /obj/structure/mine_structure/wooden/support_wall/t_bar,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "mOq" = (
@@ -18458,7 +18458,7 @@
 /turf/open/ground,
 /area/riptide/outside/beachlzone)
 "mXm" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/tram)
 "mXn" = (
@@ -18524,7 +18524,7 @@
 /turf/open/floor/prison/redfloor,
 /area/riptide/inside/warehouse)
 "naC" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 1
 	},
@@ -18831,7 +18831,7 @@
 /turf/open/floor/prison,
 /area/riptide/caves/pmc/prison)
 "nkf" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -18889,7 +18889,7 @@
 /turf/open/ground,
 /area/riptide/outside/southjungle)
 "nmG" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -18901,7 +18901,7 @@
 /turf/open/floor/wood,
 /area/riptide/caves/piratecove)
 "nnm" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 4
 	},
@@ -19060,7 +19060,7 @@
 /turf/open/lavaland/basalt,
 /area/riptide/outside/volcano)
 "nsa" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/southislands)
 "nsA" = (
@@ -19101,11 +19101,11 @@
 /area/riptide/outside/beachlzone)
 "nvb" = (
 /obj/structure/flora/drought/broc,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/riptide/outside/volcano)
 "nvm" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/alt,
 /area/riptide/caves/north/garbledradio)
 "nvJ" = (
@@ -19310,7 +19310,7 @@
 /area/riptide/inside/beachsushi)
 "nBJ" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /obj/effect/ai_node,
 /turf/open/floor/plating,
@@ -19601,7 +19601,7 @@
 /obj/machinery/door/window/right{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/freezer,
 /area/riptide/inside/medical/offices)
 "nLc" = (
@@ -19795,7 +19795,7 @@
 /turf/open/floor/wood,
 /area/riptide/caves/piratecove)
 "nRC" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
@@ -19825,7 +19825,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/riptide/caves/pmc/toxins)
 "nSe" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 9
 	},
@@ -19845,8 +19845,8 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/eastbeach)
 "nSO" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/tyranid_silo_spawn,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/ground,
 /area/riptide/outside/westislands)
 "nSS" = (
@@ -20048,7 +20048,7 @@
 /turf/closed/wall/r_wall/prison,
 /area/riptide/caves/syndicatemining)
 "oaO" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 4
 	},
@@ -20059,7 +20059,7 @@
 /turf/open/floor/wood/alt_two,
 /area/riptide/inside/recroom)
 "obC" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -20146,7 +20146,7 @@
 	},
 /area/riptide/outside/volcano)
 "ofd" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/effect/ai_node,
 /turf/open/floor/tile/cmo,
 /area/riptide/inside/medical/offices)
@@ -20463,7 +20463,7 @@
 /area/riptide/inside/landingzoneone)
 "orM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -20536,7 +20536,7 @@
 /area/riptide/inside/landingzoneone)
 "ovm" = (
 /obj/structure/mine_structure/wooden/support_wall/t_bar,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
 "ovu" = (
@@ -20730,7 +20730,7 @@
 "oAi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "oAj" = (
@@ -20783,7 +20783,7 @@
 /obj/structure/platform_decoration{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge,
 /area/riptide/outside/westislands)
 "oCp" = (
@@ -20791,7 +20791,7 @@
 /turf/open/floor/plating/ground/drought/alt,
 /area/riptide/outside/volcano)
 "oCs" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 4
 	},
@@ -21186,7 +21186,7 @@
 /turf/open/floor/tile/bar,
 /area/riptide/inside/medical/offices)
 "oQA" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/riptide/caves/piratecove)
@@ -21467,14 +21467,14 @@
 	},
 /area/riptide/inside/engineering/bridge)
 "oZN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 8
 	},
 /area/riptide/outside/westislands)
 "oZR" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
@@ -21522,7 +21522,7 @@
 	},
 /area/riptide/inside/chapel)
 "pbH" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 4
 	},
@@ -21652,7 +21652,7 @@
 /turf/open/floor/iron/smooth,
 /area/riptide/caves/pmc/lobby)
 "phm" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "phv" = (
@@ -21760,7 +21760,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/riptide/caves/pmc/toxins)
 "pmb" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/prison/sterilewhite/full,
 /area/riptide/inside/syndicatestarboard)
 "pmf" = (
@@ -21953,7 +21953,7 @@
 "prR" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "psk" = (
@@ -22191,7 +22191,7 @@
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner,
 /area/riptide/outside/southislands)
 "pzM" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/riptide/outside/northjungle)
@@ -22266,7 +22266,7 @@
 /turf/open/ground,
 /area/riptide/outside/southjungle)
 "pCz" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
 "pCA" = (
@@ -22314,7 +22314,7 @@
 /turf/open/floor/wood,
 /area/riptide/outside/northislands)
 "pEa" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -22486,7 +22486,7 @@
 /turf/open/floor/plating,
 /area/riptide/inside/tikihut)
 "pKD" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/riptide/caves/syndicatemining)
 "pKF" = (
@@ -22805,7 +22805,7 @@
 /turf/open/floor/tile/dark2,
 /area/riptide/inside/southtower)
 "pSK" = (
-/obj/machinery/door/airlock/mainship/marine/general,
+/obj/machinery/door/airlock/mainship/guardsman/general,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/riptide/inside/medical)
@@ -22848,7 +22848,7 @@
 /area/riptide/outside/northislands)
 "pTl" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/spawner/gibspawner/xeno,
+/obj/effect/spawner/gibspawner/tyranid,
 /turf/open/floor/plating,
 /area/riptide/caves/pmc/warehouse)
 "pTn" = (
@@ -23167,7 +23167,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
 "qdw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/structure/cable,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -23227,7 +23227,7 @@
 /area/riptide/outside/northislands)
 "qfc" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/beachtoilet)
 "qfi" = (
@@ -23830,7 +23830,7 @@
 	},
 /area/riptide/outside/southislands)
 "qxI" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/riptide/caves/piratecove)
@@ -24241,7 +24241,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/riptide/outside/volcano)
 "qLm" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast/corner{
 	dir = 8
 	},
@@ -24378,7 +24378,7 @@
 	},
 /area/riptide/inside/southtower)
 "qRF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner,
 /area/riptide/outside/westislands)
 "qRI" = (
@@ -24430,7 +24430,7 @@
 /turf/open/floor/wood,
 /area/riptide/outside/northislands)
 "qTd" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 1
 	},
@@ -24735,7 +24735,7 @@
 /turf/open/floor/mainship/stripesquare,
 /area/riptide/outside/volcano)
 "rbW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner2{
 	dir = 8
 	},
@@ -24790,7 +24790,7 @@
 	},
 /area/riptide/inside/syndicatestarboard)
 "rdS" = (
-/obj/machinery/door/airlock/mainship/marine/general,
+/obj/machinery/door/airlock/mainship/guardsman/general,
 /turf/open/floor/plating,
 /area/riptide/inside/medical/offices)
 "ren" = (
@@ -24804,11 +24804,11 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "rfl" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
 /turf/open/floor/wood,
@@ -24961,7 +24961,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "rjV" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
 "rka" = (
@@ -25025,7 +25025,7 @@
 /area/riptide/inside/luxurybar)
 "rmP" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/grimy,
 /area/riptide/caves/central/garbledradio)
 "rnc" = (
@@ -25094,12 +25094,12 @@
 /turf/open/floor/plating,
 /area/riptide/inside/guardcheck)
 "roP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/liquid/water/river,
 /area/riptide/outside/southislands)
 "roR" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/liquid/water/river/desertdam/clean/shallow_water_cave_coast{
 	dir = 10
 	},
@@ -25208,7 +25208,7 @@
 "rtO" = (
 /obj/structure/bed/chair/dropship/passenger,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /turf/open/floor/podhatch{
 	dir = 1
 	},
@@ -25320,7 +25320,7 @@
 /area/riptide/inside/cargoboat)
 "rxi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
@@ -25338,7 +25338,7 @@
 /turf/open/floor/tile/bar,
 /area/riptide/inside/medical)
 "rxP" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -25447,7 +25447,7 @@
 "rzt" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "rzL" = (
@@ -25804,7 +25804,7 @@
 /turf/open/lavaland/basalt,
 /area/riptide/outside/volcano)
 "rJV" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/grimy,
 /area/riptide/caves/central/garbledradio)
@@ -25837,7 +25837,7 @@
 	},
 /area/riptide/outside/southbeach)
 "rLZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
@@ -25934,7 +25934,7 @@
 /turf/open/floor/tile/green/whitegreen,
 /area/riptide/inside/medical)
 "rOZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north)
 "rPg" = (
@@ -26108,7 +26108,7 @@
 /area/riptide/outside/volcano)
 "rUJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -26250,7 +26250,7 @@
 /area/riptide/outside/southbeach)
 "rZt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/tram)
 "rZz" = (
@@ -26369,7 +26369,7 @@
 /area/riptide/outside/northjungle)
 "sdl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/heatinggrate,
 /area/riptide/caves/tram)
 "sdp" = (
@@ -26428,7 +26428,7 @@
 /turf/closed/wall/wood,
 /area/riptide/inside/beachshop)
 "sfB" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker{
@@ -26446,7 +26446,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/riptide/outside/northbeach)
 "sfY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
@@ -26462,7 +26462,7 @@
 /turf/open/floor/plating,
 /area/riptide/inside/engineering)
 "sgY" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south/garbledradio)
 "shL" = (
@@ -26474,7 +26474,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/open,
 /area/riptide/inside/engineering/cave)
 "sik" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/darker,
@@ -26646,7 +26646,7 @@
 /turf/open/floor/mainship/tcomms,
 /area/riptide/inside/syndicatehead)
 "snx" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -26798,7 +26798,7 @@
 /turf/open/floor/plating,
 /area/riptide/inside/southtower)
 "sqY" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 4
 	},
@@ -27013,7 +27013,7 @@
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
 "szg" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 1
 	},
@@ -27050,12 +27050,12 @@
 /turf/open/floor/mainship,
 /area/riptide/inside/breachedfob)
 "sAa" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/prison/darkred,
 /area/riptide/caves/syndicatemining)
 "sAh" = (
 /obj/structure/window_frame/prison/reinforced,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/syndicateport)
 "sAi" = (
@@ -27217,7 +27217,7 @@
 /turf/open/space/sea,
 /area/riptide/caves/sea)
 "sFX" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "sFZ" = (
@@ -27570,7 +27570,7 @@
 /area/riptide/outside/volcano)
 "sSm" = (
 /obj/structure/flora/drought/shroom/fire,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/riptide/outside/volcano)
 "sSo" = (
@@ -27748,7 +27748,7 @@
 /area/riptide/inside/medical/offices)
 "sXM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/prison/darkred,
 /area/riptide/caves/syndicatemining)
 "sXP" = (
@@ -27810,7 +27810,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/pmc/prison)
 "sZT" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/prison/sterilewhite/full,
 /area/riptide/inside/syndicatestarboard)
 "sZV" = (
@@ -27827,7 +27827,7 @@
 /area/riptide/outside/beachlzone)
 "taJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
 "tbq" = (
@@ -27843,7 +27843,7 @@
 /area/riptide/caves/pmc/warehouse)
 "tcl" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "tcp" = (
@@ -28062,7 +28062,7 @@
 	dir = 4
 	},
 /obj/structure/flora/drought/shroom/blight,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/riptide/outside/volcano)
 "tjz" = (
@@ -28110,7 +28110,7 @@
 /area/riptide/outside/northjungle)
 "tkO" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /obj/effect/ai_node,
@@ -28121,7 +28121,7 @@
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/pmc/warehouse)
 "tkW" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -28184,7 +28184,7 @@
 /turf/open/floor/prison/sterilewhite/full,
 /area/riptide/inside/syndicatestarboard)
 "tnV" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 4
 	},
@@ -28384,7 +28384,7 @@
 "tvb" = (
 /obj/structure/curtain/open/shower,
 /obj/machinery/shower,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/prison/blackfloor,
 /area/riptide/inside/syndicatestarboard)
 "tvc" = (
@@ -28509,7 +28509,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/beachlzone)
 "tAp" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -28779,7 +28779,7 @@
 /turf/open/floor/wood/thatch,
 /area/riptide/inside/tikihut)
 "tKJ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/riptide/caves/central/garbledradio)
@@ -28894,7 +28894,7 @@
 /turf/open/floor/prison/darkred/corners,
 /area/riptide/caves/pmc/prison)
 "tOz" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 8
 	},
@@ -28905,7 +28905,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/open,
 /area/riptide/inside/engineering/cave)
 "tPd" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/southbeach)
 "tPm" = (
@@ -29075,7 +29075,7 @@
 /turf/open/floor/mainship,
 /area/riptide/inside/breachedfob)
 "tTh" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/grimy,
 /area/riptide/caves/central/garbledradio)
 "tTr" = (
@@ -29277,7 +29277,7 @@
 /area/riptide/caves/sea)
 "tYA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/caves/tram)
 "tYC" = (
@@ -29287,7 +29287,7 @@
 /area/riptide/caves/syndicatemining)
 "tYJ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -29423,7 +29423,7 @@
 "ueQ" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg2,
 /area/riptide/caves/tram)
 "ufe" = (
@@ -29501,8 +29501,8 @@
 /turf/open/floor/wood/alt_nine,
 /area/riptide/outside/beachlzone)
 "uix" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "uiL" = (
@@ -29585,7 +29585,7 @@
 /turf/open/floor/wood/darker,
 /area/riptide/inside/beachshop)
 "umy" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/liquid/water/river/desertdam/clean/shallow_water_cave_coast{
 	dir = 10
 	},
@@ -29672,7 +29672,7 @@
 /turf/open/floor/tile/dark/gray,
 /area/riptide/inside/engineering)
 "uqE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/tram)
 "uqX" = (
@@ -29747,13 +29747,13 @@
 /turf/open/floor/wood,
 /area/riptide/caves/north2)
 "ute" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner{
 	dir = 8
 	},
 /area/riptide/outside/northislands)
 "utj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north2)
 "utn" = (
@@ -29782,7 +29782,7 @@
 /obj/machinery/door/airlock/multi_tile/mainship/secdoor/glass,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/inside/syndicateport)
 "uuq" = (
@@ -29887,7 +29887,7 @@
 /turf/open/floor/grime,
 /area/riptide/caves/pmc/warehouse)
 "uxW" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/tram)
 "uym" = (
@@ -30098,7 +30098,7 @@
 /turf/open/floor/plating/heatinggrate,
 /area/riptide/caves/tram)
 "uDG" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker{
 	dir = 1
 	},
@@ -30132,7 +30132,7 @@
 /turf/open/floor/prison/redfloor,
 /area/riptide/inside/warehouse)
 "uFp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/outdoor,
 /area/riptide/caves/rock)
 "uFI" = (
@@ -30181,7 +30181,7 @@
 /turf/open/floor/plating,
 /area/riptide/outside/southislands)
 "uHG" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/ground,
 /area/riptide/outside/eastbeach)
 "uHJ" = (
@@ -30240,7 +30240,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "uKk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/riptide/outside/southbeach)
 "uKl" = (
@@ -30318,7 +30318,7 @@
 /obj/structure/barricade/wooden{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/wood,
 /area/riptide/outside/westislands)
 "uPu" = (
@@ -30342,7 +30342,7 @@
 /area/riptide/caves/north)
 "uQm" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast,
 /area/riptide/outside/southislands)
 "uQA" = (
@@ -30418,7 +30418,7 @@
 /turf/open/floor/wood/darker,
 /area/riptide/inside/beachshop)
 "uSA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner{
 	dir = 1
 	},
@@ -30452,7 +30452,7 @@
 /area/riptide/outside/beachlzone)
 "uUm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg1,
 /area/riptide/caves/tram)
 "uUq" = (
@@ -30568,7 +30568,7 @@
 /turf/open/floor/wood/darker,
 /area/riptide/inside/beachshop)
 "uYX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "uZd" = (
@@ -30667,7 +30667,7 @@
 /turf/open/floor/tile/dark2,
 /area/riptide/inside/beachmotel)
 "vcK" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 9
 	},
@@ -30996,7 +30996,7 @@
 /area/riptide/caves/syndicatemining)
 "vnG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
 "vnN" = (
@@ -31110,7 +31110,7 @@
 /turf/open/ground,
 /area/riptide/outside/northbeach)
 "vqM" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/shuttle/dropship/floor,
 /area/riptide/caves/tram)
 "vqT" = (
@@ -31126,7 +31126,7 @@
 /area/riptide/caves/north2/garbledradio)
 "vre" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -31221,7 +31221,7 @@
 /turf/open/floor/plating,
 /area/riptide/outside/northbeach)
 "vtG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner2{
 	dir = 1
 	},
@@ -31533,7 +31533,7 @@
 /area/riptide/inside/engineering/bridge)
 "vDR" = (
 /obj/structure/flora/desert/grass,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/riptide/outside/volcano)
 "vDU" = (
@@ -31711,7 +31711,7 @@
 	},
 /area/riptide/inside/engineering)
 "vLQ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river,
 /area/riptide/outside/northislands)
 "vLX" = (
@@ -31720,7 +31720,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/beachlzone)
 "vMh" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/wood,
 /area/riptide/outside/southbeach)
@@ -31782,7 +31782,7 @@
 /turf/open/floor/wood/variable/wide,
 /area/riptide/inside/beachmotel)
 "vOf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/riptide/inside/syndicatehead)
 "vOm" = (
@@ -31822,7 +31822,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/northislands)
 "vPG" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker{
@@ -31909,7 +31909,7 @@
 /area/riptide/inside/breachedfob)
 "vVp" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/prison,
 /area/riptide/inside/syndicateport)
 "vVt" = (
@@ -31949,16 +31949,16 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "vWv" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/southbeach)
 "vWS" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/tram)
 "vWY" = (
@@ -31994,7 +31994,7 @@
 	},
 /area/riptide/caves/central)
 "vXw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 1
 	},
@@ -32271,7 +32271,7 @@
 	},
 /area/riptide/inside/hydroponics)
 "wjN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/riptide/caves/rock)
 "wke" = (
@@ -32489,7 +32489,7 @@
 	},
 /area/riptide/inside/landingzoneone)
 "wsl" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 4
 	},
@@ -32585,7 +32585,7 @@
 /turf/open/floor/plating,
 /area/riptide/inside/medical/offices)
 "wvv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/prison/redfloor,
 /area/riptide/outside/volcano)
 "wvz" = (
@@ -32631,7 +32631,7 @@
 /area/riptide/inside/syndicatecheckpoint)
 "wwc" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating,
 /area/riptide/caves/pmc/warehouse)
 "wwj" = (
@@ -32752,7 +32752,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/concrete,
 /area/riptide/outside/volcano)
 "wBk" = (
@@ -32765,7 +32765,7 @@
 /obj/machinery/light_construct/small{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "wBD" = (
@@ -32930,7 +32930,7 @@
 /area/riptide/inside/arena)
 "wGH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/tram)
 "wGV" = (
@@ -32941,7 +32941,7 @@
 /turf/open/ground,
 /area/riptide/outside/northislands)
 "wHe" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/ai_node,
 /obj/machinery/light/small,
@@ -32971,13 +32971,13 @@
 /turf/open/shuttle/dropship/floor,
 /area/riptide/caves/tram)
 "wHC" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 9
 	},
 /area/riptide/outside/northislands)
 "wHS" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge,
 /area/riptide/outside/northislands)
 "wHT" = (
@@ -33028,7 +33028,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/riptide/inside/hydroponics)
 "wIX" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating/icefloor,
 /area/shuttle/drop1/lz1)
 "wJb" = (
@@ -33252,7 +33252,7 @@
 /area/riptide/inside/engineering)
 "wRj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/riptide/caves/north)
 "wRn" = (
@@ -33399,7 +33399,7 @@
 	},
 /obj/effect/landmark/weed_node,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/riptide/caves/tram)
 "wYE" = (
@@ -33578,7 +33578,7 @@
 /turf/open/ground/grass/weedable,
 /area/riptide/outside/beachlzone)
 "xeC" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -33724,7 +33724,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "xkx" = (
@@ -33743,7 +33743,7 @@
 /area/riptide/caves/syndicatemining)
 "xli" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/riptide/outside/southbeach)
 "xlq" = (
@@ -33907,7 +33907,7 @@
 /turf/open/floor/plating,
 /area/riptide/inside/beachbar)
 "xqC" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/prison/sterilewhite/full,
 /area/riptide/inside/syndicatestarboard)
 "xqD" = (
@@ -33981,7 +33981,7 @@
 	},
 /area/riptide/inside/syndicateport)
 "xsP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/r_wall/prison,
 /area/riptide/caves/pmc/prison)
 "xsR" = (
@@ -34055,7 +34055,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/riptide/caves/syndicatemining)
 "xuJ" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/concrete,
@@ -34078,7 +34078,7 @@
 /turf/open/ground/grass/beach/corner2,
 /area/riptide/outside/river)
 "xva" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -34262,7 +34262,7 @@
 	},
 /area/riptide/outside/volcano)
 "xBP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge/corner2{
 	dir = 4
 	},
@@ -34381,7 +34381,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/central)
 "xFs" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/drought/alt,
 /area/riptide/caves/central/garbledradio)
 "xFQ" = (
@@ -34474,7 +34474,7 @@
 /turf/open/floor/prison/kitchen,
 /area/riptide/inside/syndicateport)
 "xJK" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river/desertdam/clean/shallow_edge{
 	dir = 4
 	},
@@ -34503,7 +34503,7 @@
 /turf/open/floor/wood/alt_six,
 /area/riptide/outside/northislands)
 "xLa" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall,
 /area/riptide/caves/tram)
 "xLQ" = (
@@ -34652,13 +34652,13 @@
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south/garbledradio)
 "xSs" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/north2/garbledradio)
 "xSJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/heatinggrate,
 /area/riptide/caves/tram)
 "xSL" = (
@@ -34686,7 +34686,7 @@
 /turf/open/shuttle/dropship/five,
 /area/riptide/caves/tram)
 "xTs" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/coast{
 	dir = 5
 	},
@@ -34720,7 +34720,7 @@
 /area/riptide/inside/observatory)
 "xVR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/prison/plate,
@@ -34769,7 +34769,7 @@
 /turf/open/floor/wood/darker,
 /area/riptide/inside/beachshop)
 "xXM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/liquid/water/river,
 /area/riptide/outside/southbeach)
 "xYe" = (
@@ -34792,7 +34792,7 @@
 /area/riptide/outside/southislands)
 "xYZ" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/dmg3,
 /area/riptide/caves/pmc/warehouse)
 "xZv" = (
@@ -34909,7 +34909,7 @@
 /turf/open/floor/freezer,
 /area/riptide/inside/beachsushi)
 "ydi" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/caves/south)
@@ -35039,7 +35039,7 @@
 /turf/open/floor/wood/variable/wide/damaged,
 /area/riptide/inside/beachmotel)
 "yiZ" = (
-/obj/effect/landmark/xeno_resin_door{
+/obj/effect/landmark/tyranid_resin_door{
 	dir = 4
 	},
 /turf/open/floor/plating/ground/mars/random/cave/darker{

@@ -70,7 +70,7 @@
 ///Handles what the companion does when interacted with with an item
 /datum/component/companion/proc/handle_attackby(datum/source, obj/item/I, mob/user, params)
 	SIGNAL_HANDLER
-	if(!istype(I, /obj/item/tool/research/xeno_analyzer))
+	if(!istype(I, /obj/item/tool/research/tyranid_analyzer))
 		return
 
 	if(!user || mob_master == user)

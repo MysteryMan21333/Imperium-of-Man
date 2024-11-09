@@ -274,10 +274,10 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 	var/brute_state = copytext(damage_state, 1, 2)
 	var/burn_state = copytext(damage_state, 2)
-	var/icon/brute_state_icon = icon('icons/mob/dam_human.dmi', "[species.brute_damage_icon_state]_[brute_state]")
-	var/icon/burn_state_icon = icon('icons/mob/dam_human.dmi', "[species.burn_damage_icon_state]_[burn_state]")
+	var/icon/brute_state_icon = icon('modular_imperium/master_files/icons/mob/dam_human.dmi', "[species.brute_damage_icon_state]_[brute_state]")
+	var/icon/burn_state_icon = icon('modular_imperium/master_files/icons/mob/dam_human.dmi', "[species.burn_damage_icon_state]_[burn_state]")
 	var/icon/damage_mask_icon = icon(species.damage_mask_icon, body_part)
-	var/icon/DI = icon('icons/mob/dam_human.dmi', "00") //starts blank
+	var/icon/DI = icon('modular_imperium/master_files/icons/mob/dam_human.dmi', "00") //starts blank
 	if(species.species_flags & GREYSCALE_BLOOD)
 		DI.Blend(species.blood_color, ICON_MULTIPLY) 	//coloring with species' blood color
 	DI.Blend(brute_state_icon, ICON_OVERLAY)			//add bruises
@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 	previous_damage_appearance = damage_appearance
 
-	var/icon/standing = new('icons/mob/dam_human.dmi', "00")
+	var/icon/standing = new('modular_imperium/master_files/icons/mob/dam_human.dmi', "00")
 
 	var/image/standing_image = image("icon" = standing, "layer" = -DAMAGE_LAYER)
 
@@ -344,7 +344,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	if(stand_icon)
 		qdel(stand_icon)
 
-	stand_icon = new(species.icon_template ? species.icon_template : 'icons/mob/human.dmi',"blank")
+	stand_icon = new(species.icon_template ? species.icon_template : 'modular_imperium/master_files/icons/mob/human.dmi',"blank")
 
 	var/icon_key = "[species.race_key][g][ethnicity]"
 	for(var/datum/limb/part in limbs)
@@ -409,7 +409,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 			//And no change in rendering for other parts (they icon_position is 0, so goes to 'else' part)
 			if(part.icon_position&(LEFT|RIGHT))
 
-				var/icon/temp2 = new('icons/mob/human.dmi',"blank")
+				var/icon/temp2 = new('modular_imperium/master_files/icons/mob/human.dmi',"blank")
 
 				temp2.Insert(new/icon(temp,dir=NORTH),dir=NORTH)
 				temp2.Insert(new/icon(temp,dir=SOUTH),dir=SOUTH)
@@ -450,18 +450,18 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 	if(has_head)
 		//Eyes
-		var/icon/eyes = new/icon('icons/mob/human_face.dmi', species.eyes)
+		var/icon/eyes = new/icon('modular_imperium/master_files/icons/mob/human_face.dmi', species.eyes)
 		eyes.Blend(rgb(r_eyes, g_eyes, b_eyes), ICON_ADD)
 		stand_icon.Blend(eyes, ICON_OVERLAY)
 
 		//Mouth	(lipstick!)
 		if(makeup_style && (species?.species_flags & HAS_LIPS))	//skeletons are allowed to wear lipstick no matter what you think, agouri.
-			stand_icon.Blend(new/icon('icons/mob/human_face.dmi', "camo_[makeup_style]_s"), ICON_OVERLAY)
+			stand_icon.Blend(new/icon('modular_imperium/master_files/icons/mob/human_face.dmi', "camo_[makeup_style]_s"), ICON_OVERLAY)
 
 
 	if(species.species_flags & HAS_UNDERWEAR)
-		stand_icon.Blend(new /icon('icons/mob/human.dmi', "underwear_[underwear]_[gender]"), ICON_OVERLAY)
-		stand_icon.Blend(new /icon('icons/mob/human.dmi', "undershirt_[undershirt]_[gender]"), ICON_OVERLAY)
+		stand_icon.Blend(new /icon('modular_imperium/master_files/icons/mob/human.dmi', "underwear_[underwear]_[gender]"), ICON_OVERLAY)
+		stand_icon.Blend(new /icon('modular_imperium/master_files/icons/mob/human.dmi', "undershirt_[undershirt]_[gender]"), ICON_OVERLAY)
 
 	update_bodyparts()
 	species?.update_body(src)
@@ -483,7 +483,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		return
 
 	//base icons
-	var/icon/face_standing = new /icon('icons/mob/human_face.dmi',"bald_s")
+	var/icon/face_standing = new /icon('modular_imperium/master_files/icons/mob/human_face.dmi',"bald_s")
 
 	if(f_style && !(wear_suit?.inv_hide_flags & HIDELOWHAIR) && !(wear_mask?.inv_hide_flags & HIDELOWHAIR))
 		var/datum/sprite_accessory/facial_hair_style = GLOB.facial_hair_styles_list[f_style]
@@ -517,7 +517,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	var/mutable_appearance/hair_final = mutable_appearance(face_standing, layer =-HAIR_LAYER)
 
 	if(head?.inv_hide_flags & HIDE_EXCESS_HAIR)
-		var/image/mask = image('icons/mob/human_face.dmi', null, "Jeager_Mask")
+		var/image/mask = image('modular_imperium/master_files/icons/mob/human_face.dmi', null, "Jeager_Mask")
 		mask.render_target = "*[REF(src)]"
 		hair_final.overlays += mask
 		hair_final.filters += filter(arglist(alpha_mask_filter(0, 0, null, "*[REF(src)]")))
@@ -573,7 +573,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	if(wear_suit?.inv_hide_flags & HIDEJUMPSUIT)
 		return
 
-	overlays_standing[UNIFORM_LAYER] = w_uniform.make_worn_icon(species_type = species.name, slot_name = slot_w_uniform_str, default_icon = 'icons/mob/clothing/uniforms/uniform_0.dmi', default_layer = UNIFORM_LAYER)
+	overlays_standing[UNIFORM_LAYER] = w_uniform.make_worn_icon(species_type = species.name, slot_name = slot_w_uniform_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/uniforms/uniform_0.dmi', default_layer = UNIFORM_LAYER)
 
 	apply_overlay(UNIFORM_LAYER)
 	species?.update_inv_w_uniform(src)
@@ -588,7 +588,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		client.screen += wear_id
 
 	if(w_uniform?.displays_id || istype(wear_id, /obj/item/card/id/dogtag))
-		overlays_standing[ID_LAYER] = wear_id.make_worn_icon(species_type = species.name, slot_name = slot_wear_id_str, default_icon = 'icons/mob/mob.dmi', default_layer = ID_LAYER)
+		overlays_standing[ID_LAYER] = wear_id.make_worn_icon(species_type = species.name, slot_name = slot_wear_id_str, default_icon = 'modular_imperium/master_files/icons/mob/mob.dmi', default_layer = ID_LAYER)
 
 	apply_overlay(ID_LAYER)
 
@@ -599,7 +599,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		if(client && hud_used?.hud_shown && hud_used.inventory_shown)
 			gloves.screen_loc = ui_gloves
 			client.screen += gloves
-		overlays_standing[GLOVES_LAYER] = gloves.make_worn_icon(species_type = species.name, slot_name = slot_gloves_str, default_icon = 'icons/mob/clothing/hands.dmi', default_layer = GLOVES_LAYER)
+		overlays_standing[GLOVES_LAYER] = gloves.make_worn_icon(species_type = species.name, slot_name = slot_gloves_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/hands.dmi', default_layer = GLOVES_LAYER)
 		apply_overlay(GLOVES_LAYER)
 		return
 
@@ -631,11 +631,11 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		glasses.screen_loc = ui_glasses
 		client.screen += glasses
 	if(glasses.goggles)
-		overlays_standing[GOGGLES_LAYER] = glasses.make_worn_icon(species_type = species.name, slot_name = slot_glasses_str, default_icon = 'icons/mob/clothing/eyes.dmi', default_layer = GOGGLES_LAYER)
+		overlays_standing[GOGGLES_LAYER] = glasses.make_worn_icon(species_type = species.name, slot_name = slot_glasses_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/eyes.dmi', default_layer = GOGGLES_LAYER)
 		apply_overlay(GOGGLES_LAYER)
 
 	else
-		overlays_standing[GLASSES_LAYER] = glasses.make_worn_icon(species_type = species.name, slot_name = slot_glasses_str, default_icon = 'icons/mob/clothing/eyes.dmi', default_layer = GLASSES_LAYER)
+		overlays_standing[GLASSES_LAYER] = glasses.make_worn_icon(species_type = species.name, slot_name = slot_glasses_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/eyes.dmi', default_layer = GLASSES_LAYER)
 		apply_overlay(GLASSES_LAYER)
 
 /mob/living/carbon/human/update_inv_ears()
@@ -649,7 +649,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	if((head?.inv_hide_flags & HIDEEARS) || (wear_mask?.inv_hide_flags & HIDEEARS))
 		return
 
-	overlays_standing[EARS_LAYER] = wear_ear.make_worn_icon(species_type = species.name, slot_name = slot_ear_str, default_icon = 'icons/mob/clothing/ears.dmi', default_layer = EARS_LAYER)
+	overlays_standing[EARS_LAYER] = wear_ear.make_worn_icon(species_type = species.name, slot_name = slot_ear_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/ears.dmi', default_layer = EARS_LAYER)
 	apply_overlay(EARS_LAYER)
 
 /mob/living/carbon/human/update_inv_shoes()
@@ -662,7 +662,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		return
 
 	if(shoes)
-		overlays_standing[SHOES_LAYER] = shoes.make_worn_icon(species_type = species.name, slot_name = slot_shoes_str, default_icon = 'icons/mob/clothing/feet.dmi', default_layer = SHOES_LAYER)
+		overlays_standing[SHOES_LAYER] = shoes.make_worn_icon(species_type = species.name, slot_name = slot_shoes_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/feet.dmi', default_layer = SHOES_LAYER)
 	else if(feet_blood_color)
 		var/mutable_appearance/bloodsies = mutable_appearance(icon = 'icons/effects/blood.dmi', icon_state = "shoeblood")
 		bloodsies.color = feet_blood_color
@@ -679,7 +679,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		s_store.screen_loc = ui_sstore1
 		client.screen += s_store
 
-	overlays_standing[SUIT_STORE_LAYER] = s_store.make_worn_icon(species_type = species.name, slot_name = slot_s_store_str, default_icon = 'icons/mob/suit_slot.dmi', default_layer = SUIT_STORE_LAYER)
+	overlays_standing[SUIT_STORE_LAYER] = s_store.make_worn_icon(species_type = species.name, slot_name = slot_s_store_str, default_icon = 'modular_imperium/master_files/icons/mob/suit_slot.dmi', default_layer = SUIT_STORE_LAYER)
 	apply_overlay(SUIT_STORE_LAYER)
 
 
@@ -693,7 +693,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		head.screen_loc = ui_head
 		client.screen += head
 
-	overlays_standing[HEAD_LAYER] = head.make_worn_icon(species_type = species.name, slot_name = slot_head_str, default_icon = 'icons/mob/clothing/headwear/head_0.dmi', default_layer = HEAD_LAYER)
+	overlays_standing[HEAD_LAYER] = head.make_worn_icon(species_type = species.name, slot_name = slot_head_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/headwear/head_0.dmi', default_layer = HEAD_LAYER)
 
 	apply_overlay(HEAD_LAYER)
 	species?.update_inv_head(src)
@@ -707,7 +707,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		belt.screen_loc = ui_belt
 		client.screen += belt
 
-	overlays_standing[BELT_LAYER] = belt.make_worn_icon(species_type = species.name, slot_name = slot_belt_str, default_icon = 'icons/mob/clothing/belt.dmi', default_layer = BELT_LAYER)
+	overlays_standing[BELT_LAYER] = belt.make_worn_icon(species_type = species.name, slot_name = slot_belt_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/belt.dmi', default_layer = BELT_LAYER)
 
 	apply_overlay(BELT_LAYER)
 
@@ -722,7 +722,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		wear_suit.screen_loc = ui_oclothing
 		client.screen += wear_suit
 
-	overlays_standing[SUIT_LAYER] = wear_suit.make_worn_icon(species_type = species.name, slot_name = slot_wear_suit_str, default_icon = 'icons/mob/clothing/suits/suit_0.dmi', default_layer = SUIT_LAYER)
+	overlays_standing[SUIT_LAYER] = wear_suit.make_worn_icon(species_type = species.name, slot_name = slot_wear_suit_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/suits/suit_0.dmi', default_layer = SUIT_LAYER)
 
 	apply_overlay(SUIT_LAYER)
 
@@ -749,7 +749,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		wear_mask.screen_loc = ui_mask
 		client.screen += wear_mask
 
-	overlays_standing[FACEMASK_LAYER] = wear_mask.make_worn_icon(species_type = species.name, slot_name = slot_wear_mask_str, default_icon = 'icons/mob/clothing/mask.dmi', default_layer = FACEMASK_LAYER)
+	overlays_standing[FACEMASK_LAYER] = wear_mask.make_worn_icon(species_type = species.name, slot_name = slot_wear_mask_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/mask.dmi', default_layer = FACEMASK_LAYER)
 
 	apply_overlay(FACEMASK_LAYER)
 
@@ -762,7 +762,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		back.screen_loc = ui_back
 		client.screen += back
 
-	overlays_standing[BACK_LAYER] = back.make_worn_icon(species_type = species.name, slot_name = slot_back_str, default_icon = 'icons/mob/clothing/back.dmi', default_layer = BACK_LAYER)
+	overlays_standing[BACK_LAYER] = back.make_worn_icon(species_type = species.name, slot_name = slot_back_str, default_icon = 'modular_imperium/master_files/icons/mob/clothing/back.dmi', default_layer = BACK_LAYER)
 
 	apply_overlay(BACK_LAYER)
 
@@ -771,7 +771,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	remove_overlay(HANDCUFF_LAYER)
 	if(!handcuffed)
 		return
-	overlays_standing[HANDCUFF_LAYER] = handcuffed.make_worn_icon(species_type = species.name, slot_name = slot_handcuffed_str, default_icon = 'icons/mob/mob.dmi', default_layer = HANDCUFF_LAYER)
+	overlays_standing[HANDCUFF_LAYER] = handcuffed.make_worn_icon(species_type = species.name, slot_name = slot_handcuffed_str, default_icon = 'modular_imperium/master_files/icons/mob/mob.dmi', default_layer = HANDCUFF_LAYER)
 	apply_overlay(HANDCUFF_LAYER)
 
 
@@ -783,7 +783,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		client.screen += r_hand
 		r_hand.screen_loc = ui_rhand
 
-	overlays_standing[R_HAND_LAYER] = r_hand.make_worn_icon(species_type = species.name, inhands = TRUE, slot_name = slot_r_hand_str, default_icon = 'icons/mob/inhands/items/items_right.dmi', default_layer = R_HAND_LAYER)
+	overlays_standing[R_HAND_LAYER] = r_hand.make_worn_icon(species_type = species.name, inhands = TRUE, slot_name = slot_r_hand_str, default_icon = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi', default_layer = R_HAND_LAYER)
 
 	apply_overlay(R_HAND_LAYER)
 
@@ -797,19 +797,19 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		client.screen += l_hand
 		l_hand.screen_loc = ui_lhand
 
-	overlays_standing[L_HAND_LAYER] = l_hand.make_worn_icon(species_type = species.name, inhands = TRUE, slot_name = slot_l_hand_str, default_icon = 'icons/mob/inhands/items/items_left.dmi', default_layer = L_HAND_LAYER)
+	overlays_standing[L_HAND_LAYER] = l_hand.make_worn_icon(species_type = species.name, inhands = TRUE, slot_name = slot_l_hand_str, default_icon = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi', default_layer = L_HAND_LAYER)
 	apply_overlay(L_HAND_LAYER)
 
 /mob/living/carbon/human/update_burst()
 	remove_overlay(BURST_LAYER)
 	if(!chestburst)
 		return
-	overlays_standing[BURST_LAYER] = mutable_appearance('icons/Xeno/Effects.dmi', chestburst == CARBON_IS_CHEST_BURSTING ? "burst_stand" : "bursted_stand", -BURST_LAYER)
+	overlays_standing[BURST_LAYER] = mutable_appearance('modular_imperium/master_files/icons/tyranid/Effects.dmi', chestburst == CARBON_IS_CHEST_BURSTING ? "burst_stand" : "bursted_stand", -BURST_LAYER)
 	apply_overlay(BURST_LAYER)
 
 /mob/living/carbon/human/update_fire()
 	remove_overlay(FIRE_LAYER)
 	if(!on_fire)
 		return
-	overlays_standing[FIRE_LAYER] = mutable_appearance('icons/mob/OnFire.dmi', fire_stacks < 15 ? "Standing_weak" : "Standing_medium", -FIRE_LAYER)
+	overlays_standing[FIRE_LAYER] = mutable_appearance('modular_imperium/master_files/icons/mob/OnFire.dmi', fire_stacks < 15 ? "Standing_weak" : "Standing_medium", -FIRE_LAYER)
 	apply_overlay(FIRE_LAYER)

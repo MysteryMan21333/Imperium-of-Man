@@ -119,7 +119,7 @@
 		source.set_light(2, 1)
 		var/marker_flags = GLOB.faction_to_minimap_flag[user.faction]
 		if(!marker_flags)
-			marker_flags = MINIMAP_FLAG_MARINE
+			marker_flags = MINIMAP_FLAG_GUARDSMAN
 		SSminimaps.add_marker(source, marker_flags, image('icons/UI_icons/map_blips.dmi', null, "supply", ABOVE_FLOAT_LAYER))
 
 	message_admins("[ADMIN_TPMONTY(user)] set up a supply beacon.") //do something with this
@@ -198,7 +198,7 @@
 	RegisterSignal(parent, COMSIG_UNMANNED_COORDINATES, PROC_REF(toggle_activation))
 
 /datum/component/beacon/ai_droid/on_attack_hand(atom/movable/source, mob/user)
-	return //dont want marines disabling ai droid by clicking it even if it would be funny
+	return //dont want guardsmans disabling ai droid by clicking it even if it would be funny
 
 /datum/component/beacon/ai_droid/on_examine(atom/source, mob/user, list/examine_list)
 	return //we can't attack this in hand

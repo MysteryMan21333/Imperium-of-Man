@@ -1,7 +1,7 @@
 /obj/item/disk/botany
 	name = "flora data disk"
 	desc = "A small disk used for carrying data on plant genetics."
-	icon = 'icons/obj/items/disk.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/disk.dmi'
 	icon_state = "botanydisk"
 	w_class = WEIGHT_CLASS_TINY
 
@@ -15,7 +15,7 @@
 
 /obj/item/disk/botany/attack_self(mob/user as mob)
 	if(length(genes))
-		var/choice = tgui_alert(user, "Are you sure you want to wipe the disk?", "Xenobotany Data", list("No", "Yes"))
+		var/choice = tgui_alert(user, "Are you sure you want to wipe the disk?", "Tyranidbotany Data", list("No", "Yes"))
 		if(src && user && genes && choice == "Yes")
 			to_chat(user, "You wipe the disk data.")
 			name = initial(name)
@@ -30,7 +30,7 @@
 	spawn_number = 7
 
 /obj/machinery/botany
-	icon = 'icons/obj/machines/hydroponics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/hydroponics.dmi'
 	icon_state = "hydrotray3"
 	density = TRUE
 	anchored = TRUE

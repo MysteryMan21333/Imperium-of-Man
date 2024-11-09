@@ -1,6 +1,6 @@
 /obj/effect/manifest
 	name = "manifest"
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	icon_state = "x"
 	resistance_flags = UNACIDABLE
 

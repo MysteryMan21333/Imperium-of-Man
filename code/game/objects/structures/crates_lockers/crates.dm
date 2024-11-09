@@ -1,7 +1,7 @@
 /obj/structure/closet/crate
 	name = "crate"
 	desc = "A rectangular steel crate."
-	icon = 'icons/obj/structures/crates.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/crates.dmi'
 	icon_state = "closed_basic"
 	icon_opened = "open_basic"
 	icon_closed = "closed_basic"
@@ -233,7 +233,7 @@
 
 /obj/structure/closet/crate/trashcart/food
 	desc = "A heavy, metal foodcart with wheels."
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi';
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi';
 	icon_state = "foodcart2"
 	icon_closed = "foodcart2"
 	icon_opened = "foodcart2_open"

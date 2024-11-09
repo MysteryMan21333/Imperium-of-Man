@@ -2,7 +2,7 @@
 /obj/vehicle/unmanned
 	name = "UV-L Iguana"
 	desc = "A small remote-controllable vehicle, usually owned by the TGMC and other major armies."
-	icon = 'icons/obj/unmanned_vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/unmanned_vehicles.dmi'
 	icon_state = "light_uv"
 	anchored = FALSE
 	buckle_flags = null
@@ -45,7 +45,7 @@
 	var/controlled = FALSE
 	/// Flags for unmanned vehicules
 	var/unmanned_flags = OVERLAY_TURRET|HAS_LIGHTS
-	/// Iff flags, to prevent friendly fire from sg and aiming marines
+	/// Iff flags, to prevent friendly fire from sg and aiming guardsmans
 	var/iff_signal = TGMC_LOYALIST_IFF
 	/// If explosives should be usable on the vehicle
 	var/allow_explosives = TRUE
@@ -71,7 +71,7 @@
 		max_rounds = initial(spawn_equipped_type.max_rounds)
 		update_icon()
 	hud_set_uav_ammo()
-	var/faction = deployer?.faction ? deployer.faction : FACTION_TERRAGOV
+	var/faction = deployer?.faction ? deployer.faction : FACTION_IMPERIUM
 	SSminimaps.add_marker(src, GLOB.faction_to_minimap_flag[faction], image('icons/UI_icons/map_blips.dmi', null, "uav"))
 	var/datum/atom_hud/sentry_status_hud = GLOB.huds[GLOB.faction_to_data_hud[faction]]
 	if(sentry_status_hud)
@@ -101,13 +101,13 @@
 		return
 	switch(turret_type)
 		if(TURRET_TYPE_HEAVY)
-			. += image('icons/obj/unmanned_vehicles.dmi', src, "heavy_cannon")
+			. += image('modular_imperium/master_files/icons/obj/unmanned_vehicles.dmi', src, "heavy_cannon")
 		if(TURRET_TYPE_LIGHT)
-			. += image('icons/obj/unmanned_vehicles.dmi', src, "light_cannon")
+			. += image('modular_imperium/master_files/icons/obj/unmanned_vehicles.dmi', src, "light_cannon")
 		if(TURRET_TYPE_EXPLOSIVE)
-			. += image('icons/obj/unmanned_vehicles.dmi', src, "bomb")
+			. += image('modular_imperium/master_files/icons/obj/unmanned_vehicles.dmi', src, "bomb")
 		if(TURRET_TYPE_DROIDLASER)
-			. += image('icons/obj/unmanned_vehicles.dmi', src, "droidlaser")
+			. += image('modular_imperium/master_files/icons/obj/unmanned_vehicles.dmi', src, "droidlaser")
 
 /obj/vehicle/unmanned/examine(mob/user, distance, infix, suffix)
 	. = ..()
@@ -313,7 +313,7 @@
 /obj/structure/closet/crate/uav_crate
 	name = "\improper UV-L Iguana Crate"
 	desc = "A crate containing an unmanned vehicle with a controller and some spare ammo."
-	icon = 'icons/obj/structures/crates.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/crates.dmi'
 	icon_state = "closed_weapons"
 	icon_opened = "open_weapons"
 	icon_closed = "closed_weapons"

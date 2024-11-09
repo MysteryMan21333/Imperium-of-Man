@@ -312,7 +312,7 @@
 
 /obj/effect/landmark/corpsespawner/scientist
 	name = "Scientist"
-	corpseuniform = /obj/item/clothing/under/marine/officer/researcher
+	corpseuniform = /obj/item/clothing/under/guardsman/officer/researcher
 	corpsesuit = /obj/item/clothing/suit/storage/labcoat
 	corpseback = /obj/item/storage/backpack
 	corpseshoes = /obj/item/clothing/shoes/white
@@ -384,16 +384,16 @@
 
 /obj/effect/landmark/corpsespawner/pmc
 	name = "Unknown PMC"
-	corpseuniform = /obj/item/clothing/under/marine/veteran/pmc
+	corpseuniform = /obj/item/clothing/under/guardsman/veteran/pmc
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsesuit = /obj/item/clothing/suit/armor/vest/security
 	corpseback = /obj/item/storage/backpack/satchel
 	corpsebelt = /obj/item/storage/holster/belt/pistol/m4a3/vp70
-	corpsegloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	corpsehelmet = /obj/item/clothing/head/helmet/marine/veteran/pmc
+	corpsegloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	corpsehelmet = /obj/item/clothing/head/helmet/guardsman/veteran/pmc
 	corpsemask = /obj/item/clothing/mask/gas/pmc/damaged
 	corpseradio = /obj/item/radio/headset/survivor
-	corpsesuit = /obj/item/clothing/suit/storage/marine/veteran/pmc
+	corpsesuit = /obj/item/clothing/suit/storage/guardsman/veteran/pmc
 
 /obj/effect/landmark/corpsespawner/pmc/burst
 	death_type = CHESTBURST_DEATH
@@ -469,13 +469,13 @@
 
 /obj/effect/landmark/corpsespawner/PMC
 	name = "Private Security Officer"
-	corpseuniform = /obj/item/clothing/under/marine/veteran/pmc
+	corpseuniform = /obj/item/clothing/under/guardsman/veteran/pmc
 	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
 	corpseglasses = /obj/item/clothing/glasses/sunglasses
 	corpsemask = /obj/item/clothing/mask/gas
-	corpsehelmet = /obj/item/clothing/head/helmet/marine/veteran/pmc
-	corpsegloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	corpseshoes = /obj/item/clothing/shoes/marine/pmc
+	corpsehelmet = /obj/item/clothing/head/helmet/guardsman/veteran/pmc
+	corpsegloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	corpseshoes = /obj/item/clothing/shoes/guardsman/pmc
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 	corpseid = 1
 	corpseidjob = "Private Security Officer"
@@ -487,59 +487,59 @@
 /obj/effect/landmark/corpsespawner/PMC/regular
 	death_type = REGULAR_DEATH
 
-/////////////////Marine//////////////////////
+/////////////////Guardsman//////////////////////
 
-/obj/effect/landmark/corpsespawner/marine
-	name = "Marine"
-	corpseuniform = /obj/item/clothing/under/marine
+/obj/effect/landmark/corpsespawner/guardsman
+	name = "Guardsman"
+	corpseuniform = /obj/item/clothing/under/guardsman
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/satchel
 	corpsemask = /obj/item/clothing/mask/rebreather
 	corpsehelmet = /obj/item/clothing/head/modular/m10x
-	corpsegloves = /obj/item/clothing/gloves/marine
-	corpseshoes = /obj/item/clothing/shoes/marine
+	corpsegloves = /obj/item/clothing/gloves/guardsman
+	corpseshoes = /obj/item/clothing/shoes/guardsman
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
-/obj/effect/landmark/corpsespawner/marine/burst
+/obj/effect/landmark/corpsespawner/guardsman/burst
 	death_type = CHESTBURST_DEATH
 
-/obj/effect/landmark/corpsespawner/marine/regular
+/obj/effect/landmark/corpsespawner/guardsman/regular
 	death_type = REGULAR_DEATH
 
-/obj/effect/landmark/corpsespawner/marine/engineer
-	name = "Marine Engineer"
-	corpseuniform = /obj/item/clothing/under/marine
+/obj/effect/landmark/corpsespawner/guardsman/engineer
+	name = "Guardsman Engineer"
+	corpseuniform = /obj/item/clothing/under/guardsman
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
-	corpseback = /obj/item/storage/backpack/marine/engineerpack
+	corpseback = /obj/item/storage/backpack/guardsman/engineerpack
 	corpsemask = /obj/item/clothing/mask/gas/tactical
 	corpsehelmet = /obj/item/clothing/head/beret/eng
-	corpsegloves = /obj/item/clothing/gloves/marine/insulated
-	corpseshoes = /obj/item/clothing/shoes/marine
+	corpsegloves = /obj/item/clothing/gloves/guardsman/insulated
+	corpseshoes = /obj/item/clothing/shoes/guardsman
 	corpsebelt = /obj/item/storage/belt/utility/full
 	corpsepocket1 = /obj/item/flashlight
 
-/obj/effect/landmark/corpsespawner/marine/engineer/burst
+/obj/effect/landmark/corpsespawner/guardsman/engineer/burst
 	death_type = CHESTBURST_DEATH
 
-/obj/effect/landmark/corpsespawner/marine/engineer/regular
+/obj/effect/landmark/corpsespawner/guardsman/engineer/regular
 	death_type = REGULAR_DEATH
 
-/obj/effect/landmark/corpsespawner/marine/corpsman
-	name = "Marine Corpsman"
-	corpseuniform = /obj/item/clothing/under/marine/corpsman
+/obj/effect/landmark/corpsespawner/guardsman/corpsman
+	name = "Guardsman Corpsman"
+	corpseuniform = /obj/item/clothing/under/guardsman/corpsman
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/corpsman
 	corpsemask = /obj/item/clothing/mask/gas
 	corpsehelmet = /obj/item/clothing/head/modular/m10x
 	corpsegloves = /obj/item/clothing/gloves/latex
-	corpseshoes = /obj/item/clothing/shoes/marine
+	corpseshoes = /obj/item/clothing/shoes/guardsman
 	corpsepocket1 = /obj/item/tweezers
 	corpsepocket2 = /obj/item/clothing/glasses/meson
 
-/obj/effect/landmark/corpsespawner/marine/corpsman/burst
+/obj/effect/landmark/corpsespawner/guardsman/corpsman/burst
 	death_type = CHESTBURST_DEATH
 
-/obj/effect/landmark/corpsespawner/marine/corpsman/regular
+/obj/effect/landmark/corpsespawner/guardsman/corpsman/regular
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/assistant
@@ -557,99 +557,99 @@
 /obj/effect/landmark/corpsespawner/assistant/regular
 	death_type = REGULAR_DEATH
 
-//SOM
-/obj/effect/landmark/corpsespawner/som
-	name = "SOM marine"
-	corpseuniform = /obj/item/clothing/under/som
-	corpsesuit = /obj/item/clothing/suit/modular/som
-	corpseback = /obj/item/storage/backpack/satchel/som
+//CHAOS
+/obj/effect/landmark/corpsespawner/chaos
+	name = "CHAOS guardsman"
+	corpseuniform = /obj/item/clothing/under/chaos
+	corpsesuit = /obj/item/clothing/suit/modular/chaos
+	corpseback = /obj/item/storage/backpack/satchel/chaos
 	corpsemask = /obj/item/clothing/mask/gas
-	corpsehelmet = /obj/item/clothing/head/modular/som
-	corpsegloves = /obj/item/clothing/gloves/marine/som
-	corpseshoes = /obj/item/clothing/shoes/marine/som/knife
+	corpsehelmet = /obj/item/clothing/head/modular/chaos
+	corpsegloves = /obj/item/clothing/gloves/guardsman/chaos
+	corpseshoes = /obj/item/clothing/shoes/guardsman/chaos/knife
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
-/obj/effect/landmark/corpsespawner/som/burst
+/obj/effect/landmark/corpsespawner/chaos/burst
 	death_type = CHESTBURST_DEATH
 
-/obj/effect/landmark/corpsespawner/som_officer
-	name = "SOM staff officer"
-	corpseuniform = /obj/item/clothing/under/som/officer
-	corpsesuit = /obj/item/clothing/suit/modular/som
+/obj/effect/landmark/corpsespawner/chaos_officer
+	name = "CHAOS staff officer"
+	corpseuniform = /obj/item/clothing/under/chaos/officer
+	corpsesuit = /obj/item/clothing/suit/modular/chaos
 	corpsemask = /obj/item/clothing/mask/gas
-	corpsegloves = /obj/item/clothing/gloves/marine/som
-	corpseshoes = /obj/item/clothing/shoes/marine/som/knife
+	corpsegloves = /obj/item/clothing/gloves/guardsman/chaos
+	corpseshoes = /obj/item/clothing/shoes/guardsman/chaos/knife
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
 
 //ICC
 /obj/effect/landmark/corpsespawner/icc
 	name = "ICC infantry"
-	corpseuniform = /obj/item/clothing/under/som
-	corpsesuit = /obj/item/clothing/suit/modular/som
+	corpseuniform = /obj/item/clothing/under/chaos
+	corpsesuit = /obj/item/clothing/suit/modular/chaos
 	corpsemask = /obj/item/clothing/mask/gas
-	corpsehelmet = /obj/item/clothing/head/modular/som
-	corpsegloves = /obj/item/clothing/gloves/marine/som
-	corpseshoes = /obj/item/clothing/shoes/marine/som/knife
+	corpsehelmet = /obj/item/clothing/head/modular/chaos
+	corpsegloves = /obj/item/clothing/gloves/guardsman/chaos
+	corpseshoes = /obj/item/clothing/shoes/guardsman/chaos/knife
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
 /obj/effect/landmark/corpsespawner/icc_officer
 	name = "ICC leader"
 	corpseuniform = /obj/item/clothing/under/icc
-	corpsesuit = /obj/item/clothing/suit/storage/marine/icc/guard
+	corpsesuit = /obj/item/clothing/suit/storage/guardsman/icc/guard
 	corpsemask = /obj/item/clothing/mask/gas/icc
-	corpsehelmet = /obj/item/clothing/head/helmet/marine/icc/guard
-	corpsegloves = /obj/item/clothing/gloves/marine/icc/guard
-	corpseshoes = /obj/item/clothing/shoes/marine/icc/guard/knife
+	corpsehelmet = /obj/item/clothing/head/helmet/guardsman/icc/guard
+	corpsegloves = /obj/item/clothing/gloves/guardsman/icc/guard
+	corpseshoes = /obj/item/clothing/shoes/guardsman/icc/guard/knife
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
 // VSD
 /obj/effect/landmark/corpsespawner/vsd_standard
 	name = "Vyacheslav operative"
 	corpseuniform = /obj/item/clothing/under/vsd/webbing
-	corpsesuit = /obj/item/clothing/suit/storage/marine/vsd
+	corpsesuit = /obj/item/clothing/suit/storage/guardsman/vsd
 	corpsemask = /obj/item/clothing/mask/gas/vsd
-	corpsehelmet = /obj/item/clothing/head/helmet/marine/vsd
-	corpsegloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	corpseshoes = /obj/item/clothing/shoes/marine/vsd
+	corpsehelmet = /obj/item/clothing/head/helmet/guardsman/vsd
+	corpsegloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	corpseshoes = /obj/item/clothing/shoes/guardsman/vsd
 
 /obj/effect/landmark/corpsespawner/vsd_command
 	name = "Vyacheslav officer"
 	corpseuniform = /obj/item/clothing/under/vsd/webbing
-	corpsesuit = /obj/item/clothing/suit/storage/marine/vsd/desert
+	corpsesuit = /obj/item/clothing/suit/storage/guardsman/vsd/desert
 	corpsemask = /obj/item/clothing/mask/gas/vsd
 	corpsehelmet = /obj/item/clothing/head/vsd/beret
-	corpsegloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	corpseshoes = /obj/item/clothing/shoes/marine/vsd
+	corpsegloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	corpseshoes = /obj/item/clothing/shoes/guardsman/vsd
 
 /obj/effect/landmark/corpsespawner/vsd_spy
-	name = "Unknown marine" // this guy is literally no different than a regular marine body btw
-	corpseuniform = /obj/item/clothing/under/marine
+	name = "Unknown guardsman" // this guy is literally no different than a regular guardsman body btw
+	corpseuniform = /obj/item/clothing/under/guardsman
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/satchel
 	corpsemask = /obj/item/clothing/mask/rebreather
 	corpsehelmet = /obj/item/clothing/head/modular/m10x
-	corpsegloves = /obj/item/clothing/gloves/marine
-	corpseshoes = /obj/item/clothing/shoes/marine
+	corpsegloves = /obj/item/clothing/gloves/guardsman
+	corpseshoes = /obj/item/clothing/shoes/guardsman
 
 // Freelancer
 /obj/effect/landmark/corpsespawner/freelancer
 	name = "Freelancer mercenary"
-	corpseuniform = /obj/item/clothing/under/marine/veteran/freelancer
+	corpseuniform = /obj/item/clothing/under/guardsman/veteran/freelancer
 	corpsesuit = /obj/item/clothing/suit/storage/faction/freelancer
 	corpsemask = /obj/item/clothing/mask/gas/tactical/coif
 	corpsehelmet = /obj/item/clothing/head/frelancer
-	corpsegloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	corpseshoes = /obj/item/clothing/shoes/marine
+	corpsegloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	corpseshoes = /obj/item/clothing/shoes/guardsman
 
 /obj/effect/landmark/corpsespawner/freelancer_officer
 	name = "Freelancer mercenary"
-	corpseuniform = /obj/item/clothing/under/marine/veteran/freelancer
+	corpseuniform = /obj/item/clothing/under/guardsman/veteran/freelancer
 	corpsesuit = /obj/item/clothing/suit/storage/faction/freelancer
 	corpsemask = /obj/item/clothing/mask/gas/tactical/coif
 	corpsehelmet = /obj/item/clothing/head/frelancer/beret
-	corpsegloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	corpseshoes = /obj/item/clothing/shoes/marine
+	corpsegloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	corpseshoes = /obj/item/clothing/shoes/guardsman
 
 #undef REGULAR_DEATH
 #undef COCOONED_DEATH

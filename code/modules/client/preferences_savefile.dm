@@ -47,11 +47,11 @@
 
 		to_chat(parent, span_userdanger("Forced keybindings for say (T), me (M), ooc (O), looc (L) have been applied."))
 
-	// Reset the xeno crit health alerts to default
+	// Reset the tyranid crit health alerts to default
 	if(current_version < 43)
-		WRITE_FILE(S["mute_xeno_health_alert_messages"], TRUE)
-		mute_xeno_health_alert_messages = TRUE
-		to_chat(parent, span_userdanger("Preferences for Mute xeno health alert messages have been reverted to default settings; these are now muted. Go into Preferences and set Mute xeno health alert messages to No if you wish to get xeno critical health alerts."))
+		WRITE_FILE(S["mute_tyranid_health_alert_messages"], TRUE)
+		mute_tyranid_health_alert_messages = TRUE
+		to_chat(parent, span_userdanger("Preferences for Mute tyranid health alert messages have been reverted to default settings; these are now muted. Go into Preferences and set Mute tyranid health alert messages to No if you wish to get tyranid critical health alerts."))
 	if(current_version < 46)
 		toggles_sound |= SOUND_WEATHER
 		WRITE_FILE(S["toggles_sound"], toggles_sound)
@@ -181,8 +181,8 @@
 
 	READ_FILE(S["mute_self_combat_messages"], mute_self_combat_messages)
 	READ_FILE(S["mute_others_combat_messages"], mute_others_combat_messages)
-	READ_FILE(S["mute_xeno_health_alert_messages"], mute_xeno_health_alert_messages)
-	READ_FILE(S["show_xeno_rank"], show_xeno_rank)
+	READ_FILE(S["mute_tyranid_health_alert_messages"], mute_tyranid_health_alert_messages)
+	READ_FILE(S["show_tyranid_rank"], show_tyranid_rank)
 
 	// Runechat options
 	READ_FILE(S["chat_on_map"], chat_on_map)
@@ -244,8 +244,8 @@
 
 	mute_self_combat_messages = sanitize_integer(mute_self_combat_messages, FALSE, TRUE, initial(mute_self_combat_messages))
 	mute_others_combat_messages = sanitize_integer(mute_others_combat_messages, FALSE, TRUE, initial(mute_others_combat_messages))
-	mute_xeno_health_alert_messages = sanitize_integer(mute_xeno_health_alert_messages, FALSE, TRUE, initial(mute_xeno_health_alert_messages))
-	show_xeno_rank = sanitize_integer(show_xeno_rank, FALSE, TRUE, initial(show_xeno_rank))
+	mute_tyranid_health_alert_messages = sanitize_integer(mute_tyranid_health_alert_messages, FALSE, TRUE, initial(mute_tyranid_health_alert_messages))
+	show_tyranid_rank = sanitize_integer(show_tyranid_rank, FALSE, TRUE, initial(show_tyranid_rank))
 
 	chat_on_map = sanitize_integer(chat_on_map, FALSE, TRUE, initial(chat_on_map))
 	max_chat_length = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
@@ -312,8 +312,8 @@
 
 	mute_self_combat_messages = sanitize_integer(mute_self_combat_messages, FALSE, TRUE, initial(mute_self_combat_messages))
 	mute_others_combat_messages = sanitize_integer(mute_others_combat_messages, FALSE, TRUE, initial(mute_others_combat_messages))
-	mute_xeno_health_alert_messages = sanitize_integer(mute_xeno_health_alert_messages, FALSE, TRUE, initial(mute_xeno_health_alert_messages))
-	show_xeno_rank = sanitize_integer(show_xeno_rank, FALSE, TRUE, initial(show_xeno_rank))
+	mute_tyranid_health_alert_messages = sanitize_integer(mute_tyranid_health_alert_messages, FALSE, TRUE, initial(mute_tyranid_health_alert_messages))
+	show_tyranid_rank = sanitize_integer(show_tyranid_rank, FALSE, TRUE, initial(show_tyranid_rank))
 	slot_draw_order_pref = sanitize_islist(slot_draw_order_pref, SLOT_DRAW_ORDER, length(SLOT_DRAW_ORDER), TRUE, SLOT_DRAW_ORDER)
 	status_toggle_flags = sanitize_integer(status_toggle_flags, NONE, MAX_BITFLAG, initial(status_toggle_flags))
 
@@ -369,8 +369,8 @@
 
 	WRITE_FILE(S["mute_self_combat_messages"], mute_self_combat_messages)
 	WRITE_FILE(S["mute_others_combat_messages"], mute_others_combat_messages)
-	WRITE_FILE(S["mute_xeno_health_alert_messages"], mute_xeno_health_alert_messages)
-	WRITE_FILE(S["show_xeno_rank"], show_xeno_rank)
+	WRITE_FILE(S["mute_tyranid_health_alert_messages"], mute_tyranid_health_alert_messages)
+	WRITE_FILE(S["show_tyranid_rank"], show_tyranid_rank)
 
 	// Runechat options
 	WRITE_FILE(S["chat_on_map"], chat_on_map)
@@ -425,7 +425,7 @@
 	READ_FILE(S["synthetic_name"], synthetic_name)
 	READ_FILE(S["synthetic_type"], synthetic_type)
 	READ_FILE(S["robot_type"], robot_type)
-	READ_FILE(S["xeno_name"], xeno_name)
+	READ_FILE(S["tyranid_name"], tyranid_name)
 	READ_FILE(S["ai_name"], ai_name)
 
 	READ_FILE(S["real_name"], real_name)
@@ -484,7 +484,7 @@
 	synthetic_name = reject_bad_name(synthetic_name, TRUE)
 	synthetic_type = sanitize_inlist(synthetic_type, SYNTH_TYPES, initial(synthetic_type))
 	robot_type = sanitize_inlist(robot_type, ROBOT_TYPES, initial(robot_type))
-	xeno_name = reject_bad_name(xeno_name)
+	tyranid_name = reject_bad_name(tyranid_name)
 	ai_name = reject_bad_name(ai_name, TRUE)
 
 	real_name = reject_bad_name(real_name, TRUE)
@@ -495,7 +495,7 @@
 	ethnicity = sanitize_ethnicity(ethnicity)
 	good_eyesight = sanitize_integer(good_eyesight, FALSE, TRUE, initial(good_eyesight))
 	preferred_squad = sanitize_inlist(preferred_squad, SELECTABLE_SQUADS, initial(preferred_squad))
-	preferred_squad_som = sanitize_inlist(preferred_squad_som, SELECTABLE_SQUADS_SOM, initial(preferred_squad_som))
+	preferred_squad_som = sanitize_inlist(preferred_squad_som, SELECTABLE_SQUADS_CHAOS, initial(preferred_squad_som))
 	alternate_option = sanitize_integer(alternate_option, 0, 2, initial(alternate_option))
 	job_preferences = SANITIZE_LIST(job_preferences)
 	quick_equip = sanitize_islist(quick_equip, QUICK_EQUIP_ORDER, MAX_QUICK_EQUIP_SLOTS, TRUE, VALID_EQUIP_SLOTS)
@@ -546,8 +546,8 @@
 
 	if(!synthetic_name)
 		synthetic_name = "David"
-	if(!xeno_name)
-		xeno_name = "Undefined"
+	if(!tyranid_name)
+		tyranid_name = "Undefined"
 	if(!ai_name)
 		ai_name = "ARES v3.2"
 	if(!real_name)
@@ -575,7 +575,7 @@
 	synthetic_name = reject_bad_name(synthetic_name, TRUE)
 	synthetic_type = sanitize_inlist(synthetic_type, SYNTH_TYPES, initial(synthetic_type))
 	robot_type = sanitize_inlist(robot_type, ROBOT_TYPES, initial(robot_type))
-	xeno_name = reject_bad_name(xeno_name)
+	tyranid_name = reject_bad_name(tyranid_name)
 	ai_name = reject_bad_name(ai_name, TRUE)
 
 	real_name = reject_bad_name(real_name, TRUE)
@@ -586,7 +586,7 @@
 	ethnicity = sanitize_ethnicity(ethnicity)
 	good_eyesight = sanitize_integer(good_eyesight, FALSE, TRUE, initial(good_eyesight))
 	preferred_squad = sanitize_inlist(preferred_squad, SELECTABLE_SQUADS, initial(preferred_squad))
-	preferred_squad_som = sanitize_inlist(preferred_squad_som, SELECTABLE_SQUADS_SOM, initial(preferred_squad_som))
+	preferred_squad_som = sanitize_inlist(preferred_squad_som, SELECTABLE_SQUADS_CHAOS, initial(preferred_squad_som))
 	alternate_option = sanitize_integer(alternate_option, 0, 2, initial(alternate_option))
 	job_preferences = SANITIZE_LIST(job_preferences)
 	quick_equip = sanitize_islist(quick_equip, QUICK_EQUIP_ORDER, MAX_QUICK_EQUIP_SLOTS, TRUE, VALID_EQUIP_SLOTS)
@@ -639,7 +639,7 @@
 	WRITE_FILE(S["synthetic_name"], synthetic_name)
 	WRITE_FILE(S["synthetic_type"], synthetic_type)
 	WRITE_FILE(S["robot_type"], robot_type)
-	WRITE_FILE(S["xeno_name"], xeno_name)
+	WRITE_FILE(S["tyranid_name"], tyranid_name)
 	WRITE_FILE(S["ai_name"], ai_name)
 
 	WRITE_FILE(S["real_name"], real_name)

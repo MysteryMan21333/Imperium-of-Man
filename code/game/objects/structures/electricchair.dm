@@ -6,13 +6,13 @@
 
 /obj/structure/bed/chair/e_chair/Initialize(mapload)
 	. = ..()
-	overlays += image('icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir)
+	overlays += image('modular_imperium/master_files/icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir)
 
 
 /obj/structure/bed/chair/e_chair/rotate()
 	..()
 	overlays.Cut()
-	overlays += image('icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir)	//there's probably a better way of handling this, but eh. -Pete
+	overlays += image('modular_imperium/master_files/icons/obj/objects.dmi', src, "echair_over", MOB_LAYER + 1, dir)	//there's probably a better way of handling this, but eh. -Pete
 
 
 /obj/structure/bed/chair/e_chair/proc/use_power(amount, channel)

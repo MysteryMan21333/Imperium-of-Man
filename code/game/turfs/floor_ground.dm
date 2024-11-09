@@ -6,7 +6,7 @@
 	icon_state = "desert"
 	shoefootstep = FOOTSTEP_DIRT
 	barefootstep = FOOTSTEP_DIRT
-	mediumxenofootstep = FOOTSTEP_DIRT
+	mediumtyranidfootstep = FOOTSTEP_DIRT
 	minimap_color = MINIMAP_DIRT
 
 /turf/open/floor/plating/ground/broken_states()
@@ -23,7 +23,7 @@
 	icon_state = "desert"
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
-	mediumxenofootstep = FOOTSTEP_SAND
+	mediumtyranidfootstep = FOOTSTEP_SAND
 	icon_variants = 4
 
 /turf/open/floor/plating/ground/dirt/normal_states()
@@ -130,7 +130,7 @@
 	icon_state = "grass1"
 	shoefootstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
-	mediumxenofootstep = FOOTSTEP_GRASS
+	mediumtyranidfootstep = FOOTSTEP_GRASS
 	smoothing_groups = list(SMOOTH_GROUP_JUNGLE_FLOOR)
 	minimap_color = MINIMAP_AREA_JUNGLE
 
@@ -164,7 +164,7 @@
 /turf/open/floor/plating/ground/mars
 	icon = 'icons/turf/bigred.dmi'
 	icon_state = "mars_sand"
-	mediumxenofootstep = FOOTSTEP_SAND
+	mediumtyranidfootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	shoefootstep = FOOTSTEP_SAND
 	minimap_color = MINIMAP_MARS_DIRT
@@ -238,7 +238,7 @@
 	icon_state = "ice_floor"
 	shoefootstep = FOOTSTEP_ICE
 	barefootstep = FOOTSTEP_ICE
-	mediumxenofootstep = FOOTSTEP_ICE
+	mediumtyranidfootstep = FOOTSTEP_ICE
 	minimap_color = MINIMAP_ICE
 
 //Randomize ice floor sprite
@@ -254,7 +254,7 @@
 	name = "concrete"
 	icon = 'icons/turf/concrete.dmi'
 	icon_state = "concrete0"
-	mediumxenofootstep = FOOTSTEP_CONCRETE
+	mediumtyranidfootstep = FOOTSTEP_CONCRETE
 	barefootstep = FOOTSTEP_CONCRETE
 	shoefootstep = FOOTSTEP_CONCRETE
 	minimap_color = MINIMAP_AREA_COLONY
@@ -276,7 +276,7 @@
 	icon_state = "desert0"
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
-	mediumxenofootstep = FOOTSTEP_SAND
+	mediumtyranidfootstep = FOOTSTEP_SAND
 
 /turf/open/floor/plating/ground/desertdam/grate //for spanning river
 	name = "grate"
@@ -284,7 +284,7 @@
 	icon_state = "catwalk-159"
 	shoefootstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
-	mediumxenofootstep = FOOTSTEP_CATWALK
+	mediumtyranidfootstep = FOOTSTEP_CATWALK
 
 /turf/open/floor/plating/ground/desertdam/grate/alternate
 	icon_state = "catwalk-255"
@@ -302,7 +302,7 @@
 	icon_state = "sunbleached_asphalt"
 	shoefootstep = FOOTSTEP_CONCRETE
 	barefootstep = FOOTSTEP_CONCRETE
-	mediumxenofootstep = FOOTSTEP_CONCRETE
+	mediumtyranidfootstep = FOOTSTEP_CONCRETE
 	smoothing_groups = list(SMOOTH_GROUP_ASPHALT)
 
 /turf/open/floor/plating/ground/desertdam/asphalt/get_dirt_type()
@@ -369,7 +369,7 @@
 	icon_state = "outer_cave_floor"
 	shoefootstep = FOOTSTEP_DIRT
 	barefootstep = FOOTSTEP_DIRT
-	mediumxenofootstep = FOOTSTEP_DIRT
+	mediumtyranidfootstep = FOOTSTEP_DIRT
 
 //desert floor to outer cave floor transition
 /turf/open/floor/plating/ground/desertdam/cave/desert_into_outer_cave_floor
@@ -404,7 +404,7 @@
 	name = "desert"
 	icon = 'icons/turf/desert.dmi'
 	icon_state = "desert"
-	mediumxenofootstep = FOOTSTEP_SAND
+	mediumtyranidfootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	shoefootstep = FOOTSTEP_SAND
 	icon_variants = 3
@@ -416,7 +416,7 @@
 	name = "cave"
 	icon = 'icons/turf/cave_drought.dmi'
 	icon_state = "cave"
-	mediumxenofootstep = FOOTSTEP_GRAVEL
+	mediumtyranidfootstep = FOOTSTEP_GRAVEL
 	barefootstep = FOOTSTEP_GRAVEL
 	shoefootstep = FOOTSTEP_GRAVEL
 	icon_variants = 8
@@ -424,7 +424,7 @@
 /turf/open/floor/plating/ground/drought/cave/deep
 	icon = 'icons/turf/cave.dmi'
 	icon_variants = 7
-	mediumxenofootstep = FOOTSTEP_CONCRETE
+	mediumtyranidfootstep = FOOTSTEP_CONCRETE
 	barefootstep = FOOTSTEP_CONCRETE
 	shoefootstep = FOOTSTEP_CONCRETE
 
@@ -449,6 +449,6 @@
 	name = "grate"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "shallow_grate"
-	mediumxenofootstep = FOOTSTEP_CATWALK
+	mediumtyranidfootstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
 	shoefootstep = FOOTSTEP_CATWALK

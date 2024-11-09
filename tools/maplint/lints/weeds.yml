@@ -8,5 +8,5 @@ help: "Please replace it with the proper spawner."
 /obj/structure/mineral_door/resin:
   banned: TRUE
 
-/obj/structure/xeno/xeno_turret:
+/obj/structure/xeno/tyranid_turret:
   banned: TRUE

@@ -1,8 +1,8 @@
 /obj/structure/cocoon
 	name = "resin cocoon"
 	desc = "A slimy-looking cocoon made out of resin. It is vibrating."
-	icon = 'icons/obj/cocoon.dmi'
-	icon_state = "xeno_cocoon"
+	icon = 'modular_imperium/master_files/icons/obj/cocoon.dmi'
+	icon_state = "tyranid_cocoon"
 	density = FALSE
 	layer = BELOW_OBJ_LAYER
 	hit_sound = 'sound/effects/alien/resin_break2.ogg'
@@ -14,7 +14,7 @@
 	var/hivenumber
 	///What is inside the cocoon
 	var/mob/living/victim
-	///How much time the cocoon takes to deplete the life force of the marine
+	///How much time the cocoon takes to deplete the life force of the guardsman
 	var/cocoon_life_time = 5 MINUTES
 	///Standard busy check
 	var/busy = FALSE
@@ -44,7 +44,7 @@
 	psych_points_output = clamp(psych_points_output, COCOON_PSY_POINTS_REWARD_MIN, COCOON_PSY_POINTS_REWARD_MAX)
 	SSpoints.add_strategic_psy_points(hivenumber, psych_points_output)
 	SSpoints.add_tactical_psy_points(hivenumber, psych_points_output*0.25)
-	//Gives marine cloneloss for a total of 30.
+	//Gives guardsman cloneloss for a total of 30.
 	victim.adjustCloneLoss(0.5)
 
 /obj/structure/cocoon/take_damage(damage_amount, damage_type = BRUTE, armor_type = null, effects = TRUE, attack_dir, armour_penetration = 0, mob/living/blame_mob)
@@ -66,11 +66,11 @@
 	if(anchored)
 		unanchor_from_nest()
 	if(must_release_victim)
-		var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
-		xeno_job.add_job_points(larva_point_reward)
+		var/datum/job/tyranid_job = SSjob.GetJobType(/datum/job/tyranid)
+		tyranid_job.add_job_points(larva_point_reward)
 		var/datum/hive_status/hive_status = GLOB.hive_datums[hivenumber]
 		hive_status.update_tier_limits()
-		GLOB.round_statistics.larva_from_cocoon += larva_point_reward / xeno_job.job_points_needed
+		GLOB.round_statistics.larva_from_cocoon += larva_point_reward / tyranid_job.job_points_needed
 		release_victim()
 	update_icon()
 
@@ -118,15 +118,15 @@
 /obj/structure/cocoon/update_icon_state()
 	. = ..()
 	if(anchored)
-		icon_state = "xeno_cocoon"
+		icon_state = "tyranid_cocoon"
 		return
 	if(victim)
-		icon_state = "xeno_cocoon_unnested"
+		icon_state = "tyranid_cocoon_unnested"
 		return
-	icon_state = "xeno_cocoon_open"
+	icon_state = "tyranid_cocoon_open"
 
 /obj/structure/cocoon/opened_cocoon
-	icon_state = "xeno_cocoon_open"
+	icon_state = "tyranid_cocoon_open"
 	anchored = FALSE
 
 /obj/structure/cocoon/opened_cocoon/Initialize(mapload)

@@ -6,7 +6,7 @@
 	desc = "A magazine of antimaterial rifle ammo."
 	caliber = CALIBER_10X28
 	icon_state = "t26"
-	icon = 'icons/obj/items/ammo/sniper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/sniper.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	max_rounds = 15
 	default_ammo = /datum/ammo/bullet/sniper
@@ -54,7 +54,7 @@
 	name = "\improper high velocity magazine (10x28mm)"
 	desc = "A magazine of overpressured high velocity rounds for use in the BR-8 battle rifle. The BR-8 battle rifle is the only gun that can chamber these rounds."
 	icon_state = "tx8"
-	icon = 'icons/obj/items/ammo/sniper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/sniper.dmi'
 	caliber = CALIBER_10X28_CASELESS
 	default_ammo = /datum/ammo/bullet/rifle/tx8
 	max_rounds = 25
@@ -85,7 +85,7 @@
 	desc = "A precursor to all kinds of rocket ammo unfit for normal use. How did you get this anyway?"
 	caliber = CALIBER_84MM
 	icon_state = "rocket_he"
-	icon = 'icons/obj/items/ammo/rocket.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/rocket.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	magazine_flags = MAGAZINE_REFUND_IN_CHAMBER
 	max_rounds = 1
@@ -266,49 +266,49 @@
 /obj/item/ammo_magazine/internal/launcher/rocket/m57a4/ds
 	default_ammo = /datum/ammo/rocket/wp/quad/ds
 
-//SOM RPG
-/obj/item/ammo_magazine/rocket/som
+//CHAOS RPG
+/obj/item/ammo_magazine/rocket/chaos
 	name = "\improper 84mm high-explosive RPG"
 	desc = "A high explosive warhead for the V-71 rocket launcher. Causes a strong explosion over a respectable area."
 	icon_state = "rpg_he"
-	default_ammo = /datum/ammo/rocket/som
+	default_ammo = /datum/ammo/rocket/chaos
 	reload_delay = 2 SECONDS
 	bonus_overlay = "rpg_he"
 
-/obj/item/ammo_magazine/rocket/som/light
+/obj/item/ammo_magazine/rocket/chaos/light
 	name = "\improper 84mm light-explosive RPG"
 	desc = "A light explosive warhead for the V-71 rocket launcher. Causes a light explosion over a large area but low impact damage."
 	icon_state = "rpg_le"
-	default_ammo = /datum/ammo/rocket/som/light
+	default_ammo = /datum/ammo/rocket/chaos/light
 	reload_delay = 1 SECONDS
 	bonus_overlay = "rpg_le"
 
-/obj/item/ammo_magazine/rocket/som/heat
+/obj/item/ammo_magazine/rocket/chaos/heat
 	name = "\improper 84mm HEAT RPG"
 	desc = "A high explosive anti armor warhead for the V-71 rocket launcher. Designed to punch through the toughest armor."
 	icon_state = "rpg_heat"
-	default_ammo = /datum/ammo/rocket/som/heat
+	default_ammo = /datum/ammo/rocket/chaos/heat
 	bonus_overlay = "rpg_heat"
 
-/obj/item/ammo_magazine/rocket/som/thermobaric
+/obj/item/ammo_magazine/rocket/chaos/thermobaric
 	name = "\improper 84mm thermobaric RPG"
 	desc = "A thermobaric warhead for the V-71 rocket launcher. Causes a powerful fuel air explosion over a moderate area."
 	icon_state = "rpg_thermobaric"
-	default_ammo = /datum/ammo/rocket/som/thermobaric
+	default_ammo = /datum/ammo/rocket/chaos/thermobaric
 	bonus_overlay = "rpg_thermobaric"
 
-/obj/item/ammo_magazine/rocket/som/rad
+/obj/item/ammo_magazine/rocket/chaos/rad
 	name = "\improper 84mm  irrad RPG"
 	desc = "A irrad warhead for the V-71 rocket launcher. Releases a devastating milisecond burst of radiation, debilitating anything caught in the blast radius."
 	icon_state = "rpg_rad"
-	default_ammo = /datum/ammo/rocket/som/rad
+	default_ammo = /datum/ammo/rocket/chaos/rad
 	bonus_overlay = "rpg_rad"
 
-/obj/item/ammo_magazine/rocket/som/incendiary
+/obj/item/ammo_magazine/rocket/chaos/incendiary
 	name = "\improper 84mm incendiary RPG"
 	desc = "An incendiary warhead for the V-71 rocket launcher. Releases a white phosphorus payload, burning anything in a moderate blast radius."
 	icon_state = "rpg_incendiary"
-	default_ammo = /datum/ammo/rocket/wp/quad/som
+	default_ammo = /datum/ammo/rocket/wp/quad/chaos
 	bonus_overlay = "rpg_incendiary"
 
 //ICC RPG
@@ -316,7 +316,7 @@
 	name = "\improper 84mm high-explosive tube"
 	desc = "A high explosive warhead for MP-IRL rocket launcher. Causes a strong explosion over a respectable area."
 	icon_state = "icc_he"
-	default_ammo = /datum/ammo/rocket/som
+	default_ammo = /datum/ammo/rocket/chaos
 	reload_delay = 2 SECONDS
 	bonus_overlay = "iccrpg_he"
 
@@ -324,7 +324,7 @@
 	name = "\improper 84mm light-explosive tube"
 	desc = "A light explosive warhead for the MP-IRL rocket launcher. Causes a light explosion over a large area but low impact damage."
 	icon_state = "icc_le"
-	default_ammo = /datum/ammo/rocket/som/light
+	default_ammo = /datum/ammo/rocket/chaos/light
 	reload_delay = 1 SECONDS
 	bonus_overlay = "iccrpg_le"
 
@@ -332,14 +332,14 @@
 	name = "\improper 84mm HEAT tube"
 	desc = "A high explosive anti armor warhead for the MP-IRL rocket launcher. Designed to punch through the toughest armor."
 	icon_state = "icc_heat"
-	default_ammo = /datum/ammo/rocket/som/heat
+	default_ammo = /datum/ammo/rocket/chaos/heat
 	bonus_overlay = "iccrpg_heat"
 
 /obj/item/ammo_magazine/rocket/icc/thermobaric
 	name = "\improper 84mm thermobaric tube"
 	desc = "A thermobaric warhead for the MP-IRL rocket launcher. Causes a powerful fuel air explosion over a moderate area."
 	icon_state = "icc_thermobaric"
-	default_ammo = /datum/ammo/rocket/som/thermobaric
+	default_ammo = /datum/ammo/rocket/chaos/thermobaric
 	bonus_overlay = "iccrpg_thermobaric"
 
 //VSD RPG
@@ -348,7 +348,7 @@
 	name = "\improper 84mm HE 'Anti-Personnel' case"
 	desc = "84mm Anti Personnel case. The label reads: 'Makes big boom'."
 	icon_state = "c153_he"
-	default_ammo = /datum/ammo/rocket/som
+	default_ammo = /datum/ammo/rocket/chaos
 	reload_delay = 2 SECONDS
 	bonus_overlay = "c153_he"
 
@@ -356,7 +356,7 @@
 	name = "\improper 84mm Incendiary 'Anti-Personnel' case"
 	desc = "84mm Incendiary Anti Personnel case. The label reads: 'Makes people go AAAAAAAHH'."
 	icon_state = "c153_incendiary"
-	default_ammo = /datum/ammo/rocket/wp/quad/som
+	default_ammo = /datum/ammo/rocket/wp/quad/chaos
 	bonus_overlay = "c153_incendiary"
 
 /obj/item/ammo_magazine/rocket/vsd/chemical
@@ -374,7 +374,7 @@
 	caliber = CALIBER_RAILGUN
 	magazine_flags = MAGAZINE_REFUND_IN_CHAMBER
 	icon_state = "railgun"
-	icon = 'icons/obj/items/ammo/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/misc.dmi'
 	default_ammo = /datum/ammo/bullet/railgun
 	max_rounds = 1
 	reload_delay = 20 //Hard to reload.
@@ -402,7 +402,7 @@
 	desc = "A canister holding a projectile to be used inside a pepperball gun."
 	caliber = CALIBER_PEPPERBALL
 	icon_state = "pepperball"
-	icon = 'icons/obj/items/ammo/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/misc.dmi'
 	default_ammo = /datum/ammo/bullet/pepperball
 	max_rounds = 100
 	w_class = WEIGHT_CLASS_NORMAL
@@ -421,7 +421,7 @@
 	desc = "A heavy reinforced backpack with support equipment, power cells, and spare rounds for the MG-100 Minigun System.\nClick the icon in the top left to reload your MG-100."
 	icon_state = "powerpack"
 	worn_icon_state = "powerpack"
-	icon = 'icons/obj/items/ammo/powerpack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/powerpack.dmi'
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BACK
 	magazine_flags = MAGAZINE_WORN
@@ -454,7 +454,7 @@
 /obj/item/ammo_magazine/minigun_wheelchair
 	name = "\improper Mounted MG-100 Vindicator ammo rack"
 	desc = "A case filled to the brim with ammunition. Appears custom made to be slotted into a feeding system."
-	icon = 'icons/obj/items/ammo/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/misc.dmi'
 	icon_state = "minigun"
 	atom_flags = CONDUCT
 	magazine_flags = MAGAZINE_REFILLABLE
@@ -468,7 +468,7 @@
 /obj/item/ammo_magazine/bike_minigun
 	name = "\improper Mounted MG-100 Vindicator ammo rack"
 	desc = "A case filled to the brim with ammunition. Appears custom made to be slotted into a feeding system."
-	icon = 'icons/obj/items/ammo/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/misc.dmi'
 	icon_state = "minigun"
 	w_class = WEIGHT_CLASS_HUGE
 	default_ammo = /datum/ammo/bullet/minigun_light

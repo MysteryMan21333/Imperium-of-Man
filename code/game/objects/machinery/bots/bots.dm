@@ -1,7 +1,7 @@
 /obj/machinery/bot
 	name = "generic utility robot"
 	desc = "a generic utility robot, ahelp if you see this in game."
-	icon = 'icons/obj/aibots.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/aibots.dmi'
 	density = FALSE
 	anchored = FALSE
 	voice_filter = "alimiter=0.9,acompressor=threshold=0.2:ratio=20:attack=10:release=50:makeup=2,highpass=f=1000"
@@ -145,7 +145,7 @@
 /obj/machinery/bot/medbot
 	name = "Medibot"
 	desc = "A little medical robot. He looks somewhat underwhelmed."
-	icon = 'icons/obj/aibots.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/aibots.dmi'
 	icon_state = "medibot0"
 	density = FALSE
 	anchored = FALSE

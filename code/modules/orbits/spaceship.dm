@@ -20,7 +20,7 @@ GLOBAL_VAR_INIT(current_orbit,STANDARD_ORBIT)
 	density = TRUE
 	anchored = TRUE
 	idle_power_usage = 10
-	req_access = list(ACCESS_MARINE_BRIDGE)
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE)
 	///boolean the spaceship it currently in the process of changing orbits
 	var/changing_orbit = TRUE
 	///boolean there is an authorized person logged into this console. TRUE = logged in authorized person
@@ -42,7 +42,7 @@ GLOBAL_VAR_INIT(current_orbit,STANDARD_ORBIT)
 	if(.)
 		return
 
-	//keep this? make it hackable so regular marines can run?
+	//keep this? make it hackable so regular guardsmans can run?
 	TOGGLE_BITFIELD(machine_stat, PANEL_OPEN)
 	update_icon()
 	to_chat(user, "The wires have been [CHECK_BITFIELD(machine_stat, PANEL_OPEN) ? "exposed" : "unexposed"]")
@@ -128,7 +128,7 @@ GLOBAL_VAR_INIT(current_orbit,STANDARD_ORBIT)
 		if(istype(I))
 			if(check_access(I))
 				authenticated = AUTHORIZED
-			if(ACCESS_MARINE_BRIDGE in I.access)
+			if(ACCESS_GUARDSMAN_BRIDGE in I.access)
 				authenticated = AUTHORIZED_PLUS
 			addtimer(VARSET_CALLBACK(src, authenticated, FALSE), AUTO_LOGOUT_TIME) //autologout
 		else
@@ -136,7 +136,7 @@ GLOBAL_VAR_INIT(current_orbit,STANDARD_ORBIT)
 			if(istype(I))
 				if(check_access(I))
 					authenticated = AUTHORIZED
-				if(ACCESS_MARINE_BRIDGE in I.access)
+				if(ACCESS_GUARDSMAN_BRIDGE in I.access)
 					authenticated = AUTHORIZED_PLUS
 				addtimer(VARSET_CALLBACK(src, authenticated, FALSE), AUTO_LOGOUT_TIME) //autologout
 	if(href_list["logout"])

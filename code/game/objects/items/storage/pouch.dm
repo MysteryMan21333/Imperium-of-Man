@@ -1,6 +1,6 @@
 /obj/item/storage/pouch
 	name = "abstract pouch"
-	icon = 'icons/obj/clothing/pouches.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/pouches.dmi'
 	icon_state = "small_drop"
 	w_class = WEIGHT_CLASS_BULKY //does not fit in backpack
 	equip_slot_flags = ITEM_SLOT_POCKET
@@ -73,21 +73,21 @@
 	new /obj/item/pinpointer(src)
 
 
-/obj/item/storage/pouch/general/som
+/obj/item/storage/pouch/general/chaos
 	name = "mining general pouch"
 	desc = "A general purpose pouch used to carry small items used during mining."
 	icon_state = "general_som"
 
-/obj/item/storage/pouch/general/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/general/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 	storage_datum.draw_mode = TRUE
 
-/obj/item/storage/pouch/general/large/som
+/obj/item/storage/pouch/general/large/chaos
 	desc = "A general purpose pouch used to carry small items used during mining."
 	icon_state = "large_drop_som"
 
-/obj/item/storage/pouch/general/large/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/general/large/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
@@ -143,7 +143,7 @@
 
 /obj/item/storage/pouch/firstaid
 	name = "first-aid pouch"
-	desc = "Standard marine first-aid pouch. It can contain most common medical supplies."
+	desc = "Standard guardsman first-aid pouch. It can contain most common medical supplies."
 	icon_state = "firstaid"
 
 /obj/item/storage/pouch/firstaid/Initialize(mapload, ...)
@@ -180,16 +180,16 @@
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/hypospray/advanced/inaprovaline(src)
 
-/obj/item/storage/pouch/firstaid/som
+/obj/item/storage/pouch/firstaid/chaos
 	name = "mining first aid pouch"
-	desc = "A basic first aid pouch originally used by miners due to dangerous working conditions on the mining colonies. This one is marked as belonging to the SOM."
+	desc = "A basic first aid pouch originally used by miners due to dangerous working conditions on the mining colonies. This one is marked as belonging to the CHAOS."
 	icon_state = "firstaid_som"
 
-/obj/item/storage/pouch/firstaid/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/firstaid/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
-/obj/item/storage/pouch/firstaid/som/full/PopulateContents()
+/obj/item/storage/pouch/firstaid/chaos/full/PopulateContents()
 	new /obj/item/storage/pill_bottle/packet/bicaridine(src)
 	new /obj/item/storage/pill_bottle/packet/kelotane(src)
 	new /obj/item/storage/pill_bottle/packet/tramadol(src)
@@ -197,7 +197,7 @@
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/inaprovaline(src)
 
-/obj/item/storage/pouch/firstaid/som/combat_patrol/PopulateContents()
+/obj/item/storage/pouch/firstaid/chaos/combat_patrol/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/kelotane(src)
 	new /obj/item/storage/pill_bottle/packet/tramadol(src)
@@ -205,7 +205,7 @@
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/inaprovaline(src)
 
-/obj/item/storage/pouch/firstaid/som/combat_patrol_leader/PopulateContents()
+/obj/item/storage/pouch/firstaid/chaos/combat_patrol_leader/PopulateContents()
 	new /obj/item/storage/pill_bottle/packet/bicaridine(src)
 	new /obj/item/storage/pill_bottle/packet/kelotane(src)
 	new /obj/item/storage/pill_bottle/packet/tramadol(src)
@@ -225,7 +225,7 @@
 	storage_datum.set_holdable(can_hold_list = list(
 		/obj/item/weapon/gun/pistol,
 		/obj/item/weapon/gun/revolver,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta,
 	))
 	storage_datum.draw_mode = TRUE
@@ -236,11 +236,11 @@
 /obj/item/storage/pouch/pistol/rt3/PopulateContents()
 	new /obj/item/weapon/gun/pistol/rt3(src)
 
-/obj/item/storage/pouch/pistol/som
-	desc = "It can contain a pistol or revolver. Useful for emergencies, and made out of stylish leather in the old SOM tradition."
+/obj/item/storage/pouch/pistol/chaos
+	desc = "It can contain a pistol or revolver. Useful for emergencies, and made out of stylish leather in the old CHAOS tradition."
 	icon_state = "pistol_som"
 
-/obj/item/storage/pouch/pistol/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/pistol/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
@@ -298,11 +298,11 @@
 	fill_type = /obj/item/ammo_magazine/smg/standard_smg
 	fill_number = 3
 
-/obj/item/storage/pouch/magazine/large/som
-	desc = "This pouch can contain three ammo magazines. Made with traditional SOM leather."
+/obj/item/storage/pouch/magazine/large/chaos
+	desc = "This pouch can contain three ammo magazines. Made with traditional CHAOS leather."
 	icon_state = "mag_som"
 
-/obj/item/storage/pouch/magazine/large/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/magazine/large/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
@@ -453,12 +453,12 @@
 	fill_type = /obj/item/explosive/grenade/upp
 	fill_number = 4
 
-/obj/item/storage/pouch/explosive/som
+/obj/item/storage/pouch/explosive/chaos
 	name = "\improper S26 explosive pouch"
 	desc = "A leather pouch for storing grenades, rockets, mine boxes, and other explosives."
 	icon_state = "explosive_som"
 
-/obj/item/storage/pouch/explosive/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/explosive/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
@@ -507,39 +507,39 @@
 	fill_type = /obj/item/explosive/grenade/emp
 	fill_number = 6
 
-/obj/item/storage/pouch/grenade/som
-	desc = "It can contain grenades. This one looks to be made out of traditional SOM leather."
+/obj/item/storage/pouch/grenade/chaos
+	desc = "It can contain grenades. This one looks to be made out of traditional CHAOS leather."
 	icon_state = "grenade_som"
 
-/obj/item/storage/pouch/grenade/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/grenade/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
-/obj/item/storage/pouch/grenade/som/combat_patrol/PopulateContents()
-	new /obj/item/explosive/grenade/smokebomb/som(src)
-	new /obj/item/explosive/grenade/smokebomb/som(src)
+/obj/item/storage/pouch/grenade/chaos/combat_patrol/PopulateContents()
+	new /obj/item/explosive/grenade/smokebomb/chaos(src)
+	new /obj/item/explosive/grenade/smokebomb/chaos(src)
 	new /obj/item/explosive/grenade/smokebomb/satrapine(src)
 	new /obj/item/explosive/grenade/smokebomb/satrapine(src)
 	new /obj/item/explosive/grenade/flashbang/stun(src)
 	new /obj/item/explosive/grenade/flashbang/stun(src)
 
-/obj/item/storage/pouch/grenade/som/ert/PopulateContents()
-	new /obj/item/explosive/grenade/smokebomb/som(src)
-	new /obj/item/explosive/grenade/smokebomb/som(src)
+/obj/item/storage/pouch/grenade/chaos/ert/PopulateContents()
+	new /obj/item/explosive/grenade/smokebomb/chaos(src)
+	new /obj/item/explosive/grenade/smokebomb/chaos(src)
 	new /obj/item/explosive/grenade/smokebomb/satrapine(src)
 	new /obj/item/explosive/grenade/smokebomb/satrapine(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
 
-/obj/item/storage/pouch/grenade/som/standard/PopulateContents()
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/som(src)
-	new /obj/item/explosive/grenade/incendiary/som(src)
-	new /obj/item/explosive/grenade/incendiary/som(src)
+/obj/item/storage/pouch/grenade/chaos/standard/PopulateContents()
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/chaos(src)
+	new /obj/item/explosive/grenade/incendiary/chaos(src)
+	new /obj/item/explosive/grenade/incendiary/chaos(src)
 
-/obj/item/storage/pouch/grenade/som/emp
+/obj/item/storage/pouch/grenade/chaos/emp
 	fill_type = /obj/item/explosive/grenade/emp
 	fill_number = 6
 
@@ -567,7 +567,7 @@
 	))
 
 /obj/item/storage/pouch/medkit/firstaid
-	desc = "Standard marine first-aid pouch. Contains basic pills, splints, and a stabilizing injector."
+	desc = "Standard guardsman first-aid pouch. Contains basic pills, splints, and a stabilizing injector."
 
 /obj/item/storage/pouch/medkit/firstaid/PopulateContents()
 	new /obj/item/storage/pill_bottle/bicaridine(src)
@@ -596,11 +596,11 @@
 	new /obj/item/reagent_containers/hypospray/advanced/peridaxonplus_medkit(src)
 	new /obj/item/reagent_containers/hypospray/advanced/meraderm(src)
 
-/obj/item/storage/pouch/medkit/som
-	desc = "A standard use medkit pouch that can contain all kinds of medical supplies and equipment. Made with traditional SOM leather."
+/obj/item/storage/pouch/medkit/chaos
+	desc = "A standard use medkit pouch that can contain all kinds of medical supplies and equipment. Made with traditional CHAOS leather."
 	icon_state = "medkit_som"
 
-/obj/item/storage/pouch/medkit/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/medkit/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
@@ -617,7 +617,7 @@
 	storage_datum.set_holdable(can_hold_list = list(/obj/item/reagent_containers/hypospray/autoinjector))
 
 /obj/item/storage/pouch/medical_injectors/firstaid
-	desc = "Standard marine first-aid injector pouch. Specialized to store only auto-injectors. Contains basic injectors, a stabilizing injector, stimulant injector, and an emergency injector."
+	desc = "Standard guardsman first-aid injector pouch. Specialized to store only auto-injectors. Contains basic injectors, a stabilizing injector, stimulant injector, and an emergency injector."
 
 /obj/item/storage/pouch/medical_injectors/firstaid/PopulateContents() //used in hvh and erts
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine (src)
@@ -629,7 +629,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine (src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/russian_red (src)
 
-/obj/item/storage/pouch/medical_injectors/standard/PopulateContents() //normal access variant available by default to marines
+/obj/item/storage/pouch/medical_injectors/standard/PopulateContents() //normal access variant available by default to guardsmans
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/kelotane(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/tramadol(src)
@@ -649,15 +649,15 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/peridaxon_plus(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/peridaxon_plus(src)
 
-/obj/item/storage/pouch/medical_injectors/som
-	desc = "A specialized medical pouch that can only hold auto-injectors. This one looks to be made out of traditional SOM leather."
+/obj/item/storage/pouch/medical_injectors/chaos
+	desc = "A specialized medical pouch that can only hold auto-injectors. This one looks to be made out of traditional CHAOS leather."
 	icon_state = "firstaid_injector_som"
 
-/obj/item/storage/pouch/medical_injectors/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/medical_injectors/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
-/obj/item/storage/pouch/medical_injectors/som/firstaid/PopulateContents()
+/obj/item/storage/pouch/medical_injectors/chaos/firstaid/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/autoinjector/bicaridine (src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/kelotane (src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/tramadol (src)
@@ -667,7 +667,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine (src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/russian_red (src)
 
-/obj/item/storage/pouch/medical_injectors/som/medic/PopulateContents()
+/obj/item/storage/pouch/medical_injectors/chaos/medic/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced(src)
@@ -856,11 +856,11 @@
 	new /obj/item/stack/sheet/metal/large_stack (src)
 	new /obj/item/stack/sheet/plasteel/medium_stack (src)
 
-/obj/item/storage/pouch/construction/som
-	desc = "It's designed to hold construction materials - glass/metal sheets, metal rods, barbed wire, cable coil, and empty sandbags. It also has a hook for an entrenching tool. Made with traditional SOM leather."
+/obj/item/storage/pouch/construction/chaos
+	desc = "It's designed to hold construction materials - glass/metal sheets, metal rods, barbed wire, cable coil, and empty sandbags. It also has a hook for an entrenching tool. Made with traditional CHAOS leather."
 	icon_state = "construction_som"
 
-/obj/item/storage/pouch/construction/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/construction/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
@@ -910,15 +910,15 @@
 	new /obj/item/tool/wrench (src)
 	new /obj/item/tool/crowbar (src)
 
-/obj/item/storage/pouch/tools/som
-	desc = "It's designed to hold maintenance tools - screwdriver, wrench, cable coil, etc. It also has a hook for an entrenching tool. Made with traditional SOM leather."
+/obj/item/storage/pouch/tools/chaos
+	desc = "It's designed to hold maintenance tools - screwdriver, wrench, cable coil, etc. It also has a hook for an entrenching tool. Made with traditional CHAOS leather."
 	icon_state = "tools_som"
 
-/obj/item/storage/pouch/tools/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/tools/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 
-/obj/item/storage/pouch/tools/som/full/PopulateContents()
+/obj/item/storage/pouch/tools/chaos/full/PopulateContents()
 	new /obj/item/tool/screwdriver (src)
 	new /obj/item/tool/wirecutters (src)
 	new /obj/item/tool/weldingtool (src)
@@ -982,11 +982,11 @@
 
 	return ..()
 
-/obj/item/storage/pouch/shotgun/som
-	desc = "A pouch specialized for holding shotgun ammo. Made with traditional SOM leather."
+/obj/item/storage/pouch/shotgun/chaos
+	desc = "A pouch specialized for holding shotgun ammo. Made with traditional CHAOS leather."
 	icon_state = "shotshells_som"
 
-/obj/item/storage/pouch/shotgun/som/Initialize(mapload, ...)
+/obj/item/storage/pouch/shotgun/chaos/Initialize(mapload, ...)
 	. = ..()
 	storage_datum.sprite_slots = null
 

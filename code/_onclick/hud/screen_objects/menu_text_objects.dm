@@ -112,14 +112,14 @@
 	var/mob/new_player/player = hud.mymob
 	player.view_manifest()
 
-/atom/movable/screen/text/lobby/clickable/xenomanifest
+/atom/movable/screen/text/lobby/clickable/tyranidmanifest
 	maptext = "<span class='maptext' style=font-size:8px>VIEW HIVE LEADERS</span>"
 	icon_state = "manifest"
 
-/atom/movable/screen/text/lobby/clickable/xenomanifest/Click()
+/atom/movable/screen/text/lobby/clickable/tyranidmanifest/Click()
 	. = ..()
 	var/mob/new_player/player = hud.mymob
-	player.view_xeno_manifest()
+	player.view_tyranid_manifest()
 
 /atom/movable/screen/text/lobby/clickable/background
 	maptext = "<span class='maptext' style=font-size:8px>BACKGROUND</span>"

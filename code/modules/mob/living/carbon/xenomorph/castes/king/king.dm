@@ -1,8 +1,8 @@
-/mob/living/carbon/xenomorph/king
-	caste_base_type = /datum/xeno_caste/king
+/mob/living/carbon/tyranid/king
+	caste_base_type = /datum/tyranid_caste/king
 	name = "King"
 	desc = "A primordial creature, evolved to smash the hardiest of defences and hunt the hardiest of prey."
-	icon = 'icons/Xeno/castes/king.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/king.dmi'
 	icon_state = "King Walking"
 	attacktext = "bites"
 	attack_sound = null
@@ -13,21 +13,21 @@
 	pixel_x = -16
 	mob_size = MOB_SIZE_BIG
 	drag_delay = 6
-	tier = XENO_TIER_FOUR //King, like queen, doesn't count towards population limit.
-	upgrade = XENO_UPGRADE_NORMAL
+	tier = TYRANID_TIER_FOUR //King, like queen, doesn't count towards population limit.
+	upgrade = TYRANID_UPGRADE_NORMAL
 	bubble_icon = "alienroyal"
 	inherent_verbs = list(
-		/mob/living/carbon/xenomorph/proc/hijack,
+		/mob/living/carbon/tyranid/proc/hijack,
 	)
 
-/mob/living/carbon/xenomorph/king/Initialize(mapload)
+/mob/living/carbon/tyranid/king/Initialize(mapload)
 	. = ..()
-	playsound(loc, 'sound/voice/alien/xenos_roaring.ogg', 75, 0)
+	playsound(loc, 'modular_imperium/master_files/sound/voice/alien/xenos_roaring.ogg', 75, 0)
 
-/mob/living/carbon/xenomorph/king/generate_name()
-	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
-	var/prefix = (hive.prefix || xeno_caste.upgrade_name) ? "[hive.prefix][xeno_caste.upgrade_name] " : ""
-	if(!client?.prefs.show_xeno_rank || !client)
+/mob/living/carbon/tyranid/king/generate_name()
+	var/playtime_mins = client?.get_exp(tyranid_caste.caste_name)
+	var/prefix = (hive.prefix || tyranid_caste.upgrade_name) ? "[hive.prefix][tyranid_caste.upgrade_name] " : ""
+	if(!client?.prefs.show_tyranid_rank || !client)
 		name = prefix + "King ([nicknumber])"
 		real_name = name
 		if(mind)
@@ -51,5 +51,5 @@
 	if(mind)
 		mind.name = name
 
-/mob/living/carbon/xenomorph/king/death_cry()
+/mob/living/carbon/tyranid/king/death_cry()
 	playsound(loc, 'sound/voice/alien/king_died.ogg', 75, 0)

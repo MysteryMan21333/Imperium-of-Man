@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aax" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/north)
 "aaT" = (
@@ -90,7 +90,7 @@
 /turf/open/floor/mainship/cargo,
 /area/bluesummers/caves/cryostorage/south)
 "afc" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/caves/southeast)
 "afh" = (
@@ -102,7 +102,7 @@
 /area/bluesummers/inside/industrial)
 "afi" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
@@ -732,12 +732,12 @@
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north/garbledradio)
 "aDE" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating,
 /area/bluesummers/caves/north)
 "aDJ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "aDS" = (
@@ -779,7 +779,7 @@
 /area/bluesummers/caves/west)
 "aEu" = (
 /obj/structure/lattice,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
@@ -878,8 +878,8 @@
 /turf/open/floor/mainship/cargo,
 /area/bluesummers/caves/cryostorage/north)
 "aIy" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/desertdamrockwall,
 /area/bluesummers/caves/rock)
 "aIz" = (
@@ -1151,7 +1151,7 @@
 /turf/open/floor/mainship/floor,
 /area/bluesummers/inside/eva)
 "aWP" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "aXW" = (
@@ -1427,7 +1427,7 @@
 	},
 /area/bluesummers/inside/food_processing)
 "blK" = (
-/obj/effect/landmark/corpsespawner/som/burst,
+/obj/effect/landmark/corpsespawner/chaos/burst,
 /obj/effect/landmark/weed_node,
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/gcircuit,
@@ -1615,7 +1615,7 @@
 	},
 /area/bluesummers/inside/industrial)
 "btj" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/tile/dark2,
 /area/bluesummers/inside/robotics)
 "btX" = (
@@ -1760,7 +1760,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/southeast)
 "bAu" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/west)
@@ -1897,7 +1897,7 @@
 /turf/open/floor/plating/mainship,
 /area/bluesummers/caves/mining/drill)
 "bHp" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
@@ -2012,7 +2012,7 @@
 /turf/open/floor/plating/mainship,
 /area/bluesummers/inside/garage)
 "bQA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
 "bQU" = (
@@ -2157,7 +2157,7 @@
 "bXJ" = (
 /obj/structure/lattice,
 /obj/machinery/light,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "bXO" = (
@@ -2170,7 +2170,7 @@
 /turf/open/floor/tile/dark/yellow2/corner,
 /area/bluesummers/caves/mining)
 "bYk" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "bZd" = (
@@ -2450,7 +2450,7 @@
 	},
 /area/bluesummers/caves/cryostorage/north)
 "cnI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "cor" = (
@@ -2506,7 +2506,7 @@
 	},
 /area/bluesummers/inside/engineering/plant/control)
 "cqa" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/west)
 "cqF" = (
@@ -2770,7 +2770,7 @@
 /turf/open/floor/plating/mainship,
 /area/bluesummers/inside/garage)
 "cGy" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/rock)
 "cGM" = (
@@ -2806,7 +2806,7 @@
 	},
 /area/bluesummers/inside/robotics)
 "cIT" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /obj/structure/cable,
 /turf/open/floor/mainship/green/full,
 /area/bluesummers/inside/hydroponics/south)
@@ -3123,7 +3123,7 @@
 /area/bluesummers/caves/cryostorage/bridge)
 "cUQ" = (
 /obj/structure/lattice,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/garbledradio)
 "cUT" = (
@@ -3423,7 +3423,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/southeast/roofed)
 "dhA" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/tile/darkgreen/darkgreen2{
 	dir = 1
 	},
@@ -3447,7 +3447,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/biodome)
 "djI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "dkl" = (
@@ -3478,7 +3478,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/mining/south)
 "dlk" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
@@ -3587,7 +3587,7 @@
 	},
 /area/bluesummers/caves/mining)
 "dqd" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/cryostorage/gravity)
 "dql" = (
@@ -3685,7 +3685,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/space_port)
 "duD" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/desertdamrockwall,
 /area/bluesummers/caves/rock)
 "duF" = (
@@ -3784,7 +3784,7 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/indoor)
 "dyh" = (
@@ -3815,13 +3815,13 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northwest)
 "dzy" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "dzD" = (
 /obj/item/frame/table/mainship,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "dzH" = (
@@ -3913,7 +3913,7 @@
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/caves/cryostorage/tcomms)
 "dEl" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/west)
 "dEI" = (
@@ -4139,7 +4139,7 @@
 	},
 /area/bluesummers/inside/hydroponics/south)
 "dMM" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -4260,7 +4260,7 @@
 "dSR" = (
 /obj/structure/lattice,
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/south)
@@ -4490,9 +4490,9 @@
 	},
 /area/bluesummers/inside/space_port)
 "eeu" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "eeI" = (
@@ -4523,7 +4523,7 @@
 	},
 /area/bluesummers/caves/mining)
 "efz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
 "efZ" = (
@@ -4551,7 +4551,7 @@
 /area/bluesummers/inside/eva)
 "ehs" = (
 /obj/structure/rack,
-/obj/item/clothing/gloves/marine/insulated,
+/obj/item/clothing/gloves/guardsman/insulated,
 /turf/open/floor/mainship/orange{
 	dir = 4
 	},
@@ -4594,7 +4594,7 @@
 	},
 /area/bluesummers/inside/food_processing/east)
 "ehU" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north/garbledradio)
 "ehW" = (
@@ -4664,7 +4664,7 @@
 /turf/open/floor/plating/mainship,
 /area/bluesummers/inside/garage)
 "emz" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
@@ -4763,8 +4763,8 @@
 /area/bluesummers/caves/dorms)
 "eqY" = (
 /obj/structure/lattice,
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "era" = (
@@ -5778,8 +5778,8 @@
 	},
 /area/bluesummers/inside/hydroponics)
 "fhg" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "fhi" = (
@@ -5857,7 +5857,7 @@
 "flk" = (
 /obj/item/frame/table/mainship,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "flB" = (
@@ -5972,7 +5972,7 @@
 /turf/closed/wall/mainship,
 /area/bluesummers/outside/south/roofed)
 "fsR" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north/garbledradio)
 "ftA" = (
@@ -5993,7 +5993,7 @@
 /turf/open/floor/tile/dark,
 /area/bluesummers/inside/industrial)
 "fub" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
@@ -6138,7 +6138,7 @@
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/garbledradio/indoor)
 "fzK" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/west)
 "fzM" = (
@@ -6260,7 +6260,7 @@
 /area/bluesummers/caves/cryostorage/south)
 "fFU" = (
 /obj/structure/lattice,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "fFX" = (
@@ -6493,7 +6493,7 @@
 /obj/machinery/light,
 /obj/item/frame/table/mainship,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "fQj" = (
@@ -6799,7 +6799,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/garage)
 "ggF" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/southwest)
 "ggI" = (
@@ -6866,7 +6866,7 @@
 	},
 /area/bluesummers/inside/engineering/office)
 "gjJ" = (
-/obj/machinery/computer/som{
+/obj/machinery/computer/chaos{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/red/corner,
@@ -7108,7 +7108,7 @@
 /area/bluesummers/caves/mining)
 "gvT" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
 "gwg" = (
@@ -7267,7 +7267,7 @@
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northeast/garbledradio/indoor)
 "gFi" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/mainship/green/full,
 /area/bluesummers/inside/hydroponics/south)
 "gFl" = (
@@ -7393,11 +7393,11 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/south)
 "gLE" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/southeast)
 "gLV" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "gMo" = (
@@ -7422,8 +7422,8 @@
 	},
 /area/bluesummers/inside/engineering)
 "gMO" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/north)
 "gMS" = (
@@ -7939,7 +7939,7 @@
 /area/bluesummers/caves/mining)
 "hlf" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "hlj" = (
@@ -8005,7 +8005,7 @@
 "hnb" = (
 /obj/machinery/door/airlock/mainship/maint/free_access,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northeast/indoor)
 "hnh" = (
@@ -8336,7 +8336,7 @@
 /area/bluesummers/inside/hydroponics)
 "hzb" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "hzQ" = (
@@ -8472,7 +8472,7 @@
 	},
 /area/bluesummers/inside/food_processing/east)
 "hEe" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
@@ -8590,7 +8590,7 @@
 /turf/open/floor/tile/dark/brown2,
 /area/bluesummers/inside/industrial)
 "hLb" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north/garbledradio)
@@ -8804,7 +8804,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/inside/chapel)
 "hWW" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
 "hWY" = (
@@ -8827,7 +8827,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/inside/captains_office)
 "hXN" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
 "hXP" = (
@@ -8981,12 +8981,12 @@
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/caves/cryostorage/bridge)
 "ifo" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
 "ifp" = (
 /obj/structure/lattice,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "ifr" = (
@@ -9248,7 +9248,7 @@
 /area/bluesummers/inside/engineering/plant)
 "inw" = (
 /obj/effect/turf_decal/sandytile/sandyplating,
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/bluesummers/inside/space_port)
 "inB" = (
@@ -9709,7 +9709,7 @@
 /area/bluesummers/inside/industrial)
 "iHf" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/west)
 "iHC" = (
@@ -9720,7 +9720,7 @@
 "iHH" = (
 /obj/structure/lattice,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/east)
 "iHQ" = (
@@ -9782,7 +9782,7 @@
 /turf/open/floor/tile/dark,
 /area/bluesummers/inside/industrial)
 "iJc" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/tile/dark2,
@@ -10102,7 +10102,7 @@
 "iYj" = (
 /obj/effect/landmark/corpsespawner/colonist/regular,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "iYn" = (
@@ -10252,11 +10252,11 @@
 "jee" = (
 /obj/structure/rock/variable/stalagmite,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
 "jeJ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/bluesummers/caves/dorms)
 "jeM" = (
@@ -10350,8 +10350,8 @@
 	},
 /area/bluesummers/caves/cryostorage/bridge)
 "jhe" = (
-/obj/effect/landmark/xeno_resin_door,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_door,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "jhk" = (
@@ -10674,7 +10674,7 @@
 /area/bluesummers/inside/hydroponics/south)
 "jwV" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northeast/roofed)
 "jxk" = (
@@ -10693,7 +10693,7 @@
 	},
 /area/bluesummers/inside/robotics)
 "jxT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/desertdamrockwall,
 /area/bluesummers/outside/northeast/roofed)
 "jym" = (
@@ -10759,7 +10759,7 @@
 	},
 /area/bluesummers/inside/recreation)
 "jAF" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /obj/effect/landmark/patrol_point/tgmc_11,
 /turf/open/floor/plating/ground/drought/cave,
@@ -10783,7 +10783,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/tcomms)
 "jBS" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/north)
 "jBU" = (
@@ -10919,7 +10919,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/bridge)
 "jHz" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
@@ -10996,7 +10996,7 @@
 	dir = 4;
 	pixel_y = 9
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/kutjevo/colors/yellow,
 /area/bluesummers/inside/luxury)
 "jKk" = (
@@ -11570,7 +11570,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/south)
 "kcT" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "kcU" = (
@@ -11587,7 +11587,7 @@
 	},
 /area/bluesummers/inside/industrial)
 "kdu" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/caves/northeast/garbledradio)
 "kdW" = (
@@ -11613,7 +11613,7 @@
 /turf/open/floor/mech_bay_recharge_floor,
 /area/bluesummers/caves/mining)
 "kfj" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/green/full,
@@ -11652,7 +11652,7 @@
 /turf/open/floor/plating/mainship,
 /area/bluesummers/caves/mining/drill)
 "kgx" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /obj/structure/cable,
@@ -11873,7 +11873,7 @@
 	},
 /area/bluesummers/caves/mining)
 "koA" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "koC" = (
@@ -12490,7 +12490,7 @@
 	},
 /area/bluesummers/inside/engineering/office)
 "kQf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "kQJ" = (
@@ -12794,7 +12794,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/outside/northeast)
 "lde" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	name = "\improper Airlock";
 	dir = 1
 	},
@@ -13124,8 +13124,8 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/cryostorage/tcomms)
 "lpv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/south)
 "lpL" = (
@@ -13363,7 +13363,7 @@
 /area/bluesummers/inside/engineering/plant)
 "lxM" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/south)
@@ -13547,7 +13547,7 @@
 /area/bluesummers/outside/southeast/roofed)
 "lFk" = (
 /obj/structure/closet/secure_closet/engineering_chief,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/effect/spawner/random/misc/earmuffs,
 /turf/open/floor/plating,
 /area/bluesummers/inside/engineering/office)
@@ -13687,7 +13687,7 @@
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/south)
 "lJl" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/north)
@@ -14263,8 +14263,8 @@
 /turf/open/floor/prison/kitchen,
 /area/bluesummers/inside/food_processing)
 "mhv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/caves/east)
 "mhE" = (
@@ -14653,7 +14653,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "mwL" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/dorms)
 "mwS" = (
@@ -14797,7 +14797,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/engineering/office)
 "mCC" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "mCH" = (
@@ -15129,8 +15129,8 @@
 /turf/open/floor/mainship/emerald,
 /area/bluesummers/caves/cloning)
 "mRv" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/northeast/indoor)
 "mRz" = (
@@ -15296,11 +15296,11 @@
 /area/bluesummers/inside/luxury)
 "mWo" = (
 /obj/structure/rock/variable/stalagmite,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "mWt" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/bluesummers/caves/north)
 "mWU" = (
@@ -15528,7 +15528,7 @@
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/garbledradio)
 "ngi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/south)
 "ngp" = (
@@ -15965,8 +15965,8 @@
 /turf/open/floor/tile/dark2,
 /area/bluesummers/inside/recreation)
 "nzs" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/desertdamrockwall/indestructible,
 /area/bluesummers/caves/rock)
 "nAa" = (
@@ -16002,7 +16002,7 @@
 /turf/open/floor/mainship/silver/full,
 /area/bluesummers/outside/northeast/roofed)
 "nAB" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
@@ -16249,7 +16249,7 @@
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/southwest)
 "nPb" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "nPc" = (
@@ -16448,7 +16448,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/biodome)
 "nZf" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/east)
 "nZv" = (
@@ -16484,8 +16484,8 @@
 	dir = 1
 	},
 /obj/effect/mapping_helpers/light/broken,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/west)
 "obi" = (
@@ -17002,7 +17002,7 @@
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/cryostorage/tcomms)
 "ovg" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/desertdamrockwall/indestructible,
 /area/bluesummers/caves/rock)
 "ovq" = (
@@ -17129,7 +17129,7 @@
 /area/bluesummers/caves/northwest/garbledradio)
 "oAr" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/south)
 "oAx" = (
@@ -17431,7 +17431,7 @@
 "oLO" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/engineering/toolbox,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/outside/northeast/roofed)
 "oLP" = (
@@ -17440,7 +17440,7 @@
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
 "oMt" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating,
 /area/bluesummers/caves/north)
@@ -17660,7 +17660,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/north)
 "oUk" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "oUn" = (
@@ -18222,7 +18222,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/landmark/corpsespawner/colonist/regular,
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "psB" = (
@@ -18736,7 +18736,7 @@
 /area/bluesummers/caves/cryostorage/north)
 "pNx" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/west)
 "pNK" = (
@@ -18910,7 +18910,7 @@
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/inside/chapel)
 "pVb" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/south)
 "pVL" = (
@@ -18988,7 +18988,7 @@
 /turf/open/floor/tile/dark2,
 /area/bluesummers/inside/food_processing/east)
 "pYu" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	name = "\improper Airlock"
 	},
 /turf/open/floor/mainship/green/full,
@@ -19022,8 +19022,8 @@
 	},
 /area/bluesummers/caves/cryostorage/north)
 "qax" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/northwest)
 "qaM" = (
@@ -19131,7 +19131,7 @@
 /turf/open/floor/prison/plate,
 /area/bluesummers/outside/southwest/roofed)
 "qfx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
@@ -19159,7 +19159,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "qgj" = (
@@ -19169,7 +19169,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/engineering/plant)
 "qgo" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest)
 "qhm" = (
@@ -19284,7 +19284,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/southeast)
 "qkZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/northwest)
 "qlu" = (
@@ -19406,7 +19406,7 @@
 /turf/open/floor/plating/mainship,
 /area/bluesummers/caves/mining/drill)
 "qpb" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northeast/roofed)
 "qpr" = (
@@ -19459,7 +19459,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest/garbledradio)
 "qsl" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "qsC" = (
@@ -19518,7 +19518,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/cryostorage/gravity)
 "que" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/garbledradio)
 "quM" = (
@@ -19538,7 +19538,7 @@
 /turf/open/floor/tile/dark,
 /area/bluesummers/caves/mining/south)
 "qvo" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/outside/northeast/roofed)
 "qvq" = (
@@ -19656,7 +19656,7 @@
 /turf/open/floor/mainship/cargo,
 /area/bluesummers/caves/cryostorage/north)
 "qzp" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north/garbledradio)
 "qzu" = (
@@ -19674,7 +19674,7 @@
 /area/bluesummers/caves/northeast/garbledradio)
 "qzA" = (
 /obj/structure/rock/variable/stalagmite,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "qzB" = (
@@ -19735,13 +19735,13 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/garbledradio)
 "qCj" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northeast/roofed)
 "qCP" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest/garbledradio)
 "qDk" = (
@@ -19890,7 +19890,7 @@
 /area/bluesummers/inside/captains_office)
 "qIz" = (
 /obj/structure/lattice,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "qIP" = (
@@ -20051,7 +20051,7 @@
 	},
 /area/bluesummers/inside/industrial)
 "qOC" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/outside/northeast/roofed)
 "qOG" = (
@@ -20301,7 +20301,7 @@
 /area/bluesummers/caves/mining)
 "rai" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
 "raC" = (
@@ -20489,7 +20489,7 @@
 /turf/open/floor/mainship/floor,
 /area/bluesummers/inside/hydroponics)
 "rhI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/east)
 "rhU" = (
@@ -20650,7 +20650,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/captains_office)
 "rpV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/west)
 "rqd" = (
@@ -20769,7 +20769,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/mining/south)
 "rvW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northeast/roofed)
 "rvX" = (
@@ -20864,7 +20864,7 @@
 	},
 /area/bluesummers/caves/cryostorage/bridge)
 "rzv" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/north)
 "rzG" = (
@@ -21171,7 +21171,7 @@
 /area/bluesummers/caves/northwest/garbledradio)
 "rNG" = (
 /obj/structure/rock/variable/stalagmite,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
 "rNT" = (
@@ -21319,7 +21319,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/cloning)
 "rTi" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/inside/industrial)
 "rTo" = (
@@ -21369,11 +21369,11 @@
 	},
 /area/bluesummers/inside/engineering/office)
 "rUr" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
 "rUv" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/west)
 "rUP" = (
@@ -21413,7 +21413,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/inside/hydroponics)
 "rWe" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/east)
@@ -21554,7 +21554,7 @@
 /turf/open/floor/tile/dark2,
 /area/bluesummers/inside/food_processing/east)
 "scT" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
 "sdd" = (
@@ -21835,7 +21835,7 @@
 	},
 /area/bluesummers/inside/food_processing)
 "srv" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
 "srA" = (
@@ -21910,8 +21910,8 @@
 /turf/open/floor/tile/dark/yellow2,
 /area/bluesummers/caves/mining)
 "stC" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating,
 /area/bluesummers/caves/north)
@@ -21924,8 +21924,8 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/engineering/plant/control)
 "suu" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/north)
 "suz" = (
@@ -22044,7 +22044,7 @@
 /turf/open/floor/tile/dark/yellow2,
 /area/bluesummers/caves/mining/south)
 "szr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "szT" = (
@@ -22084,7 +22084,7 @@
 /turf/open/floor/tile/dark,
 /area/bluesummers/inside/chapel/office)
 "sAP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
@@ -22364,7 +22364,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest/indoor)
 "sPt" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/west)
 "sPz" = (
@@ -22410,7 +22410,7 @@
 /turf/open/floor/tile/darkgreen/darkgreen2,
 /area/bluesummers/inside/food_processing)
 "sSd" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/dorms)
 "sSx" = (
@@ -22526,7 +22526,7 @@
 	},
 /area/bluesummers/caves/mining)
 "sYN" = (
-/obj/machinery/door/airlock/mainship/marine{
+/obj/machinery/door/airlock/mainship/guardsman{
 	dir = 2
 	},
 /turf/open/floor/mainship/green/full,
@@ -22590,7 +22590,7 @@
 	},
 /area/bluesummers/inside/robotics)
 "tbU" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/northeast)
 "tck" = (
@@ -22861,7 +22861,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/inside/biodome)
 "tlQ" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "tlV" = (
@@ -22989,7 +22989,7 @@
 /turf/open/floor/tile/dark,
 /area/bluesummers/inside/industrial)
 "tsh" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating,
 /area/bluesummers/caves/north)
 "tsl" = (
@@ -23214,7 +23214,7 @@
 /turf/open/floor/freezer,
 /area/bluesummers/inside/food_processing)
 "tBQ" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/carpet/blue,
 /area/bluesummers/inside/captains_office)
@@ -23346,7 +23346,7 @@
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/outside/south/roofed)
 "tIh" = (
-/obj/machinery/door/airlock/multi_tile/mainship/marine{
+/obj/machinery/door/airlock/multi_tile/mainship/guardsman{
 	name = "\improper Airlock"
 	},
 /turf/open/floor/mainship/green/full,
@@ -23430,7 +23430,7 @@
 /turf/open/floor/prison/kitchen,
 /area/bluesummers/inside/food_processing/east)
 "tMr" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/north)
 "tMG" = (
@@ -23484,7 +23484,7 @@
 /turf/open/floor/wood,
 /area/bluesummers/inside/recreation)
 "tOi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/outside/northeast/roofed)
 "tOH" = (
@@ -23881,8 +23881,8 @@
 "ueV" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "ufx" = (
@@ -23901,7 +23901,7 @@
 	},
 /area/bluesummers/caves/mining/south)
 "ufV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "ugx" = (
@@ -24144,7 +24144,7 @@
 /area/bluesummers/caves/cryostorage/tcomms)
 "uql" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northeast/indoor)
 "uqE" = (
@@ -24396,7 +24396,7 @@
 /turf/open/floor/tile/dark,
 /area/bluesummers/caves/mining/south)
 "uzH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "uzQ" = (
@@ -24532,7 +24532,7 @@
 /turf/open/floor/plating/dmg1,
 /area/bluesummers/caves/mining)
 "uET" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northwest)
 "uFk" = (
@@ -24662,7 +24662,7 @@
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southeast)
 "uLT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/northeast/indoor)
 "uMT" = (
@@ -24743,7 +24743,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/tcomms)
 "uOV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/south)
 "uPt" = (
@@ -24789,7 +24789,7 @@
 /area/bluesummers/inside/food_processing/east)
 "uRg" = (
 /obj/effect/spawner/random/misc/structure/cabinet,
-/obj/item/clothing/under/marine/black_suit,
+/obj/item/clothing/under/guardsman/black_suit,
 /obj/item/clothing/head/collectable/tophat,
 /turf/open/floor/carpet/purple,
 /area/bluesummers/inside/luxury)
@@ -25257,7 +25257,7 @@
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northeast)
 "voc" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast)
 "vok" = (
@@ -25620,7 +25620,7 @@
 	},
 /area/bluesummers/inside/industrial)
 "vGC" = (
-/obj/machinery/door/airlock/mainship/marine,
+/obj/machinery/door/airlock/mainship/guardsman,
 /turf/open/floor/mainship/green/full,
 /area/bluesummers/inside/hydroponics)
 "vGD" = (
@@ -26027,7 +26027,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage)
 "vZA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/east)
 "vZG" = (
@@ -26042,7 +26042,7 @@
 /area/bluesummers/caves/cryostorage/tcomms)
 "vZW" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
@@ -26281,7 +26281,7 @@
 	},
 /area/bluesummers/inside/industrial)
 "wjV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/mainship,
 /area/bluesummers/caves/south)
 "wkE" = (
@@ -26350,7 +26350,7 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/light/broken,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/outside/northeast/roofed)
 "wpO" = (
@@ -26401,7 +26401,7 @@
 /turf/open/floor/mainship/orange,
 /area/bluesummers/inside/engineering)
 "wrg" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/garbledradio)
@@ -26427,7 +26427,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/north)
 "wsU" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/indoor)
 "wsV" = (
@@ -26463,7 +26463,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/north)
 "wuZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/south)
 "wvB" = (
@@ -26617,7 +26617,7 @@
 /turf/open/floor/mainship/cargo,
 /area/bluesummers/caves/cryostorage/south)
 "wAK" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/outside/northeast/roofed)
@@ -26881,7 +26881,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/effect/spawner/random/misc/shard,
 /obj/item/weapon/banhammer,
 /turf/open/shuttle/elevator/grating,
@@ -26968,7 +26968,7 @@
 /area/bluesummers/caves/cryostorage/south)
 "wTS" = (
 /obj/effect/spawner/random/misc/trash,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northwest/garbledradio/indoor)
 "wUe" = (
@@ -27024,7 +27024,7 @@
 "wXb" = (
 /obj/structure/lattice,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast/indoor)
 "wXv" = (
@@ -27250,7 +27250,7 @@
 /turf/open/floor/mainship/floor,
 /area/bluesummers/inside/captains_office)
 "xln" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)
 "xlr" = (
@@ -27457,7 +27457,7 @@
 "xvr" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/mainship/floor,
 /area/bluesummers/caves/northeast/indoor)
 "xvt" = (
@@ -27512,7 +27512,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/tcomms)
 "xyT" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/south)
@@ -27558,7 +27558,7 @@
 /turf/open/floor/plating,
 /area/bluesummers/caves/cryostorage/north)
 "xAw" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/dmg3,
 /area/bluesummers/caves/southwest)
 "xBh" = (
@@ -27892,7 +27892,7 @@
 /area/bluesummers/inside/luxury)
 "xRJ" = (
 /obj/structure/cable,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/bluesummers/caves/northeast/indoor)
 "xRL" = (
@@ -28093,7 +28093,7 @@
 /turf/open/floor/wood,
 /area/bluesummers/inside/captains_office)
 "ycf" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/southwest)
 "ych" = (
@@ -28208,7 +28208,7 @@
 /turf/open/floor/mech_bay_recharge_floor,
 /area/bluesummers/inside/garage)
 "ygf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/northeast)

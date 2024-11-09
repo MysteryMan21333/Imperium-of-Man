@@ -23,7 +23,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "cS" = (
@@ -172,7 +172,7 @@
 	},
 /area/bigredv2/outside/nw)
 "ly" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "lJ" = (
@@ -250,7 +250,7 @@
 	},
 /area/bigredv2/outside/nw)
 "qJ" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/structure/cable,
 /obj/machinery/power/apc/drained,
 /turf/open/floor/plating,
@@ -275,7 +275,7 @@
 	},
 /area/bigredv2/outside/nw)
 "rR" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "sf" = (
@@ -452,7 +452,7 @@
 /turf/open/floor/asteroidfloor,
 /area/bigredv2/outside/nw)
 "DD" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "Ea" = (
@@ -814,7 +814,7 @@
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "Zx" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /turf/open/floor/plating,
 /area/bigredv2/outside/nw)
 "ZA" = (

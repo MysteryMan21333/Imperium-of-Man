@@ -30,10 +30,10 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	. += GLOB.glass_recipes
 
 GLOBAL_LIST_INIT(glass_radial_images, list(
-	"recipes" = image('icons/obj/structures/barricades/misc.dmi', icon_state = "plus"),
-	"directional window" = image('icons/obj/structures/windows.dmi', "window"),
-	"fulltile window" = image('icons/obj/structures/windows.dmi', "window0"),
-	"windoor" = image('icons/obj/doors/windoor.dmi', icon_state = "left")
+	"recipes" = image('modular_imperium/master_files/icons/obj/structures/barricades/misc.dmi', icon_state = "plus"),
+	"directional window" = image('modular_imperium/master_files/icons/obj/structures/windows.dmi', "window"),
+	"fulltile window" = image('modular_imperium/master_files/icons/obj/structures/windows.dmi', "window0"),
+	"windoor" = image('modular_imperium/master_files/icons/obj/doors/windoor.dmi', icon_state = "left")
 	))
 
 

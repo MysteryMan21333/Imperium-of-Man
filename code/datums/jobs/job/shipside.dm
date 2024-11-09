@@ -15,8 +15,8 @@
 	selection_color = "#ccccff"
 	total_positions = 1
 	skills_type = /datum/skills/captain
-	access = ALL_MARINE_ACCESS
-	minimal_access = ALL_MARINE_ACCESS
+	access = ALL_GUARDSMAN_ACCESS
+	minimal_access = ALL_GUARDSMAN_ACCESS
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 	outfit = /datum/outfit/job/command/captain
 	multiple_outfits = TRUE
@@ -28,7 +28,7 @@
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP|JOB_FLAG_LOUDER_TTS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -38,7 +38,7 @@
 		<b>You answer to</b> TGMC High Command<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
-		<b>Duty</b>: Lead the TGMC platoon and complete your mission. Support the marines and communicate with your command staff, execute orders.
+		<b>Duty</b>: Lead the TGMC platoon and complete your mission. Support the guardsmans and communicate with your command staff, execute orders.
 	"}
 	minimap_icon = "captain"
 
@@ -46,8 +46,8 @@
 	. = ..()
 	to_chat(M, {"As the captain of the [SSmapping.configs[SHIP_MAP].map_name] you are held by higher standard and are expected to act competently.
 While you may support Nanotrasen, you report to the TGMC High Command, not the corporate office.
-Your primary task is the safety of the ship and her crew, and ensuring the survival and success of the marines.
-Your first order of business should be briefing the marines on the mission they are about to undertake.
+Your primary task is the safety of the ship and her crew, and ensuring the survival and success of the guardsmans.
+Your first order of business should be briefing the guardsmans on the mission they are about to undertake.
 You should not be voluntarily leaving your vessel under any circumstances. A captain goes down with their ship.
 If you require any help, use <b>mentorhelp</b> to ask mentors about what you're supposed to do.
 Godspeed, captain! And remember, you are not above the law."})
@@ -83,18 +83,18 @@ Godspeed, captain! And remember, you are not above the law."})
 	id = /obj/item/card/id/gold
 	belt = /obj/item/storage/holster/belt/pistol/smart_pistol/full
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/command
-	shoes = /obj/item/clothing/shoes/marinechief/captain
-	gloves = /obj/item/clothing/gloves/marine/techofficer/captain
-	head = /obj/item/clothing/head/beret/marine/captain
+	w_uniform = /obj/item/clothing/under/guardsman/officer/command
+	shoes = /obj/item/clothing/shoes/guardsmanchief/captain
+	gloves = /obj/item/clothing/gloves/guardsman/techofficer/captain
+	head = /obj/item/clothing/head/beret/guardsman/captain
 	r_store = /obj/item/storage/pouch/general/large/command
 	l_store = /obj/item/hud_tablet/leadership
-	back = /obj/item/storage/backpack/marine/satchel/captain_cloak
+	back = /obj/item/storage/backpack/guardsman/satchel/captain_cloak
 
 /datum/outfit/job/command/captain/robot
 	species = SPECIES_COMBAT_ROBOT
 
-	w_uniform = /obj/item/clothing/under/marine/robotic
+	w_uniform = /obj/item/clothing/under/guardsman/robotic
 	shoes = null
 	gloves = null
 	head = /obj/item/clothing/head/modular/robot
@@ -115,8 +115,8 @@ Godspeed, captain! And remember, you are not above the law."})
 	comm_title = "FCDR"
 	total_positions = 1
 	skills_type = /datum/skills/fo
-	access = ALL_MARINE_ACCESS
-	minimal_access = ALL_MARINE_ACCESS
+	access = ALL_GUARDSMAN_ACCESS
+	minimal_access = ALL_GUARDSMAN_ACCESS
 	display_order = JOB_DISPLAY_ORDER_EXECUTIVE_OFFICER
 	outfit = /datum/outfit/job/command/fieldcommander
 	multiple_outfits = TRUE
@@ -128,7 +128,7 @@ Godspeed, captain! And remember, you are not above the law."})
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP|JOB_FLAG_LOUDER_TTS
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -138,14 +138,14 @@ Godspeed, captain! And remember, you are not above the law."})
 		<b>You answer to the</b> Captain<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		<b>Duty</b>: Lead your platoon on the field. Take advantage of the military staff and assets you will need for the mission, keep good relations between command and the marines. Assist the captain if available.
+		<b>Duty</b>: Lead your platoon on the field. Take advantage of the military staff and assets you will need for the mission, keep good relations between command and the guardsmans. Assist the captain if available.
 	"}
 	minimap_icon = "fieldcommander"
 
 /datum/job/terragov/command/fieldcommander/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"You are charged with overseeing the operation on the ground, and are the highest-ranked deployed marine.
-Your duties are to ensure marines hold when ordered, and push when they are cowering behind barricades.
+	to_chat(M, {"You are charged with overseeing the operation on the ground, and are the highest-ranked deployed guardsman.
+Your duties are to ensure guardsmans hold when ordered, and push when they are cowering behind barricades.
 Do not ask your men to do anything you would not do side by side with them.
 Make the TGMC proud!"})
 
@@ -153,7 +153,7 @@ Make the TGMC proud!"})
 	. = ..()
 	if(!ishuman(new_mob))
 		return
-	SSdirection.set_leader(TRACKING_ID_MARINE_COMMANDER, new_mob)
+	SSdirection.set_leader(TRACKING_ID_GUARDSMAN_COMMANDER, new_mob)
 	var/mob/living/carbon/human/new_human = new_mob
 	var/playtime_mins = user?.client?.get_exp(title)
 	if(!playtime_mins || playtime_mins < 1 )
@@ -178,10 +178,10 @@ Make the TGMC proud!"})
 	id = /obj/item/card/id/dogtag/fc
 	belt = /obj/item/storage/holster/blade/officer/full
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/exec
+	w_uniform = /obj/item/clothing/under/guardsman/officer/exec
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten
-	shoes = /obj/item/clothing/shoes/marine/full
-	gloves = /obj/item/clothing/gloves/marine/officer
+	shoes = /obj/item/clothing/shoes/guardsman/full
+	gloves = /obj/item/clothing/gloves/guardsman/officer
 	head = /obj/item/clothing/head/tgmcberet/fc
 	r_store = /obj/item/storage/pouch/general/large/command
 	l_store = /obj/item/hud_tablet/fieldcommand
@@ -190,7 +190,7 @@ Make the TGMC proud!"})
 /datum/outfit/job/command/fieldcommander/robot
 	species = SPECIES_COMBAT_ROBOT
 
-	w_uniform = /obj/item/clothing/under/marine/robotic
+	w_uniform = /obj/item/clothing/under/guardsman/robotic
 	wear_suit = /obj/item/clothing/suit/modular/robot
 	shoes = null
 	gloves = null
@@ -216,8 +216,8 @@ Make the TGMC proud!"})
 	paygrade = "O1"
 	comm_title = "SO"
 	total_positions = 4
-	access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_BRIG, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_ALPHA, ACCESS_MARINE_BRAVO, ACCESS_MARINE_CHARLIE, ACCESS_MARINE_DELTA)
-	minimal_access = ALL_MARINE_ACCESS
+	access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_BRIG, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_ALPHA, ACCESS_GUARDSMAN_BRAVO, ACCESS_GUARDSMAN_CHARLIE, ACCESS_GUARDSMAN_DELTA)
+	minimal_access = ALL_GUARDSMAN_ACCESS
 	skills_type = /datum/skills/so
 	display_order = JOB_DISPLAY_ORDER_STAFF_OFFICER
 	outfit = /datum/outfit/job/command/staffofficer
@@ -230,7 +230,7 @@ Make the TGMC proud!"})
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -247,7 +247,7 @@ Make the TGMC proud!"})
 
 /datum/job/terragov/command/staffofficer/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"Your job is to monitor the marines, man the CIC, and listen to your superior officers.
+	to_chat(M, {"Your job is to monitor the guardsmans, man the CIC, and listen to your superior officers.
 You are in charge of logistics and the overwatch system. You are also in line to take command after the captain."})
 
 /datum/job/terragov/command/staffofficer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -281,8 +281,8 @@ You are in charge of logistics and the overwatch system. You are also in line to
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/pistol/m4a3/officer
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/bridge
-	shoes = /obj/item/clothing/shoes/marine/full
+	w_uniform = /obj/item/clothing/under/guardsman/officer/bridge
+	shoes = /obj/item/clothing/shoes/guardsman/full
 	head = /obj/item/clothing/head/tgmccap/ro
 	r_store = /obj/item/storage/pouch/general/large
 	l_store = /obj/item/binoculars/tactical
@@ -291,7 +291,7 @@ You are in charge of logistics and the overwatch system. You are also in line to
 /datum/outfit/job/command/staffofficer/robot
 	species = SPECIES_COMBAT_ROBOT
 
-	w_uniform = /obj/item/clothing/under/marine/robotic
+	w_uniform = /obj/item/clothing/under/guardsman/robotic
 	shoes = null
 	gloves = null
 	head = /obj/item/clothing/head/modular/robot
@@ -310,8 +310,8 @@ You are in charge of logistics and the overwatch system. You are also in line to
 	paygrade = "WO"
 	comm_title = "TO"
 	total_positions = 1
-	access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE)
-	minimal_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO, ACCESS_MARINE_MEDBAY)
+	access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_TADPOLE)
+	minimal_access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_TADPOLE, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_RO, ACCESS_GUARDSMAN_MEDBAY)
 	skills_type = /datum/skills/transportofficer
 	display_order = JOB_DISPLAY_ORDER_TRANSPORT_OFFICER
 	outfit = /datum/outfit/job/command/transportofficer
@@ -319,7 +319,7 @@ You are in charge of logistics and the overwatch system. You are also in line to
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE_STRONG,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE_STRONG,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -353,8 +353,8 @@ You are in charge of logistics and the overwatch system. You are also in line to
 
 /datum/job/terragov/command/transportofficer/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"Your job is to support marines mobile dropship support with the Tadpole.
-You are to ensure the Tadpole's survival and to transport marines around, acting as a mobile bunker. In the case of it's death, you may perform the role of Combat Engineer.
+	to_chat(M, {"Your job is to support guardsmans mobile dropship support with the Tadpole.
+You are to ensure the Tadpole's survival and to transport guardsmans around, acting as a mobile bunker. In the case of it's death, you may perform the role of Combat Engineer.
 "})
 
 /datum/outfit/job/command/transportofficer
@@ -364,15 +364,15 @@ You are to ensure the Tadpole's survival and to transport marines around, acting
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/full
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/pilot
-	wear_suit = /obj/item/clothing/suit/storage/marine/pilot
-	shoes = /obj/item/clothing/shoes/marine/full
-	gloves = /obj/item/clothing/gloves/marine/insulated
+	w_uniform = /obj/item/clothing/under/guardsman/officer/pilot
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/pilot
+	shoes = /obj/item/clothing/shoes/guardsman/full
+	gloves = /obj/item/clothing/gloves/guardsman/insulated
 	glasses = /obj/item/clothing/glasses/welding/superior
-	head = /obj/item/clothing/head/helmet/marine/pilot
+	head = /obj/item/clothing/head/helmet/guardsman/pilot
 	r_store = /obj/item/storage/pouch/construction
 	l_store = /obj/item/hud_tablet/transportofficer
-	back = /obj/item/storage/backpack/marine/engineerpack
+	back = /obj/item/storage/backpack/guardsman/engineerpack
 	suit_store = /obj/item/storage/holster/belt/pistol/m4a3/vp70
 
 /datum/outfit/job/command/transportofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -388,8 +388,8 @@ You are to ensure the Tadpole's survival and to transport marines around, acting
 	paygrade = "O1"
 	comm_title = "PO"
 	total_positions = 1
-	access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT)
-	minimal_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO, ACCESS_MARINE_MEDBAY)
+	access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_PILOT)
+	minimal_access = list(ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_RO, ACCESS_GUARDSMAN_MEDBAY)
 	skills_type = /datum/skills/pilot
 	display_order = JOB_DISPLAY_ORDER_PILOT_OFFICER
 	outfit = /datum/outfit/job/command/pilot
@@ -397,7 +397,7 @@ You are to ensure the Tadpole's survival and to transport marines around, acting
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE_STRONG,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE_STRONG,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -433,7 +433,7 @@ You are to ensure the Tadpole's survival and to transport marines around, acting
 
 /datum/job/terragov/command/pilot/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"Your job is to support marines with either close air support via the Condor.
+	to_chat(M, {"Your job is to support guardsmans with either close air support via the Condor.
 You are expected to use the Condor as the Alamo is able to be ran automatically, though at some points you will be required to take control of the Alamo for the operation's success, though highly unlikey.
 Though you are an officer, your authority is limited to the dropship and the Condor, where you have authority over the enlisted personnel.
 "})
@@ -446,12 +446,12 @@ Though you are an officer, your authority is limited to the dropship and the Con
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/pistol/m4a3/vp70
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/pilot
-	wear_suit = /obj/item/clothing/suit/storage/marine/pilot
-	shoes = /obj/item/clothing/shoes/marine/full
-	gloves = /obj/item/clothing/gloves/marine/insulated
+	w_uniform = /obj/item/clothing/under/guardsman/officer/pilot
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/pilot
+	shoes = /obj/item/clothing/shoes/guardsman/full
+	gloves = /obj/item/clothing/gloves/guardsman/insulated
 	glasses = /obj/item/clothing/glasses/sunglasses/aviator
-	head = /obj/item/clothing/head/helmet/marine/pilot
+	head = /obj/item/clothing/head/helmet/guardsman/pilot
 	r_store = /obj/item/storage/pouch/general/large
 	l_store = /obj/item/hud_tablet/pilot
 
@@ -463,8 +463,8 @@ Though you are an officer, your authority is limited to the dropship and the Con
 	comm_title = "MCH"
 	total_positions = 0
 	skills_type = /datum/skills/mech_pilot
-	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_MECH, ACCESS_CIVILIAN_PUBLIC)
-	minimal_access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_MECH, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
+	access = list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MECH, ACCESS_CIVILIAN_PUBLIC)
+	minimal_access = list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MECH, ACCESS_CIVILIAN_PUBLIC, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO)
 	display_order = JOB_DISPLAY_ORDER_MECH_PILOT
 	outfit = /datum/outfit/job/command/mech_pilot
 	exp_requirements = XP_REQ_EXPERT
@@ -472,7 +472,7 @@ Though you are an officer, your authority is limited to the dropship and the Con
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
 	job_points_needed = 80
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 	)
 	html_description = {"
@@ -517,11 +517,11 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	belt = /obj/item/storage/belt/utility/full
 	glasses = /obj/item/clothing/glasses/welding
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/mech
-	wear_suit = /obj/item/clothing/suit/storage/marine/mech_pilot
-	head = /obj/item/clothing/head/helmet/marine/mech_pilot
-	shoes = /obj/item/clothing/shoes/marine/full
-	gloves = /obj/item/clothing/gloves/marine
+	w_uniform = /obj/item/clothing/under/guardsman/officer/mech
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/mech_pilot
+	head = /obj/item/clothing/head/helmet/guardsman/mech_pilot
+	shoes = /obj/item/clothing/shoes/guardsman/full
+	gloves = /obj/item/clothing/gloves/guardsman
 
 /datum/outfit/job/command/mech_pilot/fallen
 	ears = null
@@ -536,8 +536,8 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	total_positions = 0
 	max_positions = 2
 	skills_type = /datum/skills/assault_crewman
-	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC)
-	minimal_access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
+	access = list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ARMORED, ACCESS_CIVILIAN_PUBLIC)
+	minimal_access = list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO)
 	display_order = JOB_DISPLAY_ORDER_MECH_PILOT
 	outfit = /datum/outfit/job/command/assault_crewman
 	exp_requirements = XP_REQ_EXPERT
@@ -545,7 +545,7 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
 	job_points_needed = 35
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 	)
 	html_description = {"
@@ -595,11 +595,11 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	belt = /obj/item/storage/belt/utility/full
 	glasses = /obj/item/clothing/glasses/welding
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/assault_crewman
-	wear_suit = /obj/item/clothing/suit/storage/marine/assault_crewman
-	head = /obj/item/clothing/head/helmet/marine/assault_crewman
-	shoes = /obj/item/clothing/shoes/marine/full
-	gloves = /obj/item/clothing/gloves/marine
+	w_uniform = /obj/item/clothing/under/guardsman/officer/assault_crewman
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/assault_crewman
+	head = /obj/item/clothing/head/helmet/guardsman/assault_crewman
+	shoes = /obj/item/clothing/shoes/guardsman/full
+	gloves = /obj/item/clothing/gloves/guardsman
 	l_store = /obj/item/pamphlet/tank_loader
 
 //apc/jeep driver
@@ -610,15 +610,15 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	comm_title = "TC"
 	total_positions = 1
 	skills_type = /datum/skills/transport_crewman
-	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC)
-	minimal_access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
+	access = list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ARMORED, ACCESS_CIVILIAN_PUBLIC)
+	minimal_access = list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO)
 	display_order = JOB_DISPLAY_ORDER_MECH_PILOT
 	outfit = /datum/outfit/job/command/transport_crewman
 	exp_requirements = XP_REQ_EXPERT
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/tyranid = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 	)
 	html_description = {"
@@ -632,7 +632,7 @@ You can serve your Division in a variety of roles, so choose carefully."})
 
 /datum/job/terragov/command/transport_crewman/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"You are a Transport Crewman. You operate the TGMC's transport vehciles to ensure that marines and equipment gets to the front in a timely and safe manner."})
+	to_chat(M, {"You are a Transport Crewman. You operate the TGMC's transport vehciles to ensure that guardsmans and equipment gets to the front in a timely and safe manner."})
 
 /datum/job/terragov/command/transport_crewman/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -662,11 +662,11 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	belt = /obj/item/storage/belt/utility/full
 	glasses = /obj/item/clothing/glasses/welding
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/transport_crewman
-	wear_suit = /obj/item/clothing/suit/storage/marine/transport_crewman
-	head = /obj/item/clothing/head/helmet/marine/transport_crewman
-	shoes = /obj/item/clothing/shoes/marine/full
-	gloves = /obj/item/clothing/gloves/marine
+	w_uniform = /obj/item/clothing/under/guardsman/officer/transport_crewman
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/transport_crewman
+	head = /obj/item/clothing/head/helmet/guardsman/transport_crewman
+	shoes = /obj/item/clothing/shoes/guardsman/full
+	gloves = /obj/item/clothing/gloves/guardsman
 
 /datum/job/terragov/engineering
 	job_category = JOB_CAT_ENGINEERING
@@ -682,8 +682,8 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	comm_title = "CSE"
 	selection_color = "#ffeeaa"
 	total_positions = 1
-	access = list(ACCESS_MARINE_CE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_BRIDGE, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PREP)
-	minimal_access = list(ACCESS_MARINE_CE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_BRIDGE, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_PREP, ACCESS_MARINE_RO, ACCESS_MARINE_MEDBAY)
+	access = list(ACCESS_GUARDSMAN_CE, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_BRIDGE, ACCESS_CIVILIAN_ENGINEERING, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_PREP)
+	minimal_access = list(ACCESS_GUARDSMAN_CE, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_BRIDGE, ACCESS_CIVILIAN_ENGINEERING, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_RO, ACCESS_GUARDSMAN_MEDBAY)
 	skills_type = /datum/skills/ce
 	display_order = JOB_DISPLAY_ORDER_CHIEF_ENGINEER
 	outfit = /datum/outfit/job/engineering/chief
@@ -691,7 +691,7 @@ You can serve your Division in a variety of roles, so choose carefully."})
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -739,14 +739,14 @@ You are also next in the chain of command, should the bridge crew fall in the li
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/full
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/ce
-	wear_suit = /obj/item/clothing/suit/storage/marine/officer/req
-	shoes = /obj/item/clothing/shoes/marine/full
+	w_uniform = /obj/item/clothing/under/guardsman/officer/ce
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/officer/req
+	shoes = /obj/item/clothing/shoes/guardsman/full
 	glasses = /obj/item/clothing/glasses/welding/superior
 	gloves = /obj/item/clothing/gloves/insulated
-	head = /obj/item/clothing/head/beret/marine/techofficer
+	head = /obj/item/clothing/head/beret/guardsman/techofficer
 	r_store = /obj/item/storage/pouch/construction
-	back = /obj/item/storage/backpack/marine/engineerpack
+	back = /obj/item/storage/backpack/guardsman/engineerpack
 
 /datum/outfit/job/engineering/chief/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -762,14 +762,14 @@ You are also next in the chain of command, should the bridge crew fall in the li
 	paygrade = "PO3"
 	total_positions = 5
 	supervisors = "the chief ship engineer and the requisitions officer"
-	access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CARGO, ACCESS_CIVILIAN_ENGINEERING)
-	minimal_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_CIVILIAN_ENGINEERING)
+	access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CARGO, ACCESS_CIVILIAN_ENGINEERING)
+	minimal_access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_CARGO, ACCESS_CIVILIAN_ENGINEERING)
 	skills_type = /datum/skills/st
 	display_order = JOB_DISPLAY_ORDER_SHIP_TECH
 	outfit = /datum/outfit/job/engineering/tech
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -806,7 +806,7 @@ You are also next in the chain of command, should the bridge crew fall in the li
 /datum/job/terragov/engineering/tech/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"Your job is to make sure the ship is operational, you should firstly focus on manning the
-requisitions line and later on to be ready to send supplies for marines who are groundside."})
+requisitions line and later on to be ready to send supplies for guardsmans who are groundside."})
 
 
 /datum/outfit/job/engineering/tech
@@ -816,14 +816,14 @@ requisitions line and later on to be ready to send supplies for marines who are 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/full
 	ears = /obj/item/radio/headset/mainship/st
-	w_uniform = /obj/item/clothing/under/marine/officer/engi
-	wear_suit = /obj/item/clothing/suit/storage/marine/ship_tech
-	shoes = /obj/item/clothing/shoes/marine/full
+	w_uniform = /obj/item/clothing/under/guardsman/officer/engi
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/ship_tech
+	shoes = /obj/item/clothing/shoes/guardsman/full
 	gloves = /obj/item/clothing/gloves/insulated
 	glasses = /obj/item/clothing/glasses/welding/flipped
 	head = /obj/item/clothing/head/tgmccap/req
 	r_store = /obj/item/storage/pouch/general/medium
-	back = /obj/item/storage/backpack/marine/engineerpack
+	back = /obj/item/storage/backpack/guardsman/engineerpack
 
 /datum/job/terragov/requisitions
 	job_category = JOB_CAT_REQUISITIONS
@@ -840,8 +840,8 @@ requisitions line and later on to be ready to send supplies for marines who are 
 	comm_title = "RO"
 	selection_color = "#9990B2"
 	total_positions = 1
-	access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_PREP, ACCESS_MARINE_ALPHA, ACCESS_MARINE_BRAVO, ACCESS_MARINE_CHARLIE, ACCESS_MARINE_DELTA)
-	minimal_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_RO, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_PREP, ACCESS_MARINE_ALPHA, ACCESS_MARINE_BRAVO, ACCESS_MARINE_CHARLIE, ACCESS_MARINE_DELTA, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS)
+	access = list(ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_RO, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ALPHA, ACCESS_GUARDSMAN_BRAVO, ACCESS_GUARDSMAN_CHARLIE, ACCESS_GUARDSMAN_DELTA)
+	minimal_access = list(ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_RO, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_ALPHA, ACCESS_GUARDSMAN_BRAVO, ACCESS_GUARDSMAN_CHARLIE, ACCESS_GUARDSMAN_DELTA, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS)
 	skills_type = /datum/skills/ro
 	display_order = JOB_DISPLAY_ORDER_REQUISITIONS_OFFICER
 	outfit = /datum/outfit/job/requisitions/officer
@@ -849,7 +849,7 @@ requisitions line and later on to be ready to send supplies for marines who are 
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -859,7 +859,7 @@ requisitions line and later on to be ready to send supplies for marines who are 
 		<b>You answer to the</b> acting Command Staff<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
-		Requisition supplies to the battlefield. Ensure that the marines are reparing miners for more points. Supply the marines with deluxe equipment to ensure success.
+		Requisition supplies to the battlefield. Ensure that the guardsmans are reparing miners for more points. Supply the guardsmans with deluxe equipment to ensure success.
 	"}
 	minimap_icon = "requisition"
 
@@ -886,8 +886,8 @@ requisitions line and later on to be ready to send supplies for marines who are 
 
 /datum/job/terragov/requisitions/officer/radio_help_message(mob/M)
 	. = ..()
-	to_chat(M, {"Your job is to dispense supplies to the marines, including weapon attachments.
-While you may request paperwork for supplies, do not go out of your way to screw with marines, unless you want to get deposed.
+	to_chat(M, {"Your job is to dispense supplies to the guardsmans, including weapon attachments.
+While you may request paperwork for supplies, do not go out of your way to screw with guardsmans, unless you want to get deposed.
 A happy ship is a well-functioning ship."})
 
 
@@ -898,10 +898,10 @@ A happy ship is a well-functioning ship."})
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/m44/full
 	ears = /obj/item/radio/headset/mainship/mcom
-	w_uniform = /obj/item/clothing/under/marine/officer/ro_suit
-	wear_suit = /obj/item/clothing/suit/storage/marine/officer/req
+	w_uniform = /obj/item/clothing/under/guardsman/officer/ro_suit
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/officer/req
 	suit_store = /obj/item/weapon/gun/energy/taser
-	shoes = /obj/item/clothing/shoes/marine/full
+	shoes = /obj/item/clothing/shoes/guardsman/full
 	gloves = /obj/item/clothing/gloves/insulated
 	head = /obj/item/clothing/head/tgmccap/req
 	r_store = /obj/item/storage/pouch/general/large
@@ -924,8 +924,8 @@ A happy ship is a well-functioning ship."})
 	total_positions = 1
 	supervisors = "the acting captain"
 	selection_color = "#99FF99"
-	access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CMO, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_CHEMISTRY)
-	minimal_access = list(ACCESS_MARINE_CMO, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS)
+	access = list(ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_CMO, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_CHEMISTRY)
+	minimal_access = list(ACCESS_GUARDSMAN_CMO, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LOGISTICS)
 	skills_type = /datum/skills/cmo
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
 	outfit = /datum/outfit/job/medical/professor
@@ -938,7 +938,7 @@ A happy ship is a well-functioning ship."})
 	exp_type = EXP_TYPE_REGULAR_ALL
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -957,7 +957,7 @@ A happy ship is a well-functioning ship."})
 	. = ..()
 	to_chat(M, {"You are the chief medical officer aboard the [SSmapping.configs[SHIP_MAP].map_name] and supervisor to the medical department.
 You have final authority over the medical department, medications, and treatments.
-Make sure that the doctors and nurses are doing their jobs and keeping the marines healthy and strong."})
+Make sure that the doctors and nurses are doing their jobs and keeping the guardsmans healthy and strong."})
 
 /datum/job/terragov/medical/professor/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -1000,7 +1000,7 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 /datum/outfit/job/medical/professor/robot
 	species = SPECIES_COMBAT_ROBOT
 
-	w_uniform = /obj/item/clothing/under/marine/robotic
+	w_uniform = /obj/item/clothing/under/guardsman/robotic
 	shoes = null
 	gloves = null
 
@@ -1016,8 +1016,8 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 	paygrade = "MS"
 	total_positions = 4
 	supervisors = "the chief medical officer"
-	access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY)
-	minimal_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY)
+	minimal_access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_DROPSHIP)
 	skills_type = /datum/skills/doctor
 	display_order = JOB_DISPLAY_ORDER_DOCTOR
 	outfit = /datum/outfit/job/medical/medicalofficer
@@ -1028,7 +1028,7 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 	)
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -1038,7 +1038,7 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 		<b>You answer to the</b> Chief Medical Officer<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
-		<b>Duty</b>: Tend severely wounded patients to your aid in the form of surgery, repair broken bones and damaged organs, fix internal bleeding and prevent the birth of a xenomorph larva. Develop superior healing medicines.
+		<b>Duty</b>: Tend severely wounded patients to your aid in the form of surgery, repair broken bones and damaged organs, fix internal bleeding and prevent the birth of a tyranid larva. Develop superior healing medicines.
 	"}
 	minimap_icon = "medical"
 
@@ -1065,7 +1065,7 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 /datum/job/terragov/medical/medicalofficer/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"You are a doctor stationed aboard the [SSmapping.configs[SHIP_MAP].map_name].
-You are tasked with keeping the marines healthy and strong, usually in the form of surgery.
+You are tasked with keeping the guardsmans healthy and strong, usually in the form of surgery.
 You are also an expert when it comes to medication and treatment. If you do not know what you are doing, <b>mentorhelp</b> so a mentor can assist you."})
 
 
@@ -1091,7 +1091,7 @@ You are also an expert when it comes to medication and treatment. If you do not 
 	species = SPECIES_COMBAT_ROBOT
 	jobtype = /datum/job/terragov/medical/medicalofficer
 
-	w_uniform = /obj/item/clothing/under/marine/robotic
+	w_uniform = /obj/item/clothing/under/guardsman/robotic
 	shoes = null
 	gloves = null
 
@@ -1108,8 +1108,8 @@ You are also an expert when it comes to medication and treatment. If you do not 
 	paygrade = "RSRA"
 	total_positions = 2
 	supervisors = "the NT corporate office"
-	access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_ENGINEERING, ACCESS_CIVILIAN_ENGINEERING)
-	minimal_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_CIVILIAN_ENGINEERING)
+	minimal_access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_DROPSHIP)
 	skills_type = /datum/skills/researcher
 	display_order = JOB_DISPLAY_ORDER_MEDICAL_RESEARCHER
 	outfit = /datum/outfit/job/medical/researcher
@@ -1120,7 +1120,7 @@ You are also an expert when it comes to medication and treatment. If you do not 
 	)
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -1130,7 +1130,7 @@ You are also an expert when it comes to medication and treatment. If you do not 
 		<b>You answer to the</b> Nanotrasen Corporate Office<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
-		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Nanotrasen/TerraGov, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
+		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Nanotrasen/Imperium, synthesize chemicals for the benefit of the guardsmans. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
 	"}
 	minimap_icon = "researcher"
 
@@ -1138,10 +1138,10 @@ You are also an expert when it comes to medication and treatment. If you do not 
 /datum/job/terragov/medical/researcher/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"You are a civilian, working for the Nanotrasen Corporation, but you are still subject to the military chain of command.
-You are tasked with deploying with the marines and researching the remains of the colony to get funding for Requisitions.
-You are free to use any new technology you discover as you want, or give them out to the marines.
+You are tasked with deploying with the guardsmans and researching the remains of the colony to get funding for Requisitions.
+You are free to use any new technology you discover as you want, or give them out to the guardsmans.
 If shipside medbay is unstaffed, you should consider working as a regular doctor until someone else is available to take over.
-It is also recommended that you gear up like a regular marine, or your 'internship' might be ending early..."})
+It is also recommended that you gear up like a regular guardsman, or your 'internship' might be ending early..."})
 
 /datum/job/terragov/medical/researcher/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -1171,7 +1171,7 @@ It is also recommended that you gear up like a regular marine, or your 'internsh
 	id = /obj/item/card/id
 	belt = /obj/item/storage/belt/rig/research
 	ears = /obj/item/radio/headset/mainship/res
-	w_uniform = /obj/item/clothing/under/marine/officer/researcher
+	w_uniform = /obj/item/clothing/under/guardsman/officer/researcher
 	wear_suit = /obj/item/clothing/suit/storage/labcoat/researcher
 	shoes = /obj/item/clothing/shoes/laceup
 	gloves = /obj/item/clothing/gloves/latex
@@ -1184,7 +1184,7 @@ It is also recommended that you gear up like a regular marine, or your 'internsh
 /datum/outfit/job/medical/researcher/robot
 	species = SPECIES_COMBAT_ROBOT
 
-	w_uniform = /obj/item/clothing/under/marine/robotic
+	w_uniform = /obj/item/clothing/under/guardsman/robotic
 	shoes = null
 	gloves = null
 
@@ -1205,14 +1205,14 @@ It is also recommended that you gear up like a regular marine, or your 'internsh
 	comm_title = "CL"
 	supervisors = "the NT corporate office"
 	total_positions = 1
-	access = list(ACCESS_NT_CORPORATE, ACCESS_ILLEGAL_PIRATE, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_LOGISTICS)
-	minimal_access = list(ACCESS_NT_CORPORATE, ACCESS_ILLEGAL_PIRATE, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_MEDBAY)
+	access = list(ACCESS_NT_CORPORATE, ACCESS_ILLEGAL_PIRATE, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_LOGISTICS)
+	minimal_access = list(ACCESS_NT_CORPORATE, ACCESS_ILLEGAL_PIRATE, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_RESEARCH, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_MEDBAY)
 	skills_type = /datum/skills/civilian
 	display_order = JOB_DISPLAY_ORDER_CORPORATE_LIAISON
 	outfit = /datum/outfit/job/civilian/liaison
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -1222,7 +1222,7 @@ It is also recommended that you gear up like a regular marine, or your 'internsh
 		<b>You answer to the</b> Nanotrasen Corporate Office<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
-		<b>Duty</b>: Manage relations between Nanotrasen and TerraGov Marine Corps. Report your findings via faxes. Reply if you’re called.
+		<b>Duty</b>: Manage relations between Nanotrasen and Imperium Guardsman Corps. Report your findings via faxes. Reply if you’re called.
 	"}
 	minimap_icon = "cl"
 
@@ -1287,7 +1287,7 @@ Use your office fax machine to communicate with corporate headquarters or to acq
 	job_flags = JOB_FLAG_SPECIALNAME|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS|JOB_FLAG_ALWAYS_VISIBLE_ON_MINIMAP
 	job_points_needed = 40
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE_STRONG,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE_STRONG,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
@@ -1296,7 +1296,7 @@ Use your office fax machine to communicate with corporate headquarters or to acq
 		<b>You answer to the</b> acting Command Staff and the human crew<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		<b>Duty</b>: Support and assist in every department of the TerraGov Marine Corps, use your incredibly developed skills to help the marines during their missions. You can talk to other synthetics or the AI on the :n channel. Serve your purpose.
+		<b>Duty</b>: Support and assist in every department of the Imperium Guardsman Corps, use your incredibly developed skills to help the guardsmans during their missions. You can talk to other synthetics or the AI on the :n channel. Serve your purpose.
 	"}
 	minimap_icon = "synth"
 
@@ -1368,7 +1368,7 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 	skills_type = /datum/skills/ai
 	job_flags = JOB_FLAG_SPECIALNAME|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_ISCOMMAND|JOB_FLAG_BOLD_NAME_ON_SELECTION
 	jobworth = list(
-		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/tyranid = LARVA_POINTS_SHIPSIDE,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
@@ -1392,7 +1392,7 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 /datum/job/terragov/silicon/ai/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"Your primary job is to support and assist all TGMC departments and personnel on-board.
-However, your vision is limited through cameras from the ship or to marines groundside.
+However, your vision is limited through cameras from the ship or to guardsmans groundside.
 Recon any threats and report findings at various communication channels.
 If you require any help, use <b>mentorhelp</b> to ask mentors about what you're supposed to do."})
 
@@ -1407,5 +1407,5 @@ If you require any help, use <b>mentorhelp</b> to ask mentors about what you're 
 
 // Silicons only need a very basic preview since there is no customization for them.
 /datum/job/terragov/silicon/ai/handle_special_preview(client/parent)
-	parent.show_character_previews(image('icons/mob/ai.dmi', icon_state = "ai", dir = SOUTH))
+	parent.show_character_previews(image('modular_imperium/master_files/icons/mob/ai.dmi', icon_state = "ai", dir = SOUTH))
 	return TRUE

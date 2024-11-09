@@ -1,7 +1,7 @@
 /obj/item/attachable/scope
 	name = "rail scope"
 	icon_state = "sniper"
-	icon = 'icons/obj/items/guns/attachments/scope.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/scope.dmi'
 	desc = "A rail mounted zoom sight scope. Allows zoom by activating the attachment."
 	slot = ATTACHMENT_SLOT_RAIL
 	aim_speed_mod = 0.5 //Extra slowdown when aiming
@@ -92,10 +92,10 @@
 	else
 		master_gun.zoom = FALSE
 
-/obj/item/attachable/scope/marine
+/obj/item/attachable/scope/guardsman
 	name = "T-47 rail scope"
-	desc = "A marine standard mounted zoom sight scope. Allows zoom by activating the attachment."
-	icon_state = "marine"
+	desc = "A guardsman standard mounted zoom sight scope. Allows zoom by activating the attachment."
+	icon_state = "guardsman"
 
 /obj/item/attachable/scope/nightvision
 	name = "T-46 Night vision scope"
@@ -127,7 +127,7 @@
 /obj/item/attachable/scope/standard_magnum
 	name = "R-76 rail scope"
 	desc = "A custom rail mounted zoom sight scope designed specifically for the R-76 Magnum. Allows zoom by activating the attachment."
-	icon = 'icons/obj/items/guns/attachments/scope_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/scope_64.dmi'
 	icon_state = "t76scope"
 
 /obj/item/attachable/scope/unremovable
@@ -192,12 +192,12 @@
 
 /obj/item/attachable/scope/unremovable/laser_sniper_scope
 	name = "Terra Experimental laser sniper rifle rail scope"
-	desc = "A marine standard mounted zoom sight scope made for the Terra Experimental laser sniper rifle otherwise known as TE-S abbreviated, allows zoom by activating the attachment."
+	desc = "A guardsman standard mounted zoom sight scope made for the Terra Experimental laser sniper rifle otherwise known as TE-S abbreviated, allows zoom by activating the attachment."
 	icon_state = "tes"
 
 /obj/item/attachable/scope/unremovable/plasma_sniper_scope
 	name = "PL-02 sniper rifle rail scope"
-	desc = "A marine standard mounted zoom sight scope made for the PL-02 plasma sniper rifle, allows zoom by activating the attachment. Use F12 if your HUD doesn't come back."
+	desc = "A guardsman standard mounted zoom sight scope made for the PL-02 plasma sniper rifle, allows zoom by activating the attachment. Use F12 if your HUD doesn't come back."
 	icon_state = "plasma_scope" // missing icon?
 
 /obj/item/attachable/scope/mini
@@ -215,7 +215,7 @@
 	zoom_slowdown = 0.3
 	zoom_tile_offset = 5
 	zoom_viewsize = 0
-	variants_by_parent_type = list(/obj/item/weapon/gun/rifle/som = "")
+	variants_by_parent_type = list(/obj/item/weapon/gun/rifle/chaos = "")
 
 /obj/item/attachable/scope/mini/tx11
 	name = "AR-11 mini rail scope"

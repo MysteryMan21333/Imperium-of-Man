@@ -443,7 +443,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "Pq" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/se)
 "Qe" = (

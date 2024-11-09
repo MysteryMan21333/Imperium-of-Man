@@ -163,10 +163,10 @@
 
 /proc/zap_beam(atom/source, zap_range, damage, list/blacklistmobs)
 	. = list()
-	for(var/mob/living/carbon/xenomorph/beno in oview(zap_range, source))
+	for(var/mob/living/carbon/tyranid/beno in oview(zap_range, source))
 		. += beno
-	for(var/xeno in .)
-		var/mob/living/carbon/xenomorph/living = xeno
+	for(var/tyranid in .)
+		var/mob/living/carbon/tyranid/living = tyranid
 		if(!living)
 			return
 		if(living.stat == DEAD)
@@ -174,7 +174,7 @@
 		if(living in blacklistmobs)
 			continue
 		source.beam(living, icon_state="lightning[rand(1,12)]", time = 3, maxdistance = zap_range + 2)
-		if(living.xeno_caste.can_flags & CASTE_CAN_BE_GIVEN_PLASMA) //need 1 second more than the actual effect time
+		if(living.tyranid_caste.can_flags & CASTE_CAN_BE_GIVEN_PLASMA) //need 1 second more than the actual effect time
 			living.apply_status_effect(/datum/status_effect/noplasmaregen, 3 SECONDS)
 			living.apply_status_effect(/datum/status_effect/plasmadrain, 3 SECONDS)
 		living.add_slowdown(2)

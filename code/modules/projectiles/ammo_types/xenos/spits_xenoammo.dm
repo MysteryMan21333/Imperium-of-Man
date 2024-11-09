@@ -1,14 +1,14 @@
 /*
 //================================================
-					Xeno Spits
+					Tyranid Spits
 //================================================
 */
 
-/datum/ammo/xeno
+/datum/ammo/tyranid
 	icon_state = "neurotoxin"
 	ping = "ping_x"
 	damage_type = TOX
-	ammo_behavior_flags = AMMO_XENO
+	ammo_behavior_flags = AMMO_TYRANID
 	var/added_spit_delay = 0 //used to make cooldown of the different spits vary.
 	var/spit_cost = 5
 	armor_type = BIO
@@ -28,15 +28,15 @@
 	///Amount of slowdown stacks imposed on impact if any
 	var/slowdown_stacks
 	///These define the reagent transfer strength of the smoke caused by the spit, if any, and its aoe
-	var/datum/effect_system/smoke_spread/xeno/smoke_system
+	var/datum/effect_system/smoke_spread/tyranid/smoke_system
 	var/smoke_strength
 	var/smoke_range
 	///The hivenumber of this ammo
-	var/hivenumber = XENO_HIVE_NORMAL
+	var/hivenumber = TYRANID_HIVE_NORMAL
 
-/datum/ammo/xeno/toxin
+/datum/ammo/tyranid/toxin
 	name = "neurotoxic spit"
-	ammo_behavior_flags = AMMO_XENO|AMMO_TARGET_TURF|AMMO_SKIPS_ALIENS
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_TARGET_TURF|AMMO_SKIPS_ALIENS
 	spit_cost = 55
 	added_spit_delay = 0
 	damage_type = STAMINA
@@ -52,19 +52,19 @@
 	reagent_transfer_amount = 4
 
 ///Set up the list of reagents the spit transfers upon impact
-/datum/ammo/xeno/toxin/proc/set_reagents()
-	spit_reagents = list(/datum/reagent/toxin/xeno_neurotoxin = reagent_transfer_amount)
+/datum/ammo/tyranid/toxin/proc/set_reagents()
+	spit_reagents = list(/datum/reagent/toxin/tyranid_neurotoxin = reagent_transfer_amount)
 
-/datum/ammo/xeno/toxin/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/toxin/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	drop_neuro_smoke(get_turf(target_mob))
 
-	if(isxeno(proj.firer))
-		var/mob/living/carbon/xenomorph/xeno = proj.firer
-		if(xeno.IsStaggered())
+	if(istyranid(proj.firer))
+		var/mob/living/carbon/tyranid/tyranid = proj.firer
+		if(tyranid.IsStaggered())
 			reagent_transfer_amount *= STAGGER_DAMAGE_MULTIPLIER
 
 	var/mob/living/carbon/carbon_victim = target_mob
-	if(!istype(carbon_victim) || carbon_victim.stat == DEAD || carbon_victim.issamexenohive(proj.firer) )
+	if(!istype(carbon_victim) || carbon_victim.stat == DEAD || carbon_victim.issametyranidhive(proj.firer) )
 		return
 
 	if(isnestedhost(carbon_victim))
@@ -81,20 +81,20 @@
 
 	return ..()
 
-/datum/ammo/xeno/toxin/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/toxin/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	var/turf/target_turf = get_turf(target_obj)
 	drop_neuro_smoke(target_turf.density ? proj.loc : target_turf)
 
-/datum/ammo/xeno/toxin/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/toxin/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	drop_neuro_smoke(target_turf.density ? proj.loc : target_turf)
 
-/datum/ammo/xeno/toxin/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/toxin/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	drop_neuro_smoke(target_turf.density ? proj.loc : target_turf)
 
-/datum/ammo/xeno/toxin/set_smoke()
-	smoke_system = new /datum/effect_system/smoke_spread/xeno/neuro/light()
+/datum/ammo/tyranid/toxin/set_smoke()
+	smoke_system = new /datum/effect_system/smoke_spread/tyranid/neuro/light()
 
-/datum/ammo/xeno/toxin/proc/drop_neuro_smoke(turf/T)
+/datum/ammo/tyranid/toxin/proc/drop_neuro_smoke(turf/T)
 	if(T.density)
 		return
 
@@ -104,20 +104,20 @@
 	smoke_system.start()
 	smoke_system = null
 
-/datum/ammo/xeno/toxin/upgrade1
+/datum/ammo/tyranid/toxin/upgrade1
 	smoke_strength = 0.6
 	reagent_transfer_amount = 5
 
-/datum/ammo/xeno/toxin/upgrade2
+/datum/ammo/tyranid/toxin/upgrade2
 	smoke_strength = 0.7
 	reagent_transfer_amount = 6
 
-/datum/ammo/xeno/toxin/upgrade3
+/datum/ammo/tyranid/toxin/upgrade3
 	smoke_strength = 0.75
 	reagent_transfer_amount = 6.5
 
 
-/datum/ammo/xeno/toxin/heavy //Praetorian
+/datum/ammo/tyranid/toxin/heavy //Praetorian
 	name = "neurotoxic splash"
 	added_spit_delay = 0
 	spit_cost = 100
@@ -126,11 +126,11 @@
 	reagent_transfer_amount = 10
 
 
-/datum/ammo/xeno/sticky
+/datum/ammo/tyranid/sticky
 	name = "sticky resin spit"
 	icon_state = "sticky"
 	ping = null
-	ammo_behavior_flags = AMMO_SKIPS_ALIENS|AMMO_TARGET_TURF|AMMO_XENO
+	ammo_behavior_flags = AMMO_SKIPS_ALIENS|AMMO_TARGET_TURF|AMMO_TYRANID
 	damage_type = STAMINA
 	armor_type = BIO
 	spit_cost = 50
@@ -143,30 +143,30 @@
 	slowdown_stacks = 3
 
 
-/datum/ammo/xeno/sticky/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	drop_resin(get_turf(target_mob))
 	if(iscarbon(target_mob))
 		var/mob/living/carbon/target_carbon = target_mob
-		if(target_carbon.issamexenohive(proj.firer))
+		if(target_carbon.issametyranidhive(proj.firer))
 			return
 		target_carbon.adjust_stagger(stagger_stacks) //stagger briefly; useful for support
 		target_carbon.add_slowdown(slowdown_stacks) //slow em down
 
 
-/datum/ammo/xeno/sticky/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	if(isarmoredvehicle(target_obj))
 		var/obj/vehicle/sealed/armored/tank = target_obj
 		COOLDOWN_START(tank, cooldown_vehicle_move, tank.move_delay)
 	var/turf/target_turf = get_turf(target_obj)
 	drop_resin(target_turf.density ? proj.loc : target_turf)
 
-/datum/ammo/xeno/sticky/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	drop_resin(target_turf.density ? proj.loc : target_turf)
 
-/datum/ammo/xeno/sticky/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	drop_resin(target_turf.density ? proj.loc : target_turf)
 
-/datum/ammo/xeno/sticky/proc/drop_resin(turf/T)
+/datum/ammo/tyranid/sticky/proc/drop_resin(turf/T)
 	if(T.density || istype(T, /turf/open/space)) // No structures in space
 		return
 
@@ -176,55 +176,55 @@
 
 	new /obj/alien/resin/sticky/thin(T)
 
-/datum/ammo/xeno/sticky/turret
+/datum/ammo/tyranid/sticky/turret
 	max_range = 9
 
-/datum/ammo/xeno/sticky/globe
+/datum/ammo/tyranid/sticky/globe
 	name = "sticky resin globe"
 	icon_state = "sticky_globe"
 	damage = 40
 	max_range = 7
 	spit_cost = 200
 	added_spit_delay = 8 SECONDS
-	bonus_projectiles_type = /datum/ammo/xeno/sticky/mini
+	bonus_projectiles_type = /datum/ammo/tyranid/sticky/mini
 	bonus_projectiles_scatter = 22
 	///number of sticky resins made
 	var/bonus_projectile_quantity = 16
 
-/datum/ammo/xeno/sticky/mini
+/datum/ammo/tyranid/sticky/mini
 	damage = 5
 	max_range = 3
 	shell_speed = 1
 
-/datum/ammo/xeno/sticky/globe/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/globe/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	var/turf/det_turf = target_obj.allow_pass_flags & PASS_PROJECTILE ? get_step_towards(target_obj, proj) : target_obj.loc
 	drop_resin(det_turf)
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_obj), loc_override = det_turf)
 
-/datum/ammo/xeno/sticky/globe/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/globe/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	var/turf/det_turf = target_turf.density ? get_step_towards(target_turf, proj) : target_turf
 	drop_resin(det_turf)
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_turf), loc_override = det_turf)
 
-/datum/ammo/xeno/sticky/globe/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/globe/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	var/turf/det_turf = get_turf(target_mob)
 	drop_resin(det_turf)
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_mob), loc_override = det_turf)
 
-/datum/ammo/xeno/sticky/globe/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/sticky/globe/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	var/turf/det_turf = target_turf.density ? get_step_towards(target_turf, proj) : target_turf
 	drop_resin(det_turf)
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_turf), loc_override = det_turf)
 
-/datum/ammo/xeno/acid
+/datum/ammo/tyranid/acid
 	name = "acid spit"
-	icon_state = "xeno_acid"
+	icon_state = "tyranid_acid"
 	sound_hit = SFX_ACID_HIT
 	sound_bounce = SFX_ACID_BOUNCE
 	damage_type = BURN
 	added_spit_delay = 5
 	spit_cost = 50
-	ammo_behavior_flags = AMMO_XENO|AMMO_TARGET_TURF
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_TARGET_TURF
 	armor_type = ACID
 	damage = 22
 	max_range = 8
@@ -232,76 +232,76 @@
 	///Duration of the acid puddles
 	var/puddle_duration = 1 SECONDS //Lasts 1-3 seconds
 	///Damage dealt by acid puddles
-	var/puddle_acid_damage = XENO_DEFAULT_ACID_PUDDLE_DAMAGE
+	var/puddle_acid_damage = TYRANID_DEFAULT_ACID_PUDDLE_DAMAGE
 
-/datum/ammo/xeno/acid/on_shield_block(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/acid/on_shield_block(mob/target_mob, obj/projectile/proj)
 	airburst(target_mob, proj)
 
-/datum/ammo/xeno/acid/drop_nade(turf/T) //Leaves behind an acid pool; defaults to 1-3 seconds.
+/datum/ammo/tyranid/acid/drop_nade(turf/T) //Leaves behind an acid pool; defaults to 1-3 seconds.
 	if(T.density)
 		return
-	new /obj/effect/xenomorph/spray(T, puddle_duration, puddle_acid_damage)
+	new /obj/effect/tyranid/spray(T, puddle_duration, puddle_acid_damage)
 
-/datum/ammo/xeno/acid/medium
+/datum/ammo/tyranid/acid/medium
 	name = "acid spatter"
 	damage = 35
-	ammo_behavior_flags = AMMO_XENO
+	ammo_behavior_flags = AMMO_TYRANID
 
-/datum/ammo/xeno/acid/auto
+/datum/ammo/tyranid/acid/auto
 	name = "light acid spatter"
 	damage = 12
 	damage_falloff = 0.2
 	spit_cost = 20
 	added_spit_delay = 0
 
-/datum/ammo/xeno/acid/auto/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/acid/auto/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	drop_nade(get_turf(target_mob), proj)
 
-/datum/ammo/xeno/acid/auto/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/acid/auto/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	drop_nade(target_obj.density ? get_step_towards(target_obj, proj) : get_turf(target_obj))
 
-/datum/ammo/xeno/acid/auto/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/acid/auto/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
-/datum/ammo/xeno/acid/auto/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/acid/auto/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
-/datum/ammo/xeno/acid/passthrough
+/datum/ammo/tyranid/acid/passthrough
 	name = "acid spittle"
 	damage = 20
-	ammo_behavior_flags = AMMO_XENO|AMMO_SKIPS_ALIENS
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_SKIPS_ALIENS
 
-/datum/ammo/xeno/acid/heavy
+/datum/ammo/tyranid/acid/heavy
 	name = "acid splash"
 	added_spit_delay = 2
 	spit_cost = 70
 	damage = 40
 
-/datum/ammo/xeno/acid/heavy/turret
+/datum/ammo/tyranid/acid/heavy/turret
 	damage = 20
 	name = "acid turret splash"
 	shell_speed = 2
 	max_range = 9
 
-/datum/ammo/xeno/acid/heavy/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/acid/heavy/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	var/turf/target_turf = get_turf(target_mob)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
-/datum/ammo/xeno/acid/heavy/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/acid/heavy/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	drop_nade(target_obj.density ? get_step_towards(target_obj, proj) : get_turf(target_obj))
 
-/datum/ammo/xeno/acid/heavy/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/acid/heavy/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
-/datum/ammo/xeno/acid/heavy/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/acid/heavy/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
 
 ///For the Spitter's Scatterspit ability
-/datum/ammo/xeno/acid/heavy/scatter
+/datum/ammo/tyranid/acid/heavy/scatter
 	damage = 20
-	ammo_behavior_flags = AMMO_XENO|AMMO_TARGET_TURF|AMMO_SKIPS_ALIENS
-	bonus_projectiles_type = /datum/ammo/xeno/acid/heavy/scatter
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_TARGET_TURF|AMMO_SKIPS_ALIENS
+	bonus_projectiles_type = /datum/ammo/tyranid/acid/heavy/scatter
 	bonus_projectiles_amount = 6
 	bonus_projectiles_scatter = 2
 	max_range = 8

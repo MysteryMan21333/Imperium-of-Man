@@ -6,11 +6,11 @@
 	desc = "You can totally see in the dark now!"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	icon_state = "night"
 	worn_icon_state = "glasses"
 	darkness_view = 7
@@ -20,7 +20,7 @@
 /obj/item/clothing/glasses/night/tx8
 	name = "\improper BR-8 battle sight"
 	desc = "A headset and night vision goggles system for the BR-8 Battle Rifle. Allows highlighted imaging of surroundings. Click it to toggle."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	icon_state = "m56_goggles"
 	deactive_state = "m56_goggles_0"
 	vision_flags = SEE_TURFS
@@ -32,7 +32,7 @@
 /obj/item/clothing/glasses/night/m42_night_goggles
 	name = "\improper M42 scout sight"
 	desc = "A headset and night vision goggles system for the M42 Scout Rifle. Allows highlighted imaging of surroundings. Click it to toggle."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	icon_state = "m56_goggles"
 	deactive_state = "m56_goggles_0"
 	vision_flags = SEE_TURFS
@@ -63,7 +63,7 @@
 /obj/item/clothing/glasses/night/m56_goggles
 	name = "\improper KTLD head mounted sight"
 	desc = "A headset and goggles system made to pair with any KTLD weapon, such as the SG type weapons. Has a low-res short range imager, allowing for view of terrain."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	icon_state = "m56_goggles"
 	deactive_state = "m56_goggles_0"
 	darkness_view = 5
@@ -74,7 +74,7 @@
 /obj/item/clothing/glasses/night/sunglasses
 	name = "\improper KTLD sunglasses"
 	desc = "A pair of designer sunglasses. This pair has been fitted with a KTLD head mounted sight."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	icon_state = "m56sunglasses"
 	worn_icon_state = "m56sunglasses"
 	deactive_state = "degoggles_mesonsunglasses"
@@ -95,11 +95,11 @@
 	actions_types = list(/datum/action/item_action/toggle)
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses.dmi',
+		"Sterling Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_bravada.dmi',
+		"Chilvaris Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_charlit.dmi',
+		"Hammerhead Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_alpharii.dmi',
+		"Ratcher Combat Robot" = 'modular_imperium/master_files/icons/mob/species/robot/glasses_deltad.dmi')
 	equip_slot_flags = ITEM_SLOT_EYES
 	goggles = TRUE
 
@@ -111,7 +111,7 @@
 /obj/item/clothing/glasses/night/vsd
 	name = "\improper CM-12 night vision goggles"
 	desc = "V.S.D's standard issue night vision goggles! For the extra tacticool feel! Crash Core and your superior officers are not responsible for blindness and burning."
-	icon = 'icons/mob/clothing/eyes.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/clothing/eyes.dmi'
 	icon_state = "vsd_nvg"
 	worn_icon_state = "vsd_nvg"
 	deactive_state = "vsd_nvg_off"

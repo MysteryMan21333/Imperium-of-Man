@@ -6,7 +6,7 @@
 /obj/machinery/grill
 	name = "grill"
 	desc = "Just like the old days."
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/kitchen.dmi'
 	icon_state = "grill_open"
 	density = TRUE
 	layer = BELOW_OBJ_LAYER

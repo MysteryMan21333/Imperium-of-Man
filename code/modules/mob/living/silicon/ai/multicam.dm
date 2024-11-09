@@ -112,7 +112,7 @@ GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 
 /obj/effect/landmark/ai_multicam_room
 	name = "ai camera room"
-	icon = 'icons/mob/landmarks.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/landmarks.dmi'
 	icon_state = "x"
 
 

@@ -10,7 +10,7 @@
 
 
 /obj/structure/windoor_assembly
-	icon = 'icons/obj/doors/windoor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/windoor.dmi'
 
 	name = "Windoor Assembly"
 	icon_state = "l_windoor_assembly01"

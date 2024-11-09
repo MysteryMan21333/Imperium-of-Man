@@ -5,14 +5,14 @@
 	density = FALSE
 	anchored = TRUE
 	layer = TURF_LAYER
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "shards"
 
 /obj/effect/decal/cleanable/ash
 	name = "ashes"
 	desc = "Ashes to ashes, dust to dust, and into space."
 	gender = PLURAL
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "ash"
 	anchored = TRUE
 
@@ -51,7 +51,7 @@
 	density = FALSE
 	anchored = TRUE
 	layer = TURF_LAYER
-	icon = 'icons/obj/items/shards.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/shards.dmi'
 	icon_state = "tiny"
 	mouse_opacity = 0
 
@@ -100,7 +100,7 @@
 	density = FALSE
 	anchored = TRUE
 	layer = OBJ_LAYER
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "molten"
 
 /obj/effect/decal/cleanable/cobweb2

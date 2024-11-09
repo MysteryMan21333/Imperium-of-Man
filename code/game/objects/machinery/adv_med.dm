@@ -3,7 +3,7 @@
 
 /obj/machinery/bodyscanner
 	name = "Body Scanner"
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scanner"
 	density = TRUE
 	anchored = TRUE
@@ -152,15 +152,15 @@
 		O.forceMove(loc)
 	return TRUE
 
-/obj/machinery/bodyscanner/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/bodyscanner/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(tyranid_attacker, span_tyranidwarning("There is nothing of interest in there."))
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+	if(tyranid_attacker.status_flags & INCORPOREAL || tyranid_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[tyranid_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
-	if(!do_after(xeno_attacker, 2 SECONDS))
+	if(!do_after(tyranid_attacker, 2 SECONDS))
 		return
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
 	go_out()
@@ -190,7 +190,7 @@
 
 /obj/machinery/computer/body_scanconsole
 	name = "Body Scanner Console"
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scannerconsole"
 	screen_overlay = "body_scannerconsole_emissive"
 	density = FALSE

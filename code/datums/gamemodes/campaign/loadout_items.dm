@@ -6,7 +6,7 @@
 #define LOADOUT_ITEM_ROUNDSTART_UNLOCKABLE (1<<2)
 
 #define LOADOUT_ITEM_MG27 /obj/item/weapon/gun/standard_mmg/machinegunner
-#define LOADOUT_ITEM_TGMC_FLAMER /obj/item/weapon/gun/flamer/big_flamer/marinestandard/wide
+#define LOADOUT_ITEM_TGMC_FLAMER /obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/wide
 #define LOADOUT_ITEM_TGMC_MINIGUN /obj/item/weapon/gun/minigun/magharness
 
 GLOBAL_LIST_INIT(campaign_loadout_slots, list(ITEM_SLOT_OCLOTHING, ITEM_SLOT_ICLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_EYES, ITEM_SLOT_EARS, \

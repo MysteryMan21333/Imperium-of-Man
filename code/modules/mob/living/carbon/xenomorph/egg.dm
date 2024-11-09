@@ -11,7 +11,7 @@
 	///Number of the last maturity stage before bursting
 	var/stage_ready_to_burst = 0
 	///Which hive it belongs to
-	var/hivenumber = XENO_HIVE_NORMAL
+	var/hivenumber = TYRANID_HIVE_NORMAL
 	///How far will targets trigger the burst
 	var/trigger_size = 0
 
@@ -63,7 +63,7 @@
 	burst()
 
 /obj/alien/egg/proc/should_proc_burst(mob/living/carbon/carbon_mover)
-	if(issamexenohive(carbon_mover))
+	if(issametyranidhive(carbon_mover))
 		return FALSE
 	if(carbon_mover.stat == DEAD)
 		return FALSE
@@ -93,7 +93,7 @@
 	overlays.Cut()
 	if(on_fire)
 		overlays += "alienegg_fire"
-	if(hivenumber != XENO_HIVE_NORMAL && GLOB.hive_datums[hivenumber])
+	if(hivenumber != TYRANID_HIVE_NORMAL && GLOB.hive_datums[hivenumber])
 		var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 		color = hive.color
 		return
@@ -115,28 +115,28 @@
 	addtimer(CALLBACK(hugger, TYPE_PROC_REF(/atom/movable, forceMove), loc), 1 SECONDS)
 	hugger.go_active()
 
-/obj/alien/egg/hugger/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/alien/egg/hugger/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	if(!istype(xeno_attacker))
-		return attack_hand(xeno_attacker)
+	if(!istype(tyranid_attacker))
+		return attack_hand(tyranid_attacker)
 
-	if(!issamexenohive(xeno_attacker))
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
-		xeno_attacker.visible_message("<span class='xenowarning'>[xeno_attacker] crushes \the [src].","<span class='xenowarning'>We crush \the [src].")
+	if(!issametyranidhive(tyranid_attacker))
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+		tyranid_attacker.visible_message("<span class='tyranidwarning'>[tyranid_attacker] crushes \the [src].","<span class='tyranidwarning'>We crush \the [src].")
 		burst(FALSE)
 		return
 
 	switch(maturity_stage)
 		if(1)
-			to_chat(xeno_attacker, span_xenowarning("The child is not developed yet."))
+			to_chat(tyranid_attacker, span_tyranidwarning("The child is not developed yet."))
 		if(2)
-			to_chat(xeno_attacker, span_xenonotice("We retrieve the child."))
+			to_chat(tyranid_attacker, span_tyranidnotice("We retrieve the child."))
 			burst()
 		if(3, 4)
-			xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] clears the hatched egg."), \
-			span_xenonotice("We clear the hatched egg."))
+			tyranid_attacker.visible_message(span_tyranidnotice("\The [tyranid_attacker] clears the hatched egg."), \
+			span_tyranidnotice("We clear the hatched egg."))
 			playsound(loc, SFX_ALIEN_RESIN_BREAK, 25)
 			qdel(src)
 
@@ -150,20 +150,20 @@
 /obj/alien/egg/hugger/proc/insert_new_hugger(obj/item/clothing/mask/facehugger/facehugger, mob/user)
 	if(facehugger.stat == DEAD)
 		if(user)
-			to_chat(user, span_xenowarning("This child is dead."))
+			to_chat(user, span_tyranidwarning("This child is dead."))
 		return FALSE
 
 	if(maturity_stage != stage_ready_to_burst + 1)
 		if(user)
-			to_chat(user, span_xenowarning("This egg is not usable."))
+			to_chat(user, span_tyranidwarning("This egg is not usable."))
 		return FALSE
 
 	if(hugger_type)
 		if(user)
-			to_chat(user, span_xenowarning("This one is occupied with a child."))
+			to_chat(user, span_tyranidwarning("This one is occupied with a child."))
 		return FALSE
 	if(user)
-		user.visible_message(span_xenowarning("[user] slides [facehugger] back into [src]."),span_xenonotice("You place the child into [src]."))
+		user.visible_message(span_tyranidwarning("[user] slides [facehugger] back into [src]."),span_tyranidnotice("You place the child into [src]."))
 	hugger_type = facehugger.type
 	qdel(facehugger)
 	advance_maturity(stage_ready_to_burst)
@@ -179,7 +179,7 @@
 	stage_ready_to_burst = 2
 	trigger_size = 2
 	///Holds a typepath for the gas particle to create
-	var/gas_type = /datum/effect_system/smoke_spread/xeno/neuro/medium
+	var/gas_type = /datum/effect_system/smoke_spread/tyranid/neuro/medium
 	///Bonus size for certain gasses
 	var/gas_size_bonus = 0
 
@@ -197,22 +197,22 @@
 		flick("egg opening", src)
 	spread += gas_size_bonus
 
-	var/datum/effect_system/smoke_spread/xeno/NS = new gas_type(src)
+	var/datum/effect_system/smoke_spread/tyranid/NS = new gas_type(src)
 	NS.set_up(spread, get_turf(src))
 	NS.start()
 
-/obj/alien/egg/gas/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/alien/egg/gas/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(maturity_stage > stage_ready_to_burst)
-		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] clears the hatched egg."), \
-		span_xenonotice("We clear the broken egg."))
+		tyranid_attacker.visible_message(span_tyranidnotice("\The [tyranid_attacker] clears the hatched egg."), \
+		span_tyranidnotice("We clear the broken egg."))
 		playsound(loc, SFX_ALIEN_RESIN_BREAK, 25)
 		qdel(src)
 
-	if(!issamexenohive(xeno_attacker) || xeno_attacker.a_intent != INTENT_HELP)
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
-		xeno_attacker.visible_message(span_xenowarning("[xeno_attacker] crushes \the [src]."), span_xenowarning("We crush \the [src]."))
+	if(!issametyranidhive(tyranid_attacker) || tyranid_attacker.a_intent != INTENT_HELP)
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+		tyranid_attacker.visible_message(span_tyranidwarning("[tyranid_attacker] crushes \the [src]."), span_tyranidwarning("We crush \the [src]."))
 		burst(TRUE)
 		return
 
-	to_chat(xeno_attacker, span_warning("That egg is filled with gas and has no child to retrieve."))
+	to_chat(tyranid_attacker, span_warning("That egg is filled with gas and has no child to retrieve."))
 

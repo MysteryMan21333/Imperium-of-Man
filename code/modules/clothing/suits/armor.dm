@@ -59,7 +59,7 @@
 	desc = "An armored vest that protects against some damage."
 	icon_state = "armorsec"
 	worn_icon_state = "armorsec"
-	slowdown = SLOWDOWN_ARMOR_MEDIUM //prevents powergaming marine by swapping armor.
+	slowdown = SLOWDOWN_ARMOR_MEDIUM //prevents powergaming guardsman by swapping armor.
 
 /obj/item/clothing/suit/armor/vest/warden
 	name = "Warden's jacket"

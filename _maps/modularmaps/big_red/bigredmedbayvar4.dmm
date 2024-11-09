@@ -199,7 +199,7 @@
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/medical)
 "gd" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/outside/medical)
 "ge" = (
@@ -900,7 +900,7 @@
 	},
 /area/bigredv2/outside/medical)
 "yf" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 5
 	},

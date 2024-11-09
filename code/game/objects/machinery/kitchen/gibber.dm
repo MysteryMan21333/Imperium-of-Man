@@ -2,7 +2,7 @@
 /obj/machinery/gibber
 	name = "Gibber"
 	desc = "The name isn't descriptive enough?"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/kitchen.dmi'
 	icon_state = "grinder"
 	anchored = TRUE
 	density = TRUE
@@ -18,22 +18,22 @@
 
 /obj/machinery/gibber/Initialize(mapload)
 	. = ..()
-	overlays += image('icons/obj/kitchen.dmi', "grjam")
+	overlays += image('modular_imperium/master_files/icons/obj/kitchen.dmi', "grjam")
 
 /obj/machinery/gibber/update_overlays()
 	. = ..()
 	if(dirty)
-		. += image('icons/obj/kitchen.dmi', "grbloody")
+		. += image('modular_imperium/master_files/icons/obj/kitchen.dmi', "grbloody")
 
 	if(machine_stat & (NOPOWER|BROKEN))
 		return
 
 	if (!occupant)
-		. += image('icons/obj/kitchen.dmi', "grjam")
+		. += image('modular_imperium/master_files/icons/obj/kitchen.dmi', "grjam")
 	else if (operating)
-		. += image('icons/obj/kitchen.dmi', "gruse")
+		. += image('modular_imperium/master_files/icons/obj/kitchen.dmi', "gruse")
 	else
-		. += image('icons/obj/kitchen.dmi', "gridle")
+		. += image('modular_imperium/master_files/icons/obj/kitchen.dmi', "gridle")
 
 /obj/machinery/gibber/relaymove(mob/user)
 	if(user.incapacitated(TRUE))
@@ -131,10 +131,10 @@
 			sourcename = occupant.real_name
 		else if(ismonkey(occupant))
 			typeofmeat = /obj/item/reagent_containers/food/snacks/meat/monkey
-		else if(isxeno(occupant))
+		else if(istyranid(occupant))
 			totalslabs = 4
-			typeofmeat = /obj/item/reagent_containers/food/snacks/meat/xeno
-			gibtype = /obj/effect/decal/cleanable/blood/gibs/xeno
+			typeofmeat = /obj/item/reagent_containers/food/snacks/meat/tyranid
+			gibtype = /obj/effect/decal/cleanable/blood/gibs/tyranid
 	else
 		if(istype(occupant, /mob/living/simple_animal/cow) || istype(occupant, /mob/living/simple_animal/hostile/bear))
 			totalslabs = 4

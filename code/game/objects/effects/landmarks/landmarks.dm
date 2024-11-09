@@ -24,7 +24,7 @@
 
 /obj/effect/landmark/start
 	name = "start"
-	icon = 'icons/mob/landmarks.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/landmarks.dmi'
 	icon_state = "x"
 	anchored = TRUE
 	layer = MOB_LAYER
@@ -120,62 +120,62 @@
 /obj/effect/landmark/distress_item
 
 /obj/effect/landmark/weed_node
-	name = "xeno weed node spawn landmark"
-	icon = 'icons/Xeno/weeds.dmi'
+	name = "tyranid weed node spawn landmark"
+	icon = 'modular_imperium/master_files/icons/tyranid/weeds.dmi'
 	icon_state = "weednode0"
 
 /obj/effect/landmark/weed_node/Initialize(mapload)
-	GLOB.xeno_weed_node_turfs += loc
+	GLOB.tyranid_weed_node_turfs += loc
 	. = ..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/xeno_resin_door
-	name = "xeno resin door spawn landmark"
-	icon = 'icons/Xeno/Effects.dmi'
+/obj/effect/landmark/tyranid_resin_door
+	name = "tyranid resin door spawn landmark"
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "resin"
 
-/obj/effect/landmark/xeno_resin_door/Initialize(mapload)
-	GLOB.xeno_resin_door_turfs += loc
+/obj/effect/landmark/tyranid_resin_door/Initialize(mapload)
+	GLOB.tyranid_resin_door_turfs += loc
 	. = ..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/xeno_resin_wall
-	name = "xeno resin wall spawn landmark"
-	icon = 'icons/Xeno/structures.dmi'
+/obj/effect/landmark/tyranid_resin_wall
+	name = "tyranid resin wall spawn landmark"
+	icon = 'modular_imperium/master_files/icons/tyranid/structures.dmi'
 	icon_state = "resin0"
 
-/obj/effect/landmark/xeno_resin_wall/Initialize(mapload)
-	GLOB.xeno_resin_wall_turfs += loc
+/obj/effect/landmark/tyranid_resin_wall/Initialize(mapload)
+	GLOB.tyranid_resin_wall_turfs += loc
 	..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/xeno_silo_spawn
-	name = "xeno silo spawn landmark"
-	icon = 'icons/Xeno/resin_silo.dmi'
+/obj/effect/landmark/tyranid_silo_spawn
+	name = "tyranid silo spawn landmark"
+	icon = 'modular_imperium/master_files/icons/tyranid/resin_silo.dmi'
 	icon_state = "weed_silo"
 
-/obj/effect/landmark/xeno_silo_spawn/Initialize(mapload)
-	GLOB.xeno_resin_silo_turfs += loc
+/obj/effect/landmark/tyranid_silo_spawn/Initialize(mapload)
+	GLOB.tyranid_resin_silo_turfs += loc
 	. = ..()
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/xeno_tunnel_spawn
-	name = "xeno tunnel spawn landmark"
-	icon = 'icons/Xeno/Effects.dmi'
+/obj/effect/landmark/tyranid_tunnel_spawn
+	name = "tyranid tunnel spawn landmark"
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "hole"
 
-/obj/effect/landmark/xeno_tunnel_spawn/Initialize(mapload)
-	GLOB.xeno_tunnel_spawn_turfs += loc
+/obj/effect/landmark/tyranid_tunnel_spawn/Initialize(mapload)
+	GLOB.tyranid_tunnel_spawn_turfs += loc
 	..()
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/resin_jelly_pod
-	name = "xeno jelly pod landmark"
-	icon = 'icons/Xeno/resin_pod.dmi'
+	name = "tyranid jelly pod landmark"
+	icon = 'modular_imperium/master_files/icons/tyranid/resin_pod.dmi'
 	icon_state = "resinpod"
 
 /obj/effect/landmark/resin_jelly_pod/Initialize(mapload)
-	GLOB.xeno_tunnel_spawn_turfs += loc
+	GLOB.tyranid_tunnel_spawn_turfs += loc
 	..()
 	return INITIALIZE_HINT_QDEL
 
@@ -262,7 +262,7 @@
 		/obj/item/weapon/gun/pistol/highpower,
 		/obj/item/weapon/gun/pistol/vp70,
 		/obj/item/weapon/gun/pistol/vp78,
-		/obj/item/weapon/gun/pistol/som,
+		/obj/item/weapon/gun/pistol/chaos,
 		/obj/item/weapon/gun/pistol/icc_dpistol,
 		/obj/item/weapon/gun/revolver/standard_revolver,
 		/obj/item/weapon/gun/revolver/single_action/m44,
@@ -295,7 +295,7 @@
 		/obj/item/weapon/gun/pistol/m1911/custom,
 		/obj/item/weapon/gun/pistol/plasma_pistol,
 		/obj/item/weapon/gun/revolver/mateba,
-		/obj/item/weapon/gun/revolver/mateba/notmarine,
+		/obj/item/weapon/gun/revolver/mateba/notguardsman,
 		/obj/item/weapon/gun/revolver/mateba/custom,
 		/obj/item/weapon/gun/revolver/standard_magnum,
 		/obj/item/weapon/gun/smg/standard_machinepistol,
@@ -307,7 +307,7 @@
 		/obj/item/weapon/gun/smg/uzi,
 		/obj/item/weapon/gun/smg/icc_machinepistol/medic,
 		/obj/item/weapon/gun/smg/icc_pdw/standard,
-		/obj/item/weapon/gun/smg/som/veteran,
+		/obj/item/weapon/gun/smg/chaos/veteran,
 		/obj/item/weapon/sword,
 		/obj/item/weapon/sword/mercsword,
 		/obj/item/weapon/sword/captain,
@@ -318,7 +318,7 @@
 		/obj/item/weapon/twohanded/glaive,
 		/obj/item/weapon/gun/rifle/garand,
 		/obj/item/weapon/gun/shotgun/pump/lever/repeater,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol,
 		/obj/item/weapon/gun/shotgun/double/martini,
 	)
 
@@ -347,9 +347,9 @@
 		/obj/item/weapon/gun/shotgun/pump,
 		/obj/item/weapon/gun/shotgun/pump/t35,
 		/obj/item/weapon/gun/shotgun/combat,
-		/obj/item/weapon/gun/shotgun/combat/standardmarine,
-		/obj/item/weapon/gun/shotgun/som/pointman,
-		/obj/item/weapon/gun/shotgun/som/support,
+		/obj/item/weapon/gun/shotgun/combat/standardguardsman,
+		/obj/item/weapon/gun/shotgun/chaos/pointman,
+		/obj/item/weapon/gun/shotgun/chaos/support,
 		/obj/item/weapon/gun/shotgun/pump/trenchgun,
 		/obj/item/weapon/gun/flamer/big_flamer,
 		/obj/item/weapon/gun/pistol/auto9,
@@ -357,15 +357,15 @@
 		/obj/item/weapon/gun/rifle/tx11,
 		/obj/item/weapon/gun/rifle/standard_skirmishrifle,
 		/obj/item/weapon/gun/rifle/mkh,
-		/obj/item/weapon/gun/rifle/som,
-		/obj/item/weapon/gun/rifle/som_carbine,
-		/obj/item/weapon/gun/rifle/som_mg,
+		/obj/item/weapon/gun/rifle/chaos,
+		/obj/item/weapon/gun/rifle/chaos_carbine,
+		/obj/item/weapon/gun/rifle/chaos_mg,
 		/obj/item/weapon/gun/rifle/icc_sharpshooter,
 		/obj/item/weapon/gun/rifle/icc_battlecarbine,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/scout,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/rifleman,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/scout,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_sniper,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/charger/standard,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/caliver/standard,
 		/obj/item/weapon/gun/standard_mmg,
@@ -396,13 +396,13 @@
 		/obj/item/weapon/gun/shotgun/double,
 		/obj/item/weapon/gun/shotgun/double/sawn,
 		/obj/item/weapon/gun/shotgun/zx76,
-		/obj/item/weapon/gun/flamer/big_flamer/marinestandard,
-		/obj/item/weapon/gun/flamer/som,
+		/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard,
+		/obj/item/weapon/gun/flamer/chaos,
 		/obj/item/weapon/gun/rifle/standard_autosniper,
 		/obj/item/weapon/energy/axe,
 		/obj/item/weapon/gun/rifle/tx54,
 		/obj/item/weapon/gun/rifle/tx55,
-		/obj/item/weapon/gun/rifle/som/veteran,
+		/obj/item/weapon/gun/rifle/chaos/veteran,
 		/obj/item/weapon/gun/rifle/icc_confrontationrifle/leader,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/xray,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta,
@@ -417,7 +417,7 @@
 		/obj/item/weapon/gun/launcher/rocket,
 		/obj/item/weapon/gun/launcher/rocket/m57a4,
 		/obj/item/weapon/gun/launcher/rocket/m57a4/t57,
-		/obj/item/weapon/gun/launcher/rocket/som,
+		/obj/item/weapon/gun/launcher/rocket/chaos,
 		/obj/item/weapon/gun/launcher/rocket/icc,
 		/obj/item/weapon/gun/minigun,
 		/obj/item/weapon/gun/grenade_launcher/multinade_launcher,
@@ -435,7 +435,7 @@
 
 /obj/effect/landmark/sensor_tower
 	name = "Sensor tower"
-	icon = 'icons/obj/structures/sensor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 
 /obj/effect/landmark/sensor_tower/Initialize(mapload)
@@ -445,7 +445,7 @@
 
 /obj/effect/landmark/valhalla
 	icon = 'icons/effects/landmarks_static.dmi'
-	///What do we spawn? (xeno or marine)
+	///What do we spawn? (tyranid or guardsman)
 	var/spawns
 	///Where do we spawn?
 	var/where
@@ -454,14 +454,14 @@
 	. = ..()
 	GLOB.valhalla_button_spawn_landmark["[spawns][where]"] = src
 
-/obj/effect/landmark/valhalla/xeno_spawn_landmark
-	name = "Valhalla xeno spawn"
-	icon_state = "xeno_spawn_valhalla"
-	spawns = "xeno"
+/obj/effect/landmark/valhalla/tyranid_spawn_landmark
+	name = "Valhalla tyranid spawn"
+	icon_state = "tyranid_spawn_valhalla"
+	spawns = "tyranid"
 
-/obj/effect/landmark/valhalla/marine_spawner_landmark
-	name = "Marine spawner landmark"
-	spawns = "marine"
+/obj/effect/landmark/valhalla/guardsman_spawner_landmark
+	name = "Guardsman spawner landmark"
+	spawns = "guardsman"
 
 /obj/effect/landmark/valhalla/vehicle_spawner_landmark
 	name = "Vehicle spawner landmark"

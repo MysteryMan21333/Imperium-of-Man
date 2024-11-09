@@ -1,11 +1,11 @@
-/datum/xeno_caste/runner
+/datum/tyranid_caste/runner
 	caste_name = "Runner"
 	display_name = "Runner"
 	upgrade_name = ""
 	caste_desc = "A fast, four-legged terror. Weak in sustained combat."
-	caste_type_path = /mob/living/carbon/xenomorph/runner
-	tier = XENO_TIER_ONE
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/runner
+	tier = TYRANID_TIER_ONE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "runner" //used to match appropriate wound overlays
 
 	gib_anim = "gibbed-a-corpse-runner"
@@ -42,29 +42,29 @@
 
 	// *** Abilities *** ///
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/xenohide,
-		/datum/action/ability/xeno_action/evasion,
-		/datum/action/ability/activable/xeno/pounce/runner,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/tyranidhide,
+		/datum/action/ability/tyranid_action/evasion,
+		/datum/action/ability/activable/tyranid/pounce/runner,
 	)
 
-/datum/xeno_caste/runner/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/runner/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/runner/primordial
+/datum/tyranid_caste/runner/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "A sprinting terror of the hive. It looks ancient and menacing."
 	primordial_message = "Nothing can outrun us. We are the swift death."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/xenohide,
-		/datum/action/ability/xeno_action/evasion,
-		/datum/action/ability/activable/xeno/pounce/runner,
-		/datum/action/ability/activable/xeno/snatch,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/tyranidhide,
+		/datum/action/ability/tyranid_action/evasion,
+		/datum/action/ability/activable/tyranid/pounce/runner,
+		/datum/action/ability/activable/tyranid/snatch,
 	)

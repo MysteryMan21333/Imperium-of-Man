@@ -3,7 +3,7 @@
 /obj/item/tool/shovel
 	name = "shovel"
 	desc = "A large tool for digging and moving dirt."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "shovel"
 	worn_icon_state = "shovel"
 	atom_flags = CONDUCT
@@ -131,7 +131,7 @@
 /obj/item/tool/shovel/etool
 	name = "entrenching tool"
 	desc = "Used to dig holes and bash heads in. Folds in to fit in small spaces. Use a sharp item on it to sharpen it."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "etool_c"
 	worn_icon_state = "etool_c"
 	force = 2

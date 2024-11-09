@@ -1,7 +1,7 @@
 /obj/machinery/optable
 	name = "Operating Table"
 	desc = "Used for advanced medical procedures."
-	icon = 'icons/obj/surgery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/surgery.dmi'
 	icon_state = "table2-idle"
 	density = TRUE
 	coverage = 10
@@ -75,8 +75,8 @@
 		return FALSE
 	if(buckling_mob == user)
 		return FALSE
-	if(!ishuman(user)) //xenos buckling humans into op tables and applying anesthetic masks? no way.
-		to_chat(user, span_xenowarning("We don't have the manual dexterity to do this."))
+	if(!ishuman(user)) //tyranids buckling humans into op tables and applying anesthetic masks? no way.
+		to_chat(user, span_tyranidwarning("We don't have the manual dexterity to do this."))
 		return FALSE
 	if(buckling_mob != victim)
 		to_chat(user, span_warning("Lay the patient on the table first!"))

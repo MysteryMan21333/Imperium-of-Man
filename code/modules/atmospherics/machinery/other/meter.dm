@@ -1,7 +1,7 @@
 /obj/machinery/meter
 	name = "gas flow meter"
 	desc = "It measures something."
-	icon = 'icons/obj/meter.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/meter.dmi'
 	icon_state = "meterX"
 	layer = GAS_PUMP_LAYER
 	power_channel = ENVIRON

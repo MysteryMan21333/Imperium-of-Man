@@ -1,5 +1,5 @@
 /obj/machinery/atmospherics/components/unary/thermomachine
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "freezer"
 
 	name = "thermomachine"

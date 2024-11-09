@@ -9,7 +9,7 @@
 	density = TRUE
 	anchored = FALSE
 	opacity = FALSE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	///list of welder-salvaged items that it can output
 	var/list/welder_salvage = list(/obj/item/stack/sheet/plasteel)
 	/// times we can salvage this mech

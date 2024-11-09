@@ -80,11 +80,11 @@
 	id = "TGMC_2"
 	icon_state = "patrol_point_2"
 
-/obj/structure/patrol_point/som_11
-	id = "SOM_1"
+/obj/structure/patrol_point/chaos_11
+	id = "CHAOS_1"
 
-/obj/structure/patrol_point/som_21
-	id = "SOM_2"
+/obj/structure/patrol_point/chaos_21
+	id = "CHAOS_2"
 	icon_state = "patrol_point_2"
 
 /obj/structure/patrol_point/tank
@@ -113,10 +113,10 @@
 	icon_state = "vehicle_point_2"
 	id = "TGMC_2"
 
-/obj/structure/patrol_point/tank/som_one
+/obj/structure/patrol_point/tank/chaos_one
 	icon_state = "vehicle_point_1"
-	id = "SOM_1"
+	id = "CHAOS_1"
 
-/obj/structure/patrol_point/tank/som_two
+/obj/structure/patrol_point/tank/chaos_two
 	icon_state = "vehicle_point_2"
-	id = "SOM_2"
+	id = "CHAOS_2"

@@ -1,26 +1,26 @@
-/datum/xeno_caste
+/datum/tyranid_caste
 	var/caste_name = ""
 	var/display_name = ""
 	var/upgrade_name = "Young"
 	var/caste_desc = null
-	var/job_type = /datum/job/xenomorph
+	var/job_type = /datum/job/tyranid
 
 	var/caste_type_path = null
 
 	///primordial message that is shown when a caste becomes primordial
 	var/primordial_message = ""
 
-	var/tier = XENO_TIER_ZERO
-	var/upgrade = XENO_UPGRADE_NORMAL
+	var/tier = TYRANID_TIER_ZERO
+	var/upgrade = TYRANID_UPGRADE_NORMAL
 	///used to match appropriate wound overlays
 	var/wound_type = "alien"
-	var/language = "Xenomorph"
+	var/language = "Tyranid"
 
 	var/gib_anim = "gibbed-a-corpse"
 	var/gib_flick = "gibbed-a"
 
 	// *** Melee Attacks *** //
-	///The amount of damage a xenomorph caste will do with a 'slash' attack.
+	///The amount of damage a tyranid caste will do with a 'slash' attack.
 	var/melee_damage = 10
 	///The amount of armour pen their melee attacks have
 	var/melee_ap = 0
@@ -38,7 +38,7 @@
 	var/weeds_speed_mod = -0.4
 
 	// *** Regeneration Delay ***//
-	///Time after you take damage before a xenomorph can regen.
+	///Time after you take damage before a tyranid can regen.
 	var/regen_delay = 10 SECONDS
 	///Regeneration power increases by this amount evey decisecond.
 	var/regen_ramp_amount = 0.005
@@ -90,7 +90,7 @@
 	// *** Sunder *** //
 	///How much sunder is recovered per tick
 	var/sunder_recover = 0.5
-	///What is the max amount of sunder that can be applied to a xeno (100 = 100%)
+	///What is the max amount of sunder that can be applied to a tyranid (100 = 100%)
 	var/sunder_max = 100
 	///Multiplier on the weapons sunder, e.g 10 sunder on a projectile is reduced to 5 with a 0.5 multiplier.
 	var/sunder_multiplier = 1
@@ -98,7 +98,7 @@
 	// *** Ranged Attack *** //
 	///Delay timer for spitting
 	var/spit_delay = 6 SECONDS
-	///list of datum projectile types the xeno can use.
+	///list of datum projectile types the tyranid can use.
 	var/list/spit_types
 
 	// *** Acid spray *** //
@@ -114,7 +114,7 @@
 	var/acid_spray_structure_damage = 0
 
 	// *** Secrete resin *** //
-	///The maximum number of tiles to where a xeno can build.
+	///The maximum number of tiles to where a tyranid can build.
 	var/resin_max_range = 0
 
 	// *** Pheromones *** //
@@ -202,41 +202,41 @@
 	///the 'abilities' available to a caste.
 	var/list/actions
 
-	///The iconstate for the xeno on the minimap
-	var/minimap_icon = "xenominion"
-	///The iconstate for leadered xenos on the minimap, added as overlay
-	var/minimap_leadered_overlay = "xenoleader"
+	///The iconstate for the tyranid on the minimap
+	var/minimap_icon = "tyranidminion"
+	///The iconstate for leadered tyranids on the minimap, added as overlay
+	var/minimap_leadered_overlay = "tyranidleader"
 	///The iconstate of the plasma bar, format used is "[plasma_icon_state][amount]"
 	var/plasma_icon_state = "plasma"
 
 	///How quickly the caste enters vents
-	var/vent_enter_speed = XENO_DEFAULT_VENT_ENTER_TIME
+	var/vent_enter_speed = TYRANID_DEFAULT_VENT_ENTER_TIME
 	///How quickly the caste exits vents
-	var/vent_exit_speed = XENO_DEFAULT_VENT_EXIT_TIME
+	var/vent_exit_speed = TYRANID_DEFAULT_VENT_EXIT_TIME
 	///Whether the caste enters and crawls through vents silently
 	var/silent_vent_crawl = FALSE
-	// The amount of xenos that must be alive in the hive for this caste to be able to evolve
-	var/evolve_min_xenos = 0
+	// The amount of tyranids that must be alive in the hive for this caste to be able to evolve
+	var/evolve_min_tyranids = 0
 	// How many of this caste may be alive at once
 	var/maximum_active_caste = INFINITY
 	// Accuracy malus, 0 by default. Should NOT go over 70.
 	var/accuracy_malus = 0
 
-///Add needed component to the xeno
-/datum/xeno_caste/proc/on_caste_applied(mob/xenomorph)
+///Add needed component to the tyranid
+/datum/tyranid_caste/proc/on_caste_applied(mob/tyranid)
 	for(var/trait in caste_traits)
-		ADD_TRAIT(xenomorph, trait, XENO_TRAIT)
-	xenomorph.AddComponent(/datum/component/bump_attack)
+		ADD_TRAIT(tyranid, trait, TYRANID_TRAIT)
+	tyranid.AddComponent(/datum/component/bump_attack)
 
-/datum/xeno_caste/proc/on_caste_removed(mob/xenomorph)
-	xenomorph.remove_component(/datum/component/bump_attack)
+/datum/tyranid_caste/proc/on_caste_removed(mob/tyranid)
+	tyranid.remove_component(/datum/component/bump_attack)
 	for(var/trait in caste_traits)
-		REMOVE_TRAIT(xenomorph, trait, XENO_TRAIT)
+		REMOVE_TRAIT(tyranid, trait, TYRANID_TRAIT)
 
 ///returns the basetype caste to get what the base caste is (e.g base rav not primo or strain rav)
-/datum/xeno_caste/proc/get_base_caste_type()
-	var/datum/xeno_caste/current_type = type
-	while(initial(current_type.upgrade) != XENO_UPGRADE_BASETYPE)
+/datum/tyranid_caste/proc/get_base_caste_type()
+	var/datum/tyranid_caste/current_type = type
+	while(initial(current_type.upgrade) != TYRANID_UPGRADE_BASETYPE)
 		current_type = initial(current_type.parent_type)
 	return current_type
 
@@ -244,30 +244,30 @@
 GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 /proc/init_glob_strain_list()
 	var/list/strain_list = list()
-	for(var/datum/xeno_caste/root_caste AS in GLOB.xeno_caste_datums)
-		if(root_caste.parent_type != /datum/xeno_caste)
+	for(var/datum/tyranid_caste/root_caste AS in GLOB.tyranid_caste_datums)
+		if(root_caste.parent_type != /datum/tyranid_caste)
 			continue
 		strain_list[root_caste] = list()
-		for(var/datum/xeno_caste/typepath AS in subtypesof(root_caste))
-			if(typepath::upgrade != XENO_UPGRADE_BASETYPE)
+		for(var/datum/tyranid_caste/typepath AS in subtypesof(root_caste))
+			if(typepath::upgrade != TYRANID_UPGRADE_BASETYPE)
 				continue
 			if(typepath::caste_flags & CASTE_EXCLUDE_STRAINS)
 				continue
 			strain_list[root_caste] += typepath
 	return strain_list
 
-///returns a list of strains(xeno castedatum paths) that this caste can currently evolve to
-/datum/xeno_caste/proc/get_strain_options()
-	var/datum/xeno_caste/root_type = type
-	while(initial(root_type.parent_type) != /datum/xeno_caste)
+///returns a list of strains(tyranid castedatum paths) that this caste can currently evolve to
+/datum/tyranid_caste/proc/get_strain_options()
+	var/datum/tyranid_caste/root_type = type
+	while(initial(root_type.parent_type) != /datum/tyranid_caste)
 		root_type = root_type::parent_type
 	var/list/options = GLOB.strain_list[root_type]
 	return options?.Copy()
 
-/mob/living/carbon/xenomorph
+/mob/living/carbon/tyranid
 	name = "Drone"
 	desc = "What the hell is THAT?"
-	icon = 'icons/Xeno/castes/larva.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/larva.dmi'
 	icon_state = "Drone Walking"
 	speak_emote = list("hisses")
 	melee_damage = 5 //Arbitrary damage value
@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 	rotate_on_lying = FALSE
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
-	mob_size = MOB_SIZE_XENO
+	mob_size = MOB_SIZE_TYRANID
 	hand = 1 //Make right hand active by default. 0 is left hand, mob defines it as null normally
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
@@ -288,48 +288,48 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 	appearance_flags = TILE_BOUND|PIXEL_SCALE|KEEP_TOGETHER|LONG_GLIDE
 	see_infrared = TRUE
 	hud_type = /datum/hud/alien
-	hud_possible = list(HEALTH_HUD_XENO, PLASMA_HUD, PHEROMONE_HUD, XENO_RANK_HUD, QUEEN_OVERWATCH_HUD, ARMOR_SUNDER_HUD, XENO_DEBUFF_HUD, XENO_FIRE_HUD, XENO_BLESSING_HUD, XENO_EVASION_HUD)
+	hud_possible = list(HEALTH_HUD_TYRANID, PLASMA_HUD, PHEROMONE_HUD, TYRANID_RANK_HUD, QUEEN_OVERWATCH_HUD, ARMOR_SUNDER_HUD, TYRANID_DEBUFF_HUD, TYRANID_FIRE_HUD, TYRANID_BLESSING_HUD, TYRANID_EVASION_HUD)
 	buckle_flags = NONE
-	faction = FACTION_XENO
-	initial_language_holder = /datum/language_holder/xeno
+	faction = FACTION_TYRANID
+	initial_language_holder = /datum/language_holder/tyranid
 	voice_filter = @{"[0:a] asplit [out0][out2]; [out0] asetrate=%SAMPLE_RATE%*0.8,aresample=%SAMPLE_RATE%,atempo=1/0.8,aformat=channel_layouts=mono [p0]; [out2] asetrate=%SAMPLE_RATE%*1.2,aresample=%SAMPLE_RATE%,atempo=1/1.2,aformat=channel_layouts=mono[p2]; [p0][0][p2] amix=inputs=3"}
 	gib_chance = 5
 	light_system = MOVABLE_LIGHT
 
 	///Hive name define
-	var/hivenumber = XENO_HIVE_NORMAL
+	var/hivenumber = TYRANID_HIVE_NORMAL
 	///Hive datum we belong to
 	var/datum/hive_status/hive
-	///Xeno mob specific flags
-	var/xeno_flags = NONE
+	///Tyranid mob specific flags
+	var/tyranid_flags = NONE
 
 	///State tracking of hive status toggles
 	var/status_toggle_flags = HIVE_STATUS_DEFAULTS
-	///Handles displaying the various wound states of the xeno.
-	var/atom/movable/vis_obj/xeno_wounds/wound_overlay
-	///Handles displaying the various fire states of the xeno
-	var/atom/movable/vis_obj/xeno_wounds/fire_overlay/fire_overlay
+	///Handles displaying the various wound states of the tyranid.
+	var/atom/movable/vis_obj/tyranid_wounds/wound_overlay
+	///Handles displaying the various fire states of the tyranid
+	var/atom/movable/vis_obj/tyranid_wounds/fire_overlay/fire_overlay
 	///Handles displaying any equipped backpack item, such as a saddle
-	var/atom/movable/vis_obj/xeno_wounds/backpack_overlay/backpack_overlay
-	var/datum/xeno_caste/xeno_caste
-	/// /datum/xeno_caste that we will be on init
+	var/atom/movable/vis_obj/tyranid_wounds/backpack_overlay/backpack_overlay
+	var/datum/tyranid_caste/tyranid_caste
+	/// /datum/tyranid_caste that we will be on init
 	var/caste_base_type
-	var/language = "Xenomorph"
+	var/language = "Tyranid"
 	///Plasma currently stored
 	var/plasma_stored = 0
 
-	///A mob the xeno ate
+	///A mob the tyranid ate
 	var/mob/living/carbon/eaten_mob
 	///How much evolution they have stored
 	var/evolution_stored = 0
 	///How much upgrade points they have stored.
 	var/upgrade_stored = 0
 	///This will track their upgrade level.
-	var/upgrade = XENO_UPGRADE_INVALID
+	var/upgrade = TYRANID_UPGRADE_INVALID
 	///sunder affects armour values and does a % removal before dmg is applied. 50 sunder == 50% effective armour values
 	var/sunder = 0
 	///The ammo datum for our spit projectiles. We're born with this, it changes sometimes.
-	var/datum/ammo/xeno/ammo = null
+	var/datum/ammo/tyranid/ammo = null
 	///The aura we're currently emitted. Destroyed whenever we change or stop pheromones.
 	var/datum/aura_bearer/current_aura
 	/// If we're chosen as leader, this is the leader aura we emit.
@@ -342,39 +342,39 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 	var/warding_aura = 0
 	///Strength of aura we are affected by. NOT THE ONE WE ARE EMITTING
 	var/recovery_aura = 0
-	///Resets to -xeno_caste.regen_delay when you take damage.
+	///Resets to -tyranid_caste.regen_delay when you take damage.
 	///Negative values act as a delay while values greater than 0 act as a multiplier.
 	///Will increase by 10 every decisecond if under 0.
-	///Increases by xeno_caste.regen_ramp_amount every decisecond. If you want to balance this, look at the xeno_caste defines mentioned above.
+	///Increases by tyranid_caste.regen_ramp_amount every decisecond. If you want to balance this, look at the tyranid_caste defines mentioned above.
 	var/regen_power = 0
 
 	var/zoom_turf = null
 
-	///Type of weeds the xeno is standing on, null when not on weeds
+	///Type of weeds the tyranid is standing on, null when not on weeds
 	var/obj/alien/weeds/loc_weeds_type
 	///This will track their "tier" to restrict/limit evolutions
-	var/tier = XENO_TIER_ONE
+	var/tier = TYRANID_TIER_ONE
 	///which resin structure to build when we secrete resin
 	var/selected_resin = /turf/closed/wall/resin/regenerating
 	//which special resin structure to build when we secrete special resin
 	var/selected_special_resin = /turf/closed/wall/resin/regenerating/special/bulletproof
 	///which reagent to slash with using reagent slash
-	var/selected_reagent = /datum/reagent/toxin/xeno_hemodile
+	var/selected_reagent = /datum/reagent/toxin/tyranid_hemodile
 	///which plant to place when we use sow
-	var/obj/structure/xeno/plant/selected_plant = /obj/structure/xeno/plant/heal_fruit
+	var/obj/structure/tyranid/plant/selected_plant = /obj/structure/tyranid/plant/heal_fruit
 	///Naming variables
-	var/nicknumber = 0 //The number/name after the xeno type. Saved right here so it transfers between castes.
+	var/nicknumber = 0 //The number/name after the tyranid type. Saved right here so it transfers between castes.
 
 	///This list of inherent verbs lets us take any proc basically anywhere and add them.
-	///If they're not a xeno subtype it might crash or do weird things, like using human verb procs
+	///If they're not a tyranid subtype it might crash or do weird things, like using human verb procs
 	///It should add them properly on New() and should reset/readd them on evolves
 	var/list/inherent_verbs = list()
 
-	///The xenomorph that this source is currently overwatching
-	var/mob/living/carbon/xenomorph/observed_xeno
+	///The tyranid that this source is currently overwatching
+	var/mob/living/carbon/tyranid/observed_tyranid
 
 	///Multiplicative melee damage modifier; referenced by attack_alien.dm, most notably attack_alien_harm
-	var/xeno_melee_damage_modifier = 1
+	var/tyranid_melee_damage_modifier = 1
 
 	//Charge vars
 	///Will the mob charge when moving ? You need the charge verb to change this
@@ -394,7 +394,7 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 	// *** Ravager vars *** //
 	/// when true the rav will not go into crit or take crit damage.
 	var/endure = FALSE
-	///when true the rav leeches healing off of hitting marines
+	///when true the rav leeches healing off of hitting guardsmans
 	var/vampirism
 
 	// *** Carrier vars *** //
@@ -412,15 +412,15 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 
 	var/fire_luminosity = 0 //Luminosity of the current fire while burning
 
-	///The xenos/silo/nuke currently tracked by the xeno_tracker arrow
+	///The tyranids/silo/nuke currently tracked by the tyranid_tracker arrow
 	var/atom/tracked
 
-	/// The type of footstep this xeno has.
-	var/footstep_type = FOOTSTEP_XENO_MEDIUM
+	/// The type of footstep this tyranid has.
+	var/footstep_type = FOOTSTEP_TYRANID_MEDIUM
 
-	COOLDOWN_DECLARE(xeno_health_alert_cooldown)
+	COOLDOWN_DECLARE(tyranid_health_alert_cooldown)
 
 	///The resting cooldown
-	COOLDOWN_DECLARE(xeno_resting_cooldown)
+	COOLDOWN_DECLARE(tyranid_resting_cooldown)
 	///The unresting cooldown
-	COOLDOWN_DECLARE(xeno_unresting_cooldown)
+	COOLDOWN_DECLARE(tyranid_unresting_cooldown)

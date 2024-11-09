@@ -5,7 +5,7 @@
 /mob/living/silicon/ai
 	name = "ARES v3.2"
 	real_name = "ARES v3.2"
-	icon = 'icons/mob/AI.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/AI.dmi'
 	icon_state = "ai"
 	bubble_icon = "robot"
 	anchored = TRUE
@@ -18,7 +18,7 @@
 	buckle_flags = NONE
 	has_unlimited_silicon_privilege = TRUE
 
-	var/list/available_networks = list("marinemainship", "marine", "dropship1", "dropship2")
+	var/list/available_networks = list("guardsmanmainship", "guardsman", "dropship1", "dropship2")
 	var/obj/machinery/camera/current
 
 	var/mob/camera/aiEye/hud/eyeobj
@@ -49,7 +49,7 @@
 	var/list/obj/machinery/camera/lit_cameras = list()
 
 	var/datum/trackable/track
-	///Selected order to give to marine
+	///Selected order to give to guardsman
 	var/datum/action/innate/order/current_order
 	/// If it is currently controlling an object
 	var/controlling = FALSE
@@ -60,8 +60,8 @@
 	///Reference to the AIs minimap.
 	var/datum/action/minimap/ai/mini
 
-	///used for cooldown when AI pings the location of a xeno or xeno structure
-	COOLDOWN_DECLARE(last_pinged_marines)
+	///used for cooldown when AI pings the location of a tyranid or tyranid structure
+	COOLDOWN_DECLARE(last_pinged_guardsmans)
 
 	///stores the last time the AI manually scanned the planet. we don't do cooldown_declare because we need the world time for our game panel
 	var/last_ai_bioscan
@@ -75,14 +75,14 @@
 
 	track = new(src)
 	builtInCamera = new(src)
-	builtInCamera.network = list("marinemainship")
+	builtInCamera.network = list("guardsmanmainship")
 
-	holo_icon = getHologramIcon(icon('icons/mob/AI.dmi', "default"))
+	holo_icon = getHologramIcon(icon('modular_imperium/master_files/icons/mob/AI.dmi', "default"))
 
 	laws = list()
 	laws += "Safeguard: Protect your assigned vessel from damage to the best of your abilities."
-	laws += "Serve: Serve the personnel of your assigned vessel, and all other TerraGov personnel to the best of your abilities, with priority as according to their rank and role."
-	laws += "Protect: Protect the personnel of your assigned vessel, and all other TerraGov personnel to the best of your abilities, with priority as according to their rank and role."
+	laws += "Serve: Serve the personnel of your assigned vessel, and all other Imperium personnel to the best of your abilities, with priority as according to their rank and role."
+	laws += "Protect: Protect the personnel of your assigned vessel, and all other Imperium personnel to the best of your abilities, with priority as according to their rank and role."
 	laws += "Preserve: Do not allow unauthorized personnel to tamper with your equipment."
 
 	var/list/iconstates = GLOB.ai_core_display_screens
@@ -98,7 +98,7 @@
 			stack_trace("Unemployment has reached to an AI, who has failed to find a job.")
 
 	GLOB.ai_list += src
-	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 	H.add_hud_to(src)
 
 	RegisterSignal(src, COMSIG_MOB_CLICK_ALT, PROC_REF(send_order))
@@ -140,7 +140,7 @@
 	QDEL_NULL(mini)
 	return ..()
 
-///Print order visual to all marines squad hud and give them an arrow to follow the waypoint
+///Print order visual to all guardsmans squad hud and give them an arrow to follow the waypoint
 /mob/living/silicon/ai/proc/send_order(datum/source, atom/target)
 	SIGNAL_HANDLER
 	if(!current_order)
@@ -365,22 +365,22 @@
 	. += "- Operation information -"
 	. += "Current orbit: [GLOB.current_orbit]"
 
-	if(!GLOB.marine_main_ship?.orbital_cannon?.chambered_tray)
+	if(!GLOB.guardsman_main_ship?.orbital_cannon?.chambered_tray)
 		. += "Orbital bombardment status: No ammo chambered in the cannon."
 	else
-		. += "Orbital bombardment warhead: [GLOB.marine_main_ship.orbital_cannon.tray.warhead.name] Detected"
+		. += "Orbital bombardment warhead: [GLOB.guardsman_main_ship.orbital_cannon.tray.warhead.name] Detected"
 
-	. += "Current supply points: [round(SSpoints.supply_points[FACTION_TERRAGOV])]"
+	. += "Current supply points: [round(SSpoints.supply_points[FACTION_IMPERIUM])]"
 
 	. += "Current dropship points: [round(SSpoints.dropship_points)]"
 
-	. += "Current alert level: [GLOB.marine_main_ship.get_security_level()]"
+	. += "Current alert level: [GLOB.guardsman_main_ship.get_security_level()]"
 
 	if(SSticker.mode)
-		. += "Number of living marines: [SSticker.mode.count_humans_and_xenos()[1]]"
+		. += "Number of living guardsmans: [SSticker.mode.count_humans_and_tyranids()[1]]"
 
-	if(GLOB.marine_main_ship?.rail_gun?.last_firing_ai + COOLDOWN_RAILGUN_FIRE > world.time)
-		. += "Railgun status: Cooling down, next fire in [(GLOB.marine_main_ship?.rail_gun?.last_firing_ai + COOLDOWN_RAILGUN_FIRE - world.time)/10] seconds."
+	if(GLOB.guardsman_main_ship?.rail_gun?.last_firing_ai + COOLDOWN_RAILGUN_FIRE > world.time)
+		. += "Railgun status: Cooling down, next fire in [(GLOB.guardsman_main_ship?.rail_gun?.last_firing_ai + COOLDOWN_RAILGUN_FIRE - world.time)/10] seconds."
 	else
 		. += "Railgun status: Railgun is ready to fire."
 
@@ -495,7 +495,7 @@
 
 /datum/action/innate/squad_message
 	name = "Send Order"
-	action_icon_state = "screen_order_marine"
+	action_icon_state = "screen_order_guardsman"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_SENDORDER,
 	)
@@ -533,24 +533,24 @@
 			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>ORDERS UPDATED:</u></span><br>" + text, /atom/movable/screen/text/screen_text/command_order)
 
 
-///takes an atom A and sends an alert, coordinate and for the atom to eligible marine forces if cooldown is over
+///takes an atom A and sends an alert, coordinate and for the atom to eligible guardsman forces if cooldown is over
 /mob/living/silicon/ai/proc/ai_ping(atom/A, cooldown = COOLDOWN_AI_PING_NORMAL)
 	///list of mobs to send the notification to
 	var/list/receivers = (GLOB.alive_human_list)
 	if(is_mainship_level(A.z)) //if our target is shipside, we always use the lowest cooldown between pings
 		cooldown = COOLDOWN_AI_PING_EXTRA_LOW
-	if(!COOLDOWN_CHECK(src, last_pinged_marines)) //delay between alerts, both for balance and to prevent chat spam from overeager AIs
+	if(!COOLDOWN_CHECK(src, last_pinged_guardsmans)) //delay between alerts, both for balance and to prevent chat spam from overeager AIs
 		to_chat(src, span_alert("You must wait before issuing an alert again"))
 		return
-	COOLDOWN_START(src, last_pinged_marines, cooldown)
+	COOLDOWN_START(src, last_pinged_guardsmans, cooldown)
 	to_chat(src, span_alert("<b>You issue an alert for [A.name] to all living personnel.</b>"))
 	for(var/mob/M in receivers)
 		if(M.z != A.z || M.stat == DEAD)
 			continue
 		var/newdistance = get_dist(A, M)
 		var/generaldirection = "north"
-		if(istype(A, /obj/effect/xenomorph/acid)) //special check for acid
-			var/obj/effect/xenomorph/acid/pingedacid = A
+		if(istype(A, /obj/effect/tyranid/acid)) //special check for acid
+			var/obj/effect/tyranid/acid/pingedacid = A
 			playsound(M, 'sound/machines/beepalert.ogg', 25)
 			to_chat(M, span_alert("AI telemetry indicates that the <b>[pingedacid.acid_t]</b> which is <b>[newdistance]</b> units away at: [AREACOORD_NO_Z(A)] is <b> being melted</b>! by [pingedacid.name]!"))
 			return

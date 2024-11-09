@@ -2,7 +2,7 @@
 /obj/machinery/deployable/teleporter
 	density = FALSE
 	max_integrity = 200
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	idle_power_usage = 50
 	///List of all teleportable types
 	var/static/list/teleportable_types = list(
@@ -28,7 +28,7 @@
 
 /obj/machinery/deployable/teleporter/Initialize(mapload)
 	. = ..()
-	SSminimaps.add_marker(src, MINIMAP_FLAG_MARINE, image('icons/UI_icons/map_blips.dmi', null, "teleporter", HIGH_FLOAT_LAYER))
+	SSminimaps.add_marker(src, MINIMAP_FLAG_GUARDSMAN, image('icons/UI_icons/map_blips.dmi', null, "teleporter", HIGH_FLOAT_LAYER))
 
 
 /obj/machinery/deployable/teleporter/attack_hand(mob/living/user)
@@ -147,7 +147,7 @@
 /obj/item/teleporter_kit
 	name = "\improper ASRS Bluespace teleporter"
 	desc = "A bluespace telepad for moving personnel and equipment across small distances to another prelinked teleporter. Ctrl+Click on a tile to deploy, use a wrench to undeploy, use a crowbar to remove the power cell."
-	icon = 'icons/obj/structures/teleporter.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/teleporter.dmi'
 	icon_state = "teleporter"
 
 	max_integrity = 200

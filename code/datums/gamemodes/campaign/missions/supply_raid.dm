@@ -65,20 +65,20 @@
 	if(message)
 		return ..()
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
-			message = "This base is a key logistic hub for the SOM. Tear it apart and they're crippled in this region. Hustle marines!"
-		if(FACTION_SOM)
-			message = "This is a key logistics hub for us. Hold the line marines, throw back those Terran dogs and show them Martian resolve!"
+		if(FACTION_IMPERIUM)
+			message = "This base is a key logistic hub for the CHAOS. Tear it apart and they're crippled in this region. Hustle guardsmans!"
+		if(FACTION_CHAOS)
+			message = "This is a key logistics hub for us. Hold the line guardsmans, throw back those Terran dogs and show them Martian resolve!"
 	return ..()
 
 /datum/campaign_mission/destroy_mission/supply_raid/load_pre_mission_bonuses()
 	. = ..()
 	spawn_mech(defending_faction, 0, 1)
 	var/datum/faction_stats/attacking_team = mode.stat_list[starting_faction]
-	if(starting_faction == FACTION_TERRAGOV)
+	if(starting_faction == FACTION_IMPERIUM)
 		attacking_team.add_asset(/datum/campaign_asset/asset_disabler/tgmc_cas/instant)
-	else if(starting_faction == FACTION_SOM)
-		attacking_team.add_asset(/datum/campaign_asset/asset_disabler/som_cas/instant)
+	else if(starting_faction == FACTION_CHAOS)
+		attacking_team.add_asset(/datum/campaign_asset/asset_disabler/chaos_cas/instant)
 
 /datum/campaign_mission/destroy_mission/supply_raid/apply_major_victory()
 	winning_faction = starting_faction
@@ -93,22 +93,22 @@
 /datum/campaign_mission/destroy_mission/supply_raid/apply_minor_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	if(hostile_faction == FACTION_TERRAGOV)
+	if(hostile_faction == FACTION_IMPERIUM)
 		winning_team.add_asset(/datum/campaign_asset/equipment/power_armor)
-	else if(hostile_faction == FACTION_SOM)
-		winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	else if(hostile_faction == FACTION_CHAOS)
+		winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 		winning_team.add_asset(/datum/campaign_asset/equipment/gorgon_armor)
 
 /datum/campaign_mission/destroy_mission/supply_raid/apply_major_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	if(hostile_faction == FACTION_TERRAGOV)
+	if(hostile_faction == FACTION_IMPERIUM)
 		winning_team.add_asset(/datum/campaign_asset/equipment/power_armor)
-	else if(hostile_faction == FACTION_SOM)
-		winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	else if(hostile_faction == FACTION_CHAOS)
+		winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 		winning_team.add_asset(/datum/campaign_asset/equipment/gorgon_armor)
 
-/datum/campaign_mission/destroy_mission/supply_raid/som
+/datum/campaign_mission/destroy_mission/supply_raid/chaos
 	mission_flags = MISSION_DISALLOW_TELEPORT
 	map_name = "Orion Outpost"
 	map_file = '_maps/map_files/Campaign maps/orion_2/orionoutpost_2.dmm'
@@ -120,12 +120,12 @@
 	min_destruction_amount = 6
 	hostile_faction_additional_rewards = "Prevent the degradation of our attrition generation. B18 power armour available if you successfully protect this depot."
 
-/datum/campaign_mission/destroy_mission/supply_raid/som/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
+/datum/campaign_mission/destroy_mission/supply_raid/chaos/get_mission_deploy_message(mob/living/user, text_source = "Overwatch", portrait_to_use = GLOB.faction_to_portrait[user.faction], message)
 	if(message)
 		return ..()
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
-			message = "This base is a key logistic hub for us. Repel the SOM marauders, protect our assets at all costs!"
-		if(FACTION_SOM)
+		if(FACTION_IMPERIUM)
+			message = "This base is a key logistic hub for us. Repel the CHAOS marauders, protect our assets at all costs!"
+		if(FACTION_CHAOS)
 			message = "This is a key logistics hub for the TGMC. Smash through their defences and destroy the marked targets. Glory to Mars!"
 	return ..()

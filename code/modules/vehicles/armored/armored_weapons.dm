@@ -1,7 +1,7 @@
 /obj/item/armored_weapon
 	name = "\improper LTB main battle tank cannon"
 	desc = "A TGMC vehicle's main turret cannon. It fires 86mm rocket propelled shells"
-	icon = 'icons/obj/armored/hardpoint_modules.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/hardpoint_modules.dmi'
 	icon_state = "ltb_cannon"
 	///owner this is attached to
 	var/obj/vehicle/sealed/armored/chassis

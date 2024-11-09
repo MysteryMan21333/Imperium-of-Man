@@ -40,19 +40,19 @@
 	to_chat(src, span_notice("Railgun laser detected. Target: [AREACOORD_NO_Z(incoming_laser)]"))
 	notify_ai(src, "<b> Railgun laser detected. </b> Target: [AREACOORD_NO_Z(incoming_laser)]", ai_sound = 'sound/effects/binoctarget.ogg', source = incoming_laser, action = NOTIFY_AI_ALERT, notify_volume = 15)
 
-///Receive notifications about the xenos locking down the Alamo
-/mob/living/silicon/ai/proc/receive_lockdown_warning(datum/source, obj/machinery/computer/shuttle/marine_dropship/lockedship)
+///Receive notifications about the tyranids locking down the Alamo
+/mob/living/silicon/ai/proc/receive_lockdown_warning(datum/source, obj/machinery/computer/shuttle/guardsman_dropship/lockedship)
 	SIGNAL_HANDLER
 	var/area/A = get_area(lockedship)
 	to_chat(src, span_notice("Electronic corruption detected at [A]! Controls overridden!"))
-	playsound_local(src, 'sound/voice/alien/4_xeno_roars.ogg', 15)
+	playsound_local(src, 'modular_imperium/master_files/sound/voice/alien/4_xeno_roars.ogg', 15)
 	notify_ai(src, "<b> Electronic corruption detected at [A]! Controls overridden! </b>" , source = lockedship, action = NOTIFY_AI_ALERT, notify_volume = 15)
 
 ///Receive notifications about the tad control equipment being destroyed
 /mob/living/silicon/ai/proc/receive_tad_warning(datum/source, obj/machinery/computer/camera_advanced/shuttle_docker/minidropship/ruinedtad)
 	SIGNAL_HANDLER
 	to_chat(src, span_notice("Telemetry from our mini dropship reports that the controls have become nonfunctional!"))
-	notify_ai(src, "<b> Telemetry from our mini dropship reports that the controls have become nonfunctional! </b>", ai_sound = 'sound/voice/alien/4_xeno_roars.ogg', source = ruinedtad, action = NOTIFY_AI_ALERT, notify_volume = 15)
+	notify_ai(src, "<b> Telemetry from our mini dropship reports that the controls have become nonfunctional! </b>", ai_sound = 'modular_imperium/master_files/sound/voice/alien/4_xeno_roars.ogg', source = ruinedtad, action = NOTIFY_AI_ALERT, notify_volume = 15)
 
 ///Receive notifications about disks being generated
 /mob/living/silicon/ai/proc/show_disk_complete(datum/source, obj/machinery/computer/nuke_disk_generator/generatingcomputer)

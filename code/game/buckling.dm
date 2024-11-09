@@ -172,7 +172,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/xenomorph/user_can_buckle(mob/living/buckling_mob)
+/mob/living/carbon/tyranid/user_can_buckle(mob/living/buckling_mob)
 	if(buckling_mob.stat)
 		return FALSE
 	return ..()

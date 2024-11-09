@@ -1,14 +1,14 @@
-/datum/xeno_caste/beetle
+/datum/tyranid_caste/beetle
 	caste_name = "Beetle"
 	display_name = "Beetle"
 	upgrade_name = ""
 	caste_desc = ""
 	wound_type = ""
 
-	caste_type_path = /mob/living/carbon/xenomorph/beetle
+	caste_type_path = /mob/living/carbon/tyranid/beetle
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	// *** Melee Attacks *** //
 	melee_damage = 17
@@ -31,9 +31,9 @@
 	// *** Defense *** //
 	soft_armor = list(MELEE = 30, BULLET = 30, LASER = 25, ENERGY = 20, BOMB = 20, BIO = 20, FIRE = 30, ACID = 20)
 
-	minimap_icon = "xenominion"
+	minimap_icon = "tyranidminion"
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/activable/xeno/charge/forward_charge/unprecise,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/activable/tyranid/charge/forward_charge/unprecise,
 	)

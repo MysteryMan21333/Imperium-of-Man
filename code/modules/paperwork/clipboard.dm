@@ -1,10 +1,10 @@
 /obj/item/clipboard
 	name = "clipboard"
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "clipboard"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/civilian_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/civilian_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/civilian_right.dmi',
 	)
 	worn_icon_state = "clipboard"
 	w_class = WEIGHT_CLASS_SMALL

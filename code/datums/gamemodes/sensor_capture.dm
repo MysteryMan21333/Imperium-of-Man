@@ -17,7 +17,7 @@
 
 /datum/game_mode/hvh/combat_patrol/sensor_capture/announce()
 	to_chat(world, "<b>The current game mode is - Sensor Capture!</b>")
-	to_chat(world, "<b>The SOM have launched an invasion to this sector. TerraGov and SOM forces fight over the sensor towers around the sector.</b>")
+	to_chat(world, "<b>The CHAOS have launched an invasion to this sector. Imperium and CHAOS forces fight over the sensor towers around the sector.</b>")
 
 /datum/game_mode/hvh/combat_patrol/sensor_capture/game_end_countdown()
 	if(game_timer == SENSOR_CAP_TIMER_PAUSED)
@@ -30,13 +30,13 @@
 		return TRUE
 
 	if(max_time_reached)
-		message_admins("Round finished: [MODE_COMBAT_PATROL_SOM_MAJOR]")
-		round_finished = MODE_COMBAT_PATROL_SOM_MAJOR
+		message_admins("Round finished: [MODE_COMBAT_PATROL_CHAOS_MAJOR]")
+		round_finished = MODE_COMBAT_PATROL_CHAOS_MAJOR
 		return TRUE
 
 	if(sensors_activated >= SENSORS_NEEDED)
-		message_admins("Round finished: [MODE_COMBAT_PATROL_MARINE_MAJOR]")
-		round_finished = MODE_COMBAT_PATROL_MARINE_MAJOR
+		message_admins("Round finished: [MODE_COMBAT_PATROL_GUARDSMAN_MAJOR]")
+		round_finished = MODE_COMBAT_PATROL_GUARDSMAN_MAJOR
 		return TRUE
 
 /datum/game_mode/hvh/combat_patrol/sensor_capture/get_status_tab_items(datum/dcs, mob/source, list/items)
@@ -45,7 +45,7 @@
 
 /datum/game_mode/hvh/combat_patrol/sensor_capture/get_deploy_point_message(mob/living/user)
 	switch(user.faction)
-		if(FACTION_TERRAGOV)
-			. = "Reactivate all sensor towers, good luck marines."
-		if(FACTION_SOM)
+		if(FACTION_IMPERIUM)
+			. = "Reactivate all sensor towers, good luck guardsmans."
+		if(FACTION_CHAOS)
 			. = "Prevent reactivation of the sensor towers, glory to Mars!"

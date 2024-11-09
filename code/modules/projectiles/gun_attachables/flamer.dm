@@ -2,7 +2,7 @@
 	name = "standard flamer nozzle"
 	desc = "The standard flamer nozzle. This one fires a stream of fire for direct and accurate flames. Though not as area filling as its counterpart, this one excels at directed frontline combat."
 	icon_state = "directional"
-	icon = 'icons/obj/items/guns/attachments/flamer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/flamer.dmi'
 	slot = ATTACHMENT_SLOT_FLAMER_NOZZLE
 	attach_delay = 2 SECONDS
 	detach_delay = 2 SECONDS

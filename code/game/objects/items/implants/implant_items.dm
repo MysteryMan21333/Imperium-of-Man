@@ -42,7 +42,7 @@
 /obj/item/implant/deployitem/blade
 	name = "mantis blade implant"
 	desc = "A large folding blade capable of being stored within an arm."
-	icon = 'icons/obj/items/weapons/swords.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/swords.dmi'
 	icon_state = "armblade"
 	helditem = /obj/item/weapon/sword/mantisblade
 

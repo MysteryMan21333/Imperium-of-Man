@@ -132,7 +132,7 @@
 /obj/item/clothing/gloves/heldgloves/boxing
 	name = "boxing gloves"
 	desc = "Because you really needed another excuse to punch your crewmates."
-	icon = 'icons/obj/clothing/boxing.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/boxing.dmi'
 	icon_state = "boxing"
 	rightglove_path = /obj/item/weapon/heldglove/boxing/hook
 	leftglove_path = /obj/item/weapon/heldglove/boxing/jab
@@ -147,7 +147,7 @@
 /obj/item/weapon/heldglove/boxing
 	name = "boxing glove"
 	desc = "Because you really needed another excuse to punch your crewmates."
-	icon = 'icons/obj/clothing/boxing.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/boxing.dmi'
 	icon_state = "boxing"
 	damtype = STAMINA
 	force = 10
@@ -214,7 +214,7 @@
 	name = "punching bag"
 	desc = "A Nanotrasen punching bag. A common sight this far from Sol.\nCheap and flimsy, might break if hit by something too heavy."
 	max_integrity = 750 //This is going to get hit, a lot
-	icon = 'icons/obj/clothing/boxing.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/boxing.dmi'
 	icon_state = "punchingbag"
 
 /obj/structure/punching_bag/attackby(obj/item/I, mob/user, params)

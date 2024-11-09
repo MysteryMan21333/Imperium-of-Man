@@ -1,7 +1,7 @@
 /obj/item/radio/intercom
 	name = "station intercom"
 	desc = "Talk through this. To speak directly into an intercom next to you, use :i."
-	icon = 'icons/obj/machines/radio.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_BULKY

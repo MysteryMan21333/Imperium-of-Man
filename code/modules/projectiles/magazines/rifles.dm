@@ -6,7 +6,7 @@
 	desc = "A 10mm assault rifle magazine."
 	caliber = CALIBER_10X24_CASELESS
 	icon_state = "m412"
-	icon = 'icons/obj/items/ammo/rifle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/rifle.dmi'
 	icon_state_mini = "mag_rifle"
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo = /datum/ammo/bullet/rifle
@@ -182,7 +182,7 @@
 	caliber = CALIBER_762X39
 	default_ammo = /datum/ammo/bullet/rifle/mpi_km
 	icon_state = "rpd"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_drum_big"
 	bonus_overlay = "rpd_100"
 	max_rounds = 100
@@ -195,7 +195,7 @@
 	desc = "A drum magazine for the Degtyaryov machine gun."
 	caliber = CALIBER_762X39
 	icon_state = "dp27"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	default_ammo = /datum/ammo/bullet/rifle/ap
 	max_rounds = 47
 	icon_state_mini = "mag_rifle"
@@ -231,7 +231,7 @@
 	name = "\improper MG-42 drum magazine (10x24mm)"
 	desc = "A drum magazine for the MG-42 light machine gun."
 	icon_state = "t42"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_drum"
 	caliber = CALIBER_10X24_CASELESS
 	default_ammo = /datum/ammo/bullet/rifle
@@ -245,7 +245,7 @@
 	name = "\improper MG-60 GPMG box magazine (10x26mm)"
 	desc = "A belt box for the MG-60 general purpose machinegun."
 	icon_state = "t60"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_gpmg"
 	caliber = CALIBER_10x26_CASELESS
 	default_ammo = /datum/ammo/bullet/rifle/machinegun
@@ -260,7 +260,7 @@
 	name = "\improper PR-412L1 box magazine (10x24mm)"
 	desc = "A semi-rectangular box of rounds for the PR-412L1 heavy pulse rifle."
 	icon_state = "m412l1"
-	icon = 'icons/obj/items/ammo/rifle.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/rifle.dmi'
 	icon_state_mini = "mag_box"
 	caliber = CALIBER_10X24_CASELESS
 	default_ammo = /datum/ammo/bullet/rifle
@@ -309,7 +309,7 @@
 	desc = "A wide drum magazine carefully filled to capacity with 10x26mm specialized smart rounds."
 	caliber = CALIBER_10x26_CASELESS
 	icon_state = "sg29"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_sg29"
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo = /datum/ammo/bullet/smartmachinegun
@@ -392,13 +392,13 @@
 	max_rounds = 20
 
 //-------------------------------------------------------
-//Marine magazine sniper, or the SR-127.
+//Guardsman magazine sniper, or the SR-127.
 /obj/item/ammo_magazine/rifle/chamberedrifle
 	name = "SR-127 bolt action rifle magazine"
 	desc = "A box magazine filled with 8.6x70mm rifle rounds for the SR-127."
 	caliber = CALIBER_86X70
 	icon_state = "tl127"
-	icon = 'icons/obj/items/ammo/sniper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/sniper.dmi'
 	icon_state_mini = "mag_rifle_big"
 	default_ammo = /datum/ammo/bullet/sniper/pfc
 	max_rounds = 10
@@ -413,7 +413,7 @@
 	bonus_overlay = "tl127_flak"
 
 //-------------------------------------------------------
-//Marine magazine automatic sniper, or the SR-81.
+//Guardsman magazine automatic sniper, or the SR-81.
 /obj/item/ammo_magazine/rifle/autosniper
 	name = "\improper SR-81 automatic sniper rifle magazine"
 	desc = "A box magazine filled with low pressure 8.6x70mm rifle rounds for the SR-81."
@@ -451,10 +451,10 @@
 	name = "\improper ALF-51B box magazine (10x25mm)"
 	desc = "A box magazine for the ALF-51B machinecarbine."
 	icon_state = "t60"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_gpmg"
 	caliber = CALIBER_10X25_CASELESS
-	default_ammo = /datum/ammo/bullet/rifle/som_machinegun
+	default_ammo = /datum/ammo/bullet/rifle/chaos_machinegun
 	w_class = WEIGHT_CLASS_NORMAL
 	max_rounds = 80
 	reload_delay = 1 SECONDS
@@ -554,9 +554,9 @@
 	max_rounds = 8
 
 //-------------------------------------------------------
-//V-31 SOM rifle
+//V-31 CHAOS rifle
 
-/obj/item/ammo_magazine/rifle/som
+/obj/item/ammo_magazine/rifle/chaos
 	name = "\improper V-31 magazine (10x24mm)"
 	desc = "A 10mm rifle magazine designed for the V-31."
 	caliber = CALIBER_10X24_CASELESS
@@ -566,7 +566,7 @@
 	default_ammo = /datum/ammo/bullet/rifle
 	max_rounds = 50
 
-/obj/item/ammo_magazine/rifle/som/ap
+/obj/item/ammo_magazine/rifle/chaos/ap
 	name = "\improper V-31 AP magazine (10x24mm)"
 	desc = "A 10mm rifle magazine designed for the V-31, loaded with armor piercing rounds."
 	caliber = CALIBER_10X24_CASELESS
@@ -576,7 +576,7 @@
 	default_ammo = /datum/ammo/bullet/rifle/hv
 	max_rounds = 50
 
-/obj/item/ammo_magazine/rifle/som/incendiary
+/obj/item/ammo_magazine/rifle/chaos/incendiary
 	name = "\improper V-31 incendiary magazine (10x24mm)"
 	desc = "A 10mm rifle magazine designed for the V-31, loaded with incendiary rounds."
 	icon_state = "v31_incend"
@@ -586,14 +586,14 @@
 //-------------------------------------------------------
 //V-41 Machine Gun
 
-/obj/item/ammo_magazine/som_mg
+/obj/item/ammo_magazine/chaos_mg
 	name = "\improper V-41 box magazine (10x26mm)"
 	desc = "A drum magazine for the V-41 machinegun."
 	icon_state = "v41"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_drum_big_long"
 	caliber = CALIBER_10x26_CASELESS
-	default_ammo = /datum/ammo/bullet/rifle/som_machinegun
+	default_ammo = /datum/ammo/bullet/rifle/chaos_machinegun
 	w_class = WEIGHT_CLASS_NORMAL
 	max_rounds = 200
 	reload_delay = 3 SECONDS
@@ -673,7 +673,7 @@
 	name = "\improper ML-41 GPMG box magazine (10x26mm)"
 	desc = "A belt box for the ML-41 assault machinegun."
 	icon_state = "minimi"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_gpmg"
 	caliber = CALIBER_10x26_CASELESS
 	default_ammo = /datum/ammo/bullet/rifle/machinegun
@@ -695,7 +695,7 @@
 	name = "box of 10x26mm"
 	desc = "A box containing 500 rounds of 10x26mm caseless."
 	icon_state = "minimi"
-	icon = 'icons/obj/items/ammo/packet.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/packet.dmi'
 	current_rounds = 500
 	max_rounds = 500
 
@@ -707,7 +707,7 @@
 	caliber = CALIBER_556X45
 	default_ammo = /datum/ammo/bullet/rifle/machinegun
 	icon_state = "l26"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_gpmg"
 	bonus_overlay = "l26_100"
 	max_rounds = 200

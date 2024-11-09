@@ -14,7 +14,7 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 /obj/structure/cable
 	name = "power cable"
 	desc = "A flexible, superconducting insulated cable for heavy-duty power transfer."
-	icon = 'icons/obj/power_cond/layer_cable.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power_cond/layer_cable.dmi'
 	icon_state = "l2-1-2-4-8-node"
 	color = COLOR_YELLOW
 	layer = WIRE_LAYER //Above hidden pipes, GAS_PIPE_HIDDEN_LAYER
@@ -383,11 +383,11 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	name = "cable coil"
 	desc = "A coil of insulated power cable."
 	gender = NEUTER //That's a cable coil sounds better than that's some cable coils
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	icon_state = "coil"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	worn_icon_state = "coil"
 	max_amount = MAXCOIL
@@ -432,11 +432,11 @@ GLOBAL_LIST(cable_radial_layer_list)
 		return
 	if(!GLOB.cable_radial_layer_list)
 		GLOB.cable_radial_layer_list = list(
-		"Layer 1" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-red"),
-		"Layer 2" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-yellow"),
-		"Layer 3" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-blue"),
-		"Multilayer cable hub" = image(icon = 'icons/obj/power.dmi', icon_state = "cable_bridge"),
-		"Multi Z layer cable hub" = image(icon = 'icons/obj/power.dmi', icon_state = "cablerelay-broken-cable")
+		"Layer 1" = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "coil-red"),
+		"Layer 2" = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "coil-yellow"),
+		"Layer 3" = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "coil-blue"),
+		"Multilayer cable hub" = image(icon = 'modular_imperium/master_files/icons/obj/power.dmi', icon_state = "cable_bridge"),
+		"Multi Z layer cable hub" = image(icon = 'modular_imperium/master_files/icons/obj/power.dmi', icon_state = "cablerelay-broken-cable")
 		)
 	var/layer_result = show_radial_menu(user, src, GLOB.cable_radial_layer_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if(!check_menu(user))
@@ -603,7 +603,7 @@ GLOBAL_LIST(cable_radial_layer_list)
 /obj/structure/cable/multilayer
 	name = "multilayer cable hub"
 	desc = "A flexible, superconducting insulated multilayer hub for heavy-duty multilayer power transfer."
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	icon_state = "cable_bridge"
 	cable_layer = CABLE_LAYER_2
 	machinery_layer = MACHINERY_LAYER_1
@@ -615,7 +615,7 @@ GLOBAL_LIST(cable_radial_layer_list)
 	var/obj/effect/node/layer3/cable_node_3
 
 /obj/effect/node
-	icon = 'icons/obj/power_cond/layer_cable.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power_cond/layer_cable.dmi'
 	icon_state = "l2-noconnection"
 	vis_flags = VIS_INHERIT_ID|VIS_INHERIT_PLANE|VIS_INHERIT_LAYER
 	color = COLOR_ALMOST_BLACK
@@ -691,10 +691,10 @@ GLOBAL_LIST(hub_radial_layer_list)
 		return
 	if(!GLOB.hub_radial_layer_list)
 		GLOB.hub_radial_layer_list = list(
-			"Layer 1" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-red"),
-			"Layer 2" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-yellow"),
-			"Layer 3" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-blue"),
-			"Machinery" = image(icon = 'icons/obj/power.dmi', icon_state = "smes")
+			"Layer 1" = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "coil-red"),
+			"Layer 2" = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "coil-yellow"),
+			"Layer 3" = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = "coil-blue"),
+			"Machinery" = image(icon = 'modular_imperium/master_files/icons/obj/power.dmi', icon_state = "smes")
 			)
 
 	var/layer_result = show_radial_menu(user, src, GLOB.hub_radial_layer_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)

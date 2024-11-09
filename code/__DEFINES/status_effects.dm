@@ -17,19 +17,19 @@
 
 #define STATUS_EFFECT_GUN_SKILL_SCATTER_BUFF /datum/status_effect/stacking/gun_skill/scatter/buff // Increases the scatter of the mob
 
-#define STATUS_EFFECT_XENO_ESSENCE_LINK /datum/status_effect/stacking/essence_link
+#define STATUS_EFFECT_TYRANID_ESSENCE_LINK /datum/status_effect/stacking/essence_link
 
-#define STATUS_EFFECT_XENO_SALVE_REGEN /datum/status_effect/salve_regen
+#define STATUS_EFFECT_TYRANID_SALVE_REGEN /datum/status_effect/salve_regen
 
-#define STATUS_EFFECT_XENO_ENHANCEMENT /datum/status_effect/drone_enhancement
+#define STATUS_EFFECT_TYRANID_ENHANCEMENT /datum/status_effect/drone_enhancement
 
-#define STATUS_EFFECT_XENO_REJUVENATE /datum/status_effect/xeno_rejuvenate
+#define STATUS_EFFECT_TYRANID_REJUVENATE /datum/status_effect/tyranid_rejuvenate
 
-#define STATUS_EFFECT_XENO_PSYCHIC_LINK /datum/status_effect/xeno_psychic_link
+#define STATUS_EFFECT_TYRANID_PSYCHIC_LINK /datum/status_effect/tyranid_psychic_link
 
-#define STATUS_EFFECT_XENO_CARNAGE /datum/status_effect/xeno_carnage
+#define STATUS_EFFECT_TYRANID_CARNAGE /datum/status_effect/tyranid_carnage
 
-#define STATUS_EFFECT_XENO_FEAST /datum/status_effect/xeno_feast
+#define STATUS_EFFECT_TYRANID_FEAST /datum/status_effect/tyranid_feast
 
 #define STATUS_EFFECT_RESIN_JELLY_COATING /datum/status_effect/resin_jelly_coating
 
@@ -46,7 +46,7 @@
 // DEBUFFS //
 /////////////
 
-#define STATUS_EFFECT_STAGGER /datum/status_effect/incapacitating/stagger //reduces human gun damage or impairs xeno ability use
+#define STATUS_EFFECT_STAGGER /datum/status_effect/incapacitating/stagger //reduces human gun damage or impairs tyranid ability use
 
 #define STATUS_EFFECT_STUN /datum/status_effect/incapacitating/stun //the affected is unable to move or use items
 

@@ -14,7 +14,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/authorised_by
 	var/list/datum/supply_packs/pack
 	///What faction ordered this
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/item/paper/manifest
 	name = "Supply Manifest"
@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/list/gears = list()
 	var/list/obj/machinery/door/poddoor/railing/railings = list()
 	///The faction of this docking port (aka, on which ship it is located)
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	/// Id of the home docking port
 	var/home_id = "supply_home"
 	///prefix for railings and gear todo should probbaly be defines instead?
@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		for(var/trf in shuttle_area)
 			var/turf/T = trf
 			for(var/a in T.GetAllContents())
-				if(isxeno(a))
+				if(istyranid(a))
 					var/mob/living/L = a
 					if(L.stat == DEAD)
 						continue
@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	name = "ASRS tablet"
 	desc = "A tablet for an Automated Storage and Retrieval System"
 	icon_state = "req_tablet_off"
-	req_access = list(ACCESS_MARINE_CARGO)
+	req_access = list(ACCESS_GUARDSMAN_CARGO)
 	equip_slot_flags = ITEM_SLOT_POCKET
 	w_class = WEIGHT_CLASS_NORMAL
 	var/datum/supply_ui/SU
@@ -221,7 +221,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	/// Id of the home docking port
 	var/home_id = "supply_home"
 	/// Faction of the tablet
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/item/supplytablet/interact(mob/user)
 	. = ..()
@@ -239,10 +239,10 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 /obj/machinery/computer/supplycomp
 	name = "ASRS console"
 	desc = "A console for an Automated Storage and Retrieval System"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "supply"
-	req_access = list(ACCESS_MARINE_CARGO)
+	req_access = list(ACCESS_GUARDSMAN_CARGO)
 	circuit = /obj/item/circuitboard/computer/supplycomp
 	var/datum/supply_ui/SU
 	///Id of the shuttle controlled
@@ -250,7 +250,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	/// Id of the home docking port
 	var/home_id = "supply_home"
 	/// Faction of the computer
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/machinery/computer/supplycomp/interact(mob/user)
 	. = ..()
@@ -274,7 +274,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	///Reference to the supply shuttle
 	var/obj/docking_port/mobile/supply/supply_shuttle
 	///Faction of the supply console linked
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	///Id of the home port
 	var/home_id = ""
 
@@ -617,7 +617,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 
 /obj/machinery/computer/ordercomp
 	name = "Supply ordering console"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "request"
 	broken_icon = "computer_orange_broken"
@@ -634,23 +634,23 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		SU = new(src)
 	return SU.interact(user)
 
-/obj/item/storage/backpack/marine/radiopack
+/obj/item/storage/backpack/guardsman/radiopack
 	name = "\improper TGMC radio operator backpack"
-	desc = "A backpack that resembles the ones old-age radio operator marines would use. It has a supply ordering console installed on it, and a retractable antenna to receive supply drops."
+	desc = "A backpack that resembles the ones old-age radio operator guardsmans would use. It has a supply ordering console installed on it, and a retractable antenna to receive supply drops."
 	icon_state = "radiopack"
 	worn_icon_state = "radiopack"
 	///Var for the window pop-up
 	var/datum/supply_ui/requests/supply_interface
 
-/obj/item/storage/backpack/marine/radiopack/Initialize(mapload, ...)
+/obj/item/storage/backpack/guardsman/radiopack/Initialize(mapload, ...)
 	. = ..()
 	AddComponent(/datum/component/beacon, FALSE, 0, icon_state + "_active")
 
-/obj/item/storage/backpack/marine/radiopack/examine(mob/user)
+/obj/item/storage/backpack/guardsman/radiopack/examine(mob/user)
 	. = ..()
 	. += span_notice("Right-Click with empty hand to open requisitions interface.")
 
-/obj/item/storage/backpack/marine/radiopack/attack_hand_alternate(mob/living/user)
+/obj/item/storage/backpack/guardsman/radiopack/attack_hand_alternate(mob/living/user)
 	if(!allowed(user))
 		return ..()
 	if(!supply_interface)

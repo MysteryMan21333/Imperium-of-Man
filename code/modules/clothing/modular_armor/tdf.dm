@@ -3,12 +3,12 @@
 /obj/item/clothing/suit/modular/tdf
 	name = "\improper Knight class medium armor"
 	desc = "The Knight medium combat armor is the standard issue armor given to TDF infantry. Provides good protection without minor impairment to the users mobility. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_MEDIUM
-	icon = 'icons/mob/modular/tdf_armor.dmi'
+	soft_armor = GUARDSMAN_ARMOR_MEDIUM
+	icon = 'modular_imperium/master_files/icons/mob/modular/tdf_armor.dmi'
 	worn_icon_list = list(
-		slot_wear_suit_str = 'icons/mob/modular/tdf_armor.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/clothing/suits_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/suits_right.dmi',
+		slot_wear_suit_str = 'modular_imperium/master_files/icons/mob/modular/tdf_armor.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/suits_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/suits_right.dmi',
 	)
 	icon_state = "tdf_medium"
 	worn_icon_state = "tdf_medium"
@@ -113,7 +113,7 @@
 /obj/item/clothing/suit/modular/tdf/light
 	name = "\improper Pawn class light armor"
 	desc = "The Pawn light combat armor is the standard issue armor given to TDF recon units and assault units for their mobility. Provides good protection without minor impairment to the users mobility. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_LIGHT
+	soft_armor = GUARDSMAN_ARMOR_LIGHT
 	icon_state = "tdf_light"
 	worn_icon_state = "tdf_light"
 	slowdown = SLOWDOWN_ARMOR_LIGHT
@@ -151,7 +151,7 @@
 /obj/item/clothing/suit/modular/tdf/heavy
 	name = "\improper Bishop class heavy armor"
 	desc = "A heavy piece of armor. Provides excellent protection however it does reduce mobility somewhat. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
-	soft_armor = MARINE_ARMOR_HEAVY
+	soft_armor = GUARDSMAN_ARMOR_HEAVY
 	icon_state = "tdf_heavy"
 	worn_icon_state = "tdf_heavy"
 	slowdown = SLOWDOWN_ARMOR_HEAVY
@@ -245,15 +245,15 @@
 /obj/item/clothing/head/modular/tdf
 	name = "\improper Pawn Class Helmet"
 	desc = "The standard combat helmet worn by TDF combat troops. Comes with an integrated hud and AR to provide situational awareness to the wearer."
-	icon = 'icons/mob/modular/tdf_helmets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/modular/tdf_helmets.dmi'
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/modular/tdf_helmets.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/clothing/hats_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/hats_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/modular/tdf_helmets.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/hats_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/hats_right.dmi',
 	)
 	icon_state = "tdf_helmet"
 	worn_icon_state = "tdf_helmet"
-	soft_armor = MARINE_ARMOR_MEDIUM
+	soft_armor = GUARDSMAN_ARMOR_MEDIUM
 	inv_hide_flags = HIDEEARS|HIDEALLHAIR
 	armor_protection_flags = HEAD|FACE|EYES
 	attachments_allowed = list(
@@ -302,7 +302,7 @@
 	name = "\improper Knight Class Helmet"
 	icon_state = "tdf_helmet_medium"
 	worn_icon_state = "tdf_helmet_medium"
-	soft_armor = MARINE_ARMOR_HEAVY
+	soft_armor = GUARDSMAN_ARMOR_HEAVY
 
 /obj/item/clothing/head/modular/tdf/heavy
 	name = "\improper Bishop Class Helmet"

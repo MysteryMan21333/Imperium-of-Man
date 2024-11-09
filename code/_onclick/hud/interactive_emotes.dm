@@ -4,7 +4,7 @@
 		return
 
 	var/list/interactions_list = list("Headbutt" = /atom/movable/screen/interaction/headbutt)	//Universal interactions
-	if(isxeno(src))	//Benos don't high five each other, they slap tails! A beno cannot initiate a high five, but can recieve one if prompted by a human
+	if(istyranid(src))	//Benos don't high five each other, they slap tails! A beno cannot initiate a high five, but can recieve one if prompted by a human
 		interactions_list["Tail Slap"] = /atom/movable/screen/interaction/fist_bump
 	else
 		interactions_list["High Five"] = /atom/movable/screen/interaction
@@ -40,7 +40,7 @@
 /atom/movable/screen/interaction
 	name = "high five"
 	desc = "You gonna leave them hanging?"
-	icon = 'icons/mob/screen_alert.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen_alert.dmi'
 	icon_state = "drunk2"	//It looks jolly
 	///Sound filed played when interaction is successful
 	var/interaction_sound = 'sound/effects/snap.ogg'
@@ -154,7 +154,7 @@
 	var/x_distance = owner.x - initiator.x
 	var/y_distance = owner.y - initiator.y
 
-	if(isxeno(owner))
+	if(istyranid(owner))
 		animate(owner, pixel_x = owner.pixel_x - x_distance * 8, pixel_y = owner.pixel_y - y_distance * 8, dir = initiator.dir,
 				time = 0.5 SECONDS, easing = BACK_EASING, flags = ANIMATION_PARALLEL)
 		owner.face_atom(initiator)
@@ -163,7 +163,7 @@
 				time = 0.5 SECONDS, easing = BACK_EASING, flags = ANIMATION_PARALLEL)
 	animate(pixel_x = initial(owner.pixel_x), pixel_y = initial(owner.pixel_y), time = 0.1 SECONDS)
 
-	if(isxeno(initiator))
+	if(istyranid(initiator))
 		animate(initiator, pixel_x = initiator.pixel_x + x_distance * 8, pixel_y = initiator.pixel_y + y_distance * 8, dir = owner.dir,
 				time = 0.5 SECONDS, easing = BACK_EASING, flags = ANIMATION_PARALLEL)
 		initiator.face_atom(owner)
@@ -174,13 +174,13 @@
 
 //We support interspecies bumping of fists and tails!
 /atom/movable/screen/interaction/fist_bump/success_message()
-	var/owner_xeno = isxeno(owner)
-	var/initiator_xeno = isxeno(initiator)
-	if(owner_xeno && initiator_xeno)
+	var/owner_tyranid = istyranid(owner)
+	var/initiator_tyranid = istyranid(initiator)
+	if(owner_tyranid && initiator_tyranid)
 		return "[owner] and [initiator] slap tails together!"
-	if(owner_xeno)
+	if(owner_tyranid)
 		return "[owner] slaps [initiator]'s fist!"
-	if(initiator_xeno)
+	if(initiator_tyranid)
 		return "[owner] fist bumps [initiator]'s tail!"
 	return "[owner] fist bumps [initiator]!"
 
@@ -204,7 +204,7 @@
 	var/rotation_angle
 	//This was so much pain, maintainers forgive me
 	if(owner.dir & (EAST | WEST))
-		if(isxenorunner(owner))	//Rounies get special upwards headbutts
+		if(istyranidrunner(owner))	//Rounies get special upwards headbutts
 			rotation_angle = owner.dir & EAST ? -15 : 15
 		else
 			rotation_angle = owner.dir & EAST ? 15 : -15
@@ -221,7 +221,7 @@
 		animate(pixel_x = initial(owner.pixel_x), pixel_y = initial(owner.pixel_y), time = 0.1 SECONDS)
 
 	if(initiator.dir & (EAST | WEST))
-		if(isxenorunner(initiator))
+		if(istyranidrunner(initiator))
 			rotation_angle = initiator.dir & EAST ? -15 : 15
 		else
 			rotation_angle = initiator.dir & EAST ? 15 : -15

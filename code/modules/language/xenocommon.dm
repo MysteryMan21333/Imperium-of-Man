@@ -1,6 +1,6 @@
-/datum/language/xenocommon
-	name = "Xenomorph"
-	desc = "The common tongue of the xenomorphs."
+/datum/language/tyranidcommon
+	name = "Tyranid"
+	desc = "The common tongue of the tyranids."
 	speech_verb = "hisses"
 	ask_verb = "hisses"
 	exclaim_verb = "hisses"
@@ -9,4 +9,4 @@
 	syllables = list("sss", "sSs", "SSS")
 	default_priority = 50
 
-	icon_state = "xeno"
+	icon_state = "tyranid"

@@ -231,7 +231,7 @@
 	update_icon_state()
 	rope.update_icon_state()
 	flick("rope_deploy", rope)
-	SSminimaps.add_marker(rope, MINIMAP_FLAG_MARINE, image('icons/UI_icons/map_blips.dmi', null, "rappel"))
+	SSminimaps.add_marker(rope, MINIMAP_FLAG_GUARDSMAN, image('icons/UI_icons/map_blips.dmi', null, "rappel"))
 
 	playsound(target, 'sound/effects/tadpolehovering.ogg', 100, TRUE, falloff = 2.5)
 	playsound(target, 'sound/effects/rappel.ogg', 50, TRUE)
@@ -295,8 +295,8 @@
 	if(rappel_state >= RAPPEL_STATE_USABLE) //Otherwise, tadpole retracts rappels normally
 		pre_retract()
 
-///Handles xeno attacks on the system; called by the rappel rope whenever attack_alien() is called on the rope
-/obj/structure/dropship_equipment/shuttle/rappel_system/proc/attack_rappel(mob/living/carbon/xenomorph/attacker)
+///Handles tyranid attacks on the system; called by the rappel rope whenever attack_alien() is called on the rope
+/obj/structure/dropship_equipment/shuttle/rappel_system/proc/attack_rappel(mob/living/carbon/tyranid/attacker)
 	//Stops the pilot bringing up the rappel to prevent it being disabled
 	rappel_condition = RAPPEL_CONDITION_HOOKED
 	var/previously_retracting = FALSE //Lets us continue retracting the rope if it was previously
@@ -351,7 +351,7 @@
 ///This is the rope that the system deploys, a subtype of the HvH deployment rappel.
 ///Created by the rappel system on init and stored in the rappel system when it's not in use
 /obj/effect/rappel_rope/tadpole
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	name = "tadpole rappel rope"
 	light_system = STATIC_LIGHT
 	light_power = 0.5
@@ -403,8 +403,8 @@
 	. = ..()
 	user.forceMove(get_turf(parent_system))
 
-//Rappel destruction, xeno mains rejoice
-/obj/effect/rappel_rope/tadpole/attack_alien(mob/living/carbon/xenomorph/X, damage_amount, damage_type, damage_flag, effects, armor_penetration, isrightclick)
+//Rappel destruction, tyranid mains rejoice
+/obj/effect/rappel_rope/tadpole/attack_alien(mob/living/carbon/tyranid/X, damage_amount, damage_type, damage_flag, effects, armor_penetration, isrightclick)
 	. = ..()
 	parent_system.attack_rappel(X)
 
@@ -412,6 +412,6 @@
 /obj/item/spare_cord
 	name = "Replacement rappel cord box"
 	desc = "A box full of expensive, plasteel-infused spare rappel cord for a rappel system. Click on a rappel system to replace any damaged cord, making the system functional again."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "cordbox"
 	w_class = WEIGHT_CLASS_BULKY

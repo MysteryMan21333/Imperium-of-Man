@@ -3,7 +3,7 @@
 /obj/machinery/bioprinter
 	name = "bio/synthetic printer"
 	desc = "It's a machine that can either grow replacement or manufacture synthetic organs."
-	icon = 'icons/obj/surgery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/surgery.dmi'
 
 	anchored = TRUE
 	density = TRUE

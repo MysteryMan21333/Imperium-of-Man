@@ -1,6 +1,6 @@
 /datum/species/skeleton
 	name = "Skeleton"
-	icobase = 'icons/mob/human_races/r_skeleton.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_skeleton.dmi'
 	unarmed_type = /datum/unarmed_attack/punch
 	count_human = TRUE
 

@@ -39,19 +39,19 @@
 		if(0)
 			return ALL_ACCESS
 		if(1)
-			return list(ACCESS_MARINE_CAPTAIN, ACCESS_MARINE_COMMANDER, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_PILOT, ACCESS_MARINE_MECH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_ARMORED)//command
+			return list(ACCESS_GUARDSMAN_CAPTAIN, ACCESS_GUARDSMAN_COMMANDER, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_TADPOLE, ACCESS_GUARDSMAN_PILOT, ACCESS_GUARDSMAN_MECH, ACCESS_GUARDSMAN_BRIDGE, ACCESS_GUARDSMAN_ARMORED)//command
 		if(2)
-			return list(ACCESS_MARINE_CE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_REMOTEBUILD)//engineering and maintenance
+			return list(ACCESS_GUARDSMAN_CE, ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_REMOTEBUILD)//engineering and maintenance
 		if(3)
-			return list(ACCESS_MARINE_CMO, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_RESEARCH)//medbay
+			return list(ACCESS_GUARDSMAN_CMO, ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_RESEARCH)//medbay
 		if(4)
-			return list(ACCESS_MARINE_RO, ACCESS_MARINE_CARGO)//req
+			return list(ACCESS_GUARDSMAN_RO, ACCESS_GUARDSMAN_CARGO)//req
 		if(5)
-			return list(ACCESS_MARINE_WO, ACCESS_MARINE_ARMORY, ACCESS_MARINE_BRIG)//security
+			return list(ACCESS_GUARDSMAN_WO, ACCESS_GUARDSMAN_ARMORY, ACCESS_GUARDSMAN_BRIG)//security
 		if(6)
-			return list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_ENGPREP, ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_LEADER)//spess mahreens
+			return list(ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_ENGPREP, ACCESS_GUARDSMAN_SMARTPREP, ACCESS_GUARDSMAN_LEADER)//spess mahreens
 		if(7)
-			return list(ACCESS_MARINE_ALPHA, ACCESS_MARINE_BRAVO, ACCESS_MARINE_CHARLIE, ACCESS_MARINE_DELTA)//squads
+			return list(ACCESS_GUARDSMAN_ALPHA, ACCESS_GUARDSMAN_BRAVO, ACCESS_GUARDSMAN_CHARLIE, ACCESS_GUARDSMAN_DELTA)//squads
 		if(8)
 			return list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING)//Civilian
 
@@ -71,7 +71,7 @@
 		if(5)
 			return "[SSmapping.configs[SHIP_MAP].map_name] Security"//security
 		if(6)
-			return "[SSmapping.configs[SHIP_MAP].map_name] Marine"//marine prep
+			return "[SSmapping.configs[SHIP_MAP].map_name] Guardsman"//guardsman prep
 		if(7)
 			return "Squad Access"//squads
 		if(8)
@@ -80,65 +80,65 @@
 
 /proc/get_access_desc(A)
 	switch(A)
-		if(ACCESS_MARINE_WO)
+		if(ACCESS_GUARDSMAN_WO)
 			return "WO's Office"
-		if(ACCESS_MARINE_BRIG)
+		if(ACCESS_GUARDSMAN_BRIG)
 			return "Brig"
-		if(ACCESS_MARINE_ARMORY)
+		if(ACCESS_GUARDSMAN_ARMORY)
 			return "Armory"
-		if(ACCESS_MARINE_CMO)
+		if(ACCESS_GUARDSMAN_CMO)
 			return "CMO's Office"
-		if(ACCESS_MARINE_MEDBAY)
+		if(ACCESS_GUARDSMAN_MEDBAY)
 			return "Medbay"
-		if(ACCESS_MARINE_CHEMISTRY)
+		if(ACCESS_GUARDSMAN_CHEMISTRY)
 			return "Chemistry"
-		if(ACCESS_MARINE_RESEARCH)
+		if(ACCESS_GUARDSMAN_RESEARCH)
 			return "Research"
-		if(ACCESS_MARINE_CE)
+		if(ACCESS_GUARDSMAN_CE)
 			return "CE's Office"
-		if(ACCESS_MARINE_ENGINEERING)
+		if(ACCESS_GUARDSMAN_ENGINEERING)
 			return "Engineering"
-		if(ACCESS_MARINE_REMOTEBUILD)
+		if(ACCESS_GUARDSMAN_REMOTEBUILD)
 			return "FOB Construction Drone"
-		if(ACCESS_MARINE_CAPTAIN)
+		if(ACCESS_GUARDSMAN_CAPTAIN)
 			return "Captain's Quarters"
-		if(ACCESS_MARINE_COMMANDER)
+		if(ACCESS_GUARDSMAN_COMMANDER)
 			return "Field Commander's Quarters"
-		if(ACCESS_MARINE_LOGISTICS)
+		if(ACCESS_GUARDSMAN_LOGISTICS)
 			return "Logistics"
-		if(ACCESS_MARINE_BRIDGE)
+		if(ACCESS_GUARDSMAN_BRIDGE)
 			return "Bridge"
-		if(ACCESS_MARINE_PREP)
-			return "Marine Prep"
-		if(ACCESS_MARINE_ENGPREP)
-			return "Marine Squad Engineering"
-		if(ACCESS_MARINE_MEDPREP)
-			return "Marine Squad Medical"
-		if(ACCESS_MARINE_SMARTPREP)
-			return "Marine Smartgunner"
-		if(ACCESS_MARINE_LEADER)
-			return "Marine Leader"
-		if(ACCESS_MARINE_ALPHA)
+		if(ACCESS_GUARDSMAN_PREP)
+			return "Guardsman Prep"
+		if(ACCESS_GUARDSMAN_ENGPREP)
+			return "Guardsman Squad Engineering"
+		if(ACCESS_GUARDSMAN_MEDPREP)
+			return "Guardsman Squad Medical"
+		if(ACCESS_GUARDSMAN_SMARTPREP)
+			return "Guardsman Smartgunner"
+		if(ACCESS_GUARDSMAN_LEADER)
+			return "Guardsman Leader"
+		if(ACCESS_GUARDSMAN_ALPHA)
 			return "Alpha Squad"
-		if(ACCESS_MARINE_BRAVO)
+		if(ACCESS_GUARDSMAN_BRAVO)
 			return "Bravo Squad"
-		if(ACCESS_MARINE_CHARLIE)
+		if(ACCESS_GUARDSMAN_CHARLIE)
 			return "Charlie Squad"
-		if(ACCESS_MARINE_DELTA)
+		if(ACCESS_GUARDSMAN_DELTA)
 			return "Delta Squad"
-		if(ACCESS_MARINE_RO)
+		if(ACCESS_GUARDSMAN_RO)
 			return "RO's Office"
-		if(ACCESS_MARINE_CARGO)
+		if(ACCESS_GUARDSMAN_CARGO)
 			return "Requisitions"
-		if(ACCESS_MARINE_DROPSHIP)
+		if(ACCESS_GUARDSMAN_DROPSHIP)
 			return "Dropship Piloting"
-		if(ACCESS_MARINE_TADPOLE)
+		if(ACCESS_GUARDSMAN_TADPOLE)
 			return "Tadpole Piloting"
-		if(ACCESS_MARINE_PILOT)
+		if(ACCESS_GUARDSMAN_PILOT)
 			return "Pilot Gear"
-		if(ACCESS_MARINE_MECH)
+		if(ACCESS_GUARDSMAN_MECH)
 			return "Mech"
-		if(ACCESS_MARINE_ARMORED)
+		if(ACCESS_GUARDSMAN_ARMORED)
 			return "Armored Vehicle Bay"
 		if(ACCESS_CIVILIAN_RESEARCH)
 			return "Civilian Research"
@@ -355,68 +355,68 @@
 			. = size ? "CLF" : "CLF Medic"
 		if("CLF3")
 			. = size ? "CLF" : "CLF Leader"
-		if("SOM_E1")
-			. = size ? "PTE" : "SOM Private"
-		if("SOM_E2")
-			. = size ? "PFC" : "SOM Private First Class"
-		if("SOM_E3")
-			. = size ? "LCP" : "SOM Lance Corporal"
-		if("SOM_E4")
-			. = size ? "CPL" : "SOM Corporal"
-		if("SOM_E5")
-			. = size ? "CFC" : "SOM Corporal First Class"
-		if("SOM_S1")
-			. = size ? "3SG" : "SOM Third Sergeant"
-		if("SOM_S2")
-			. = size ? "2SG" : "SOM Second Sergeant"
-		if("SOM_S3")
-			. = size ? "1SG" : "SOM First Sergeant"
-		if("SOM_S4")
-			. = size ? "SSG" : "SOM Staff Sergeant"
-		if("SOM_S5")
-			. = size ? "MSG" : "SOM Master Sergeant"
-		if("SOM_W1")
-			. = size ? "3WO" : "SOM Third Warrant Officer"
-		if("SOM_W2")
-			. = size ? "2WO" : "SOM Second Warrant Officer"
-		if("SOM_W3")
-			. = size ? "1WWO" : "SOM First Warrant Officer"
-		if("SOM_W4")
-			. = size ? "MWO" : "SOM Master Warrant Officer"
-		if("SOM_W5")
-			. = size ? "SWO" : "SOM Senior Warrant Officer"
-		if("SOM_W6")
-			. = size ? "CWO" : "SOM Chief Warrant Officer"
-		if("SOM_O1")
-			. = size ? "2LT" : "SOM Second Lieutenant"
-		if("SOM_O2")
-			. = size ? "LTA" : "SOM Lieutenant"
-		if("SOM_O3")
-			. = size ? "CPT" : "SOM Captain"
-		if("SOM_O4")
-			. = size ? "MAJ" : "SOM Major"
-		if("SOM_O5")
-			. = size ? "LTC" : "SOM Lieutenant-Colonel"
-		if("SOM_O6")
-			. = size ? "SLTC" : "SOM Senior Lieutenant-Colonel"
-		if("SOM_O7")
-			. = size ? "COL" : "SOM Colonel"
-		if("SOM_G1")
-			. = size ? "BG" : "SOM Brigadier-General"
-		if("SOM_G2")
-			. = size ? "MG" : "SOM Major-General"
-		if("SOM_G3")
-			. = size ? "LG" : "SOM Lieutenant-General"
-		if("SOM_G4")
-			. = size ? "GEN" : "SOM General"
-		if("SOM_A1")
-			. = size ? "RADM(1)" : "SOM Rear-Admiral"
-		if("SOM_A2")
-			. = size ? "RADM(2)" : "SOM Rear-Admiral"
-		if("SOM_A3")
-			. = size ? "VADM" : "SOM Vice-Admiral"
-		if("SOM_A4")
-			. = size ? "ADM" : "SOM Admiral"
+		if("CHAOS_E1")
+			. = size ? "PTE" : "CHAOS Private"
+		if("CHAOS_E2")
+			. = size ? "PFC" : "CHAOS Private First Class"
+		if("CHAOS_E3")
+			. = size ? "LCP" : "CHAOS Lance Corporal"
+		if("CHAOS_E4")
+			. = size ? "CPL" : "CHAOS Corporal"
+		if("CHAOS_E5")
+			. = size ? "CFC" : "CHAOS Corporal First Class"
+		if("CHAOS_S1")
+			. = size ? "3SG" : "CHAOS Third Sergeant"
+		if("CHAOS_S2")
+			. = size ? "2SG" : "CHAOS Second Sergeant"
+		if("CHAOS_S3")
+			. = size ? "1SG" : "CHAOS First Sergeant"
+		if("CHAOS_S4")
+			. = size ? "SSG" : "CHAOS Staff Sergeant"
+		if("CHAOS_S5")
+			. = size ? "MSG" : "CHAOS Master Sergeant"
+		if("CHAOS_W1")
+			. = size ? "3WO" : "CHAOS Third Warrant Officer"
+		if("CHAOS_W2")
+			. = size ? "2WO" : "CHAOS Second Warrant Officer"
+		if("CHAOS_W3")
+			. = size ? "1WWO" : "CHAOS First Warrant Officer"
+		if("CHAOS_W4")
+			. = size ? "MWO" : "CHAOS Master Warrant Officer"
+		if("CHAOS_W5")
+			. = size ? "SWO" : "CHAOS Senior Warrant Officer"
+		if("CHAOS_W6")
+			. = size ? "CWO" : "CHAOS Chief Warrant Officer"
+		if("CHAOS_O1")
+			. = size ? "2LT" : "CHAOS Second Lieutenant"
+		if("CHAOS_O2")
+			. = size ? "LTA" : "CHAOS Lieutenant"
+		if("CHAOS_O3")
+			. = size ? "CPT" : "CHAOS Captain"
+		if("CHAOS_O4")
+			. = size ? "MAJ" : "CHAOS Major"
+		if("CHAOS_O5")
+			. = size ? "LTC" : "CHAOS Lieutenant-Colonel"
+		if("CHAOS_O6")
+			. = size ? "SLTC" : "CHAOS Senior Lieutenant-Colonel"
+		if("CHAOS_O7")
+			. = size ? "COL" : "CHAOS Colonel"
+		if("CHAOS_G1")
+			. = size ? "BG" : "CHAOS Brigadier-General"
+		if("CHAOS_G2")
+			. = size ? "MG" : "CHAOS Major-General"
+		if("CHAOS_G3")
+			. = size ? "LG" : "CHAOS Lieutenant-General"
+		if("CHAOS_G4")
+			. = size ? "GEN" : "CHAOS General"
+		if("CHAOS_A1")
+			. = size ? "RADM(1)" : "CHAOS Rear-Admiral"
+		if("CHAOS_A2")
+			. = size ? "RADM(2)" : "CHAOS Rear-Admiral"
+		if("CHAOS_A3")
+			. = size ? "VADM" : "CHAOS Vice-Admiral"
+		if("CHAOS_A4")
+			. = size ? "ADM" : "CHAOS Admiral"
 		if("ICC1")
 			. = size ? "ICC" : "ICC Standard"
 		if("ICC2")
@@ -442,7 +442,7 @@
 		if("MRC3")
 			. = size ? "MERC" : "MERC Engineer"
 		if("VM")
-			. = size ? "VAT" : "VatGrown Marine"
+			. = size ? "VAT" : "VatGrown Guardsman"
 		if("Mk.V")
 			. = size ? "Mk.V" : "Mark V"
 		if("Mk.IV")

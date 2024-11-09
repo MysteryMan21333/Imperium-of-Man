@@ -1,6 +1,6 @@
 /datum/job/erp
 	title = "ERP Prankster"
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/prankster
@@ -15,7 +15,7 @@
 	id = /obj/item/card/id/captains_spare
 	ears = /obj/item/radio/headset/distress/erp
 	mask = /obj/item/clothing/mask/gas/clown_hat
-	gloves = /obj/item/clothing/gloves/marine/black
+	gloves = /obj/item/clothing/gloves/guardsman/black
 	back = /obj/item/storage/backpack/clown
 	shoes = /obj/item/clothing/shoes/clown_shoes/erp
 	w_uniform = /obj/item/clothing/under/rank/clown/erp
@@ -23,7 +23,7 @@
 	head = /obj/item/clothing/head/tgmcberet/red2/erp
 	l_store = /obj/item/storage/pouch/medkit/firstaid
 	r_store = /obj/item/storage/holster/flarepouch/full
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	suit_store = /obj/item/weapon/gun/rifle/standard_carbine/beginner
 
 /datum/outfit/job/erp/post_equip(mob/living/carbon/human/H, visualsOnly)

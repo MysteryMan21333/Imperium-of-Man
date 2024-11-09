@@ -7,8 +7,8 @@
 	resistance_flags = UNACIDABLE
 	icon_state = "bottle"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/drinks_lefthand.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/drinks_righthand.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_lefthand.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/drinks_righthand.dmi',
 	)
 
 	///Like Edible's food type, what kind of drink is this?

@@ -111,7 +111,7 @@
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/medbay)
 "jT" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/blue/whiteblue,
 /area/lv624/lazarus/medbay)
 "kj" = (

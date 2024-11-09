@@ -19,7 +19,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 		///Base type doesn't have a list of weapons to spawn
 		/obj/effect/landmark/weapon_spawn,
 		///Base type that is missing a lot of stuff needed, let's just not
-		/mob/living/carbon/xenomorph,
+		/mob/living/carbon/tyranid,
 		///Base type doesn't have any variations in it's variation list
 		/turf/closed/wall/variable,
 		//This is meant to fail extremely loud every single time it occurs in any environment in any context, and it falsely alarms when this unit test iterates it. Let's not spawn it in.

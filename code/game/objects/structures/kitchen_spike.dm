@@ -2,7 +2,7 @@
 
 /obj/structure/kitchenspike
 	name = "a meat spike"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/kitchen.dmi'
 	icon_state = "spike"
 	desc = "A spike for collecting meat from animals"
 	density = TRUE
@@ -10,7 +10,7 @@
 	coverage = 5
 	var/meat = 0
 	var/occupied = 0
-	var/meattype = 0 // 0 - Nothing, 1 - Monkey, 2 - Xeno
+	var/meattype = 0 // 0 - Nothing, 1 - Monkey, 2 - Tyranid
 
 /obj/structure/kitchenspike/attackby(obj/item/grab/G, mob/user)
 	if(!istype(G, /obj/item/grab))
@@ -51,11 +51,11 @@
 		else if(src.meattype == 2)
 			if(src.meat > 1)
 				src.meat--
-				new /obj/item/reagent_containers/food/snacks/meat/xeno( src.loc )
+				new /obj/item/reagent_containers/food/snacks/meat/tyranid( src.loc )
 				to_chat(usr, "You remove some meat from the alien.")
 			else if(src.meat == 1)
 				src.meat--
-				new /obj/item/reagent_containers/food/snacks/meat/xeno(src.loc)
+				new /obj/item/reagent_containers/food/snacks/meat/tyranid(src.loc)
 				to_chat(usr, "You remove the last piece of meat from the alien!")
 				src.icon_state = "spike"
 				src.occupied = 0

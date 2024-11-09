@@ -159,7 +159,7 @@
 
 /obj/item/mecha_ammo/vendable/pistol
 	name = "box of pistol bullets"
-	desc = "Bigger version of the small pistol bullets most marines use."
+	desc = "Bigger version of the small pistol bullets most guardsmans use."
 	icon_state = "pistol_ammo"
 	rounds = 200
 	ammo_type = MECHA_AMMO_PISTOL

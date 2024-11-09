@@ -3,7 +3,7 @@
 ///old style janicart
 /obj/structure/bed/chair/janicart
 	name = "janicart"
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	desc = "A brave janitor cyborg gave its life to produce such an amazing combination of speed and utility."
 	icon_state = "pussywagon"
 	anchored = FALSE
@@ -74,6 +74,6 @@
 /obj/item/key
 	name = "key"
 	desc = "A keyring with a small steel key, and a pink fob reading \"Pussy Wagon\"."
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "keys"
 	w_class = WEIGHT_CLASS_TINY

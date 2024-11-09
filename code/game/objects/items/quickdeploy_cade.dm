@@ -2,7 +2,7 @@
 /obj/item/quikdeploy
 	name = "QuikDeploy System"
 	desc = "This is a QuikDeploy system, allows for extremely fast placement of various objects."
-	icon = 'icons/obj/items/quikdeploy_cade.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/quikdeploy_cade.dmi'
 	w_class = WEIGHT_CLASS_SMALL //While this is small, normal 50 stacks of metal is NORMAL so this is a bit on the bad space to cade ratio
 	var/delay = 0 //Delay on deploying the thing
 	var/atom/movable/thing_to_deploy = null

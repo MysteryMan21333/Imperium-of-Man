@@ -138,7 +138,7 @@
 
 //todo: make a generic activable/implant parent type
 /datum/action/ability/activable/sandevistan
-	action_icon = 'icons/obj/items/implants.dmi'
+	action_icon = 'modular_imperium/master_files/icons/obj/items/implants.dmi'
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY|ABILITY_IGNORE_SELECTED_ABILITY
 	use_state_flags = ABILITY_USE_STAGGERED|ABILITY_USE_INCAP|ABILITY_USE_LYING|ABILITY_USE_BUCKLED|ABILITY_USE_BUSY
 	keybinding_signals = list(

@@ -1,13 +1,13 @@
 /obj/item/detective_scanner
 	name = "forensic scanner"
 	desc = "Used to scan objects for DNA and fingerprints."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "forensic1"
 	var/list/stored = list()
 	w_class = WEIGHT_CLASS_NORMAL
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "electronic"
 	atom_flags = CONDUCT

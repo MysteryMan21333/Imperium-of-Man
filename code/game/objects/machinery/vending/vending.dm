@@ -56,7 +56,7 @@
 /obj/machinery/vending
 	name = "Vendomat"
 	desc = "A generic vending machine."
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "generic"
 	anchored = TRUE
 	density = TRUE
@@ -279,38 +279,38 @@
 	for(var/season in seasonal_items)
 		products[seasonal_items[season]] += SSpersistence.season_items[season]
 
-/obj/machinery/vending/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/vending/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	if(xeno_attacker.a_intent == INTENT_HARM)
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+	if(tyranid_attacker.a_intent == INTENT_HARM)
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
 		if(prob(damage_amount))
 			playsound(loc, 'sound/effects/metalhit.ogg', 25, 1)
-			xeno_attacker.visible_message(span_danger("\The [xeno_attacker] smashes \the [src] beyond recognition!"), \
+			tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] smashes \the [src] beyond recognition!"), \
 			span_danger("We enter a frenzy and smash \the [src] apart!"), null, 5)
 			malfunction()
 			return TRUE
 		else
-			xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+			tyranid_attacker.visible_message(span_danger("[tyranid_attacker] slashes \the [src]!"), \
 			span_danger("We slash \the [src]!"), null, 5)
 			playsound(loc, 'sound/effects/metalhit.ogg', 25, 1)
 		return TRUE
 
 	if(tipped_level)
-		to_chat(xeno_attacker, span_warning("There's no reason to bother with that old piece of trash."))
+		to_chat(tyranid_attacker, span_warning("There's no reason to bother with that old piece of trash."))
 		return FALSE
 
-	xeno_attacker.visible_message(span_warning("\The [xeno_attacker] begins to lean against \the [src]."), \
+	tyranid_attacker.visible_message(span_warning("\The [tyranid_attacker] begins to lean against \the [src]."), \
 	span_warning("You begin to lean against \the [src]."), null, 5)
 	tipped_level = 1
 	var/shove_time = 1 SECONDS
-	if(xeno_attacker.mob_size == MOB_SIZE_BIG)
+	if(tyranid_attacker.mob_size == MOB_SIZE_BIG)
 		shove_time = 5 SECONDS
-	if(istype(xeno_attacker,/mob/living/carbon/xenomorph/crusher))
+	if(istype(tyranid_attacker,/mob/living/carbon/tyranid/crusher))
 		shove_time = 1.5 SECONDS
-	if(do_after(xeno_attacker, shove_time, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
-		xeno_attacker.visible_message(span_danger("\The [xeno_attacker] knocks \the [src] down!"), \
+	if(do_after(tyranid_attacker, shove_time, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
+		tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] knocks \the [src] down!"), \
 		span_danger("You knock \the [src] down!"), null, 5)
 		tip_over()
 	else
@@ -547,8 +547,8 @@
 
 	var/ui_theme
 	switch(faction)
-		if(FACTION_SOM)
-			ui_theme = "som"
+		if(FACTION_CHAOS)
+			ui_theme = "chaos"
 		else
 			ui_theme = "main"
 	.["ui_theme"] = ui_theme

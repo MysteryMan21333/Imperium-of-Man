@@ -1,7 +1,7 @@
 /obj/item/rsp
 	name = "\improper Rapid-Seed-Producer (RSP)"
 	desc = "A device used to rapidly deploy seeds."
-	icon = 'icons/obj/items/tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "rcp"
 	opacity = FALSE
 	density = FALSE

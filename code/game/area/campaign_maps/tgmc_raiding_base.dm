@@ -150,7 +150,7 @@
 	icon_state = "hangar"
 
 /area/campaign/tgmc_raiding/underground/security
-	name = "\improper Marine Security"
+	name = "\improper Guardsman Security"
 	icon_state = "brig"
 	minimap_color = MINIMAP_AREA_SEC
 
@@ -206,7 +206,7 @@
 	name = "\improper South Bathroom"
 
 /area/campaign/tgmc_raiding/underground/living/laundry
-	name = "\improper Marine Laundromat"
+	name = "\improper Guardsman Laundromat"
 	icon_state = "fitness"
 
 /area/campaign/tgmc_raiding/underground/living/boxing
@@ -214,11 +214,11 @@
 	icon_state = "fitness"
 
 /area/campaign/tgmc_raiding/underground/living/chapel
-	name = "\improper Marine Chapel"
+	name = "\improper Guardsman Chapel"
 	icon_state = "chapeloffice"
 
 /area/campaign/tgmc_raiding/underground/living/library
-	name = "\improper Marine Library"
+	name = "\improper Guardsman Library"
 	icon_state = "library"
 
 /area/campaign/tgmc_raiding/underground/living/offices
@@ -233,7 +233,7 @@
 	name = "\improper Firing Range"
 
 /area/campaign/tgmc_raiding/underground/general/prep
-	name = "\improper Marine Prep"
+	name = "\improper Guardsman Prep"
 
 /area/campaign/tgmc_raiding/underground/general/hallway
 	name = "\improper Central Base Hallway"

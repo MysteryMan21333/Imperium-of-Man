@@ -180,24 +180,24 @@
 /proc/ui_style2icon(ui_style)
 	switch(ui_style)
 		if("Retro")
-			return 'icons/mob/screen/retro.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/retro.dmi'
 		if("Plasmafire")
-			return 'icons/mob/screen/plasmafire.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/plasmafire.dmi'
 		if("Slimecore")
-			return 'icons/mob/screen/slimecore.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/slimecore.dmi'
 		if("Operative")
-			return 'icons/mob/screen/operative.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/operative.dmi'
 		if("Clockwork")
-			return 'icons/mob/screen/clockwork.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/clockwork.dmi'
 		if("White")
-			return 'icons/mob/screen/White.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/White.dmi'
 		if("Glass")
-			return 'icons/mob/screen/glass.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/glass.dmi'
 		if("Minimalist")
-			return 'icons/mob/screen/minimalist.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/minimalist.dmi'
 		if("Holo")
-			return 'icons/mob/screen/holo.dmi'
-	return 'icons/mob/screen/midnight.dmi'
+			return 'modular_imperium/master_files/icons/mob/screen/holo.dmi'
+	return 'modular_imperium/master_files/icons/mob/screen/midnight.dmi'
 
 
 //Splits the text of a file at seperator and returns them in a list.

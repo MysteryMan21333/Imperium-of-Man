@@ -1,7 +1,7 @@
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle
 	name = "\improper Runner Saddle"
 	desc = "A rugged saddle, designed to be worn by runners. You can alt-click to change the style"
-	icon = 'icons/Xeno/saddles/saddles.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/saddles/saddles.dmi'
 	//Same as icon state; We need to cache it so that update icons works later in the code and fetches the right style
 	var/style = "cowboybags"
 	icon_state = "cowboybags"
@@ -21,11 +21,11 @@
 /datum/storage/backpack/duffelbag/saddle
 	max_storage_space = 18
 
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle/examine(mob/user)
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle/examine(mob/user)
 	. = ..()
 	. += span_notice("Its current style is set to [style_list_inverted[style]].")
 
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle/AltClick(mob/user)
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle/AltClick(mob/user)
 	if(!ishuman(user))
 		return
 	var/mob/living/living_user = user
@@ -37,24 +37,24 @@
 	style = style_list[new_style]
 	icon_state = style
 
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle/mob_can_equip(mob/user, slot, warning, override_nodrop, bitslot)
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle/mob_can_equip(mob/user, slot, warning, override_nodrop, bitslot)
 	if(!slot || !user)
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_NODROP) && slot != SLOT_L_HAND && slot != SLOT_R_HAND && !override_nodrop) //No drops can only be equipped to a hand slot
 		if(slot == SLOT_L_HAND || slot == SLOT_R_HAND)
 			to_chat(user, span_notice("[src] is stuck to your hand!"))
 			return FALSE
-	if(isxenorunner(user))
+	if(istyranidrunner(user))
 		return TRUE
 	return FALSE
 
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle/afterattack(atom/target, mob/user, proximity)
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
-	if(!isxenorunner(target))
+	if(!istyranidrunner(target))
 		return
-	var/mob/living/carbon/xenomorph/runner/rouny = target
+	var/mob/living/carbon/tyranid/runner/rouny = target
 	if(rouny.back)
 		balloon_alert(user,"This runner already has a saddle on!")
 		return
@@ -66,26 +66,26 @@
 	user.temporarilyRemoveItemFromInventory(src)
 	rouny.equip_to_slot_if_possible(src,SLOT_BACK,TRUE)
 
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle/equipped(mob/equipper, slot)
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle/equipped(mob/equipper, slot)
 	. = ..()
-	if(!isxeno(equipper))
+	if(!istyranid(equipper))
 		return
-	var/mob/living/carbon/xenomorph/rouny = equipper
+	var/mob/living/carbon/tyranid/rouny = equipper
 	rouny.backpack_overlay.icon_state = src.style
 	ENABLE_BITFIELD(rouny.buckle_flags, CAN_BUCKLE)
 	rouny.AddElement(/datum/element/ridable, /datum/component/riding/creature/crusher/runner)
-	rouny.RegisterSignal(rouny, COMSIG_GRAB_SELF_ATTACK, TYPE_PROC_REF(/mob/living/carbon/xenomorph, grabbed_self_attack))
+	rouny.RegisterSignal(rouny, COMSIG_GRAB_SELF_ATTACK, TYPE_PROC_REF(/mob/living/carbon/tyranid, grabbed_self_attack))
 
-/obj/item/storage/backpack/marine/duffelbag/xenosaddle/unequipped(mob/unequipper, slot)
+/obj/item/storage/backpack/guardsman/duffelbag/tyranidsaddle/unequipped(mob/unequipper, slot)
 	. = ..()
-	if(!isxeno(unequipper))
+	if(!istyranid(unequipper))
 		return
-	var/mob/living/carbon/xenomorph/rouny = unequipper
+	var/mob/living/carbon/tyranid/rouny = unequipper
 	rouny.backpack_overlay.icon_state = ""
 	DISABLE_BITFIELD(rouny.buckle_flags, CAN_BUCKLE)
 	rouny.RemoveElement(/datum/element/ridable, /datum/component/riding/creature/crusher/runner)
 	rouny.UnregisterSignal(rouny, COMSIG_GRAB_SELF_ATTACK)
 	rouny.unbuckle_all_mobs(TRUE)
 
-/mob/living/carbon/xenomorph/runner/mouse_buckle_handling(atom/movable/dropping, mob/living/user)
+/mob/living/carbon/tyranid/runner/mouse_buckle_handling(atom/movable/dropping, mob/living/user)
 	return

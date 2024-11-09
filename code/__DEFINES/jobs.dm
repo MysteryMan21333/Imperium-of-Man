@@ -2,8 +2,8 @@
 
 #define JOB_DISPLAY_ORDER_DEFAULT 0
 
-#define JOB_DISPLAY_ORDER_XENO_QUEEN 1
-#define JOB_DISPLAY_ORDER_XENOMORPH 2
+#define JOB_DISPLAY_ORDER_TYRANID_QUEEN 1
+#define JOB_DISPLAY_ORDER_TYRANID 2
 #define JOB_DISPLAY_ORDER_CAPTAIN 3
 #define JOB_DISPLAY_ORDER_EXECUTIVE_OFFICER 4
 #define JOB_DISPLAY_ORDER_STAFF_OFFICER 5
@@ -23,7 +23,7 @@
 #define JOB_DISPLAY_ORDER_SQUAD_SMARTGUNNER 20
 #define JOB_DISPLAY_ORDER_SQUAD_CORPSMAN 21
 #define JOB_DISPLAY_ORDER_SUQAD_ENGINEER 22
-#define JOB_DISPLAY_ORDER_SQUAD_MARINE 23
+#define JOB_DISPLAY_ORDER_SQUAD_GUARDSMAN 23
 #define JOB_DISPLAY_ORDER_SURVIVOR 24
 
 #define JOB_FLAG_SPECIALNAME (1<<0)
@@ -32,7 +32,7 @@
 #define JOB_FLAG_NOHEADSET (1<<3) //Doesn't start with a headset on spawn.
 #define JOB_FLAG_ALLOWS_PREFS_GEAR (1<<4) //Allows preference loadouts.
 #define JOB_FLAG_PROVIDES_BANK_ACCOUNT (1<<5) //$$$
-#define JOB_FLAG_OVERRIDELATEJOINSPAWN (1<<6) //AIs and xenos, for example.
+#define JOB_FLAG_OVERRIDELATEJOINSPAWN (1<<6) //AIs and tyranids, for example.
 #define JOB_FLAG_ADDTOMANIFEST (1<<7) //Add info to datacore.
 #define JOB_FLAG_ISCOMMAND (1<<8)
 #define JOB_FLAG_BOLD_NAME_ON_SELECTION (1<<9)
@@ -66,29 +66,29 @@
 #define SQUAD_SMARTGUNNER "Squad Smartgunner"
 #define SQUAD_CORPSMAN "Squad Corpsman"
 #define SQUAD_ENGINEER "Squad Engineer"
-#define SQUAD_MARINE "Squad Marine"
+#define SQUAD_GUARDSMAN "Squad Guardsman"
 #define SQUAD_ROBOT "Squad Robot"
 #define SQUAD_VATGROWN "Squad VatGrown"
 #define SILICON_AI "AI"
 
-//SOM
-#define SOM_COMMANDER "SOM Commander"
-#define SOM_FIELD_COMMANDER "SOM Field Commander"
-#define SOM_STAFF_OFFICER "SOM Staff Officer"
-#define SOM_PILOT_OFFICER "SOM Pilot Officer"
-#define SOM_MECH_PILOT "SOM Mech Pilot"
-#define SOM_REQUISITIONS_OFFICER "SOM Requisitions Officer"
-#define SOM_CHIEF_ENGINEER "SOM Chief Engineer"
-#define SOM_CHIEF_MEDICAL_OFFICER "SOM Chief Medical Officer"
-#define SOM_TECH "SOM Technician"
-#define SOM_MEDICAL_DOCTOR "SOM Medical Doctor"
-#define SOM_CHEF "SOM chef"
+//CHAOS
+#define CHAOS_COMMANDER "CHAOS Commander"
+#define CHAOS_FIELD_COMMANDER "CHAOS Field Commander"
+#define CHAOS_STAFF_OFFICER "CHAOS Staff Officer"
+#define CHAOS_PILOT_OFFICER "CHAOS Pilot Officer"
+#define CHAOS_MECH_PILOT "CHAOS Mech Pilot"
+#define CHAOS_REQUISITIONS_OFFICER "CHAOS Requisitions Officer"
+#define CHAOS_CHIEF_ENGINEER "CHAOS Chief Engineer"
+#define CHAOS_CHIEF_MEDICAL_OFFICER "CHAOS Chief Medical Officer"
+#define CHAOS_TECH "CHAOS Technician"
+#define CHAOS_MEDICAL_DOCTOR "CHAOS Medical Doctor"
+#define CHAOS_CHEF "CHAOS chef"
 
-#define SOM_SQUAD_LEADER "SOM Squad Leader"
-#define SOM_SQUAD_CORPSMAN "SOM Squad Medic"
-#define SOM_SQUAD_ENGINEER "SOM Squad Engineer"
-#define SOM_SQUAD_VETERAN "SOM Squad Veteran"
-#define SOM_SQUAD_MARINE "SOM Squad Standard"
+#define CHAOS_SQUAD_LEADER "CHAOS Squad Leader"
+#define CHAOS_SQUAD_CORPSMAN "CHAOS Squad Medic"
+#define CHAOS_SQUAD_ENGINEER "CHAOS Squad Engineer"
+#define CHAOS_SQUAD_VETERAN "CHAOS Squad Veteran"
+#define CHAOS_SQUAD_GUARDSMAN "CHAOS Squad Standard"
 
 #define JOB_CAT_COMMAND "Command"
 #define JOB_CAT_SILICON "Silicon"
@@ -96,14 +96,14 @@
 #define JOB_CAT_MEDICAL "Medical"
 #define JOB_CAT_ENGINEERING "Engineering"
 #define JOB_CAT_CIVILIAN "Civilian"
-#define JOB_CAT_MARINE "Marine"
-#define JOB_CAT_XENO "Xenomorph"
+#define JOB_CAT_GUARDSMAN "Guardsman"
+#define JOB_CAT_TYRANID "Tyranid"
 #define JOB_CAT_UNASSIGNED "Unassigned"
 
 #define JOB_COMM_TITLE_SQUAD_LEADER "SL"
 
-#define ROLE_XENOMORPH "Xenomorph"
-#define ROLE_XENO_QUEEN "Xeno Queen"
+#define ROLE_TYRANID "Tyranid"
+#define ROLE_TYRANID_QUEEN "Tyranid Queen"
 #define ROLE_ERT "Emergency Response Team"
 #define ROLE_VALHALLA "Valhalla"
 
@@ -115,14 +115,14 @@ GLOBAL_LIST_INIT(jobs_support, list(PILOT_OFFICER, TRANSPORT_OFFICER, MECH_PILOT
 GLOBAL_LIST_INIT(jobs_engineering, list(CHIEF_SHIP_ENGINEER, SHIP_TECH))
 GLOBAL_LIST_INIT(jobs_requisitions, list(REQUISITIONS_OFFICER))
 GLOBAL_LIST_INIT(jobs_medical, list(CHIEF_MEDICAL_OFFICER, MEDICAL_DOCTOR, MEDICAL_RESEARCHER))
-GLOBAL_LIST_INIT(jobs_marines, list(SQUAD_LEADER, SQUAD_SMARTGUNNER, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_MARINE))
-GLOBAL_LIST_INIT(jobs_som, list(SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN, SOM_SQUAD_ENGINEER, SOM_SQUAD_CORPSMAN, SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER, SOM_STAFF_OFFICER, SOM_COMMANDER))
+GLOBAL_LIST_INIT(jobs_guardsmans, list(SQUAD_LEADER, SQUAD_SMARTGUNNER, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_GUARDSMAN))
+GLOBAL_LIST_INIT(jobs_som, list(CHAOS_SQUAD_GUARDSMAN, CHAOS_SQUAD_VETERAN, CHAOS_SQUAD_ENGINEER, CHAOS_SQUAD_CORPSMAN, CHAOS_SQUAD_LEADER, CHAOS_FIELD_COMMANDER, CHAOS_STAFF_OFFICER, CHAOS_COMMANDER))
 GLOBAL_LIST_INIT(jobs_regular_all, list(CAPTAIN, FIELD_COMMANDER, STAFF_OFFICER, PILOT_OFFICER, TRANSPORT_OFFICER, MECH_PILOT, REQUISITIONS_OFFICER, CHIEF_SHIP_ENGINEER, \
 CHIEF_MEDICAL_OFFICER, SYNTHETIC, SILICON_AI, CORPORATE_LIAISON, SHIP_TECH, ASSAULT_CREWMAN, TRANSPORT_CREWMAN, \
-MEDICAL_DOCTOR, MEDICAL_RESEARCHER, SQUAD_LEADER, SQUAD_SMARTGUNNER, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_MARINE, \
-SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN, SOM_SQUAD_ENGINEER, SOM_SQUAD_CORPSMAN, SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER, SOM_STAFF_OFFICER, SOM_COMMANDER))
-GLOBAL_LIST_INIT(jobs_xenos, list(ROLE_XENOMORPH, ROLE_XENO_QUEEN))
-GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine), TRUE))
+MEDICAL_DOCTOR, MEDICAL_RESEARCHER, SQUAD_LEADER, SQUAD_SMARTGUNNER, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_GUARDSMAN, \
+CHAOS_SQUAD_GUARDSMAN, CHAOS_SQUAD_VETERAN, CHAOS_SQUAD_ENGINEER, CHAOS_SQUAD_CORPSMAN, CHAOS_SQUAD_LEADER, CHAOS_FIELD_COMMANDER, CHAOS_STAFF_OFFICER, CHAOS_COMMANDER))
+GLOBAL_LIST_INIT(jobs_tyranids, list(ROLE_TYRANID, ROLE_TYRANID_QUEEN))
+GLOBAL_LIST_INIT(jobs_fallen_guardsman, typecacheof(list(/datum/job/fallen/guardsman), TRUE))
 
 //Playtime tracking system, see jobs_exp.dm
 #define EXP_TYPE_LIVING "Living"
@@ -130,7 +130,7 @@ GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine),
 #define EXP_TYPE_COMMAND "Command"
 #define EXP_TYPE_ENGINEERING "Engineering"
 #define EXP_TYPE_MEDICAL "Medical"
-#define EXP_TYPE_MARINES "Marines"
+#define EXP_TYPE_GUARDSMANS "Guardsmans"
 #define EXP_TYPE_REQUISITIONS "Requisitions"
 #define EXP_TYPE_SILICON "Silicon"
 #define EXP_TYPE_SPECIAL "Special"
@@ -156,8 +156,8 @@ GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine),
 #define LARVA_POINTS_SHIPSIDE 1
 #define LARVA_POINTS_SHIPSIDE_STRONG 1.5
 #define LARVA_POINTS_REGULAR 3.25
-///How many marines per xeno at optimal ratio
-#define XENO_MARINE_RATIO 2.46
+///How many guardsmans per tyranid at optimal ratio
+#define TYRANID_GUARDSMAN_RATIO 2.46
 
 #define SURVIVOR_POINTS_REGULAR 1
 
@@ -169,14 +169,14 @@ GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine),
 
 #define VETERAN_POINTS_REGULAR 1
 
-#define MARINE_SPAWN_ORIGIN "xenos from marine spawn"
-#define PSY_DRAIN_ORIGIN "xenos from psy drained bodies"
-#define COCOON_ORIGIN "xenos from cocoon that reached its endlife"
-#define SILO_ORIGIN "xenos from silo generation"
+#define GUARDSMAN_SPAWN_ORIGIN "tyranids from guardsman spawn"
+#define PSY_DRAIN_ORIGIN "tyranids from psy drained bodies"
+#define COCOON_ORIGIN "tyranids from cocoon that reached its endlife"
+#define SILO_ORIGIN "tyranids from silo generation"
 
 #define SQUAD_MAX_POSITIONS(total_positions) CEILING(total_positions / length(SSjob.active_squads), 1)
 
-/// How many points a marine can spend in job specific vendors by default
+/// How many points a guardsman can spend in job specific vendors by default
 #define DEFAULT_TOTAL_BUY_POINTS 45
 /// How many points a medic can spend on pills
 #define MEDIC_TOTAL_BUY_POINTS 45
@@ -185,7 +185,7 @@ GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine),
 /// How many points the field commander can spend
 #define COMMANDER_TOTAL_BUY_POINTS 45
 
-GLOBAL_LIST_INIT(default_marine_points, list(
+GLOBAL_LIST_INIT(default_guardsman_points, list(
 		"SMARTGUNNER SUPPLIES" = DEFAULT_TOTAL_BUY_POINTS,
 		"ENGINEERING SUPPLIES" = ENGINEER_TOTAL_BUY_POINTS,
 		"LEADER SUPPLIES" = DEFAULT_TOTAL_BUY_POINTS,

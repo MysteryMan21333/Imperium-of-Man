@@ -1,6 +1,6 @@
 /obj/machinery/power
 	name = null
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	anchored = TRUE
 	use_power = NO_POWER_USE
 	idle_power_usage = 0

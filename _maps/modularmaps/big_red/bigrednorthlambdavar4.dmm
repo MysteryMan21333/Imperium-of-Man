@@ -91,7 +91,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "T" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "Y" = (

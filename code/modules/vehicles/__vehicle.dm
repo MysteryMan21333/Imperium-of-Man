@@ -1,7 +1,7 @@
 /obj/vehicle
 	name = "generic vehicle"
 	desc = "Yell at coderbus."
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "fuckyou"
 	max_integrity = 300
 	soft_armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 0, BOMB = 30, FIRE = 60, ACID = 60)
@@ -11,7 +11,7 @@
 	obj_flags = CAN_BE_HIT
 	atom_flags = CRITICAL_ATOM
 	appearance_flags = TILE_BOUND|PIXEL_SCALE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_AIR
 	COOLDOWN_DECLARE(cooldown_vehicle_move)
 	///mob = bitflags of their control level.
@@ -187,5 +187,5 @@
 //TGMC ADDED BELOW
 /obj/vehicle/effect_smoke(obj/effect/particle_effect/smoke/S)
 	. = ..()
-	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID))
+	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID_ACID))
 		take_damage(20 * S.strength, BURN, ACID)

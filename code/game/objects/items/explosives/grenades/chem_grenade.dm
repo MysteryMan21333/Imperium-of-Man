@@ -109,7 +109,7 @@
 			return
 
 	else if(stage == CG_READY && I.tool_behaviour == TOOL_WIRECUTTER && !active)
-		to_chat(user, span_notice("Patented marine-proof Dura-Cable prevents you from taking apart the grenade."))
+		to_chat(user, span_notice("Patented guardsman-proof Dura-Cable prevents you from taking apart the grenade."))
 		return
 
 	else if(stage == CG_WIRED && I.tool_behaviour == TOOL_WRENCH)

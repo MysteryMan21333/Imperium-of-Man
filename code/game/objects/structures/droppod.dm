@@ -7,16 +7,16 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 ///radius of dispersion for pods for randomisation or obstacle avoidance
 #define DROPPOD_BASE_DISPERSION 1
 
-///base marine drop pod. can be controlled by an attached [/obj/structure/droppod/leader] or [/obj/machinery/computer/droppod_control]
+///base guardsman drop pod. can be controlled by an attached [/obj/structure/droppod/leader] or [/obj/machinery/computer/droppod_control]
 /obj/structure/droppod
 	name = "\improper TGMC Zeus orbital drop pod"
 	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment."
-	icon = 'icons/obj/structures/droppod.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/droppod.dmi'
 	icon_state = "singlepod_green"
 	density = TRUE
 	anchored = TRUE
 	layer = ABOVE_OBJ_LAYER
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	interaction_flags = INTERACT_OBJ_DEFAULT|INTERACT_POWERLOADER_PICKUP_ALLOWED_BYPASS_ANCHOR
 	soft_armor = list(MELEE = 25, BULLET = 80, LASER = 80, ENERGY = 90, BOMB = 70, BIO = 100, FIRE = 0, ACID = 0)
 	max_integrity = 75
@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 	interaction_actions += new /datum/action/innate/set_drop_target(src)
 	interaction_actions += new /datum/action/innate/launch_droppod(src)
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_DROPSHIP_HIJACKED, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, COMSIG_GLOB_CAMPAIGN_DISABLE_DROPPODS), PROC_REF(disable_launching))
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED, COMSIG_GLOB_CAMPAIGN_ENABLE_DROPPODS), PROC_REF(allow_drop))
+	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED, COMSIG_GLOB_CAMPAIGN_ENABLE_DROPPODS), PROC_REF(allow_drop))
 	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_LOADED, PROC_REF(change_targeted_z))
 	GLOB.droppod_list += src
 	update_icon()
@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 	operation_started = TRUE
 	launch_allowed = TRUE
 	update_icon()
-	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
+	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
 
 /obj/structure/droppod/update_icon()
 	. = ..()
@@ -272,7 +272,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 	new /area/arrival(loc)	//adds a safezone so we dont suffocate on the way down, cleaned up with reserved turfs
 
 	var/turf/target = locate(target_x, target_y, 2)
-	var/obj/effect/overlay/blinking_laser/marine/pod_warning/laserpod = new /obj/effect/overlay/blinking_laser/marine/pod_warning(target)
+	var/obj/effect/overlay/blinking_laser/guardsman/pod_warning/laserpod = new /obj/effect/overlay/blinking_laser/guardsman/pod_warning(target)
 	laserpod.dir = target
 	QDEL_IN(laserpod, DROPPOD_TRANSIT_TIME + 1)
 
@@ -492,7 +492,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 /obj/structure/droppod/nonmob/mech_pod
 	name = "\improper TGMC Zeus mech drop pod"
 	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment. This is a larger model designed specifically to carry mechs. Shift click to enter when inside a mech."
-	icon = 'icons/obj/structures/big_droppod.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/big_droppod.dmi'
 	icon_state = "mechpod"
 	light_range = 2
 	light_color = LIGHT_COLOR_BLUE
@@ -572,7 +572,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 	if(!pod.target_z)
 		to_chat(owner, span_danger("No active combat zone detected."))
 		return
-	var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(pod.target_z, MINIMAP_FLAG_MARINE)
+	var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(pod.target_z, MINIMAP_FLAG_GUARDSMAN)
 	owner.client.screen += map
 	choosing = TRUE
 	var/list/polled_coords = map.get_coords_from_click(owner)
@@ -585,7 +585,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 /datum/action/innate/set_drop_target/remove_action(mob/M)
 	if(choosing)
 		var/obj/structure/droppod/pod = target
-		var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(pod.target_z, MINIMAP_FLAG_MARINE)
+		var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(pod.target_z, MINIMAP_FLAG_GUARDSMAN)
 		owner?.client?.screen -= map
 		map.UnregisterSignal(owner, COMSIG_MOB_CLICKON)
 		choosing = FALSE
@@ -594,7 +594,7 @@ GLOBAL_LIST_INIT(blocked_droppod_tiles, typecacheof(list(/turf/open/space/transi
 /obj/structure/drop_pod_launcher
 	name = "Zeus pod launch bay"
 	desc = "A hatch in the ground wih support for a Zeus drop pod launch."
-	icon = 'icons/obj/structures/droppod.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/droppod.dmi'
 	icon_state = "launch_bay"
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE

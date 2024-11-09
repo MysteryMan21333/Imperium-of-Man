@@ -14,11 +14,11 @@
 #define PLATINUM_CRATE_SELL_AMOUNT 300
 #define PHORON_DROPSHIP_BONUS_AMOUNT 15
 #define PLATINUM_DROPSHIP_BONUS_AMOUNT 30
-///Resource generator that produces a certain material that can be repaired by marines and attacked by xenos, Intended as an objective for marines to play towards to get more req gear
+///Resource generator that produces a certain material that can be repaired by guardsmans and attacked by tyranids, Intended as an objective for guardsmans to play towards to get more req gear
 /obj/machinery/miner
 	name = "\improper Nanotrasen phoron Mining Well"
 	desc = "Top-of-the-line Nanotrasen research drill with it's own export module, used to extract phoron in vast quantities. Selling the phoron mined by these would net a nice profit..."
-	icon = 'icons/obj/mining_drill.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/mining_drill.dmi'
 	density = TRUE
 	icon_state = "mining_drill_active"
 	anchored = TRUE
@@ -45,7 +45,7 @@
 	///What type of upgrade it has installed , used to change the icon of the miner.
 	var/miner_upgrade_type
 	///What faction secured that miner
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/machinery/miner/damaged	//mapping and all that shebang
 	miner_status = MINER_DESTROYED
@@ -316,26 +316,26 @@
 	else
 		add_tick += 1
 
-/obj/machinery/miner/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL) //Incorporeal xenos cannot attack physically.
+/obj/machinery/miner/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL) //Incorporeal tyranids cannot attack physically.
 		return
-	if(miner_upgrade_type == MINER_RESISTANT && !(xeno_attacker.mob_size == MOB_SIZE_BIG || xeno_attacker.xeno_caste.caste_flags & CASTE_IS_STRONG))
-		xeno_attacker.visible_message(span_notice("[xeno_attacker]'s claws bounce off of [src]'s reinforced plating."),
+	if(miner_upgrade_type == MINER_RESISTANT && !(tyranid_attacker.mob_size == MOB_SIZE_BIG || tyranid_attacker.tyranid_caste.caste_flags & CASTE_IS_STRONG))
+		tyranid_attacker.visible_message(span_notice("[tyranid_attacker]'s claws bounce off of [src]'s reinforced plating."),
 		span_notice("We can't slash through [src]'s reinforced plating!"))
 		return
 	while(miner_status != MINER_DESTROYED)
-		if(xeno_attacker.do_actions)
-			return balloon_alert(xeno_attacker, "busy")
-		if(!do_after(xeno_attacker, 1.5 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
+		if(tyranid_attacker.do_actions)
+			return balloon_alert(tyranid_attacker, "busy")
+		if(!do_after(tyranid_attacker, 1.5 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
 			return
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-		xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+		tyranid_attacker.visible_message(span_danger("[tyranid_attacker] slashes \the [src]!"), \
 		span_danger("We slash \the [src]!"), null, 5)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25, TRUE)
 		miner_integrity -= 25
 		set_miner_status()
-		if(miner_status == MINER_DESTROYED && xeno_attacker.client)
-			var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[xeno_attacker.ckey]
+		if(miner_status == MINER_DESTROYED && tyranid_attacker.client)
+			var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[tyranid_attacker.ckey]
 			personal_statistics.miner_sabotages_performed++
 
 /obj/machinery/miner/proc/set_miner_status()

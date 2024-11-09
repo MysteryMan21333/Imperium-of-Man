@@ -15,7 +15,7 @@
 * Stacks
 */
 /obj/item/stack
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stack_objects.dmi'
 	gender = PLURAL
 	var/list/datum/stack_recipe/recipes
 	var/singular_name
@@ -371,7 +371,7 @@
 
 
 /obj/item/stack/AltClick(mob/user)
-	if(isxeno(user))
+	if(istyranid(user))
 		return ..()
 	if(!can_interact(user))
 		return ..() //Alt click on turf if not human or too far away.

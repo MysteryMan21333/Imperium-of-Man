@@ -1,6 +1,6 @@
 /obj/machinery/faxmachine
 	name = "fax machine"
-	icon = 'icons/obj/machines/library.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/library.dmi'
 	icon_state = "fax"
 	anchored = TRUE
 	density = TRUE

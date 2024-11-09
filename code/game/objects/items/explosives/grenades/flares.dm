@@ -172,7 +172,7 @@
 	. = ..()
 	if(!.)
 		return
-	anchored = TRUE//prevents marines from picking up and running around with a stronger flare
+	anchored = TRUE//prevents guardsmans from picking up and running around with a stronger flare
 
 /obj/item/explosive/grenade/flare/strongerflare/turn_off()
 	. = ..()

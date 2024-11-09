@@ -4,7 +4,7 @@
 #define WARRIOR_EMPOWER_COMBO_THRESHOLD 2 // After how many abilities should a Warrior get an empowered cast (2 means the 3rd one is empowered).
 #define WARRIOR_EMPOWER_COMBO_FADE_TIME 10 SECONDS // The duration of a combo, after which it will disappear by itself.
 
-/datum/action/ability/xeno_action/empower
+/datum/action/ability/tyranid_action/empower
 	name = "Empower"
 	/// Holds the fade-out timer.
 	var/fade_timer
@@ -12,42 +12,42 @@
 	var/combo_count = 0
 	/// List of abilities that can be empowered.
 	var/list/empowerable_actions = list(
-		/datum/action/ability/activable/xeno/warrior/fling,
-		/datum/action/ability/activable/xeno/warrior/grapple_toss,
-		/datum/action/ability/activable/xeno/warrior/punch,
-		/datum/action/ability/activable/xeno/warrior/punch/flurry,
+		/datum/action/ability/activable/tyranid/warrior/fling,
+		/datum/action/ability/activable/tyranid/warrior/grapple_toss,
+		/datum/action/ability/activable/tyranid/warrior/punch,
+		/datum/action/ability/activable/tyranid/warrior/punch/flurry,
 	)
 	hidden = TRUE
 
 /// Checks if Empower is capped and gives bonuses if so, otherwise increases combo count.
-/datum/action/ability/xeno_action/empower/proc/check_empower(atom/target)
+/datum/action/ability/tyranid_action/empower/proc/check_empower(atom/target)
 	if(isliving(target))
 		var/mob/living/living_target = target
-		if(living_target.stat == DEAD || living_target.issamexenohive(owner))
+		if(living_target.stat == DEAD || living_target.issametyranidhive(owner))
 			return FALSE
 	if(combo_count >= WARRIOR_EMPOWER_COMBO_THRESHOLD)
-		var/mob/living/carbon/xenomorph/xeno_owner = owner
-		xeno_owner.emote("roar")
+		var/mob/living/carbon/tyranid/tyranid_owner = owner
+		tyranid_owner.emote("roar")
 		clear_empower()
 		return TRUE
 	activate_empower()
 	return FALSE
 
 /// Handles empowering, and gives visual feedback if applicable.
-/datum/action/ability/xeno_action/empower/proc/activate_empower()
+/datum/action/ability/tyranid_action/empower/proc/activate_empower()
 	combo_count++
 	if(combo_count >= WARRIOR_EMPOWER_COMBO_THRESHOLD)
-		var/mob/living/carbon/xenomorph/xeno_owner = owner
-		for(var/datum/action/ability/activable/xeno/warrior/warrior_action AS in xeno_owner.actions)
+		var/mob/living/carbon/tyranid/tyranid_owner = owner
+		for(var/datum/action/ability/activable/tyranid/warrior/warrior_action AS in tyranid_owner.actions)
 			if(warrior_action.type in empowerable_actions)
 				warrior_action.add_empowered_frame()
 				warrior_action.update_button_icon()
 	fade_timer = addtimer(CALLBACK(src, PROC_REF(empower_fade)), WARRIOR_EMPOWER_COMBO_FADE_TIME, TIMER_OVERRIDE|TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /// Clears empowering, as well as visual feedback and combo count.
-/datum/action/ability/xeno_action/empower/proc/clear_empower()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	for(var/datum/action/ability/activable/xeno/warrior/warrior_action AS in xeno_owner.actions)
+/datum/action/ability/tyranid_action/empower/proc/clear_empower()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	for(var/datum/action/ability/activable/tyranid/warrior/warrior_action AS in tyranid_owner.actions)
 		if(warrior_action.type in empowerable_actions)
 			warrior_action.remove_empowered_frame()
 			warrior_action.update_button_icon()
@@ -55,7 +55,7 @@
 	deltimer(fade_timer)
 
 /// Happens when Empower fades.
-/datum/action/ability/xeno_action/empower/proc/empower_fade()
+/datum/action/ability/tyranid_action/empower/proc/empower_fade()
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 25, 0, 1)
 	clear_empower()
 
@@ -66,37 +66,37 @@
 #define WARRIOR_AGILITY_SPEED_MODIFIER -0.6
 #define WARRIOR_AGILITY_ARMOR_MODIFIER 30
 
-/datum/action/ability/xeno_action/toggle_agility
+/datum/action/ability/tyranid_action/toggle_agility
 	name = "Agility"
 	action_icon_state = "agility_on"
-	action_icon = 'icons/Xeno/actions/warrior.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/warrior.dmi'
 	cooldown_duration = 0.4 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_AGILITY,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_TOGGLE_AGILITY,
 	)
 	action_type = ACTION_TOGGLE
 	/// Whether the ability is active or not.
 	var/ability_active = FALSE
 
-/datum/action/ability/xeno_action/toggle_agility/New(Target)
+/datum/action/ability/tyranid_action/toggle_agility/New(Target)
 	. = ..()
 	desc = "Move on all fours and loosen our scales. Increases movement speed by [abs(WARRIOR_AGILITY_SPEED_MODIFIER)], but reduces all soft armor by [WARRIOR_AGILITY_ARMOR_MODIFIER]. Automatically disabled after using an ability."
 
-/datum/action/ability/xeno_action/toggle_agility/action_activate()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+/datum/action/ability/tyranid_action/toggle_agility/action_activate()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 	GLOB.round_statistics.warrior_agility_toggles++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "warrior_agility_toggles")
 	ability_active = !ability_active
 	set_toggle(ability_active ? TRUE : FALSE)
-	xeno_owner.update_icons()
+	tyranid_owner.update_icons()
 	add_cooldown()
 	if(!ability_active)
-		xeno_owner.remove_movespeed_modifier(MOVESPEED_ID_WARRIOR_AGILITY)
-		xeno_owner.soft_armor = xeno_owner.soft_armor.modifyAllRatings(WARRIOR_AGILITY_ARMOR_MODIFIER)
+		tyranid_owner.remove_movespeed_modifier(MOVESPEED_ID_WARRIOR_AGILITY)
+		tyranid_owner.soft_armor = tyranid_owner.soft_armor.modifyAllRatings(WARRIOR_AGILITY_ARMOR_MODIFIER)
 		return
-	xeno_owner.add_movespeed_modifier(MOVESPEED_ID_WARRIOR_AGILITY, TRUE, 0, NONE, TRUE, WARRIOR_AGILITY_SPEED_MODIFIER)
-	xeno_owner.soft_armor = xeno_owner.soft_armor.modifyAllRatings(-WARRIOR_AGILITY_ARMOR_MODIFIER)
-	xeno_owner.toggle_move_intent(MOVE_INTENT_RUN)
+	tyranid_owner.add_movespeed_modifier(MOVESPEED_ID_WARRIOR_AGILITY, TRUE, 0, NONE, TRUE, WARRIOR_AGILITY_SPEED_MODIFIER)
+	tyranid_owner.soft_armor = tyranid_owner.soft_armor.modifyAllRatings(-WARRIOR_AGILITY_ARMOR_MODIFIER)
+	tyranid_owner.toggle_move_intent(MOVE_INTENT_RUN)
 
 
 // ***************************************
@@ -105,35 +105,35 @@
 #define WARRIOR_IMPACT_DAMAGE_MULTIPLIER 0.5
 #define WARRIOR_DISPLACE_KNOCKDOWN 0.4 SECONDS
 
-/datum/action/ability/activable/xeno/warrior/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/xeno_action/toggle_agility/agility_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/toggle_agility]
+/datum/action/ability/activable/tyranid/warrior/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/tyranid_action/toggle_agility/agility_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/toggle_agility]
 	if(agility_action?.ability_active)
 		agility_action.action_activate()
 
 /// Adds an outline around the ability button to represent Empower.
-/datum/action/ability/activable/xeno/warrior/proc/add_empowered_frame()
+/datum/action/ability/activable/tyranid/warrior/proc/add_empowered_frame()
 	button.add_overlay(visual_references[VREF_MUTABLE_EMPOWERED_FRAME])
 
 /// Removes the Empower outline.
-/datum/action/ability/activable/xeno/warrior/proc/remove_empowered_frame()
+/datum/action/ability/activable/tyranid/warrior/proc/remove_empowered_frame()
 	button.cut_overlay(visual_references[VREF_MUTABLE_EMPOWERED_FRAME])
 
 /// Handles anything that would happen when a target is thrown into an atom using an ability.
-/datum/action/ability/activable/xeno/warrior/proc/thrown_into(datum/source, atom/hit_atom, impact_speed)
+/datum/action/ability/activable/tyranid/warrior/proc/thrown_into(datum/source, atom/hit_atom, impact_speed)
 	SIGNAL_HANDLER
 	UnregisterSignal(source, COMSIG_MOVABLE_IMPACT)
 	var/mob/living/living_target = source
 	INVOKE_ASYNC(living_target, TYPE_PROC_REF(/mob, emote), "scream")
 	living_target.Knockdown(WARRIOR_DISPLACE_KNOCKDOWN)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	new /obj/effect/temp_visual/warrior/impact(get_turf(living_target), get_dir(living_target, xeno_owner))
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	new /obj/effect/temp_visual/warrior/impact(get_turf(living_target), get_dir(living_target, tyranid_owner))
 	// mob/living/turf_collision() does speed * 5 damage on impact with a turf, and we don't want to go overboard, so we deduce that here.
-	var/thrown_damage = ((xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier) - (impact_speed * 5)) * WARRIOR_IMPACT_DAMAGE_MULTIPLIER
+	var/thrown_damage = ((tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier) - (impact_speed * 5)) * WARRIOR_IMPACT_DAMAGE_MULTIPLIER
 	living_target.apply_damage(thrown_damage, BRUTE, blocked = MELEE)
 	if(isliving(hit_atom))
 		var/mob/living/hit_living = hit_atom
-		if(hit_living.issamexenohive(xeno_owner))
+		if(hit_living.issametyranidhive(tyranid_owner))
 			return
 		INVOKE_ASYNC(hit_living, TYPE_PROC_REF(/mob, emote), "scream")
 		hit_living.apply_damage(thrown_damage, BRUTE, blocked = MELEE)
@@ -141,7 +141,7 @@
 		step_away(hit_living, living_target, 1, 1)
 	if(isobj(hit_atom))
 		var/obj/hit_object = hit_atom
-		if(istype(hit_object, /obj/structure/xeno))
+		if(istype(hit_object, /obj/structure/tyranid))
 			return
 		hit_object.take_damage(thrown_damage, BRUTE, MELEE)
 	if(iswallturf(hit_atom))
@@ -150,7 +150,7 @@
 			hit_wall.take_damage(thrown_damage, BRUTE, MELEE)
 
 /// Ends the target's throw.
-/datum/action/ability/activable/xeno/warrior/proc/throw_ended(datum/source)
+/datum/action/ability/activable/tyranid/warrior/proc/throw_ended(datum/source)
 	SIGNAL_HANDLER
 	UnregisterSignal(source, COMSIG_MOVABLE_POST_THROW)
 	/* So the reason why we do not flat out unregister this is because, when an atom makes impact with something, it calls throw_impact(). Calling it this way causes
@@ -159,8 +159,8 @@
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, UnregisterSignal), source, COMSIG_MOVABLE_IMPACT, COMSIG_MOVABLE_POST_THROW), 1)
 	var/mob/living/living_target = source
 	living_target.Knockdown(0.5 SECONDS)
-	if(living_target.pass_flags & PASS_XENO)
-		living_target.pass_flags &= ~PASS_XENO
+	if(living_target.pass_flags & PASS_TYRANID)
+		living_target.pass_flags &= ~PASS_TYRANID
 
 /obj/effect/temp_visual/warrior/impact
 	icon = 'icons/effects/96x96.dmi'
@@ -195,29 +195,29 @@
 // ***************************************
 #define WARRIOR_LUNGE_RANGE 4 // in tiles
 
-/datum/action/ability/activable/xeno/warrior/lunge
+/datum/action/ability/activable/tyranid/warrior/lunge
 	name = "Lunge"
 	action_icon_state = "lunge"
-	action_icon = 'icons/Xeno/actions/warrior.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/warrior.dmi'
 	ability_cost = 30
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_LUNGE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_LUNGE,
 	)
 	target_flags = ABILITY_MOB_TARGET
 	/// The target of our lunge, we keep it to check if we are adjacent every time we move.
 	var/atom/lunge_target
 
-/datum/action/ability/activable/xeno/warrior/lunge/New(Target)
+/datum/action/ability/activable/tyranid/warrior/lunge/New(Target)
 	. = ..()
 	desc = "Lunge towards a target within [WARRIOR_LUNGE_RANGE] tiles, putting them in our grasp. Usable on allies."
 
-/datum/action/ability/activable/xeno/warrior/lunge/on_cooldown_finish()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+/datum/action/ability/activable/tyranid/warrior/lunge/on_cooldown_finish()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.balloon_alert(tyranid_owner, "[initial(name)] ready")
 	return ..()
 
-/datum/action/ability/activable/xeno/warrior/lunge/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/warrior/lunge/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -226,7 +226,7 @@
 			owner.balloon_alert(owner, "Invalid target")
 		return FALSE
 	var/mob/living/living_target = A
-	if(living_target.stat == DEAD && !living_target.issamexenohive(owner))
+	if(living_target.stat == DEAD && !living_target.issametyranidhive(owner))
 		if(!silent)
 			owner.balloon_alert(owner, "Dead")
 		return FALSE
@@ -235,31 +235,31 @@
 			owner.balloon_alert(owner, "Too far")
 		return FALSE
 
-/datum/action/ability/activable/xeno/warrior/lunge/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/warrior/lunge/use_ability(atom/A)
 	. = ..()
 	GLOB.round_statistics.warrior_lunges++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "warrior_lunges")
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.add_filter("warrior_lunge", 2, gauss_blur_filter(3))
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.add_filter("warrior_lunge", 2, gauss_blur_filter(3))
 	lunge_target = A
 	succeed_activate()
 	add_cooldown()
-	if(lunge_target.Adjacent(xeno_owner)) // They're already in range, neck grab without lunging.
+	if(lunge_target.Adjacent(tyranid_owner)) // They're already in range, neck grab without lunging.
 		lunge_grab(lunge_target)
 		return
 	RegisterSignal(lunge_target, COMSIG_QDELETING, PROC_REF(clean_lunge_target))
-	RegisterSignal(xeno_owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_if_lunge_possible))
-	RegisterSignal(xeno_owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(clean_lunge_target))
-	xeno_owner.throw_at(get_step_towards(A, xeno_owner), WARRIOR_LUNGE_RANGE, 2, xeno_owner)
+	RegisterSignal(tyranid_owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_if_lunge_possible))
+	RegisterSignal(tyranid_owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(clean_lunge_target))
+	tyranid_owner.throw_at(get_step_towards(A, tyranid_owner), WARRIOR_LUNGE_RANGE, 2, tyranid_owner)
 
 /// Check if we are close enough to grab.
-/datum/action/ability/activable/xeno/warrior/lunge/proc/check_if_lunge_possible(datum/source)
+/datum/action/ability/activable/tyranid/warrior/lunge/proc/check_if_lunge_possible(datum/source)
 	SIGNAL_HANDLER
 	if(lunge_target.Adjacent(source))
 		INVOKE_ASYNC(src, PROC_REF(lunge_grab), lunge_target)
 
 /// Null lunge target and reset related vars.
-/datum/action/ability/activable/xeno/warrior/lunge/proc/clean_lunge_target()
+/datum/action/ability/activable/tyranid/warrior/lunge/proc/clean_lunge_target()
 	SIGNAL_HANDLER
 	UnregisterSignal(lunge_target, COMSIG_QDELETING)
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_POST_THROW))
@@ -268,27 +268,27 @@
 	owner.remove_filter("warrior_lunge")
 
 /// Do the grab on the target, and clean all previous vars
-/datum/action/ability/activable/xeno/warrior/lunge/proc/lunge_grab(atom/A)
+/datum/action/ability/activable/tyranid/warrior/lunge/proc/lunge_grab(atom/A)
 	clean_lunge_target()
-	var/mob/living/carbon/xenomorph/warrior/warrior_owner = owner
+	var/mob/living/carbon/tyranid/warrior/warrior_owner = owner
 	warrior_owner.swap_hand()
 	warrior_owner.start_pulling(A, lunge = TRUE)
 	warrior_owner.swap_hand()
-	var/datum/action/ability/xeno_action/empower/empower_action = warrior_owner.actions_by_path[/datum/action/ability/xeno_action/empower]
+	var/datum/action/ability/tyranid_action/empower/empower_action = warrior_owner.actions_by_path[/datum/action/ability/tyranid_action/empower]
 	if(empower_action?.combo_count < WARRIOR_EMPOWER_COMBO_THRESHOLD)
 		empower_action?.activate_empower()
 
-/datum/action/ability/activable/xeno/warrior/lunge/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/warrior/lunge/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/warrior/lunge/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/warrior/lunge/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(!line_of_sight(owner, target, 2))
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
@@ -300,22 +300,22 @@
 #define WARRIOR_FLING_DISTANCE 4 // in tiles
 #define WARRIOR_FLING_EMPOWER_MULTIPLIER 2
 
-/datum/action/ability/activable/xeno/warrior/fling
+/datum/action/ability/activable/tyranid/warrior/fling
 	name = "Fling"
 	action_icon_state = "fling"
-	action_icon = 'icons/Xeno/actions/shrike.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/shrike.dmi'
 	ability_cost = 20
 	cooldown_duration = WARRIOR_FLING_TOSS_COOLDOWN
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_FLING,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_FLING,
 	)
 	target_flags = ABILITY_MOB_TARGET
 
-/datum/action/ability/activable/xeno/warrior/fling/New(Target)
+/datum/action/ability/activable/tyranid/warrior/fling/New(Target)
 	. = ..()
 	desc = "Send a target flying up to [WARRIOR_FLING_DISTANCE] tiles away. Distance reduced for bigger targets. Usable on allies."
 
-/datum/action/ability/activable/xeno/warrior/fling/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/warrior/fling/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -326,7 +326,7 @@
 			owner.balloon_alert(owner, "Invalid target")
 		return FALSE
 	var/mob/living/living_target = A
-	if(living_target.stat == DEAD && !living_target.issamexenohive(owner))
+	if(living_target.stat == DEAD && !living_target.issametyranidhive(owner))
 		if(!silent)
 			owner.balloon_alert(owner, "Dead")
 		return FALSE
@@ -335,45 +335,45 @@
 			owner.balloon_alert(owner, "Not adjacent")
 		return FALSE
 
-/datum/action/ability/activable/xeno/warrior/fling/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/warrior/fling/use_ability(atom/A)
 	. = ..()
 	GLOB.round_statistics.warrior_flings++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "warrior_flings")
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
 	var/mob/living/living_target = A
-	xeno_owner.face_atom(living_target)
+	tyranid_owner.face_atom(living_target)
 	playsound(living_target, 'sound/weapons/alien_claw_block.ogg', 75, 1)
 	shake_camera(living_target, 1, 1)
-	xeno_owner.do_attack_animation(living_target, ATTACK_EFFECT_DISARM2)
+	tyranid_owner.do_attack_animation(living_target, ATTACK_EFFECT_DISARM2)
 	var/fling_distance = WARRIOR_FLING_DISTANCE
 	if(living_target.mob_size >= MOB_SIZE_BIG) // Penalize fling distance for big creatures.
 		fling_distance--
-	var/datum/action/ability/xeno_action/empower/empower_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/empower]
+	var/datum/action/ability/tyranid_action/empower/empower_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/empower]
 	if(empower_action?.check_empower(living_target))
 		fling_distance *= WARRIOR_FLING_EMPOWER_MULTIPLIER
-	if(!living_target.issamexenohive(xeno_owner))
+	if(!living_target.issametyranidhive(tyranid_owner))
 		RegisterSignal(living_target, COMSIG_MOVABLE_IMPACT, PROC_REF(thrown_into))
 		RegisterSignal(living_target, COMSIG_MOVABLE_POST_THROW, PROC_REF(throw_ended))
-	if(!(living_target.pass_flags & PASS_XENO))
-		living_target.pass_flags |= PASS_XENO
-	var/fling_direction = get_dir(xeno_owner, living_target)
-	living_target.throw_at(get_ranged_target_turf(xeno_owner, fling_direction ? fling_direction : xeno_owner.dir, fling_distance), fling_distance, 1, xeno_owner, TRUE)
+	if(!(living_target.pass_flags & PASS_TYRANID))
+		living_target.pass_flags |= PASS_TYRANID
+	var/fling_direction = get_dir(tyranid_owner, living_target)
+	living_target.throw_at(get_ranged_target_turf(tyranid_owner, fling_direction ? fling_direction : tyranid_owner.dir, fling_distance), fling_distance, 1, tyranid_owner, TRUE)
 	succeed_activate()
 	add_cooldown()
-	var/datum/action/ability/activable/xeno/warrior/grapple_toss/toss_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/warrior/grapple_toss]
+	var/datum/action/ability/activable/tyranid/warrior/grapple_toss/toss_action = tyranid_owner.actions_by_path[/datum/action/ability/activable/tyranid/warrior/grapple_toss]
 	toss_action?.add_cooldown()
 
-/datum/action/ability/activable/xeno/warrior/fling/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/warrior/fling/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/warrior/fling/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/warrior/fling/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > 1)
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
@@ -387,28 +387,28 @@
 #define WARRIOR_GRAPPLE_TOSS_EMPOWER_MULTIPLIER 2
 #define WARRIOR_GRAPPLE_TOSS_THROW_PARALYZE 0.5 SECONDS
 
-/datum/action/ability/activable/xeno/warrior/grapple_toss
+/datum/action/ability/activable/tyranid/warrior/grapple_toss
 	name = "Grapple Toss"
 	action_icon_state = "grapple_toss"
-	action_icon = 'icons/Xeno/actions/warrior.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/warrior.dmi'
 	ability_cost = 20
 	cooldown_duration = WARRIOR_FLING_TOSS_COOLDOWN
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_GRAPPLE_TOSS,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_GRAPPLE_TOSS,
 	)
 	target_flags = ABILITY_TURF_TARGET
 
-/datum/action/ability/activable/xeno/warrior/grapple_toss/New(Target)
+/datum/action/ability/activable/tyranid/warrior/grapple_toss/New(Target)
 	. = ..()
 	desc = "Throw a creature under our grasp up to [WARRIOR_GRAPPLE_TOSS_DISTANCE] tiles away. Distance reduced on larger targets. Usable on allies."
 
-/datum/action/ability/activable/xeno/warrior/grapple_toss/on_cooldown_finish()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/datum/action/ability/activable/xeno/warrior/fling/fling_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/warrior/fling]
-	xeno_owner.balloon_alert(xeno_owner, "[fling_action ? "[initial(fling_action.name)] / " : ""][initial(name)] ready")
+/datum/action/ability/activable/tyranid/warrior/grapple_toss/on_cooldown_finish()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/datum/action/ability/activable/tyranid/warrior/fling/fling_action = tyranid_owner.actions_by_path[/datum/action/ability/activable/tyranid/warrior/fling]
+	tyranid_owner.balloon_alert(tyranid_owner, "[fling_action ? "[initial(fling_action.name)] / " : ""][initial(name)] ready")
 	return ..()
 
-/datum/action/ability/activable/xeno/warrior/grapple_toss/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/warrior/grapple_toss/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -421,21 +421,21 @@
 			owner.balloon_alert(owner, "Target not adjacent")
 		return FALSE
 
-/datum/action/ability/activable/xeno/warrior/grapple_toss/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/warrior/grapple_toss/use_ability(atom/A)
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/atom/movable/atom_target = xeno_owner.pulling
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/atom/movable/atom_target = tyranid_owner.pulling
 	var/fling_distance = WARRIOR_GRAPPLE_TOSS_DISTANCE
-	var/datum/action/ability/xeno_action/empower/empower_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/empower]
+	var/datum/action/ability/tyranid_action/empower/empower_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/empower]
 	if(empower_action?.check_empower(atom_target))
 		fling_distance *= WARRIOR_GRAPPLE_TOSS_EMPOWER_MULTIPLIER
 	if(isliving(atom_target))
 		var/mob/living/living_target = atom_target
 		if(living_target.mob_size >= MOB_SIZE_BIG)
 			fling_distance--
-		if(!living_target.issamexenohive(xeno_owner))
-			if(!(living_target.pass_flags & PASS_XENO))
-				living_target.pass_flags |= PASS_XENO
+		if(!living_target.issametyranidhive(tyranid_owner))
+			if(!(living_target.pass_flags & PASS_TYRANID))
+				living_target.pass_flags |= PASS_TYRANID
 			shake_camera(living_target, 1, 1)
 			living_target.adjust_stagger(WARRIOR_GRAPPLE_TOSS_STAGGER)
 			living_target.add_slowdown(WARRIOR_GRAPPLE_TOSS_SLOWDOWN)
@@ -443,14 +443,14 @@
 			living_target.Paralyze(WARRIOR_GRAPPLE_TOSS_THROW_PARALYZE) // very important otherwise the guy can move right as you throw them
 			RegisterSignal(living_target, COMSIG_MOVABLE_IMPACT, PROC_REF(thrown_into))
 			RegisterSignal(living_target, COMSIG_MOVABLE_POST_THROW, PROC_REF(throw_ended))
-	xeno_owner.face_atom(atom_target)
-	atom_target.forceMove(get_turf(xeno_owner))
-	xeno_owner.do_attack_animation(atom_target, ATTACK_EFFECT_DISARM2)
+	tyranid_owner.face_atom(atom_target)
+	atom_target.forceMove(get_turf(tyranid_owner))
+	tyranid_owner.do_attack_animation(atom_target, ATTACK_EFFECT_DISARM2)
 	playsound(atom_target, 'sound/weapons/alien_claw_block.ogg', 75, 1)
-	atom_target.throw_at(get_turf(A), fling_distance, 1, xeno_owner, TRUE)
+	atom_target.throw_at(get_turf(A), fling_distance, 1, tyranid_owner, TRUE)
 	succeed_activate()
 	add_cooldown()
-	var/datum/action/ability/activable/xeno/warrior/fling/fling_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/warrior/fling]
+	var/datum/action/ability/activable/tyranid/warrior/fling/fling_action = tyranid_owner.actions_by_path[/datum/action/ability/activable/tyranid/warrior/fling]
 	fling_action?.add_cooldown()
 
 
@@ -466,24 +466,24 @@
 #define WARRIOR_PUNCH_KNOCKBACK_DISTANCE 1 // in tiles
 #define WARRIOR_PUNCH_KNOCKBACK_SPEED 1
 
-/datum/action/ability/activable/xeno/warrior/punch
+/datum/action/ability/activable/tyranid/warrior/punch
 	name = "Punch"
 	action_icon_state = "punch"
-	action_icon = 'icons/Xeno/actions/warrior.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/warrior.dmi'
 	desc = "Strike a target, inflicting stamina damage, stagger and slowdown. Deals double damage, stagger and slowdown to grappled targets. Deals quadruple damage to structures and machinery."
 	ability_cost = 15
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PUNCH,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_PUNCH,
 	)
 	target_flags = ABILITY_MOB_TARGET
 
-/datum/action/ability/activable/xeno/warrior/punch/on_cooldown_finish()
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+/datum/action/ability/activable/tyranid/warrior/punch/on_cooldown_finish()
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	tyranid_owner.balloon_alert(tyranid_owner, "[initial(name)] ready")
 	return ..()
 
-/datum/action/ability/activable/xeno/warrior/punch/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/warrior/punch/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -497,7 +497,7 @@
 		return FALSE
 	if(isliving(A))
 		var/mob/living/living_target = A
-		if(living_target.issamexenohive(owner))
+		if(living_target.issametyranidhive(owner))
 			if(!silent)
 				owner.balloon_alert(owner, "Cannot punch")
 			return FALSE
@@ -510,47 +510,47 @@
 			owner.balloon_alert(owner, "Not adjacent")
 		return FALSE
 
-/datum/action/ability/activable/xeno/warrior/punch/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/warrior/punch/use_ability(atom/A)
 	. = ..()
 	GLOB.round_statistics.warrior_punches++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "warrior_punches")
 	do_ability(A)
 
 /// Does the ability. Exists because Punch is the parent of another ability, so this lets us separate functionality and avoid repeating a few lines of code.
-/datum/action/ability/activable/xeno/warrior/punch/proc/do_ability(atom/A)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/punch_damage = xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier
-	var/datum/action/ability/xeno_action/empower/empower_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/empower]
+/datum/action/ability/activable/tyranid/warrior/punch/proc/do_ability(atom/A)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/punch_damage = tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier
+	var/datum/action/ability/tyranid_action/empower/empower_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/empower]
 	if(empower_action?.check_empower(A))
 		punch_damage *= WARRIOR_PUNCH_EMPOWER_MULTIPLIER
-	if(!A.punch_act(xeno_owner, punch_damage))
+	if(!A.punch_act(tyranid_owner, punch_damage))
 		return fail_activate()
 	succeed_activate()
 	add_cooldown()
 
-/datum/action/ability/activable/xeno/warrior/punch/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/warrior/punch/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/warrior/punch/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/warrior/punch/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > 1)
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
 /// Handles anything that should happen when the Warrior's punch hits any atom.
-/atom/proc/punch_act(mob/living/carbon/xenomorph/xeno, punch_damage, push = TRUE)
+/atom/proc/punch_act(mob/living/carbon/tyranid/tyranid, punch_damage, push = TRUE)
 	return TRUE
 
-/obj/machinery/punch_act(mob/living/carbon/xenomorph/xeno, punch_damage, ...)
-	xeno.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
-	xeno.do_attack_animation(src, ATTACK_EFFECT_DISARM2)
-	if(!(resistance_flags & UNACIDABLE) || resistance_flags & XENO_DAMAGEABLE) // If it's acidable or we can't acid it but it has the xeno damagable flag, we can damage it
-		attack_generic(xeno, punch_damage * 4, BRUTE, effects = FALSE)
+/obj/machinery/punch_act(mob/living/carbon/tyranid/tyranid, punch_damage, ...)
+	tyranid.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
+	tyranid.do_attack_animation(src, ATTACK_EFFECT_DISARM2)
+	if(!(resistance_flags & UNACIDABLE) || resistance_flags & TYRANID_DAMAGEABLE) // If it's acidable or we can't acid it but it has the tyranid damagable flag, we can damage it
+		attack_generic(tyranid, punch_damage * 4, BRUTE, effects = FALSE)
 	playsound(src, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 50, 1)
 	Shake(duration = 0.5 SECONDS)
 	if(!(machine_stat & PANEL_OPEN))
@@ -566,9 +566,9 @@
 	set_disabled() // Currently only computers use this; falcon punch away its density.
 	return ..()
 
-/obj/machinery/light/punch_act(mob/living/carbon/xenomorph/xeno, ...)
+/obj/machinery/light/punch_act(mob/living/carbon/tyranid/tyranid, ...)
 	. = ..()
-	attack_alien(xeno)
+	attack_alien(tyranid)
 
 /obj/machinery/camera/punch_act(...)
 	. = ..()
@@ -588,31 +588,31 @@
 	if(tipped_level < 2)
 		tip_over()
 
-/obj/structure/punch_act(mob/living/carbon/xenomorph/xeno, punch_damage, ...)
+/obj/structure/punch_act(mob/living/carbon/tyranid/tyranid, punch_damage, ...)
 	. = ..()
-	xeno.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
-	xeno.do_attack_animation(src, ATTACK_EFFECT_DISARM2)
-	attack_alien(xeno, punch_damage * 4, BRUTE, effects = FALSE)
+	tyranid.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
+	tyranid.do_attack_animation(src, ATTACK_EFFECT_DISARM2)
+	attack_alien(tyranid, punch_damage * 4, BRUTE, effects = FALSE)
 	playsound(src, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 50, 1)
 	Shake(duration = 0.5 SECONDS)
 
-/obj/vehicle/punch_act(mob/living/carbon/xenomorph/xeno, punch_damage, ...)
+/obj/vehicle/punch_act(mob/living/carbon/tyranid/tyranid, punch_damage, ...)
 	. = ..()
-	xeno.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
-	xeno.do_attack_animation(src, ATTACK_EFFECT_DISARM2)
-	attack_generic(xeno, punch_damage * 4, BRUTE, effects = FALSE)
+	tyranid.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
+	tyranid.do_attack_animation(src, ATTACK_EFFECT_DISARM2)
+	attack_generic(tyranid, punch_damage * 4, BRUTE, effects = FALSE)
 	playsound(src, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 50, 1)
 	Shake(duration = 0.5 SECONDS)
 	return TRUE
 
-/mob/living/punch_act(mob/living/carbon/xenomorph/warrior/xeno, punch_damage, push = TRUE)
+/mob/living/punch_act(mob/living/carbon/tyranid/warrior/tyranid, punch_damage, push = TRUE)
 	. = ..()
 	var/slowdown_stacks = WARRIOR_PUNCH_SLOWDOWN
 	var/stagger_stacks = WARRIOR_PUNCH_STAGGER
 	var/visual_effect = /obj/effect/temp_visual/warrior/punch/weak
 	var/sound_effect = 'sound/weapons/punch1.ogg'
-	if(pulledby == xeno)
-		xeno.stop_pulling()
+	if(pulledby == tyranid)
+		tyranid.stop_pulling()
 		punch_damage *= WARRIOR_PUNCH_GRAPPLED_DAMAGE_MULTIPLIER
 		slowdown_stacks *= WARRIOR_PUNCH_GRAPPLED_DEBUFF_MULTIPLIER
 		stagger_stacks *= WARRIOR_PUNCH_GRAPPLED_DEBUFF_MULTIPLIER
@@ -623,11 +623,11 @@
 	var/datum/limb/target_limb
 	if(!iscarbon(src))
 		var/mob/living/carbon/carbon_target = src
-		target_limb = carbon_target.get_limb(xeno.zone_selected)
+		target_limb = carbon_target.get_limb(tyranid.zone_selected)
 		if(!target_limb || (target_limb.limb_status & LIMB_DESTROYED))
 			target_limb = carbon_target.get_limb(BODY_ZONE_CHEST)
-	xeno.face_atom(src)
-	xeno.do_attack_animation(src)
+	tyranid.face_atom(src)
+	tyranid.do_attack_animation(src)
 	new visual_effect(get_turf(src))
 	playsound(src, sound_effect, 50, 1)
 	shake_camera(src, 1, 1)
@@ -636,13 +636,13 @@
 	adjust_blurriness(slowdown_stacks)
 	apply_damage(punch_damage, BRUTE, target_limb ? target_limb : 0, MELEE)
 	apply_damage(punch_damage, STAMINA, updating_health = TRUE)
-	var/turf_behind = get_step(src, REVERSE_DIR(get_dir(src, xeno)))
+	var/turf_behind = get_step(src, REVERSE_DIR(get_dir(src, tyranid)))
 	if(!push)
 		return
 	if(LinkBlocked(get_turf(src), turf_behind))
 		do_attack_animation(turf_behind)
 		return
-	knockback(xeno, WARRIOR_PUNCH_KNOCKBACK_DISTANCE, WARRIOR_PUNCH_KNOCKBACK_SPEED)
+	knockback(tyranid, WARRIOR_PUNCH_KNOCKBACK_DISTANCE, WARRIOR_PUNCH_KNOCKBACK_SPEED)
 
 /obj/effect/temp_visual/warrior/punch
 	icon = 'icons/effects/effects.dmi'
@@ -670,20 +670,20 @@
 #define WARRIOR_JAB_BLUR 6
 #define WARRIOR_JAB_CONFUSION_DURATION 3 SECONDS
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry
+/datum/action/ability/activable/tyranid/warrior/punch/flurry
 	name = "Flurry"
 	action_icon_state = "flurry"
-	action_icon = 'icons/Xeno/actions/warrior.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/warrior.dmi'
 	desc = "Strike at your target with blinding speed."
 	ability_cost = 10
 	cooldown_duration = 7 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_JAB,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_JAB,
 	)
 	/// The amount of charges we currently have. Initial value is assumed to be the maximum.
 	var/current_charges = 3
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry/give_action(mob/living/L)
+/datum/action/ability/activable/tyranid/warrior/punch/flurry/give_action(mob/living/L)
 	. = ..()
 	var/mutable_appearance/counter_maptext = mutable_appearance(icon = null, icon_state = null, layer = ACTION_LAYER_MAPTEXT)
 	counter_maptext.pixel_x = 16
@@ -691,12 +691,12 @@
 	counter_maptext.maptext = MAPTEXT("[current_charges]/[initial(current_charges)]")
 	visual_references[VREF_MUTABLE_JAB] = counter_maptext
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry/remove_action(mob/living/carbon/xenomorph/X)
+/datum/action/ability/activable/tyranid/warrior/punch/flurry/remove_action(mob/living/carbon/tyranid/X)
 	. = ..()
 	button.cut_overlay(visual_references[VREF_MUTABLE_JAB])
 	visual_references[VREF_MUTABLE_JAB] = null
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry/update_button_icon()
+/datum/action/ability/activable/tyranid/warrior/punch/flurry/update_button_icon()
 	button.cut_overlay(visual_references[VREF_MUTABLE_JAB])
 	var/mutable_appearance/number = visual_references[VREF_MUTABLE_JAB]
 	number?.maptext = MAPTEXT("[current_charges]/[initial(current_charges)]")
@@ -704,7 +704,7 @@
 	button.add_overlay(visual_references[VREF_MUTABLE_JAB])
 	return ..()
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/warrior/punch/flurry/on_cooldown_finish()
 	current_charges = clamp(current_charges+1, 0, initial(current_charges))
 	owner.balloon_alert(owner, "[initial(name)] ready[current_charges > 1 ? " ([current_charges]/[initial(current_charges)])" : ""]")
 	update_button_icon()
@@ -713,22 +713,22 @@
 		return
 	return ..()
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry/can_use_action(silent, override_flags)
+/datum/action/ability/activable/tyranid/warrior/punch/flurry/can_use_action(silent, override_flags)
 	. = ..()
 	if(cooldown_timer && current_charges > 0)
 		return TRUE
 
-/datum/action/ability/activable/xeno/warrior/punch/flurry/do_ability(atom/A)
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	var/jab_damage = round((xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier) * WARRIOR_JAB_DAMAGE_MULTIPLIER)
-	if(!A.punch_act(xeno_owner, jab_damage, FALSE))
+/datum/action/ability/activable/tyranid/warrior/punch/flurry/do_ability(atom/A)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	var/jab_damage = round((tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier) * WARRIOR_JAB_DAMAGE_MULTIPLIER)
+	if(!A.punch_act(tyranid_owner, jab_damage, FALSE))
 		return fail_activate()
 	current_charges--
 	succeed_activate()
 	add_cooldown()
 	if(!isliving(A))
 		return
-	var/datum/action/ability/xeno_action/empower/empower_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/empower]
+	var/datum/action/ability/tyranid_action/empower/empower_action = tyranid_owner.actions_by_path[/datum/action/ability/tyranid_action/empower]
 	if(!empower_action?.check_empower(A))
 		return
 	var/mob/living/living_target = A

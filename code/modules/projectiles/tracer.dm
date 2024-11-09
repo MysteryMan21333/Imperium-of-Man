@@ -1,6 +1,6 @@
 /atom/movable/hitscan_projectile_effect
 	name = "pew"
-	icon = 'icons/obj/items/projectiles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/projectiles.dmi'
 	icon_state = ""
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

@@ -1,11 +1,11 @@
-/mob/living/carbon/xenomorph/fire_act(burn_level)
+/mob/living/carbon/tyranid/fire_act(burn_level)
 	if(status_flags & GODMODE)
 		return
-	if(xeno_caste.caste_flags & CASTE_FIRE_IMMUNE)
+	if(tyranid_caste.caste_flags & CASTE_FIRE_IMMUNE)
 		return
 	return ..()
 
-/mob/living/carbon/xenomorph/modify_by_armor(damage_amount, armor_type, penetration, def_zone, attack_dir)
+/mob/living/carbon/tyranid/modify_by_armor(damage_amount, armor_type, penetration, def_zone, attack_dir)
 	var/hard_armor_remaining = get_hard_armor(armor_type, def_zone)
 
 	var/effective_penetration = max(0, penetration - hard_armor_remaining)
@@ -15,7 +15,7 @@
 
 	return clamp(damage_amount * (1 - ((get_soft_armor(armor_type, def_zone) * sunder_ratio - effective_penetration) * 0.01)), 0, damage_amount)
 
-/mob/living/carbon/xenomorph/ex_act(severity)
+/mob/living/carbon/tyranid/ex_act(severity)
 	if(status_flags & (INCORPOREAL|GODMODE))
 		return
 
@@ -28,7 +28,7 @@
 	if(bomb_armor_ratio <= 0) //we have 100 effective bomb armor
 		return
 
-	if((severity == EXPLODE_DEVASTATE) && (bomb_armor_ratio > XENO_EXPLOSION_GIB_THRESHOLD))
+	if((severity == EXPLODE_DEVASTATE) && (bomb_armor_ratio > TYRANID_EXPLOSION_GIB_THRESHOLD))
 		return gib() //Gibs unprotected benos
 
 	switch(severity)
@@ -59,7 +59,7 @@
 
 	apply_damages(ex_damage * 0.5, ex_damage * 0.5, blocked = BOMB, updating_health = TRUE)
 
-/mob/living/carbon/xenomorph/apply_damage(damage = 0, damagetype = BRUTE, def_zone, blocked = 0, sharp = FALSE, edge = FALSE, updating_health = FALSE, penetration)
+/mob/living/carbon/tyranid/apply_damage(damage = 0, damagetype = BRUTE, def_zone, blocked = 0, sharp = FALSE, edge = FALSE, updating_health = FALSE, penetration)
 	if(status_flags & GODMODE)
 		return
 	if(damagetype != BRUTE && damagetype != BURN)
@@ -75,7 +75,7 @@
 	if(damage > 12) //Light damage won't splash.
 		check_blood_splash(damage, damagetype, 0, 1, sharp, edge)
 
-	SEND_SIGNAL(src, COMSIG_XENOMORPH_TAKING_DAMAGE, damage)
+	SEND_SIGNAL(src, COMSIG_TYRANID_TAKING_DAMAGE, damage)
 
 	if(stat == DEAD)
 		return FALSE
@@ -89,37 +89,37 @@
 	if(updating_health)
 		updatehealth()
 
-	regen_power = -xeno_caste.regen_delay //Remember, this is in deciseconds.
+	regen_power = -tyranid_caste.regen_delay //Remember, this is in deciseconds.
 
 	if(isobj(pulling))
 		stop_pulling()
 
 
-	if(!COOLDOWN_CHECK(src, xeno_health_alert_cooldown))
+	if(!COOLDOWN_CHECK(src, tyranid_health_alert_cooldown))
 		return
 	//If we're alive and health is less than either the alert threshold, or the alert trigger percent, whichever is greater, and we're not on alert cooldown, trigger the hive alert
-	if(stat == DEAD || (health > max(XENO_HEALTH_ALERT_TRIGGER_THRESHOLD, maxHealth * XENO_HEALTH_ALERT_TRIGGER_PERCENT)) || xeno_caste.caste_flags & CASTE_DO_NOT_ALERT_LOW_LIFE)
+	if(stat == DEAD || (health > max(TYRANID_HEALTH_ALERT_TRIGGER_THRESHOLD, maxHealth * TYRANID_HEALTH_ALERT_TRIGGER_PERCENT)) || tyranid_caste.caste_flags & CASTE_DO_NOT_ALERT_LOW_LIFE)
 		return
 
 	var/list/filter_list = list()
-	for(var/i in hive.get_all_xenos())
+	for(var/i in hive.get_all_tyranids())
 
-		var/mob/living/carbon/xenomorph/X = i
+		var/mob/living/carbon/tyranid/X = i
 		if(!X.client) //Don't bother if they don't have a client; also runtime filters
 			continue
 
 		if(X == src) //We don't need an alert about ourself.
-			filter_list += X //Add the xeno to the filter list
+			filter_list += X //Add the tyranid to the filter list
 
-		if(X.client.prefs.mute_xeno_health_alert_messages) //Build the filter list; people who opted not to receive health alert messages
-			filter_list += X //Add the xeno to the filter list
+		if(X.client.prefs.mute_tyranid_health_alert_messages) //Build the filter list; people who opted not to receive health alert messages
+			filter_list += X //Add the tyranid to the filter list
 
-	xeno_message("Our sister [name] is badly hurt with <font color='red'>([health]/[maxHealth])</font> health remaining at [AREACOORD_NO_Z(src)]!", "xenoannounce", 5, hivenumber, FALSE, src, 'sound/voice/alien/help1.ogg', TRUE, filter_list, /atom/movable/screen/arrow/silo_damaged_arrow)
-	COOLDOWN_START(src, xeno_health_alert_cooldown, XENO_HEALTH_ALERT_COOLDOWN) //set the cooldown.
+	tyranid_message("Our sister [name] is badly hurt with <font color='red'>([health]/[maxHealth])</font> health remaining at [AREACOORD_NO_Z(src)]!", "tyranidannounce", 5, hivenumber, FALSE, src, 'sound/voice/alien/help1.ogg', TRUE, filter_list, /atom/movable/screen/arrow/silo_damaged_arrow)
+	COOLDOWN_START(src, tyranid_health_alert_cooldown, TYRANID_HEALTH_ALERT_COOLDOWN) //set the cooldown.
 
 	return damage
 
-///Handles overheal for xeno receiving damage
+///Handles overheal for tyranid receiving damage
 #define HANDLE_OVERHEAL(amount) \
 	if(overheal && amount > 0) { \
 		var/reduction = min(amount, overheal); \
@@ -127,9 +127,9 @@
 		adjustOverheal(src, -reduction); \
 	} \
 
-/mob/living/carbon/xenomorph/adjustBruteLoss(amount, updating_health = FALSE, passive = FALSE)
+/mob/living/carbon/tyranid/adjustBruteLoss(amount, updating_health = FALSE, passive = FALSE)
 	var/list/amount_mod = list()
-	SEND_SIGNAL(src, COMSIG_XENOMORPH_BRUTE_DAMAGE, amount, amount_mod, passive)
+	SEND_SIGNAL(src, COMSIG_TYRANID_BRUTE_DAMAGE, amount, amount_mod, passive)
 	for(var/i in amount_mod)
 		amount -= i
 
@@ -140,9 +140,9 @@
 	if(updating_health)
 		updatehealth()
 
-/mob/living/carbon/xenomorph/adjustFireLoss(amount, updating_health = FALSE, passive = FALSE)
+/mob/living/carbon/tyranid/adjustFireLoss(amount, updating_health = FALSE, passive = FALSE)
 	var/list/amount_mod = list()
-	SEND_SIGNAL(src, COMSIG_XENOMORPH_BURN_DAMAGE, amount, amount_mod, passive)
+	SEND_SIGNAL(src, COMSIG_TYRANID_BURN_DAMAGE, amount, amount_mod, passive)
 	for(var/i in amount_mod)
 		amount -= i
 
@@ -155,7 +155,7 @@
 
 #undef HANDLE_OVERHEAL
 
-/mob/living/carbon/xenomorph/proc/check_blood_splash(damage = 0, damtype = BRUTE, chancemod = 0, radius = 1, sharp = FALSE, edge = FALSE)
+/mob/living/carbon/tyranid/proc/check_blood_splash(damage = 0, damtype = BRUTE, chancemod = 0, radius = 1, sharp = FALSE, edge = FALSE)
 	if(!damage)
 		return FALSE
 	var/chance = 25 //base chance
@@ -172,7 +172,7 @@
 
 	if(radius > 1 || prob(chance))
 
-		var/obj/effect/decal/cleanable/blood/xeno/decal = locate(/obj/effect/decal/cleanable/blood/xeno) in T
+		var/obj/effect/decal/cleanable/blood/tyranid/decal = locate(/obj/effect/decal/cleanable/blood/tyranid) in T
 
 		if(!decal) //Let's not stack blood, it just makes lagggggs.
 			add_splatter_floor(T) //Drop some on the ground first.
@@ -180,7 +180,7 @@
 			if(decal.random_icon_states && length(decal.random_icon_states) > 0) //If there's already one, just randomize it so it changes.
 				decal.icon_state = pick(decal.random_icon_states)
 
-		if(!(xeno_caste.caste_flags & CASTE_ACID_BLOOD))
+		if(!(tyranid_caste.caste_flags & CASTE_ACID_BLOOD))
 			return
 		var/splash_chance
 		for(var/mob/living/carbon/human/victim in range(radius,src)) //Loop through all nearby victims, including the tile.

@@ -1,59 +1,59 @@
 // ***************************************
 // *********** Charge
 // ***************************************
-/datum/action/ability/activable/xeno/charge
+/datum/action/ability/activable/tyranid/charge
 	name = "Eviscerating Charge"
 	action_icon_state = "pounce"
-	action_icon = 'icons/Xeno/actions/runner.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/runner.dmi'
 	desc = "Charge up to 4 tiles and viciously attack your target."
 	cooldown_duration = 20 SECONDS
 	ability_cost = 500 //Can't ignore pain/Charge and ravage in the same timeframe, but you can combo one of them.
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RAVAGER_CHARGE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_RAVAGER_CHARGE,
 	)
 	///charge distance
 	var/charge_range = RAV_CHARGEDISTANCE
 
-/datum/action/ability/activable/xeno/charge/use_ability(atom/A)
+/datum/action/ability/activable/tyranid/charge/use_ability(atom/A)
 	if(!A)
 		return
-	var/mob/living/carbon/xenomorph/ravager/X = owner
+	var/mob/living/carbon/tyranid/ravager/X = owner
 
-	RegisterSignal(X, COMSIG_XENO_OBJ_THROW_HIT, PROC_REF(obj_hit))
+	RegisterSignal(X, COMSIG_TYRANID_OBJ_THROW_HIT, PROC_REF(obj_hit))
 	RegisterSignal(X, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
-	RegisterSignal(X, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
+	RegisterSignal(X, COMSIG_TYRANID_LEAP_BUMP, PROC_REF(mob_hit))
 
 	X.visible_message(span_danger("[X] charges towards \the [A]!"), \
 	span_danger("We charge towards \the [A]!") )
 	X.emote("roar")
-	X.xeno_flags |= XENO_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
+	X.tyranid_flags |= TYRANID_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
 	succeed_activate()
 
 	X.throw_at(A, charge_range, RAV_CHARGESPEED, X)
 
 	add_cooldown()
 
-/datum/action/ability/activable/xeno/charge/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("Our exoskeleton quivers as we get ready to use [name] again."))
+/datum/action/ability/activable/tyranid/charge/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("Our exoskeleton quivers as we get ready to use [name] again."))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
-/datum/action/ability/activable/xeno/charge/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/charge/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/charge/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/charge/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(!line_of_sight(owner, target, charge_range))
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
 ///Deals with hitting objects
-/datum/action/ability/activable/xeno/charge/proc/obj_hit(datum/source, obj/target, speed)
+/datum/action/ability/activable/tyranid/charge/proc/obj_hit(datum/source, obj/target, speed)
 	SIGNAL_HANDLER
 	if(istype(target, /obj/structure/table))
 		var/obj/structure/S = target
@@ -65,14 +65,14 @@
 	charge_complete()
 
 ///Deals with hitting mobs. Triggered by bump instead of throw impact as we want to plow past mobs
-/datum/action/ability/activable/xeno/charge/proc/mob_hit(datum/source, mob/living/living_target)
+/datum/action/ability/activable/tyranid/charge/proc/mob_hit(datum/source, mob/living/living_target)
 	SIGNAL_HANDLER
 	. = TRUE
-	if(living_target.stat || isxeno(living_target)) //we leap past xenos
+	if(living_target.stat || istyranid(living_target)) //we leap past tyranids
 		return
 
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	living_target.attack_alien_harm(xeno_owner, xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier * 0.25, FALSE, TRUE, FALSE, TRUE, INTENT_HARM) //Location is always random, cannot crit, harm only
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	living_target.attack_alien_harm(tyranid_owner, tyranid_owner.tyranid_caste.melee_damage * tyranid_owner.tyranid_melee_damage_modifier * 0.25, FALSE, TRUE, FALSE, TRUE, INTENT_HARM) //Location is always random, cannot crit, harm only
 	var/target_turf = get_ranged_target_turf(living_target, get_dir(src, living_target), rand(1, 3)) //we blast our victim behind us
 	target_turf = get_step_rand(target_turf) //Scatter
 	if(iscarbon(living_target))
@@ -81,41 +81,41 @@
 	living_target.throw_at(get_turf(target_turf), charge_range, RAV_CHARGESPEED, src)
 
 ///Cleans up after charge is finished
-/datum/action/ability/activable/xeno/charge/proc/charge_complete()
+/datum/action/ability/activable/tyranid/charge/proc/charge_complete()
 	SIGNAL_HANDLER
-	UnregisterSignal(owner, list(COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENOMORPH_LEAP_BUMP))
-	var/mob/living/carbon/xenomorph/ravager/xeno_owner = owner
-	xeno_owner.xeno_flags &= ~XENO_LEAPING
+	UnregisterSignal(owner, list(COMSIG_TYRANID_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_TYRANID_LEAP_BUMP))
+	var/mob/living/carbon/tyranid/ravager/tyranid_owner = owner
+	tyranid_owner.tyranid_flags &= ~TYRANID_LEAPING
 
 // ***************************************
 // *********** Ravage
 // ***************************************
-/datum/action/ability/activable/xeno/ravage
+/datum/action/ability/activable/tyranid/ravage
 	name = "Ravage"
 	action_icon_state = "ravage"
-	action_icon = 'icons/Xeno/actions/ravager.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/ravager.dmi'
 	desc = "Attacks and knockbacks enemies in the direction your facing."
 	ability_cost = 200
 	cooldown_duration = 6 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RAVAGE,
-		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_RAVAGE_SELECT,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_RAVAGE,
+		KEYBINDING_ALTERNATE = COMSIG_TYRANIDABILITY_RAVAGE_SELECT,
 	)
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
 
-/datum/action/ability/activable/xeno/ravage/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We gather enough strength to Ravage again."))
+/datum/action/ability/activable/tyranid/ravage/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("We gather enough strength to Ravage again."))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
-/datum/action/ability/activable/xeno/ravage/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/ravager/X = owner
+/datum/action/ability/activable/tyranid/ravage/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/ravager/X = owner
 
 	X.emote("roar")
 	X.visible_message(span_danger("\The [X] thrashes about in a murderous frenzy!"), \
-	span_xenowarning("We thrash about in a murderous frenzy!"))
+	span_tyranidwarning("We thrash about in a murderous frenzy!"))
 
 	X.face_atom(A)
 	activate_particles(X.dir)
@@ -125,18 +125,18 @@
 	atoms_to_ravage += get_step(owner, turn(owner.dir, 45)).contents
 	for(var/atom/movable/ravaged AS in atoms_to_ravage)
 		if(ishitbox(ravaged) || isvehicle(ravaged))
-			ravaged.attack_alien(X, X.xeno_caste.melee_damage) //Handles APC/Tank stuff. Has to be before the !ishuman check or else ravage does work properly on vehicles.
+			ravaged.attack_alien(X, X.tyranid_caste.melee_damage) //Handles APC/Tank stuff. Has to be before the !ishuman check or else ravage does work properly on vehicles.
 			continue
-		if(!(ravaged.resistance_flags & XENO_DAMAGEABLE) || !X.Adjacent(ravaged))
+		if(!(ravaged.resistance_flags & TYRANID_DAMAGEABLE) || !X.Adjacent(ravaged))
 			continue
 		if(!ishuman(ravaged))
-			ravaged.attack_alien(X, X.xeno_caste.melee_damage)
+			ravaged.attack_alien(X, X.tyranid_caste.melee_damage)
 			ravaged.knockback(X, RAV_RAVAGE_THROW_RANGE, RAV_CHARGESPEED)
 			continue
 		var/mob/living/carbon/human/human_victim = ravaged
 		if(human_victim.stat == DEAD)
 			continue
-		human_victim.attack_alien_harm(X, X.xeno_caste.melee_damage * X.xeno_melee_damage_modifier * 0.25, FALSE, TRUE, FALSE, TRUE)
+		human_victim.attack_alien_harm(X, X.tyranid_caste.melee_damage * X.tyranid_melee_damage_modifier * 0.25, FALSE, TRUE, FALSE, TRUE)
 		human_victim.knockback(X, RAV_RAVAGE_THROW_RANGE, RAV_CHARGESPEED)
 		shake_camera(human_victim, 2, 1)
 		human_victim.Paralyze(1 SECONDS)
@@ -145,7 +145,7 @@
 	add_cooldown()
 
 /// Handles the activation and deactivation of particles, as well as their appearance.
-/datum/action/ability/activable/xeno/ravage/proc/activate_particles(direction) // This could've been an animate()!
+/datum/action/ability/activable/tyranid/ravage/proc/activate_particles(direction) // This could've been an animate()!
 	particle_holder = new(get_turf(owner), /particles/ravager_slash)
 	QDEL_NULL_IN(src, particle_holder, 5)
 	particle_holder.particles.rotation += dir2angle(direction)
@@ -163,17 +163,17 @@
 			particle_holder.particles.position = list(-4, 9)
 			particle_holder.particles.velocity = list(-20, 0)
 
-/datum/action/ability/activable/xeno/ravage/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/ravage/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/ravage/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/ravage/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > 1)
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
@@ -194,15 +194,15 @@
 // ***************************************
 // *********** Endure
 // ***************************************
-/datum/action/ability/xeno_action/endure
+/datum/action/ability/tyranid_action/endure
 	name = "Endure"
 	action_icon_state = "ignore_pain"
-	action_icon = 'icons/Xeno/actions/ravager.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/ravager.dmi'
 	desc = "For the next few moments you will not go into crit and become resistant to explosives and immune to stagger and slowdown, but you still die if you take damage exceeding your crit health."
 	ability_cost = 200
 	cooldown_duration = 60 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_ENDURE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_ENDURE,
 	)
 	use_state_flags = ABILITY_USE_STAGGERED //Can use this while staggered
 	///How low the Ravager's health can go while under the effects of Endure before it dies
@@ -212,17 +212,17 @@
 	///Timer for Endure's warning
 	var/endure_warning_duration
 
-/datum/action/ability/xeno_action/endure/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We feel able to imbue ourselves with plasma to Endure once again!"))
+/datum/action/ability/tyranid_action/endure/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("We feel able to imbue ourselves with plasma to Endure once again!"))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
-/datum/action/ability/xeno_action/endure/action_activate()
-	var/mob/living/carbon/xenomorph/ravager/X = owner
+/datum/action/ability/tyranid_action/endure/action_activate()
+	var/mob/living/carbon/tyranid/ravager/X = owner
 
 	X.emote("roar")
 	X.visible_message(span_danger("[X]'s skin begins to glow!"), \
-	span_xenowarning("We feel the plasma coursing through our veins!"))
+	span_tyranidwarning("We feel the plasma coursing through our veins!"))
 
 	X.endure = TRUE
 
@@ -234,11 +234,11 @@
 	X.set_stagger(0) //Remove stagger
 	X.set_slowdown(0) //Remove slowdown
 	X.soft_armor = X.soft_armor.modifyRating(bomb = 20) //Improved explosion resistance
-	ADD_TRAIT(X, TRAIT_STAGGERIMMUNE, ENDURE_TRAIT) //Can now endure impacts/damages that would make lesser xenos flinch
+	ADD_TRAIT(X, TRAIT_STAGGERIMMUNE, ENDURE_TRAIT) //Can now endure impacts/damages that would make lesser tyranids flinch
 	ADD_TRAIT(X, TRAIT_SLOWDOWNIMMUNE, ENDURE_TRAIT) //Can now endure slowdown
 
-	RegisterSignal(X, COMSIG_XENOMORPH_BRUTE_DAMAGE, PROC_REF(damage_taken)) //Warns us if our health is critically low
-	RegisterSignal(X, COMSIG_XENOMORPH_BURN_DAMAGE, PROC_REF(damage_taken))
+	RegisterSignal(X, COMSIG_TYRANID_BRUTE_DAMAGE, PROC_REF(damage_taken)) //Warns us if our health is critically low
+	RegisterSignal(X, COMSIG_TYRANID_BURN_DAMAGE, PROC_REF(damage_taken))
 
 	succeed_activate()
 	add_cooldown()
@@ -247,20 +247,20 @@
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "ravager_endures")
 
 ///Warns the player when Endure is about to end
-/datum/action/ability/xeno_action/endure/proc/endure_warning()
+/datum/action/ability/tyranid_action/endure/proc/endure_warning()
 	if(QDELETED(owner))
 		return
 	to_chat(owner,span_highdanger("We feel the plasma draining from our veins... [initial(name)] will last for only [timeleft(endure_duration) * 0.1] more seconds!"))
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 50, 0, 1)
 
 ///Turns off the Endure buff
-/datum/action/ability/xeno_action/endure/proc/endure_deactivate()
+/datum/action/ability/tyranid_action/endure/proc/endure_deactivate()
 	if(QDELETED(owner))
 		return
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 
-	UnregisterSignal(X, COMSIG_XENOMORPH_BRUTE_DAMAGE)
-	UnregisterSignal(X, COMSIG_XENOMORPH_BURN_DAMAGE)
+	UnregisterSignal(X, COMSIG_TYRANID_BRUTE_DAMAGE)
+	UnregisterSignal(X, COMSIG_TYRANID_BURN_DAMAGE)
 
 	X.do_jitter_animation(1000)
 	X.endure = FALSE
@@ -270,8 +270,8 @@
 		var/total_damage = X.getFireLoss() + X.getBruteLoss()
 		var/burn_percentile_damage = X.getFireLoss() / total_damage
 		var/brute_percentile_damage = X.getBruteLoss() / total_damage
-		X.setBruteLoss((X.xeno_caste.max_health - X.get_crit_threshold()-1) * brute_percentile_damage)
-		X.setFireLoss((X.xeno_caste.max_health - X.get_crit_threshold()-1) * burn_percentile_damage)
+		X.setBruteLoss((X.tyranid_caste.max_health - X.get_crit_threshold()-1) * brute_percentile_damage)
+		X.setFireLoss((X.tyranid_caste.max_health - X.get_crit_threshold()-1) * burn_percentile_damage)
 
 	X.soft_armor = X.soft_armor.modifyRating(bomb = -20) //Remove resistances/immunities
 	REMOVE_TRAIT(X, TRAIT_STAGGERIMMUNE, ENDURE_TRAIT)
@@ -284,21 +284,21 @@
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 50, 0, 1)
 
 ///Warns us when our health is critically low and tells us exactly how much more punishment we can take
-/datum/action/ability/xeno_action/endure/proc/damage_taken(mob/living/carbon/xenomorph/X, damage_taken)
+/datum/action/ability/tyranid_action/endure/proc/damage_taken(mob/living/carbon/tyranid/X, damage_taken)
 	SIGNAL_HANDLER
 	if(X.health < 0)
-		to_chat(X, "<span class='xenohighdanger' style='color: red;'>We are critically wounded! We can only withstand [(RAVAGER_ENDURE_HP_LIMIT-X.health) * -1] more damage before we perish!</span>")
+		to_chat(X, "<span class='tyranidhighdanger' style='color: red;'>We are critically wounded! We can only withstand [(RAVAGER_ENDURE_HP_LIMIT-X.health) * -1] more damage before we perish!</span>")
 		X.overlay_fullscreen("endure", /atom/movable/screen/fullscreen/animated/bloodlust)
 	else
 		X.clear_fullscreen("endure", 0.7 SECONDS)
 
 
 
-/datum/action/ability/xeno_action/endure/ai_should_start_consider()
+/datum/action/ability/tyranid_action/endure/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/xeno_action/endure/ai_should_use(target)
-	var/mob/living/carbon/xenomorph/ravager/X = owner
+/datum/action/ability/tyranid_action/endure/ai_should_use(target)
+	var/mob/living/carbon/tyranid/ravager/X = owner
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > WORLD_VIEW_NUM) // If we can be seen.
@@ -312,16 +312,16 @@
 // ***************************************
 // *********** Rage
 // ***************************************
-/datum/action/ability/xeno_action/rage
+/datum/action/ability/tyranid_action/rage
 	name = "Rage"
 	action_icon_state = "rage"
-	action_icon = 'icons/Xeno/actions/ravager.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/ravager.dmi'
 	desc = "Use while at 50% health or lower to gain extra slash damage, resistances and speed in proportion to your missing hit points. This bonus is increased and you regain plasma while your HP is negative."
 	ability_cost = 0 //We're limited by cooldowns, not plasma
 	cooldown_duration = 60 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RAGE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_RAGE,
 	)
 	///Determines the power of Rage's many effects. Power scales inversely with the Ravager's HP; min 0.25 at 50% of Max HP, max 1 while in negative HP. 0.5 and above triggers especial effects.
 	var/rage_power
@@ -330,26 +330,26 @@
 	///Determines the Plasma to remove when Rage ends
 	var/rage_plasma
 
-/datum/action/ability/xeno_action/rage/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We are able to enter our rage once again."))
+/datum/action/ability/tyranid_action/rage/on_cooldown_finish()
+	to_chat(owner, span_tyraniddanger("We are able to enter our rage once again."))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
-/datum/action/ability/xeno_action/rage/can_use_action(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/tyranid_action/rage/can_use_action(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
 
-	var/mob/living/carbon/xenomorph/rager = owner
+	var/mob/living/carbon/tyranid/rager = owner
 
 	if(rager.health > rager.maxHealth * RAVAGER_RAGE_MIN_HEALTH_THRESHOLD) //Need to be at 50% of max hp or lower to rage
 		if(!silent)
-			to_chat(rager, span_xenodanger("Our health isn't low enough to rage! We must take [rager.health - (rager.maxHealth * RAVAGER_RAGE_MIN_HEALTH_THRESHOLD)] more damage!"))
+			to_chat(rager, span_tyraniddanger("Our health isn't low enough to rage! We must take [rager.health - (rager.maxHealth * RAVAGER_RAGE_MIN_HEALTH_THRESHOLD)] more damage!"))
 		return FALSE
 
 
-/datum/action/ability/xeno_action/rage/action_activate()
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/rage/action_activate()
+	var/mob/living/carbon/tyranid/X = owner
 
 	rage_power = (1-(X.health/X.maxHealth)) * RAVAGER_RAGE_POWER_MULTIPLIER //Calculate the power of our rage; scales with difference between current and max HP
 
@@ -368,9 +368,9 @@
 
 	var/bonus_duration
 	if(rage_power >= RAVAGER_RAGE_SUPER_RAGE_THRESHOLD) //If we're super pissed it's time to get crazy
-		var/datum/action/ability/xeno_action/charge = X.actions_by_path[/datum/action/ability/activable/xeno/charge]
-		var/datum/action/ability/xeno_action/ravage = X.actions_by_path[/datum/action/ability/activable/xeno/ravage]
-		var/datum/action/ability/xeno_action/endure/endure_ability = X.actions_by_path[/datum/action/ability/xeno_action/endure]
+		var/datum/action/ability/tyranid_action/charge = X.actions_by_path[/datum/action/ability/activable/tyranid/charge]
+		var/datum/action/ability/tyranid_action/ravage = X.actions_by_path[/datum/action/ability/activable/tyranid/ravage]
+		var/datum/action/ability/tyranid_action/endure/endure_ability = X.actions_by_path[/datum/action/ability/tyranid_action/endure]
 
 		if(endure_ability.endure_duration) //Check if Endure is active
 			endure_ability.endure_threshold = RAVAGER_ENDURE_HP_LIMIT * (1 + rage_power) //Endure crit threshold scales with Rage Power; min -100, max -150
@@ -379,12 +379,12 @@
 			charge.clear_cooldown() //Reset charge cooldown
 		if(ravage)
 			ravage.clear_cooldown() //Reset ravage cooldown
-		RegisterSignal(X, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(drain_slash))
+		RegisterSignal(X, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(drain_slash))
 
 	for(var/turf/affected_tiles AS in RANGE_TURFS(rage_power_radius / 2, X.loc))
 		affected_tiles.Shake(duration = 1 SECONDS) //SFX
 
-	for(var/mob/living/affected_mob in cheap_get_humans_near(X, rage_power_radius) + cheap_get_xenos_near(X, rage_power_radius)) //Roar that applies cool SFX
+	for(var/mob/living/affected_mob in cheap_get_humans_near(X, rage_power_radius) + cheap_get_tyranids_near(X, rage_power_radius)) //Roar that applies cool SFX
 		if(affected_mob.stat || affected_mob == X) //We don't care about the dead/unconsious
 			continue
 
@@ -404,15 +404,15 @@
 
 	X.add_filter("ravager_rage_outline", 5, outline_filter(1.5, COLOR_RED)) //Set our cool aura; also confirmation we have the buff
 
-	rage_plasma = min(X.xeno_caste.plasma_max - X.plasma_stored, X.xeno_caste.plasma_max * rage_power) //Calculate the plasma to restore (and take away later)
+	rage_plasma = min(X.tyranid_caste.plasma_max - X.plasma_stored, X.tyranid_caste.plasma_max * rage_power) //Calculate the plasma to restore (and take away later)
 	X.plasma_stored += rage_plasma //Regain a % of our maximum plasma scaling with rage
 
 	rage_sunder = min(X.sunder, rage_power * 100) //Set our temporary Sunder recovery
 	X.adjust_sunder(-1 * rage_sunder) //Restores up to 50 Sunder temporarily.
 
-	X.xeno_melee_damage_modifier += rage_power  //Set rage melee damage bonus
+	X.tyranid_melee_damage_modifier += rage_power  //Set rage melee damage bonus
 
-	X.add_movespeed_modifier(MOVESPEED_ID_RAVAGER_RAGE, TRUE, 0, NONE, TRUE, X.xeno_caste.speed * 0.5 * rage_power) //Set rage speed bonus
+	X.add_movespeed_modifier(MOVESPEED_ID_RAVAGER_RAGE, TRUE, 0, NONE, TRUE, X.tyranid_caste.speed * 0.5 * rage_power) //Set rage speed bonus
 
 	//Too angry to be stunned/slowed/staggered/knocked down
 	ADD_TRAIT(X, TRAIT_STUNIMMUNE, RAGE_TRAIT)
@@ -429,14 +429,14 @@
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "ravager_rages")
 
 ///Warns the user when his rage is about to end.
-/datum/action/ability/xeno_action/rage/proc/rage_warning(bonus_duration = 0)
+/datum/action/ability/tyranid_action/rage/proc/rage_warning(bonus_duration = 0)
 	if(QDELETED(owner))
 		return
 	to_chat(owner,span_highdanger("Our rage begins to subside... [initial(name)] will only last for only [(RAVAGER_RAGE_DURATION + bonus_duration) * (1-RAVAGER_RAGE_WARNING) * 0.1] more seconds!"))
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 50, 0, 1)
 
 ///Warns the user when his rage is about to end.
-/datum/action/ability/xeno_action/rage/proc/drain_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
+/datum/action/ability/tyranid_action/rage/proc/drain_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
 	SIGNAL_HANDLER
 	var/mob/living/rager = owner
 	var/brute_damage = rager.getBruteLoss()
@@ -453,20 +453,20 @@
 		health_modifier = min(burn_damage, health_recovery)*-1
 		rager.adjustFireLoss(health_modifier)
 
-	var/datum/action/ability/xeno_action/endure/endure_ability = rager.actions_by_path[/datum/action/ability/xeno_action/endure]
+	var/datum/action/ability/tyranid_action/endure/endure_ability = rager.actions_by_path[/datum/action/ability/tyranid_action/endure]
 	if(endure_ability.endure_duration) //Check if Endure is active
 		var/new_duration = min(RAVAGER_ENDURE_DURATION, (timeleft(endure_ability.endure_duration) + RAVAGER_RAGE_ENDURE_INCREASE_PER_SLASH)) //Increment Endure duration by 2 seconds per slash
 		deltimer(endure_ability.endure_duration) //Reset timers
 		deltimer(endure_ability.endure_warning_duration)
-		endure_ability.endure_duration = addtimer(CALLBACK(endure_ability, TYPE_PROC_REF(/datum/action/ability/xeno_action/endure, endure_deactivate)), new_duration, TIMER_UNIQUE|TIMER_STOPPABLE|TIMER_OVERRIDE) //Reset Endure timers if active
+		endure_ability.endure_duration = addtimer(CALLBACK(endure_ability, TYPE_PROC_REF(/datum/action/ability/tyranid_action/endure, endure_deactivate)), new_duration, TIMER_UNIQUE|TIMER_STOPPABLE|TIMER_OVERRIDE) //Reset Endure timers if active
 		if(new_duration > 3 SECONDS) //Check timing
-			endure_ability.endure_warning_duration = addtimer(CALLBACK(endure_ability, TYPE_PROC_REF(/datum/action/ability/xeno_action/endure, endure_warning)), new_duration - 3 SECONDS, TIMER_UNIQUE|TIMER_STOPPABLE|TIMER_OVERRIDE) //Reset Endure timers if active
+			endure_ability.endure_warning_duration = addtimer(CALLBACK(endure_ability, TYPE_PROC_REF(/datum/action/ability/tyranid_action/endure, endure_warning)), new_duration - 3 SECONDS, TIMER_UNIQUE|TIMER_STOPPABLE|TIMER_OVERRIDE) //Reset Endure timers if active
 
 ///Called when we want to end the Rage effect
-/datum/action/ability/xeno_action/rage/proc/rage_deactivate()
+/datum/action/ability/tyranid_action/rage/proc/rage_deactivate()
 	if(QDELETED(owner))
 		return
-	var/mob/living/carbon/xenomorph/X = owner
+	var/mob/living/carbon/tyranid/X = owner
 
 	X.do_jitter_animation(1000)
 
@@ -474,7 +474,7 @@
 	X.visible_message(span_warning("[X] seems to calm down."), \
 	span_highdanger("Our rage subsides and its power leaves our body, leaving us exhausted."))
 
-	X.xeno_melee_damage_modifier = initial(X.xeno_melee_damage_modifier) //Reset rage melee damage bonus
+	X.tyranid_melee_damage_modifier = initial(X.tyranid_melee_damage_modifier) //Reset rage melee damage bonus
 	X.remove_movespeed_modifier(MOVESPEED_ID_RAVAGER_RAGE) //Reset speed
 	X.adjust_sunder(rage_sunder) //Remove the temporary Sunder restoration
 	X.use_plasma(rage_plasma) //Remove the temporary Plasma
@@ -482,7 +482,7 @@
 	REMOVE_TRAIT(X, TRAIT_STUNIMMUNE, RAGE_TRAIT)
 	REMOVE_TRAIT(X, TRAIT_SLOWDOWNIMMUNE, RAGE_TRAIT)
 	REMOVE_TRAIT(X, TRAIT_STAGGERIMMUNE, RAGE_TRAIT)
-	UnregisterSignal(X, COMSIG_XENOMORPH_ATTACK_LIVING)
+	UnregisterSignal(X, COMSIG_TYRANID_ATTACK_LIVING)
 
 	rage_sunder = 0
 	rage_power = 0
@@ -494,7 +494,7 @@
 // *********** Vampirism
 // ***************************************
 
-/particles/xeno_slash/vampirism
+/particles/tyranid_slash/vampirism
 	color = "#ff0000"
 	grow = list(-0.2 ,0.5)
 	fade = 10
@@ -505,16 +505,16 @@
 	position = generator(GEN_SPHERE, 10, 30, NORMAL_RAND)
 	scale = generator(GEN_VECTOR, list(1, 1), list(0.9, 0.9), NORMAL_RAND)
 
-/datum/action/ability/xeno_action/vampirism
+/datum/action/ability/tyranid_action/vampirism
 	name = "Toggle vampirism"
 	action_icon_state = "neuroclaws_off"
-	action_icon = 'icons/Xeno/actions/sentinel.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/sentinel.dmi'
 	desc = "Toggle on to enable boosting on "
 	ability_cost = 0 //We're limited by nothing, rip and tear
 	cooldown_duration = 1 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_VAMPIRISM,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_VAMPIRISM,
 	)
 	/// how long we have to wait before healing again
 	var/heal_delay = 2 SECONDS
@@ -523,41 +523,41 @@
 	/// Ref to our particle deletion timer
 	var/timer_ref
 
-/datum/action/ability/xeno_action/vampirism/clean_action()
+/datum/action/ability/tyranid_action/vampirism/clean_action()
 	QDEL_NULL(particle_holder)
 	timer_ref = null
 	return ..()
 
-/datum/action/ability/xeno_action/vampirism/update_button_icon()
-	var/mob/living/carbon/xenomorph/xeno = owner
-	action_icon_state = xeno.vampirism ? "neuroclaws_on" : "neuroclaws_off"
+/datum/action/ability/tyranid_action/vampirism/update_button_icon()
+	var/mob/living/carbon/tyranid/tyranid = owner
+	action_icon_state = tyranid.vampirism ? "neuroclaws_on" : "neuroclaws_off"
 	return ..()
 
-/datum/action/ability/xeno_action/vampirism/give_action(mob/living/L)
+/datum/action/ability/tyranid_action/vampirism/give_action(mob/living/L)
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno = L
-	xeno.vampirism = TRUE
-	RegisterSignal(L, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(on_slash))
+	var/mob/living/carbon/tyranid/tyranid = L
+	tyranid.vampirism = TRUE
+	RegisterSignal(L, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(on_slash))
 
-/datum/action/ability/xeno_action/vampirism/remove_action(mob/living/L)
+/datum/action/ability/tyranid_action/vampirism/remove_action(mob/living/L)
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno = L
-	xeno.vampirism = FALSE
-	UnregisterSignal(L, COMSIG_XENOMORPH_ATTACK_LIVING)
+	var/mob/living/carbon/tyranid/tyranid = L
+	tyranid.vampirism = FALSE
+	UnregisterSignal(L, COMSIG_TYRANID_ATTACK_LIVING)
 
-/datum/action/ability/xeno_action/vampirism/action_activate()
+/datum/action/ability/tyranid_action/vampirism/action_activate()
 	. = ..()
-	var/mob/living/carbon/xenomorph/xeno = owner
-	xeno.vampirism = !xeno.vampirism
-	if(xeno.vampirism)
-		RegisterSignal(xeno, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(on_slash))
+	var/mob/living/carbon/tyranid/tyranid = owner
+	tyranid.vampirism = !tyranid.vampirism
+	if(tyranid.vampirism)
+		RegisterSignal(tyranid, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(on_slash))
 	else
-		UnregisterSignal(xeno, COMSIG_XENOMORPH_ATTACK_LIVING)
-	to_chat(xeno, span_xenonotice("You will now[xeno.vampirism ? "" : " no longer"] heal from attacking"))
+		UnregisterSignal(tyranid, COMSIG_TYRANID_ATTACK_LIVING)
+	to_chat(tyranid, span_tyranidnotice("You will now[tyranid.vampirism ? "" : " no longer"] heal from attacking"))
 	update_button_icon()
 
 ///Adds the slashed mob to tracked damage mobs
-/datum/action/ability/xeno_action/vampirism/proc/on_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
+/datum/action/ability/tyranid_action/vampirism/proc/on_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
 	SIGNAL_HANDLER
 	if(target.stat == DEAD)
 		return
@@ -565,10 +565,10 @@
 		return
 	if(timeleft(timer_ref) > 0)
 		return
-	var/mob/living/carbon/xenomorph/x = owner
+	var/mob/living/carbon/tyranid/x = owner
 	x.adjustBruteLoss(-x.bruteloss * 0.125)
 	x.adjustFireLoss(-x.fireloss * 0.125)
-	particle_holder = new(x, /particles/xeno_slash/vampirism)
+	particle_holder = new(x, /particles/tyranid_slash/vampirism)
 	particle_holder.pixel_y = 18
 	particle_holder.pixel_x = 18
 	timer_ref = QDEL_NULL_IN(src, particle_holder, heal_delay)

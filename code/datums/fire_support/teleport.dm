@@ -9,7 +9,7 @@
 	initiate_screen_message = "Coordinates confirmed, teleporting in COPE now!"
 	initiate_title = "Rhino-1"
 	initiate_sound = null
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_scientist
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_scientist
 	start_visual = null
 	start_sound = null
 	delay_to_impact = 10 SECONDS
@@ -31,7 +31,7 @@
 ///Enabled the datum for use
 /datum/fire_support/tele_cope/proc/enable_use(datum/source, obj/structure/teleporter_array/teleporter)
 	SIGNAL_HANDLER
-	if(teleporter.faction != FACTION_SOM)
+	if(teleporter.faction != FACTION_CHAOS)
 		return
 	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, PROC_REF(disable_use))
 	UnregisterSignal(SSdcs, COMSIG_GLOB_TELEPORTER_ARRAY_ENABLED)

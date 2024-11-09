@@ -2,7 +2,7 @@
 /obj/item/reagent_containers/borghypo
 	name = "Robot Hypospray"
 	desc = "An advanced chemical synthesizer and injection system, designed for heavy-duty medical equipment."
-	icon = 'icons/obj/items/syringe.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/syringe.dmi'
 	worn_icon_state = "hypo"
 	icon_state = "borghypo"
 	amount_per_transfer_from_this = 5

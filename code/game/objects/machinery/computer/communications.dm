@@ -18,7 +18,7 @@
 	desc = "This can be used for various important functions."
 	icon_state = "computer_small"
 	screen_overlay = "comm"
-	req_access = list(ACCESS_MARINE_BRIDGE)
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE)
 	circuit = /obj/item/circuitboard/computer/communications
 	var/prints_intercept = TRUE
 	var/authenticated = 0
@@ -65,14 +65,14 @@
 			if(istype(I))
 				if(check_access(I))
 					authenticated = 1
-				if(ACCESS_MARINE_BRIDGE in I.access)
+				if(ACCESS_GUARDSMAN_BRIDGE in I.access)
 					authenticated = 2
 			else
 				I = C.wear_id
 				if(istype(I))
 					if(check_access(I))
 						authenticated = 1
-					if(ACCESS_MARINE_BRIDGE in I.access)
+					if(ACCESS_GUARDSMAN_BRIDGE in I.access)
 						authenticated = 2
 		if("logout")
 			authenticated = 0
@@ -81,7 +81,7 @@
 			var/mob/M = usr
 			var/obj/item/card/id/I = M.get_active_held_item()
 			if(istype(I))
-				if((ACCESS_MARINE_CAPTAIN in I.access) || (ACCESS_MARINE_BRIDGE in I.access)) //Let heads change the alert level.
+				if((ACCESS_GUARDSMAN_CAPTAIN in I.access) || (ACCESS_GUARDSMAN_BRIDGE in I.access)) //Let heads change the alert level.
 					switch(tmp_alertlevel)
 						if(-INFINITY to SEC_LEVEL_GREEN)
 							tmp_alertlevel = SEC_LEVEL_GREEN //Cannot go below green.
@@ -133,7 +133,7 @@
 				to_chat(usr, span_warning("Only the Captain can award medals."))
 				return
 			var/mob/living/user = usr
-			if(!ismarinecaptainjob(user.job))
+			if(!isguardsmancaptainjob(user.job))
 				to_chat(usr, span_warning("Only the Captain can award medals."))
 				return
 
@@ -150,7 +150,7 @@
 					to_chat(usr, span_warning("The [SSmapping.configs[SHIP_MAP].map_name]'s distress beacon must be activated prior to evacuation taking place."))
 					return FALSE
 
-				if(GLOB.marine_main_ship.security_level < SEC_LEVEL_RED)
+				if(GLOB.guardsman_main_ship.security_level < SEC_LEVEL_RED)
 					to_chat(usr, span_warning("The ship must be under red alert in order to enact evacuation procedures."))
 					return FALSE
 
@@ -188,7 +188,7 @@
 						//if the self_destruct is active we try to cancel it (which includes lowering alert level to red)
 						if(!SSevacuation.cancel_self_destruct(1))
 							//if SD wasn't active (likely canceled manually in the SD room), then we lower the alert level manually.
-							GLOB.marine_main_ship.set_security_level(SEC_LEVEL_RED, TRUE) //both SD and evac are inactive, lowering the security level.
+							GLOB.guardsman_main_ship.set_security_level(SEC_LEVEL_RED, TRUE) //both SD and evac are inactive, lowering the security level.
 
 				log_game("[key_name(usr)] has canceled the emergency evacuation.")
 				message_admins("[ADMIN_TPMONTY(usr)] has canceled the emergency evacuation.")
@@ -214,13 +214,13 @@
 					to_chat(usr, span_warning("The distress beacon is currently recalibrating."))
 					return FALSE
 
-				var/Ship[] = SSticker.mode.count_humans_and_xenos(SSmapping.levels_by_trait(ZTRAIT_MARINE_MAIN_SHIP))
-				var/ShipMarines[] = Ship[1]
-				var/ShipXenos[] = Ship[2]
-				var/All[] = SSticker.mode.count_humans_and_xenos()
-				var/AllMarines[] = All[1]
-				var/AllXenos[] = All[2]
-				if((AllXenos < round(AllMarines * 0.8)) && (ShipXenos < round(ShipMarines * 0.5))) //If there's less humans (weighted) than xenos, humans get home-turf advantage
+				var/Ship[] = SSticker.mode.count_humans_and_tyranids(SSmapping.levels_by_trait(ZTRAIT_GUARDSMAN_MAIN_SHIP))
+				var/ShipGuardsmans[] = Ship[1]
+				var/ShipTyranids[] = Ship[2]
+				var/All[] = SSticker.mode.count_humans_and_tyranids()
+				var/AllGuardsmans[] = All[1]
+				var/AllTyranids[] = All[2]
+				if((AllTyranids < round(AllGuardsmans * 0.8)) && (ShipTyranids < round(ShipGuardsmans * 0.5))) //If there's less humans (weighted) than tyranids, humans get home-turf advantage
 					to_chat(usr, span_warning("The sensors aren't picking up enough of a threat to warrant a distress beacon."))
 					return FALSE
 
@@ -229,7 +229,7 @@
 
 				var/datum/emergency_call/E = SSticker.mode.get_random_call()
 
-				var/admin_response = admin_approval("<span color='prefix'>DISTRESS:</span> [ADMIN_TPMONTY(usr)] has called a Distress Beacon that was received by [E.name]. Humans: [AllMarines], Xenos: [AllXenos].",
+				var/admin_response = admin_approval("<span color='prefix'>DISTRESS:</span> [ADMIN_TPMONTY(usr)] has called a Distress Beacon that was received by [E.name]. Humans: [AllGuardsmans], Tyranids: [AllTyranids].",
 					user_message = span_boldnotice("A distress beacon will launch in 60 seconds unless High Command responds otherwise."),
 					options = list("approve" = "approve", "deny" = "deny", "deny without annoncing" = "deny without annoncing"),
 					user = usr, admin_sound = sound('sound/effects/sos-morse-code.ogg', channel = CHANNEL_ADMIN))
@@ -413,8 +413,8 @@
 			dat += " <A HREF='?src=[text_ref(src)];operation=setstat;statdisp=alert;alert=biohazard'>Biohazard</A> \]<BR><HR>"
 
 		if(STATE_ALERT_LEVEL)
-			dat += "Current alert level: [GLOB.marine_main_ship.get_security_level()]<BR>"
-			if(GLOB.marine_main_ship.security_level == SEC_LEVEL_DELTA)
+			dat += "Current alert level: [GLOB.guardsman_main_ship.get_security_level()]<BR>"
+			if(GLOB.guardsman_main_ship.security_level == SEC_LEVEL_DELTA)
 				if(SSevacuation.dest_status >= NUKE_EXPLOSION_ACTIVE)
 					dat += "<font color='red'><b>The self-destruct mechanism is active. [SSevacuation.evac_status != EVACUATION_STATUS_INITIATING ? "You have to manually deactivate the self-destruct mechanism." : ""]</b></font><BR>"
 				switch(SSevacuation.evac_status)
@@ -429,8 +429,8 @@
 				dat += "<A HREF='?src=[text_ref(src)];operation=securitylevel;newalertlevel=[SEC_LEVEL_GREEN]'>Green</A>"
 
 		if(STATE_CONFIRM_LEVEL)
-			dat += "Current alert level: [GLOB.marine_main_ship.get_security_level()]<BR>"
-			dat += "Confirm the change to: [GLOB.marine_main_ship.get_security_level(tmp_alertlevel)]<BR>"
+			dat += "Current alert level: [GLOB.guardsman_main_ship.get_security_level()]<BR>"
+			dat += "Confirm the change to: [GLOB.guardsman_main_ship.get_security_level(tmp_alertlevel)]<BR>"
 			dat += "<A HREF='?src=[text_ref(src)];operation=swipeidseclevel'>Swipe ID</A> to confirm change.<BR>"
 
 	dat += "<BR>\[ [(state != STATE_DEFAULT) ? "<A HREF='?src=[text_ref(src)];operation=main'>Main Menu</A>|" : ""]\]"
@@ -444,12 +444,12 @@
 
 
 /obj/machinery/computer/communications/proc/switch_alert_level(new_level)
-	var/old_level = GLOB.marine_main_ship.security_level
-	GLOB.marine_main_ship.set_security_level(new_level)
-	if(GLOB.marine_main_ship.security_level == old_level)
+	var/old_level = GLOB.guardsman_main_ship.security_level
+	GLOB.guardsman_main_ship.set_security_level(new_level)
+	if(GLOB.guardsman_main_ship.security_level == old_level)
 		return //Only notify the admins if an actual change happened
-	log_game("[key_name(usr)] has changed the security level from [GLOB.marine_main_ship.get_security_level(old_level)] to [GLOB.marine_main_ship.get_security_level()].")
-	message_admins("[ADMIN_TPMONTY(usr)] has changed the security level from [GLOB.marine_main_ship.get_security_level(old_level)] to [GLOB.marine_main_ship.get_security_level()].")
+	log_game("[key_name(usr)] has changed the security level from [GLOB.guardsman_main_ship.get_security_level(old_level)] to [GLOB.guardsman_main_ship.get_security_level()].")
+	message_admins("[ADMIN_TPMONTY(usr)] has changed the security level from [GLOB.guardsman_main_ship.get_security_level(old_level)] to [GLOB.guardsman_main_ship.get_security_level()].")
 
 
 #undef STATE_DEFAULT

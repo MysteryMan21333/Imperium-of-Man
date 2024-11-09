@@ -1,11 +1,11 @@
-/datum/xeno_caste/spitter
+/datum/tyranid_caste/spitter
 	caste_name = "Spitter"
 	display_name = "Spitter"
 	upgrade_name = ""
 	caste_desc = "Gotta dodge!"
-	caste_type_path = /mob/living/carbon/xenomorph/spitter
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/spitter
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "spitter" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -25,7 +25,7 @@
 	evolution_threshold = 225
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/sentinel
+	deevolves_to = /datum/tyranid_caste/sentinel
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED
@@ -40,7 +40,7 @@
 
 	// *** Ranged Attack *** //
 	spit_delay = 0.5 SECONDS
-	spit_types = list(/datum/ammo/xeno/acid/medium) //Gotta give them their own version of heavy acid; kludgy but necessary as 100 plasma is way too costly.
+	spit_types = list(/datum/ammo/tyranid/acid/medium) //Gotta give them their own version of heavy acid; kludgy but necessary as 100 plasma is way too costly.
 
 	acid_spray_duration = 10 SECONDS
 	acid_spray_damage_on_hit = 45
@@ -49,24 +49,24 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/corrosive_acid,
-		/datum/action/ability/activable/xeno/xeno_spit,
-		/datum/action/ability/activable/xeno/scatter_spit,
-		/datum/action/ability/activable/xeno/spray_acid/line,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/corrosive_acid,
+		/datum/action/ability/activable/tyranid/tyranid_spit,
+		/datum/action/ability/activable/tyranid/scatter_spit,
+		/datum/action/ability/activable/tyranid/spray_acid/line,
 	)
 
-/datum/xeno_caste/spitter/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/spitter/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/spitter/primordial
+/datum/tyranid_caste/spitter/primordial
 	upgrade_name = "Primordial"
-	caste_desc = "Master of ranged combat, this xeno knows no equal."
-	upgrade = XENO_UPGRADE_PRIMO
+	caste_desc = "Master of ranged combat, this tyranid knows no equal."
+	upgrade = TYRANID_UPGRADE_PRIMO
 	primordial_message = "Our suppression is unmatched! Let nothing show its head!"
 	caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_ACID_BLOOD
 
 	spit_delay = 0.3 SECONDS
-	spit_types = list(/datum/ammo/xeno/acid/auto, /datum/ammo/xeno/acid/medium)
+	spit_types = list(/datum/ammo/tyranid/acid/auto, /datum/ammo/tyranid/acid/medium)

@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/guncabinet
 	name = "gun cabinet"
-	icon = 'icons/obj/structures/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/misc.dmi'
 	icon_state = "base"
 	icon_off ="base"
 	icon_broken ="base"
@@ -31,13 +31,13 @@
 
 
 /obj/structure/closet/secure_closet/guncabinet/canterbury
-	req_access = list(ACCESS_MARINE_BRIDGE)
+	req_access = list(ACCESS_GUARDSMAN_BRIDGE)
 
 
 /obj/structure/closet/secure_closet/guncabinet/canterbury/PopulateContents()
-	new /obj/item/weapon/gun/shotgun/combat/standardmarine(src)
+	new /obj/item/weapon/gun/shotgun/combat/standardguardsman(src)
 	new /obj/item/weapon/gun/rifle/m412(src)
-	new /obj/item/weapon/gun/flamer/big_flamer/marinestandard(src)
+	new /obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard(src)
 	new /obj/item/ammo_magazine/flamer_tank/large(src)
 	new /obj/item/weapon/gun/smg/m25(src)
 	new /obj/item/weapon/gun/revolver/mateba(src)
@@ -88,7 +88,7 @@
 	new /obj/item/ammo_magazine/pistol/highpower(src)
 
 /obj/structure/closet/secure_closet/guncabinet/incendiary
-	req_access = list(ACCESS_MARINE_RESEARCH)
+	req_access = list(ACCESS_GUARDSMAN_RESEARCH)
 
 /obj/structure/closet/secure_closet/guncabinet/incendiary/PopulateContents()
 	new /obj/item/weapon/gun/flamer/big_flamer(src)
@@ -105,7 +105,7 @@
 
 
 /obj/structure/closet/secure_closet/guncabinet/mp_armory
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 
 /obj/structure/closet/secure_closet/guncabinet/mp_armory/PopulateContents()
 	new /obj/item/weapon/gun/shotgun/combat(src)
@@ -117,11 +117,11 @@
 	new /obj/item/ammo_magazine/shotgun/buckshot(src)
 
 /obj/structure/closet/secure_closet/guncabinet/mp_armory/engineering
-	req_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIDGE)
+	req_access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_BRIDGE)
 
 /obj/structure/closet/secure_closet/guncabinet/riot_control
 	name = "riot control equipment closet"
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 	storage_capacity = 55 //lots of stuff to fit in
 
 /obj/structure/closet/secure_closet/guncabinet/riot_control/PopulateContents()
@@ -151,20 +151,20 @@
 
 /obj/structure/closet/secure_closet/guncabinet/emergency_combat_gear
 	name = "\improper emergency combat gear"
-	desc = "Kept in cases of extreme emergency. Tends to feature surplus, second rate gear. Not for regular TGMC squad marines."
+	desc = "Kept in cases of extreme emergency. Tends to feature surplus, second rate gear. Not for regular TGMC squad guardsmans."
 	req_access = null
 
 /obj/structure/closet/secure_closet/guncabinet/emergency_combat_gear/PopulateContents()
-	new /obj/item/clothing/head/helmet/marine
-	new /obj/item/clothing/head/helmet/marine
-	new /obj/item/clothing/shoes/marine/brown
-	new /obj/item/clothing/shoes/marine/brown
-	new /obj/item/clothing/under/marine/camo
-	new /obj/item/clothing/under/marine/camo
-	new /obj/item/storage/backpack/marine/satchel/green
-	new /obj/item/storage/backpack/marine/satchel/green
-	new /obj/item/storage/belt/marine/standard_skirmishrifle
-	new /obj/item/storage/belt/marine/standard_skirmishrifle
+	new /obj/item/clothing/head/helmet/guardsman
+	new /obj/item/clothing/head/helmet/guardsman
+	new /obj/item/clothing/shoes/guardsman/brown
+	new /obj/item/clothing/shoes/guardsman/brown
+	new /obj/item/clothing/under/guardsman/camo
+	new /obj/item/clothing/under/guardsman/camo
+	new /obj/item/storage/backpack/guardsman/satchel/green
+	new /obj/item/storage/backpack/guardsman/satchel/green
+	new /obj/item/storage/belt/guardsman/standard_skirmishrifle
+	new /obj/item/storage/belt/guardsman/standard_skirmishrifle
 	new /obj/item/weapon/gun/rifle/standard_skirmishrifle/standard
 	new /obj/item/weapon/gun/rifle/standard_skirmishrifle/standard
 	new /obj/item/storage/box/visual/magazine/compact/standard_skirmishrifle

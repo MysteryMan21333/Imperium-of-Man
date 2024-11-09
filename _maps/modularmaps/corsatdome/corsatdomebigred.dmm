@@ -180,7 +180,7 @@
 /turf/open/floor/plating/ground/mars,
 /area/corsat/sigma/biodome)
 "dE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/corsat/sigma/biodome)
 "dK" = (
@@ -412,7 +412,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/corsat/sigma/biodome)
 "hh" = (
@@ -1302,7 +1302,7 @@
 /obj/effect/turf_decal/tile/corsatstraight/red{
 	dir = 8
 	},
-/obj/structure/xeno/tunnel,
+/obj/structure/tyranid/tunnel,
 /turf/open/floor/grayscale/black,
 /area/corsat/sigma/airlock/control)
 "Ab" = (
@@ -1756,7 +1756,7 @@
 	},
 /area/corsat/sigma/biodome)
 "Hy" = (
-/obj/structure/xeno/tunnel,
+/obj/structure/tyranid/tunnel,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/corsat/sigma/biodome)
 "HE" = (
@@ -1914,7 +1914,7 @@
 /turf/open/floor/plating/dmg3,
 /area/corsat/sigma/biodome/testgrounds)
 "Ku" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/corsat/sigma/biodome)
 "Kv" = (

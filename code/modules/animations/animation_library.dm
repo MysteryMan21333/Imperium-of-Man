@@ -37,7 +37,7 @@ Instead of being uniform, it starts out a littler slower, goes fast in the middl
 /proc/animation_horror_flick(atom/A, flash_color = "#000000", speed = 4)
 	animate(A, color = flash_color, time = speed)
 	animate(color = "#FFFFFF", time = speed)
-	var/image/I = image('icons/mob/mob.dmi',A,"spook")
+	var/image/I = image('modular_imperium/master_files/icons/mob/mob.dmi',A,"spook")
 	flick_overlay_view(I, A, 7)
 
 

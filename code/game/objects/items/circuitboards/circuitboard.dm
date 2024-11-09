@@ -1,11 +1,11 @@
 /obj/item/circuitboard
 	w_class = WEIGHT_CLASS_TINY
 	name = "Circuit board"
-	icon = 'icons/obj/items/circuitboards.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/circuitboards.dmi'
 	icon_state = "id_mod"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "electronic"
 	atom_flags = CONDUCT

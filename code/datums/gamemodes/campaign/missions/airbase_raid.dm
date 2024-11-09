@@ -51,26 +51,26 @@
 /datum/campaign_mission/destroy_mission/airbase/apply_major_victory()
 	winning_faction = starting_faction
 	var/datum/faction_stats/hostile_team = mode.stat_list[hostile_faction]
-	hostile_team.add_asset(/datum/campaign_asset/asset_disabler/som_cas)
+	hostile_team.add_asset(/datum/campaign_asset/asset_disabler/chaos_cas)
 
 /datum/campaign_mission/destroy_mission/airbase/apply_minor_victory()
 	winning_faction = starting_faction
 	var/datum/faction_stats/hostile_team = mode.stat_list[hostile_faction]
-	hostile_team.add_asset(/datum/campaign_asset/asset_disabler/som_cas)
+	hostile_team.add_asset(/datum/campaign_asset/asset_disabler/chaos_cas)
 
 /datum/campaign_mission/destroy_mission/airbase/apply_minor_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 	winning_team.add_asset(/datum/campaign_asset/equipment/gorgon_armor)
 
 /datum/campaign_mission/destroy_mission/airbase/apply_major_loss()
 	winning_faction = hostile_faction
 	var/datum/faction_stats/winning_team = mode.stat_list[hostile_faction]
-	winning_team.add_asset(/datum/campaign_asset/mech/light/som)
+	winning_team.add_asset(/datum/campaign_asset/mech/light/chaos)
 	winning_team.add_asset(/datum/campaign_asset/equipment/gorgon_armor)
 
-/datum/campaign_mission/destroy_mission/airbase/som
+/datum/campaign_mission/destroy_mission/airbase/chaos
 	mission_flags = MISSION_DISALLOW_TELEPORT
 	map_name = "Orion outpost"
 	map_file = '_maps/map_files/Campaign maps/orion_2/orionoutpost_2.dmm'

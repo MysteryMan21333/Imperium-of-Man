@@ -4,9 +4,9 @@
 	slot = ATTACHMENT_SLOT_UNIFORM
 	w_class = WEIGHT_CLASS_BULKY
 	attach_features_flags = ATTACH_REMOVABLE|ATTACH_APPLY_ON_MOB|ATTACH_SEPERATE_MOB_OVERLAY|ATTACH_NO_HANDS
-	icon = 'icons/obj/clothing/ties.dmi'
-	attach_icon = 'icons/obj/clothing/ties_overlay.dmi'
-	mob_overlay_icon = 'icons/mob/ties.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/ties.dmi'
+	attach_icon = 'modular_imperium/master_files/icons/obj/clothing/ties_overlay.dmi'
+	mob_overlay_icon = 'modular_imperium/master_files/icons/mob/ties.dmi'
 
 /obj/item/armor_module/storage/uniform/webbing
 	name = "webbing"

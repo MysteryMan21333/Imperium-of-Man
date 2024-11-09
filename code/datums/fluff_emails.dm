@@ -4,7 +4,7 @@
 	var/entry_text //email content
 
 
-//emails for the marine ship computers
+//emails for the guardsman ship computers
 /datum/fluff_email/mainship
 
 
@@ -102,6 +102,6 @@
 					<br>
 					I do have some concerns though, the combat robots have begun to develop... quirks? I think that their processors are
 					especially strained by the new software, I swear I even heard one of them cuss when I was running through its combat logs.
-					I've even heard rumors of the robots forming a secret religion praising a "Machine God", probably just bored squad marines though.
+					I've even heard rumors of the robots forming a secret religion praising a "Machine God", probably just bored squad guardsmans though.
 				</html>
 				"}

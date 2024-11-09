@@ -53,7 +53,7 @@
 /turf/closed/wall/r_wall,
 /area/bigredv2/caves/lambda_lab)
 "A" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "D" = (
@@ -95,7 +95,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "X" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/turf_decal/sandedge{
 	dir = 4
 	},

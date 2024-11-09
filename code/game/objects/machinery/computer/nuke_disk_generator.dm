@@ -210,7 +210,7 @@
 GLOBAL_LIST_INIT(nuke_disk_generator_types, list(/obj/machinery/computer/nuke_disk_generator/red, /obj/machinery/computer/nuke_disk_generator/green, /obj/machinery/computer/nuke_disk_generator/blue))
 
 /obj/structure/nuke_disk_candidate
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "nuke_rand"
 	name = "computer"
 	desc = "Some dusty old computer. Looks non-functional"

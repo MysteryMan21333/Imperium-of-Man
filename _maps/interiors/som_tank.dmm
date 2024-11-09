@@ -1,84 +1,84 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/interior/tank/som/thirteen,
-/area/interior/tank/som)
+/turf/closed/interior/tank/chaos/thirteen,
+/area/interior/tank/chaos)
 "b" = (
-/obj/structure/bed/chair/vehicle_crew/gunner/som,
-/turf/open/interior/tank/som/three,
-/area/interior/tank/som)
+/obj/structure/bed/chair/vehicle_crew/gunner/chaos,
+/turf/open/interior/tank/chaos/three,
+/area/interior/tank/chaos)
 "d" = (
-/obj/structure/prop/som_tank/computer/front_center,
-/turf/closed/interior/tank/som/fourteen,
-/area/interior/tank/som)
+/obj/structure/prop/chaos_tank/computer/front_center,
+/turf/closed/interior/tank/chaos/fourteen,
+/area/interior/tank/chaos)
 "e" = (
-/obj/structure/gun_breech/som,
-/turf/open/interior/tank/som/five,
-/area/interior/tank/som)
+/obj/structure/gun_breech/chaos,
+/turf/open/interior/tank/chaos/five,
+/area/interior/tank/chaos)
 "f" = (
-/turf/closed/interior/tank/som/eighteen,
-/area/interior/tank/som)
+/turf/closed/interior/tank/chaos/eighteen,
+/area/interior/tank/chaos)
 "h" = (
-/obj/structure/prop/som_tank/computer/front_left,
-/turf/open/interior/tank/som/ten,
-/area/interior/tank/som)
+/obj/structure/prop/chaos_tank/computer/front_left,
+/turf/open/interior/tank/chaos/ten,
+/area/interior/tank/chaos)
 "i" = (
-/turf/open/interior/tank/som/seven,
-/area/interior/tank/som)
+/turf/open/interior/tank/chaos/seven,
+/area/interior/tank/chaos)
 "m" = (
-/turf/closed/interior/tank/som/fifteen,
-/area/interior/tank/som)
+/turf/closed/interior/tank/chaos/fifteen,
+/area/interior/tank/chaos)
 "n" = (
-/obj/structure/prop/som_tank/computer/front_right,
-/turf/open/interior/tank/som/twelve,
-/area/interior/tank/som)
+/obj/structure/prop/chaos_tank/computer/front_right,
+/turf/open/interior/tank/chaos/twelve,
+/area/interior/tank/chaos)
 "o" = (
-/obj/structure/periscope/som,
-/turf/open/interior/tank/som/four,
-/area/interior/tank/som)
+/obj/structure/periscope/chaos,
+/turf/open/interior/tank/chaos/four,
+/area/interior/tank/chaos)
 "q" = (
-/obj/structure/prop/som_tank/computer/floating,
-/obj/structure/prop/som_tank/computer/floating/alt,
-/obj/structure/prop/som_tank/computer/gunner_console,
-/turf/open/interior/tank/som/six,
-/area/interior/tank/som)
+/obj/structure/prop/chaos_tank/computer/floating,
+/obj/structure/prop/chaos_tank/computer/floating/alt,
+/obj/structure/prop/chaos_tank/computer/gunner_console,
+/turf/open/interior/tank/chaos/six,
+/area/interior/tank/chaos)
 "r" = (
-/obj/structure/ammo_rack/primary/som,
-/turf/closed/interior/tank/door/som,
-/area/interior/tank/som)
+/obj/structure/ammo_rack/primary/chaos,
+/turf/closed/interior/tank/door/chaos,
+/area/interior/tank/chaos)
 "v" = (
-/obj/structure/bed/chair/vehicle_crew/driver/som,
-/turf/open/interior/tank/som/eleven,
-/area/interior/tank/som)
+/obj/structure/bed/chair/vehicle_crew/driver/chaos,
+/turf/open/interior/tank/chaos/eleven,
+/area/interior/tank/chaos)
 "x" = (
-/turf/open/interior/tank/som/two,
-/area/interior/tank/som)
+/turf/open/interior/tank/chaos/two,
+/area/interior/tank/chaos)
 "B" = (
-/turf/open/interior/tank/som/nine,
-/area/interior/tank/som)
+/turf/open/interior/tank/chaos/nine,
+/area/interior/tank/chaos)
 "D" = (
-/turf/closed/interior/tank/som/seventeen{
+/turf/closed/interior/tank/chaos/seventeen{
 	dir = 1
 	},
-/area/interior/tank/som)
+/area/interior/tank/chaos)
 "N" = (
-/turf/closed/interior/tank/som/eighteen{
+/turf/closed/interior/tank/chaos/eighteen{
 	dir = 1
 	},
-/area/interior/tank/som)
+/area/interior/tank/chaos)
 "U" = (
-/turf/open/interior/tank/som/eight,
-/area/interior/tank/som)
+/turf/open/interior/tank/chaos/eight,
+/area/interior/tank/chaos)
 "V" = (
-/obj/structure/ammo_rack/secondary/som,
-/obj/structure/bed/chair/loader_seat/som,
-/turf/open/interior/tank/som/one,
-/area/interior/tank/som)
+/obj/structure/ammo_rack/secondary/chaos,
+/obj/structure/bed/chair/loader_seat/chaos,
+/turf/open/interior/tank/chaos/one,
+/area/interior/tank/chaos)
 "X" = (
-/turf/closed/interior/tank/som/nineteen,
-/area/interior/tank/som)
+/turf/closed/interior/tank/chaos/nineteen,
+/area/interior/tank/chaos)
 "Z" = (
-/turf/closed/interior/tank/som/seventeen,
-/area/interior/tank/som)
+/turf/closed/interior/tank/chaos/seventeen,
+/area/interior/tank/chaos)
 
 (1,1,1) = {"
 f

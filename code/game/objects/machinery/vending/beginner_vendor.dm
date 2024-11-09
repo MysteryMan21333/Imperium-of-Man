@@ -5,14 +5,14 @@ GLOBAL_LIST_INIT(beginner_loadouts, init_beginner_loadouts())
 /proc/init_beginner_loadouts() //List of all loadouts in quick_load_beginners.dm
 	. = list()
 	var/list/loadout_list = list(
-		/datum/outfit/quick/beginner/marine/rifleman,
-		/datum/outfit/quick/beginner/marine/machinegunner,
-		/datum/outfit/quick/beginner/marine/marksman,
-		/datum/outfit/quick/beginner/marine/shotgunner,
-		/datum/outfit/quick/beginner/marine/shocktrooper,
-		/datum/outfit/quick/beginner/marine/hazmat,
-		/datum/outfit/quick/beginner/marine/cqc,
-		/datum/outfit/quick/beginner/marine/chad,
+		/datum/outfit/quick/beginner/guardsman/rifleman,
+		/datum/outfit/quick/beginner/guardsman/machinegunner,
+		/datum/outfit/quick/beginner/guardsman/marksman,
+		/datum/outfit/quick/beginner/guardsman/shotgunner,
+		/datum/outfit/quick/beginner/guardsman/shocktrooper,
+		/datum/outfit/quick/beginner/guardsman/hazmat,
+		/datum/outfit/quick/beginner/guardsman/cqc,
+		/datum/outfit/quick/beginner/guardsman/chad,
 		/datum/outfit/quick/beginner/engineer/builder,
 		/datum/outfit/quick/beginner/engineer/burnitall,
 		/datum/outfit/quick/beginner/engineer/pcenjoyer,
@@ -30,12 +30,12 @@ GLOBAL_LIST_INIT(robot_loadouts, init_robot_loadouts())
 /proc/init_robot_loadouts()
 	. = list()
 	var/list/loadout_list = list(
-		//Marine
-		/datum/outfit/quick/beginner_robot/marine/rifleman,
-		/datum/outfit/quick/beginner_robot/marine/machinegunner,
-		/datum/outfit/quick/beginner_robot/marine/marksman,
-		/datum/outfit/quick/beginner_robot/marine/shotgunner,
-		/datum/outfit/quick/beginner_robot/marine/shocktrooper,
+		//Guardsman
+		/datum/outfit/quick/beginner_robot/guardsman/rifleman,
+		/datum/outfit/quick/beginner_robot/guardsman/machinegunner,
+		/datum/outfit/quick/beginner_robot/guardsman/marksman,
+		/datum/outfit/quick/beginner_robot/guardsman/shotgunner,
+		/datum/outfit/quick/beginner_robot/guardsman/shocktrooper,
 		//Engineer
 		/datum/outfit/quick/beginner_robot/engineer/builder,
 		/datum/outfit/quick/beginner_robot/engineer/burnitall,
@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(robot_loadouts, init_robot_loadouts())
 /obj/machinery/quick_vendor/beginner //Loadout vendor that shits out basic pre-made loadouts so new players can get something usable
 	icon_state = "loadoutvendor"
 	categories = list(
-		"Squad Marine",
+		"Squad Guardsman",
 		"Squad Engineer",
 		"Squad Corpsman",
 		"Squad Smartgunner",

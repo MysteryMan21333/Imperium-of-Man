@@ -121,13 +121,13 @@
 		on_fire = TRUE
 		RegisterSignal(src, COMSIG_LIVING_DO_RESIST, PROC_REF(resist_fire))
 		to_chat(src, span_danger("You are on fire! Use Resist to put yourself out!"))
-		visible_message(span_danger("[src] bursts into flames!"), isxeno(src) ? span_xenodanger("You burst into flames!") : span_highdanger("You burst into flames!"))
+		visible_message(span_danger("[src] bursts into flames!"), istyranid(src) ? span_tyraniddanger("You burst into flames!") : span_highdanger("You burst into flames!"))
 		update_fire()
 		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED, fire_stacks)
 		return TRUE
 
-/mob/living/carbon/xenomorph/IgniteMob()
-	if(xeno_caste.caste_flags & CASTE_FIRE_IMMUNE)
+/mob/living/carbon/tyranid/IgniteMob()
+	if(tyranid_caste.caste_flags & CASTE_FIRE_IMMUNE)
 		return
 	. = ..()
 	if(!.)
@@ -140,8 +140,8 @@
 
 ///Puts out any fire on the mob
 /mob/living/proc/ExtinguishMob()
-	var/datum/status_effect/stacking/melting_fire/xeno_fire = has_status_effect(STATUS_EFFECT_MELTING_FIRE)
-	if(xeno_fire)
+	var/datum/status_effect/stacking/melting_fire/tyranid_fire = has_status_effect(STATUS_EFFECT_MELTING_FIRE)
+	if(tyranid_fire)
 		remove_status_effect(STATUS_EFFECT_MELTING_FIRE)
 	if(!on_fire)
 		return FALSE
@@ -236,7 +236,7 @@
 
 //Mobs on Fire end
 // When they are affected by a queens screech
-/mob/living/proc/screech_act(mob/living/carbon/xenomorph/queen/Q)
+/mob/living/proc/screech_act(mob/living/carbon/tyranid/queen/Q)
 	shake_camera(src, 3 SECONDS, 1)
 
 /mob/living/effect_smoke(obj/effect/particle_effect/smoke/S)
@@ -247,7 +247,7 @@
 		return
 	if(status_flags & GODMODE)
 		return FALSE
-	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO) && (stat == DEAD || isnestedhost(src)))
+	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID) && (stat == DEAD || isnestedhost(src)))
 		return FALSE
 	if(LAZYACCESS(smoke_delays, S.type) > world.time)
 		return FALSE
@@ -263,11 +263,11 @@
 	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_BLISTERING))
 		adjustFireLoss(15 * bio_protection)
 		to_chat(src, span_danger("It feels as if you've been dumped into an open fire!"))
-	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID))
+	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID_ACID))
 		if(prob(25 * acid_protection))
 			to_chat(src, span_danger("Your skin feels like it is melting away!"))
 		adjustFireLoss(max(S.strength * rand(20, 23) * acid_protection - acid_hard_protection, 0))
-	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_TOXIC))
+	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID_TOXIC))
 		if(HAS_TRAIT(src, TRAIT_INTOXICATION_IMMUNE))
 			return
 		if(has_status_effect(STATUS_EFFECT_INTOXICATED))

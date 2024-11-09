@@ -1,8 +1,8 @@
 /obj/item/stack/sheet
 	name = "sheet"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/stacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/stacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/stacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/stacks_right.dmi',
 	)
 	layer = UPPER_ITEM_LAYER
 	w_class = WEIGHT_CLASS_NORMAL

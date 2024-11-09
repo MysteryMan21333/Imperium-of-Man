@@ -2,7 +2,7 @@
 /obj/item/deployable_vehicle
 	name = "\improper UV-L Iguana"
 	desc = "An Iguana B-type drone, ready to be deployed."
-	icon = 'icons/obj/unmanned_vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/unmanned_vehicles.dmi'
 	icon_state = "light_uv_folded"
 	w_class = WEIGHT_CLASS_NORMAL
 	slowdown = 0.3
@@ -90,14 +90,14 @@
 	pass_flags = PASS_LOW_STRUCTURE|PASS_GRILLE|PASS_MOB
 	turret_pattern = NO_PATTERN
 	unmanned_flags = GIVE_NIGHT_VISION
-	layer = XENO_HIDING_LAYER
+	layer = TYRANID_HIDING_LAYER
 	trigger_gargoyle = FALSE
 	allow_explosives = FALSE
 
 /obj/structure/closet/crate/uvt_crate
 	name = "\improper UV-T Skink Crate"
 	desc = "A crate containing a scouting drone and a controller."
-	icon = 'icons/obj/structures/crates.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/crates.dmi'
 	icon_state = "closed_weapons"
 	icon_opened = "open_weapons"
 	icon_closed = "closed_weapons"

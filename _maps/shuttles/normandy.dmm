@@ -51,11 +51,11 @@
 /area/shuttle/dropship/normandy)
 "iq" = (
 /obj/structure/bed/chair/dropship/passenger,
-/obj/docking_port/mobile/marine_dropship/two,
+/obj/docking_port/mobile/guardsman_dropship/two,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/normandy)
 "jx" = (
-/obj/machinery/computer/shuttle/marine_dropship/two,
+/obj/machinery/computer/shuttle/guardsman_dropship/two,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/normandy)
 "jY" = (

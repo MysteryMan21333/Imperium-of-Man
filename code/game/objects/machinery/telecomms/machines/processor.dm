@@ -62,21 +62,21 @@
 	network = "tcommsat"
 	autolinkers = list("processor4")
 
-/obj/machinery/telecomms/processor/preset_one/som
-	id = "Processor 1 som"
+/obj/machinery/telecomms/processor/preset_one/chaos
+	id = "Processor 1 chaos"
 	autolinkers = list("processor1_som")
 
 
-/obj/machinery/telecomms/processor/preset_two/som
-	id = "Processor 2 som"
+/obj/machinery/telecomms/processor/preset_two/chaos
+	id = "Processor 2 chaos"
 	autolinkers = list("processor2_som")
 
 
-/obj/machinery/telecomms/processor/preset_three/som
-	id = "Processor 3 som"
+/obj/machinery/telecomms/processor/preset_three/chaos
+	id = "Processor 3 chaos"
 	autolinkers = list("processor3_som")
 
 
-/obj/machinery/telecomms/processor/preset_four/som
-	id = "Processor 4 som"
+/obj/machinery/telecomms/processor/preset_four/chaos
+	id = "Processor 4 chaos"
 	autolinkers = list("processor4_som")

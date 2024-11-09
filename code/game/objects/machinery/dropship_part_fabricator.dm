@@ -8,7 +8,7 @@
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
-	icon = 'icons/obj/machines/drone_fab.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/drone_fab.dmi'
 	icon_state = "drone_fab_idle"
 	resistance_flags = RESIST_ALL
 	/// List of everything in queue

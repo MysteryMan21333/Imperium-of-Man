@@ -1,14 +1,14 @@
 /obj/item/clothing/tie
 	name = "tie"
 	desc = "A neosilk clip-on tie."
-	icon = 'icons/obj/clothing/ties.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/ties.dmi'
 	icon_state = "bluetie"
 	equip_slot_flags = NONE
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/tie/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/attachment, ATTACHMENT_SLOT_UNIFORM_TIE, 'icons/obj/clothing/ties_overlay.dmi', attach_features_flags = (ATTACH_REMOVABLE|ATTACH_APPLY_ON_MOB), mob_overlay_icon = 'icons/mob/ties.dmi')
+	AddElement(/datum/element/attachment, ATTACHMENT_SLOT_UNIFORM_TIE, 'modular_imperium/master_files/icons/obj/clothing/ties_overlay.dmi', attach_features_flags = (ATTACH_REMOVABLE|ATTACH_APPLY_ON_MOB), mob_overlay_icon = 'modular_imperium/master_files/icons/mob/ties.dmi')
 
 /obj/item/clothing/tie/blue
 	name = "blue tie"
@@ -112,7 +112,7 @@
 /obj/item/clothing/tie/medal/letter/commendation
 	name = "letter of commendation"
 	desc = "A letter printed on cardstock often filled with praise for the person it is intended for."
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	icon_state = "commendation"
 
 //Armbands
@@ -184,7 +184,7 @@
 	if(istype(I, /obj/item/card/id))
 		var/obj/item/card/id/id_card = I
 
-		if(!(ACCESS_MARINE_BRIG in id_card.access))
+		if(!(ACCESS_GUARDSMAN_BRIG in id_card.access))
 			to_chat(user, "[src] rejects your insufficient access rights.")
 			return
 

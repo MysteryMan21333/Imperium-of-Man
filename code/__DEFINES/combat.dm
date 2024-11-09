@@ -27,7 +27,7 @@
 #define ENERGY "energy"
 /// Involves a shockwave, usually from an explosion.
 #define BOMB "bomb"
-/// Involved in checking whether a disease can infect or spread. Also involved in xeno neurotoxin.
+/// Involved in checking whether a disease can infect or spread. Also involved in tyranid neurotoxin.
 #define BIO "bio"
 /// Involves fire or temperature extremes.
 #define FIRE "fire"
@@ -46,7 +46,7 @@
 #define EMBED_CHANCE 3	//Percentage chance for an object to embed into somebody when thrown (if it's sharp).
 #define EMBED_PROCESS_CHANCE 4	//Percentage chance to deal damage or whatever set behavior per victim's move.
 #define EMBED_LIMB_DAMAGE 2	//Damage to deal to victim's limbs.
-#define EMBED_BODY_DAMAGE 10	//Damage to deal to victims without limbs (xenos), to their body.
+#define EMBED_BODY_DAMAGE 10	//Damage to deal to victims without limbs (tyranids), to their body.
 #define EMBEDDED_UNSAFE_REMOVAL_TIME 8 SECONDS	//Total removal time.
 #define EMBEDDED_UNSAFE_REMOVAL_DMG_MULTIPLIER 8	//Coefficient of multiplication for the damage the item does when removed without a surgery (this*((embed_limb_damage or embed_body_damage)))
 #define EMBEDDED_FALL_CHANCE 5	//Percentage chance for an embeddedd object fall out of the victim on its own, each process.
@@ -78,5 +78,5 @@
 #define EMP_LIGHT 3
 #define EMP_WEAK 4
 
-///Xenomorph accuracy
-#define XENO_DEFAULT_ACCURACY 70
+///Tyranid accuracy
+#define TYRANID_DEFAULT_ACCURACY 70

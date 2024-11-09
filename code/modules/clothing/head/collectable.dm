@@ -16,10 +16,10 @@
 	icon_state = "slime"
 	armor_protection_flags = NONE
 
-/obj/item/clothing/head/collectable/xenom
-	name = "collectable xenomorph helmet!"
+/obj/item/clothing/head/collectable/tyranidm
+	name = "collectable tyranid helmet!"
 	desc = "Hiss hiss hiss!"
-	icon_state = "xenom"
+	icon_state = "tyranidm"
 	armor_protection_flags = HEAD|FACE|EYES
 
 /obj/item/clothing/head/collectable/chef

@@ -1,7 +1,7 @@
 /obj/structure/fence
 	name = "fence"
 	desc = "A large metal mesh strewn between two poles. Intended as a cheap way to separate areas, while allowing one to see through it."
-	icon = 'icons/obj/smooth_objects/fence.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/fence.dmi'
 	base_icon_state = "fence"
 	icon_state = "fence-icon"
 	density = TRUE
@@ -9,7 +9,7 @@
 	coverage = 5
 	layer = WINDOW_LAYER
 	max_integrity = 150 //Its cheap but still viable to repair, cant be moved around, about 7 runner hits to take down
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	minimap_color = MINIMAP_FENCE
 	var/cut = FALSE //Cut fences can be passed through
 	coverage = 0 //4 rods doesn't provide any cover
@@ -19,7 +19,7 @@
 	///Chance for the fence to break on /init
 	var/chance_to_break = 80 //Defaults to 80%
 	///icon set we switch to when destroyed
-	var/destroyed_icon = 'icons/obj/smooth_objects/brokenfence.dmi'
+	var/destroyed_icon = 'modular_imperium/master_files/icons/obj/smooth_objects/brokenfence.dmi'
 
 /obj/structure/fence/ex_act(severity)
 	switch(severity)
@@ -148,5 +148,5 @@
 	chance_to_break = 100
 
 /obj/structure/fence/dark
-	icon = 'icons/obj/smooth_objects/dark_fence.dmi'
-	destroyed_icon = 'icons/obj/smooth_objects/brokenfence_dark.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/dark_fence.dmi'
+	destroyed_icon = 'modular_imperium/master_files/icons/obj/smooth_objects/brokenfence_dark.dmi'

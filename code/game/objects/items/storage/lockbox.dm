@@ -4,7 +4,7 @@
 	icon_state = "lockbox+l"
 	worn_icon_state = "syringe_kit"
 	w_class = WEIGHT_CLASS_BULKY
-	req_access = list(ACCESS_MARINE_CAPTAIN)
+	req_access = list(ACCESS_GUARDSMAN_CAPTAIN)
 	storage_type = /datum/storage/lockbox
 	var/locked = 1
 	var/broken = 0

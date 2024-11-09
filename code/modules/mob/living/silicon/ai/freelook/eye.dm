@@ -5,7 +5,7 @@
 /mob/camera/aiEye
 	name = "Inactive AI Eye"
 	icon_state = "ai_camera"
-	icon = 'icons/mob/cameramob.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/cameramob.dmi'
 	invisibility = INVISIBILITY_MAXIMUM
 	var/list/visibleCameraChunks = list()
 	var/mob/living/silicon/ai/ai = null
@@ -21,20 +21,20 @@
 	GLOB.aiEyes += src
 	setLoc(loc, TRUE)
 
-//Version the normal aiEye that's added to squad HUDs. Visible to marines, not visible to xenos. CAS does this too.
+//Version the normal aiEye that's added to squad HUDs. Visible to guardsmans, not visible to tyranids. CAS does this too.
 //This is the one actually used by AI in ai.dm
 /mob/camera/aiEye/hud
 	icon_state = "nothing"
 	var/icon_state_on = "ai_camera"
-	hud_possible = list(SQUAD_HUD_TERRAGOV)
+	hud_possible = list(SQUAD_HUD_IMPERIUM)
 
 /mob/camera/aiEye/hud/Initialize(mapload)
 	. = ..()
 	prepare_huds()
-	var/datum/atom_hud/squad/squad_hud = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+	var/datum/atom_hud/squad/squad_hud = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 	squad_hud.add_to_hud(src)
 
-	var/image/holder = hud_list[SQUAD_HUD_TERRAGOV]
+	var/image/holder = hud_list[SQUAD_HUD_IMPERIUM]
 	if(!holder)
 		return
 	holder.icon = icon
@@ -42,7 +42,7 @@
 	hud_list[hud_type] = holder
 
 /mob/camera/aiEye/hud/Destroy()
-	var/datum/atom_hud/squad/squad_hud = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+	var/datum/atom_hud/squad/squad_hud = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 	squad_hud.remove_from_hud(src)
 	return ..()
 

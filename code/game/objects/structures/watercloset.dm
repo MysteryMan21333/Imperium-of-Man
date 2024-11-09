@@ -6,7 +6,7 @@
 /obj/structure/toilet
 	name = "toilet"
 	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. This one seems remarkably clean."
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "toilet00"
 	density = FALSE
 	anchored = TRUE
@@ -84,7 +84,7 @@
 	. = ..()
 	if(.)
 		return
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(!iscarbon(grab.grabbed_thing))
 		return
@@ -122,7 +122,7 @@
 /obj/structure/urinal
 	name = "urinal"
 	desc = "The HU-452, an experimental urinal."
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "urinal"
 	density = FALSE
 	anchored = TRUE
@@ -130,7 +130,7 @@
 /obj/machinery/shower
 	name = "shower"
 	desc = "The HS-451. Installed in the 2050s by the Nanotrasen Hygiene Division."
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "shower"
 	density = FALSE
 	anchored = TRUE
@@ -156,7 +156,7 @@
 
 /obj/effect/mist
 	name = "mist"
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "mist"
 	layer = FLY_LAYER
 	anchored = TRUE
@@ -209,7 +209,7 @@
 		mymist = null
 
 	if(on)
-		overlays += image('icons/obj/watercloset.dmi', src, "water", MOB_LAYER + 1, dir)
+		overlays += image('modular_imperium/master_files/icons/obj/watercloset.dmi', src, "water", MOB_LAYER + 1, dir)
 		if(watertemp == WATER_TEMP_FREEZING)
 			return
 		if(!ismist)
@@ -232,7 +232,7 @@
 /obj/machinery/shower/update_overlays()
 	. = ..()
 	if(on)
-		. += image('icons/obj/watercloset.dmi', src, "water", MOB_LAYER + 1, dir)
+		. += image('modular_imperium/master_files/icons/obj/watercloset.dmi', src, "water", MOB_LAYER + 1, dir)
 
 /obj/machinery/shower/proc/on_cross(datum/source, atom/movable/O, oldloc, oldlocs)
 	SIGNAL_HANDLER
@@ -296,7 +296,7 @@
 /obj/item/toy/bikehorn/rubberducky
 	name = "rubber ducky"
 	desc = "Rubber ducky you're so fine, you make bathtime lots of fuuun. Rubber ducky I'm awfully fooooond of yooooouuuu~"	//thanks doohl
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	worn_icon_state = "rubberducky"
 
@@ -304,7 +304,7 @@
 
 /obj/structure/sink
 	name = "sink"
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/watercloset.dmi'
 	icon_state = "sink"
 	desc = "A sink used for washing one's hands and face."
 	///is someone currently washing at this sink?

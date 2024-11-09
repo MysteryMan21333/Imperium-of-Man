@@ -23,7 +23,7 @@
 //NORTH default dir
 /obj/docking_port
 	invisibility = INVISIBILITY_ABSTRACT
-	icon = 'icons/obj/items/pinpointer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/pinpointer.dmi'
 	icon_state = "pinpointer_far"
 
 	resistance_flags = RESIST_ALL
@@ -492,7 +492,7 @@
 	if(currently_docked)
 		// by someone other than us
 		if(currently_docked != src)
-			return SHUTTLE_SOMEONE_ELSE_DOCKED
+			return SHUTTLE_CHAOSEONE_ELSE_DOCKED
 		else
 		// This isn't an error, per se, but we can't let the shuttle code
 		// attempt to move us where we currently are, it will get weird.

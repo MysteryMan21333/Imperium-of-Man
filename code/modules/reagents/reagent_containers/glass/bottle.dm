@@ -4,7 +4,7 @@
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
 	desc = "A small bottle."
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = null
 	worn_icon_state = "bottle"
 	amount_per_transfer_from_this = 10
@@ -38,7 +38,7 @@
 	. = ..()
 
 	if(reagents.total_volume && (icon_state == "bottle-1" || icon_state == "bottle-2" || icon_state == "bottle-3" || icon_state == "bottle-4")) //only for those who have reagentfillings icons
-		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
+		var/image/filling = image('modular_imperium/master_files/icons/obj/reagentfillings.dmi', src, "[icon_state]10")
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
@@ -155,7 +155,7 @@
 /obj/item/reagent_containers/glass/bottle/adminordrazine
 	name = "\improper Adminordrazine bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
-	icon = 'icons/obj/items/drinks.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/drinks.dmi'
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 60)
 

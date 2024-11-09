@@ -1,15 +1,15 @@
 /datum/loadout_item/secondary
 	item_slot = ITEM_SLOT_SECONDARY
 	item_whitelist = list(
-		/obj/item/storage/backpack/marine/satchel = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/marine = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/guardsman/satchel = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/guardsman = ITEM_SLOT_BACK,
 		/obj/item/storage/backpack/lightpack = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/marine/engineerpack = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/marine/tech = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/marine/corpsman = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/satchel/som = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/lightpack/som = ITEM_SLOT_BACK,
-		/obj/item/storage/backpack/marine/engineerpack/som = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/guardsman/engineerpack = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/guardsman/tech = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/guardsman/corpsman = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/satchel/chaos = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/lightpack/chaos = ITEM_SLOT_BACK,
+		/obj/item/storage/backpack/guardsman/engineerpack/chaos = ITEM_SLOT_BACK,
 	)
 	req_desc = "Requires some kind of back storage."
 
@@ -26,10 +26,10 @@
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/plastique, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
 	switch(wearer.faction)
-		if(FACTION_SOM)
-			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
-			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/som, SLOT_IN_BACKPACK)
+		if(FACTION_CHAOS)
+			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
+			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade/chaos, SLOT_IN_BACKPACK)
 		else
 			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 			wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
@@ -43,7 +43,7 @@
 	req_desc = null
 	item_whitelist = null
 	jobs_supported = list(
-		SQUAD_MARINE,
+		SQUAD_GUARDSMAN,
 		SQUAD_CORPSMAN,
 		SQUAD_ENGINEER,
 		SQUAD_SMARTGUNNER,
@@ -51,14 +51,14 @@
 		FIELD_COMMANDER,
 		STAFF_OFFICER,
 		CAPTAIN,
-		SOM_SQUAD_MARINE,
-		SOM_SQUAD_CORPSMAN,
-		SOM_SQUAD_ENGINEER,
-		SOM_SQUAD_VETERAN,
-		SOM_SQUAD_LEADER,
-		SOM_FIELD_COMMANDER,
-		SOM_STAFF_OFFICER,
-		SOM_COMMANDER,
+		CHAOS_SQUAD_GUARDSMAN,
+		CHAOS_SQUAD_CORPSMAN,
+		CHAOS_SQUAD_ENGINEER,
+		CHAOS_SQUAD_VETERAN,
+		CHAOS_SQUAD_LEADER,
+		CHAOS_FIELD_COMMANDER,
+		CHAOS_STAFF_OFFICER,
+		CHAOS_COMMANDER,
 	)
 
 

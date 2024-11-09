@@ -8,8 +8,8 @@
 	icon_state = "sandbag_stack"
 	worn_icon_state = "sandbag_stack"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/stacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/stacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/stacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/stacks_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 2
@@ -70,8 +70,8 @@
 	icon_state = "sandbag_pile"
 	worn_icon_state = "sandbag_pile"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/stacks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/stacks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/stacks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/stacks_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 9

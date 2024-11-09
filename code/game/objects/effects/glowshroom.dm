@@ -6,11 +6,11 @@
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
-	icon = 'icons/obj/lighting.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/lighting.dmi'
 	icon_state = "glowshroomf"
 	layer = ABOVE_TURF_LAYER
 	max_integrity = 30
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	hit_sound = 'sound/effects/attackblob.ogg'
 	destroy_sound = null
 	coverage = 0

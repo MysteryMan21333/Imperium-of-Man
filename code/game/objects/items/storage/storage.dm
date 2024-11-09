@@ -10,10 +10,10 @@
  */
 /obj/item/storage
 	name = "storage"
-	icon = 'icons/obj/items/storage/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/misc.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/containers_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/containers_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_NORMAL
 	///Determines what subtype of storage is on our item, see datums\storage\subtypes

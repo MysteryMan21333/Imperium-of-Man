@@ -2,7 +2,7 @@
 /obj/machinery/line_nexter
 	name = "Turnstile"
 	desc = "a one way barrier combined with a bar to pull people out of line."
-	icon = 'icons/obj/structures/barricades/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/barricades/misc.dmi'
 	density = TRUE
 	icon_state = "turnstile"
 	anchored = TRUE
@@ -33,7 +33,7 @@
 
 /obj/machinery/line_nexter_control
 	name = "Next Button"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "doorctrl0"
 	var/id
 
@@ -41,7 +41,7 @@
 	. = ..()
 	if(.)
 		return
-	if(istype(user,/mob/living/carbon/xenomorph))
+	if(istype(user,/mob/living/carbon/tyranid))
 		return
 
 	icon_state = "doorctrl1"

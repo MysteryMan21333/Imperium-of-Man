@@ -101,8 +101,8 @@
 /obj/item/clothing/ears
 	name = "ears"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/ears_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/ears_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/ears_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/ears_right.dmi',
 	)
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 2
@@ -130,10 +130,10 @@
 ///////////////////////////////////////////////////////////////////////
 //Suit
 /obj/item/clothing/suit
-	icon = 'icons/obj/clothing/suits/suits.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/suits/suits.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/suits_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/suits_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/suits_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/suits_right.dmi',
 	)
 	name = "suit"
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS
@@ -182,10 +182,10 @@
 	name = "gloves"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/clothing/gloves.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/gloves.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/gloves_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/gloves_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/gloves_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/gloves_right.dmi',
 	)
 	item_state_worn = TRUE
 	siemens_coefficient = 0.50
@@ -241,10 +241,10 @@
 //Mask
 /obj/item/clothing/mask
 	name = "mask"
-	icon = 'icons/obj/clothing/masks.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/masks.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/masks_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/masks_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/masks_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/masks_right.dmi',
 	)
 	equip_slot_flags = ITEM_SLOT_MASK
 	armor_protection_flags = FACE|EYES
@@ -267,10 +267,10 @@
 //Shoes
 /obj/item/clothing/shoes
 	name = "shoes"
-	icon = 'icons/obj/clothing/shoes.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/shoes.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/shoes_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/shoes_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/shoes_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/shoes_right.dmi',
 	)
 	desc = "Comfortable-looking shoes."
 	gender = PLURAL //Carn: for grammarically correct text-parsing

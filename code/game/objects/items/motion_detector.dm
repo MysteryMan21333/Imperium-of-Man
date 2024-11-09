@@ -52,7 +52,7 @@
 	name = "tactical sensor"
 	desc = "A device that detects hostile movement. Hostiles appear as red blips. Friendlies with the correct IFF signature appear as green, and their bodies as blue, unrevivable bodies as dark blue. It has a mode selection interface."
 	icon_state = "minidetector"
-	icon = 'icons/obj/items/guns/attachments/rail.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/rail.dmi'
 	slot = ATTACHMENT_SLOT_RAIL
 	attachment_action_type = /datum/action/item_action/toggle
 	/// Who's using this item
@@ -135,10 +135,10 @@
 		if(nearby_human.last_move_time + move_sensitivity < world.time)
 			continue
 		prepare_blip(nearby_human, nearby_human.wear_id?.iff_signal & operator.wear_id.iff_signal ? MOTION_DETECTOR_FRIENDLY : MOTION_DETECTOR_HOSTILE)
-	for (var/mob/living/carbon/xenomorph/nearby_xeno AS in cheap_get_xenos_near(operator, range))
-		if(nearby_xeno.last_move_time + move_sensitivity < world.time )
+	for (var/mob/living/carbon/tyranid/nearby_tyranid AS in cheap_get_tyranids_near(operator, range))
+		if(nearby_tyranid.last_move_time + move_sensitivity < world.time )
 			continue
-		prepare_blip(nearby_xeno, MOTION_DETECTOR_HOSTILE)
+		prepare_blip(nearby_tyranid, MOTION_DETECTOR_HOSTILE)
 	if(hostile_detected)
 		playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
 	addtimer(CALLBACK(src, PROC_REF(clean_blips)), 1 SECONDS)

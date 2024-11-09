@@ -23,12 +23,12 @@
 	enterer.forceMove(pick(loaded_turfs))
 	return ..()
 
-/datum/interior/armored/som
-	template = /datum/map_template/interior/som_tank
+/datum/interior/armored/chaos
+	template = /datum/map_template/interior/chaos_tank
 
 /turf/closed/interior/tank
 	name = "\improper Banteng tank interior"
-	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_interior.dmi'
 
 /turf/closed/interior/tank/one
 	icon_state = "tank_interior_1"
@@ -77,7 +77,7 @@
 
 /turf/closed/interior/tank/door
 	name = "exit hatch"
-	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_interior.dmi'
 	icon_state = "tank_interior_7"
 	resistance_flags = RESIST_ALL
 	///owner of this object, assigned during interior linkage
@@ -134,7 +134,7 @@
 
 /turf/open/interior/tank
 	name = "\improper Banteng tank interior"
-	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_interior.dmi'
 
 /turf/open/interior/tank/eight
 	icon_state = "tank_interior_8"
@@ -157,98 +157,98 @@
 	name = "Tank Interior"
 	icon_state = "shuttle"
 
-/area/interior/tank/som
+/area/interior/tank/chaos
 	name = "Tank Interior"
 	icon_state = "shuttle"
 	base_lighting_alpha = 90
 
-/turf/closed/interior/tank/som
+/turf/closed/interior/tank/chaos
 	name = "\improper Gorgon tank interior"
-	icon = 'icons/obj/armored/3x4/som_tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_tank_interior.dmi'
 
-/turf/closed/interior/tank/som/thirteen
+/turf/closed/interior/tank/chaos/thirteen
 	icon_state = "tank_interior_13"
 	plane = FLOOR_PLANE
 
-/turf/closed/interior/tank/som/fourteen
+/turf/closed/interior/tank/chaos/fourteen
 	icon_state = "tank_interior_14"
 	plane = FLOOR_PLANE
 
-/turf/closed/interior/tank/som/fifteen
+/turf/closed/interior/tank/chaos/fifteen
 	icon_state = "tank_interior_15"
 	plane = FLOOR_PLANE
 
-/turf/open/interior/tank/som/sixteen
+/turf/open/interior/tank/chaos/sixteen
 	icon_state = "tank_interior_16"
 
-/turf/closed/interior/tank/som/seventeen
+/turf/closed/interior/tank/chaos/seventeen
 	icon_state = "tank_interior_17"
 
-/turf/closed/interior/tank/som/eighteen
+/turf/closed/interior/tank/chaos/eighteen
 	icon_state = "tank_interior_18"
 
-/turf/closed/interior/tank/som/nineteen
+/turf/closed/interior/tank/chaos/nineteen
 	icon_state = "tank_interior_19"
 
-/turf/closed/interior/tank/som/twenty
+/turf/closed/interior/tank/chaos/twenty
 	icon_state = "tank_interior_20"
 
-/turf/closed/interior/tank/som/twentyone
+/turf/closed/interior/tank/chaos/twentyone
 	icon_state = "tank_interior_21"
 
-/turf/open/interior/tank/som
+/turf/open/interior/tank/chaos
 	name = "\improper Gorgon tank interior"
-	icon = 'icons/obj/armored/3x4/som_tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_tank_interior.dmi'
 
-/turf/open/interior/tank/som/one
+/turf/open/interior/tank/chaos/one
 	icon_state = "tank_interior_1"
 
-/turf/open/interior/tank/som/two
+/turf/open/interior/tank/chaos/two
 	icon_state = "tank_interior_2"
 
-/turf/open/interior/tank/som/three
+/turf/open/interior/tank/chaos/three
 	icon_state = "tank_interior_3"
 
-/turf/open/interior/tank/som/four
+/turf/open/interior/tank/chaos/four
 	icon_state = "tank_interior_4"
 
-/turf/open/interior/tank/som/five
+/turf/open/interior/tank/chaos/five
 	icon_state = "tank_interior_5"
 
-/turf/open/interior/tank/som/six
+/turf/open/interior/tank/chaos/six
 	icon_state = "tank_interior_6"
 
-/turf/open/interior/tank/som/seven
+/turf/open/interior/tank/chaos/seven
 	icon_state = "tank_interior_7"
 
-/turf/open/interior/tank/som/eight
+/turf/open/interior/tank/chaos/eight
 	icon_state = "tank_interior_8"
 
-/turf/open/interior/tank/som/nine
+/turf/open/interior/tank/chaos/nine
 	icon_state = "tank_interior_9"
 
-/turf/open/interior/tank/som/ten
+/turf/open/interior/tank/chaos/ten
 	icon_state = "tank_interior_10"
 
-/turf/open/interior/tank/som/eleven
+/turf/open/interior/tank/chaos/eleven
 	icon_state = "tank_interior_11"
 
-/turf/open/interior/tank/som/twelve
+/turf/open/interior/tank/chaos/twelve
 	icon_state = "tank_interior_12"
 
-/turf/closed/interior/tank/door/som
+/turf/closed/interior/tank/door/chaos
 	name = "exit hatch"
-	icon = 'icons/obj/armored/3x4/som_tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_tank_interior.dmi'
 	icon_state = "hatch"
 	plane = FLOOR_PLANE
 
-/turf/closed/interior/tank/door/som/Initialize(mapload)
+/turf/closed/interior/tank/door/chaos/Initialize(mapload)
 	. = ..()
 	update_appearance(UPDATE_OVERLAYS)
 
-/turf/closed/interior/tank/door/som/update_overlays()
+/turf/closed/interior/tank/door/chaos/update_overlays()
 	. = ..()
 	. += image(icon, "hatch_decal", layer = BELOW_OBJ_LAYER, pixel_y = 24)
 
-/turf/closed/interior/tank/door/som/get_enter_location()
+/turf/closed/interior/tank/door/chaos/get_enter_location()
 	return get_step(src, NORTH)

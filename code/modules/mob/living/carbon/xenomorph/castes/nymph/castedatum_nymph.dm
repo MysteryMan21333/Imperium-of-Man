@@ -1,14 +1,14 @@
-/datum/xeno_caste/nymph
+/datum/tyranid_caste/nymph
 	caste_name = "Nymph"
 	display_name = "Nymph"
 	upgrade_name = ""
 	caste_desc = ""
 	wound_type = ""
 
-	caste_type_path = /mob/living/carbon/xenomorph/nymph
+	caste_type_path = /mob/living/carbon/tyranid/nymph
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	// *** Melee Attacks *** //
 	melee_damage = 8
@@ -30,10 +30,10 @@
 	// *** Defense *** //
 	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 0, BIO = 10, FIRE = 10, ACID = 10)
 
-	minimap_icon = "xenominion"
+	minimap_icon = "tyranidminion"
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/activable/xeno/secrete_resin,
-		/datum/action/ability/activable/xeno/plant_weeds,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/activable/tyranid/secrete_resin,
+		/datum/action/ability/activable/tyranid/plant_weeds,
 	)

@@ -1,7 +1,7 @@
 /obj/vehicle/sealed/armored
 	name = "\improper MT - Shortstreet MK4"
 	desc = "An adorable chunk of metal with an alarming amount of firepower designed to crush, immolate, destroy and maim anything that Nanotrasen wants it to. This model contains advanced Bluespace technology which allows a TARDIS-like amount of room on the inside."
-	icon = 'icons/obj/armored/1x1/tinytank.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/1x1/tinytank.dmi'
 	icon_state = "tank"
 	pixel_x = -16
 	pixel_y = -8
@@ -10,7 +10,7 @@
 	move_resist = INFINITY
 	atom_flags = BUMP_ATTACKABLE|PREVENT_CONTENTS_EXPLOSION|CRITICAL_ATOM
 	allow_pass_flags = PASS_TANK|PASS_AIR|PASS_WALKOVER|PASS_THROW
-	resistance_flags = XENO_DAMAGEABLE|UNACIDABLE|PLASMACUTTER_IMMUNE|PORTAL_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE|UNACIDABLE|PLASMACUTTER_IMMUNE|PORTAL_IMMUNE
 
 	move_delay = 0.7 SECONDS
 	max_integrity = 600
@@ -27,7 +27,7 @@
 	///Cool and good turret overlay that allows independently swiveling guns
 	var/atom/movable/vis_obj/turret_overlay/turret_overlay
 	///Icon for the rotating turret icon. also should hold the icons for the weapon icons
-	var/turret_icon = 'icons/obj/armored/1x1/tinytank_gun.dmi'
+	var/turret_icon = 'modular_imperium/master_files/icons/obj/armored/1x1/tinytank_gun.dmi'
 	///Iconstate for the rotating main turret
 	var/turret_icon_state = "turret"
 	///secondary independently rotating overlay, if we only have a secondary weapon
@@ -56,7 +56,7 @@
 	///list of mods we allow to attach
 	var/list/permitted_mods = list(/obj/item/tank_module/overdrive, /obj/item/tank_module/passenger, /obj/item/tank_module/ability/zoom)
 	///Minimap flags to use for this vehcile
-	var/minimap_flags = MINIMAP_FLAG_MARINE
+	var/minimap_flags = MINIMAP_FLAG_GUARDSMAN
 	///minimap iconstate to use for this vehicle
 	var/minimap_icon_state
 	///if true disables stops users from being able to shoot weapons
@@ -200,13 +200,13 @@
 
 /obj/vehicle/sealed/armored/examine(mob/user)
 	. = ..()
-	if(!isxeno(user))
+	if(!istyranid(user))
 		. += "To fire its main cannon, left click a tile."
 		. += "To fire its secondary weapon, right click a tile."
 		. += "Middle click to toggle weapon safety."
 		. += "It's currently holding [LAZYLEN(occupants)]/[max_occupants] crew."
 	. += span_notice("There is [isnull(primary_weapon) ? "nothing" : "[primary_weapon]"] in the primary attachment point, [isnull(secondary_weapon) ? "nothing" : "[secondary_weapon]"] installed in the secondary slot, [isnull(driver_utility_module) ? "nothing" : "[driver_utility_module]"] in the driver utility slot and [isnull(gunner_utility_module) ? "nothing" : "[gunner_utility_module]"] in the gunner utility slot.")
-	if(!isxeno(user))
+	if(!istyranid(user))
 		. += "<b>It is currently at <u>[PERCENT(obj_integrity / max_integrity)]%</u> integrity.</b>"
 
 /obj/vehicle/sealed/armored/get_mechanics_info()
@@ -671,7 +671,7 @@
 /atom/movable/vis_obj/turret_overlay
 	name = "Tank gun turret"
 	desc = "The shooty bit on a tank."
-	icon = 'icons/obj/armored/3x3/tank_gun.dmi' //set by owner
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_gun.dmi' //set by owner
 	icon_state = "turret"
 	layer = ABOVE_ALL_MOB_LAYER
 	vis_flags = VIS_INHERIT_ID
@@ -709,7 +709,7 @@
 /atom/movable/vis_obj/tank_damage
 	name = "Tank damage overlay"
 	desc = "ow."
-	icon = 'icons/obj/armored/3x3/tank_damage.dmi' //set by owner
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_damage.dmi' //set by owner
 	icon_state = "null" // set on demand
 	vis_flags = VIS_INHERIT_DIR
 

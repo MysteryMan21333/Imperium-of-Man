@@ -1,9 +1,9 @@
 /obj/item/weapon/gun/energy/lasgun/lasrifle/plasma
 	name = "generic plasma weapon"
-	icon = 'icons/obj/items/guns/plasma64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/plasma64.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/plasma_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/plasma_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/plasma_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/plasma_right_1.dmi',
 	)
 	default_ammo_type = /obj/item/cell/lasgun/plasma
 	allowed_ammo_types = list(/obj/item/cell/lasgun/plasma)
@@ -23,7 +23,7 @@
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/plasma/rifle
 	name = "\improper PL-38 plasma rifle"
-	desc = "The PL-38 Plasma Rifle is an experimental addition to the TerraGov Marine Corps arsenal, rumored to be the child of some back door contract deals, it is a versatile weapon if you mind the rather cheap cooling systems. It has a normal beam mode similar to a rifle, a hipower mode that easily pierces through soft targets, and a blast mode that will easily melt through the armor of anything hit by it."
+	desc = "The PL-38 Plasma Rifle is an experimental addition to the Imperium Guardsman Corps arsenal, rumored to be the child of some back door contract deals, it is a versatile weapon if you mind the rather cheap cooling systems. It has a normal beam mode similar to a rifle, a hipower mode that easily pierces through soft targets, and a blast mode that will easily melt through the armor of anything hit by it."
 	icon_state = "plasma_rifle"
 	worn_icon_state = "plasma_rifle"
 	fire_sound = 'sound/weapons/guns/fire/plasma_fire_med.ogg'
@@ -51,7 +51,7 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,
@@ -59,7 +59,7 @@
 		/obj/item/attachable/verticalgrip,
 		/obj/item/attachable/angledgrip,
 		/obj/item/attachable/magnetic_harness,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/scope/mini,
 		/obj/item/weapon/gun/shotgun/combat/masterkey,
 		/obj/item/weapon/gun/flamer/mini_flamer,
@@ -117,7 +117,7 @@
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/plasma/cannon
 	name = "\improper PL-96 plasma cannon"
-	desc = "The PL-96 Plasma Cannon is an experimental addition to the TerraGov Marine Corps arsenal, rumored to be the child of some back door contract deals, is an absolutely incredibly devastating weapon to behold... if you mind the incredibly poor cooling mechanisms and unwieldiness of the whole package. It has a normal beam mode similar to a machinegun, a fire glob mode that leaves devastating flames in the aftermath, and a Charge mode nicknamed the 'Femur breaker' due to its incredible armor shattering potiential upon hitting a target."
+	desc = "The PL-96 Plasma Cannon is an experimental addition to the Imperium Guardsman Corps arsenal, rumored to be the child of some back door contract deals, is an absolutely incredibly devastating weapon to behold... if you mind the incredibly poor cooling mechanisms and unwieldiness of the whole package. It has a normal beam mode similar to a machinegun, a fire glob mode that leaves devastating flames in the aftermath, and a Charge mode nicknamed the 'Femur breaker' due to its incredible armor shattering potiential upon hitting a target."
 	icon_state = "plasma_cannon"
 	worn_icon_state = "plasma_cannon"
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_AMMO_COUNT_BY_SHOTS_REMAINING|GUN_WIELDED_FIRING_ONLY|GUN_WIELDED_STABLE_FIRING_ONLY
@@ -226,7 +226,7 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,

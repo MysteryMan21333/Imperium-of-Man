@@ -60,8 +60,8 @@
 	icon_state = "seashallow"
 	shoefootstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
-	mediumxenofootstep = FOOTSTEP_WATER
-	heavyxenofootstep = FOOTSTEP_WATER
+	mediumtyranidfootstep = FOOTSTEP_WATER
+	heavytyranidfootstep = FOOTSTEP_WATER
 	minimap_color = MINIMAP_WATER
 
 /turf/open/liquid/water/Initialize(mapload)
@@ -69,8 +69,8 @@
 	if(mob_liquid_height > 15)
 		shoefootstep = FOOTSTEP_SWIM
 		barefootstep = FOOTSTEP_SWIM
-		mediumxenofootstep = FOOTSTEP_SWIM
-		heavyxenofootstep = FOOTSTEP_SWIM
+		mediumtyranidfootstep = FOOTSTEP_SWIM
+		heavytyranidfootstep = FOOTSTEP_SWIM
 
 /turf/open/liquid/water/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	. = ..()

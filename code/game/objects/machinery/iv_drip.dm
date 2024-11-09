@@ -1,6 +1,6 @@
 /obj/machinery/iv_drip
 	name = "\improper IV drip"
-	icon = 'icons/obj/iv_drip.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/iv_drip.dmi'
 	anchored = FALSE
 	density = FALSE
 	drag_delay = 1
@@ -26,7 +26,7 @@
 	if(!reagents?.total_volume)
 		return
 
-	var/image/filling = image('icons/obj/iv_drip.dmi', src, "reagent")
+	var/image/filling = image('modular_imperium/master_files/icons/obj/iv_drip.dmi', src, "reagent")
 
 	var/percent = round((reagents.total_volume / beaker.volume) * 100)
 	switch(percent)

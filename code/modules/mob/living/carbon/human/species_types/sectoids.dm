@@ -1,6 +1,6 @@
 /datum/species/sectoid
 	name = "Sectoid"
-	icobase = 'icons/mob/human_races/r_sectoid.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_sectoid.dmi'
 	default_language_holder = /datum/language_holder/sectoid
 	eyes = "blank_eyes"
 	count_human = TRUE

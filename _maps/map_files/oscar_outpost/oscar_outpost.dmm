@@ -412,7 +412,7 @@
 /turf/open/floor/prison,
 /area/oscar_outpost/base)
 "cX" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "cY" = (
@@ -433,7 +433,7 @@
 /turf/open/floor,
 /area/oscar_outpost/village/central)
 "dc" = (
-/obj/machinery/marine_selector/gear/medic,
+/obj/machinery/guardsman_selector/gear/medic,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "dd" = (
@@ -488,7 +488,7 @@
 /turf/open/floor/plating/ground/dirt2,
 /area/oscar_outpost/outside/underground)
 "dz" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "dA" = (
@@ -589,16 +589,16 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
 "er" = (
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "es" = (
@@ -661,7 +661,7 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "eM" = (
-/obj/machinery/door/airlock/mainship/marine/general/corps{
+/obj/machinery/door/airlock/mainship/guardsman/general/corps{
 	dir = 1
 	},
 /turf/open/floor/tile/dark,
@@ -671,7 +671,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village/east)
 "eT" = (
-/obj/item/clothing/suit/storage/marine/smartgunner,
+/obj/item/clothing/suit/storage/guardsman/smartgunner,
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/oscar_outpost/base)
@@ -1729,7 +1729,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/oscar_outpost/base)
 "mc" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "ml" = (
@@ -1903,7 +1903,7 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "nC" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost/base)
 "nF" = (
@@ -2039,7 +2039,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname/mainship,
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "oI" = (
@@ -2065,7 +2065,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village/fairgrounds)
 "oN" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/machinery/landinglight/lz1{
 	dir = 1
 	},
@@ -2206,7 +2206,7 @@
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost/village/central)
 "pJ" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost/village/central)
 "pK" = (
@@ -2844,7 +2844,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village/east)
 "tw" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost/village/central)
 "tx" = (
@@ -3076,7 +3076,7 @@
 /obj/structure/barricade/metal{
 	dir = 4
 	},
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/plating/asteroidwarning{
 	dir = 4
 	},
@@ -3353,7 +3353,7 @@
 /turf/open/floor/plating/ground/dirt2,
 /area/oscar_outpost/village/fairgrounds)
 "wX" = (
-/obj/machinery/door/airlock/mainship/marine/general/smart{
+/obj/machinery/door/airlock/mainship/guardsman/general/smart{
 	dir = 2
 	},
 /turf/open/floor/tile/dark,
@@ -3463,7 +3463,7 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
 "xv" = (
-/obj/machinery/marine_selector/gear/leader,
+/obj/machinery/guardsman_selector/gear/leader,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "xw" = (
@@ -3627,7 +3627,7 @@
 /turf/open/floor,
 /area/oscar_outpost/village)
 "yu" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/plating/asteroidwarning{
 	dir = 8
 	},
@@ -4198,7 +4198,7 @@
 /turf/open/floor/plating/asteroidfloor,
 /area/oscar_outpost)
 "Bj" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
@@ -4409,7 +4409,7 @@
 /turf/open/floor/prison,
 /area/oscar_outpost/base)
 "Cl" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -5667,7 +5667,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village)
 "HH" = (
-/obj/machinery/marine_selector/clothes/smartgun,
+/obj/machinery/guardsman_selector/clothes/smartgun,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "HK" = (
@@ -6084,7 +6084,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village)
 "Jh" = (
-/obj/machinery/door/airlock/mainship/marine/general/engi{
+/obj/machinery/door/airlock/mainship/guardsman/general/engi{
 	dir = 1
 	},
 /turf/open/floor/tile/dark,
@@ -6725,15 +6725,15 @@
 /turf/open/floor,
 /area/oscar_outpost/village)
 "LZ" = (
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
-/obj/item/storage/backpack/marine/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
+/obj/item/storage/backpack/guardsman/radiopack,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "Ma" = (
@@ -6890,7 +6890,7 @@
 /turf/open/floor/prison,
 /area/oscar_outpost/base)
 "Mz" = (
-/obj/machinery/marine_selector/gear/smartgun,
+/obj/machinery/guardsman_selector/gear/smartgun,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "MB" = (
@@ -7326,7 +7326,7 @@
 /turf/open/floor/mainship/sterile,
 /area/oscar_outpost/village)
 "OM" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
@@ -7886,7 +7886,7 @@
 /turf/open/floor,
 /area/oscar_outpost/village)
 "QY" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
 "QZ" = (
@@ -7895,7 +7895,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village/east)
 "Rc" = (
-/obj/machinery/door/airlock/mainship/marine/general/sl{
+/obj/machinery/door/airlock/mainship/guardsman/general/sl{
 	dir = 2
 	},
 /turf/open/floor/tile/dark,
@@ -8172,7 +8172,7 @@
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
 "Sn" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
@@ -8315,7 +8315,7 @@
 /turf/open/floor/plating/ground/dirt2,
 /area/oscar_outpost/outside/road)
 "SJ" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
 /obj/item/reagent_containers/food/snacks/protein_pack,
@@ -8903,7 +8903,7 @@
 /obj/structure/barricade/metal{
 	dir = 8
 	},
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /turf/open/floor/plating/asteroidwarning{
 	dir = 8
 	},
@@ -8988,7 +8988,7 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/base)
 "Wj" = (
-/obj/machinery/marine_selector/clothes/synth,
+/obj/machinery/guardsman_selector/clothes/synth,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -9064,12 +9064,12 @@
 	},
 /area/oscar_outpost/village/fairgrounds)
 "Wx" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /obj/effect/spawner/random/misc/plushie/nospawnninetynine,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "Wy" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "WA" = (
@@ -9266,12 +9266,12 @@
 /turf/open/floor/wood,
 /area/oscar_outpost/village/east)
 "Xm" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/machinery/light,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "Xp" = (
-/obj/effect/landmark/start/job/squadmarine,
+/obj/effect/landmark/start/job/squadguardsman,
 /obj/effect/ai_node,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
@@ -9540,7 +9540,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/oscar_outpost/outside/west)
 "Yq" = (
-/obj/machinery/marine_selector/clothes/leader,
+/obj/machinery/guardsman_selector/clothes/leader,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "Ys" = (
@@ -9718,11 +9718,11 @@
 	},
 /area/oscar_outpost/village/central)
 "YW" = (
-/obj/machinery/marine_selector/gear/engi,
+/obj/machinery/guardsman_selector/gear/engi,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost/base)
 "YX" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/tile/dark,
 /area/oscar_outpost)
 "Zh" = (

@@ -14,14 +14,14 @@
 		/datum/job/terragov/command/fieldcommander/campaign = 1,
 		/datum/job/terragov/command/staffofficer/campaign = 2,
 		/datum/job/terragov/command/captain/campaign = 1,
-		/datum/job/som/squad/standard = -1,
-		/datum/job/som/squad/medic = 8,
-		/datum/job/som/squad/engineer = 4,
-		/datum/job/som/squad/veteran = 4,
-		/datum/job/som/squad/leader = 4,
-		/datum/job/som/command/fieldcommander = 1,
-		/datum/job/som/command/staffofficer = 2,
-		/datum/job/som/command/commander = 1,
+		/datum/job/chaos/squad/standard = -1,
+		/datum/job/chaos/squad/medic = 8,
+		/datum/job/chaos/squad/engineer = 4,
+		/datum/job/chaos/squad/veteran = 4,
+		/datum/job/chaos/squad/leader = 4,
+		/datum/job/chaos/command/fieldcommander = 1,
+		/datum/job/chaos/command/staffofficer = 2,
+		/datum/job/chaos/command/commander = 1,
 	)
 	///The current mission type being played
 	var/datum/campaign_mission/current_mission
@@ -34,8 +34,8 @@
 
 /datum/game_mode/hvh/campaign/announce()
 	to_chat(world, "<b>The current game mode is - Campaign!</b>")
-	to_chat(world, "<b>The fringe world of Palmaria is undergoing significant upheaval, with large portions of the population threatening to succeed from TerraGov. With the population on the brink of civil war, \
-	both TerraGov Marine Corp and the Sons of Mars forces are looking to intervene.")
+	to_chat(world, "<b>The fringe world of Palmaria is undergoing significant upheaval, with large portions of the population threatening to succeed from Imperium. With the population on the brink of civil war, \
+	both Imperium Guardsman Corp and the Sons of Mars forces are looking to intervene.")
 	to_chat(world, "<b>Fight for your faction across the planet, the campaign for Palmaria starts now!</b>")
 	to_chat(world, "<b>WIP, report bugs on the github!</b>")
 
@@ -51,7 +51,7 @@
 /datum/game_mode/hvh/campaign/post_setup()
 	. = ..()
 	INVOKE_ASYNC(src, PROC_REF(scale_loadouts)) //load_new_mission delays other proc calls in this proc both before and after it for whatever reason
-	for(var/obj/effect/landmark/patrol_point/exit_point AS in GLOB.patrol_point_list) //som 'ship' map is now ground, but this ensures we clean up exit points if this changes in the future
+	for(var/obj/effect/landmark/patrol_point/exit_point AS in GLOB.patrol_point_list) //chaos 'ship' map is now ground, but this ensures we clean up exit points if this changes in the future
 		qdel(exit_point)
 	load_new_mission(new /datum/campaign_mission/tdm/first_mission(factions[1])) //this is the 'roundstart' mission
 
@@ -81,9 +81,9 @@
 	var/op_name_faction_two = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 		if(human.faction == factions[1])
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_faction_one]</u></span><br>" + "Fight to restore peace and order across the planet, and check the SOM threat.<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "TGMC Rapid Reaction Battalion<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/rapid_response)
+			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_faction_one]</u></span><br>" + "Fight to restore peace and order across the planet, and check the CHAOS threat.<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "TGMC Rapid Reaction Battalion<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/rapid_response)
 		else if(human.faction == factions[2])
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_faction_two]</u></span><br>" + "Fight to liberate the people of Palmaria from the yoke of TerraGov oppression!<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "SOM 4th Special Assault Force<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/saf_four)
+			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name_faction_two]</u></span><br>" + "Fight to liberate the people of Palmaria from the yoke of Imperium oppression!<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "CHAOS 4th Special Assault Force<br>" + "[human.job.title], [human]<br>", /atom/movable/screen/text/screen_text/picture/saf_four)
 
 /datum/game_mode/hvh/campaign/process()
 	if(round_finished)
@@ -93,7 +93,7 @@
 		return
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_BIOSCAN) || bioscan_interval == 0 || current_mission.mission_state != MISSION_STATE_ACTIVE)
 		return
-	announce_bioscans_marine_som(ztrait = ZTRAIT_AWAY) //todo: make this faction neutral
+	announce_bioscans_guardsman_som(ztrait = ZTRAIT_AWAY) //todo: make this faction neutral
 
 /datum/game_mode/hvh/campaign/check_finished(game_status) //todo: add the actual logic once the persistance stuff is done
 	if(round_finished)
@@ -104,26 +104,26 @@
 	for(var/faction in factions)
 		if(stat_list[faction].victory_points >= CAMPAIGN_MAX_VICTORY_POINTS)
 			switch(faction)
-				if(FACTION_SOM)
-					round_finished = MODE_COMBAT_PATROL_SOM_MINOR
-				if(FACTION_TERRAGOV)
-					round_finished = MODE_COMBAT_PATROL_MARINE_MINOR
+				if(FACTION_CHAOS)
+					round_finished = MODE_COMBAT_PATROL_CHAOS_MINOR
+				if(FACTION_IMPERIUM)
+					round_finished = MODE_COMBAT_PATROL_GUARDSMAN_MINOR
 			message_admins("Round finished: [round_finished]")
 			return TRUE
 
 /datum/game_mode/hvh/campaign/declare_completion()
 	. = ..()
-	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal TGMC spawned: [GLOB.round_statistics.total_humans_created[FACTION_TERRAGOV]]\nTotal SOM spawned: [GLOB.round_statistics.total_humans_created[FACTION_SOM]]")
+	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal TGMC spawned: [GLOB.round_statistics.total_humans_created[FACTION_IMPERIUM]]\nTotal CHAOS spawned: [GLOB.round_statistics.total_humans_created[FACTION_CHAOS]]")
 
 /datum/game_mode/hvh/campaign/end_round_fluff()
 	var/announcement_body = ""
 	switch(round_finished)
-		if(MODE_COMBAT_PATROL_SOM_MINOR)
-			announcement_body = "Brave SOM forces are reporting decisive victories against the imperialist TerraGov forces across the planet, forcing their disorganised and chaotic retreat. \
+		if(MODE_COMBAT_PATROL_CHAOS_MINOR)
+			announcement_body = "Brave CHAOS forces are reporting decisive victories against the imperialist Imperium forces across the planet, forcing their disorganised and chaotic retreat. \
 			With the planet now liberated, the Sons of Mars welcome the people of Palmaria into the light of a new day, ready to help them into a better future as brothers."
-		if(MODE_COMBAT_PATROL_MARINE_MINOR)
-			announcement_body = "TGMC forces have routed the terrorist SOM forces across the planet, destroying their strongholds and returning possession of stolen property to their legitimate corporate owners. \
-			With the SOM threat removed, TerraGov peacekeeping forces begin to move in to ensure a rapid return to law and order, restoring stability, safety, and a guarantee of Palmaria's economic development to the benefit of all citizens."
+		if(MODE_COMBAT_PATROL_GUARDSMAN_MINOR)
+			announcement_body = "TGMC forces have routed the terrorist CHAOS forces across the planet, destroying their strongholds and returning possession of stolen property to their legitimate corporate owners. \
+			With the CHAOS threat removed, Imperium peacekeeping forces begin to move in to ensure a rapid return to law and order, restoring stability, safety, and a guarantee of Palmaria's economic development to the benefit of all citizens."
 
 	send_ooc_announcement(
 		sender_override = "Round Concluded",
@@ -133,40 +133,40 @@
 		style = "game"
 	)
 
-	var/sound/som_track
+	var/sound/chaos_track
 	var/sound/tgmc_track
 	var/sound/ghost_track
 	switch(round_finished)
-		if(MODE_COMBAT_PATROL_SOM_MAJOR)
-			som_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
+		if(MODE_COMBAT_PATROL_CHAOS_MAJOR)
+			chaos_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
 			tgmc_track = pick('sound/theme/sad_loss1.ogg', 'sound/theme/sad_loss2.ogg')
-			ghost_track = som_track
-		if(MODE_COMBAT_PATROL_MARINE_MAJOR)
-			som_track = pick('sound/theme/sad_loss1.ogg', 'sound/theme/sad_loss2.ogg')
+			ghost_track = chaos_track
+		if(MODE_COMBAT_PATROL_GUARDSMAN_MAJOR)
+			chaos_track = pick('sound/theme/sad_loss1.ogg', 'sound/theme/sad_loss2.ogg')
 			tgmc_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
 			ghost_track = tgmc_track
-		if(MODE_COMBAT_PATROL_SOM_MINOR)
-			som_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
+		if(MODE_COMBAT_PATROL_CHAOS_MINOR)
+			chaos_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
 			tgmc_track = pick('sound/theme/neutral_melancholy1.ogg', 'sound/theme/neutral_melancholy2.ogg')
-			ghost_track = som_track
-		if(MODE_COMBAT_PATROL_MARINE_MINOR)
-			som_track = pick('sound/theme/neutral_melancholy1.ogg', 'sound/theme/neutral_melancholy2.ogg')
+			ghost_track = chaos_track
+		if(MODE_COMBAT_PATROL_GUARDSMAN_MINOR)
+			chaos_track = pick('sound/theme/neutral_melancholy1.ogg', 'sound/theme/neutral_melancholy2.ogg')
 			tgmc_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
 			ghost_track = tgmc_track
 		if(MODE_COMBAT_PATROL_DRAW)
-			som_track = pick('sound/theme/neutral_hopeful1.ogg', 'sound/theme/neutral_hopeful2.ogg')
+			chaos_track = pick('sound/theme/neutral_hopeful1.ogg', 'sound/theme/neutral_hopeful2.ogg')
 			tgmc_track = pick('sound/theme/neutral_hopeful1.ogg', 'sound/theme/neutral_hopeful2.ogg')
 			ghost_track = tgmc_track
 
-	som_track = sound(som_track, channel = CHANNEL_CINEMATIC)
+	chaos_track = sound(chaos_track, channel = CHANNEL_CINEMATIC)
 	tgmc_track = sound(tgmc_track, channel = CHANNEL_CINEMATIC)
 	ghost_track = sound(ghost_track, channel = CHANNEL_CINEMATIC)
 
 	for(var/mob/mob AS in GLOB.player_list)
 		switch(mob.faction)
-			if(FACTION_SOM)
-				SEND_SOUND(mob, som_track)
-			if(FACTION_TERRAGOV)
+			if(FACTION_CHAOS)
+				SEND_SOUND(mob, chaos_track)
+			if(FACTION_IMPERIUM)
 				SEND_SOUND(mob, tgmc_track)
 			else
 				SEND_SOUND(mob, ghost_track)

@@ -106,9 +106,9 @@
 	. = message
 	if(!(emote_flags & EMOTE_MUZZLE_IGNORE) && user.is_muzzled() && emote_type == EMOTE_AUDIBLE)
 		return "makes a [pick("strong ", "weak ", "")]noise."
-	if(isxeno(user) && message_alien)
+	if(istyranid(user) && message_alien)
 		. = message_alien
-	else if(isxenolarva(user) && message_larva)
+	else if(istyranidlarva(user) && message_larva)
 		. = message_larva
 	else if(isAI(user) && message_AI)
 		. = message_AI

@@ -1,5 +1,5 @@
 
-/datum/hud/new_player/New(mob/owner, ui_style='icons/mob/screen/white.dmi', ui_color, ui_alpha = 230)
+/datum/hud/new_player/New(mob/owner, ui_style='modular_imperium/master_files/icons/mob/screen/white.dmi', ui_color, ui_alpha = 230)
 	..()
 	var/list/buttons = subtypesof(/atom/movable/screen/text/lobby)
 	buttons -= /atom/movable/screen/text/lobby/clickable //skip the parent type for clickables

@@ -3,7 +3,7 @@
 /obj/machinery/power/monitor
 	name = "power monitoring computer"
 	desc = "It monitors power levels across the station."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	//computer stuff
 	density = TRUE

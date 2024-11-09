@@ -1,7 +1,7 @@
 /obj/structure/coatrack
 	name = "coat rack"
 	desc = "Rack that holds coats."
-	icon = 'icons/obj/structures/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/misc.dmi'
 	icon_state = "coatrack0"
 	coverage = 5
 	var/obj/item/clothing/suit/coat

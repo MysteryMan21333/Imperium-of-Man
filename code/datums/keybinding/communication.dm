@@ -27,12 +27,12 @@
 
 /datum/keybinding/client/communication/xooc
 	name = XOOC_CHANNEL
-	full_name = "Xeno OOC(XOOC)"
+	full_name = "Tyranid OOC(XOOC)"
 	keybind_signal = COMSIG_KB_CLIENT_XOOC_DOWN
 
 /datum/keybinding/client/communication/mooc
 	name = MOOC_CHANNEL
-	full_name = "Marine OOC(MOOC)"
+	full_name = "Guardsman OOC(MOOC)"
 	keybind_signal = COMSIG_KB_CLIENT_MOOC_DOWN
 
 /datum/keybinding/client/communication/looc

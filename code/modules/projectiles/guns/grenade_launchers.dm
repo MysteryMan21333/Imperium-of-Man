@@ -16,10 +16,10 @@ The Grenade Launchers
 	wield_delay = 0.4 SECONDS
 	caliber = CALIBER_40MM //codex
 	load_method = SINGLE_CASING //codex
-	icon = 'icons/obj/items/guns/special.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	fire_sound = 'sound/weapons/guns/fire/grenadelauncher.ogg'
 	fire_rattle = 'sound/weapons/guns/fire/grenadelauncher.ogg'
@@ -34,14 +34,14 @@ The Grenade Launchers
 		/obj/item/explosive/grenade/m15,
 		/obj/item/explosive/grenade/stick,
 		/obj/item/explosive/grenade/upp,
-		/obj/item/explosive/grenade/som,
+		/obj/item/explosive/grenade/chaos,
 		/obj/item/explosive/grenade/sectoid,
 		/obj/item/explosive/grenade/creampie,
 		/obj/item/explosive/grenade/incendiary,
-		/obj/item/explosive/grenade/incendiary/som,
+		/obj/item/explosive/grenade/incendiary/chaos,
 		/obj/item/explosive/grenade/incendiary/molotov,
 		/obj/item/explosive/grenade/smokebomb,
-		/obj/item/explosive/grenade/smokebomb/som,
+		/obj/item/explosive/grenade/smokebomb/chaos,
 		/obj/item/explosive/grenade/smokebomb/cloak,
 		/obj/item/explosive/grenade/smokebomb/drain,
 		/obj/item/explosive/grenade/smokebomb/antigas,
@@ -119,8 +119,8 @@ The Grenade Launchers
 
 /obj/item/weapon/gun/grenade_launcher/multinade_launcher
 	name = "\improper GL-70 grenade launcher"
-	desc = "The GL-70 is the standard grenade launcher used by the TerraGov Marine Corps for area denial and big explosions."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	desc = "The GL-70 is the standard grenade launcher used by the Imperium Guardsman Corps for area denial and big explosions."
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "t70"
 	worn_icon_state = "t70"
 	fire_animation = "t70_fire"
@@ -158,7 +158,7 @@ The Grenade Launchers
 /obj/item/weapon/gun/grenade_launcher/underslung
 	name = "underslung grenade launcher"
 	desc = "A weapon-mounted, reloadable, two-shot grenade launcher."
-	icon = 'icons/obj/items/guns/attachments/gun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/gun.dmi'
 	icon_state = "grenade"
 	max_shells = 2 //codex
 	max_chamber_items = 1
@@ -179,12 +179,12 @@ The Grenade Launchers
 		/obj/item/explosive/grenade/training,
 		/obj/item/explosive/grenade/stick,
 		/obj/item/explosive/grenade/upp,
-		/obj/item/explosive/grenade/som,
+		/obj/item/explosive/grenade/chaos,
 		/obj/item/explosive/grenade/incendiary,
-		/obj/item/explosive/grenade/incendiary/som,
+		/obj/item/explosive/grenade/incendiary/chaos,
 		/obj/item/explosive/grenade/incendiary/molotov,
 		/obj/item/explosive/grenade/smokebomb,
-		/obj/item/explosive/grenade/smokebomb/som,
+		/obj/item/explosive/grenade/smokebomb/chaos,
 		/obj/item/explosive/grenade/smokebomb/cloak,
 		/obj/item/explosive/grenade/smokebomb/drain,
 		/obj/item/explosive/grenade/smokebomb/antigas,
@@ -216,14 +216,14 @@ The Grenade Launchers
 /obj/item/weapon/gun/grenade_launcher/underslung/mpi
 	icon_state = "grenade_mpi"
 	attach_features_flags = NONE
-	default_ammo_type = /obj/item/explosive/grenade/som
+	default_ammo_type = /obj/item/explosive/grenade/chaos
 
 /obj/item/weapon/gun/grenade_launcher/underslung/mpi/removeable
 	attach_features_flags = ATTACH_REMOVABLE
 
 /obj/item/weapon/gun/grenade_launcher/single_shot
 	name = "\improper GL-81 grenade launcher"
-	desc = "A lightweight, single-shot grenade launcher used by the TerraGov Marine Corps for area denial and big explosions."
+	desc = "A lightweight, single-shot grenade launcher used by the Imperium Guardsman Corps for area denial and big explosions."
 	icon_state = "m81"
 	worn_icon_state = "m81"
 	max_shells = 1 //codex
@@ -246,7 +246,7 @@ The Grenade Launchers
 	desc = "A lightweight, single-shot grenade launcher to launch tear gas grenades. Used by Nanotrasen security during riots."
 	default_ammo_type = null
 	allowed_ammo_types = list(/obj/item/explosive/grenade/chem_grenade)
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 
 /obj/item/weapon/gun/grenade_launcher/single_shot/flare
 	name = "flare gun"
@@ -264,7 +264,7 @@ The Grenade Launchers
 	attachable_allowed = list(/obj/item/attachable/scope/unremovable/flaregun)
 	starting_attachment_types = list(/obj/item/attachable/scope/unremovable/flaregun)
 
-/obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine
+/obj/item/weapon/gun/grenade_launcher/single_shot/flare/guardsman
 	name = "M30E2 flare gun"
 	desc = "A very tiny flaregun that fires flares equipped with long range irons, the mass amounts of markings on the back and barrel denote it as owned by the TGMC."
-	icon_state = "marine_flaregun"
+	icon_state = "guardsman_flaregun"

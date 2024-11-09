@@ -5,7 +5,7 @@
 	minimal_access = list(ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_RESEARCH, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_LOGISTICS)
 	display_order = JOB_DISPLAY_ORDER_SURVIVOR
 	skills_type = /datum/skills/civilian/survivor
-	faction = FACTION_TERRAGOV
+	faction = FACTION_IMPERIUM
 
 /datum/job/survivor/after_spawn(mob/living/carbon/C, mob/M, latejoin = FALSE)
 	. = ..()
@@ -53,7 +53,7 @@
 /datum/job/survivor/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"In whatever case you have been through, you are here to survive and get yourself rescued.
-You appreciate the support of TerraGov and Nanotrasen should you be rescued.
+You appreciate the support of Imperium and Nanotrasen should you be rescued.
 You are not hostile to TGMC, nor you should oppose or disrupt their objective, unless an admin says otherwise.
 If you find any other survivors in the area, cooperate with them to increase your chances of survival.
 Depending on the job you've undertook, you may have additional skills to help others when needed.
@@ -201,7 +201,7 @@ Good luck, but do not expect to survive."})
 	w_uniform = /obj/item/clothing/under/rank/security
 	wear_suit = /obj/item/clothing/suit/armor/patrol
 	head = /obj/item/clothing/head/securitycap
-	shoes = /obj/item/clothing/shoes/marine/full
+	shoes = /obj/item/clothing/shoes/guardsman/full
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/security
 	gloves = /obj/item/clothing/gloves/black
@@ -271,7 +271,7 @@ Good luck, but do not expect to survive."})
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/soup/mysterysoup, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/packaged_hdogs, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/chocolateegg, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/meat/xeno, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/meat/tyranid, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/pastries/xemeatpie, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/pastries/birthdaycakeslice, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/donut/meat, SLOT_IN_BACKPACK)
@@ -321,7 +321,7 @@ Good luck, but do not expect to survive."})
 	w_uniform = /obj/item/clothing/under/rank/atmospheric_technician
 	wear_suit = /obj/item/clothing/suit/storage/hazardvest
 	shoes = /obj/item/clothing/shoes/black
-	back = /obj/item/storage/backpack/satchel/som
+	back = /obj/item/storage/backpack/satchel/chaos
 	gloves = /obj/item/clothing/gloves/insulated
 	belt = /obj/item/storage/belt
 	head = /obj/item/clothing/head/hardhat/white
@@ -391,7 +391,7 @@ Good luck, but do not expect to survive."})
 	w_uniform = /obj/item/clothing/under/rank/miner
 	head = /obj/item/clothing/head/helmet/space/rig/mining
 	shoes = /obj/item/clothing/shoes/black
-	back = /obj/item/storage/backpack/satchel/som
+	back = /obj/item/storage/backpack/satchel/chaos
 	l_hand = /obj/item/weapon/twohanded/sledgehammer
 	r_store = /obj/item/reagent_containers/cup/glass/flask
 	r_hand = /obj/item/clothing/suit/space/rig/mining
@@ -594,13 +594,13 @@ Good luck, but do not expect to survive."})
 /datum/outfit/job/survivor/rambo
 	name = "Overpowered Survivor"
 	jobtype = /datum/job/survivor/rambo
-	w_uniform = /obj/item/clothing/under/marine/striped
+	w_uniform = /obj/item/clothing/under/guardsman/striped
 	wear_suit = /obj/item/clothing/suit/armor/patrol
-	shoes = /obj/item/clothing/shoes/marine/clf/full
+	shoes = /obj/item/clothing/shoes/guardsman/clf/full
 	back = /obj/item/storage/holster/blade/machete/full
 	gloves = /obj/item/clothing/gloves/ruggedgloves
 	suit_store = /obj/item/weapon/gun/rifle/alf_machinecarbine/freelancer
-	belt = /obj/item/storage/belt/marine/alf_machinecarbine
+	belt = /obj/item/storage/belt/guardsman/alf_machinecarbine
 	l_store = /obj/item/storage/pouch/medical_injectors/firstaid
 	r_store = /obj/item/flashlight/combat
 	glasses = /obj/item/clothing/glasses/m42_goggles

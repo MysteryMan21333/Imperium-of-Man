@@ -1,7 +1,7 @@
 /obj/vehicle/ridden/wheelchair //ported from Hippiestation (by Jujumatic)
 	name = "wheelchair"
 	desc = "A chair with big wheels. It looks like you can move in this on your own."
-	icon = 'icons/obj/vehicles.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/vehicles.dmi'
 	icon_state = "wheelchair"
 	layer = OBJ_LAYER
 	max_integrity = 100

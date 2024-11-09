@@ -1,10 +1,10 @@
 /obj/structure/concrete_planter
 	name = "concrete seated planter"
 	desc = "A decorative concrete planter."
-	icon = 'icons/obj/structures/prop/concrete_planter.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/concrete_planter.dmi'
 	icon_state = "planter"
 	density = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	coverage = 80
 

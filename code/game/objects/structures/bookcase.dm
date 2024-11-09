@@ -1,10 +1,10 @@
 
 /obj/structure/bookcase
 	name = "bookcase"
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "book-0"
 	max_integrity = 200
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	anchored = TRUE
 	density = TRUE
 	opacity = TRUE

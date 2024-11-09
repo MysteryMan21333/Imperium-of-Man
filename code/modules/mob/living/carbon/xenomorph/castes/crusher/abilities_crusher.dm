@@ -1,20 +1,20 @@
 // ***************************************
 // *********** Stomp
 // ***************************************
-/datum/action/ability/activable/xeno/stomp
+/datum/action/ability/activable/tyranid/stomp
 	name = "Stomp"
 	action_icon_state = "stomp"
-	action_icon = 'icons/Xeno/actions/crusher.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/crusher.dmi'
 	desc = "Knocks all adjacent targets away and down."
 	ability_cost = 100
 	cooldown_duration = 20 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_STOMP,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_STOMP,
 	)
 
-/datum/action/ability/activable/xeno/stomp/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/stomp/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/X = owner
 	succeed_activate()
 	add_cooldown()
 
@@ -22,15 +22,15 @@
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "crusher_stomps")
 
 	playsound(X.loc, 'sound/effects/bang.ogg', 25, 0)
-	X.visible_message(span_xenodanger("[X] smashes into the ground!"), \
-	span_xenodanger("We smash into the ground!"))
+	X.visible_message(span_tyraniddanger("[X] smashes into the ground!"), \
+	span_tyraniddanger("We smash into the ground!"))
 	X.create_stomp() //Adds the visual effect. Wom wom wom
 
 	for(var/mob/living/M in range(1, get_turf(X)))
-		if(X.issamexenohive(M) || M.stat == DEAD || isnestedhost(M) || !X.Adjacent(M))
+		if(X.issametyranidhive(M) || M.stat == DEAD || isnestedhost(M) || !X.Adjacent(M))
 			continue
 		var/distance = get_dist(M, X)
-		var/damage = X.xeno_caste.stomp_damage/max(1, distance + 1)
+		var/damage = X.tyranid_caste.stomp_damage/max(1, distance + 1)
 		if(distance == 0) //If we're on top of our victim, give him the full impact
 			GLOB.round_statistics.crusher_stomp_victims++
 			SSblackbox.record_feedback("tally", "round_statistics", 1, "crusher_stomp_victims")
@@ -45,42 +45,42 @@
 			M.take_overall_damage(damage, BRUTE, MELEE, updating_health = TRUE, max_limbs = 3)
 			M.Paralyze(0.5 SECONDS)
 
-/datum/action/ability/activable/xeno/stomp/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/stomp/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/stomp/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/stomp/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > 1)
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
 // ***************************************
 // *********** Cresttoss
 // ***************************************
-/datum/action/ability/activable/xeno/cresttoss
+/datum/action/ability/activable/tyranid/cresttoss
 	name = "Crest Toss"
 	action_icon_state = "cresttoss"
-	action_icon = 'icons/Xeno/actions/crusher.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/crusher.dmi'
 	desc = "Fling an adjacent target over and behind you, or away from you while on harm intent. Also works over barricades."
 	ability_cost = 75
 	cooldown_duration = 12 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_CRESTTOSS,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_CRESTTOSS,
 	)
 	target_flags = ABILITY_MOB_TARGET
 
-/datum/action/ability/activable/xeno/cresttoss/on_cooldown_finish()
-	var/mob/living/carbon/xenomorph/X = owner
-	to_chat(X, span_xenowarning("<b>We can now crest toss again.</b>"))
+/datum/action/ability/activable/tyranid/cresttoss/on_cooldown_finish()
+	var/mob/living/carbon/tyranid/X = owner
+	to_chat(X, span_tyranidwarning("<b>We can now crest toss again.</b>"))
 	playsound(X, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
-/datum/action/ability/activable/xeno/cresttoss/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/cresttoss/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -94,16 +94,16 @@
 		if(L.stat == DEAD || isnestedhost(L)) //no bully
 			return FALSE
 
-/datum/action/ability/activable/xeno/cresttoss/use_ability(atom/movable/A)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/cresttoss/use_ability(atom/movable/A)
+	var/mob/living/carbon/tyranid/X = owner
 	X.face_atom(A) //Face towards the target so we don't look silly
 	var/facing
-	var/toss_distance = X.xeno_caste.crest_toss_distance
+	var/toss_distance = X.tyranid_caste.crest_toss_distance
 	var/turf/throw_origin = get_turf(X)
-	var/turf/target_turf = throw_origin //throw distance is measured from the xeno itself
+	var/turf/target_turf = throw_origin //throw distance is measured from the tyranid itself
 	var/big_mob_message
 
-	if(!X.issamexenohive(A)) //xenos should be able to fling xenos into xeno passable areas!
+	if(!X.issametyranidhive(A)) //tyranids should be able to fling tyranids into tyranid passable areas!
 		for(var/obj/effect/forcefield/fog/fog in throw_origin)
 			A.balloon_alert(X, "Cannot, fog")
 			return fail_activate()
@@ -133,8 +133,8 @@
 
 	X.icon_state = "Crusher Charging"  //Momentarily lower the crest for visual effect
 
-	X.visible_message(span_xenowarning("\The [X] flings [A] away with its crest[big_mob_message]!"), \
-	span_xenowarning("We fling [A] away with our crest[big_mob_message]!"))
+	X.visible_message(span_tyranidwarning("\The [X] flings [A] away with its crest[big_mob_message]!"), \
+	span_tyranidwarning("We fling [A] away with our crest[big_mob_message]!"))
 
 	succeed_activate()
 
@@ -142,7 +142,7 @@
 	A.throw_at(target_turf, toss_distance, 1, X, TRUE, TRUE)
 
 	//Handle the damage
-	if(!X.issamexenohive(A) && isliving(A)) //Friendly xenos don't take damage.
+	if(!X.issametyranidhive(A) && isliving(A)) //Friendly tyranids don't take damage.
 		var/damage = toss_distance * 6
 		var/mob/living/L = A
 		L.take_overall_damage(damage, BRUTE, MELEE, updating_health = TRUE)
@@ -152,42 +152,42 @@
 	add_cooldown()
 	addtimer(CALLBACK(X, TYPE_PROC_REF(/mob, update_icons)), 3)
 
-/datum/action/ability/activable/xeno/cresttoss/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/cresttoss/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/cresttoss/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/cresttoss/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(get_dist(target, owner) > 1)
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE
 
 // ***************************************
 // *********** Advance
 // ***************************************
-/datum/action/ability/activable/xeno/advance
+/datum/action/ability/activable/tyranid/advance
 	name = "Rapid Advance"
 	action_icon_state = "crest_defense"
-	action_icon = 'icons/Xeno/actions/defender.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/defender.dmi'
 	desc = "Charges up the crushers charge in place, then unleashes the full bulk of the crusher at the target location. Does not crush in diagonal directions."
 	ability_cost = 175
 	cooldown_duration = 30 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_ADVANCE,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_ADVANCE,
 	)
 	///Max charge range
 	var/advance_range = 7
 
-/datum/action/ability/activable/xeno/advance/on_cooldown_finish()
-	to_chat(owner, span_xenowarning("<b>We can now rapidly charge forward again.</b>"))
+/datum/action/ability/activable/tyranid/advance/on_cooldown_finish()
+	to_chat(owner, span_tyranidwarning("<b>We can now rapidly charge forward again.</b>"))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
-/datum/action/ability/activable/xeno/advance/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/advance/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -196,8 +196,8 @@
 		return FALSE
 
 
-/datum/action/ability/activable/xeno/advance/use_ability(atom/A)
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/activable/tyranid/advance/use_ability(atom/A)
+	var/mob/living/carbon/tyranid/X = owner
 	X.face_atom(A)
 	X.set_canmove(FALSE)
 	if(!do_after(X, 1 SECONDS, NONE, X, BUSY_ICON_DANGER) || (QDELETED(A)) || X.z != A.z)
@@ -206,7 +206,7 @@
 		return fail_activate()
 	X.set_canmove(TRUE)
 
-	var/datum/action/ability/xeno_action/ready_charge/charge = X.actions_by_path[/datum/action/ability/xeno_action/ready_charge]
+	var/datum/action/ability/tyranid_action/ready_charge/charge = X.actions_by_path[/datum/action/ability/tyranid_action/ready_charge]
 	var/aimdir = get_dir(X, A)
 	if(charge)
 		charge.charge_on(FALSE)
@@ -223,14 +223,14 @@
 	succeed_activate()
 	add_cooldown()
 
-/datum/action/ability/activable/xeno/advance/ai_should_start_consider()
+/datum/action/ability/activable/tyranid/advance/ai_should_start_consider()
 	return TRUE
 
-/datum/action/ability/activable/xeno/advance/ai_should_use(atom/target)
+/datum/action/ability/activable/tyranid/advance/ai_should_use(atom/target)
 	if(!iscarbon(target))
 		return FALSE
 	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
-	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(target.get_tyranid_hivenumber() == owner.get_tyranid_hivenumber())
 		return FALSE
 	return TRUE

@@ -1,13 +1,13 @@
 /obj/machinery/self_destruct
-	icon = 'icons/obj/machines/self_destruct.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/self_destruct.dmi'
 	use_power = FALSE
 	density = FALSE
 	anchored = TRUE
 	resistance_flags = RESIST_ALL
 	interaction_flags = INTERACT_MACHINE_TGUI
 	var/active_state = SELF_DESTRUCT_MACHINE_INACTIVE
-	///Whether only marines can activate this. left here in case of admins feeling nice or events
-	var/marine_only_activate = TRUE
+	///Whether only guardsmans can activate this. left here in case of admins feeling nice or events
+	var/guardsman_only_activate = TRUE
 	///When the self destruct sequence was initiated
 	var/started_at = 0
 	/// Timer mainly used for hud timers
@@ -44,8 +44,8 @@
 	. = ..()
 	if(!.)
 		return
-	if(marine_only_activate && !isterragovjob(user?.job))
-		to_chat(user, span_warning("The [src] beeps, \"Marine retinal scan failed!\"."))
+	if(guardsman_only_activate && !isterragovjob(user?.job))
+		to_chat(user, span_warning("The [src] beeps, \"Guardsman retinal scan failed!\"."))
 		return FALSE
 	return TRUE
 
@@ -100,7 +100,7 @@
 			if(!isliving(usr))
 				return
 			var/mob/living/user = usr
-			if(!ismarinecommandjob(user.job))
+			if(!isguardsmancommandjob(user.job))
 				to_chat(usr, span_notice("You don't have the necessary clearance to cancel the emergency destruct system."))
 				return
 			if(SSevacuation.cancel_self_destruct())

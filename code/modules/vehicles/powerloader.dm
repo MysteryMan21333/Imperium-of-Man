@@ -1,6 +1,6 @@
 /obj/vehicle/ridden/powerloader
 	name = "\improper RPL-Y Cargo Loader"
-	icon = 'icons/obj/powerloader.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/powerloader.dmi'
 	desc = "The RPL-Y Cargo Loader is a commercial mechanized exoskeleton used for lifting heavy materials and objects. An old but trusted design used in warehouses, constructions and military ships everywhere."
 	icon_state = "powerloader_open"
 	layer = POWERLOADER_LAYER //so the top appears above windows and wall mounts
@@ -121,7 +121,7 @@
 	return ..()
 
 /obj/item/powerloader_clamp
-	icon = 'icons/obj/powerloader.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/powerloader.dmi'
 	name = "\improper RPL-Y Cargo Loader Hydraulic Claw"
 	icon_state = "loader_clamp"
 	force = 20
@@ -144,7 +144,7 @@
 	if(victim in linked_powerloader.buckled_mobs)
 		linked_powerloader.unbuckle_mob(victim) //if the pilot clicks themself with the clamp, it unbuckles them.
 		return TRUE
-	if(isxeno(victim) && victim.stat == DEAD && !victim.anchored && user.a_intent == INTENT_HELP)
+	if(istyranid(victim) && victim.stat == DEAD && !victim.anchored && user.a_intent == INTENT_HELP)
 		victim.forceMove(linked_powerloader)
 		loaded = victim
 		playsound(src, 'sound/machines/hydraulics_2.ogg', 40, 1)
@@ -175,9 +175,9 @@
 /obj/structure/powerloader_wreckage
 	name = "\improper RPL-Y Cargo Loader wreckage"
 	desc = "Remains of some unfortunate Cargo Loader. Completely unrepairable."
-	icon = 'icons/obj/powerloader.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/powerloader.dmi'
 	icon_state = "wreck"
 	density = TRUE
 	anchored = FALSE
 	opacity = FALSE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE

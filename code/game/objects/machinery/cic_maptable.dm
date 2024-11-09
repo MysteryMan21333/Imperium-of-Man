@@ -1,7 +1,7 @@
 /obj/machinery/cic_maptable
 	name = "map table"
 	desc = "A table that displays a map of the current target location"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "maptable"
 	interaction_flags = INTERACT_MACHINE_DEFAULT
 	use_power = IDLE_POWER_USE
@@ -12,7 +12,7 @@
 	light_color = LIGHT_COLOR_BLUE
 	var/screen_overlay = "maptable_screen"
 	///flags that we want to be shown when you interact with this table
-	var/minimap_flag = MINIMAP_FLAG_MARINE
+	var/minimap_flag = MINIMAP_FLAG_GUARDSMAN
 	///by default Zlevel 2, groundside is targetted
 	var/targetted_zlevel = 2
 	///minimap obj ref that we will display to users
@@ -94,14 +94,14 @@
 
 /obj/machinery/cic_maptable/droppod_maptable
 	name = "Athena tactical map console"
-	desc = "A map that display the planetside AO, specialized in revealing potential areas to drop pod. This is especially useful to see where the frontlines and marines are at so that anyone droppodding can decide where to land. Pray that your land nav skills are robust to not get lost!"
+	desc = "A map that display the planetside AO, specialized in revealing potential areas to drop pod. This is especially useful to see where the frontlines and guardsmans are at so that anyone droppodding can decide where to land. Pray that your land nav skills are robust to not get lost!"
 	icon_state = "droppodtable"
 	screen_overlay = "droppodtable_emissive"
 
-/obj/machinery/cic_maptable/som_maptable
-	icon_state = "som_console"
-	screen_overlay = "som_maptable_screen"
-	minimap_flag = MINIMAP_FLAG_MARINE_SOM
+/obj/machinery/cic_maptable/chaos_maptable
+	icon_state = "chaos_console"
+	screen_overlay = "chaos_maptable_screen"
+	minimap_flag = MINIMAP_FLAG_GUARDSMAN_CHAOS
 	light_color = LIGHT_COLOR_FLARE
 
 /obj/machinery/cic_maptable/no_flags
@@ -173,7 +173,7 @@
 		tool.set_zlevel(new_z, tool.minimap_flag)
 
 /obj/machinery/cic_maptable/drawable/big
-	icon = 'icons/obj/structures/prop/mainship_96.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_96.dmi'
 	layer = ABOVE_OBJ_LAYER
 	pixel_x = -16
 	pixel_y = -14
@@ -188,8 +188,8 @@
 	)
 	AddElement(/datum/element/connect_loc, connections)
 
-/obj/machinery/cic_maptable/drawable/big/som
-	minimap_flag = MINIMAP_FLAG_MARINE_SOM
-	screen_overlay = "som_maptable_screen"
+/obj/machinery/cic_maptable/drawable/big/chaos
+	minimap_flag = MINIMAP_FLAG_GUARDSMAN_CHAOS
+	screen_overlay = "chaos_maptable_screen"
 	light_color = LIGHT_COLOR_FLARE
 	light_range = 3

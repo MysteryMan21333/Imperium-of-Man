@@ -1,7 +1,7 @@
 /obj/item/mass_spectrometer
 	desc = "A hand-held mass spectrometer which identifies trace chemicals in a blood sample."
 	name = "mass-spectrometer"
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "spectrometer"
 	worn_icon_state = "analyzer"
 	w_class = WEIGHT_CLASS_SMALL

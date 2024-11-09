@@ -6,11 +6,11 @@
 	desc = "They got that drip, doe."
 	item_map_variant_flags = NONE
 	allowed_uniform_type = /obj/item/clothing/under
-	icon = 'icons/obj/clothing/suits/marine_suits.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/suits/marine_suits.dmi'
 	worn_icon_list = list(
-		slot_wear_suit_str = 'icons/mob/clothing/suits/marine_suits.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_wear_suit_str = 'modular_imperium/master_files/icons/mob/clothing/suits/marine_suits.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	attachments_allowed = list(
 // Armor Modules
@@ -30,9 +30,9 @@
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
 		/obj/item/armor_module/storage/medical,
-		/obj/item/armor_module/storage/general/som,
-		/obj/item/armor_module/storage/engineering/som,
-		/obj/item/armor_module/storage/medical/som,
+		/obj/item/armor_module/storage/general/chaos,
+		/obj/item/armor_module/storage/engineering/chaos,
+		/obj/item/armor_module/storage/medical/chaos,
 		/obj/item/armor_module/storage/injector,
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,
@@ -109,7 +109,7 @@
 
 
 
-//marine hats
+//guardsman hats
 /obj/item/clothing/head/modular/style/beret
 	name = "TGMC beret"
 	desc = "A hat used by the TGMC, typically considered the most iconic military headgear. Often reserved for higher ranking officers, they occasionally they find their way down the ranks into the hands of squad-leaders and decorated grunts."

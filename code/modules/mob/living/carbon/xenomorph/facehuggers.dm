@@ -14,7 +14,7 @@
 /obj/item/clothing/mask/facehugger
 	name = "facehugger"
 	desc = "It has some sort of a tube at the end of its tail."
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "facehugger"
 	worn_icon_state = "facehugger"
 	w_class = WEIGHT_CLASS_TINY //Note: can be picked up by aliens unlike most other items of w_class below 4
@@ -40,9 +40,9 @@
 	///Is actually attacking someone?
 	var/leaping = FALSE
 	///What hive this hugger belongs to
-	var/hivenumber = XENO_HIVE_NORMAL
-	///The xeno that spawned/threw/dropped the hugger. Used for anti-shuffle
-	var/mob/living/carbon/xenomorph/source
+	var/hivenumber = TYRANID_HIVE_NORMAL
+	///The tyranid that spawned/threw/dropped the hugger. Used for anti-shuffle
+	var/mob/living/carbon/tyranid/source
 	///The timer tracking when we die
 	var/lifetimer
 	///The timer tracking when we next jump
@@ -81,7 +81,7 @@
 	AddElement(/datum/element/connect_loc, connections)
 
 ///Registers the source of our facehugger for the purpose of anti-shuffle mechanics
-/obj/item/clothing/mask/facehugger/proc/facehugger_register_source(mob/living/carbon/xenomorph/S)
+/obj/item/clothing/mask/facehugger/proc/facehugger_register_source(mob/living/carbon/tyranid/S)
 	if(source) //If we have an existing source, unregister
 		UnregisterSignal(source, COMSIG_QDELETING)
 
@@ -115,25 +115,25 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Deal with picking up facehuggers. "attack_alien" is the universal 'xenos click something while unarmed' proc.
-/obj/item/clothing/mask/facehugger/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+//Deal with picking up facehuggers. "attack_alien" is the universal 'tyranids click something while unarmed' proc.
+/obj/item/clothing/mask/facehugger/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
 
-	if(!issamexenohive(xeno_attacker) && stat != DEAD)
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
-		xeno_attacker.visible_message(span_xenowarning("[xeno_attacker] crushes [src]!"),
-			span_xenowarning("We crush [src]."))
+	if(!issametyranidhive(tyranid_attacker) && stat != DEAD)
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+		tyranid_attacker.visible_message(span_tyranidwarning("[tyranid_attacker] crushes [src]!"),
+			span_tyranidwarning("We crush [src]."))
 		kill_hugger()
 		return
 	else
-		attack_hand(xeno_attacker)
+		attack_hand(tyranid_attacker)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/mask/facehugger/attack_hand(mob/living/user)
-	if(isxeno(user))
-		var/mob/living/carbon/xenomorph/X = user
-		if(X.xeno_caste.can_flags & CASTE_CAN_HOLD_FACEHUGGERS)
+	if(istyranid(user))
+		var/mob/living/carbon/tyranid/X = user
+		if(X.tyranid_caste.can_flags & CASTE_CAN_HOLD_FACEHUGGERS)
 			deltimer(jumptimer)
 			deltimer(activetimer)
 			remove_danger_overlay() //Remove the exclamation overlay as we pick it up
@@ -166,8 +166,8 @@
 	user.update_icons()
 
 /obj/item/clothing/mask/facehugger/attack_self(mob/user)
-	if(isxenocarrier(user))
-		var/mob/living/carbon/xenomorph/carrier/C = user
+	if(istyranidcarrier(user))
+		var/mob/living/carbon/tyranid/carrier/C = user
 		C.store_hugger(src)
 	if(ishuman(user))
 		if(stat == DEAD)
@@ -246,11 +246,11 @@
 		return
 
 	for(var/obj/effect/particle_effect/smoke/check_smoke in get_turf(src)) //Check for pacifying smoke
-		if(CHECK_BITFIELD(check_smoke.smoke_traits, SMOKE_HUGGER_PACIFY)) //Cancel out and make the hugger go idle if we have the xeno pacify tag
+		if(CHECK_BITFIELD(check_smoke.smoke_traits, SMOKE_HUGGER_PACIFY)) //Cancel out and make the hugger go idle if we have the tyranid pacify tag
 			go_idle()
 			return
 
-	if(ishuman(loc)) //Having an angry xeno in your hand is a bad idea.
+	if(ishuman(loc)) //Having an angry tyranid in your hand is a bad idea.
 		var/mob/living/carbon/human/holder = loc
 		holder.visible_message(span_warning("The facehugger [holder] is carrying leaps at [holder.p_them()]!") , "<span class ='danger'>The facehugger you're carrying leaps at you!</span>")
 		if(!try_attach(holder))
@@ -286,7 +286,7 @@
 
 	if(!about_to_jump)
 		return
-	add_overlay(image('icons/obj/items/grenade.dmi', "danger"))
+	add_overlay(image('modular_imperium/master_files/icons/obj/items/grenade.dmi', "danger"))
 
 ///Applies an alert overlay when the hugger is about to jump
 /obj/item/clothing/mask/facehugger/proc/apply_danger_overlay()
@@ -313,9 +313,9 @@
 		var/obj/alien/egg/hugger/E = locate() in loc
 		if(E?.insert_new_hugger(src))
 			return FALSE
-		var/obj/structure/xeno/trap/T = locate() in loc
+		var/obj/structure/tyranid/trap/T = locate() in loc
 		if(T && !T.hugger)
-			visible_message(span_xenowarning("[src] crawls into [T]!"))
+			visible_message(span_tyranidwarning("[src] crawls into [T]!"))
 			forceMove(T)
 			T.hugger = src
 			T.set_trap_type(TRAP_HUGGER)
@@ -335,13 +335,13 @@
 	return FALSE
 
 /obj/item/clothing/mask/facehugger/proc/on_cross(datum/source, atom/movable/target, oldloc, oldlocs)
-	if(stat == CONSCIOUS  && !issamexenohive(target))
+	if(stat == CONSCIOUS  && !issametyranidhive(target))
 		HasProximity(target)
 
 /obj/item/clothing/mask/facehugger/proc/on_exited(datum/source, atom/movable/AM, direction)
 	if(stat != CONSCIOUS) //Have to be conscious
 		return
-	if(source == AM || (!source && issamexenohive(AM))) //shuffle hug prevention, if we have a source and it steps off go_idle() or if we don't have a source and a xeno from the same hive steps off go_idle()
+	if(source == AM || (!source && issametyranidhive(AM))) //shuffle hug prevention, if we have a source and it steps off go_idle() or if we don't have a source and a tyranid from the same hive steps off go_idle()
 		go_idle()
 
 /obj/item/clothing/mask/facehugger/on_found(mob/finder)
@@ -386,7 +386,7 @@
 		if(!try_attach(carbon_victim))
 			go_idle()
 	else
-		if(!issamexenohive(carbon_victim))
+		if(!issametyranidhive(carbon_victim))
 			carbon_victim.adjust_stagger(3 SECONDS)
 			carbon_victim.add_slowdown(3)
 		pre_leap(activate_time)
@@ -419,14 +419,14 @@
 
 	return TRUE
 
-/mob/living/carbon/xenomorph/can_be_facehugged(obj/item/clothing/mask/facehugger/F, check_death = TRUE, check_mask = TRUE, provoked = FALSE)
+/mob/living/carbon/tyranid/can_be_facehugged(obj/item/clothing/mask/facehugger/F, check_death = TRUE, check_mask = TRUE, provoked = FALSE)
 	if(!F.combat_hugger) //Only combat huggers will attack aliens
 		return FALSE
 
 	if(check_death && stat == DEAD) //Don't attack dead aliens
 		return FALSE
 
-	if(F.issamexenohive(src)) //Check for our hive
+	if(F.issametyranidhive(src)) //Check for our hive
 		return FALSE
 
 	return ..()
@@ -435,13 +435,13 @@
 	if(check_death && stat == DEAD)
 		return FALSE
 
-	if(faction == FACTION_XENO)
+	if(faction == FACTION_TYRANID)
 		return FALSE
 
 	if(F.combat_hugger) //Combat huggers will attack anything else
 		return TRUE
 
-	if((status_flags & (XENO_HOST|GODMODE)) || F.stat == DEAD)
+	if((status_flags & (TYRANID_HOST|GODMODE)) || F.stat == DEAD)
 		return FALSE
 
 	if(!provoked)
@@ -486,11 +486,11 @@
 	if(attached)
 		return TRUE
 
-	if(hugged.status_flags & XENO_HOST || hugged.status_flags & GODMODE || isxeno(hugged))
+	if(hugged.status_flags & TYRANID_HOST || hugged.status_flags & GODMODE || istyranid(hugged))
 		return FALSE
 
-	if(isxeno(loc)) //Being carried? Drop it
-		var/mob/living/carbon/xenomorph/X = loc
+	if(istyranid(loc)) //Being carried? Drop it
+		var/mob/living/carbon/tyranid/X = loc
 		X.dropItemToGround(src)
 		X.update_icons()
 
@@ -590,7 +590,7 @@
 		update_icon()
 
 	if(as_planned)
-		if(sterile || target.status_flags & XENO_HOST)
+		if(sterile || target.status_flags & TYRANID_HOST)
 			target.visible_message(span_danger("[src] falls limp after violating [target]'s face!"))
 		else //Huggered but not impregnated, deal damage.
 			target.visible_message(span_danger("[src] frantically claws at [target]'s face before falling down!"),span_danger("[src] frantically claws at your face before falling down! Auugh!"))
@@ -644,8 +644,8 @@
 
 /obj/item/clothing/mask/facehugger/bullet_act(obj/projectile/proj)
 	..()
-	if(proj.ammo.ammo_behavior_flags & AMMO_XENO)
-		return FALSE //Xeno spits ignore huggers.
+	if(proj.ammo.ammo_behavior_flags & AMMO_TYRANID)
+		return FALSE //Tyranid spits ignore huggers.
 	if(proj.damage && !(proj.ammo.damage_type in list(OXY, STAMINA)))
 		kill_hugger()
 	proj.ammo.on_hit_obj(src, proj)
@@ -657,7 +657,7 @@
 /obj/item/clothing/mask/facehugger/dropped(mob/user)
 	. = ..()
 	go_idle()
-	if(isxeno(user)) //Set the source mob
+	if(istyranid(user)) //Set the source mob
 		facehugger_register_source(user)
 
 
@@ -720,7 +720,7 @@
 /obj/item/clothing/mask/facehugger/combat/chem_injector/neuro
 	name = "neurotoxin hugger"
 	color = COLOR_DARK_ORANGE
-	injected_chemical_type = /datum/reagent/toxin/xeno_neurotoxin
+	injected_chemical_type = /datum/reagent/toxin/tyranid_neurotoxin
 
 /obj/item/clothing/mask/facehugger/combat/chem_injector/neuro/try_attach(mob/living/carbon/M)
 	if(!..())
@@ -729,7 +729,7 @@
 
 /obj/item/clothing/mask/facehugger/combat/chem_injector/ozelomelyn
 	name = "ozelomelyn hugger"
-	injected_chemical_type = /datum/reagent/toxin/xeno_ozelomelyn
+	injected_chemical_type = /datum/reagent/toxin/tyranid_ozelomelyn
 	color = COLOR_MAGENTA
 
 /obj/item/clothing/mask/facehugger/combat/acid
@@ -750,11 +750,11 @@
 
 	for(var/turf/acid_tile AS in RANGE_TURFS(1, loc))
 		new /obj/effect/temp_visual/acid_splatter(acid_tile) //SFX
-		if(!locate(/obj/effect/xenomorph/spray) in acid_tile.contents)
-			new /obj/effect/xenomorph/spray(acid_tile, 6 SECONDS, 16)
+		if(!locate(/obj/effect/tyranid/spray) in acid_tile.contents)
+			new /obj/effect/tyranid/spray(acid_tile, 6 SECONDS, 16)
 
 
-	var/datum/effect_system/smoke_spread/xeno/acid/light/A = new(get_turf(src)) //Spawn acid smoke
+	var/datum/effect_system/smoke_spread/tyranid/acid/light/A = new(get_turf(src)) //Spawn acid smoke
 	A.set_up(1,src)
 	A.start()
 	kill_hugger(0.5 SECONDS)
@@ -779,11 +779,11 @@
 	playsound(loc, SFX_ALIEN_RESIN_BUILD, 50, 1)
 
 	for(var/turf/sticky_tile AS in RANGE_TURFS(1, loc))
-		if(!locate(/obj/effect/xenomorph/spray) in sticky_tile.contents)
+		if(!locate(/obj/effect/tyranid/spray) in sticky_tile.contents)
 			new /obj/alien/resin/sticky/thin(sticky_tile)
 
 	for(var/mob/living/target in range(1, loc))
-		if(isxeno(target)) //Xenos aren't affected by sticky resin
+		if(istyranid(target)) //Tyranids aren't affected by sticky resin
 			continue
 
 		target.adjust_stagger(3 SECONDS)
@@ -826,8 +826,8 @@
 		return FALSE
 	if(!isliving(M))
 		return FALSE
-	if(isxeno(M))
-		var/mob/living/carbon/xenomorph/X = M
+	if(istyranid(M))
+		var/mob/living/carbon/tyranid/X = M
 		if(hivenumber == X.hive.hivenumber) //No friendly fire
 			return FALSE
 

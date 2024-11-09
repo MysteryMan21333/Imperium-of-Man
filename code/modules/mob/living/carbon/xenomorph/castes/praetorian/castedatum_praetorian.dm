@@ -1,11 +1,11 @@
-/datum/xeno_caste/praetorian
+/datum/tyranid_caste/praetorian
 	caste_name = "Praetorian"
 	display_name = "Praetorian"
 	upgrade_name = ""
 	caste_desc = "A giant ranged monster. It looks pretty strong."
-	caste_type_path = /mob/living/carbon/xenomorph/praetorian
-	tier = XENO_TIER_THREE
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/praetorian
+	tier = TYRANID_TIER_THREE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "praetorian" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -24,7 +24,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/spitter
+	deevolves_to = /datum/tyranid_caste/spitter
 
 	// *** Flags *** //
 	can_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
@@ -35,7 +35,7 @@
 
 	// *** Ranged Attack *** //
 	spit_delay = 1 SECONDS
-	spit_types = list(/datum/ammo/xeno/toxin/heavy, /datum/ammo/xeno/acid/heavy)
+	spit_types = list(/datum/ammo/tyranid/toxin/heavy, /datum/ammo/tyranid/acid/heavy)
 
 	acid_spray_duration = 10 SECONDS
 	acid_spray_range = 5
@@ -51,49 +51,49 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/corrosive_acid,
-		/datum/action/ability/activable/xeno/xeno_spit,
-		/datum/action/ability/activable/xeno/spray_acid/cone,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/corrosive_acid,
+		/datum/action/ability/activable/tyranid/tyranid_spit,
+		/datum/action/ability/activable/tyranid/spray_acid/cone,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
 	)
 
-/datum/xeno_caste/praetorian/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/praetorian/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/praetorian/primordial
+/datum/tyranid_caste/praetorian/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "An aberrant creature extremely proficient with acid, keep your distance if you don't wish to be burned."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	primordial_message = "The strongest of acids flows through our veins, let's reduce them to dust."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/corrosive_acid,
-		/datum/action/ability/activable/xeno/xeno_spit,
-		/datum/action/ability/activable/xeno/spray_acid/cone,
-		/datum/action/ability/activable/xeno/charge/acid_dash,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/corrosive_acid,
+		/datum/action/ability/activable/tyranid/tyranid_spit,
+		/datum/action/ability/activable/tyranid/spray_acid/cone,
+		/datum/action/ability/activable/tyranid/charge/acid_dash,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
 	)
 
-/datum/xeno_caste/praetorian/dancer
-	caste_type_path = /mob/living/carbon/xenomorph/praetorian/dancer
+/datum/tyranid_caste/praetorian/dancer
+	caste_type_path = /mob/living/carbon/tyranid/praetorian/dancer
 	upgrade_name = ""
 	caste_name = "Dancer Praetorian"
 	display_name = "Praetorian"
-	upgrade = XENO_UPGRADE_BASETYPE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	caste_desc = "A giant melee monster. It looks pretty strong."
 
 	// +2 melee damage
@@ -105,41 +105,41 @@
 
 	// Loses ranged spit abilities for close combat combo abilities.
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/corrosive_acid,
-		/datum/action/ability/xeno_action/dodge,
-		/datum/action/ability/activable/xeno/impale,
-		/datum/action/ability/activable/xeno/tail_trip,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/corrosive_acid,
+		/datum/action/ability/tyranid_action/dodge,
+		/datum/action/ability/activable/tyranid/impale,
+		/datum/action/ability/activable/tyranid/tail_trip,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
 	)
 
-/datum/xeno_caste/praetorian/dancer/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/praetorian/dancer/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/praetorian/dancer/primordial
+/datum/tyranid_caste/praetorian/dancer/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "An aberrant creature extremely proficient with its body and tail. Keep your distance if you don't wish to be finessed."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 	primordial_message = "With a flick of our tail, we dance through the shadows, striking with lethal precision."
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/corrosive_acid,
-		/datum/action/ability/xeno_action/dodge,
-		/datum/action/ability/activable/xeno/impale,
-		/datum/action/ability/activable/xeno/tail_trip,
-		/datum/action/ability/activable/xeno/charge/acid_dash, // No unique primordial ability at the moment. Replace eventually with something cooler!
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/corrosive_acid,
+		/datum/action/ability/tyranid_action/dodge,
+		/datum/action/ability/activable/tyranid/impale,
+		/datum/action/ability/activable/tyranid/tail_trip,
+		/datum/action/ability/activable/tyranid/charge/acid_dash, // No unique primordial ability at the moment. Replace eventually with something cooler!
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
 	)

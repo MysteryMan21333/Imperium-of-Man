@@ -1,7 +1,7 @@
 /obj/structure/razorwire
 	name = "razorwire obstacle"
 	desc = "A bundle of barbed wire supported by metal rods. Used to deny access to areas under (literal) pain of entanglement and injury. A classic fortification since the 1900s."
-	icon = 'icons/obj/structures/barricades/barbedwire.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/barricades/barbedwire.dmi'
 	icon_state = "barbedwire_x"
 	base_icon_state = "barbedwire_x"
 	density = TRUE
@@ -9,7 +9,7 @@
 	layer = ABOVE_OBJ_LAYER
 	coverage = 5
 	climbable = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_DEFENSIVE_STRUCTURE|PASS_GRILLE|PASSABLE
 	var/list/entangled_list
 	var/sheet_type = /obj/item/stack/barbed_wire
@@ -181,11 +181,11 @@
 	deconstruct(TRUE)
 	return TRUE
 
-/obj/structure/razorwire/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/structure/razorwire/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	xeno_attacker.apply_damage(RAZORWIRE_BASE_DAMAGE, blocked = MELEE, updating_health = TRUE) //About a third as damaging as actually entering
+	tyranid_attacker.apply_damage(RAZORWIRE_BASE_DAMAGE, blocked = MELEE, updating_health = TRUE) //About a third as damaging as actually entering
 	update_icon()
 	return ..()
 
@@ -220,5 +220,5 @@
 	. = ..()
 	if(!.)
 		return
-	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID))
+	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_TYRANID_ACID))
 		take_damage(2 * S.strength, BURN, ACID)

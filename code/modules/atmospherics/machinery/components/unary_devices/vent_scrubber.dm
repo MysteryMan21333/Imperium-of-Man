@@ -127,12 +127,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/can_crawl_through()
 	return !welded
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
-	if(!welded || !(do_after(xeno_attacker, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE)))
+	if(!welded || !(do_after(tyranid_attacker, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE)))
 		return
-	xeno_attacker.visible_message("[xeno_attacker] furiously claws at [src]!", "We manage to clear away the stuff blocking the scrubber.", "You hear loud scraping noises.")
+	tyranid_attacker.visible_message("[tyranid_attacker] furiously claws at [src]!", "We manage to clear away the stuff blocking the scrubber.", "You hear loud scraping noises.")
 	welded = FALSE
 	update_icon()
 	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
@@ -143,9 +143,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/AltClick(mob/user)
 	if(!isliving(user))
 		return
-	if(isxeno(user))
-		var/mob/living/carbon/xenomorph/xeno_user = user
-		xeno_user.handle_ventcrawl(src, xeno_user.xeno_caste.vent_enter_speed, xeno_user.xeno_caste.silent_vent_crawl)
+	if(istyranid(user))
+		var/mob/living/carbon/tyranid/tyranid_user = user
+		tyranid_user.handle_ventcrawl(src, tyranid_user.tyranid_caste.vent_enter_speed, tyranid_user.tyranid_caste.silent_vent_crawl)
 		return
 	var/mob/living/living_user = user
 	living_user.handle_ventcrawl(src)

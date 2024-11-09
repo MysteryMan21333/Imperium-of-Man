@@ -33,7 +33,7 @@
 	desc = "A pistol magazine."
 	caliber = CALIBER_9X19
 	icon_state = "m4a3"
-	icon = 'icons/obj/items/ammo/pistol.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/pistol.dmi'
 	max_rounds = 14
 	w_class = WEIGHT_CLASS_SMALL
 	default_ammo = /datum/ammo/bullet/pistol
@@ -198,9 +198,9 @@
 	max_rounds = 18
 
 //-------------------------------------------------------
-//SOM pistol
+//CHAOS pistol
 
-/obj/item/ammo_magazine/pistol/som
+/obj/item/ammo_magazine/pistol/chaos
 	name = "\improper V-11 AP magazine (9mm)"
 	default_ammo = /datum/ammo/bullet/pistol/ap
 	caliber = CALIBER_9X19
@@ -208,13 +208,13 @@
 	icon_state_mini = "mag_pistol_normal"
 	max_rounds = 18
 
-/obj/item/ammo_magazine/pistol/som/incendiary
+/obj/item/ammo_magazine/pistol/chaos/incendiary
 	name = "\improper V-11 incendiary magazine (9mm)"
 	icon_state = "v11_incend"
 	default_ammo = /datum/ammo/bullet/pistol/incendiary
 	icon_state_mini = "mag_pistol_red"
 
-/obj/item/ammo_magazine/pistol/som/extended
+/obj/item/ammo_magazine/pistol/chaos/extended
 	name = "\improper V-11 extended magazine (9mm)"
 	max_rounds = 30
 	icon_state = "v11_extended"

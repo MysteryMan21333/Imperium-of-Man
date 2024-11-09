@@ -24,8 +24,8 @@ require only minor tweaks.
 #define ZTRAIT_STATION "Station"
 #define ZTRAIT_RESERVED "Transit/Reserved"
 #define ZTRAIT_GROUND "Ground"
-#define ZTRAIT_MARINE_MAIN_SHIP "Marine Main Ship"
-#define ZTRAIT_DOUBLE_SHIPS "Double Marine Ship"
+#define ZTRAIT_GUARDSMAN_MAIN_SHIP "Guardsman Main Ship"
+#define ZTRAIT_DOUBLE_SHIPS "Double Guardsman Ship"
 #define ZTRAIT_AWAY "Away"
 
 // boolean - weather types that occur on the level
@@ -58,7 +58,7 @@ require only minor tweaks.
 #define ZTRAIT_BASETURF "Baseturf"
 
 // default trait definitions, used by SSmapping
-#define ZTRAITS_MAIN_SHIP list(ZTRAIT_MARINE_MAIN_SHIP = TRUE)
+#define ZTRAITS_MAIN_SHIP list(ZTRAIT_GUARDSMAN_MAIN_SHIP = TRUE)
 #define ZTRAITS_GROUND list(ZTRAIT_GROUND = TRUE)
 #define ZTRAITS_CENTCOM list(ZTRAIT_CENTCOM = TRUE)
 #define ZTRAITS_STATION list(ZTRAIT_LINKAGE = CROSSLINKED, ZTRAIT_STATION = TRUE)

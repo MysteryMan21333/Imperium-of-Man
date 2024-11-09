@@ -4,36 +4,36 @@
 #define SPIDERLING_ENRAGED "spiderling_enraged"
 #define SPIDERLING_NORMAL "spiderling_normal"
 
-/mob/living/carbon/xenomorph/spiderling
-	caste_base_type = /datum/xeno_caste/spiderling
+/mob/living/carbon/tyranid/spiderling
+	caste_base_type = /datum/tyranid_caste/spiderling
 	name = "Spiderling"
 	desc = "A widow spawn, it chitters angrily without any sense of self-preservation, only to obey the widow's will."
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	icon_state = "Spiderling Running"
 	health = 250
 	maxHealth = 250
 	plasma_stored = 200
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	pull_speed = -2
-	allow_pass_flags = PASS_XENO
-	pass_flags = PASS_XENO|PASS_LOW_STRUCTURE
+	allow_pass_flags = PASS_TYRANID
+	pass_flags = PASS_TYRANID|PASS_LOW_STRUCTURE
 	density = FALSE
 	/// The widow that this spiderling belongs to
-	var/mob/living/carbon/xenomorph/spidermother
+	var/mob/living/carbon/tyranid/spidermother
 	/// What sprite state this - normal, enraged, guarding? Used for update_icons()
 	var/spiderling_state = SPIDERLING_NORMAL
 
-/mob/living/carbon/xenomorph/spiderling/Initialize(mapload, mob/living/carbon/xenomorph/mother)
+/mob/living/carbon/tyranid/spiderling/Initialize(mapload, mob/living/carbon/tyranid/mother)
 	. = ..()
 	spidermother = mother
 	if(spidermother)
 		AddComponent(/datum/component/ai_controller, /datum/ai_behavior/spiderling, spidermother)
-		transfer_to_hive(spidermother.get_xeno_hivenumber())
+		transfer_to_hive(spidermother.get_tyranid_hivenumber())
 	else
-		AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+		AddComponent(/datum/component/ai_controller, /datum/ai_behavior/tyranid)
 
-/mob/living/carbon/xenomorph/spiderling/update_icons(state_change = TRUE)
+/mob/living/carbon/tyranid/spiderling/update_icons(state_change = TRUE)
 	. = ..()
 	if(state_change)
 		if(spiderling_state == SPIDERLING_ENRAGED)
@@ -41,15 +41,15 @@
 		if(spiderling_state == SPIDERLING_GUARDING)
 			icon_state = "[icon_state] Guarding"
 
-/mob/living/carbon/xenomorph/spiderling/on_death()
+/mob/living/carbon/tyranid/spiderling/on_death()
 	//We QDEL them as cleanup and preventing them from being sold
 	QDEL_IN(src, TIME_TO_DISSOLVE)
 	return ..()
 
 ///If we're covering our widow, any clicks should be transferred to them
-/mob/living/carbon/xenomorph/spiderling/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(!get_dist(src, spidermother) && isxeno(x))
-		spidermother.attack_alien(xeno_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration, isrightclick)
+/mob/living/carbon/tyranid/spiderling/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(!get_dist(src, spidermother) && istyranid(x))
+		spidermother.attack_alien(tyranid_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration, isrightclick)
 		return
 	return ..()
 
@@ -67,15 +67,15 @@
 /datum/ai_behavior/spiderling/New(loc, parent_to_assign, escorted_atom, can_heal = FALSE)
 	. = ..()
 	default_escorted_atom = WEAKREF(escorted_atom)
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(go_to_target))
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_ATTACK_OBJ, PROC_REF(go_to_obj_target))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_ATTACK_LIVING, PROC_REF(go_to_target))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_ATTACK_OBJ, PROC_REF(go_to_obj_target))
 	RegisterSignal(escorted_atom, COMSIG_SPIDERLING_GUARD, PROC_REF(attempt_guard))
 	RegisterSignal(escorted_atom, COMSIG_SPIDERLING_UNGUARD, PROC_REF(attempt_unguard))
 	RegisterSignal(escorted_atom, COMSIG_MOB_DEATH, PROC_REF(spiderling_rage))
 	RegisterSignal(escorted_atom, COMSIG_LIVING_DO_RESIST, PROC_REF(parent_resist))
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_RESIN_JELLY_APPLIED, PROC_REF(apply_spiderling_jelly))
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_REST, PROC_REF(start_resting))
-	RegisterSignal(escorted_atom, COMSIG_XENOMORPH_UNREST, PROC_REF(stop_resting))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_RESIN_JELLY_APPLIED, PROC_REF(apply_spiderling_jelly))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_REST, PROC_REF(start_resting))
+	RegisterSignal(escorted_atom, COMSIG_TYRANID_UNREST, PROC_REF(stop_resting))
 	RegisterSignal(escorted_atom, COMSIG_ELEMENT_JUMP_STARTED, PROC_REF(do_jump))
 	RegisterSignal(escorted_atom, COMSIG_SPIDERLING_MARK, PROC_REF(decide_mark))
 	RegisterSignal(escorted_atom, COMSIG_SPIDERLING_RETURN, PROC_REF(revert_to_default_escort))
@@ -117,7 +117,7 @@
 	SIGNAL_HANDLER
 	if(!isliving(target))
 		return
-	if(mob_parent?.get_xeno_hivenumber() == target.get_xeno_hivenumber())
+	if(mob_parent?.get_tyranid_hivenumber() == target.get_tyranid_hivenumber())
 		return
 	atom_to_walk_to = target
 	change_action(MOVING_TO_ATOM, target)
@@ -165,24 +165,24 @@
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, PROC_REF(revert_to_default_escort))
 	guarding_status = SPIDERLING_NOT_GUARDING
-	var/mob/living/carbon/xenomorph/spiderling/X = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/X = mob_parent
 	X?.spiderling_state = SPIDERLING_NORMAL
 	X?.update_icons()
 
 /datum/ai_behavior/spiderling/ai_do_move()
 	if((guarding_status == SPIDERLING_ATTEMPTING_GUARD) && (get_dist(mob_parent, atom_to_walk_to) <= 1))
-		var/mob/living/carbon/xenomorph/spiderling/X = mob_parent
+		var/mob/living/carbon/tyranid/spiderling/X = mob_parent
 		if(prob(50))
 			X?.emote("hiss")
 		guarding_status = SPIDERLING_GUARDING
-		var/mob/living/carbon/xenomorph/widow/to_guard = escorted_atom
+		var/mob/living/carbon/tyranid/widow/to_guard = escorted_atom
 		to_guard.buckle_mob(X, TRUE, TRUE)
 		X?.dir = SOUTH
 	return ..()
 
 /// Moves spiderlings to the widow
 /datum/ai_behavior/spiderling/proc/guard_owner()
-	var/mob/living/carbon/xenomorph/spiderling/X = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/X = mob_parent
 	if(QDELETED(X))
 		return
 	if(prob(50))
@@ -195,11 +195,11 @@
 	atom_to_walk_to = escorted_atom
 	guarding_status = SPIDERLING_ATTEMPTING_GUARD
 
-/// This happens when the spiderlings mother dies, they move faster and will attack any nearby marines
+/// This happens when the spiderlings mother dies, they move faster and will attack any nearby guardsmans
 /datum/ai_behavior/spiderling/proc/spiderling_rage()
 	SIGNAL_HANDLER
 	escorted_atom = null
-	var/mob/living/carbon/xenomorph/spiderling/x = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/x = mob_parent
 	if(QDELETED(x))
 		return
 	var/list/mob/living/carbon/human/possible_victims = list()
@@ -219,7 +219,7 @@
 
 /// Makes the spiderling roar and then kill themselves after some time
 /datum/ai_behavior/spiderling/proc/triggered_spiderling_rage(mob/M, mob/victim)
-	var/mob/living/carbon/xenomorph/spiderling/spiderling_parent = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/spiderling_parent = mob_parent
 	if(QDELETED(spiderling_parent))
 		return
 	change_action(MOVING_TO_ATOM, victim)
@@ -230,13 +230,13 @@
 
 ///This kills the spiderling
 /datum/ai_behavior/spiderling/proc/kill_parent()
-	var/mob/living/carbon/xenomorph/spiderling/spiderling_parent = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/spiderling_parent = mob_parent
 	spiderling_parent?.death(gibbing = FALSE)
 
 /// resist when widow does
 /datum/ai_behavior/spiderling/proc/parent_resist()
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/spiderling/spiderling_parent = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/spiderling_parent = mob_parent
 	spiderling_parent?.do_resist()
 
 /// rest when widow does
@@ -261,5 +261,5 @@
 /// Signal handler to apply resin jelly to the spiderling whenever widow gets it
 /datum/ai_behavior/spiderling/proc/apply_spiderling_jelly()
 	SIGNAL_HANDLER
-	var/mob/living/carbon/xenomorph/spiderling/beno_to_coat = mob_parent
+	var/mob/living/carbon/tyranid/spiderling/beno_to_coat = mob_parent
 	beno_to_coat?.apply_status_effect(STATUS_EFFECT_RESIN_JELLY_COATING)

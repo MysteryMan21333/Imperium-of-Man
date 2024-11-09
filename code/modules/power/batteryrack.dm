@@ -74,13 +74,13 @@
 		return
 
 	if(outputting)
-		. += image('icons/obj/power.dmi', "gsmes_outputting")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_outputting")
 	if(inputting)
-		. += image('icons/obj/power.dmi', "gsmes_charging")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_charging")
 
 	var/clevel = chargedisplay()
 	if(clevel>0)
-		. += image('icons/obj/power.dmi', "gsmes_og[clevel]")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_og[clevel]")
 
 
 
@@ -152,15 +152,15 @@
 		return
 
 	if(outputting)
-		. += image('icons/obj/power.dmi', "gsmes_outputting")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_outputting")
 	if(inputting)
-		. += image('icons/obj/power.dmi', "gsmes_charging")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_charging")
 	if(overcharge_percent > 100)
-		. += image('icons/obj/power.dmi', "gsmes_overcharge")
+		. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_overcharge")
 	else
 		var/clevel = chargedisplay()
 		if(clevel>0)
-			. += image('icons/obj/power.dmi', "gsmes_og[clevel]")
+			. += image('modular_imperium/master_files/icons/obj/power.dmi', "gsmes_og[clevel]")
 
 
 //This mess of if-elses and magic numbers handles what happens if the engies don't pay attention and let it eat too much charge

@@ -231,8 +231,8 @@
 /datum/component/riding/creature/crusher/handle_specials()
 	. = ..()
 	set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(-10, -3), TEXT_SOUTH = list(-11, 6), TEXT_EAST = list(-21, 4), TEXT_WEST = list(4, 4)))
-	set_riding_offsets(/mob/living/carbon/xenomorph/runner, list(TEXT_NORTH = list(-16, 9), TEXT_SOUTH = list(-16, 17), TEXT_EAST = list(-21, 7), TEXT_WEST = list(-6, 7)))
-	set_riding_offsets(/mob/living/carbon/xenomorph/larva, list(TEXT_NORTH = list(3, 6), TEXT_SOUTH = list(0, 16), TEXT_EAST = list(-2, 10), TEXT_WEST = list(0, 10)))
+	set_riding_offsets(/mob/living/carbon/tyranid/runner, list(TEXT_NORTH = list(-16, 9), TEXT_SOUTH = list(-16, 17), TEXT_EAST = list(-21, 7), TEXT_WEST = list(-6, 7)))
+	set_riding_offsets(/mob/living/carbon/tyranid/larva, list(TEXT_NORTH = list(3, 6), TEXT_SOUTH = list(0, 16), TEXT_EAST = list(-2, 10), TEXT_WEST = list(0, 10)))
 	set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
 	set_vehicle_dir_layer(NORTH, ABOVE_LYING_MOB_LAYER)
 	set_vehicle_dir_layer(EAST, ABOVE_LYING_MOB_LAYER)
@@ -259,7 +259,7 @@
 	return ..()
 
 /// If the crusher gets knocked over, force the riding rounys off and see if someone got hurt
-/datum/component/riding/creature/crusher/proc/check_carrier_fall_over(mob/living/carbon/xenomorph/crusher/carrying_crusher)
+/datum/component/riding/creature/crusher/proc/check_carrier_fall_over(mob/living/carbon/tyranid/crusher/carrying_crusher)
 	SIGNAL_HANDLER
 
 	for(var/mob/living/rider AS in carrying_crusher.buckled_mobs)
@@ -316,7 +316,7 @@
 	RegisterSignal(parent, COMSIG_ATOM_DIR_CHANGE, PROC_REF(vehicle_turned))
 	RegisterSignal(parent, COMSIG_MOVABLE_UNBUCKLE, PROC_REF(vehicle_mob_unbuckle))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(vehicle_moved))
-	RegisterSignals(parent, list(COMSIG_XENOMORPH_ATTACK_LIVING, COMSIG_XENOMORPH_ATTACK_OBJ), PROC_REF(check_widow_attack))
+	RegisterSignals(parent, list(COMSIG_TYRANID_ATTACK_LIVING, COMSIG_TYRANID_ATTACK_OBJ), PROC_REF(check_widow_attack))
 
 /datum/component/riding/creature/widow/vehicle_mob_unbuckle(datum/source, mob/living/former_rider, force = FALSE)
 	unequip_buckle_inhands(parent)
@@ -325,7 +325,7 @@
 	return ..()
 
 /// If the widow gets knocked over, force the riding rounys off and see if someone got hurt
-/datum/component/riding/creature/widow/proc/check_widow_attack(mob/living/carbon/xenomorph/widow/carrying_widow)
+/datum/component/riding/creature/widow/proc/check_widow_attack(mob/living/carbon/tyranid/widow/carrying_widow)
 	SIGNAL_HANDLER
 	for(var/mob/living/rider AS in carrying_widow.buckled_mobs)
 		carrying_widow.unbuckle_mob(rider)
@@ -366,7 +366,7 @@
 	set_vehicle_dir_layer(WEST, ABOVE_MOB_LAYER)
 
 /// If the rouny gets knocked over, toss the riding human off aswell
-/datum/component/riding/creature/crusher/runner/check_carrier_fall_over(mob/living/carbon/xenomorph/runner/carrying_runner)
+/datum/component/riding/creature/crusher/runner/check_carrier_fall_over(mob/living/carbon/tyranid/runner/carrying_runner)
 	for(var/mob/living/rider AS in carrying_runner.buckled_mobs)
 		carrying_runner.unbuckle_mob(rider)
 		rider.Knockdown(1 SECONDS)

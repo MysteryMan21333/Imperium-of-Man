@@ -11,13 +11,13 @@
 	name = "bed"
 	desc = "A mattress seated on a rectangular metallic frame. This is used to support a lying person in a comfortable manner, notably for regular sleep. Ancient technology, but still useful."
 	icon_state = "bed"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	buckle_flags = CAN_BUCKLE|BUCKLE_PREVENTS_PULL
 	buckle_lying = 90
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 40
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	hit_sound = 'sound/effects/metalhit.ogg'
 	coverage = 10
 	var/dropmetal = TRUE
@@ -135,7 +135,7 @@
 
 /obj/structure/bed/roller/attack_hand_alternate(mob/living/user)
 	. = ..()
-	if(!ishuman(user)) // Keep xenos from toggling the brake
+	if(!ishuman(user)) // Keep tyranids from toggling the brake
 		return
 
 	if(!anchored)
@@ -235,7 +235,7 @@
 /obj/structure/bed/roller
 	name = "roller bed"
 	desc = "A basic cushioned leather board resting on a small frame. Not very comfortable at all, but allows the patient to rest lying down while moved to another location rapidly. Has brakes to prevent the patient from rolling away."
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "roller_down"
 	anchored = FALSE
 	buckle_flags = CAN_BUCKLE
@@ -249,7 +249,7 @@
 /obj/item/roller
 	name = "roller bed"
 	desc = "A collapsed roller bed that can be carried around."
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	w_class = WEIGHT_CLASS_SMALL //Fits in a backpack
 	drag_delay = 1 //Pulling something on wheels is easy
@@ -298,7 +298,7 @@
 /obj/item/roller_holder
 	name = "roller bed rack"
 	desc = "A rack for carrying a collapsed roller bed."
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	var/obj/item/roller/held
 
@@ -327,7 +327,7 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 /obj/structure/bed/medevac_stretcher
 	name = "medevac stretcher"
 	desc = "A medevac stretcher with integrated beacon for rapid evacuation of an injured patient via dropship lift and an emergency bluespace teleporter for tele-evacuation to a linked beacon. Accepts patients and body bags. Right click to activate."
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "stretcher_down"
 	buckling_y = 0
 	buildstacktype = null
@@ -347,13 +347,13 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 	. = ..()
 	radio = new(src)
 
-/obj/structure/bed/medevac_stretcher/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/structure/bed/medevac_stretcher/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 	if(buckled_bodybag)
 		unbuckle_bodybag()
 	for(var/m in buckled_mobs)
-		user_unbuckle_mob(m, xeno_attacker, TRUE)
+		user_unbuckle_mob(m, tyranid_attacker, TRUE)
 
 /obj/structure/bed/medevac_stretcher/attack_ghost(mob/dead/observer/user)
 	. = ..()
@@ -529,7 +529,7 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 
 /obj/item/roller/medevac
 	name = "medevac stretcher"
-	desc = "A collapsed medevac stretcher that can be carried around. Can be used to instantly transport a marine to a linked beacon. Don't forget the beacon!"
+	desc = "A collapsed medevac stretcher that can be carried around. Can be used to instantly transport a guardsman to a linked beacon. Don't forget the beacon!"
 	icon_state = "stretcher_folded"
 	var/last_teleport = null
 	var/obj/item/medevac_beacon/linked_beacon = null
@@ -606,13 +606,13 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 /obj/item/medevac_beacon
 	name = "medevac beacon"
 	desc = "A specialized teleportation beacon that links with a medvac stretcher; provides the target destination for the stretcher's displacement field. WARNING: Must be in a powered area to function."
-	icon = 'icons/obj/items/beacon.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/beacon.dmi'
 	icon_state = "med_0"
 	var/planted = FALSE
 	var/locked = FALSE
 	var/list/obj/item/roller/medevac/linked_beds = list()
 	var/list/obj/structure/bed/medevac_stretcher/linked_beds_deployed = list()
-	req_one_access = list(ACCESS_MARINE_MEDPREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_MEDBAY)
+	req_one_access = list(ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_MEDBAY)
 	var/obj/item/radio/headset/mainship/doc/radio
 	///The faction this beacon belongs to
 	var/faction
@@ -799,7 +799,7 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 /obj/structure/bed/bedroll
 	name = "unfolded bedroll"
 	desc = "Perfect for those long missions, when there's nowhere else to sleep, you remembered to bring at least one thing of comfort."
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "bedroll_o"
 	foldabletype = /obj/item/roller/bedroll
 	accepts_bodybag = FALSE
@@ -808,7 +808,7 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 /obj/item/roller/bedroll
 	name = "folded bedroll"
 	desc = "A standard issue USCMC bedroll, They've been in service for as long as you can remember. The tag on it states to unfold it before rest, but who needs rules anyway, right?"
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "bedroll"
 	rollertype = /obj/structure/bed/bedroll
 
@@ -816,7 +816,7 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 
 /obj/structure/bed/roller/hospital
 	name = "hospital bed"
-	icon = 'icons/obj/rollerbed.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/rollerbed.dmi'
 	icon_state = "bigrollerempty_up"
 	foldabletype = null
 	base_bed_icon = "bigrollerempty"
@@ -852,7 +852,7 @@ GLOBAL_LIST_EMPTY(activated_medevac_stretchers)
 /obj/structure/bed/urban/hospital/hospitaldivider
 	name = "hospital divider"
 	desc = "A hospital divider for privacy."
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "hospitalcurtain"
 	layer = ABOVE_MOB_LAYER
 	anchored = TRUE

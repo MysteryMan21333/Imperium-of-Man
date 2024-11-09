@@ -1,5 +1,5 @@
 /datum/job/freelancer
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_ANTAGONIST_ACCESS
 	minimal_access = ALL_ANTAGONIST_ACCESS
 	skills_type = /datum/skills/crafty
@@ -15,11 +15,11 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/distress/dutch
 	mask = /obj/item/clothing/mask/rebreather/scarf/freelancer
-	w_uniform = /obj/item/clothing/under/marine/veteran/freelancer
-	belt = /obj/item/storage/belt/marine
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/freelancer
+	belt = /obj/item/storage/belt/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/freelancer
-	shoes = /obj/item/clothing/shoes/marine
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
+	shoes = /obj/item/clothing/shoes/guardsman
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
 	head = /obj/item/clothing/head/frelancer
 	back = /obj/item/storage/backpack/lightpack
 	l_store = /obj/item/storage/pouch/medkit/firstaid
@@ -35,7 +35,7 @@
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/burger/tofu, SLOT_IN_BACKPACK)
-	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/flask/marine, SLOT_IN_BACKPACK)
+	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/flask/guardsman, SLOT_IN_BACKPACK)
 
 //Freelancer Standard
 /datum/job/freelancer/standard
@@ -186,7 +186,7 @@
 	jobtype = /datum/job/freelancer/grenadier
 
 /datum/outfit/job/freelancer/grenadier/one
-	w_uniform = /obj/item/clothing/under/marine/veteran/freelancer/veteran
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/freelancer/veteran
 	suit_store = /obj/item/weapon/gun/rifle/alf_machinecarbine/freelancer
 	r_store = /obj/item/storage/pouch/grenade
 
@@ -286,7 +286,7 @@
 	jobtype = /datum/job/freelancer/leader
 
 /datum/outfit/job/freelancer/leader
-	w_uniform = /obj/item/clothing/under/marine/veteran/freelancer/veteran
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/freelancer/veteran
 	head = /obj/item/clothing/head/frelancer/beret
 	glasses = /obj/item/clothing/glasses/hud/health
 
@@ -315,7 +315,7 @@
 
 ///tx11
 /datum/outfit/job/freelancer/leader/two
-	belt = /obj/item/belt_harness/marine
+	belt = /obj/item/belt_harness/guardsman
 	wear_suit = /obj/item/clothing/suit/storage/faction/freelancer/leader/two
 	suit_store = /obj/item/weapon/gun/rifle/tx11/freelancertwo
 	r_store = /obj/item/storage/pouch/grenade

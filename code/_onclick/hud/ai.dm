@@ -1,5 +1,5 @@
 /atom/movable/screen/ai
-	icon = 'icons/mob/screen_ai.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen_ai.dmi'
 
 
 /atom/movable/screen/ai/Click()

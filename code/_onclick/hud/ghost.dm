@@ -1,5 +1,5 @@
 /atom/movable/screen/ghost
-	icon = 'icons/mob/screen_ghost.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen_ghost.dmi'
 
 /atom/movable/screen/ghost/MouseEntered()
 	flick(icon_state + "_anim", src)
@@ -12,13 +12,13 @@
 	var/mob/dead/observer/G = usr
 	G.follow()
 
-// /atom/movable/screen/ghost/follow_xeno
-// 	name = "Follow Xeno"
-// 	icon_state = "follow_xeno"
+// /atom/movable/screen/ghost/follow_tyranid
+// 	name = "Follow Tyranid"
+// 	icon_state = "follow_tyranid"
 
-// /atom/movable/screen/ghost/follow_xeno/Click()
+// /atom/movable/screen/ghost/follow_tyranid/Click()
 // 	var/mob/dead/observer/G = usr
-// 	G.follow_xeno()
+// 	G.follow_tyranid()
 
 // /atom/movable/screen/ghost/follow_human
 // 	name = "Follow Humans"
@@ -42,7 +42,7 @@
 	ghost.reenter_corpse()
 
 
-/datum/hud/ghost/New(mob/owner, ui_style='icons/mob/screen/white.dmi', ui_color, ui_alpha = 230)
+/datum/hud/ghost/New(mob/owner, ui_style='modular_imperium/master_files/icons/mob/screen/white.dmi', ui_color, ui_alpha = 230)
 	. = ..()
 	var/atom/movable/screen/using
 

@@ -3,7 +3,7 @@
 	var/timeofhostdeath = 0
 	var/emp_damage = 0//Handles a type of MMI damage
 	var/alert = null
-	icon = 'icons/obj/items/organs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/organs.dmi'
 	icon_state = "brain1"
 
 /mob/living/brain/Initialize(mapload)

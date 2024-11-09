@@ -20,7 +20,7 @@
 		if(part.surgery_open_stage)
 			radial_state = "radial_[bodypart]_surgery"
 
-		radial_options[bodypart] = image(icon = 'icons/mob/radial.dmi', icon_state = radial_state)
+		radial_options[bodypart] = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = radial_state)
 
 	//the list of the above
 	var/list/radial_options_show = list("head" = radial_options[BODY_ZONE_HEAD],

@@ -5,7 +5,7 @@
 /obj/alien
 	name = "alien thing"
 	desc = "theres something alien about this"
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	hit_sound = SFX_ALIEN_RESIN_BREAK
 	anchored = TRUE
 	max_integrity = 1
@@ -65,7 +65,7 @@
 	desc = "Looks like some kind of slimy growth."
 	icon_state = "Resin1"
 	max_integrity = 200
-	resistance_flags = XENO_DAMAGEABLE|UNACIDABLE
+	resistance_flags = TYRANID_DAMAGEABLE|UNACIDABLE
 
 
 /obj/alien/resin/attack_hand(mob/living/user)
@@ -121,14 +121,14 @@
 
 	victim.next_move_slowdown += slow_amt
 
-/obj/alien/resin/sticky/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/alien/resin/sticky/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	if(xeno_attacker.a_intent == INTENT_HARM) //Clear it out on hit; no need to double tap.
-		if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active && refundable)
-			SSresinshaping.quickbuild_points_by_hive[xeno_attacker.hivenumber]++
-		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW) //SFX
+	if(tyranid_attacker.a_intent == INTENT_HARM) //Clear it out on hit; no need to double tap.
+		if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_TYRANID_QUICKBUILD) && SSresinshaping.active && refundable)
+			SSresinshaping.quickbuild_points_by_hive[tyranid_attacker.hivenumber]++
+		tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW) //SFX
 		playsound(src, SFX_ALIEN_RESIN_BREAK, 25) //SFX
 		deconstruct(TRUE)
 		return
@@ -148,16 +148,16 @@
 //Resin Doors
 /obj/structure/mineral_door/resin
 	name = RESIN_DOOR
-	icon = 'icons/obj/smooth_objects/resin-door.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/resin-door.dmi'
 	icon_state = "resin-door-1"
 	base_icon_state = "resin-door"
 	resistance_flags = NONE
 	layer = RESIN_STRUCTURE_LAYER
 	max_integrity = 100
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
+	smoothing_groups = list(SMOOTH_GROUP_TYRANID_STRUCTURES)
 	canSmoothWith = list(
-		SMOOTH_GROUP_XENO_STRUCTURES,
+		SMOOTH_GROUP_TYRANID_STRUCTURES,
 		SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS,
 		SMOOTH_GROUP_MINERAL_STRUCTURES,
 	)
@@ -183,12 +183,12 @@
 
 /obj/structure/mineral_door/resin/Cross(atom/movable/mover, turf/target)
 	. = ..()
-	if(!. && isxeno(mover) && !open)
+	if(!. && istyranid(mover) && !open)
 		toggle_state()
 		return TRUE
 
 
-/obj/structure/mineral_door/resin/attack_larva(mob/living/carbon/xenomorph/larva/M)
+/obj/structure/mineral_door/resin/attack_larva(mob/living/carbon/tyranid/larva/M)
 	var/turf/cur_loc = M.loc
 	if(!istype(cur_loc))
 		return FALSE
@@ -196,22 +196,22 @@
 	return TRUE
 
 //clicking on resin doors attacks them, or opens them without harm intent
-/obj/structure/mineral_door/resin/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	var/turf/cur_loc = xeno_attacker.loc
+/obj/structure/mineral_door/resin/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	var/turf/cur_loc = tyranid_attacker.loc
 	if(!istype(cur_loc))
 		return FALSE //Some basic logic here
-	if(xeno_attacker.a_intent != INTENT_HARM)
-		try_toggle_state(xeno_attacker)
+	if(tyranid_attacker.a_intent != INTENT_HARM)
+		try_toggle_state(tyranid_attacker)
 		return TRUE
-	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active)
-		SSresinshaping.quickbuild_points_by_hive[xeno_attacker.hivenumber]++
+	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_TYRANID_QUICKBUILD) && SSresinshaping.active)
+		SSresinshaping.quickbuild_points_by_hive[tyranid_attacker.hivenumber]++
 		qdel(src)
 		return TRUE
 
-	src.balloon_alert(xeno_attacker, "Destroying...")
+	src.balloon_alert(tyranid_attacker, "Destroying...")
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
-	if(do_after(xeno_attacker, 1 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
-		src.balloon_alert(xeno_attacker, "Destroyed")
+	if(do_after(tyranid_attacker, 1 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
+		src.balloon_alert(tyranid_attacker, "Destroyed")
 		qdel(src)
 
 /obj/structure/mineral_door/resin/fire_act(burn_level)
@@ -229,7 +229,7 @@
 			take_damage(30, BRUTE, BOMB)
 
 /obj/structure/mineral_door/resin/try_toggle_state(atom/user)
-	if(isxeno(user))
+	if(istyranid(user))
 		return ..()
 
 /obj/structure/mineral_door/resin/toggle_state()
@@ -282,31 +282,31 @@
 /obj/item/resin_jelly
 	name = "resin jelly"
 	desc = "A foul, viscous resin jelly that doesnt seem to burn easily."
-	icon = 'icons/Xeno/xeno_materials.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/xeno_materials.dmi'
 	icon_state = "resin_jelly"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 200, ACID = 0)
 	var/immune_time = 15 SECONDS
 	///Holder to ensure only one user per resin jelly.
 	var/current_user
 
-/obj/item/resin_jelly/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/item/resin_jelly/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	if(xeno_attacker.xeno_caste.can_flags & CASTE_CAN_HOLD_JELLY)
-		return attack_hand(xeno_attacker)
-	if(xeno_attacker.do_actions || !isnull(current_user))
+	if(tyranid_attacker.tyranid_caste.can_flags & CASTE_CAN_HOLD_JELLY)
+		return attack_hand(tyranid_attacker)
+	if(tyranid_attacker.do_actions || !isnull(current_user))
 		return
-	current_user = xeno_attacker
-	xeno_attacker.balloon_alert(xeno_attacker, "Applying...")
-	if(!do_after(xeno_attacker, RESIN_SELF_TIME, NONE, xeno_attacker, BUSY_ICON_MEDICAL))
+	current_user = tyranid_attacker
+	tyranid_attacker.balloon_alert(tyranid_attacker, "Applying...")
+	if(!do_after(tyranid_attacker, RESIN_SELF_TIME, NONE, tyranid_attacker, BUSY_ICON_MEDICAL))
 		current_user = null
 		return
-	activate_jelly(xeno_attacker)
+	activate_jelly(tyranid_attacker)
 
-/obj/item/resin_jelly/attack_self(mob/living/carbon/xenomorph/user)
+/obj/item/resin_jelly/attack_self(mob/living/carbon/tyranid/user)
 	//Activates if the item itself is clicked in hand.
-	if(!isxeno(user))
+	if(!istyranid(user))
 		return
 	if(user.do_actions || !isnull(current_user))
 		return
@@ -317,12 +317,12 @@
 		return
 	activate_jelly(user)
 
-/obj/item/resin_jelly/attack(mob/living/carbon/xenomorph/M, mob/living/user)
+/obj/item/resin_jelly/attack(mob/living/carbon/tyranid/M, mob/living/user)
 	//Activates if active hand and clicked on mob in game.
 	//Can target self so we need to check for that.
-	if(!isxeno(user))
+	if(!istyranid(user))
 		return TRUE
-	if(!isxeno(M))
+	if(!istyranid(M))
 		M.balloon_alert(user, "Cannot apply")
 		return FALSE
 	if(user.do_actions || !isnull(current_user))
@@ -338,25 +338,25 @@
 	user.temporarilyRemoveItemFromInventory(src)
 	return FALSE
 
-/obj/item/resin_jelly/proc/activate_jelly(mob/living/carbon/xenomorph/user)
-	user.visible_message(span_notice("[user]'s chitin begins to gleam with an unseemly glow..."), span_xenonotice("We feel powerful as we are covered in [src]!"))
+/obj/item/resin_jelly/proc/activate_jelly(mob/living/carbon/tyranid/user)
+	user.visible_message(span_notice("[user]'s chitin begins to gleam with an unseemly glow..."), span_tyranidnotice("We feel powerful as we are covered in [src]!"))
 	user.emote("roar")
 	user.apply_status_effect(STATUS_EFFECT_RESIN_JELLY_COATING)
-	SEND_SIGNAL(user, COMSIG_XENOMORPH_RESIN_JELLY_APPLIED)
+	SEND_SIGNAL(user, COMSIG_TYRANID_RESIN_JELLY_APPLIED)
 	qdel(src)
 
 /obj/item/resin_jelly/throw_at(atom/target, range, speed, thrower, spin, flying = FALSE, targetted_throw = TRUE)
-	if(isxenohivelord(thrower))
+	if(istyranidhivelord(thrower))
 		RegisterSignal(src, COMSIG_MOVABLE_IMPACT, PROC_REF(jelly_throw_hit))
 	. = ..()
 
 /obj/item/resin_jelly/proc/jelly_throw_hit(datum/source, atom/hit_atom)
 	SIGNAL_HANDLER
 	UnregisterSignal(source, COMSIG_MOVABLE_IMPACT)
-	if(!isxeno(hit_atom))
+	if(!istyranid(hit_atom))
 		return
-	var/mob/living/carbon/xenomorph/X = hit_atom
-	if(X.xeno_caste.caste_flags & CASTE_FIRE_IMMUNE)
+	var/mob/living/carbon/tyranid/X = hit_atom
+	if(X.tyranid_caste.caste_flags & CASTE_FIRE_IMMUNE)
 		return
 	X.visible_message(span_notice("[X] is splattered with jelly!"))
 	INVOKE_ASYNC(src, PROC_REF(activate_jelly), X)

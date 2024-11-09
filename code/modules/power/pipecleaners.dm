@@ -39,7 +39,7 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/structure/pipe_cleaner
 	name = "pipe cleaner"
 	desc = "A bendable piece of wire covered in fuzz. Fun for arts and crafts!"
-	icon = 'icons/obj/power_cond/pipe_cleaner.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power_cond/pipe_cleaner.dmi'
 	icon_state = "0-1"
 	layer = WIRE_LAYER //Above hidden pipes, GAS_PIPE_HIDDEN_LAYER
 	anchored = TRUE
@@ -177,7 +177,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	name = "pipe cleaner coil"
 	desc = "A coil of pipe cleaners. Good for arts and crafts, not to build with."
 	gender = NEUTER //That's a pipe_cleaner coil sounds better than that's some pipe_cleaner coils
-	icon = 'icons/obj/power.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/power.dmi'
 	icon_state = "pipecleaner"
 	worn_icon_state = "coil"
 	max_amount = MAXCOIL

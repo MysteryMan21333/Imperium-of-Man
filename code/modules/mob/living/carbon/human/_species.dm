@@ -14,13 +14,13 @@
 
 	//----Icon stuff here
 	///Normal icon file
-	var/icobase = 'icons/mob/human_races/r_human.dmi'
+	var/icobase = 'modular_imperium/master_files/icons/mob/human_races/r_human.dmi'
 	///icon state for calculating brute damage icons
 	var/brute_damage_icon_state = "human_brute"
 	///icon state for calculating brute damage icons
 	var/burn_damage_icon_state = "human_burn"
 	///damage mask icon we want to use when drawing wounds
-	var/damage_mask_icon = 'icons/mob/dam_mask.dmi'
+	var/damage_mask_icon = 'modular_imperium/master_files/icons/mob/dam_mask.dmi'
 	///icon for eyes
 	var/eyes = "eyes_s"
 	///Color of the blood specific to our species
@@ -306,7 +306,7 @@
 /datum/species/proc/get_inventory_dialogue(mob/living/carbon/human/H)
 	return
 
-///Used by xenos understanding larvae and dionaea understanding nymphs
+///Used by tyranids understanding larvae and dionaea understanding nymphs
 /datum/species/proc/can_understand(mob/other)
 	return
 

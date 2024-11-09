@@ -1,6 +1,6 @@
 /obj/machinery
 	name = "machinery"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	layer = BELOW_OBJ_LAYER
 	verb_say = "beeps"
 	verb_yell = "blares"

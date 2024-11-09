@@ -226,7 +226,7 @@
 /obj/structure/table,
 /obj/item/tool/shovel/spade,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "abL" = (
 /obj/structure/disposalpipe/segment/corner{
 	dir = 2
@@ -295,7 +295,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 8
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "acg" = (
 /obj/structure/barricade/wooden{
 	dir = 4
@@ -778,7 +778,7 @@
 	dir = 1
 	},
 /turf/closed/wall/r_wall,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "afD" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/darkpurple,
@@ -818,7 +818,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "afN" = (
 /turf/open/floor/plating,
 /area/desert_dam/interior/lab_northeast/east_lab_containment)
@@ -1169,7 +1169,7 @@
 	dir = 5
 	},
 /turf/open/floor/plating,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aiv" = (
 /obj/structure/desertdam/decals/loose_sand_overlay{
 	dir = 9
@@ -1246,7 +1246,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "ajc" = (
 /turf/open/floor/plating/ground/desertdam/asphalt/open{
 	dir = 8
@@ -1401,7 +1401,7 @@
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
 "akf" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/prison/darkpurple{
 	dir = 5
 	},
@@ -1605,7 +1605,7 @@
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
 "alb" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/prison/darkpurple{
 	dir = 4
 	},
@@ -2111,11 +2111,11 @@
 	},
 /area/desert_dam/interior/lab_northeast/east_lab_east_hallway)
 "anH" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/prison,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
 "anI" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/prison,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
 "anM" = (
@@ -5332,10 +5332,10 @@
 "aGz" = (
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn,
 /turf/open/floor/plating,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aGA" = (
 /turf/closed/wall/r_wall,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aGB" = (
 /obj/structure/prop/vehicle/crane,
 /turf/open/floor/prison/darkyellow{
@@ -5422,7 +5422,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 9
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHl" = (
 /obj/machinery/light{
 	dir = 1
@@ -5430,13 +5430,13 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHm" = (
 /obj/machinery/hydroponics/slashable,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHn" = (
 /obj/machinery/vending/hydroseeds,
 /obj/machinery/light{
@@ -5445,27 +5445,27 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHo" = (
 /obj/machinery/science/centrifuge,
 /turf/open/floor/tile/green/whitegreenfull,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHp" = (
 /obj/machinery/biogenerator,
 /turf/open/floor/tile/green/greentaupe{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHq" = (
 /obj/machinery/seed_extractor,
 /turf/open/floor/tile/green/greentaupe{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHr" = (
 /obj/machinery/botany/extractor,
 /turf/open/floor/tile/green/whitegreenfull,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHs" = (
 /obj/machinery/vending/hydronutrients,
 /obj/machinery/light{
@@ -5474,13 +5474,13 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHt" = (
 /obj/machinery/hydroponics/slashable,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 5
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aHv" = (
 /turf/open/floor/plating/ground/desertdam/asphalt/edge{
 	dir = 9
@@ -5560,10 +5560,10 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 8
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIf" = (
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIg" = (
 /obj/machinery/hydroponics/slashable,
 /obj/machinery/light{
@@ -5572,7 +5572,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 4
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIi" = (
 /turf/open/floor/plating/ground/desertdam/asphalt/threeside{
 	dir = 1
@@ -5642,18 +5642,18 @@
 /turf/open/floor/tile/green/whitegreencorner{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIM" = (
 /turf/open/floor/tile/green/whitegreencorner,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIN" = (
 /turf/open/floor/tile/green/whitegreen,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIO" = (
 /turf/open/floor/tile/green/whitegreencorner{
 	dir = 8
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aIP" = (
 /obj/structure/platform_decoration{
 	dir = 9
@@ -5695,15 +5695,15 @@
 "aJr" = (
 /obj/machinery/hydroponics/slashable,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aJs" = (
 /turf/open/floor/tile/green/whitegreen{
 	dir = 4
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aJu" = (
 /turf/closed/wall,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aJv" = (
 /obj/machinery/light,
 /turf/open/floor/plating/ground/mars/random/sand,
@@ -5712,7 +5712,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 8
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aJB" = (
 /obj/structure/platform,
 /turf/closed/wall/r_wall,
@@ -5777,10 +5777,10 @@
 "aKp" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	dir = 2;
-	name = "\improper Xenoflora"
+	name = "\improper Tyranidflora"
 	},
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aKq" = (
 /obj/structure/platform_decoration{
 	dir = 4
@@ -5858,7 +5858,7 @@
 /turf/open/floor/tile/green/whitegreencorner{
 	dir = 4
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aLa" = (
 /turf/open/floor/plating/ground/desertdam/asphalt/edge{
 	dir = 10
@@ -5868,7 +5868,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aLe" = (
 /obj/structure/platform{
 	dir = 8
@@ -5932,21 +5932,21 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 10
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aLM" = (
 /obj/machinery/light,
 /turf/open/floor/tile/green/whitegreen,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aLN" = (
 /obj/machinery/hydroponics/slashable,
 /turf/open/floor/tile/green/whitegreen,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aLO" = (
 /obj/machinery/hydroponics/slashable,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 6
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aLP" = (
 /turf/closed/wall{
 	name = "reinforced metal wall"
@@ -5978,13 +5978,13 @@
 /area/desert_dam/interior/dam_interior/workshop)
 "aMa" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
-	name = "\improper Xenoflora"
+	name = "\improper Tyranidflora"
 	},
 /turf/open/floor/tile/green/whitegreenfull,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aMb" = (
 /turf/open/floor/tile/green/whitegreenfull,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "aMc" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -6092,7 +6092,7 @@
 /area/desert_dam/interior/dam_interior/hanger)
 "aMV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/desert_dam/building/water_treatment_one/control_room)
 "aMW" = (
@@ -15694,7 +15694,7 @@
 "bVm" = (
 /obj/structure/cable,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "bVn" = (
 /obj/machinery/power/apc/drained{
 	start_charge = 0
@@ -15785,7 +15785,7 @@
 /turf/open/floor/tile/green/whitegreencorner{
 	dir = 4
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "bVS" = (
 /obj/structure/stairs/seamless/platform{
 	dir = 1
@@ -15861,7 +15861,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "bWe" = (
 /obj/machinery/flasher/portable,
 /turf/open/floor/prison/marked,
@@ -19826,7 +19826,7 @@
 	},
 /area/desert_dam/building/medical/primary_storage)
 "cva" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/red/whitered{
 	dir = 5
 	},
@@ -21527,7 +21527,7 @@
 /turf/open/floor/prison/whitegreen/full,
 /area/desert_dam/building/medical/treatment_room)
 "cEz" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/prison/whitegreen/full,
 /area/desert_dam/building/medical/treatment_room)
 "cEA" = (
@@ -22027,8 +22027,8 @@
 /turf/open/floor/prison/cellstripe,
 /area/desert_dam/building/warehouse/warehouse)
 "cIm" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
@@ -22270,7 +22270,7 @@
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	name = "\improper Garage"
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/desert_dam/building/medical/garage)
 "cJA" = (
@@ -26474,7 +26474,7 @@
 "dxt" = (
 /obj/effect/ai_node,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "dxL" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	name = "\improper Hydroponics Breakroom"
@@ -27343,7 +27343,7 @@
 /obj/machinery/hydroponics/slashable,
 /obj/structure/cable,
 /turf/open/floor/tile/green/whitegreen,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "dFP" = (
 /obj/structure/platform_decoration{
 	dir = 10
@@ -29904,7 +29904,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "eLH" = (
 /obj/structure/bed/stool,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -30031,7 +30031,7 @@
 "ePj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno/limb,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,
 /turf/open/floor/prison/bright_clean,
 /area/desert_dam/building/water_treatment_one/control_room)
 "ePs" = (
@@ -30328,7 +30328,7 @@
 	},
 /area/desert_dam/exterior/valley/valley_wilderness)
 "eXe" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/desert_dam/exterior/landing/landing_pad_two)
 "eXs" = (
@@ -30900,7 +30900,7 @@
 "fqI" = (
 /obj/structure/table,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "fre" = (
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/plating/ground/mars/random/sand,
@@ -31172,7 +31172,7 @@
 /turf/open/floor/plating/asteroidplating,
 /area/desert_dam/exterior/landing/landing_pad_two_external)
 "fzT" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/exterior/valley/valley_wilderness)
 "fzW" = (
@@ -31311,8 +31311,8 @@
 /turf/open/floor/prison/green,
 /area/desert_dam/building/dorms/hallway_northwing)
 "fED" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge{
 	dir = 4
 	},
@@ -32475,7 +32475,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/desert_dam/interior/dam_interior/west_tunnel)
 "goN" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/effect/ai_node,
@@ -32487,7 +32487,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/desert_dam/exterior/valley/valley_medical)
 "gpi" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/desert_dam/interior/caves/temple)
 "gpl" = (
@@ -32550,7 +32550,7 @@
 /turf/open/floor/prison,
 /area/desert_dam/interior/lab_northeast/east_lab_RND)
 "grc" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge{
 	dir = 4
 	},
@@ -32630,7 +32630,7 @@
 /turf/open/floor/wood,
 /area/desert_dam/building/administration/office)
 "gvt" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/desert_dam/interior/caves/east_caves)
 "gvG" = (
@@ -33668,7 +33668,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/edge,
 /area/desert_dam/exterior/valley/south_valley_dam)
 "hhO" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
@@ -33968,7 +33968,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/desert_dam/exterior/landing/landing_pad_two_external)
 "hrL" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/prison,
 /area/desert_dam/building/medical/virology_wing)
@@ -35172,7 +35172,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "idh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
@@ -35266,8 +35266,8 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/exterior/valley/valley_wilderness)
 "ihZ" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/prison,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
 "iia" = (
@@ -35528,7 +35528,7 @@
 /turf/open/floor/prison/whitegreen,
 /area/desert_dam/building/medical/emergency_room)
 "iqx" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/shuttle/dropship/fourteen,
 /area/desert_dam/interior/caves/temple)
@@ -37618,7 +37618,7 @@
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
 /area/desert_dam/exterior/valley/valley_mining)
 "jEM" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/exterior/valley/valley_crashsite)
 "jEN" = (
@@ -39648,7 +39648,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 8
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "kSd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
@@ -40656,9 +40656,9 @@
 	},
 /area/desert_dam/building/security/southern_hallway)
 "lAv" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/exterior/valley/valley_crashsite)
 "lAR" = (
@@ -40871,7 +40871,7 @@
 /obj/effect/ai_node,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "lIA" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -42360,7 +42360,7 @@
 /turf/open/floor/prison,
 /area/desert_dam/building/cafeteria/loading)
 "mJX" = (
-/obj/effect/decal/remains/xeno{
+/obj/effect/decal/remains/tyranid{
 	pixel_x = 31
 	},
 /turf/open/floor/plating/ground/mars/random/dirt,
@@ -42414,7 +42414,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/desert_dam/exterior/valley/valley_hydro)
 "mLi" = (
-/obj/effect/decal/remains/xeno{
+/obj/effect/decal/remains/tyranid{
 	pixel_x = 1;
 	pixel_y = 31
 	},
@@ -42957,7 +42957,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/item/book/manual/engineering_guide,
 /turf/open/floor/mainship/mono,
 /area/desert_dam/exterior/valley/tradeship)
@@ -43228,7 +43228,7 @@
 /turf/closed/wall/r_wall/unmeltable,
 /area/desert_dam/interior/dam_interior/hanger)
 "nne" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/whiteyellow/full,
 /area/desert_dam/interior/lab_northeast/east_lab_lobby)
@@ -44223,7 +44223,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/exterior/landing/landing_pad_one_external)
 "nXn" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge,
 /area/desert_dam/exterior/valley/valley_crashsite)
 "nXu" = (
@@ -44448,7 +44448,7 @@
 /turf/open/floor/freezer,
 /area/desert_dam/building/water_treatment_one/breakroom)
 "ocf" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison,
 /area/desert_dam/building/water_treatment_one/control_room)
 "ocw" = (
@@ -44687,7 +44687,7 @@
 /obj/machinery/power/apc/drained{
 	start_charge = 0
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/prison,
 /area/desert_dam/building/water_treatment_one/control_room)
@@ -45342,13 +45342,13 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/desert_dam/exterior/valley/bar_valley_dam)
 "oJc" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating,
 /area/desert_dam/interior/lab_northeast/east_lab_containment)
 "oJi" = (
 /obj/effect/landmark/start/job/survivor,
 /turf/open/floor/tile/green/whitegreen,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "oJq" = (
 /obj/item/reagent_containers/food/snacks/meat{
 	pixel_x = 5;
@@ -45524,7 +45524,7 @@
 	},
 /area/desert_dam/interior/dam_interior/northeastern_tunnel)
 "oNE" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/tile/whiteyellow/full,
 /area/desert_dam/interior/lab_northeast/east_lab_lobby)
 "oNP" = (
@@ -47050,7 +47050,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/exterior/valley/valley_hydro)
 "pFu" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_west_hallway)
@@ -47351,7 +47351,7 @@
 /turf/open/floor/plating/asteroidplating,
 /area/desert_dam/exterior/valley/valley_crashsite)
 "pNG" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/desert_dam/interior/caves/temple)
 "pNQ" = (
@@ -47381,8 +47381,8 @@
 	dir = 1
 	},
 /obj/effect/landmark/patrol_point{
-	id = "SOM_11";
-	name = "SOM exit point 11"
+	id = "CHAOS_11";
+	name = "CHAOS exit point 11"
 	},
 /turf/open/floor/mainship/orange{
 	dir = 8
@@ -47671,7 +47671,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/desert_dam/interior/dam_interior/north_tunnel_entrance)
 "pWE" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /obj/structure/cable,
 /turf/open/floor/prison/bright_clean/two,
@@ -48492,7 +48492,7 @@
 	},
 /area/desert_dam/exterior/valley/valley_hydro)
 "qvi" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
 /area/desert_dam/exterior/valley/valley_wilderness)
 "qvs" = (
@@ -48869,7 +48869,7 @@
 /obj/item/stack/sheet/mineral/sandstone{
 	amount = 50
 	},
-/obj/effect/decal/remains/xeno{
+/obj/effect/decal/remains/tyranid{
 	pixel_x = 1;
 	pixel_y = 31
 	},
@@ -49802,7 +49802,7 @@
 	},
 /area/desert_dam/interior/dam_interior/northeastern_tunnel)
 "rmx" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
 "rmI" = (
@@ -50022,7 +50022,7 @@
 /turf/open/floor/prison,
 /area/desert_dam/interior/lab_northeast/east_lab_excavation)
 "rvU" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/interior/caves/east_caves)
 "rwf" = (
@@ -50494,8 +50494,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/patrol_point{
-	id = "SOM_12";
-	name = "SOM exit point 12"
+	id = "CHAOS_12";
+	name = "CHAOS exit point 12"
 	},
 /turf/open/floor/mainship/orange{
 	dir = 4
@@ -52177,7 +52177,7 @@
 	},
 /area/desert_dam/building/medical/lobby)
 "sHZ" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/interior/caves/east_caves)
 "sId" = (
@@ -52215,7 +52215,7 @@
 /turf/open/floor/prison,
 /area/desert_dam/building/medical/break_room)
 "sJd" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
@@ -52231,7 +52231,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "sJS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -52268,8 +52268,8 @@
 /turf/open/floor/prison/whitegreen,
 /area/desert_dam/building/medical/treatment_room)
 "sKZ" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
 /area/desert_dam/exterior/valley/valley_crashsite)
 "sLu" = (
@@ -52320,7 +52320,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 1
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "sNT" = (
 /obj/machinery/computer/intel_computer,
 /turf/open/floor/prison/darkyellow{
@@ -53304,7 +53304,7 @@
 	},
 /area/desert_dam/building/medical/emergency_room)
 "tvd" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_central_hallway)
@@ -53631,7 +53631,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/desert_dam/exterior/valley/valley_labs)
 "tFE" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/desert_dam/interior/caves/east_caves)
 "tFQ" = (
@@ -54057,7 +54057,7 @@
 "tUw" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/white,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "tUy" = (
 /obj/structure/bed/chair,
 /obj/effect/decal/cleanable/dirt,
@@ -54339,7 +54339,7 @@
 /turf/open/floor/tile/green/whitegreen{
 	dir = 8
 	},
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "ubw" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -54468,7 +54468,7 @@
 /turf/open/floor/plating/asteroidplating,
 /area/desert_dam/building/telecommunication)
 "ufg" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge,
 /area/desert_dam/exterior/landing/landing_pad_three_external)
 "ufh" = (
@@ -54738,7 +54738,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/interior/lab_northeast/east_lab_containment)
 "upp" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/desert_dam/exterior/landing/landing_pad_one)
 "ups" = (
@@ -54871,7 +54871,7 @@
 /turf/open/floor/prison,
 /area/desert_dam/interior/dam_interior/hangar_storage)
 "usI" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/interior/caves/central_caves)
 "usN" = (
@@ -57531,7 +57531,7 @@
 "vZF" = (
 /obj/effect/ai_node,
 /turf/open/floor/tile/green/whitegreen,
-/area/desert_dam/building/lab_northwest/west_lab_xenoflora)
+/area/desert_dam/building/lab_northwest/west_lab_tyranidflora)
 "vZV" = (
 /turf/open/floor/marking/asteroidwarning{
 	dir = 6
@@ -58114,7 +58114,7 @@
 /turf/open/floor/prison,
 /area/desert_dam/interior/lab_northeast/east_lab_east_entrance)
 "wpq" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_central_hallway)
 "wpK" = (
@@ -58479,7 +58479,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/desert_dam/interior/caves/east_caves)
 "wDo" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /turf/open/floor/prison/bright_clean/two,
 /area/desert_dam/interior/lab_northeast/east_lab_biology)
@@ -59580,7 +59580,7 @@
 	},
 /area/desert_dam/interior/dam_interior/western_dam_cave)
 "xkL" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/tile/darkish,
 /area/desert_dam/interior/caves/temple)
@@ -59937,7 +59937,7 @@
 /turf/open/floor/prison/whitegreen/full,
 /area/desert_dam/building/medical/east_wing_hallway)
 "xxI" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/prison/bright_clean,
 /area/desert_dam/interior/lab_northeast/east_lab_containment)
@@ -60610,7 +60610,7 @@
 /turf/open/floor/prison/bright_clean,
 /area/desert_dam/building/hydroponics/hydroponics_storage)
 "xSK" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/desert_dam/building/medical/garage)
 "xSZ" = (
@@ -60966,7 +60966,7 @@
 /turf/open/floor/prison/sterilewhite,
 /area/desert_dam/building/medical/east_wing_hallway)
 "ydV" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/cavetodirt{
 	dir = 4
 	},

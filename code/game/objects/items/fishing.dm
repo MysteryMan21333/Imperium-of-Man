@@ -1,10 +1,10 @@
 /obj/item/fishing
 	name = "fishing prop"
-	icon = 'icons/obj/items/fishing.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/fishing.dmi'
 	icon_state = "worm"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/toys_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/toys_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/toys_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/toys_right.dmi',
 		)
 	force = 0
 
@@ -66,8 +66,8 @@
 	desc = "You can fish with this."
 	icon_state = "fishing_rod"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/fishing_rod_lefthand.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/fishing_rod_righthand.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/fishing_rod_lefthand.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/fishing_rod_righthand.dmi',
 	)
 	worn_icon_state = "rod"
 	inhand_x_dimension = 64

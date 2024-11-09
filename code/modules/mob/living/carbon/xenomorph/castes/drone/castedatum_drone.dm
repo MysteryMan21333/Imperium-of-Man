@@ -1,12 +1,12 @@
-/datum/xeno_caste/drone
+/datum/tyranid_caste/drone
 	caste_name = "Drone"
 	display_name = "Drone"
 	upgrade_name = ""
 	caste_desc = "A builder of hives. Only drones may evolve into Shrikes."
-	caste_type_path = /mob/living/carbon/xenomorph/drone
+	caste_type_path = /mob/living/carbon/tyranid/drone
 
-	tier = XENO_TIER_ONE
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_ONE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	gib_anim = "gibbed-a-small-corpse"
 	gib_flick = "gibbed-a-small"
@@ -46,54 +46,54 @@
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/cocoon,
-		/datum/action/ability/activable/xeno/plant_weeds,
-		/datum/action/ability/activable/xeno/secrete_resin,
-		/datum/action/ability/activable/xeno/secrete_special_resin,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/essence_link,
-		/datum/action/ability/activable/xeno/psychic_cure/acidic_salve,
-		/datum/action/ability/activable/xeno/transfer_plasma/drone,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
-		/datum/action/ability/xeno_action/create_jelly/slow,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/activable/xeno/recycle,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/cocoon,
+		/datum/action/ability/activable/tyranid/plant_weeds,
+		/datum/action/ability/activable/tyranid/secrete_resin,
+		/datum/action/ability/activable/tyranid/secrete_special_resin,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/essence_link,
+		/datum/action/ability/activable/tyranid/psychic_cure/acidic_salve,
+		/datum/action/ability/activable/tyranid/transfer_plasma/drone,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
+		/datum/action/ability/tyranid_action/create_jelly/slow,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/activable/tyranid/recycle,
 	)
 
-/datum/xeno_caste/drone/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/drone/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/drone/primordial
+/datum/tyranid_caste/drone/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "The perfect worker."
 	primordial_message = "We shall build wonders with our claws. Glory to the hive."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/activable/xeno/cocoon,
-		/datum/action/ability/activable/xeno/plant_weeds,
-		/datum/action/ability/activable/xeno/secrete_resin,
-		/datum/action/ability/activable/xeno/secrete_special_resin,
-		/datum/action/ability/xeno_action/place_acidwell,
-		/datum/action/ability/activable/xeno/essence_link,
-		/datum/action/ability/activable/xeno/psychic_cure/acidic_salve,
-		/datum/action/ability/activable/xeno/transfer_plasma/drone,
-		/datum/action/ability/xeno_action/sow,
-		/datum/action/ability/xeno_action/enhancement,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
-		/datum/action/ability/xeno_action/create_jelly/slow,
-		/datum/action/ability/xeno_action/pheromones,
-		/datum/action/ability/xeno_action/pheromones/emit_recovery,
-		/datum/action/ability/xeno_action/pheromones/emit_warding,
-		/datum/action/ability/xeno_action/pheromones/emit_frenzy,
-		/datum/action/ability/activable/xeno/recycle,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/activable/tyranid/cocoon,
+		/datum/action/ability/activable/tyranid/plant_weeds,
+		/datum/action/ability/activable/tyranid/secrete_resin,
+		/datum/action/ability/activable/tyranid/secrete_special_resin,
+		/datum/action/ability/tyranid_action/place_acidwell,
+		/datum/action/ability/activable/tyranid/essence_link,
+		/datum/action/ability/activable/tyranid/psychic_cure/acidic_salve,
+		/datum/action/ability/activable/tyranid/transfer_plasma/drone,
+		/datum/action/ability/tyranid_action/sow,
+		/datum/action/ability/tyranid_action/enhancement,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
+		/datum/action/ability/tyranid_action/create_jelly/slow,
+		/datum/action/ability/tyranid_action/pheromones,
+		/datum/action/ability/tyranid_action/pheromones/emit_recovery,
+		/datum/action/ability/tyranid_action/pheromones/emit_warding,
+		/datum/action/ability/tyranid_action/pheromones/emit_frenzy,
+		/datum/action/ability/activable/tyranid/recycle,
 	)

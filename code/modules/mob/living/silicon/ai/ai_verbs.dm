@@ -86,18 +86,18 @@
 
 		if("Animal")
 			var/list/icon_list = list(
-			"bear" = 'icons/mob/animal.dmi',
-			"carp" = 'icons/mob/animal.dmi',
-			"chicken_brown" = 'icons/mob/animal.dmi',
-			"corgi" = 'icons/mob/pets.dmi',
-			"cow" = 'icons/mob/animal.dmi',
-			"crab" = 'icons/mob/animal.dmi',
-			"fox" = 'icons/mob/pets.dmi',
-			"goat" = 'icons/mob/animal.dmi',
-			"cat" = 'icons/mob/pets.dmi',
-			"cat2" = 'icons/mob/pets.dmi',
-			"parrot_fly" = 'icons/mob/animal.dmi',
-			"pug" = 'icons/mob/pets.dmi'
+			"bear" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"carp" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"chicken_brown" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"corgi" = 'modular_imperium/master_files/icons/mob/pets.dmi',
+			"cow" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"crab" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"fox" = 'modular_imperium/master_files/icons/mob/pets.dmi',
+			"goat" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"cat" = 'modular_imperium/master_files/icons/mob/pets.dmi',
+			"cat2" = 'modular_imperium/master_files/icons/mob/pets.dmi',
+			"parrot_fly" = 'modular_imperium/master_files/icons/mob/animal.dmi',
+			"pug" = 'modular_imperium/master_files/icons/mob/pets.dmi'
 			)
 
 			hologram = tgui_input_list(src, "Please select a hologram:", null, icon_list)
@@ -108,11 +108,11 @@
 
 		if("Unique")
 			var/list/icon_list = list(
-				"default" = 'icons/mob/ai.dmi',
-				"floating face" = 'icons/mob/ai.dmi',
-				"xeno_queen" = 'icons/mob/ai.dmi',
-				"void_horror" = 'icons/mob/ai.dmi',
-				"carp" = 'icons/mob/ai.dmi'
+				"default" = 'modular_imperium/master_files/icons/mob/ai.dmi',
+				"floating face" = 'modular_imperium/master_files/icons/mob/ai.dmi',
+				"tyranid_queen" = 'modular_imperium/master_files/icons/mob/ai.dmi',
+				"void_horror" = 'modular_imperium/master_files/icons/mob/ai.dmi',
+				"carp" = 'modular_imperium/master_files/icons/mob/ai.dmi'
 				)
 
 			hologram = tgui_input_list(src, "Please select a hologram:", null, icon_list)

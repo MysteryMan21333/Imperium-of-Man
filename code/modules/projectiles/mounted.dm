@@ -2,7 +2,7 @@
 /obj/machinery/deployable/mounted
 
 	anchored = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	density = TRUE
 	layer = ABOVE_MOB_PROP_LAYER
 	use_power = FALSE

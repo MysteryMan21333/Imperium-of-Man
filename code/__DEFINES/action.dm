@@ -17,12 +17,12 @@
 #define VREF_MUTABLE_SELECTED_FRAME "VREF_SELECTED_FRAME"
 /// A misc image holder for stuff thats meant to be added ontop , used by a few actions
 #define VREF_IMAGE_ONTOP "VREF_LAYERED_IMAGE"
-// /datum/action/ability/xeno_action. Additional references
+// /datum/action/ability/tyranid_action. Additional references
 /// A mutable appearance to add the "empowered" frame around the edges
 #define VREF_MUTABLE_EMPOWERED_FRAME "VREF_EMPOWERED_FRAME"
-/// A reference for the build counter of a xeno
+/// A reference for the build counter of a tyranid
 #define VREF_MUTABLE_BUILDING_COUNTER "VREF_BUILD_COUNTER"
-//A reference for the special resin build counter of a xeno
+//A reference for the special resin build counter of a tyranid
 #define VREF_MUTABLE_SPECIAL_RESIN_COUNTER "VREF_SPECIAL_RESIN_COUNTER"
 // extra reference for the amount of landslide charges we have
 #define VREF_MUTABLE_LANDSLIDE "VREF_LANDSLIDE"

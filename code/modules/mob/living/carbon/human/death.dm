@@ -26,7 +26,7 @@
 	if(species)
 		new species.remains_type(loc)
 	else
-		new /obj/effect/decal/remains/xeno(loc)
+		new /obj/effect/decal/remains/tyranid(loc)
 
 
 /mob/living/carbon/human/dust_animation()

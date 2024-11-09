@@ -1,108 +1,108 @@
-/obj/effect/ai_node/spawner/xeno
-	name = "Xeno AI spawner"
+/obj/effect/ai_node/spawner/tyranid
+	name = "Tyranid AI spawner"
 
-//////Generic xeno spawners
+//////Generic tyranid spawners
 ////////Tier ones
 
-/obj/effect/ai_node/spawner/xeno/runnergang	// RUNNNER GANG RUNNER GANG
-	spawntypes = /mob/living/carbon/xenomorph/runner/ai
+/obj/effect/ai_node/spawner/tyranid/runnergang	// RUNNNER GANG RUNNER GANG
+	spawntypes = /mob/living/carbon/tyranid/runner/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/defender
-	spawntypes = /mob/living/carbon/xenomorph/defender/ai
+/obj/effect/ai_node/spawner/tyranid/defender
+	spawntypes = /mob/living/carbon/tyranid/defender/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/sentinel
-	spawntypes = /mob/living/carbon/xenomorph/sentinel/ai
+/obj/effect/ai_node/spawner/tyranid/sentinel
+	spawntypes = /mob/living/carbon/tyranid/sentinel/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/drone
-	spawntypes = /mob/living/carbon/xenomorph/drone/ai
+/obj/effect/ai_node/spawner/tyranid/drone
+	spawntypes = /mob/living/carbon/tyranid/drone/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/tierones
-	spawntypes = list(/mob/living/carbon/xenomorph/runner/ai, /mob/living/carbon/xenomorph/sentinel/ai, /mob/living/carbon/xenomorph/defender/ai, /mob/living/carbon/xenomorph/drone/ai)
+/obj/effect/ai_node/spawner/tyranid/tierones
+	spawntypes = list(/mob/living/carbon/tyranid/runner/ai, /mob/living/carbon/tyranid/sentinel/ai, /mob/living/carbon/tyranid/defender/ai, /mob/living/carbon/tyranid/drone/ai)
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
 /////////////Tier twos
 
-/obj/effect/ai_node/spawner/xeno/spitter
-	spawntypes = /mob/living/carbon/xenomorph/spitter/ai
+/obj/effect/ai_node/spawner/tyranid/spitter
+	spawntypes = /mob/living/carbon/tyranid/spitter/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/warrior
-	spawntypes = /mob/living/carbon/xenomorph/warrior/ai
+/obj/effect/ai_node/spawner/tyranid/warrior
+	spawntypes = /mob/living/carbon/tyranid/warrior/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/hivelord
-	spawntypes = /mob/living/carbon/xenomorph/hivelord/ai
+/obj/effect/ai_node/spawner/tyranid/hivelord
+	spawntypes = /mob/living/carbon/tyranid/hivelord/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/hunter
-	spawntypes = /mob/living/carbon/xenomorph/hunter/ai
+/obj/effect/ai_node/spawner/tyranid/hunter
+	spawntypes = /mob/living/carbon/tyranid/hunter/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/tiertwos
-	spawntypes = list(/mob/living/carbon/xenomorph/hunter/ai, /mob/living/carbon/xenomorph/warrior/ai, /mob/living/carbon/xenomorph/spitter/ai)
+/obj/effect/ai_node/spawner/tyranid/tiertwos
+	spawntypes = list(/mob/living/carbon/tyranid/hunter/ai, /mob/living/carbon/tyranid/warrior/ai, /mob/living/carbon/tyranid/spitter/ai)
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
 ////////////////////Tier 3s
 
-/obj/effect/ai_node/spawner/xeno/ravager
-	spawntypes = /mob/living/carbon/xenomorph/ravager/ai
+/obj/effect/ai_node/spawner/tyranid/ravager
+	spawntypes = /mob/living/carbon/tyranid/ravager/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/boiler
-	spawntypes = /mob/living/carbon/xenomorph/boiler/ai
+/obj/effect/ai_node/spawner/tyranid/boiler
+	spawntypes = /mob/living/carbon/tyranid/boiler/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/praetorian
-	spawntypes = /mob/living/carbon/xenomorph/praetorian/ai
+/obj/effect/ai_node/spawner/tyranid/praetorian
+	spawntypes = /mob/living/carbon/tyranid/praetorian/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
-/obj/effect/ai_node/spawner/xeno/crusher
-	spawntypes = /mob/living/carbon/xenomorph/crusher/ai
+/obj/effect/ai_node/spawner/tyranid/crusher
+	spawntypes = /mob/living/carbon/tyranid/crusher/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
 
-/obj/effect/ai_node/spawner/xeno/tierthrees
-	spawntypes = list(/mob/living/carbon/xenomorph/crusher/ai, /mob/living/carbon/xenomorph/praetorian/ai, /mob/living/carbon/xenomorph/boiler/ai, /mob/living/carbon/xenomorph/ravager/ai)
+/obj/effect/ai_node/spawner/tyranid/tierthrees
+	spawntypes = list(/mob/living/carbon/tyranid/crusher/ai, /mob/living/carbon/tyranid/praetorian/ai, /mob/living/carbon/tyranid/boiler/ai, /mob/living/carbon/tyranid/ravager/ai)
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
 
 /////////////Tier 4s
 
-/obj/effect/ai_node/spawner/xeno/queen
-	spawntypes = /mob/living/carbon/xenomorph/queen/ai
+/obj/effect/ai_node/spawner/tyranid/queen
+	spawntypes = /mob/living/carbon/tyranid/queen/ai
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10

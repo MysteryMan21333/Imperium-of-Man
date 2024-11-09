@@ -1,13 +1,13 @@
 //Robot armour
 /obj/item/clothing/suit/modular/robot
 	name = "XR-1 armor plating"
-	desc = "Medium armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Medium armor plating designed for self mounting on Imperium combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 
-	worn_icon_list = list(slot_wear_suit_str = 'icons/mob/modular/robot_armor.dmi')
+	worn_icon_list = list(slot_wear_suit_str = 'modular_imperium/master_files/icons/mob/modular/robot_armor.dmi')
 	icon_state = "chest"
 	worn_icon_state = "chest"
 	species_exception = list(/datum/species/robot)
-	soft_armor = MARINE_ARMOR_MEDIUM
+	soft_armor = GUARDSMAN_ARMOR_MEDIUM
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 
 	colorable_colors = ARMOR_PALETTES_LIST
@@ -28,16 +28,16 @@
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
 		/obj/item/armor_module/storage/medical,
-		/obj/item/armor_module/storage/general/som,
-		/obj/item/armor_module/storage/engineering/som,
-		/obj/item/armor_module/storage/medical/som,
+		/obj/item/armor_module/storage/general/chaos,
+		/obj/item/armor_module/storage/engineering/chaos,
+		/obj/item/armor_module/storage/medical/chaos,
 		/obj/item/armor_module/storage/injector,
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,
 		/obj/item/armor_module/armor/badge,
 	)
 
-	allowed_uniform_type = /obj/item/clothing/under/marine/robotic
+	allowed_uniform_type = /obj/item/clothing/under/guardsman/robotic
 
 	item_map_variant_flags = ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_DESERT_VARIANT
 
@@ -74,8 +74,8 @@
 
 /obj/item/clothing/suit/modular/robot/light
 	name = "XR-1-L armor plating"
-	desc = "Light armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
-	soft_armor = MARINE_ARMOR_LIGHT
+	desc = "Light armor plating designed for self mounting on Imperium combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	soft_armor = GUARDSMAN_ARMOR_LIGHT
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	greyscale_config = /datum/greyscale_config/robot/light
 
@@ -89,8 +89,8 @@
 
 /obj/item/clothing/suit/modular/robot/heavy
 	name = "XR-1-H armor plating"
-	desc = "Heavy armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
-	soft_armor = MARINE_ARMOR_HEAVY
+	desc = "Heavy armor plating designed for self mounting on Imperium combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	soft_armor = GUARDSMAN_ARMOR_HEAVY
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	greyscale_config = /datum/greyscale_config/robot/heavy
 
@@ -122,16 +122,16 @@
 //robot hats
 /obj/item/clothing/head/modular/robot
 	name = "XN-1 upper armor plating"
-	desc = "Medium armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Medium armor plating designed for self mounting on the upper half of Imperium combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	icon_state = "helmet"
 	worn_icon_state = "helmet"
 	species_exception = list(/datum/species/robot)
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_PRISON_VARIANT)
-	soft_armor = MARINE_ARMOR_HEAVY
+	soft_armor = GUARDSMAN_ARMOR_HEAVY
 
 	colorable_colors = ARMOR_PALETTES_LIST
 	colorable_allowed = PRESET_COLORS_ALLOWED
@@ -149,11 +149,11 @@
 		/obj/item/armor_module/module/night_vision,
 		/obj/item/armor_module/storage/helmet,
 		/obj/item/armor_module/armor/badge,
-		/obj/item/armor_module/armor/visor/marine/robot,
-		/obj/item/armor_module/armor/visor/marine/robot/light,
-		/obj/item/armor_module/armor/visor/marine/robot/heavy,
+		/obj/item/armor_module/armor/visor/guardsman/robot,
+		/obj/item/armor_module/armor/visor/guardsman/robot/light,
+		/obj/item/armor_module/armor/visor/guardsman/robot/heavy,
 	)
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/guardsman/robot)
 	item_map_variant_flags = ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_DESERT_VARIANT
 
 
@@ -165,22 +165,22 @@
 
 //---- Medium helmets with attachments
 /obj/item/clothing/head/modular/robot/hod
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot, /obj/item/armor_module/module/hod_head)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/guardsman/robot, /obj/item/armor_module/module/hod_head)
 
 /obj/item/clothing/head/modular/robot/light
 	name = "XN-1-L upper armor plating"
-	desc = "Light armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/light)
+	desc = "Light armor plating designed for self mounting on the upper half of Imperium combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/guardsman/robot/light)
 	greyscale_config = /datum/greyscale_config/robot/light
 
 /obj/item/clothing/head/modular/robot/heavy
 	name = "XN-1-H upper armor plating"
-	desc = "Heavy armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/heavy)
+	desc = "Heavy armor plating designed for self mounting on the upper half of Imperium combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/guardsman/robot/heavy)
 	greyscale_config = /datum/greyscale_config/robot/heavy
 
 /obj/item/clothing/head/modular/robot/heavy/tyr
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/heavy, /obj/item/armor_module/module/tyr_head)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/guardsman/robot/heavy, /obj/item/armor_module/module/tyr_head)
 
 /obj/item/clothing/head/modular/robot/antenna
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/heavy, /obj/item/armor_module/module/antenna)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/guardsman/robot/heavy, /obj/item/armor_module/module/antenna)

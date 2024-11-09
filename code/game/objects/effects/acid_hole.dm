@@ -1,7 +1,7 @@
 /obj/effect/acid_hole
 	name = "hole"
 	desc = "What could have done this? Something agile enough could probably climb through."
-	icon = 'icons/obj/smooth_objects/acid-hole.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/acid-hole.dmi'
 	icon_state = "acid-hole-0"
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_ACID_HOLE)
@@ -41,12 +41,12 @@
 	. = ..()
 	if(!holed_wall)
 		return
-	if(M == user && isxeno(user))
+	if(M == user && istyranid(user))
 		use_wall_hole(user)
 
 
 /obj/effect/acid_hole/CtrlClick(mob/living/carbon/user)
-	if(!isxeno(user))
+	if(!istyranid(user))
 		return
 	if(!user.CanReach(src))
 		return
@@ -56,7 +56,7 @@
 			return
 		use_wall_hole(user)
 
-/obj/effect/acid_hole/proc/expand_hole(mob/living/carbon/xenomorph/user)
+/obj/effect/acid_hole/proc/expand_hole(mob/living/carbon/tyranid/user)
 	if(user.do_actions || user.lying_angle)
 		return
 

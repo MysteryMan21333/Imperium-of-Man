@@ -6,7 +6,7 @@
 		/datum/job/terragov/squad/engineer = 10,
 	)
 	/// If we are shipside or groundside
-	var/round_stage = INFESTATION_MARINE_DEPLOYMENT
+	var/round_stage = INFESTATION_GUARDSMAN_DEPLOYMENT
 	/// Timer used to calculate how long till the hive collapse due to no ruler
 	var/orphan_hive_timer
 	/// Time between two bioscan
@@ -19,19 +19,19 @@
 	if(bioscan_interval)
 		TIMER_COOLDOWN_START(src, COOLDOWN_BIOSCAN, bioscan_interval)
 	var/weed_type
-	for(var/turf/T in GLOB.xeno_weed_node_turfs)
+	for(var/turf/T in GLOB.tyranid_weed_node_turfs)
 		weed_type = pickweight(GLOB.weed_prob_list)
 		new weed_type(T)
-	for(var/turf/T AS in GLOB.xeno_resin_wall_turfs)
+	for(var/turf/T AS in GLOB.tyranid_resin_wall_turfs)
 		T.ChangeTurf(/turf/closed/wall/resin/regenerating, T.type)
-	for(var/i in GLOB.xeno_resin_door_turfs)
+	for(var/i in GLOB.tyranid_resin_door_turfs)
 		new /obj/structure/mineral_door/resin(i)
-	for(var/i in GLOB.xeno_tunnel_spawn_turfs)
-		var/obj/structure/xeno/tunnel/new_tunnel = new /obj/structure/xeno/tunnel(i, XENO_HIVE_NORMAL)
+	for(var/i in GLOB.tyranid_tunnel_spawn_turfs)
+		var/obj/structure/tyranid/tunnel/new_tunnel = new /obj/structure/tyranid/tunnel(i, TYRANID_HIVE_NORMAL)
 		new_tunnel.name = "[get_area_name(new_tunnel)] tunnel"
 		new_tunnel.tunnel_desc = "["[get_area_name(new_tunnel)]"] (X: [new_tunnel.x], Y: [new_tunnel.y])"
-	for(var/i in GLOB.xeno_jelly_pod_turfs)
-		new /obj/structure/xeno/resin_jelly_pod(i, XENO_HIVE_NORMAL)
+	for(var/i in GLOB.tyranid_jelly_pod_turfs)
+		new /obj/structure/tyranid/resin_jelly_pod(i, TYRANID_HIVE_NORMAL)
 
 /datum/game_mode/infestation/process()
 	if(round_finished)
@@ -48,8 +48,8 @@
 
 #define AI_SCAN_DELAY 15 SECONDS
 
-///Annonce to everyone the number of xeno and marines on ship and ground
-/datum/game_mode/infestation/announce_bioscans(show_locations = TRUE, delta = 2, ai_operator = FALSE, announce_humans = TRUE, announce_xenos = TRUE, send_fax = TRUE)
+///Annonce to everyone the number of tyranid and guardsmans on ship and ground
+/datum/game_mode/infestation/announce_bioscans(show_locations = TRUE, delta = 2, ai_operator = FALSE, announce_humans = TRUE, announce_tyranids = TRUE, send_fax = TRUE)
 
 	if(ai_operator)
 		#ifndef TESTING
@@ -71,40 +71,40 @@
 	var/list/list/area/locations = list()
 
 	for(var/trait in GLOB.bioscan_locations)
-		counts[trait] = list(FACTION_TERRAGOV = 0, FACTION_XENO = 0)
-		locations[trait] = list(FACTION_TERRAGOV = 0, FACTION_XENO = 0)
+		counts[trait] = list(FACTION_IMPERIUM = 0, FACTION_TYRANID = 0)
+		locations[trait] = list(FACTION_IMPERIUM = 0, FACTION_TYRANID = 0)
 		for(var/i in SSmapping.levels_by_trait(trait))
-			var/list/parsed_xenos = GLOB.hive_datums[XENO_HIVE_NORMAL].xenos_by_zlevel["[i]"]?.Copy()
-			for(var/mob/living/carbon/xenomorph/xeno in parsed_xenos)
-				if(xeno.xeno_caste.caste_flags & CASTE_NOT_IN_BIOSCAN)
-					parsed_xenos -= xeno
-			counts[trait][FACTION_XENO] += length(parsed_xenos)
-			counts[trait][FACTION_TERRAGOV] += length(GLOB.humans_by_zlevel["[i]"])
-			if(length(GLOB.hive_datums[XENO_HIVE_NORMAL].xenos_by_zlevel["[i]"]))
-				locations[trait][FACTION_XENO] = get_area(pick(GLOB.hive_datums[XENO_HIVE_NORMAL].xenos_by_zlevel["[i]"]))
+			var/list/parsed_tyranids = GLOB.hive_datums[TYRANID_HIVE_NORMAL].tyranids_by_zlevel["[i]"]?.Copy()
+			for(var/mob/living/carbon/tyranid/tyranid in parsed_tyranids)
+				if(tyranid.tyranid_caste.caste_flags & CASTE_NOT_IN_BIOSCAN)
+					parsed_tyranids -= tyranid
+			counts[trait][FACTION_TYRANID] += length(parsed_tyranids)
+			counts[trait][FACTION_IMPERIUM] += length(GLOB.humans_by_zlevel["[i]"])
+			if(length(GLOB.hive_datums[TYRANID_HIVE_NORMAL].tyranids_by_zlevel["[i]"]))
+				locations[trait][FACTION_TYRANID] = get_area(pick(GLOB.hive_datums[TYRANID_HIVE_NORMAL].tyranids_by_zlevel["[i]"]))
 			if(length(GLOB.humans_by_zlevel["[i]"]))
-				locations[trait][FACTION_TERRAGOV] = get_area(pick(GLOB.humans_by_zlevel["[i]"]))
+				locations[trait][FACTION_IMPERIUM] = get_area(pick(GLOB.humans_by_zlevel["[i]"]))
 
-	var/numHostsPlanet = counts[ZTRAIT_GROUND][FACTION_TERRAGOV]
-	var/numHostsShip = counts[ZTRAIT_MARINE_MAIN_SHIP][FACTION_TERRAGOV]
-	var/numHostsTransit = counts[ZTRAIT_RESERVED][FACTION_TERRAGOV]
-	var/numXenosPlanet = counts[ZTRAIT_GROUND][FACTION_XENO]
-	var/numXenosShip = counts[ZTRAIT_MARINE_MAIN_SHIP][FACTION_XENO]
-	var/numXenosTransit = counts[ZTRAIT_RESERVED][FACTION_XENO]
-	var/host_location_planetside = locations[ZTRAIT_GROUND][FACTION_TERRAGOV]
-	var/host_location_shipside = locations[ZTRAIT_MARINE_MAIN_SHIP][FACTION_TERRAGOV]
-	var/xeno_location_planetside = locations[ZTRAIT_GROUND][FACTION_XENO]
-	var/xeno_location_shipside = locations[ZTRAIT_MARINE_MAIN_SHIP][FACTION_XENO]
+	var/numHostsPlanet = counts[ZTRAIT_GROUND][FACTION_IMPERIUM]
+	var/numHostsShip = counts[ZTRAIT_GUARDSMAN_MAIN_SHIP][FACTION_IMPERIUM]
+	var/numHostsTransit = counts[ZTRAIT_RESERVED][FACTION_IMPERIUM]
+	var/numTyranidsPlanet = counts[ZTRAIT_GROUND][FACTION_TYRANID]
+	var/numTyranidsShip = counts[ZTRAIT_GUARDSMAN_MAIN_SHIP][FACTION_TYRANID]
+	var/numTyranidsTransit = counts[ZTRAIT_RESERVED][FACTION_TYRANID]
+	var/host_location_planetside = locations[ZTRAIT_GROUND][FACTION_IMPERIUM]
+	var/host_location_shipside = locations[ZTRAIT_GUARDSMAN_MAIN_SHIP][FACTION_IMPERIUM]
+	var/tyranid_location_planetside = locations[ZTRAIT_GROUND][FACTION_TYRANID]
+	var/tyranid_location_shipside = locations[ZTRAIT_GUARDSMAN_MAIN_SHIP][FACTION_TYRANID]
 
 	//Adjust the randomness there so everyone gets the same thing
 	var/hosts_shipside = BIOSCAN_DELTA(numHostsShip, delta)
-	var/xenos_planetside = BIOSCAN_DELTA(numXenosPlanet, delta)
+	var/tyranids_planetside = BIOSCAN_DELTA(numTyranidsPlanet, delta)
 	var/hosts_transit = BIOSCAN_DELTA(numHostsTransit, delta)
-	var/xenos_transit = BIOSCAN_DELTA(numXenosTransit, delta)
+	var/tyranids_transit = BIOSCAN_DELTA(numTyranidsTransit, delta)
 
 	var/sound/S = sound(get_sfx(SFX_QUEEN), channel = CHANNEL_ANNOUNCEMENTS, volume = 50)
-	if(announce_xenos)
-		for(var/i in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
+	if(announce_tyranids)
+		for(var/i in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
 			var/mob/M = i
 			SEND_SOUND(M, S)
 			to_chat(M, assemble_alert(
@@ -121,10 +121,10 @@
 
 	var/name = "[MAIN_AI_SYSTEM] Bioscan Status"
 
-	var/input = {"Bioscan complete. Sensors indicate [numXenosShip || "no"] unknown lifeform signature[numXenosShip > 1 ? "s":""] \
-	present on the ship[BIOSCAN_LOCATION(show_locations, xeno_location_shipside)], [xenos_planetside ? "approximately [xenos_planetside]":"no"] \
-	signature[xenos_planetside > 1 ? "s":""] located elsewhere[BIOSCAN_LOCATION(show_locations, xeno_location_planetside)] and [numXenosTransit || "no"] \
-	unknown lifeform signature[numXenosTransit > 1 ? "s":""] in transit."}
+	var/input = {"Bioscan complete. Sensors indicate [numTyranidsShip || "no"] unknown lifeform signature[numTyranidsShip > 1 ? "s":""] \
+	present on the ship[BIOSCAN_LOCATION(show_locations, tyranid_location_shipside)], [tyranids_planetside ? "approximately [tyranids_planetside]":"no"] \
+	signature[tyranids_planetside > 1 ? "s":""] located elsewhere[BIOSCAN_LOCATION(show_locations, tyranid_location_planetside)] and [numTyranidsTransit || "no"] \
+	unknown lifeform signature[numTyranidsTransit > 1 ? "s":""] in transit."}
 
 	var/ai_name = "[usr] Bioscan Status"
 
@@ -133,8 +133,8 @@
 		log_game("Bioscan. Humans: [numHostsPlanet] on the planet\
 		[host_location_planetside ? " Location:[host_location_planetside]":""] and [numHostsShip] on the ship.\
 		[host_location_shipside ? " Location: [host_location_shipside].":""] \
-		Xenos: [xenos_planetside] on the planet and [numXenosShip] on the ship\
-		[xeno_location_planetside ? " Location:[xeno_location_planetside]":""] and [numXenosTransit] in transit.")
+		Tyranids: [tyranids_planetside] on the planet and [numTyranidsShip] on the ship\
+		[tyranid_location_planetside ? " Location:[tyranid_location_planetside]":""] and [numTyranidsTransit] in transit.")
 
 		switch(GLOB.current_orbit)
 			if(1)
@@ -154,15 +154,15 @@
 		var/fax_message = generate_templated_fax("Combat Information Center", "[MAIN_AI_SYSTEM] Bioscan Status", "", input, "", MAIN_AI_SYSTEM)
 		send_fax(null, null, "Combat Information Center", "[MAIN_AI_SYSTEM] Bioscan Status", fax_message, FALSE)
 
-	log_game("Bioscan. Humans: [numHostsPlanet] on the planet[host_location_planetside ? " Location:[host_location_planetside]":""] and [numHostsShip] on the ship.[host_location_shipside ? " Location: [host_location_shipside].":""] Xenos: [xenos_planetside] on the planet and [numXenosShip] on the ship[xeno_location_planetside ? " Location:[xeno_location_planetside]":""] and [numXenosTransit] in transit.")
+	log_game("Bioscan. Humans: [numHostsPlanet] on the planet[host_location_planetside ? " Location:[host_location_planetside]":""] and [numHostsShip] on the ship.[host_location_shipside ? " Location: [host_location_shipside].":""] Tyranids: [tyranids_planetside] on the planet and [numTyranidsShip] on the ship[tyranid_location_planetside ? " Location:[tyranid_location_planetside]":""] and [numTyranidsTransit] in transit.")
 
 	for(var/i in GLOB.observer_list)
 		var/mob/M = i
 		to_chat(M, assemble_alert(
 			title = "Detailed Bioscan",
-			message = {"[numXenosPlanet] xeno\s on the planet.
-[numXenosShip] xeno\s on the ship.
-[numXenosTransit] xeno\s in transit.
+			message = {"[numTyranidsPlanet] tyranid\s on the planet.
+[numTyranidsShip] tyranid\s on the ship.
+[numTyranidsTransit] tyranid\s in transit.
 
 [numHostsPlanet] human\s on the planet.
 [numHostsShip] human\s on the ship.
@@ -171,7 +171,7 @@
 		))
 
 	message_admins("Bioscan - Humans: [numHostsPlanet] on the planet[host_location_planetside ? ". Location:[host_location_planetside]":""]. [hosts_shipside] on the ship.[host_location_shipside ? " Location: [host_location_shipside].":""]. [hosts_transit] in transit.")
-	message_admins("Bioscan - Xenos: [xenos_planetside] on the planet[xenos_planetside > 0 && xeno_location_planetside ? ". Location:[xeno_location_planetside]":""]. [numXenosShip] on the ship.[xeno_location_shipside ? " Location: [xeno_location_shipside].":""] [xenos_transit] in transit.")
+	message_admins("Bioscan - Tyranids: [tyranids_planetside] on the planet[tyranids_planetside > 0 && tyranid_location_planetside ? ". Location:[tyranid_location_planetside]":""]. [numTyranidsShip] on the ship.[tyranid_location_shipside ? " Location: [tyranid_location_shipside].":""] [tyranids_transit] in transit.")
 
 #undef BIOSCAN_DELTA
 #undef BIOSCAN_LOCATION
@@ -184,9 +184,9 @@
 	if(world.time < (SSticker.round_start_time + 5 SECONDS))
 		return FALSE
 
-	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_ALIVE_SSD|COUNT_IGNORE_XENO_SPECIAL_AREA)
+	var/list/living_player_list = count_humans_and_tyranids(count_flags = COUNT_IGNORE_ALIVE_SSD|COUNT_IGNORE_TYRANID_SPECIAL_AREA)
 	var/num_humans = living_player_list[1]
-	var/num_xenos = living_player_list[2]
+	var/num_tyranids = living_player_list[2]
 	var/num_humans_ship = living_player_list[3]
 
 	if(SSevacuation.dest_status == NUKE_EXPLOSION_FINISHED)
@@ -194,33 +194,33 @@
 		round_finished = MODE_GENERIC_DRAW_NUKE
 		return TRUE
 
-	if(round_stage == INFESTATION_DROPSHIP_CAPTURED_XENOS)
+	if(round_stage == INFESTATION_DROPSHIP_CAPTURED_TYRANIDS)
 		message_admins("Round finished: [MODE_INFESTATION_X_MINOR]")
 		round_finished = MODE_INFESTATION_X_MINOR
 		return TRUE
 
 	if(!num_humans)
-		if(!num_xenos)
+		if(!num_tyranids)
 			message_admins("Round finished: [MODE_INFESTATION_DRAW_DEATH]") //everyone died at the same time, no one wins
 			round_finished = MODE_INFESTATION_DRAW_DEATH
 			return TRUE
-		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //xenos wiped out ALL the marines without hijacking, xeno major victory
+		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //tyranids wiped out ALL the guardsmans without hijacking, tyranid major victory
 		round_finished = MODE_INFESTATION_X_MAJOR
 		return TRUE
-	if(!num_xenos)
-		if(round_stage == INFESTATION_MARINE_CRASHING)
-			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //marines lost the ground operation but managed to wipe out Xenos on the ship at a greater cost, minor victory
+	if(!num_tyranids)
+		if(round_stage == INFESTATION_GUARDSMAN_CRASHING)
+			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //guardsmans lost the ground operation but managed to wipe out Tyranids on the ship at a greater cost, minor victory
 			round_finished = MODE_INFESTATION_M_MINOR
 			return TRUE
-		message_admins("Round finished: [MODE_INFESTATION_M_MAJOR]") //marines win big
+		message_admins("Round finished: [MODE_INFESTATION_M_MAJOR]") //guardsmans win big
 		round_finished = MODE_INFESTATION_M_MAJOR
 		return TRUE
-	if(round_stage == INFESTATION_MARINE_CRASHING && !num_humans_ship)
+	if(round_stage == INFESTATION_GUARDSMAN_CRASHING && !num_humans_ship)
 		if(SSevacuation.human_escaped > SSevacuation.initial_human_on_ship * 0.5)
-			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //xenos have control of the ship, but most marines managed to flee
+			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //tyranids have control of the ship, but most guardsmans managed to flee
 			round_finished = MODE_INFESTATION_X_MINOR
 			return
-		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //xenos wiped our marines, xeno major victory
+		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //tyranids wiped our guardsmans, tyranid major victory
 		round_finished = MODE_INFESTATION_X_MAJOR
 		return TRUE
 	return FALSE
@@ -228,52 +228,52 @@
 
 /datum/game_mode/infestation/declare_completion()
 	. = ..()
-	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal xenos spawned: [GLOB.round_statistics.total_xenos_created]\nTotal humans spawned: [GLOB.round_statistics.total_humans_created]")
+	log_game("[round_finished]\nGame mode: [name]\nRound time: [duration2text()]\nEnd round player population: [length(GLOB.clients)]\nTotal tyranids spawned: [GLOB.round_statistics.total_tyranids_created]\nTotal humans spawned: [GLOB.round_statistics.total_humans_created]")
 
 /datum/game_mode/infestation/end_round_fluff()
 	send_ooc_announcement(
 		sender_override = "Round Concluded",
 		title = round_finished,
-		text = "Thus ends the story of the brave men and women of the TerraGov Marine Corps, and their struggle on [SSmapping.configs[GROUND_MAP].map_name]...",
+		text = "Thus ends the story of the brave men and women of the Imperium Guardsman Corps, and their struggle on [SSmapping.configs[GROUND_MAP].map_name]...",
 		play_sound = FALSE,
 		style = "game"
 	)
 
-	var/sound/xeno_track
+	var/sound/tyranid_track
 	var/sound/human_track
 	var/sound/ghost_track
 	switch(round_finished)
 		if(MODE_INFESTATION_X_MAJOR)
-			xeno_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
+			tyranid_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
 			human_track = pick('sound/theme/sad_loss1.ogg', 'sound/theme/sad_loss2.ogg')
-			ghost_track = xeno_track
+			ghost_track = tyranid_track
 		if(MODE_INFESTATION_M_MAJOR)
-			xeno_track = pick('sound/theme/sad_loss1.ogg', 'sound/theme/sad_loss2.ogg')
+			tyranid_track = pick('sound/theme/sad_loss1.ogg', 'sound/theme/sad_loss2.ogg')
 			human_track = pick('sound/theme/winning_triumph1.ogg', 'sound/theme/winning_triumph2.ogg')
 			ghost_track = human_track
 		if(MODE_INFESTATION_X_MINOR)
-			xeno_track = pick('sound/theme/neutral_hopeful1.ogg', 'sound/theme/neutral_hopeful2.ogg')
+			tyranid_track = pick('sound/theme/neutral_hopeful1.ogg', 'sound/theme/neutral_hopeful2.ogg')
 			human_track = pick('sound/theme/neutral_melancholy1.ogg', 'sound/theme/neutral_melancholy2.ogg')
-			ghost_track = xeno_track
+			ghost_track = tyranid_track
 		if(MODE_INFESTATION_M_MINOR)
-			xeno_track = pick('sound/theme/neutral_melancholy1.ogg', 'sound/theme/neutral_melancholy2.ogg')
+			tyranid_track = pick('sound/theme/neutral_melancholy1.ogg', 'sound/theme/neutral_melancholy2.ogg')
 			human_track = pick('sound/theme/neutral_hopeful1.ogg', 'sound/theme/neutral_hopeful2.ogg')
 			ghost_track = human_track
 		if(MODE_INFESTATION_DRAW_DEATH)
 			ghost_track = pick('sound/theme/nuclear_detonation1.ogg', 'sound/theme/nuclear_detonation2.ogg')
-			xeno_track = ghost_track
+			tyranid_track = ghost_track
 			human_track = ghost_track
 
-	xeno_track = sound(xeno_track)
-	xeno_track.channel = CHANNEL_CINEMATIC
+	tyranid_track = sound(tyranid_track)
+	tyranid_track.channel = CHANNEL_CINEMATIC
 	human_track = sound(human_track)
 	human_track.channel = CHANNEL_CINEMATIC
 	ghost_track = sound(ghost_track)
 	ghost_track.channel = CHANNEL_CINEMATIC
 
-	for(var/i in GLOB.xeno_mob_list)
+	for(var/i in GLOB.tyranid_mob_list)
 		var/mob/M = i
-		SEND_SOUND(M, xeno_track)
+		SEND_SOUND(M, tyranid_track)
 
 	for(var/i in GLOB.human_mob_list)
 		var/mob/M = i
@@ -285,8 +285,8 @@
 			SEND_SOUND(M, human_track)
 			continue
 
-		if(isxeno(M.mind.current))
-			SEND_SOUND(M, xeno_track)
+		if(istyranid(M.mind.current))
+			SEND_SOUND(M, tyranid_track)
 			continue
 
 		SEND_SOUND(M, ghost_track)
@@ -295,18 +295,18 @@
 	. = ..()
 	if(!.)
 		return
-	var/xeno_candidate = FALSE //Let's guarantee there's at least one xeno.
+	var/tyranid_candidate = FALSE //Let's guarantee there's at least one tyranid.
 	for(var/level = JOBS_PRIORITY_HIGH; level >= JOBS_PRIORITY_LOW; level--)
 		for(var/p in GLOB.ready_players)
 			var/mob/new_player/player = p
-			if(player.client.prefs.job_preferences[ROLE_XENO_QUEEN] == level && SSjob.AssignRole(player, SSjob.GetJobType(/datum/job/xenomorph/queen)))
-				xeno_candidate = TRUE
+			if(player.client.prefs.job_preferences[ROLE_TYRANID_QUEEN] == level && SSjob.AssignRole(player, SSjob.GetJobType(/datum/job/tyranid/queen)))
+				tyranid_candidate = TRUE
 				break
-			if(player.client.prefs.job_preferences[ROLE_XENOMORPH] == level && SSjob.AssignRole(player, SSjob.GetJobType(/datum/job/xenomorph)))
-				xeno_candidate = TRUE
+			if(player.client.prefs.job_preferences[ROLE_TYRANID] == level && SSjob.AssignRole(player, SSjob.GetJobType(/datum/job/tyranid)))
+				tyranid_candidate = TRUE
 				break
-	if(!xeno_candidate && !bypass_checks)
-		to_chat(world, "<b>Unable to start [name].</b> No xeno candidate found.")
+	if(!tyranid_candidate && !bypass_checks)
+		to_chat(world, "<b>Unable to start [name].</b> No tyranid candidate found.")
 		return FALSE
 
 /datum/game_mode/infestation/pre_setup()
@@ -320,7 +320,7 @@
 
 	priority_announce(
 		title = "High Command Update",
-		subtitle = "Good morning, marines.",
+		subtitle = "Good morning, guardsmans.",
 		message = "Cryosleep disengaged by TGMC High Command.<br><br>ATTN: [SSmapping.configs[SHIP_MAP].map_name].<br>[SSmapping.configs[GROUND_MAP].announce_text]",
 		sound = 'sound/AI/ares_online.ogg',
 		color_override = "red"
@@ -331,15 +331,15 @@
 	to_chat(world, span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
 
 /datum/game_mode/infestation/attempt_to_join_as_larva(client/waiter)
-	var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/hive_status/normal/HS = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 	return HS.add_to_larva_candidate_queue(waiter)
 
 
-/datum/game_mode/infestation/spawn_larva(mob/xeno_candidate, mob/living/carbon/xenomorph/mother)
-	var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
-	return HS.spawn_larva(xeno_candidate, mother)
+/datum/game_mode/infestation/spawn_larva(mob/tyranid_candidate, mob/living/carbon/tyranid/mother)
+	var/datum/hive_status/normal/HS = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
+	return HS.spawn_larva(tyranid_candidate, mother)
 
-/datum/game_mode/infestation/proc/on_nuclear_diffuse(obj/machinery/nuclearbomb/bomb, mob/living/carbon/xenomorph/X)
+/datum/game_mode/infestation/proc/on_nuclear_diffuse(obj/machinery/nuclearbomb/bomb, mob/living/carbon/tyranid/X)
 	SIGNAL_HANDLER
 	priority_announce("WARNING. WARNING. Planetary Nuke deactivated. WARNING. WARNING. Self destruct failed. WARNING. WARNING.", "Planetary Warhead Disengaged", type = ANNOUNCEMENT_PRIORITY)
 
@@ -350,10 +350,10 @@
 
 /datum/game_mode/infestation/proc/on_nuke_started(datum/source, obj/machinery/nuclearbomb/nuke)
 	SIGNAL_HANDLER
-	var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
+	var/datum/hive_status/normal/HS = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
 	var/area_name = get_area_name(nuke)
-	HS.xeno_message("An overwhelming wave of dread ripples throughout the hive... A nuke has been activated[area_name ? " in [area_name]":""]!")
-	HS.set_all_xeno_trackers(nuke)
+	HS.tyranid_message("An overwhelming wave of dread ripples throughout the hive... A nuke has been activated[area_name ? " in [area_name]":""]!")
+	HS.set_all_tyranid_trackers(nuke)
 
 /datum/game_mode/infestation/proc/play_cinematic(z_level)
 	GLOB.enter_allowed = FALSE
@@ -380,7 +380,7 @@
 
 	if(SSmapping.level_trait(z_level, ZTRAIT_GROUND))
 		planet_nuked = INFESTATION_NUKE_COMPLETED
-	else if(SSmapping.level_trait(z_level, ZTRAIT_MARINE_MAIN_SHIP))
+	else if(SSmapping.level_trait(z_level, ZTRAIT_GUARDSMAN_MAIN_SHIP))
 		planet_nuked = INFESTATION_NUKE_COMPLETED_SHIPSIDE
 	else
 		planet_nuked = INFESTATION_NUKE_COMPLETED_OTHER

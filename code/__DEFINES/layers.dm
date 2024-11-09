@@ -71,7 +71,7 @@
 
 #define CATWALK_LAYER 2.51 //catwalk overlay of /turf/open/floor/plating/plating_catwalk
 #define HOLOPAD_LAYER 2.515 //layer for the holopads so they render over catwalks, yet still get covered like regular floor.
-#define XENO_WEEDS_LAYER 2.52 //weed layer so that it goes above catwalks
+#define TYRANID_WEEDS_LAYER 2.52 //weed layer so that it goes above catwalks
 
 #define ATMOS_DEVICE_LAYER 2.53 //vents, connector ports, atmos devices that should be above pipe layer.
 
@@ -88,7 +88,7 @@
 
 #define WINDOW_FRAME_LAYER 2.72
 
-#define XENO_HIDING_LAYER 2.75
+#define TYRANID_HIDING_LAYER 2.75
 
 #define BELOW_TABLE_LAYER 2.79
 #define TABLE_LAYER 2.8
@@ -127,7 +127,7 @@
 #define BELOW_MOB_LAYER 3.79
 #define LYING_MOB_LAYER 3.8
 
-#define ABOVE_LYING_MOB_LAYER 3.9 //drone (not the xeno)
+#define ABOVE_LYING_MOB_LAYER 3.9 //drone (not the tyranid)
 
 //#define MOB_LAYER 4
 

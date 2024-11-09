@@ -4,7 +4,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "aaF" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/mainship/blue{
 	dir = 10
 	},
@@ -78,7 +78,7 @@
 /turf/closed/wall,
 /area/lawankaoutpost/colony/operations_kitchen)
 "acj" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lawankaoutpost/colony/recdorms)
 "acS" = (
@@ -229,7 +229,7 @@
 /turf/open/floor/mainship/floor,
 /area/lawankaoutpost/colony/biologics)
 "aia" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
 "aii" = (
@@ -263,7 +263,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/mining)
 "ajO" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -306,7 +306,7 @@
 /obj/structure/flora/grass/tallgrass/hideable{
 	color = "#7a8c54"
 	},
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "alT" = (
@@ -334,7 +334,7 @@
 	},
 /area/lawankaoutpost/colony/operations_administration)
 "amA" = (
-/obj/structure/xenoautopsy/tank,
+/obj/structure/tyranidautopsy/tank,
 /turf/open/floor/plating,
 /area/lawankaoutpost/colony/biologics_storage)
 "amB" = (
@@ -496,7 +496,7 @@
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
 	dir = 2
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "aun" = (
@@ -1012,7 +1012,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "aOS" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/red/whitered{
 	dir = 1
 	},
@@ -1107,7 +1107,7 @@
 /turf/open/floor/tile/dark,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "aUn" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "aUq" = (
@@ -1618,7 +1618,7 @@
 	},
 /area/lawankaoutpost/colony/robotics)
 "bqT" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/operations_hall)
@@ -1708,7 +1708,7 @@
 /area/lawankaoutpost/colony/cargo)
 "bwp" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "bws" = (
@@ -1765,7 +1765,7 @@
 /area/lawankaoutpost/colony/southdorms)
 "bxs" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "bxy" = (
@@ -2076,7 +2076,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/mining)
 "bKq" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
 "bKO" = (
@@ -2093,7 +2093,7 @@
 /area/lawankaoutpost/colony/bar)
 "bLI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/medbay)
@@ -2329,7 +2329,7 @@
 /area/lawankaoutpost/colony/marshalls)
 "bWn" = (
 /obj/structure/fence,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lawankaoutpost/outside/central)
 "bWN" = (
@@ -2535,7 +2535,7 @@
 /turf/closed/wall,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "cdC" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "cdZ" = (
@@ -2602,7 +2602,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
 "cgf" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/mainship/floor,
 /area/lawankaoutpost/colony/biologics)
 "cgq" = (
@@ -3003,7 +3003,7 @@
 	},
 /area/lawankaoutpost/colony/southdorms)
 "cwe" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/plating,
 /area/lawankaoutpost/colony/biologics_storage)
 "cwl" = (
@@ -3453,7 +3453,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
 "cSN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall,
 /area/lawankaoutpost/outside/west)
 "cSZ" = (
@@ -3490,8 +3490,8 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
 "cTU" = (
-/obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/start/job/tyranid,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "cUP" = (
@@ -3741,7 +3741,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/west)
 "ddv" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 8
 	},
@@ -3922,7 +3922,7 @@
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
 "djJ" = (
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /turf/open/floor/plating,
 /area/lawankaoutpost/colony/biologics_storage)
 "djN" = (
@@ -4103,7 +4103,7 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lawankaoutpost/colony/recdorms)
 "drE" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
@@ -4678,7 +4678,7 @@
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
 "dUE" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/tile/dark/blue2{
 	dir = 10
 	},
@@ -5230,7 +5230,7 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "erI" = (
 /obj/structure/flora/ausbushes/grassybush,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northwest)
 "esj" = (
@@ -5703,7 +5703,7 @@
 /area/lawankaoutpost/colony/southdorms)
 "eLZ" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
 "eMm" = (
@@ -6166,7 +6166,7 @@
 /turf/open/floor/tile/dark,
 /area/lawankaoutpost/colony/chapel)
 "ffn" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
@@ -6727,7 +6727,7 @@
 /area/lawankaoutpost/colony/engineering)
 "fAp" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "fAt" = (
@@ -6969,7 +6969,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "fKw" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west/garbledradio)
 "fKB" = (
@@ -7022,7 +7022,7 @@
 	},
 /area/lawankaoutpost/colony/biologics)
 "fLw" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /obj/structure/flora/grass/tallgrass/hideable{
 	color = "#7a8c54"
 	},
@@ -7084,7 +7084,7 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "fNA" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "fNI" = (
@@ -7330,7 +7330,7 @@
 /turf/open/floor/cult,
 /area/lawankaoutpost/caves/southwest)
 "fXn" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "fXw" = (
@@ -7557,7 +7557,7 @@
 	},
 /area/lawankaoutpost/colony/cargo)
 "gfZ" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark/red2,
 /area/lawankaoutpost/colony/marshalls)
@@ -7730,7 +7730,7 @@
 /turf/open/floor/grayscale/black,
 /area/lawankaoutpost/colony/operations_kitchen)
 "gmy" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "gmF" = (
@@ -7814,7 +7814,7 @@
 	},
 /area/lawankaoutpost/colony/atmos)
 "gqw" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/mainship/blue{
 	dir = 9
@@ -8474,7 +8474,7 @@
 /area/lawankaoutpost/colony/robotics)
 "gWT" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "gWU" = (
@@ -8689,7 +8689,7 @@
 /area/lawankaoutpost/colony/northdorms)
 "hha" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "hhr" = (
@@ -8744,7 +8744,7 @@
 	},
 /area/lawankaoutpost/colony/engineering)
 "hkA" = (
-/obj/structure/sign/xenobio{
+/obj/structure/sign/tyranidbio{
 	dir = 1
 	},
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
@@ -8991,7 +8991,7 @@
 /turf/open/floor/grayscale/black,
 /area/lawankaoutpost/colony/operations_kitchen)
 "hxH" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest/garbledradio)
 "hyw" = (
@@ -9255,7 +9255,7 @@
 	},
 /area/lawankaoutpost/colony/biologics)
 "hNz" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/medbay)
 "hNN" = (
@@ -9947,7 +9947,7 @@
 	},
 /area/lawankaoutpost/colony/northdorms)
 "ioc" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "ior" = (
@@ -9976,7 +9976,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/medbay)
 "ipr" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "ipL" = (
@@ -10576,14 +10576,14 @@
 	},
 /area/lawankaoutpost/colony/marshalls)
 "iQv" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/tile/dark/blue2{
 	dir = 9
 	},
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "iQN" = (
 /obj/item/ammo_casing/bullet,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/red/whitered,
 /area/lawankaoutpost/colony/medbay)
 "iQO" = (
@@ -10837,8 +10837,8 @@
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
 	dir = 2
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "jaI" = (
@@ -11085,7 +11085,7 @@
 /turf/open/floor/grayscale/black,
 /area/lawankaoutpost/colony/operations_kitchen)
 "jiX" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/caves/nanotrasen_lab)
@@ -11124,7 +11124,7 @@
 	},
 /area/lawankaoutpost/colony/operations_hall)
 "jjF" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /obj/effect/landmark/campaign_structure/barricade/sandbags/asat{
 	dir = 4
 	},
@@ -11517,7 +11517,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southwest)
 "jCY" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark/red2{
@@ -11653,7 +11653,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/lawankaoutpost/colony/chapel)
 "jIy" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/core,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/core,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 10
@@ -11914,7 +11914,7 @@
 /area/lawankaoutpost/colony/biologics_storage)
 "jUa" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle,
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle,
 /turf/open/floor/tile/green/whitegreenfull,
 /area/lawankaoutpost/colony/marshalls)
 "jUb" = (
@@ -12249,7 +12249,7 @@
 "kmN" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/turf_decal/tracks/wheels/bloody,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/medbay)
 "kmU" = (
@@ -12306,7 +12306,7 @@
 	},
 /area/lawankaoutpost/colony/robotics)
 "kod" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/lawankaoutpost/caves/rock)
 "kog" = (
@@ -12385,7 +12385,7 @@
 /area/lawankaoutpost/colony/engineering)
 "ksb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -12399,7 +12399,7 @@
 /turf/open/floor/tile/darkgreen/darkgreen2/corner,
 /area/lawankaoutpost/colony/marshalls)
 "ktf" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/mainship/floor,
 /area/lawankaoutpost/colony/biologics)
 "kti" = (
@@ -12543,7 +12543,7 @@
 /turf/open/floor/plating,
 /area/lawankaoutpost/colony/northdorms)
 "kyX" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -12608,14 +12608,14 @@
 	},
 /area/lawankaoutpost/colony/engineering)
 "kBQ" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing,
 /obj/structure/cable,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
 "kCa" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark2,
@@ -12645,7 +12645,7 @@
 /area/lawankaoutpost/colony/operations_storage)
 "kDD" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "kDH" = (
@@ -12985,7 +12985,7 @@
 	},
 /area/lawankaoutpost/colony/chapel)
 "kRE" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 8
 	},
@@ -13208,7 +13208,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/recdorms)
 "las" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/limb,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lawankaoutpost/colony/recdorms)
 "lat" = (
@@ -13508,7 +13508,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/operations_hall)
 "lli" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark/red2{
@@ -13800,8 +13800,8 @@
 /turf/closed/gm/dense,
 /area/lawankaoutpost/caves/rock)
 "lxw" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "lxG" = (
@@ -14029,7 +14029,7 @@
 	},
 /area/lawankaoutpost/colony/engineering)
 "lHN" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -14139,7 +14139,7 @@
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/northdorms)
 "lLD" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/red2,
 /area/lawankaoutpost/colony/marshalls)
 "lLG" = (
@@ -14257,7 +14257,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "lPV" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -14883,7 +14883,7 @@
 /area/lawankaoutpost/colony/northdorms)
 "msM" = (
 /obj/structure/rack,
-/obj/item/xenos_claw,
+/obj/item/tyranids_claw,
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "mtb" = (
@@ -14915,7 +14915,7 @@
 /turf/open/floor/freezer,
 /area/lawankaoutpost/colony/operations_kitchen)
 "mui" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
@@ -15016,7 +15016,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
 "myl" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -15124,7 +15124,7 @@
 /turf/open/floor/tile/dark/yellow2,
 /area/lawankaoutpost/colony/engineering)
 "mBb" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/red/whitered{
 	dir = 4
 	},
@@ -15459,7 +15459,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/landingzonetwo)
 "mSt" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/red/whitered,
 /area/lawankaoutpost/colony/medbay)
@@ -15939,7 +15939,7 @@
 	},
 /area/lawankaoutpost/colony/atmos)
 "nmr" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "nmE" = (
@@ -15958,11 +15958,11 @@
 /area/lawankaoutpost/colony/northdorms)
 "nns" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "nnF" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -15992,7 +15992,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/operations_kitchen)
 "noI" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
@@ -16118,7 +16118,7 @@
 /area/lawankaoutpost/colony/landingzoneone)
 "nsW" = (
 /obj/structure/fence,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lawankaoutpost/outside/west)
 "ntc" = (
@@ -16476,7 +16476,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/landingzoneone)
 "nGg" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "nGs" = (
@@ -16627,7 +16627,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/medbay)
 "nKA" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "nKJ" = (
@@ -16657,8 +16657,8 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lawankaoutpost/outside/south)
 "nLR" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/lawankaoutpost/caves/rock)
 "nMn" = (
@@ -16681,7 +16681,7 @@
 	},
 /area/lawankaoutpost/colony/robotics)
 "nMN" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/up,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/up,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark/red2{
 	dir = 8
@@ -16689,7 +16689,7 @@
 /area/lawankaoutpost/colony/marshalls)
 "nNp" = (
 /obj/item/ammo_casing/shell,
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -16776,7 +16776,7 @@
 /area/lawankaoutpost/outside/central)
 "nQs" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
 "nQC" = (
@@ -16843,7 +16843,7 @@
 /turf/open/floor/tile/green/greentaupe,
 /area/lawankaoutpost/colony/recdorms)
 "nUt" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "nUw" = (
@@ -17103,7 +17103,7 @@
 	},
 /area/lawankaoutpost/colony/recdorms)
 "ofq" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
 "ofO" = (
@@ -17141,13 +17141,13 @@
 /turf/open/floor/plating,
 /area/lawankaoutpost/colony/marshalls)
 "oib" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "oic" = (
 /obj/structure/table,
-/obj/item/tool/research/xeno_analyzer,
+/obj/item/tool/research/tyranid_analyzer,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -17515,8 +17515,8 @@
 	},
 /area/lawankaoutpost/colony/marshalls)
 "ovj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "ovr" = (
@@ -17699,7 +17699,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/atmos)
 "oCt" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -17760,7 +17760,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/recdorms)
 "oFe" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark/red2{
@@ -17839,7 +17839,7 @@
 /area/lawankaoutpost/colony/biologics)
 "oJj" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "oJq" = (
@@ -18079,7 +18079,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lawankaoutpost/outside/northwest)
 "oSh" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "oSu" = (
@@ -18823,7 +18823,7 @@
 /area/lawankaoutpost/outside/central)
 "pvH" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "pvY" = (
@@ -18931,7 +18931,7 @@
 /turf/open/floor/tile/dark,
 /area/lawankaoutpost/colony/operations_storage)
 "pzg" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/structure/cable,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
@@ -19176,7 +19176,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/operations_hall)
 "pHc" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "pHk" = (
@@ -19319,7 +19319,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "pNU" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/core,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/core,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 9
@@ -19551,7 +19551,7 @@
 /area/lawankaoutpost/colony/biologics)
 "pZn" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/dark/brown2{
 	dir = 4
 	},
@@ -19951,7 +19951,7 @@
 /area/lawankaoutpost/outside/northeast)
 "qrf" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
 "qrL" = (
@@ -20101,7 +20101,7 @@
 /turf/open/floor/tile/dark,
 /area/lawankaoutpost/colony/medbay)
 "qyf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall,
 /area/lawankaoutpost/outside/central)
 "qyi" = (
@@ -20986,7 +20986,7 @@
 /turf/open/floor/grayscale/black,
 /area/lawankaoutpost/colony/operations_kitchen)
 "rjP" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/core,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/core,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "rkc" = (
@@ -21054,7 +21054,7 @@
 /area/lawankaoutpost/outside/north)
 "rly" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "rlC" = (
@@ -21069,7 +21069,7 @@
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone{
 	dir = 2
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "rmx" = (
@@ -21131,7 +21131,7 @@
 	},
 /area/lawankaoutpost/colony/biologics)
 "roN" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "roW" = (
@@ -21531,7 +21531,7 @@
 	},
 /area/lawankaoutpost/colony/mining)
 "rED" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "rEF" = (
@@ -21790,12 +21790,12 @@
 /turf/open/floor/tile/blue/whitebluefull,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "rRn" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/dark/purple2,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "rRp" = (
 /obj/structure/rack,
-/obj/item/organ/brain/xeno,
+/obj/item/organ/brain/tyranid,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -21964,9 +21964,9 @@
 /area/lawankaoutpost/colony/recdorms)
 "rXg" = (
 /obj/structure/rack,
-/obj/item/weapon/gun/shotgun/double/marine,
-/obj/item/weapon/gun/shotgun/double/marine,
-/obj/item/weapon/gun/shotgun/double/marine,
+/obj/item/weapon/gun/shotgun/double/guardsman,
+/obj/item/weapon/gun/shotgun/double/guardsman,
+/obj/item/weapon/gun/shotgun/double/guardsman,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
 "rXY" = (
@@ -22232,7 +22232,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/operations_hall)
 "smA" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "smC" = (
@@ -22289,7 +22289,7 @@
 	},
 /area/lawankaoutpost/colony/southdorms)
 "sob" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
@@ -22614,7 +22614,7 @@
 	},
 /area/lawankaoutpost/colony/mining)
 "sBt" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/core,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/core,
 /turf/open/floor/mainship/blue{
 	dir = 5
 	},
@@ -22726,7 +22726,7 @@
 /turf/open/floor/tile/brown/full,
 /area/lawankaoutpost/colony/cargo)
 "sEu" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "sEx" = (
@@ -22850,7 +22850,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/chapel)
 "sIW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
 "sJh" = (
@@ -23085,7 +23085,7 @@
 /area/lawankaoutpost/outside/northwest)
 "sUs" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "sUt" = (
@@ -23144,7 +23144,7 @@
 /turf/open/floor/tile/dark/blue2,
 /area/lawankaoutpost/colony/operations_administration)
 "sWm" = (
-/obj/structure/sign/xenobio{
+/obj/structure/sign/tyranidbio{
 	dir = 8
 	},
 /obj/structure/table,
@@ -23396,7 +23396,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "teU" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/east)
@@ -23448,7 +23448,7 @@
 /turf/open/floor/tile/red/whitered,
 /area/lawankaoutpost/colony/operations_hall)
 "tio" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/mainship/blue,
 /area/lawankaoutpost/colony/biologics)
 "tiq" = (
@@ -24092,7 +24092,7 @@
 /turf/open/floor/freezer,
 /area/lawankaoutpost/colony/biologics)
 "tIk" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "tIu" = (
@@ -24518,7 +24518,7 @@
 /area/lawankaoutpost/colony/engineering)
 "tZS" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "tZX" = (
@@ -24970,7 +24970,7 @@
 /turf/open/floor/tile/dark/red2/corner,
 /area/lawankaoutpost/colony/marshalls)
 "uxb" = (
-/obj/effect/decal/remains/xeno,
+/obj/effect/decal/remains/tyranid,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
@@ -25159,7 +25159,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/operations_hall)
 "uDc" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "uDj" = (
@@ -25175,7 +25175,7 @@
 	},
 /area/lawankaoutpost/colony/operations_meeting)
 "uDr" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "uDw" = (
@@ -25250,7 +25250,7 @@
 /area/lawankaoutpost/caves/nukestorage)
 "uHz" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "uIt" = (
@@ -25354,7 +25354,7 @@
 	},
 /area/lawankaoutpost/colony/marshalls)
 "uLe" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/red2{
 	dir = 1
 	},
@@ -25697,7 +25697,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/cargo)
 "vaT" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
 "vbc" = (
@@ -25806,7 +25806,7 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lawankaoutpost/colony/recdorms)
 "veS" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/plating,
 /area/lawankaoutpost/colony/biologics_storage)
 "vfb" = (
@@ -26120,7 +26120,7 @@
 /turf/open/floor/tile/dark/yellow2,
 /area/lawankaoutpost/colony/engineering)
 "vuf" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/red2{
 	dir = 4
 	},
@@ -26174,7 +26174,7 @@
 /area/lawankaoutpost/colony/cabin)
 "vwL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/red2{
 	dir = 8
 	},
@@ -26306,7 +26306,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/east)
 "vBW" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/item/ammo_casing,
 /turf/open/floor/tile/dark/red2{
 	dir = 8
@@ -26616,7 +26616,7 @@
 /turf/open/floor/tile/yellow/full,
 /area/lawankaoutpost/colony/mining)
 "vNG" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "vOg" = (
@@ -26773,7 +26773,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/engineering)
 "vVu" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "vVy" = (
@@ -26806,7 +26806,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
@@ -27093,7 +27093,7 @@
 /area/lawankaoutpost/colony/hydroponics)
 "wfL" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "wfS" = (
@@ -27243,7 +27243,7 @@
 	},
 /area/lawankaoutpost/colony/biologics)
 "wks" = (
-/obj/structure/xenoautopsy/jar_shelf,
+/obj/structure/tyranidautopsy/jar_shelf,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
@@ -27272,7 +27272,7 @@
 	},
 /area/lawankaoutpost/colony/recdorms)
 "wlA" = (
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "wlX" = (
@@ -27446,7 +27446,7 @@
 /turf/open/floor/cult,
 /area/lawankaoutpost/caves/southwest)
 "wue" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
 "wuj" = (
@@ -27996,7 +27996,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "wRr" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
@@ -28025,7 +28025,7 @@
 /area/lawankaoutpost/colony/northdorms)
 "wTt" = (
 /obj/structure/table,
-/obj/item/storage/backpack/marine/satchel/green,
+/obj/item/storage/backpack/guardsman/satchel/green,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/mining)
 "wTM" = (
@@ -28076,7 +28076,7 @@
 /area/lawankaoutpost/colony/medbay)
 "wWw" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west/garbledradio)
 "wXb" = (
@@ -28300,7 +28300,7 @@
 /area/lawankaoutpost/colony/operations_hall)
 "xdN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark/red2{
@@ -28416,7 +28416,7 @@
 /area/lawankaoutpost/outside/northeast)
 "xho" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/northwest)
 "xhp" = (
@@ -28426,7 +28426,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/central)
 "xhO" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "xhU" = (
@@ -28524,7 +28524,7 @@
 /area/lawankaoutpost/caves/rock)
 "xmk" = (
 /obj/structure/table,
-/obj/item/storage/backpack/marine/satchel/green,
+/obj/item/storage/backpack/guardsman/satchel/green,
 /obj/structure/cable,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/mining)
@@ -28719,8 +28719,8 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/northeast)
 "xuA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/caves/rock)
 "xuZ" = (
@@ -28895,7 +28895,7 @@
 /turf/closed/mineral/smooth,
 /area/lawankaoutpost/outside/northeast)
 "xCh" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "xCF" = (
@@ -29018,7 +29018,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "xHB" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/limb,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,
 /obj/item/ammo_casing,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 5
@@ -29397,7 +29397,7 @@
 /area/lawankaoutpost/colony/operations_storage)
 "xVY" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "xWj" = (
@@ -29687,7 +29687,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/operations_kitchen)
 "yhX" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor,
 /area/lawankaoutpost/colony/operations_kitchen)
 "yib" = (

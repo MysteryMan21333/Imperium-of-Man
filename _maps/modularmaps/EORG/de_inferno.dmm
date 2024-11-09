@@ -629,7 +629,7 @@
 /turf/open/floor/tile/dark,
 /area/deathmatch)
 "lc" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/structure/platform,
 /turf/open/floor/plating/asteroidplating,
 /area/deathmatch)
@@ -815,7 +815,7 @@
 /turf/open/floor/wood/broken,
 /area/deathmatch)
 "rA" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4
 	},
@@ -1038,7 +1038,7 @@
 /area/deathmatch)
 "yG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/asteroidplating,
 /area/deathmatch)
 "yV" = (
@@ -1046,7 +1046,7 @@
 /turf/open/floor/wood,
 /area/deathmatch)
 "zq" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/asteroidplating,
 /area/deathmatch)
 "zx" = (
@@ -1505,7 +1505,7 @@
 /area/deathmatch)
 "OS" = (
 /obj/structure/prop/mainship/ship_memorial{
-	desc = "A ship memorial dedicated to the triumphs of the TGMC and the fallen marines of this ship. On the left there are grand tales of victory etched into the slab. On the right there is a list of famous marines who have fallen in combat serving the TGMC. There seems to be an etch of three spikes on the free space below."
+	desc = "A ship memorial dedicated to the triumphs of the TGMC and the fallen guardsmans of this ship. On the left there are grand tales of victory etched into the slab. On the right there is a list of famous guardsmans who have fallen in combat serving the TGMC. There seems to be an etch of three spikes on the free space below."
 	},
 /turf/open/floor/plating/mainship,
 /area/deathmatch)
@@ -1526,7 +1526,7 @@
 /turf/open/floor/industrial,
 /area/deathmatch)
 "PT" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/wood,
 /area/deathmatch)
 "Qr" = (

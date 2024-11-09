@@ -1052,7 +1052,7 @@
 /area/bigredv2/caves/lambda_lab)
 "akB" = (
 /obj/structure/table/reinforced,
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /turf/open/floor/tile/purple/whitepurple{
 	dir = 1
 	},
@@ -1405,7 +1405,7 @@
 /area/bigredv2/caves/lambda_lab)
 "amP" = (
 /obj/machinery/door/airlock/mainship/research/glass/free_access{
-	name = "\improper Lambda Lab Xenobiology"
+	name = "\improper Lambda Lab Tyranidbiology"
 	},
 /turf/open/floor/marking/delivery,
 /area/bigredv2/caves/lambda_lab)
@@ -2727,7 +2727,7 @@
 /turf/open/floor/wood,
 /area/bigredv2/outside/dorms)
 "azQ" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/north)
 "aAc" = (
@@ -3301,7 +3301,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/hydroponics)
 "aFd" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
@@ -4353,7 +4353,7 @@
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/virology)
 "aNf" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/virology)
 "aNg" = (
@@ -5990,7 +5990,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "bpm" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
 /turf/open/floor/wood,
@@ -7196,7 +7196,7 @@
 /turf/open/floor/tile/dark/yellow2/corner,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "bCE" = (
-/obj/item/stack/sheet/xenochitin,
+/obj/item/stack/sheet/tyranidchitin,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "bCK" = (
@@ -7538,7 +7538,7 @@
 	},
 /area/bigredv2/outside/c)
 "bNC" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "bOB" = (
@@ -7738,7 +7738,7 @@
 	},
 /area/bigredv2/outside/sw)
 "cjX" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "cki" = (
@@ -7839,7 +7839,7 @@
 /turf/open/floor/marking/asteroidwarning,
 /area/bigredv2/outside/nw)
 "cwd" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/c)
 "cxr" = (
@@ -7894,7 +7894,7 @@
 /turf/open/space/basic,
 /area/space)
 "cEb" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /obj/structure/cable,
 /turf/open/floor/tile/dark,
@@ -7956,7 +7956,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/cargo)
 "cMN" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/caves/lambda_lab)
 "cNA" = (
@@ -8043,7 +8043,7 @@
 /area/bigredv2/outside/space_port)
 "cTQ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "cVB" = (
@@ -8253,7 +8253,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/engineering/east)
 "dun" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/dark/yellow2/corner{
 	dir = 8
 	},
@@ -8501,8 +8501,8 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/virology)
 "dZG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "eaq" = (
@@ -8527,7 +8527,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southwest)
 "eci" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/core,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/core,
 /obj/item/shard,
 /turf/open/floor/tile/purple/whitepurplefull,
 /area/bigredv2/caves/lambda_lab)
@@ -8945,7 +8945,7 @@
 	},
 /area/bigredv2/outside/cargo)
 "eZU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/east/garbledradio)
 "fax" = (
@@ -9159,7 +9159,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/c)
 "fuU" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/northeast/garbledradio)
 "fxl" = (
@@ -9317,7 +9317,7 @@
 /turf/closed/wall,
 /area/bigredv2/outside/engineering)
 "fQz" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/northeast/garbledradio)
 "fQL" = (
@@ -9386,7 +9386,7 @@
 /turf/open/floor/plating,
 /area/bigredv2/outside/space_port)
 "fVW" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/down,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/down,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/n)
@@ -9407,11 +9407,11 @@
 /turf/open/floor,
 /area/bigredv2/outside/hydroponics)
 "fXC" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/bigredv2/outside/c)
 "fYP" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/north)
 "fZp" = (
@@ -9521,7 +9521,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/marshal_office)
 "gne" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/virology)
 "gnk" = (
@@ -9545,7 +9545,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/dark/purple2,
 /area/bigredv2/caves/lambda_lab)
 "gsc" = (
@@ -9559,11 +9559,11 @@
 	},
 /area/bigredv2/outside/nw)
 "gtb" = (
-/obj/effect/mapping_helpers/area_flag_injector/marine_base,
+/obj/effect/mapping_helpers/area_flag_injector/guardsman_base,
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/telecomm)
 "gvF" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "gwQ" = (
@@ -9664,7 +9664,7 @@
 /turf/open/floor/tile/dark/purple2,
 /area/bigredv2/caves/lambda_lab)
 "gGk" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/southwest)
 "gGl" = (
@@ -9719,7 +9719,7 @@
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "gKk" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "gKM" = (
@@ -9932,7 +9932,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "hbR" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/turf_decal/sandedge/corner2{
 	dir = 4
 	},
@@ -10001,7 +10001,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/marking/asteroidwarning,
 /area/bigredv2/caves/lambda_lab)
 "hli" = (
@@ -10152,7 +10152,7 @@
 "hGw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /obj/effect/turf_decal/warning_stripes,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -10205,7 +10205,7 @@
 /turf/open/floor/asteroidfloor,
 /area/bigredv2/outside/virology)
 "hOx" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
@@ -10251,7 +10251,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/marshal_office)
 "hWw" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "hWJ" = (
@@ -10355,8 +10355,8 @@
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
 /area/bigredv2/outside/c)
 "ihF" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "ihJ" = (
@@ -10722,7 +10722,7 @@
 	},
 /area/bigredv2/caves/northeast/garbledradio)
 "iYQ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/north)
 "iZv" = (
@@ -10772,7 +10772,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "jcm" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "jdc" = (
@@ -10788,7 +10788,7 @@
 	},
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "jdy" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/structure/cable,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark/purple2,
@@ -10813,7 +10813,7 @@
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "jeH" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/caves/lambda_lab)
 "jeS" = (
@@ -10862,7 +10862,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "jiy" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /obj/effect/turf_decal/warning_stripes,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -10910,7 +10910,7 @@
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
 "jnj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "jnD" = (
@@ -10996,7 +10996,7 @@
 /turf/open/floor/plating,
 /area/bigredv2/outside/engineering)
 "juj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "juw" = (
@@ -11093,7 +11093,7 @@
 /area/bigredv2/caves/south)
 "jDi" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/dark/purple2,
 /area/bigredv2/caves/lambda_lab)
 "jDz" = (
@@ -11205,8 +11205,8 @@
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "jLx" = (
 /obj/effect/decal/cleanable/blood,
-/obj/structure/xenoautopsy/tank/broken,
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/structure/tyranidautopsy/tank/broken,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/effect/turf_decal/warning_stripes,
 /turf/open/floor/tile/purple/whitepurple,
 /area/bigredv2/caves/lambda_lab)
@@ -11353,7 +11353,7 @@
 /obj/machinery/air_alarm{
 	dir = 8
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/dark/purple2{
 	dir = 4
 	},
@@ -11595,7 +11595,7 @@
 /turf/open/floor/wood,
 /area/bigredv2/outside/bar)
 "kJa" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "kJU" = (
@@ -11639,12 +11639,12 @@
 /turf/closed/wall,
 /area/bigredv2/outside/telecomm)
 "kSj" = (
-/obj/item/stack/sheet/xenochitin,
+/obj/item/stack/sheet/tyranidchitin,
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "kSo" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/marking/asteroidwarning{
 	dir = 4
@@ -11962,7 +11962,7 @@
 /turf/open/floor/tile/dark/red2,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "lIi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/northeast)
 "lIJ" = (
@@ -12009,7 +12009,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/w)
 "lNE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "lOi" = (
@@ -12109,7 +12109,7 @@
 /area/bigredv2/outside/dorms)
 "lXU" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "lYl" = (
@@ -12127,7 +12127,7 @@
 /area/bigredv2/caves/lambda_lab)
 "maQ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/damaged/four,
 /area/bigredv2/caves/lambda_lab)
 "mbR" = (
@@ -12304,16 +12304,16 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "msE" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/north)
 "msV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "mtc" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "muf" = (
@@ -12367,7 +12367,7 @@
 /area/space)
 "mCI" = (
 /obj/machinery/miner/damaged/platinum,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "mEZ" = (
@@ -12454,7 +12454,7 @@
 	},
 /area/bigredv2/outside/space_port/two)
 "mNY" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
@@ -12761,7 +12761,7 @@
 /area/bigredv2/outside/marshal_office)
 "nsO" = (
 /obj/structure/cable,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
@@ -12813,7 +12813,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/marshal_office)
 "nxX" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating,
 /area/bigredv2/caves/lambda_lab)
@@ -12827,7 +12827,7 @@
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "nzJ" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/caves/lambda_lab)
 "nzQ" = (
@@ -12932,7 +12932,7 @@
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/space_port)
 "nIY" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/west)
 "nJo" = (
@@ -13149,7 +13149,7 @@
 /turf/open/floor/wood,
 /area/bigredv2/outside/bar)
 "ojF" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor,
 /area/bigredv2/outside/marshal_office)
 "okf" = (
@@ -13291,7 +13291,7 @@
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/marshal_office)
 "oBp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/north)
 "oCl" = (
@@ -13520,8 +13520,8 @@
 /turf/open/floor,
 /area/bigredv2/outside/hydroponics)
 "pjg" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "pkg" = (
@@ -13562,7 +13562,7 @@
 /turf/open/floor/elevatorshaft,
 /area/bigredv2/caves/lambda_lab)
 "pnd" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/bcircuit/anim,
 /area/bigredv2/caves/lambda_lab)
@@ -13914,7 +13914,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/bigredv2/outside/marshal_office)
 "qeD" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
@@ -13963,7 +13963,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/marshal_office)
 "qiV" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "qjc" = (
@@ -14031,7 +14031,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "qrT" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/plating/ground/mars/random/dirt,
 /area/bigredv2/outside/c)
 "qsc" = (
@@ -14075,7 +14075,7 @@
 /turf/open/floor/wood,
 /area/bigredv2/caves/lambda_lab)
 "qyN" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/darkgreen/darkgreen2/corner{
 	dir = 8
 	},
@@ -14206,7 +14206,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/darkgreen/darkgreen2/corner{
 	dir = 8
 	},
@@ -14418,7 +14418,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "rlJ" = (
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /obj/effect/turf_decal/warning_stripes,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -14484,7 +14484,7 @@
 	pixel_y = 8
 	},
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/freezer,
 /area/bigredv2/outside/dorms)
 "rqt" = (
@@ -14575,7 +14575,7 @@
 /area/bigredv2/outside/cargo)
 "ryU" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "rzc" = (
@@ -14586,7 +14586,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "rAy" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "rBl" = (
@@ -14684,7 +14684,7 @@
 /area/bigredv2/outside/nw)
 "rJM" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/tyranid_tunnel_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "rKr" = (
@@ -14796,7 +14796,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "rVq" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/turf_decal/sandedge{
 	dir = 4
 	},
@@ -14863,7 +14863,7 @@
 /area/bigredv2/caves/rock)
 "shC" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "sjK" = (
@@ -14921,7 +14921,7 @@
 /obj/item/paper/Court,
 /turf/open/floor/engine/cult,
 /area/bigredv2/outside/marshal_office)
-"som" = (
+"chaos" = (
 /obj/machinery/light{
 	dir = 8
 	},
@@ -15107,7 +15107,7 @@
 	},
 /area/bigredv2/outside/marshal_office)
 "sJp" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "sLE" = (
@@ -15121,7 +15121,7 @@
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/west)
 "sOq" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "sPO" = (
@@ -15240,7 +15240,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/space_port)
 "tej" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
 "teq" = (
@@ -15327,7 +15327,7 @@
 /area/bigredv2/outside/space_port)
 "tqt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/green/whitegreenfull,
 /area/bigredv2/caves/lambda_lab)
@@ -15478,7 +15478,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/general_offices)
 "tJZ" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/structure/cable,
 /obj/effect/turf_decal/sandedge{
 	dir = 8
@@ -15534,7 +15534,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "tPk" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
 "tPn" = (
@@ -15842,7 +15842,7 @@
 	},
 /area/bigredv2/caves/southwest)
 "uuU" = (
-/obj/structure/xenoautopsy/tank/alien,
+/obj/structure/tyranidautopsy/tank/alien,
 /obj/effect/turf_decal/warning_stripes,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -15888,7 +15888,7 @@
 /turf/open/floor/plating,
 /area/bigredv2/outside/space_port)
 "uyy" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/lambda_lab)
@@ -16282,7 +16282,7 @@
 /area/bigredv2/outside/filtration_plant)
 "vsj" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/warning{
 	dir = 5
 	},
@@ -16363,7 +16363,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "vzx" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/turf_decal/sandedge{
 	dir = 8
 	},
@@ -16711,7 +16711,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "wjH" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/turf_decal/sandedge{
 	dir = 4
 	},
@@ -16739,7 +16739,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "wnR" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/marking/asteroidwarning{
 	dir = 1
 	},
@@ -16912,7 +16912,7 @@
 	},
 /area/bigredv2/caves/lambda_lab)
 "wFx" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -16975,7 +16975,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "wPx" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "wPV" = (
@@ -17070,7 +17070,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast/garbledradio)
 "xba" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "xbZ" = (
@@ -17235,7 +17235,7 @@
 	},
 /area/bigredv2/outside/s)
 "xvj" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "xvL" = (
@@ -17318,7 +17318,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "xET" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "xFo" = (
@@ -17360,12 +17360,12 @@
 /turf/open/floor,
 /area/bigredv2/outside/hydroponics)
 "xJI" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/lambda_lab)
 "xKo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
@@ -17404,7 +17404,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/telecomm)
 "xPh" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/limb,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,
 /turf/open/floor/marking/asteroidwarning{
 	dir = 10
 	},
@@ -17445,7 +17445,7 @@
 /area/bigredv2/outside/nanotrasen_lab/inside)
 "xRL" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/dark/purple2{
 	dir = 8
 	},
@@ -17579,7 +17579,7 @@
 /turf/open/floor/asteroidfloor,
 /area/bigredv2/outside/space_port)
 "ycd" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "ycw" = (
@@ -20762,7 +20762,7 @@ gCQ
 gCQ
 hYk
 dHg
-som
+chaos
 wpe
 kRS
 kAz
@@ -22060,7 +22060,7 @@ cTd
 jkE
 azc
 azc
-som
+chaos
 azc
 azc
 azc

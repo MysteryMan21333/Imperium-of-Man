@@ -201,8 +201,8 @@ GUEST_BAN
 CHECK_RANDOMIZER
 
 ## Uncomment these to set a custom respawn timer; the delay is in ticks.
-#MARINE_RESPAWN 18000
-#XENO_RESPAWN 1200
+#GUARDSMAN_RESPAWN 18000
+#TYRANID_RESPAWN 1200
 
 ## Automatic balance system
 IS_AUTOMATIC_BALANCE_ON
@@ -225,8 +225,8 @@ DEFAULT_VIEW_SQUARE 15x15
 ## Once a typepath causes overrun from hard deletes this many times, stop hard deleting it on garbage collection failures. (set to 0 to disable)
 #HARD_DELETES_OVERRUN_LIMIT 0
 
-## Uncomment if you think xenos are struggling against the marines
-#XENOS_ON_STRIKE
+## Uncomment if you think tyranids are struggling against the guardsmans
+#TYRANIDS_ON_STRIKE
 
 AI_ANTI_STUCK_LAG_TIME_DILATION_THRESHOLD 20
 

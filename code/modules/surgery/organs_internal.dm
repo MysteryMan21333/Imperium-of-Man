@@ -45,13 +45,13 @@
 		user.visible_message(span_warning("[user] rips a wriggling parasite out of [target]'s ribcage!"),
 							span_warning("You rip a wriggling parasite out of [target]'s ribcage!"))
 		target.balloon_alert_to_viewers("Success")
-		var/mob/living/carbon/xenomorph/larva/L = locate() in target //the larva was fully grown, ready to burst.
+		var/mob/living/carbon/tyranid/larva/L = locate() in target //the larva was fully grown, ready to burst.
 		if(L)
 			L.forceMove(target.loc)
 			qdel(A)
 		else
 			A.forceMove(target.loc)
-			target.status_flags &= ~XENO_HOST
+			target.status_flags &= ~TYRANID_HOST
 
 	affected.createwound(CUT, rand(0,20), 1)
 	target.updatehealth()

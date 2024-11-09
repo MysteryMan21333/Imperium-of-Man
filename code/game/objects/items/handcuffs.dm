@@ -2,7 +2,7 @@
 	name = "handcuffs"
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "handcuff"
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT

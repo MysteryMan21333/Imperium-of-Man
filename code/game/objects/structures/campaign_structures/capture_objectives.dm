@@ -32,7 +32,7 @@
 	var/new_icon_state
 	if(!owning_faction)
 		switch(capturing_faction)
-			if(FACTION_TERRAGOV)
+			if(FACTION_IMPERIUM)
 				new_icon_state = "campaign_objective_capturing_tgmc"
 			if(null)
 				new_icon_state = "campaign_objective"
@@ -40,7 +40,7 @@
 				new_icon_state = "campaign_objective_capturing_som"
 	else
 		switch(owning_faction)
-			if(FACTION_TERRAGOV)
+			if(FACTION_IMPERIUM)
 				new_icon_state = capturing_faction ? "campaign_objective_decap_tgmc" : "campaign_objective_tgmc"
 			else
 				new_icon_state = capturing_faction ? "campaign_objective_decap_som" : "campaign_objective_som"
@@ -132,21 +132,21 @@
 //sensor tower
 /obj/effect/landmark/campaign_structure/sensor_tower
 	name = "sensor tower objective"
-	icon = 'icons/obj/structures/sensor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 	mission_types = list(
 		/datum/campaign_mission/tdm,
 		/datum/campaign_mission/tdm/orion,
 		/datum/campaign_mission/tdm/first_mission,
 		/datum/campaign_mission/tdm/mech_wars,
-		/datum/campaign_mission/tdm/mech_wars/som,
+		/datum/campaign_mission/tdm/mech_wars/chaos,
 	)
 	spawn_object = /obj/structure/campaign_objective/capture_objective/sensor_tower
 
 /obj/structure/campaign_objective/capture_objective/sensor_tower
 	name = "sensor tower"
 	desc = "A tall tower with a sensor array at the top and a control box at the bottom. Used to hack into colony control."
-	icon = 'icons/obj/structures/sensor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 	obj_flags = NONE
 	capture_flags = CAPTURE_OBJECTIVE_RECAPTURABLE
@@ -161,7 +161,7 @@
 	icon_state = initial(icon_state)
 	if(!owning_faction)
 		switch(capturing_faction)
-			if(FACTION_TERRAGOV)
+			if(FACTION_IMPERIUM)
 				icon_state += "_cap_tgmc"
 			if(null)
 				return
@@ -169,15 +169,15 @@
 				icon_state += "_cap_som"
 		return
 	switch(owning_faction)
-		if(FACTION_TERRAGOV)
+		if(FACTION_IMPERIUM)
 			icon_state += capturing_faction ? "_decap_tgmc" : "_tgmc"
 		else
-			icon_state += capturing_faction ? "_decap_som" : "_som"
+			icon_state += capturing_faction ? "_decap_som" : "_chaos"
 
 //fulton objectives = they qdel after being captured
 /obj/effect/landmark/campaign_structure/phoron_crate
 	name = "phoron crate objective"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign_structures.dmi'
 	icon_state = "orebox_phoron"
 	mission_types = list(/datum/campaign_mission/capture_mission/phoron_capture)
 	spawn_object = /obj/structure/campaign_objective/capture_objective/fultonable
@@ -219,18 +219,18 @@
 
 /obj/effect/landmark/campaign_structure/asat_system
 	name = "ASAT system"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign_structures.dmi'
 	icon_state = "asat"
 	mission_types = list(/datum/campaign_mission/capture_mission/asat)
 	spawn_object = /obj/structure/campaign_objective/capture_objective/fultonable/asat_system
 
 /obj/structure/campaign_objective/capture_objective/fultonable/asat_system
 	name = "\improper T-4000 ASAT system"
-	icon = 'icons/obj/structures/campaign_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign_structures.dmi'
 	icon_state = "asat"
 	desc = "A sophisticated surface to space missile system designed for attacking orbiting satellites or spacecraft."
 	capture_flags = CAPTURE_OBJECTIVE_RECAPTURABLE
-	owning_faction = FACTION_TERRAGOV
+	owning_faction = FACTION_IMPERIUM
 
 /obj/structure/campaign_objective/capture_objective/fultonable/asat_system/capture_check(mob/living/user)
 	//This is a 'defend' objective. The defending faction can't actually claim it for themselves, just decap it.

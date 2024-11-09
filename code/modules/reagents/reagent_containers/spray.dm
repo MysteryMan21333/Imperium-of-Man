@@ -1,11 +1,11 @@
 /obj/item/reagent_containers/spray
 	name = "spray bottle"
 	desc = "A spray bottle, with an unscrewable top."
-	icon = 'icons/obj/items/spray.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/spray.dmi'
 	icon_state = "cleaner"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/spray_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/spray_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/spray_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/spray_right.dmi',
 	)
 	worn_icon_state = "cleaner"
 	reagent_flags = OPENCONTAINER_NOUNIT
@@ -146,7 +146,7 @@
 /obj/item/reagent_containers/spray/waterflower
 	name = "water flower"
 	desc = "A seemingly innocent sunflower...with a twist."
-	icon = 'icons/obj/items/harvest.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/harvest.dmi'
 	icon_state = "sunflower"
 	worn_icon_state = "sunflower"
 	amount_per_transfer_from_this = 1

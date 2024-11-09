@@ -16,19 +16,19 @@
 //recreational items
 
 /obj/item/toy
-	icon = 'icons/obj/items/toy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/toy.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/toys_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/toys_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/toys_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/toys_right.dmi',
 	)
 	throw_speed = 4
 	throw_range = 20
 	force = 0
 
-/obj/item/toy/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/toy/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!CONFIG_GET(flag/fun_allowed))
 		return FALSE
-	attack_hand(xeno_attacker)
+	attack_hand(tyranid_attacker)
 
 
 /*
@@ -112,7 +112,7 @@
 	throw_speed = 4
 	throw_range = 20
 	force = 0
-	icon = 'icons/obj/items/toy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/toy.dmi'
 	icon_state = "syndballoon"
 	worn_icon_state = "syndballoon"
 	w_class = WEIGHT_CLASS_BULKY
@@ -123,11 +123,11 @@
 /obj/item/toy/blink
 	name = "electronic blink toy game"
 	desc = "Blink.  Blink.  Blink. Ages 8 and up."
-	icon = 'icons/obj/items/radio.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/radio.dmi'
 	icon_state = "beacon"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/tools_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/tools_right.dmi',
 	)
 	worn_icon_state = "signaler"
 
@@ -137,7 +137,7 @@
 /obj/item/toy/spinningtoy
 	name = "Gravitational Singularity"
 	desc = "\"Singulo\" brand spinning toy."
-	icon = 'icons/obj/singularity.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/singularity.dmi'
 	icon_state = "singularity_s1"
 
 
@@ -149,7 +149,7 @@
 /obj/item/toy/crayon
 	name = "crayon"
 	desc = "A colourful crayon. Please refrain from eating it or putting it in your nose."
-	icon = 'icons/obj/items/crayons.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/crayons.dmi'
 	icon_state = "crayonred"
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("attacked", "coloured")
@@ -214,7 +214,7 @@
 /obj/item/toy/waterflower
 	name = "Water Flower"
 	desc = "A seemingly innocent sunflower...with a twist."
-	icon = 'icons/obj/items/harvest.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/harvest.dmi'
 	icon_state = "sunflower"
 	worn_icon_state = "sunflower"
 	var/empty = 0
@@ -254,7 +254,7 @@
 
 		var/obj/effect/decal/D = new/obj/effect/decal/(get_turf(src))
 		D.name = "water"
-		D.icon = 'icons/obj/items/chemistry.dmi'
+		D.icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 		D.icon_state = "chempuff"
 		D.create_reagents(5)
 		src.reagents.trans_to(D, 1)
@@ -364,7 +364,7 @@
 	desc = "No bother to sink or swim when you can just float!"
 	icon_state = "inflatable"
 	worn_icon_state = "inflatable"
-	icon = 'icons/obj/clothing/belts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/belts.dmi'
 	equip_slot_flags = ITEM_SLOT_BELT
 
 
@@ -386,7 +386,7 @@
 /obj/item/toy/dice
 	name = "d6"
 	desc = "A dice with six sides."
-	icon = 'icons/obj/items/dice.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/dice.dmi'
 	icon_state = "d66"
 	w_class = WEIGHT_CLASS_TINY
 	var/sides = 6
@@ -419,7 +419,7 @@
 /obj/item/toy/bikehorn
 	name = "bike horn"
 	desc = "A horn off of a bicycle."
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "bike_horn"
 	worn_icon_state = "bike_horn"
 	throwforce = 3
@@ -549,7 +549,7 @@
 
 /obj/item/toy/plush/royalqueen
 	name = "royal queen plushie"
-	desc = "A plushie depicting a royal xenomorph queen. Smells faintly of stardust and baguettes, with a tag that has Wee! written on it."
+	desc = "A plushie depicting a royal tyranid queen. Smells faintly of stardust and baguettes, with a tag that has Wee! written on it."
 	icon_state = "queenplushie"
 	worn_icon_state = "queenplushie"
 	attack_verb = list("nuzzles", "bops", "pats")
@@ -792,11 +792,11 @@
 /obj/structure/hoop
 	name = "basketball hoop"
 	desc = "Boom, Shakalaka!"
-	icon = 'icons/obj/structures/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/misc.dmi'
 	icon_state = "hoop"
 	anchored = TRUE
 	density = TRUE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	var/side = ""
 	var/id = ""
 

@@ -1,5 +1,5 @@
 /datum/job/imperial
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	comm_title = "IMP"
 	faction = FACTION_IMP
 	skills_type = /datum/skills/imperial
@@ -14,10 +14,10 @@
 	id = /obj/item/card/id
 	//belt =
 	ears = /obj/item/radio/headset/distress/imperial
-	w_uniform = /obj/item/clothing/under/marine/imperial
-	shoes = /obj/item/clothing/shoes/marine/imperial
+	w_uniform = /obj/item/clothing/under/guardsman/imperial
+	shoes = /obj/item/clothing/shoes/guardsman/imperial
 	//wear_suit =
-	gloves = /obj/item/clothing/gloves/marine
+	gloves = /obj/item/clothing/gloves/guardsman
 	//head =
 	//mask =
 	//glasses =
@@ -40,10 +40,10 @@
 	name = "Imperial Guardsman"
 	jobtype = /datum/job/imperial/guardsman
 
-	belt = /obj/item/storage/belt/marine/te_cells
-	wear_suit = /obj/item/clothing/suit/storage/marine/imperial
+	belt = /obj/item/storage/belt/guardsman/te_cells
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/imperial
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle
-	head = /obj/item/clothing/head/helmet/marine/imperial
+	head = /obj/item/clothing/head/helmet/guardsman/imperial
 	r_store = /obj/item/storage/pouch/medical_injectors/firstaid
 	l_store = /obj/item/storage/holster/flarepouch/full
 	back = /obj/item/storage/backpack/lightpack
@@ -71,8 +71,8 @@
 	name = "Guardsman Sergeant"
 	jobtype = /datum/job/imperial/guardsman/sergeant
 
-	wear_suit = /obj/item/clothing/suit/storage/marine/imperial/sergeant
-	head = /obj/item/clothing/head/helmet/marine/imperial/sergeant
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/imperial/sergeant
+	head = /obj/item/clothing/head/helmet/guardsman/imperial/sergeant
 	r_store = /obj/item/storage/pouch/explosive/upp
 	l_store = /obj/item/storage/pouch/field_pouch/full
 
@@ -88,7 +88,7 @@
 	jobtype = /datum/job/imperial/guardsman/medicae
 
 	belt = /obj/item/storage/belt/lifesaver/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/imperial/medicae
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/imperial/medicae
 	glasses = /obj/item/clothing/glasses/hud/health
 	l_store = /obj/item/storage/pouch/medkit/medic
 	r_store = /obj/item/storage/pouch/medical_injectors/medic
@@ -116,10 +116,10 @@
 	jobtype = /datum/job/imperial/commissar
 
 	belt = /obj/item/storage/holster/belt/mateba/full //Ideally this can be later replaced with a bolter
-	w_uniform = /obj/item/clothing/under/marine/imperial/commissar
-	wear_suit = /obj/item/clothing/suit/storage/marine/imperial/commissar
+	w_uniform = /obj/item/clothing/under/guardsman/imperial/commissar
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/imperial/commissar
 	suit_store = /obj/item/weapon/sword/commissar_sword
-	gloves = /obj/item/clothing/gloves/marine/commissar
+	gloves = /obj/item/clothing/gloves/guardsman/commissar
 	head = /obj/item/clothing/head/commissar
 	l_store = /obj/item/storage/pouch/medkit/firstaid
 	r_store = /obj/item/storage/pouch/magazine/pistol/large/mateba

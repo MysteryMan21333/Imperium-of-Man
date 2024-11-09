@@ -1,11 +1,11 @@
-/datum/xeno_caste/warrior
+/datum/tyranid_caste/warrior
 	caste_name = "Warrior"
 	display_name = "Warrior"
 	upgrade_name = ""
 	caste_desc = "A powerful front line combatant."
-	caste_type_path = /mob/living/carbon/xenomorph/warrior
-	tier = XENO_TIER_TWO
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/warrior
+	tier = TYRANID_TIER_TWO
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "warrior" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -28,7 +28,7 @@
 	evolution_threshold = 225
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/defender
+	deevolves_to = /datum/tyranid_caste/defender
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_IS_STRONG
@@ -42,34 +42,34 @@
 	minimap_icon = "warrior"
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/toggle_agility,
-		/datum/action/ability/activable/xeno/warrior/lunge,
-		/datum/action/ability/activable/xeno/warrior/fling,
-		/datum/action/ability/activable/xeno/warrior/grapple_toss,
-		/datum/action/ability/activable/xeno/warrior/punch,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/toggle_agility,
+		/datum/action/ability/activable/tyranid/warrior/lunge,
+		/datum/action/ability/activable/tyranid/warrior/fling,
+		/datum/action/ability/activable/tyranid/warrior/grapple_toss,
+		/datum/action/ability/activable/tyranid/warrior/punch,
 	)
 
-/datum/xeno_caste/warrior/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/warrior/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/warrior/primordial
+/datum/tyranid_caste/warrior/primordial
 	upgrade_name = "Primordial"
 	caste_desc = "A champion of the hive, methodically shatters its opponents with punches rather than slashes."
 	primordial_message = "Our rhythm is unmatched and our strikes lethal, no single foe can stand against us."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/empower,
-		/datum/action/ability/xeno_action/toggle_agility,
-		/datum/action/ability/activable/xeno/warrior/lunge,
-		/datum/action/ability/activable/xeno/warrior/fling,
-		/datum/action/ability/activable/xeno/warrior/grapple_toss,
-		/datum/action/ability/activable/xeno/warrior/punch,
-		/datum/action/ability/activable/xeno/warrior/punch/flurry,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/empower,
+		/datum/action/ability/tyranid_action/toggle_agility,
+		/datum/action/ability/activable/tyranid/warrior/lunge,
+		/datum/action/ability/activable/tyranid/warrior/fling,
+		/datum/action/ability/activable/tyranid/warrior/grapple_toss,
+		/datum/action/ability/activable/tyranid/warrior/punch,
+		/datum/action/ability/activable/tyranid/warrior/punch/flurry,
 	)

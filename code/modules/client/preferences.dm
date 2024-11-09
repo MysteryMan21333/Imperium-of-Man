@@ -61,8 +61,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//Robot specific preferences
 	var/robot_type = "Basic"
 
-	//Xenomorph specific preferences
-	var/xeno_name = "Undefined"
+	//Tyranid specific preferences
+	var/tyranid_name = "Undefined"
 
 	//AI specific preferences
 	var/ai_name = "ARES v3.2"
@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/ethnicity = "Western"
 	var/good_eyesight = TRUE
 	var/preferred_squad = "None"
-	///Your preferred squad, when playing SOM
+	///Your preferred squad, when playing CHAOS
 	var/preferred_squad_som = "None"
 	var/alternate_option = RETURN_TO_LOBBY
 	///Quick equip slots, up to [MAX_QUICK_EQUIP_SLOTS]. One per quick equip hotkey.
@@ -133,10 +133,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/mute_self_combat_messages = FALSE
 	///Whether to mute goonchat combat messages from others, such as when they are shot.
 	var/mute_others_combat_messages = FALSE
-	///Whether to mute xeno health alerts from when other xenos are badly hurt.
-	var/mute_xeno_health_alert_messages = TRUE
-	///Whether we generate a xeno name to show in the chatbox and on the mob.
-	var/show_xeno_rank = TRUE
+	///Whether to mute tyranid health alerts from when other tyranids are badly hurt.
+	var/mute_tyranid_health_alert_messages = TRUE
+	///Whether we generate a tyranid name to show in the chatbox and on the mob.
+	var/show_tyranid_rank = TRUE
 
 	///whether the user wants to hear tts
 	var/sound_tts = TTS_SOUND_ENABLED

@@ -2,7 +2,7 @@
 /obj/structure/rock
 	name = "rock"
 	desc = "A rock. You shouldn't see this one."
-	icon = 'icons/obj/flora/rocks2.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/rocks2.dmi'
 	icon_state = "basalt"
 	max_integrity = 250
 	coverage = 100
@@ -26,7 +26,7 @@
 /obj/structure/rock/basalt
 	name = "volcanic rock"
 	desc = "A volcanic rock. Pioneers used to ride these babies for miles."
-	icon = 'icons/obj/flora/rocks2.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/rocks2.dmi'
 	icon_state = "basalt_1"
 
 /obj/structure/rock/basalt/alt
@@ -93,7 +93,7 @@
 
 /obj/structure/rock/basalt/large_boulder
 	name = "giant volcanic rock"
-	icon = 'icons/obj/flora/rock_large.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/rock_large.dmi'
 	icon_state = "boulder_1"
 	color = "#c7bdbd"
 	bound_height = 64
@@ -132,7 +132,7 @@
 	desc = "A large rock. It's not cooking anything."
 
 /obj/structure/rock/dark/large
-	icon = 'icons/obj/structures/boulder_largedark.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/boulder_largedark.dmi'
 	icon_state = "boulder_largedark1"
 	bound_height = 64
 	bound_width = 64
@@ -144,7 +144,7 @@
 	icon_state = "boulder_largedark3"
 
 /obj/structure/rock/dark/wide
-	icon = 'icons/obj/structures/boulder_widedark.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/boulder_widedark.dmi'
 	icon_state = "boulderwidedark"
 	bound_height = 32
 	bound_width = 64
@@ -154,7 +154,7 @@
 
 /obj/structure/rock/dark/small
 	icon_state = "bouldersmalldark1"
-	icon = 'icons/obj/structures/boulder_small.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/boulder_small.dmi'
 
 /obj/structure/rock/dark/small/two
 	icon_state = "bouldersmalldark2"
@@ -164,7 +164,7 @@
 
 // Cave props
 /obj/structure/rock/dark/stalagmite
-	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	name = "stalagmite"
 	icon_state = "stalagmite"
 	desc = "A cave stalagmite."
@@ -212,14 +212,14 @@
 /obj/structure/rock/variable/stalagmite
 	name = "stalagmite"
 	desc = "An ancient mound of mineral deposits, typically found in caves."
-	icon = 'icons/obj/structures/cave_decor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/cave_decor.dmi'
 	icon_state = "stalagmite"
 	icon_variants = 6
 
 /obj/structure/rock/variable/jungle
 	name = "rock"
 	desc = "A large bunch of slippery looking rocks."
-	icon = 'icons/obj/flora/jungleflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/jungleflora.dmi'
 	icon_state = "rock"
 	density = FALSE
 	icon_variants = 5
@@ -233,7 +233,7 @@
 /obj/structure/rock/variable/jungle_large
 	name = "rocks"
 	desc = "A large bunch of slippery looking rocks."
-	icon = 'icons/obj/flora/largejungleflora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/largejungleflora.dmi'
 	icon_state = "rocks"
 	max_integrity = 350
 	coverage = 75
@@ -245,7 +245,7 @@
 /obj/structure/rock/variable/drought
 	name = "rock"
 	desc = "Some dusty rocks."
-	icon = 'icons/obj/flora/desert_flora.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/desert_flora.dmi'
 	icon_state = "drought"
 	density = FALSE
 	icon_variants = 32
@@ -254,7 +254,7 @@
 /obj/structure/rock/crystal
 	name = "strange crystal"
 	desc = "A strange glowing crystal. Not sure if you should touch it."
-	icon = 'icons/obj/flora/crystals.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/crystals.dmi'
 	icon_state = "big_crystal"
 	light_range = 2
 	light_power = 0.5
@@ -275,7 +275,7 @@
 /obj/structure/rock/variable/crystal_mound
 	name = "strange crystal"
 	desc = "Some strange crystals seem to be pushing out of the ground here..."
-	icon = 'icons/obj/flora/crystals.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/crystals.dmi'
 	icon_state = "crystal_mound"
 	icon_variants = 3
 	light_range = 0.5

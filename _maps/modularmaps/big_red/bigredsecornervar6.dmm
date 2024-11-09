@@ -48,7 +48,7 @@
 /turf/open/shuttle/escapepod,
 /area/bigredv2/caves/secomplex)
 "eE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/south)
 "eM" = (
@@ -68,7 +68,7 @@
 /area/space)
 "fG" = (
 /obj/effect/turf_decal/sandedge,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/caves/secomplex)
 "fY" = (
@@ -76,7 +76,7 @@
 /turf/open/shuttle/escapepod,
 /area/bigredv2/caves/secomplex)
 "ga" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "gd" = (
@@ -86,7 +86,7 @@
 	},
 /area/bigredv2/caves/secomplex)
 "gi" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/body,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/body,
 /obj/item/ammo_casing/bullet,
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/caves/secomplex)
@@ -106,7 +106,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "gZ" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
@@ -241,14 +241,14 @@
 /turf/open/shuttle/escapepod,
 /area/bigredv2/caves/secomplex)
 "ov" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "oB" = (
 /turf/open/shuttle/escapepod,
 /area/bigredv2/caves/secomplex)
 "pE" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/blue/taupeblue,
 /area/bigredv2/caves/secomplex)
 "pV" = (
@@ -295,7 +295,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/caves/secomplex)
 "tb" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/turf_decal/sandedge,
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
@@ -325,7 +325,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
 "ub" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/blue/taupeblue{
 	dir = 10
 	},
@@ -346,7 +346,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
 "uN" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/caves/secomplex)
 "uX" = (
@@ -453,7 +453,7 @@
 /turf/open/shuttle/escapepod,
 /area/bigredv2/caves/secomplex)
 "Ap" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/secomplex)
 "BF" = (
@@ -566,7 +566,7 @@
 /area/bigredv2/caves/secomplex)
 "Ja" = (
 /obj/effect/turf_decal/sandedge,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/caves/secomplex)
 "Jt" = (
@@ -580,7 +580,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
 "Kf" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/caves/secomplex)
 "Kq" = (
@@ -598,7 +598,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/caves/secomplex)
 "Le" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "Lq" = (
@@ -629,7 +629,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "MY" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "Nr" = (
@@ -648,7 +648,7 @@
 /turf/open/shuttle/elevator/grating,
 /area/bigredv2/caves/secomplex)
 "OC" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast/garbledradio)
 "OG" = (
@@ -669,11 +669,11 @@
 	},
 /area/bigredv2/caves/secomplex)
 "PV" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno,
+/obj/effect/decal/cleanable/blood/gibs/tyranid,
 /turf/open/shuttle/elevator/grating,
 /area/bigredv2/caves/secomplex)
 "PY" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/southeast)
 "Qa" = (
@@ -686,7 +686,7 @@
 /turf/open/shuttle/escapepod/five,
 /area/bigredv2/caves/secomplex)
 "Qx" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/caves/secomplex)
 "QD" = (
@@ -708,7 +708,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
 "Rf" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/bigred,
 /area/bigredv2/caves/rock)
 "Ro" = (
@@ -743,7 +743,7 @@
 /turf/open/floor/mainship/mono,
 /area/bigredv2/caves/secomplex)
 "Tw" = (
-/obj/effect/decal/cleanable/blood/gibs/xeno/limb,
+/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/caves/secomplex)
 "TA" = (
@@ -782,7 +782,7 @@
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
 "Wb" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/caves/secomplex)
 "Wh" = (
@@ -823,7 +823,7 @@
 /area/bigredv2/caves/secomplex)
 "Yg" = (
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marinemainship_network,
+/obj/machinery/computer/security/guardsmanmainship_network,
 /turf/open/floor/tile/dark,
 /area/bigredv2/caves/secomplex)
 "Yn" = (
@@ -859,7 +859,7 @@
 /turf/open/floor/mainship/mono,
 /area/bigredv2/caves/secomplex)
 "Zm" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/tile/blue/taupeblue{
 	dir = 6
 	},

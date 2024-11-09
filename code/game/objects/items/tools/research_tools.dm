@@ -5,16 +5,16 @@
 	///Skill level needed to use the tool
 	var/skill_threshold = SKILL_MEDICAL_EXPERT
 
-/obj/item/tool/research/xeno_analyzer
-	name = "xenolinguistic analyzer"
+/obj/item/tool/research/tyranid_analyzer
+	name = "tyranidlinguistic analyzer"
 	desc = "A tool translating communications with some alien species. Can be used to befriend Newt."
-	icon = 'icons/obj/items/implants.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/implants.dmi'
 	icon_state = "implantcase-b"
 
 /obj/item/tool/research/excavation_tool
 	name = "subterrain scanner and excavator"
 	desc = "A tool for locating and uncovering underground resources. Use \"unique action\" when near an excavation site."
-	icon = 'icons/obj/items/surgery_tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/surgery_tools.dmi'
 	icon_state = "alien_drill"
 
 /obj/item/tool/research/excavation_tool/unique_action(mob/user)

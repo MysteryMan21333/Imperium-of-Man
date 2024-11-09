@@ -2,11 +2,11 @@
 //--------------------------------------------------
 
 /obj/item/weapon/gun/pistol
-	icon = 'icons/obj/items/guns/pistols.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/pistols.dmi'
 	icon_state = "" //Defaults to revolver pistol when there's no sprite.
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/pistols_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/pistols_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/pistols_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/pistols_right_1.dmi',
 	)
 	fire_sound = 'sound/weapons/guns/fire/pistol.ogg'
 	unload_sound = 'sound/weapons/guns/interact/pistol_unload.ogg'
@@ -82,12 +82,12 @@
 	icon_state = "tx7"
 	worn_icon_state = "tx7"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/energy_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/energy_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_right_1.dmi',
 	)
 	caliber = CALIBER_PLASMA
 	max_shots = 10
-	icon = 'icons/obj/items/guns/energy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/energy.dmi'
 	reload_sound = 'sound/weapons/guns/interact/tp14_reload.ogg'
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
 	default_ammo_type = /obj/item/ammo_magazine/pistol/plasma_pistol
@@ -101,7 +101,7 @@
 		/obj/item/attachable/gyro,
 		/obj/item/attachable/lace,
 		/obj/item/attachable/buildasentry,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/weapon/gun/shotgun/combat/masterkey,
 	)
 
@@ -578,9 +578,9 @@
 	starting_attachment_types = list(/obj/item/attachable/reddot, /obj/item/attachable/gyro, /obj/item/attachable/compensator)
 
 //-------------------------------------------------------
-//SOM pistol
+//CHAOS pistol
 
-/obj/item/weapon/gun/pistol/som
+/obj/item/weapon/gun/pistol/chaos
 	name = "\improper V-11 pistol"
 	desc = "The standard sidearm used by the Sons of Mars. A reliable and simple weapon that is often seen on the export market on the outer colonies. Typically chambered in 9mm armor piercing rounds."
 	icon_state = "v11"
@@ -592,8 +592,8 @@
 	unload_sound = 'sound/weapons/guns/interact/vp70_unload.ogg'
 	reload_sound = 'sound/weapons/guns/interact/vp70_reload.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/vp70_cocked.ogg'
-	default_ammo_type = /obj/item/ammo_magazine/pistol/som
-	allowed_ammo_types = list(/obj/item/ammo_magazine/pistol/som, /obj/item/ammo_magazine/pistol/som/incendiary, /obj/item/ammo_magazine/pistol/som/extended)
+	default_ammo_type = /obj/item/ammo_magazine/pistol/chaos
+	allowed_ammo_types = list(/obj/item/ammo_magazine/pistol/chaos, /obj/item/ammo_magazine/pistol/chaos/incendiary, /obj/item/ammo_magazine/pistol/chaos/extended)
 	force = 8
 	attachable_allowed = list(
 		/obj/item/attachable/suppressor,
@@ -615,14 +615,14 @@
 	scatter = -1
 	scatter_unwielded = 4
 
-/obj/item/weapon/gun/pistol/som/standard
+/obj/item/weapon/gun/pistol/chaos/standard
 	starting_attachment_types = list(
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/reddot,
 	)
 
-/obj/item/weapon/gun/pistol/som/burst
-	default_ammo_type = /obj/item/ammo_magazine/pistol/som/extended
+/obj/item/weapon/gun/pistol/chaos/burst
+	default_ammo_type = /obj/item/ammo_magazine/pistol/chaos/extended
 	starting_attachment_types = list(
 		/obj/item/attachable/burstfire_assembly,
 		/obj/item/attachable/reddot,
@@ -672,7 +672,7 @@
 /obj/item/weapon/gun/pistol/xmdivider
 	name = "\improper XM104 'Divider' Revolver"
 	desc = "Intertech's one of a kind revolver. Fires custom incendiary .357 rounds, has firemode switch of single action and burst fire. Kicks like a fucking mule. You remember High Command saying: 'Don't let this get into enemy hands'."
-	icon = 'icons/obj/items/guns/pistols64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/pistols64.dmi'
 	icon_state = "xm104"
 	worn_icon_state = "xm104"
 	fire_animation = "xm104_fire"
@@ -748,7 +748,7 @@ It is a modified Beretta 93R, and can fire three round burst or single fire. Whe
 	desc = "The PL-5 is a true and tested ICCAF handgun, used for a very long time with minimal changes to the core design, best used at close quarters with its higher than usual magazine size for its caliber. It is chambered in .45 ACP."
 	icon_state = "pl5"
 	worn_icon_state = "pl5"
-	icon = 'icons/obj/items/guns/pistols64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/pistols64.dmi'
 	caliber = CALIBER_45ACP //codex
 	max_shells = 18 //codex
 	fire_sound = 'sound/weapons/guns/fire/colt.ogg'
@@ -794,8 +794,8 @@ It is a modified Beretta 93R, and can fire three round burst or single fire. Whe
 
 /obj/item/weapon/gun/pistol/knife
 	name = "\improper M6 'Eclipse Raider' ballistic knife"
-	desc = "The back issue survival knife issued to a few TerraGov Marine Corps marines. There are a surprisingly large amount of attachment points on this... knife."
-	icon = 'icons/obj/items/weapons/knives.dmi'
+	desc = "The back issue survival knife issued to a few Imperium Guardsman Corps guardsmans. There are a surprisingly large amount of attachment points on this... knife."
+	icon = 'modular_imperium/master_files/icons/obj/items/weapons/knives.dmi'
 	icon_state = "elite_knife"
 	reload_sound = 'sound/weapons/flipblade.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/pistol_cocked.ogg'
@@ -836,8 +836,8 @@ It is a modified Beretta 93R, and can fire three round burst or single fire. Whe
 // Smart pistol, based on Calico M-950
 /obj/item/weapon/gun/pistol/smart_pistol
 	name = "\improper SP-13 smart pistol"
-	desc = "The SP-13 is a IFF-capable sidearm used by the TerraGov Marine Corps. A cutting-edge miniaturization technology allows mounting of a KTLD IFF system on the pistol, albeit at high manufactoring cost and the usual specialized training required to use such a pistol. Unique design feature high-capacity mag on top of the barrel, with integrated sight."
-	icon = 'icons/obj/items/guns/pistols64.dmi'
+	desc = "The SP-13 is a IFF-capable sidearm used by the Imperium Guardsman Corps. A cutting-edge miniaturization technology allows mounting of a KTLD IFF system on the pistol, albeit at high manufactoring cost and the usual specialized training required to use such a pistol. Unique design feature high-capacity mag on top of the barrel, with integrated sight."
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/pistols64.dmi'
 	icon_state = "sp13"
 	worn_icon_state = "sp13"
 	caliber = CALIBER_9X19 //codex

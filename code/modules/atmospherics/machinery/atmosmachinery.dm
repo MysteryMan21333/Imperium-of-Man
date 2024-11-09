@@ -256,12 +256,12 @@
 		return FALSE
 	var/silent_crawl = FALSE
 	var/vent_crawl_exit_time = 2 SECONDS
-	if(isxeno(user))
-		var/mob/living/carbon/xenomorph/X = user
-		silent_crawl = X.xeno_caste.silent_vent_crawl
-		vent_crawl_exit_time = X.xeno_caste.vent_exit_speed
+	if(istyranid(user))
+		var/mob/living/carbon/tyranid/X = user
+		silent_crawl = X.tyranid_caste.silent_vent_crawl
+		vent_crawl_exit_time = X.tyranid_caste.vent_exit_speed
 	TIMER_COOLDOWN_START(user, COOLDOWN_VENTCRAWL, vent_crawl_exit_time)
-	if(!silent_crawl) //Xenos with silent crawl can silently enter/exit/move through vents.
+	if(!silent_crawl) //Tyranids with silent crawl can silently enter/exit/move through vents.
 		visible_message(span_warning("You hear something squeezing through the ducts."))
 	to_chat(user, span_notice("You begin to climb out of [src]"))
 	if(!do_after(user, vent_crawl_exit_time, IGNORE_HELD_ITEM, src))
@@ -295,9 +295,9 @@
 				user.update_pipe_vision()
 				user.client.eye = target_move  //Byond only updates the eye every tick, This smooths out the movement
 				var/silent_crawl = FALSE //Some creatures can move through the vents silently
-				if(isxeno(user))
-					var/mob/living/carbon/xenomorph/X = user
-					silent_crawl = X.xeno_caste.silent_vent_crawl
+				if(istyranid(user))
+					var/mob/living/carbon/tyranid/X = user
+					silent_crawl = X.tyranid_caste.silent_vent_crawl
 				if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_VENTSOUND) || silent_crawl)
 					return
 				TIMER_COOLDOWN_START(user, COOLDOWN_VENTSOUND, 3 SECONDS)

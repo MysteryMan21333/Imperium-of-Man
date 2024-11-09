@@ -3,7 +3,7 @@
 /obj/item/grab
 	name = "grab"
 	icon_state = "reinforce"
-	icon = 'icons/mob/screen/generic.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen/generic.dmi'
 	atom_flags = NONE
 	item_flags = NOBLUDGEON|DELONDROP|ITEM_ABSTRACT
 	layer = ABOVE_HUD_LAYER

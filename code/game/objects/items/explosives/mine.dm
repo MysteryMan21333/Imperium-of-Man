@@ -10,8 +10,8 @@ Stepping directly on the mine will also blow it up
 */
 /obj/item/explosive/mine
 	name = "\improper M20 Claymore anti-personnel mine"
-	desc = "The M20 Claymore is a directional proximity triggered anti-personnel mine designed by Armat Systems for use by the TerraGov Marine Corps."
-	icon = 'icons/obj/items/mines.dmi'
+	desc = "The M20 Claymore is a directional proximity triggered anti-personnel mine designed by Armat Systems for use by the Imperium Guardsman Corps."
+	icon = 'modular_imperium/master_files/icons/obj/items/mines.dmi'
 	icon_state = "m20"
 	force = 5
 	w_class = WEIGHT_CLASS_SMALL
@@ -170,15 +170,15 @@ Stepping directly on the mine will also blow it up
 	return TRUE
 
 /// Alien attacks trigger the explosive to instantly detonate
-/obj/item/explosive/mine/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/item/explosive/mine/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 	if(triggered) //Mine is already set to go off
 		return
 
-	if(xeno_attacker.a_intent == INTENT_HELP)
+	if(tyranid_attacker.a_intent == INTENT_HELP)
 		return
-	xeno_attacker.visible_message(span_danger("[xeno_attacker] has slashed [src]!"), \
+	tyranid_attacker.visible_message(span_danger("[tyranid_attacker] has slashed [src]!"), \
 	span_danger("We slash [src]!"))
 	playsound(loc, 'sound/weapons/slice.ogg', 25, 1)
 	INVOKE_ASYNC(src, PROC_REF(trigger_explosion))
@@ -235,12 +235,12 @@ Stepping directly on the mine will also blow it up
 /// PMC specific mine, with IFF for PMC units
 /obj/item/explosive/mine/pmc
 	name = "\improper M20P Claymore anti-personnel mine"
-	desc = "The M20P Claymore is a directional proximity triggered anti-personnel mine designed by Armat Systems for use by the TerraGov Marine Corps. It has been modified for use by the NT PMC forces."
+	desc = "The M20P Claymore is a directional proximity triggered anti-personnel mine designed by Armat Systems for use by the Imperium Guardsman Corps. It has been modified for use by the NT PMC forces."
 	icon_state = "m20p"
 
 /obj/item/explosive/mine/anti_tank
 	name = "\improper M92 Valiant anti-tank mine"
-	desc = "The M92 Valiant is a anti-tank mine designed by Armat Systems for use by the TerraGov Marine Corps against heavy armour, both tanks and mechs."
+	desc = "The M92 Valiant is a anti-tank mine designed by Armat Systems for use by the Imperium Guardsman Corps against heavy armour, both tanks and mechs."
 	icon_state = "m92"
 	target_mode = MINE_VEHICLE_ONLY
 

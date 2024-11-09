@@ -3,10 +3,10 @@
 //ENERGY GUNS/ETC
 
 /obj/item/weapon/gun/energy
-	icon = 'icons/obj/items/guns/energy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/energy.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/energy_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/energy_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_right_1.dmi',
 	)
 	attachable_allowed = list()
 	rounds_per_shot = 10 //100 shots.
@@ -155,7 +155,7 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/verticalgrip,
 		/obj/item/attachable/angledgrip,
@@ -248,18 +248,18 @@
 /obj/item/weapon/gun/energy/lasgun/lasrifle
 	name = "\improper LR-73 lasrifle MK2"
 	desc = "A multifunctional laser based rifle with an integrated mode selector. Ideal for any situation. Uses power cells instead of ballistic magazines."
-	icon = 'icons/obj/items/guns/energy64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/energy64.dmi'
 	icon_state = "tx73"
 	worn_icon_state = "tx73"
 	max_shots = 50 //codex stuff
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman
 	rounds_per_shot = 12
 	gun_firemode = GUN_FIREMODE_AUTOMATIC
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/verticalgrip,
 		/obj/item/attachable/angledgrip,
@@ -269,7 +269,7 @@
 		/obj/item/attachable/foldable/bipod,
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/scope,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/scope/mini,
 	)
 	gun_features_flags = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_ENERGY|GUN_AMMO_COUNT_BY_SHOTS_REMAINING|GUN_NO_PITCH_SHIFT_NEAR_EMPTY
@@ -306,7 +306,7 @@
 	///what to change the gun icon_state to when switching to this mode.
 	var/icon_state = "tx73"
 	///Which icon file the radial menu will use.
-	var/radial_icon = 'icons/mob/radial.dmi'
+	var/radial_icon = 'modular_imperium/master_files/icons/mob/radial.dmi'
 	///The icon state the radial menu will use.
 	var/radial_icon_state = "laser"
 	///windup before firing
@@ -407,7 +407,7 @@
 	message_to_user = "You set the tesla shock rifle's power mode mode to standard."
 	fire_mode = GUN_FIREMODE_SEMIAUTO
 	icon_state = "tesla"
-	description = "Fires a slow moving ball of energy that shocks any living thing nearby. Minimal damage, but drains plasma rapidly from xenomorphs."
+	description = "Fires a slow moving ball of energy that shocks any living thing nearby. Minimal damage, but drains plasma rapidly from tyranids."
 
 /datum/lasrifle/tesla_mode/focused
 	rounds_per_shot = 100
@@ -424,7 +424,7 @@
 
 //TE Standard Laser rifle
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle
 	name = "\improper Terra Experimental laser rifle"
 	desc = "A Terra Experimental laser rifle, abbreviated as the TE-R. Has multiple firemodes for tactical flexibility. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
 	reload_sound = 'sound/weapons/guns/interact/standard_laser_rifle_reload.ogg'
@@ -432,7 +432,7 @@
 	icon_state = "ter"
 	worn_icon_state = "ter"
 	max_shots = 60
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman
 	rounds_per_shot = 10
 	gun_firemode = GUN_FIREMODE_AUTOMATIC
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
@@ -441,12 +441,12 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,
 		/obj/item/attachable/magnetic_harness,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/scope/mini,
 		/obj/item/weapon/gun/flamer/mini_flamer,
 		/obj/item/attachable/motiondetector,
@@ -476,15 +476,15 @@
 		"Microwave" = /datum/lasrifle/energy_rifle_mode/microwave,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/rifleman
 	starting_attachment_types = list(/obj/item/attachable/bayonet, /obj/item/attachable/reddot, /obj/item/weapon/gun/flamer/mini_flamer)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/medic
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/medic
 	starting_attachment_types = list(/obj/item/attachable/bayonet, /obj/item/attachable/magnetic_harness, /obj/item/weapon/gun/flamer/mini_flamer)
 
 /datum/lasrifle/energy_rifle_mode/standard
 	rounds_per_shot = 10
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman
 	fire_delay = 0.2 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/Laser Rifle Standard.ogg'
 	message_to_user = "You set the laser rifle's charge mode to standard fire."
@@ -495,7 +495,7 @@
 
 /datum/lasrifle/energy_rifle_mode/overcharge
 	rounds_per_shot = 24
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/overcharge
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/overcharge
 	fire_delay = 0.45 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/Laser overcharge standard.ogg'
 	message_to_user = "You set the laser rifle's charge mode to overcharge."
@@ -506,19 +506,19 @@
 
 /datum/lasrifle/energy_rifle_mode/weakening
 	rounds_per_shot = 24
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/weakening
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/weakening
 	fire_delay = 0.4 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/laser.ogg'
 	message_to_user = "You set the laser rifle's charge mode to weakening."
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 	icon_state = "ter"
 	radial_icon_state = "laser_disabler"
-	description = "Fires a pulse of energy that inflicts slowdown, and deals stamina damage to humans, or drains plasma from xenomorphs."
+	description = "Fires a pulse of energy that inflicts slowdown, and deals stamina damage to humans, or drains plasma from tyranids."
 
 
 /datum/lasrifle/energy_rifle_mode/microwave
 	rounds_per_shot = 30
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/microwave
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/microwave
 	fire_delay = 0.45 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/laser_rifle_2.ogg'
 	message_to_user = "You set the laser rifle's charge mode to microwave."
@@ -529,9 +529,9 @@
 
 ///TE Standard Laser Pistol
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol
 	name = "\improper Terra Experimental laser pistol"
-	desc = "A TerraGov standard issue laser pistol abbreviated as TE-P. It has an integrated charge selector for normal, heat and taser settings. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
+	desc = "A Imperium standard issue laser pistol abbreviated as TE-P. It has an integrated charge selector for normal, heat and taser settings. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
 	reload_sound = 'sound/weapons/guns/interact/standard_laser_pistol_reload.ogg'
 	fire_sound = 'sound/weapons/guns/fire/Laser Pistol Standard.ogg'
 	icon_state = "tep"
@@ -540,7 +540,7 @@
 	equip_slot_flags = ITEM_SLOT_BELT
 	gun_skill_category = SKILL_PISTOLS
 	max_shots = 30 //codex stuff
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/pistol
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/pistol
 	ammo_level_icon = null
 	rounds_per_shot = 20
 	gun_firemode = GUN_FIREMODE_AUTOMATIC
@@ -548,7 +548,7 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,
@@ -576,12 +576,12 @@
 		"Disabler" = /datum/lasrifle/energy_pistol_mode/disabler,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol/tactical
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol/tactical
 	starting_attachment_types = list(/obj/item/attachable/reddot, /obj/item/attachable/lasersight)
 
 /datum/lasrifle/energy_pistol_mode/standard
 	rounds_per_shot = 20
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/pistol
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/pistol
 	fire_delay = 0.15 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/Laser Pistol Standard.ogg'
 	message_to_user = "You set the laser pistol's charge mode to standard fire."
@@ -591,18 +591,18 @@
 
 /datum/lasrifle/energy_pistol_mode/disabler
 	rounds_per_shot = 80
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/pistol/disabler
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/pistol/disabler
 	fire_delay = 10
 	fire_sound = 'sound/weapons/guns/fire/disabler.ogg'
 	message_to_user = "You set the laser pistol's charge mode to disabler fire."
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 	icon_state = "tep"
 	radial_icon_state = "laser_disabler"
-	description = "Fires a disabling pulse that drains stamina. Ineffective against xenomorphs."
+	description = "Fires a disabling pulse that drains stamina. Ineffective against tyranids."
 
 /datum/lasrifle/energy_pistol_mode/heat
 	rounds_per_shot = 100
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/pistol/heat
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/pistol/heat
 	fire_delay = 0.5 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
 	message_to_user = "You set the laser pistol's charge mode to wave heat."
@@ -613,15 +613,15 @@
 
 //TE Standard Laser Carbine
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine
 	name = "\improper Terra Experimental laser carbine"
-	desc = "A TerraGov standard issue laser carbine, otherwise known as TE-C for short. Has multiple firemodes for tactical flexibility. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
+	desc = "A Imperium standard issue laser carbine, otherwise known as TE-C for short. Has multiple firemodes for tactical flexibility. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
 	reload_sound = 'sound/weapons/guns/interact/standard_laser_rifle_reload.ogg'
 	fire_sound = 'sound/weapons/guns/fire/Laser Carbine Scatter.ogg'
 	icon_state = "tec"
 	worn_icon_state = "tec"
 	max_shots = 12
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/blast
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/blast
 	rounds_per_shot = 50
 	gun_firemode = GUN_FIREMODE_SEMIAUTO
 	gun_firemode_list = list(GUN_FIREMODE_SEMIAUTO)
@@ -629,7 +629,7 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,
@@ -667,26 +667,26 @@
 		"Cripple" = /datum/lasrifle/energy_carbine_mode/base/cripple,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/scout
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/scout
 	starting_attachment_types = list(
 		/obj/item/attachable/reddot,
 		/obj/item/weapon/gun/grenade_launcher/underslung,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/mag_harness
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/mag_harness
 	starting_attachment_types = list(
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/weapon/gun/grenade_launcher/underslung,
 		/obj/item/attachable/bayonet,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/gyro
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/gyro
 	starting_attachment_types = list(
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/gyro,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/beginner
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/beginner
 	starting_attachment_types = list(
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/verticalgrip,
@@ -695,7 +695,7 @@
 
 /datum/lasrifle/energy_carbine_mode/auto_burst
 	rounds_per_shot = 12
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/carbine
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/carbine
 	fire_delay = 0.2 SECONDS
 	burst_amount = 4
 	fire_sound = 'sound/weapons/guns/fire/Laser Rifle Standard.ogg'
@@ -706,7 +706,7 @@
 
 /datum/lasrifle/energy_carbine_mode/base/spread
 	rounds_per_shot = 50
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/blast
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/blast
 	fire_delay = 1.5 SECONDS
 	burst_amount = 1
 	fire_sound = 'sound/weapons/guns/fire/Laser Carbine Scatter.ogg'
@@ -718,7 +718,7 @@
 
 /datum/lasrifle/energy_carbine_mode/base/impact
 	rounds_per_shot = 50
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/impact
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/impact
 	fire_delay = 1 SECONDS
 	burst_amount = 1
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
@@ -730,7 +730,7 @@
 
 /datum/lasrifle/energy_carbine_mode/base/cripple
 	rounds_per_shot = 15
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/cripple
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/cripple
 	fire_delay = 0.3 SECONDS
 	burst_amount = 1
 	fire_sound = 'sound/weapons/guns/fire/laser.ogg'
@@ -742,7 +742,7 @@
 
 //TE Standard Sniper
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_sniper
 	name = "\improper Terra Experimental laser sniper rifle"
 	desc = "The T-ES, a Terra Experimental standard issue laser sniper rifle, has multiple powerful firemodes, although the lack of aim mode can limit its tactical flexibility. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
 	reload_sound = 'sound/weapons/guns/interact/standard_laser_sniper_reload.ogg'
@@ -751,7 +751,7 @@
 	worn_icon_state = "tes"
 	w_class = WEIGHT_CLASS_BULKY
 	max_shots = 20
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/sniper
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/sniper
 	rounds_per_shot = 30
 	damage_falloff_mult = 0
 	gun_firemode = GUN_FIREMODE_SEMIAUTO
@@ -763,7 +763,7 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/scope/unremovable/laser_sniper_scope,
 		/obj/item/weapon/gun/grenade_launcher/underslung,
@@ -800,7 +800,7 @@
 /datum/lasrifle/energy_sniper_mode/standard
 	rounds_per_shot = 30
 	fire_delay = 0.8 SECONDS
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/sniper
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/sniper
 	fire_sound = 'sound/weapons/guns/fire/Laser Sniper Standard.ogg'
 	message_to_user = "You set the sniper rifle's charge mode to standard fire."
 	fire_mode = GUN_FIREMODE_SEMIAUTO
@@ -810,7 +810,7 @@
 /datum/lasrifle/energy_sniper_mode/heat
 	rounds_per_shot = 100
 	fire_delay = 1 SECONDS
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/sniper_heat
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/sniper_heat
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
 	message_to_user = "You set the sniper rifle's charge mode to wave heat."
 	fire_mode = GUN_FIREMODE_SEMIAUTO
@@ -821,7 +821,7 @@
 /datum/lasrifle/energy_sniper_mode/shatter
 	rounds_per_shot = 100
 	fire_delay = 1 SECONDS
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/shatter
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/shatter
 	fire_sound = 'sound/weapons/guns/fire/laser_rifle_2.ogg'
 	message_to_user = "You set the sniper rifle's charge mode to shatter."
 	fire_mode = GUN_FIREMODE_SEMIAUTO
@@ -832,7 +832,7 @@
 /datum/lasrifle/energy_sniper_mode/ricochet
 	rounds_per_shot = 45
 	fire_delay = 0.8 SECONDS
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/ricochet/four
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/ricochet/four
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
 	message_to_user = "You set the sniper rifle's charge mode to ricochet."
 	fire_mode = GUN_FIREMODE_SEMIAUTO
@@ -842,9 +842,9 @@
 
 // TE Standard MG
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser
 	name = "\improper Terra Experimental laser machine gun"
-	desc = "A Terra Experimental standard issue machine laser gun, often called as the TE-M by marines. High efficiency modulators ensure the TE-M has an extremely high fire count, and multiple firemodes makes it a flexible infantry support gun. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
+	desc = "A Terra Experimental standard issue machine laser gun, often called as the TE-M by guardsmans. High efficiency modulators ensure the TE-M has an extremely high fire count, and multiple firemodes makes it a flexible infantry support gun. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
 	reload_sound = 'sound/weapons/guns/interact/standard_machine_laser_reload.ogg'
 	fire_sound = 'sound/weapons/guns/fire/Laser Rifle Standard.ogg'
 	icon_state = "tem"
@@ -852,7 +852,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	gun_skill_category = SKILL_HEAVY_WEAPONS
 	max_shots = 150 //codex stuff
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/autolaser
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/autolaser
 	rounds_per_shot = 4
 	gun_firemode = GUN_FIREMODE_AUTOMATIC
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
@@ -860,10 +860,10 @@
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/flashlight,
 		/obj/item/attachable/magnetic_harness,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/scope/mini,
 		/obj/item/weapon/gun/grenade_launcher/underslung,
 		/obj/item/weapon/gun/flamer/mini_flamer,
@@ -898,17 +898,17 @@
 		"Melting" = /datum/lasrifle/energy_mg_mode/standard/melting,
 	)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser/apply_gun_modifiers(obj/projectile/projectile_to_fire, atom/target, firer)
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser/apply_gun_modifiers(obj/projectile/projectile_to_fire, atom/target, firer)
 	. = ..()
 	if((gun_firemode == GUN_FIREMODE_BURSTFIRE) && shots_fired) //this specifically boosts the burst fire mode
 		projectile_to_fire.damage *= (1 + shots_fired)
 
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser/patrol
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser/patrol
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/weapon/gun/grenade_launcher/underslung, /obj/item/attachable/bayonet)
 
 /datum/lasrifle/energy_mg_mode/standard
 	rounds_per_shot = 4
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/autolaser
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/autolaser
 	fire_delay = 0.2 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/Laser Sniper Standard.ogg'
 	message_to_user = "You set the machine laser's charge mode to standard fire."
@@ -918,7 +918,7 @@
 
 /datum/lasrifle/energy_mg_mode/standard/burst
 	rounds_per_shot = 8
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/autolaser/burst
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/autolaser/burst
 	fire_delay = 0.45 SECONDS
 	burst_amount = 4
 	fire_sound = 'sound/weapons/guns/fire/Laser Carbine Scatter.ogg'
@@ -931,7 +931,7 @@
 
 /datum/lasrifle/energy_mg_mode/standard/charge
 	rounds_per_shot = 15
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/autolaser/charge
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/autolaser/charge
 	fire_delay = 1 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/Laser overcharge standard.ogg'
 	windup_delay = 0.5 SECONDS
@@ -942,12 +942,12 @@
 
 /datum/lasrifle/energy_mg_mode/standard/melting
 	rounds_per_shot = 18
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/autolaser/melting
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/autolaser/melting
 	fire_delay = 0.45 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/laser_rifle_2.ogg'
 	message_to_user = "You set the machine laser's charge mode to melting."
 	radial_icon_state = "laser_heat"
-	description = "Fires an unusual laser pulse that applies a melting effect which severely sunders xenomorph armor over time, as well as applying further damage."
+	description = "Fires an unusual laser pulse that applies a melting effect which severely sunders tyranid armor over time, as well as applying further damage."
 
 // TE X-Ray
 
@@ -959,12 +959,12 @@
 	icon_state = "tex"
 	worn_icon_state = "tex"
 	max_shots = 40 //codex stuff
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/xray
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/xray
 	rounds_per_shot = 15
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,
@@ -998,7 +998,7 @@
 
 /datum/lasrifle/energy_rifle_mode/xray
 	rounds_per_shot = 15
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/xray
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/xray
 	fire_delay = 0.5 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/laser3.ogg'
 	message_to_user = "You set the xray rifle's charge mode to standard fire."
@@ -1009,7 +1009,7 @@
 
 /datum/lasrifle/energy_rifle_mode/xray/piercing
 	rounds_per_shot = 30
-	ammo_datum_type = /datum/ammo/energy/lasgun/marine/xray/piercing
+	ammo_datum_type = /datum/ammo/energy/lasgun/guardsman/xray/piercing
 	fire_delay = 0.6 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/laser.ogg'
 	message_to_user = "You set the xray rifle's charge mode to piercing mode."
@@ -1075,7 +1075,7 @@
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta
 	name = "\improper VX-12 Serpenta"
-	desc = "Volkite weapons are the pride of Martian weapons manufacturing, their construction being a tightly guarded secret. Infamous for its ability to deflagrate organic targets with its tremendous thermal energy, explosively burning flesh in a fiery blast that can be deadly to anyone unfortunate enough to be nearby. The 'serpenta' is pistol typically seen in the hands of SOM officers and some NCOs, and is quite dangerous for it's size."
+	desc = "Volkite weapons are the pride of Martian weapons manufacturing, their construction being a tightly guarded secret. Infamous for its ability to deflagrate organic targets with its tremendous thermal energy, explosively burning flesh in a fiery blast that can be deadly to anyone unfortunate enough to be nearby. The 'serpenta' is pistol typically seen in the hands of CHAOS officers and some NCOs, and is quite dangerous for it's size."
 	icon_state = "vx12"
 	worn_icon_state = "vx12"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -1100,7 +1100,7 @@
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta/custom
 	name = "\improper VX-12c Serpenta"
-	desc = "The 'serpenta' is pistol typically seen in the hands of SOM officers and some NCOs, and is quite dangerous for it's size. This particular weapon appears to be a custom model with improved performance."
+	desc = "The 'serpenta' is pistol typically seen in the hands of CHAOS officers and some NCOs, and is quite dangerous for it's size. This particular weapon appears to be a custom model with improved performance."
 	icon_state = "vx12c"
 	worn_icon_state = "vx12"
 	ammo_datum_type = /datum/ammo/energy/volkite/medium/custom
@@ -1156,8 +1156,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 32
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/energy_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/energy_right_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_right_64.dmi',
 	)
 	fire_sound = 'sound/weapons/guns/fire/volkite_3.ogg'
 	max_shots = 40
@@ -1175,7 +1175,7 @@
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/scope,
 		/obj/item/attachable/scope/mini,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/motiondetector,
 		/obj/item/attachable/buildasentry,
 	)
@@ -1206,8 +1206,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 32
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/energy_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/energy_right_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/energy_right_64.dmi',
 	)
 	ammo_level_icon = null
 	gun_skill_category = SKILL_HEAVY_WEAPONS

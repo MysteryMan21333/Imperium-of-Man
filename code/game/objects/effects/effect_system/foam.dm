@@ -155,7 +155,7 @@
 // dense and opaque, but easy to break
 
 /obj/structure/foamedmetal
-	icon = 'icons/obj/smooth_objects/foamwall.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/foamwall.dmi'
 	icon_state = "foamwall-icon"
 	base_icon_state = "foamwall"
 	density = TRUE
@@ -164,7 +164,7 @@
 	allow_pass_flags = NONE
 	name = "foamed metal"
 	desc = "A lightweight foamed metal wall."
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	max_integrity = 120
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(

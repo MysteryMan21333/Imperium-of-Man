@@ -1,14 +1,14 @@
 
-//Xeno-style acids
+//Tyranid-style acids
 //Ideally we'll consolidate all the "effect" objects here
 //Also need to change the icons
-/obj/effect/xenomorph
+/obj/effect/tyranid
 	name = "alien thing"
 	desc = "You shouldn't be seeing this."
-	icon = 'icons/Xeno/Effects.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/Effects.dmi'
 	layer = FLY_LAYER
 
-/obj/effect/xenomorph/splatter
+/obj/effect/tyranid/splatter
 	name = "splatter"
 	desc = "It burns! It burns like hygiene!"
 	icon_state = "splatter"
@@ -16,11 +16,11 @@
 	opacity = FALSE
 	anchored = TRUE
 
-/obj/effect/xenomorph/splatter/Initialize(mapload) //Self-deletes after creation & animation
+/obj/effect/tyranid/splatter/Initialize(mapload) //Self-deletes after creation & animation
 	. = ..()
 	QDEL_IN(src, 8)
 
-/obj/effect/xenomorph/splatterblob
+/obj/effect/tyranid/splatterblob
 	name = "splatter"
 	desc = "It burns! It burns like hygiene!"
 	icon_state = "acidblob"
@@ -28,11 +28,11 @@
 	opacity = FALSE
 	anchored = TRUE
 
-/obj/effect/xenomorph/splatterblob/Initialize(mapload) //Self-deletes after creation & animation
+/obj/effect/tyranid/splatterblob/Initialize(mapload) //Self-deletes after creation & animation
 	. = ..()
 	QDEL_IN(src, 4 SECONDS)
 
-/obj/effect/xenomorph/spray
+/obj/effect/tyranid/spray
 	name = "splatter"
 	desc = "It burns! It burns like hygiene!"
 	icon_state = "acid2"
@@ -44,27 +44,27 @@
 	pass_flags = PASS_LOW_STRUCTURE|PASS_MOB|PASS_GRILLE|PASS_AIR
 	var/slow_amt = 0.8
 	var/duration = 10 SECONDS
-	var/acid_damage = XENO_DEFAULT_ACID_PUDDLE_DAMAGE
+	var/acid_damage = TYRANID_DEFAULT_ACID_PUDDLE_DAMAGE
 	/// Who created that spray
-	var/mob/xeno_owner
+	var/mob/tyranid_owner
 
-/obj/effect/xenomorph/spray/Initialize(mapload, duration = 10 SECONDS, damage = XENO_DEFAULT_ACID_PUDDLE_DAMAGE, mob/living/_xeno_owner) //Self-deletes
+/obj/effect/tyranid/spray/Initialize(mapload, duration = 10 SECONDS, damage = TYRANID_DEFAULT_ACID_PUDDLE_DAMAGE, mob/living/_tyranid_owner) //Self-deletes
 	. = ..()
 	START_PROCESSING(SSprocessing, src)
 	QDEL_IN(src, duration + rand(0, 2 SECONDS))
 	acid_damage = damage
-	xeno_owner = _xeno_owner
-	RegisterSignal(xeno_owner, COMSIG_QDELETING, PROC_REF(clean_mob_owner))
+	tyranid_owner = _tyranid_owner
+	RegisterSignal(tyranid_owner, COMSIG_QDELETING, PROC_REF(clean_mob_owner))
 	RegisterSignal(loc, COMSIG_ATOM_ENTERED, PROC_REF(atom_enter_turf))
 	TIMER_COOLDOWN_START(src, COOLDOWN_PARALYSE_ACID, 5)
 
-/obj/effect/xenomorph/spray/Destroy()
+/obj/effect/tyranid/spray/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
-	xeno_owner = null
+	tyranid_owner = null
 	return ..()
 
 /// Signal handler to check if an human is entering the acid spray turf
-/obj/effect/xenomorph/spray/proc/atom_enter_turf(datum/source, atom/movable/moved_in, direction)
+/obj/effect/tyranid/spray/proc/atom_enter_turf(datum/source, atom/movable/moved_in, direction)
 	SIGNAL_HANDLER
 	if(!ishuman(moved_in))
 		return
@@ -73,19 +73,19 @@
 		return
 	victim.acid_spray_entered(null, src, acid_damage, slow_amt)
 
-/// Set xeno_owner to null to avoid hard del
-/obj/effect/xenomorph/spray/proc/clean_mob_owner()
-	UnregisterSignal(xeno_owner, COMSIG_QDELETING)
-	xeno_owner = null
+/// Set tyranid_owner to null to avoid hard del
+/obj/effect/tyranid/spray/proc/clean_mob_owner()
+	UnregisterSignal(tyranid_owner, COMSIG_QDELETING)
+	tyranid_owner = null
 
 /// Signal handler to burn and maybe stun the human entering the acid spray
-/mob/living/carbon/human/proc/acid_spray_entered(datum/source, obj/effect/xenomorph/spray/acid_spray, acid_damage, slow_amt)
+/mob/living/carbon/human/proc/acid_spray_entered(datum/source, obj/effect/tyranid/spray/acid_spray, acid_damage, slow_amt)
 	SIGNAL_HANDLER
 	if(CHECK_MULTIPLE_BITFIELDS(pass_flags, HOVERING) || stat == DEAD)
 		return
 
-	if(acid_spray.xeno_owner && TIMER_COOLDOWN_CHECK(acid_spray, COOLDOWN_PARALYSE_ACID)) //To prevent being able to walk "over" acid sprays
-		acid_spray_act(acid_spray.xeno_owner)
+	if(acid_spray.tyranid_owner && TIMER_COOLDOWN_CHECK(acid_spray, COOLDOWN_PARALYSE_ACID)) //To prevent being able to walk "over" acid sprays
+		acid_spray_act(acid_spray.tyranid_owner)
 		return
 
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_ACID))
@@ -104,7 +104,7 @@
 	for(var/limb_to_hit in list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
 		INVOKE_ASYNC(src, PROC_REF(apply_damage), acid_damage * 0.5, BURN, limb_to_hit, ACID)
 
-/obj/effect/xenomorph/spray/process()
+/obj/effect/tyranid/spray/process()
 	var/turf/T = loc
 	if(!istype(T))
 		qdel(src)
@@ -117,7 +117,7 @@
 		SEND_SIGNAL(A, COMSIG_ATOM_ACIDSPRAY_ACT, src, acid_damage, slow_amt)
 
 //Medium-strength acid
-/obj/effect/xenomorph/acid
+/obj/effect/tyranid/acid
 	name = "acid"
 	desc = "Burbling corrosive stuff. I wouldn't want to touch it."
 	icon_state = "acid_normal"
@@ -138,11 +138,11 @@
 	///How much faster or slower acid melts specific objects/turfs.
 	var/acid_melt_multiplier
 
-/obj/effect/xenomorph/acid/Initialize(mapload, atom/target, melting_rate)
+/obj/effect/tyranid/acid/Initialize(mapload, atom/target, melting_rate)
 	if(!istype(target))
 		return INITIALIZE_HINT_QDEL
 
-	var/obj/effect/xenomorph/acid/current_acid = target.get_self_acid()
+	var/obj/effect/tyranid/acid/current_acid = target.get_self_acid()
 	if(current_acid)
 		current_acid.acid_strength = acid_strength
 		current_acid.acid_damage = acid_damage
@@ -164,17 +164,17 @@
 	update_appearance(UPDATE_ICON_STATE)
 	START_PROCESSING(SSslowprocess, src)
 
-/obj/effect/xenomorph/acid/Destroy()
+/obj/effect/tyranid/acid/Destroy()
 	STOP_PROCESSING(SSslowprocess, src)
 	acid_t = null
 	return ..()
 
-/obj/effect/xenomorph/acid/update_icon_state()
+/obj/effect/tyranid/acid/update_icon_state()
 	icon_state = base_icon_state
 	if(iswallturf(acid_t))
 		icon_state += "_wall"
 
-/obj/effect/xenomorph/acid/process(delta_time)
+/obj/effect/tyranid/acid/process(delta_time)
 	if(!acid_t || !acid_t.loc)
 		qdel(src)
 		return
@@ -185,31 +185,31 @@
 		return
 	switch(strength_t - ticks)
 		if(0 to 1)
-			visible_message(span_xenowarning("\The [acid_t] begins to crumble under the acid!"))
+			visible_message(span_tyranidwarning("\The [acid_t] begins to crumble under the acid!"))
 		if(2)
-			visible_message(span_xenowarning("\The [acid_t] is struggling to withstand the acid!"))
+			visible_message(span_tyranidwarning("\The [acid_t] is struggling to withstand the acid!"))
 		if(4)
-			visible_message(span_xenowarning("\The [acid_t]\s structure is being melted by the acid!"))
+			visible_message(span_tyranidwarning("\The [acid_t]\s structure is being melted by the acid!"))
 		if(6)
-			visible_message(span_xenowarning("\The [acid_t] is barely holding up against the acid!"))
+			visible_message(span_tyranidwarning("\The [acid_t] is barely holding up against the acid!"))
 
 ///cleans up if the target is destroyed
-/obj/effect/xenomorph/acid/proc/on_target_del(atom/source)
+/obj/effect/tyranid/acid/proc/on_target_del(atom/source)
 	SIGNAL_HANDLER
 	qdel(src)
 
 ///Moves with the target
-/obj/effect/xenomorph/acid/proc/on_target_move(atom/source)
+/obj/effect/tyranid/acid/proc/on_target_move(atom/source)
 	SIGNAL_HANDLER
 	loc = source.loc
 
 ///Sig handler to show this acid is attached to something
-/obj/effect/xenomorph/acid/proc/return_self_acid(atom/source, list/acid_List)
+/obj/effect/tyranid/acid/proc/return_self_acid(atom/source, list/acid_List)
 	SIGNAL_HANDLER
 	acid_List += src
 
 ///Sig handler to show this acid is attached to something
-/obj/effect/xenomorph/acid/proc/on_attempt_pickup(obj/item/source, mob/user)
+/obj/effect/tyranid/acid/proc/on_attempt_pickup(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 	if(!ishuman(user))
 		qdel(src)
@@ -217,7 +217,7 @@
 	INVOKE_ASYNC(src, PROC_REF(on_pickup), source, user)
 
 ///Sig handler to show this acid is attached to something
-/obj/effect/xenomorph/acid/proc/on_pickup(obj/item/item, mob/living/carbon/human/human_user)
+/obj/effect/tyranid/acid/proc/on_pickup(obj/item/item, mob/living/carbon/human/human_user)
 	human_user.visible_message(span_danger("Corrosive substances seethe all over [human_user] as [human_user.p_they()] retrieves the acid-soaked [item]!"),
 	span_danger("Corrosive substances burn and seethe all over you upon retrieving the acid-soaked [item]!"))
 	playsound(human_user, SFX_ACID_HIT, 25)
@@ -235,22 +235,22 @@
 	UPDATEHEALTH(human_user)
 	qdel(src)
 
-/obj/effect/xenomorph/acid/weak
+/obj/effect/tyranid/acid/weak
 	name = "weak acid"
 	acid_strength = WEAK_ACID_STRENGTH
 	acid_damage = 75
 	icon_state = "acid_weak"
 
-/obj/effect/xenomorph/acid/strong
+/obj/effect/tyranid/acid/strong
 	name = "strong acid"
 	acid_strength = STRONG_ACID_STRENGTH
 	acid_damage = 175
 	icon_state = "acid_strong"
 
-/obj/effect/xenomorph/warp_shadow
+/obj/effect/tyranid/warp_shadow
 	name = "warp shadow"
 	desc = "A strange rift in space and time. You probably shouldn't touch this."
-	icon = 'icons/Xeno/castes/wraith.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/wraith.dmi'
 	icon_state = "Wraith Walking"
 	color = COLOR_BLACK
 	alpha = 128 //Translucent
@@ -258,6 +258,6 @@
 	opacity = FALSE
 	anchored = TRUE
 
-/obj/effect/xenomorph/warp_shadow/Initialize(mapload, target)
+/obj/effect/tyranid/warp_shadow/Initialize(mapload, target)
 	. = ..()
 	add_filter("wraith_warp_shadow", 4, list("type" = "blur", 5)) //Cool filter appear

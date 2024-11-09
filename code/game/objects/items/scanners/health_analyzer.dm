@@ -2,11 +2,11 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 
 /obj/item/healthanalyzer
 	name = "\improper HF2 health analyzer"
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "health"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medical_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medical_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_right.dmi',
 	)
 	worn_icon_state = "healthanalyzer"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject. The front panel is able to provide the basic readout of the subject's status."
@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 	if(!iscarbon(M))
 		balloon_alert(user, "Cannot scan")
 		return
-	if(isxeno(M))
+	if(istyranid(M))
 		balloon_alert(user, "Unknown entity")
 		return
 	if(M.species.species_flags & NO_SCAN)
@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 		"blood_type" = patient.blood_type,
 		"blood_amount" = patient.blood_volume,
 
-		"hugged" = !!(patient.status_flags & XENO_HOST),
+		"hugged" = !!(patient.status_flags & TYRANID_HOST),
 
 		"accessible_theme" = user.client?.prefs?.accessible_tgui_themes
 	)
@@ -364,7 +364,7 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 				"color" = "red"
 				))
 		if(organic_patient) // human advice, includes chems
-			if(patient.status_flags & XENO_HOST)
+			if(patient.status_flags & TYRANID_HOST)
 				advice += list(list(
 					"advice" = "Alien embryo detected. Immediate surgical intervention advised.", // friend detected :)
 					"tooltip" = "The patient has been implanted with an alien embryo! Left untreated, it will burst out of their chest. Surgical intervention is strongly advised.",
@@ -549,7 +549,7 @@ GLOBAL_LIST_INIT(known_implants, subtypesof(/obj/item/implant))
 	worn_icon_state = "medscan_gloves"
 	equip_slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/clothing/gloves.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/gloves.dmi'
 	item_state_worn = TRUE
 	siemens_coefficient = 0.50
 	blood_sprite_state = "bloodyhands"

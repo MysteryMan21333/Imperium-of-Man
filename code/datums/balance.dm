@@ -11,7 +11,7 @@ GLOBAL_DATUM_INIT(balance, /datum/balance, new())
 	var/list/balance_values
 
 /datum/balance/proc/Initialize()
-	factions = list("marines", "xeno", "other")
+	factions = list("guardsmans", "tyranid", "other")
 	balance_values = list()
 	for(var/faction in factions)
 		balance_values[faction] = 0
@@ -26,10 +26,10 @@ GLOBAL_DATUM_INIT(balance, /datum/balance, new())
 		return FALSE
 	var/mob/living/living = source
 	switch(living.faction)
-		if(FACTION_XENO)
-			balance_values["xeno"]++
-		if (FACTION_TERRAGOV)
-			balance_values["marine"]++
+		if(FACTION_TYRANID)
+			balance_values["tyranid"]++
+		if (FACTION_IMPERIUM)
+			balance_values["guardsman"]++
 		else
 			balance_values["other"]++
 
@@ -43,10 +43,10 @@ GLOBAL_DATUM_INIT(balance, /datum/balance, new())
 		return FALSE
 	var/mob/living/living = source
 	switch(living.faction)
-		if(FACTION_XENO)
-			balance_values["xeno"]--
-		if (FACTION_TERRAGOV)
-			balance_values["marine"]--
+		if(FACTION_TYRANID)
+			balance_values["tyranid"]--
+		if (FACTION_IMPERIUM)
+			balance_values["guardsman"]--
 		else
 			balance_values["other"]--
 

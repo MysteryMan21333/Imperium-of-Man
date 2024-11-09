@@ -26,8 +26,8 @@
 		return ERROR_CANT_WEED
 	for(var/obj/effect/forcefield/fog/F in range(1, target))
 		return ERROR_FOG
-	for(var/mob/living/carbon/xenomorph/blocker in target)
-		if(blocker.stat != DEAD && !CHECK_BITFIELD(blocker.xeno_caste.caste_flags, CASTE_IS_BUILDER))
+	for(var/mob/living/carbon/tyranid/blocker in target)
+		if(blocker.stat != DEAD && !CHECK_BITFIELD(blocker.tyranid_caste.caste_flags, CASTE_IS_BUILDER))
 			return ERROR_BLOCKER
 	if(!target.check_alien_construction(null, TRUE, planned_building))
 		return ERROR_CONSTRUCT
@@ -47,7 +47,7 @@
 
 	for(var/mob/dead/observer/O AS in GLOB.observer_list)
 		//Players without preferences or jobbaned players cannot be drafted.
-		if(!O.key || !O.mind || !O.client?.prefs || !(O.client.prefs.be_special & (BE_ALIEN|BE_ALIEN_UNREVIVABLE)) || is_banned_from(O.ckey, ROLE_XENOMORPH))
+		if(!O.key || !O.mind || !O.client?.prefs || !(O.client.prefs.be_special & (BE_ALIEN|BE_ALIEN_UNREVIVABLE)) || is_banned_from(O.ckey, ROLE_TYRANID))
 			continue
 
 		if(O.client.prefs.be_special & BE_ALIEN_UNREVIVABLE && !(O.client.prefs.be_special & BE_ALIEN) && ishuman(O.mind.current))

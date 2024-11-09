@@ -1,6 +1,6 @@
 /obj/machinery/pipedispenser
 	name = "Pipe Dispenser"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "pipe_d"
 	density = TRUE
 	anchored = TRUE
@@ -113,7 +113,7 @@
 
 /obj/machinery/pipedispenser/disposal
 	name = "disposal pipe dispenser"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	icon_state = "pipe_d"
 	desc = "Dispenses pipes that will ultimately be used to move trash around."
 

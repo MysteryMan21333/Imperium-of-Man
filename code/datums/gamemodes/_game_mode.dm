@@ -18,7 +18,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 
 	var/round_time_fog
 	var/round_type_flags = NONE
-	var/xeno_abilities_flags = NONE
+	var/tyranid_abilities_flags = NONE
 
 	///Determines whether rounds with the gamemode will be factored in when it comes to persistency
 	var/allow_persistence_save = TRUE
@@ -26,10 +26,10 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	var/distress_cancelled = FALSE
 
 	var/deploy_time_lock = 15 MINUTES
-	///The respawn time for marines
+	///The respawn time for guardsmans
 	var/respawn_time = 30 MINUTES
-	//The respawn time for Xenomorphs
-	var/xenorespawn_time = 5 MINUTES
+	//The respawn time for Tyranids
+	var/tyranidrespawn_time = 5 MINUTES
 	///How many points do you need to win in a point gamemode
 	var/win_points_needed = 0
 	///The points per faction, assoc list
@@ -43,8 +43,8 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	 * after the end of the last round with the gamemode type
 	 */
 	var/time_between_round = 0
-	///What factions are used in this gamemode, typically TGMC and xenos
-	var/list/factions = list(FACTION_TERRAGOV, FACTION_ALIEN)
+	///What factions are used in this gamemode, typically TGMC and tyranids
+	var/list/factions = list(FACTION_IMPERIUM, FACTION_ALIEN)
 
 //Distress call variables.
 	var/list/datum/emergency_call/all_calls = list() //initialized at round start and stores the datums.
@@ -118,7 +118,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	transfer_characters()
 	SSpoints.prepare_supply_packs_list(CHECK_BITFIELD(round_type_flags, MODE_HUMAN_ONLY))
 	SSpoints.dropship_points = 0
-	SSpoints.supply_points[FACTION_TERRAGOV] = 0
+	SSpoints.supply_points[FACTION_IMPERIUM] = 0
 
 	for(var/hivenum in GLOB.hive_datums)
 		var/datum/hive_status/hive = GLOB.hive_datums[hivenum]
@@ -261,13 +261,13 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	return
 
 GLOBAL_LIST_INIT(bioscan_locations, list(
-	ZTRAIT_MARINE_MAIN_SHIP,
+	ZTRAIT_GUARDSMAN_MAIN_SHIP,
 	ZTRAIT_GROUND,
 	ZTRAIT_RESERVED,
 ))
 
-///Annonce to everyone the number of xeno and marines on ship and ground
-/datum/game_mode/proc/announce_bioscans(show_locations = TRUE, delta = 2, ai_operator = FALSE, announce_humans = TRUE, announce_xenos = TRUE, send_fax = TRUE)
+///Annonce to everyone the number of tyranid and guardsmans on ship and ground
+/datum/game_mode/proc/announce_bioscans(show_locations = TRUE, delta = 2, ai_operator = FALSE, announce_humans = TRUE, announce_tyranids = TRUE, send_fax = TRUE)
 	return
 
 /datum/game_mode/proc/setup_blockers()
@@ -277,11 +277,11 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(send_global_signal), COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE), SSticker.round_start_time + shutters_drop_time)
 			//Called late because there used to be shutters opened earlier. To re-add them just copy the logic.
 
-	if(round_type_flags & MODE_XENO_SPAWN_PROTECT)
+	if(round_type_flags & MODE_TYRANID_SPAWN_PROTECT)
 		var/turf/T
-		while(length(GLOB.xeno_spawn_protection_locations))
-			T = GLOB.xeno_spawn_protection_locations[length(GLOB.xeno_spawn_protection_locations)]
-			GLOB.xeno_spawn_protection_locations.len--
+		while(length(GLOB.tyranid_spawn_protection_locations))
+			T = GLOB.tyranid_spawn_protection_locations[length(GLOB.tyranid_spawn_protection_locations)]
+			GLOB.tyranid_spawn_protection_locations.len--
 			new /obj/effect/forcefield/fog(T)
 			stoplag()
 
@@ -332,9 +332,9 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 			to_chat(M, "<br><br><h1>[span_danger("Failed to find a valid location for End of Round Deathmatch. Please do not grief.")]</h1><br><br>")
 			continue
 
-		if(isxeno(M))
-			var/mob/living/carbon/xenomorph/X = M
-			X.transfer_to_hive(pick(XENO_HIVE_NORMAL, XENO_HIVE_CORRUPTED, XENO_HIVE_ALPHA, XENO_HIVE_BETA, XENO_HIVE_ZETA))
+		if(istyranid(M))
+			var/mob/living/carbon/tyranid/X = M
+			X.transfer_to_hive(pick(TYRANID_HIVE_NORMAL, TYRANID_HIVE_CORRUPTED, TYRANID_HIVE_ALPHA, TYRANID_HIVE_BETA, TYRANID_HIVE_ZETA))
 			INVOKE_ASYNC(X, TYPE_PROC_REF(/atom/movable, forceMove), picked)
 
 		else if(ishuman(M))
@@ -382,10 +382,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 
 /datum/game_mode/proc/announce_round_stats()
 	var/list/parts = list({"[span_round_body("The end of round statistics are:")]<br>
-		<br>There were [GLOB.round_statistics.total_projectiles_fired[FACTION_TERRAGOV]] total projectiles fired.
-		<br>[GLOB.round_statistics.total_projectile_hits[FACTION_TERRAGOV] ? GLOB.round_statistics.total_projectile_hits[FACTION_TERRAGOV] : "No"] projectiles managed to hit marines. For a [(GLOB.round_statistics.total_projectile_hits[FACTION_TERRAGOV] / max(GLOB.round_statistics.total_projectiles_fired[FACTION_TERRAGOV], 1)) * 100]% friendly fire rate!"})
-	if(GLOB.round_statistics.total_projectile_hits[FACTION_XENO])
-		parts += "[GLOB.round_statistics.total_projectile_hits[FACTION_XENO]] projectiles managed to hit xenomorphs. For a [(GLOB.round_statistics.total_projectile_hits[FACTION_XENO] / max(GLOB.round_statistics.total_projectiles_fired[FACTION_TERRAGOV], 1)) * 100]% accuracy total!"
+		<br>There were [GLOB.round_statistics.total_projectiles_fired[FACTION_IMPERIUM]] total projectiles fired.
+		<br>[GLOB.round_statistics.total_projectile_hits[FACTION_IMPERIUM] ? GLOB.round_statistics.total_projectile_hits[FACTION_IMPERIUM] : "No"] projectiles managed to hit guardsmans. For a [(GLOB.round_statistics.total_projectile_hits[FACTION_IMPERIUM] / max(GLOB.round_statistics.total_projectiles_fired[FACTION_IMPERIUM], 1)) * 100]% friendly fire rate!"})
+	if(GLOB.round_statistics.total_projectile_hits[FACTION_TYRANID])
+		parts += "[GLOB.round_statistics.total_projectile_hits[FACTION_TYRANID]] projectiles managed to hit tyranids. For a [(GLOB.round_statistics.total_projectile_hits[FACTION_TYRANID] / max(GLOB.round_statistics.total_projectiles_fired[FACTION_IMPERIUM], 1)) * 100]% accuracy total!"
 	if(GLOB.round_statistics.grenades_thrown)
 		parts += "[GLOB.round_statistics.grenades_thrown] total grenades exploding."
 	else
@@ -398,10 +398,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.rocket_shells_fired] rocket artillery shells were fired."
 	if(GLOB.round_statistics.obs_fired)
 		parts += "[GLOB.round_statistics.obs_fired] orbital bombardements were fired."
-	if(GLOB.round_statistics.total_human_deaths[FACTION_TERRAGOV])
-		parts += "[GLOB.round_statistics.total_human_deaths[FACTION_TERRAGOV]] people were killed, among which [GLOB.round_statistics.total_human_revives[FACTION_TERRAGOV]] were revived and [GLOB.round_statistics.total_human_respawns] respawned. For a [(GLOB.round_statistics.total_human_revives[FACTION_TERRAGOV] / max(GLOB.round_statistics.total_human_deaths[FACTION_TERRAGOV], 1)) * 100]% revival rate and a [(GLOB.round_statistics.total_human_respawns / max(GLOB.round_statistics.total_human_deaths[FACTION_TERRAGOV], 1)) * 100]% respawn rate."
+	if(GLOB.round_statistics.total_human_deaths[FACTION_IMPERIUM])
+		parts += "[GLOB.round_statistics.total_human_deaths[FACTION_IMPERIUM]] people were killed, among which [GLOB.round_statistics.total_human_revives[FACTION_IMPERIUM]] were revived and [GLOB.round_statistics.total_human_respawns] respawned. For a [(GLOB.round_statistics.total_human_revives[FACTION_IMPERIUM] / max(GLOB.round_statistics.total_human_deaths[FACTION_IMPERIUM], 1)) * 100]% revival rate and a [(GLOB.round_statistics.total_human_respawns / max(GLOB.round_statistics.total_human_deaths[FACTION_IMPERIUM], 1)) * 100]% respawn rate."
 	if(SSevacuation.human_escaped)
-		parts += "[SSevacuation.human_escaped] marines manage to evacuate, among [SSevacuation.initial_human_on_ship] that were on ship when xenomorphs arrived."
+		parts += "[SSevacuation.human_escaped] guardsmans manage to evacuate, among [SSevacuation.initial_human_on_ship] that were on ship when tyranids arrived."
 	if(GLOB.round_statistics.now_pregnant)
 		parts += "[GLOB.round_statistics.now_pregnant] people infected among which [GLOB.round_statistics.total_larva_burst] burst. For a [(GLOB.round_statistics.total_larva_burst / max(GLOB.round_statistics.now_pregnant, 1)) * 100]% successful delivery rate!"
 	if(length(GLOB.round_statistics.workout_counts))
@@ -433,10 +433,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.defiler_neurogas_uses] number of times Defilers vented neurogas."
 	if(GLOB.round_statistics.defiler_reagent_slashes)
 		parts += "[GLOB.round_statistics.defiler_reagent_slashes] number of times Defilers struck an enemy with their reagent slash."
-	if(GLOB.round_statistics.xeno_unarmed_attacks && GLOB.round_statistics.xeno_bump_attacks)
-		parts += "[GLOB.round_statistics.xeno_bump_attacks] bump attacks, which made up [(GLOB.round_statistics.xeno_bump_attacks / GLOB.round_statistics.xeno_unarmed_attacks) * 100]% of all attacks ([GLOB.round_statistics.xeno_unarmed_attacks])."
-	if(GLOB.round_statistics.xeno_rally_hive)
-		parts += "[GLOB.round_statistics.xeno_rally_hive] number of times xeno leaders rallied the hive."
+	if(GLOB.round_statistics.tyranid_unarmed_attacks && GLOB.round_statistics.tyranid_bump_attacks)
+		parts += "[GLOB.round_statistics.tyranid_bump_attacks] bump attacks, which made up [(GLOB.round_statistics.tyranid_bump_attacks / GLOB.round_statistics.tyranid_unarmed_attacks) * 100]% of all attacks ([GLOB.round_statistics.tyranid_unarmed_attacks])."
+	if(GLOB.round_statistics.tyranid_rally_hive)
+		parts += "[GLOB.round_statistics.tyranid_rally_hive] number of times tyranid leaders rallied the hive."
 	if(GLOB.round_statistics.hivelord_healing_infusions)
 		parts += "[GLOB.round_statistics.hivelord_healing_infusions] number of times Hivelords used Healing Infusion."
 	if(GLOB.round_statistics.spitter_acid_sprays)
@@ -446,11 +446,11 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if(GLOB.round_statistics.ravager_endures)
 		parts += "[GLOB.round_statistics.ravager_endures] number of times Ravagers used Endure."
 	if(GLOB.round_statistics.bull_crush_hit)
-		parts += "[GLOB.round_statistics.bull_crush_hit] number of times Bulls crushed marines."
+		parts += "[GLOB.round_statistics.bull_crush_hit] number of times Bulls crushed guardsmans."
 	if(GLOB.round_statistics.bull_gore_hit)
-		parts += "[GLOB.round_statistics.bull_gore_hit] number of times Bulls gored marines."
+		parts += "[GLOB.round_statistics.bull_gore_hit] number of times Bulls gored guardsmans."
 	if(GLOB.round_statistics.bull_headbutt_hit)
-		parts += "[GLOB.round_statistics.bull_headbutt_hit] number of times Bulls headbutted marines."
+		parts += "[GLOB.round_statistics.bull_headbutt_hit] number of times Bulls headbutted guardsmans."
 	if(GLOB.round_statistics.hunter_marks)
 		parts += "[GLOB.round_statistics.hunter_marks] number of times Hunters marked a target for death."
 	if(GLOB.round_statistics.ravager_rages)
@@ -463,8 +463,8 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.larva_from_silo] larvas came from silos."
 	if(GLOB.round_statistics.larva_from_cocoon)
 		parts += "[GLOB.round_statistics.larva_from_cocoon] larvas came from cocoons."
-	if(GLOB.round_statistics.larva_from_marine_spawning)
-		parts += "[GLOB.round_statistics.larva_from_marine_spawning] larvas came from marine spawning."
+	if(GLOB.round_statistics.larva_from_guardsman_spawning)
+		parts += "[GLOB.round_statistics.larva_from_guardsman_spawning] larvas came from guardsman spawning."
 	if(GLOB.round_statistics.larva_from_siloing_body)
 		parts += "[GLOB.round_statistics.larva_from_siloing_body] larvas came from siloing bodies."
 	if(GLOB.round_statistics.psy_crushes)
@@ -481,8 +481,8 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.points_from_mining] requisitions points gained from mining."
 	if(GLOB.round_statistics.points_from_research)
 		parts += "[GLOB.round_statistics.points_from_research] requisitions points gained from research."
-	if(GLOB.round_statistics.points_from_xenos)
-		parts += "[GLOB.round_statistics.points_from_xenos] requisitions points gained from xenomorph sales."
+	if(GLOB.round_statistics.points_from_tyranids)
+		parts += "[GLOB.round_statistics.points_from_tyranids] requisitions points gained from tyranid sales."
 	if(GLOB.round_statistics.runner_items_stolen)
 		parts += "[GLOB.round_statistics.runner_items_stolen] items stolen by runners."
 
@@ -507,10 +507,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		return ""
 
 
-/datum/game_mode/proc/count_humans_and_xenos(list/z_levels = SSmapping.levels_by_any_trait(list(ZTRAIT_MARINE_MAIN_SHIP, ZTRAIT_GROUND, ZTRAIT_RESERVED)), count_flags)
+/datum/game_mode/proc/count_humans_and_tyranids(list/z_levels = SSmapping.levels_by_any_trait(list(ZTRAIT_GUARDSMAN_MAIN_SHIP, ZTRAIT_GROUND, ZTRAIT_RESERVED)), count_flags)
 	var/num_humans = 0
 	var/num_humans_ship = 0
-	var/num_xenos = 0
+	var/num_tyranids = 0
 
 	for(var/z in z_levels)
 		for(var/i in GLOB.humans_by_zlevel["[z]"])
@@ -519,9 +519,9 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 				continue
 			if(count_flags & COUNT_IGNORE_HUMAN_SSD && !H.client && H.afk_status == MOB_DISCONNECTED)
 				continue
-			if(H.status_flags & XENO_HOST)
+			if(H.status_flags & TYRANID_HOST)
 				continue
-			if(H.faction == FACTION_XENO)
+			if(H.faction == FACTION_TYRANID)
 				continue
 			if(isspaceturf(H.loc))
 				continue
@@ -530,27 +530,27 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 				num_humans_ship++
 
 	for(var/z in z_levels)
-		for(var/i in GLOB.hive_datums[XENO_HIVE_NORMAL].xenos_by_zlevel["[z]"])
-			var/mob/living/carbon/xenomorph/X = i
+		for(var/i in GLOB.hive_datums[TYRANID_HIVE_NORMAL].tyranids_by_zlevel["[z]"])
+			var/mob/living/carbon/tyranid/X = i
 			if(!istype(X)) // Small fix?
 				continue
-			if(count_flags & COUNT_IGNORE_XENO_SSD && !X.client && X.afk_status == MOB_DISCONNECTED)
+			if(count_flags & COUNT_IGNORE_TYRANID_SSD && !X.client && X.afk_status == MOB_DISCONNECTED)
 				continue
-			if(count_flags & COUNT_IGNORE_XENO_SPECIAL_AREA && is_xeno_in_forbidden_zone(X))
+			if(count_flags & COUNT_IGNORE_TYRANID_SPECIAL_AREA && is_tyranid_in_forbidden_zone(X))
 				continue
 			if(isspaceturf(X.loc))
 				continue
-			if(X.xeno_caste.upgrade == XENO_UPGRADE_BASETYPE) //Ais don't count
+			if(X.tyranid_caste.upgrade == TYRANID_UPGRADE_BASETYPE) //Ais don't count
 				continue
 			// Never count hivemind
-			if(isxenohivemind(X))
+			if(istyranidhivemind(X))
 				continue
 
-			num_xenos++
+			num_tyranids++
 
-	return list(num_humans, num_xenos, num_humans_ship)
+	return list(num_humans, num_tyranids, num_humans_ship)
 
-/datum/game_mode/proc/get_total_joblarvaworth(list/z_levels = SSmapping.levels_by_any_trait(list(ZTRAIT_MARINE_MAIN_SHIP, ZTRAIT_GROUND, ZTRAIT_RESERVED)), count_flags)
+/datum/game_mode/proc/get_total_joblarvaworth(list/z_levels = SSmapping.levels_by_any_trait(list(ZTRAIT_GUARDSMAN_MAIN_SHIP, ZTRAIT_GROUND, ZTRAIT_RESERVED)), count_flags)
 	. = 0
 
 	for(var/i in GLOB.human_mob_list)
@@ -561,19 +561,19 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 			continue
 		if(count_flags & COUNT_IGNORE_HUMAN_SSD && !H.client)
 			continue
-		if(H.status_flags & XENO_HOST)
+		if(H.status_flags & TYRANID_HOST)
 			continue
 		if(!(H.z in z_levels) || isspaceturf(H.loc))
 			continue
-		. += H.job.jobworth[/datum/job/xenomorph]
+		. += H.job.jobworth[/datum/job/tyranid]
 
-/datum/game_mode/proc/is_xeno_in_forbidden_zone(mob/living/carbon/xenomorph/xeno)
+/datum/game_mode/proc/is_tyranid_in_forbidden_zone(mob/living/carbon/tyranid/tyranid)
 	return FALSE
 
-/datum/game_mode/infestation/distress/is_xeno_in_forbidden_zone(mob/living/carbon/xenomorph/xeno)
-	if(round_stage == INFESTATION_MARINE_CRASHING)
+/datum/game_mode/infestation/distress/is_tyranid_in_forbidden_zone(mob/living/carbon/tyranid/tyranid)
+	if(round_stage == INFESTATION_GUARDSMAN_CRASHING)
 		return FALSE
-	if(isxenoresearcharea(get_area(xeno)))
+	if(istyranidresearcharea(get_area(tyranid)))
 		return TRUE
 	return FALSE
 
@@ -586,7 +586,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if(!SSticker || SSticker.current_state != GAME_STATE_PLAYING)
 		to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished!<spawn>")
 		return FALSE
-	if(!GLOB.enter_allowed || (!GLOB.xeno_enter_allowed && istype(job, /datum/job/xenomorph)))
+	if(!GLOB.enter_allowed || (!GLOB.tyranid_enter_allowed && istype(job, /datum/job/tyranid)))
 		to_chat(usr, "<span class='warning'>Spawning currently disabled, please observe.<spawn>")
 		return FALSE
 	if(!NP.client.prefs.random_name)
@@ -617,13 +617,13 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	deadchat_broadcast(span_game(" has woken at [span_name("[A?.name]")]."), span_game("[span_name("[player.new_character.real_name]")] ([job.title])"), follow_target = player.new_character, message_type = DEADCHAT_ARRIVALRATTLE)
 	qdel(player)
 
-/datum/game_mode/proc/attempt_to_join_as_larva(mob/xeno_candidate)
-	to_chat(xeno_candidate, span_warning("This is unavailable in this gamemode."))
+/datum/game_mode/proc/attempt_to_join_as_larva(mob/tyranid_candidate)
+	to_chat(tyranid_candidate, span_warning("This is unavailable in this gamemode."))
 	return FALSE
 
 
-/datum/game_mode/proc/spawn_larva(mob/xeno_candidate)
-	to_chat(xeno_candidate, span_warning("This is unavailable in this gamemode."))
+/datum/game_mode/proc/spawn_larva(mob/tyranid_candidate)
+	to_chat(tyranid_candidate, span_warning("This is unavailable in this gamemode."))
 	return FALSE
 
 /datum/game_mode/proc/set_valid_job_types()
@@ -666,13 +666,13 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 
 /datum/game_mode/proc/set_valid_squads()
 	var/max_squad_num = min(squads_max_number, SSmapping.configs[SHIP_MAP].squads_max_num)
-	SSjob.active_squads[FACTION_TERRAGOV] = list()
+	SSjob.active_squads[FACTION_IMPERIUM] = list()
 	if(max_squad_num == 0)
 		return TRUE
 	var/list/preferred_squads = list()
 	for(var/key in shuffle(SSjob.squads))
 		var/datum/squad/squad = SSjob.squads[key]
-		if(squad.faction == FACTION_TERRAGOV)
+		if(squad.faction == FACTION_IMPERIUM)
 			preferred_squads[squad.name] = 0
 	if(!length(preferred_squads))
 		to_chat(world, span_boldnotice("Error, no squads found."))
@@ -690,16 +690,16 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	sortTim(preferred_squads, cmp=/proc/cmp_numeric_dsc, associative = TRUE)
 
 	preferred_squads.len = max_squad_num
-	SSjob.active_squads[FACTION_TERRAGOV] = list()
+	SSjob.active_squads[FACTION_IMPERIUM] = list()
 	for(var/name in preferred_squads) //Back from weight to instantiate var
-		SSjob.active_squads[FACTION_TERRAGOV] += LAZYACCESSASSOC(SSjob.squads_by_name, FACTION_TERRAGOV, name)
+		SSjob.active_squads[FACTION_IMPERIUM] += LAZYACCESSASSOC(SSjob.squads_by_name, FACTION_IMPERIUM, name)
 	return TRUE
 
 
 /datum/game_mode/proc/scale_roles()
 	if(SSjob.ssjob_flags & SSJOB_OVERRIDE_JOBS_START)
 		return FALSE
-	if(length(SSjob.active_squads[FACTION_TERRAGOV]))
+	if(length(SSjob.active_squads[FACTION_IMPERIUM]))
 		scale_squad_jobs()
 	for(var/job_type in job_points_needed_by_job_type)
 		if(!(job_type in subtypesof(/datum/job)))
@@ -711,7 +711,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 
 /datum/game_mode/proc/scale_squad_jobs()
 	var/datum/job/scaled_job = SSjob.GetJobType(/datum/job/terragov/squad/leader)
-	scaled_job.total_positions = length(SSjob.active_squads[FACTION_TERRAGOV])
+	scaled_job.total_positions = length(SSjob.active_squads[FACTION_IMPERIUM])
 
 ///Return the list of joinable factions, with regards with the current round balance
 /datum/game_mode/proc/get_joinable_factions(should_look_balance)
@@ -731,7 +731,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	parts += antag_report()
 
 	parts += announce_round_stats()
-	parts += announce_xenomorphs()
+	parts += announce_tyranids()
 	CHECK_TICK
 
 	//Medals
@@ -833,13 +833,13 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 /client/proc/roundend_report_file()
 	return "data/[ckey].html"
 
-/datum/game_mode/proc/announce_xenomorphs()
+/datum/game_mode/proc/announce_tyranids()
 	var/list/parts = list()
-	var/datum/hive_status/normal/HN = GLOB.hive_datums[XENO_HIVE_NORMAL]
-	if(!HN.living_xeno_ruler)
+	var/datum/hive_status/normal/HN = GLOB.hive_datums[TYRANID_HIVE_NORMAL]
+	if(!HN.living_tyranid_ruler)
 		return
 
-	parts += span_round_body("The surviving xenomorph ruler was:<br>[HN.living_xeno_ruler.key] as [span_boldnotice("[HN.living_xeno_ruler]")]")
+	parts += span_round_body("The surviving tyranid ruler was:<br>[HN.living_tyranid_ruler.key] as [span_boldnotice("[HN.living_tyranid_ruler]")]")
 
 	if(length(parts))
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
@@ -961,18 +961,18 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if(patrol_wave_countdown)
 		items += "Respawn wave timer: [patrol_wave_countdown]"
 
-	if (isobserver(source) || isxeno(source))
+	if (isobserver(source) || istyranid(source))
 		handle_collapse_timer(dcs, source, items)
 
 	if (source.can_wait_in_larva_queue())
 		handle_larva_timer(dcs, source, items)
-		handle_xeno_respawn_timer(dcs, source, items)
+		handle_tyranid_respawn_timer(dcs, source, items)
 
 /// Displays the orphan hivemind collapse timer, if applicable
 /datum/game_mode/proc/handle_collapse_timer(datum/dcs, mob/source, list/items)
-	if (isxeno(source))
-		var/mob/living/carbon/xenomorph/xeno = source
-		if(xeno.hivenumber != XENO_HIVE_NORMAL)
+	if (istyranid(source))
+		var/mob/living/carbon/tyranid/tyranid = source
+		if(tyranid.hivenumber != TYRANID_HIVE_NORMAL)
 			return // Don't show for non-normal hives
 	var/rulerless_countdown = get_hivemind_collapse_countdown()
 	if(rulerless_countdown)
@@ -986,19 +986,19 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if (larva_position) // If non-zero, we're in queue
 		items += "Position in larva candidate queue: [larva_position]"
 
-	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
-	var/stored_larva = xeno_job.total_positions - xeno_job.current_positions
+	var/datum/job/tyranid_job = SSjob.GetJobType(/datum/job/tyranid)
+	var/stored_larva = tyranid_job.total_positions - tyranid_job.current_positions
 	if(stored_larva)
 		items += "Burrowed larva: [stored_larva]"
 
-/// Displays your xeno respawn timer, if applicable
-/datum/game_mode/proc/handle_xeno_respawn_timer(datum/dcs, mob/source, list/items)
+/// Displays your tyranid respawn timer, if applicable
+/datum/game_mode/proc/handle_tyranid_respawn_timer(datum/dcs, mob/source, list/items)
 	if(GLOB.respawn_allowed)
-		var/status_value = ((GLOB.key_to_time_of_xeno_death[source.key] ? GLOB.key_to_time_of_xeno_death[source.key] : -INFINITY)  + SSticker.mode?.xenorespawn_time - world.time) * 0.1 //If xeno_death is null, use -INFINITY
+		var/status_value = ((GLOB.key_to_time_of_tyranid_death[source.key] ? GLOB.key_to_time_of_tyranid_death[source.key] : -INFINITY)  + SSticker.mode?.tyranidrespawn_time - world.time) * 0.1 //If tyranid_death is null, use -INFINITY
 		if(status_value <= 0)
-			items += "Xeno respawn timer: READY"
+			items += "Tyranid respawn timer: READY"
 		else
-			items += "Xeno respawn timer: [(status_value / 60) % 60]:[add_leading(num2text(status_value % 60), 2, "0")]"
+			items += "Tyranid respawn timer: [(status_value / 60) % 60]:[add_leading(num2text(status_value % 60), 2, "0")]"
 
 ///Returns a list of verbs to give ghosts in this gamemode
 /datum/game_mode/proc/ghost_verbs(mob/dead/observer/observer)

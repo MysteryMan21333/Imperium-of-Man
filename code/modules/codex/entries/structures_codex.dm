@@ -30,8 +30,8 @@
 		structure_strings += "You cannot destroy this structure."
 	else
 		structure_strings += "You can destroy this structure."
-	if(CHECK_BITFIELD(resistance_flags, XENO_DAMAGEABLE))
-		structure_strings += "Xenos can damage this structure."
+	if(CHECK_BITFIELD(resistance_flags, TYRANID_DAMAGEABLE))
+		structure_strings += "Tyranids can damage this structure."
 
 	if(anchored)
 		structure_strings += "It is anchored in place."

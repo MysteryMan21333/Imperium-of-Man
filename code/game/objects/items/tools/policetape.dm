@@ -1,7 +1,7 @@
 //Define all tape types in policetape.dm
 /obj/item/tool/taperoll
 	name = "tape roll"
-	icon = 'icons/obj/policetape.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/policetape.dmi'
 	icon_state = "rollstart"
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_SMALL
@@ -12,7 +12,7 @@
 
 /obj/item/tape
 	name = "tape"
-	icon = 'icons/obj/policetape.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/policetape.dmi'
 	anchored = TRUE
 	var/lifted = 0
 	var/crumpled = 0
@@ -35,7 +35,7 @@
 /obj/item/tape/police
 	name = "police tape"
 	desc = "A length of police tape.  Do not cross."
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 	icon_base = "police"
 
 /obj/item/tool/taperoll/engineering
@@ -48,7 +48,7 @@
 /obj/item/tape/engineering
 	name = "engineering tape"
 	desc = "A length of engineering tape. Better not cross it."
-	req_one_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_ENGPREP)
+	req_one_access = list(ACCESS_GUARDSMAN_ENGINEERING, ACCESS_GUARDSMAN_ENGPREP)
 	icon_base = "engineering"
 
 /obj/item/tool/taperoll/attack_self(mob/user as mob)

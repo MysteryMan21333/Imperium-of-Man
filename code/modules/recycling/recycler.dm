@@ -1,7 +1,7 @@
 /obj/machinery/recycler
 	name = "recycler"
 	desc = "A large crushing machine used to recycle trash."
-	icon = 'icons/obj/recycling.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/recycling.dmi'
 	icon_state = "grinder-o1"
 	layer = ABOVE_MOB_LAYER
 	anchored = TRUE

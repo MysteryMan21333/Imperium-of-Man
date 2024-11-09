@@ -9,7 +9,7 @@
 	var/mob/living/carbon/link_partner
 	/// Used for particles. Holds the particles instead of the mob. See particle_holder for documentation.
 	var/obj/effect/abstract/particle_holder/particle_holder
-	/// If the target xeno was within range.
+	/// If the target tyranid was within range.
 	var/was_within_range = TRUE
 	///Range the linkees must be to each other to benefit
 	var/max_range = 6
@@ -134,4 +134,4 @@
 /atom/movable/screen/alert/status_effect/reknit_form
 	name = "Reknit form"
 	desc = "Your health is being restored."
-	icon_state = "xeno_rejuvenate"
+	icon_state = "tyranid_rejuvenate"

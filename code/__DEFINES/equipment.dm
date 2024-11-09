@@ -12,8 +12,8 @@
 #define PASS_DEFENSIVE_STRUCTURE (1<<4)
 ///Allows Mobs to pass fire without ignition
 #define PASS_FIRE (1<<5)
-///Pass xenos
-#define PASS_XENO (1<<6)
+///Pass tyranids
+#define PASS_TYRANID (1<<6)
 ///you can throw past
 #define PASS_THROW (1<<7)
 ///projectiles can pass
@@ -189,7 +189,7 @@
 
 
 //===========================================================================================
-//Marine armor only, use for armor_features_flags.
+//Guardsman armor only, use for armor_features_flags.
 #define ARMOR_SQUAD_OVERLAY (1<<0)
 #define ARMOR_LAMP_OVERLAY (1<<1)
 #define ARMOR_LAMP_ON (1<<2)
@@ -199,7 +199,7 @@
 //===========================================================================================
 
 //===========================================================================================
-//Marine helmet only, use for marine_helmet_flags.
+//Guardsman helmet only, use for guardsman_helmet_flags.
 #define HELMET_SQUAD_OVERLAY (1<<0)
 #define HELMET_GARB_OVERLAY (1<<1)
 #define HELMET_STORE_GARB (1<<2)

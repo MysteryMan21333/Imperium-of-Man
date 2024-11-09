@@ -2,11 +2,11 @@
 	name = "\improper Condor Jet pilot seat"
 	icon_state = "chair"
 	layer = ABOVE_MOB_LAYER
-	req_access = list(ACCESS_MARINE_PILOT)
+	req_access = list(ACCESS_GUARDSMAN_PILOT)
 	interaction_flags = INTERACT_MACHINE_TGUI|INTERACT_MACHINE_NOSILICON
 	resistance_flags = RESIST_ALL
 	///The docking port we are handling control for
-	var/obj/docking_port/mobile/marine_dropship/casplane/owner
+	var/obj/docking_port/mobile/guardsman_dropship/casplane/owner
 	///The pilot human
 	var/mob/living/carbon/human/occupant
 	///Animated cockpit /image overlay, 96x96
@@ -18,7 +18,7 @@
 	. = ..()
 	set_cockpit_overlay("cockpit_closed")
 	RegisterSignal(SSdcs, COMSIG_GLOB_CAS_LASER_CREATED, PROC_REF(receive_laser_cas))
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED), PROC_REF(cas_usable))
+	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED), PROC_REF(cas_usable))
 
 /obj/structure/caspart/caschair/Destroy()
 	owner?.chair = null
@@ -37,7 +37,7 @@
 
 /obj/structure/caspart/caschair/proc/cas_usable(datum/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
+	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LAUNCHED))
 	cas_usable = TRUE
 	if(occupant)
 		to_chat(occupant, span_notice("Combat initiated, CAS now available."))
@@ -45,7 +45,7 @@
 ///Handles updating the cockpit overlay
 /obj/structure/caspart/caschair/proc/set_cockpit_overlay(new_state)
 	cut_overlays()
-	cockpit = image('icons/obj/structures/cas_cockpit.dmi', src, new_state)
+	cockpit = image('modular_imperium/master_files/icons/obj/structures/cas_cockpit.dmi', src, new_state)
 	cockpit.pixel_x = -16
 	cockpit.pixel_y = -32
 	cockpit.layer = ABOVE_ALL_MOB_LAYER
@@ -144,23 +144,23 @@
 	occupant.forceMove(get_step(loc, WEST))
 	occupant = null
 
-/obj/structure/caspart/caschair/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/structure/caspart/caschair/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(tyranid_attacker, span_tyranidwarning("There is nothing of interest in there."))
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+	if(tyranid_attacker.status_flags & INCORPOREAL || tyranid_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[tyranid_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
-	if(!do_after(xeno_attacker, 2 SECONDS))
+	if(!do_after(tyranid_attacker, 2 SECONDS))
 		return
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
 	eject_user(TRUE)
 
 /obj/structure/caspart/caschair/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(!istype(port, /obj/docking_port/mobile/marine_dropship/casplane))
+	if(!istype(port, /obj/docking_port/mobile/guardsman_dropship/casplane))
 		return
-	var/obj/docking_port/mobile/marine_dropship/casplane/plane = port
+	var/obj/docking_port/mobile/guardsman_dropship/casplane/plane = port
 	owner = plane
 	plane.chair = src
 
@@ -168,7 +168,7 @@
 	ui = SStgui.try_update_ui(user, src, ui)
 
 	if(!ui)
-		ui = new(user, src, "MarineCasship", name)
+		ui = new(user, src, "GuardsmanCasship", name)
 		ui.open()
 
 /obj/structure/caspart/caschair/ui_data(mob/user)

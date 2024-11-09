@@ -18,20 +18,20 @@ GLOBAL_DATUM_INIT(round_statistics, /datum/round_statistics, new)
 	var/human_bump_attacks = 0
 	var/points_from_research = 0
 	var/points_from_mining = 0
-	var/points_from_xenos = 0
-	var/total_xeno_deaths = 0
+	var/points_from_tyranids = 0
+	var/total_tyranid_deaths = 0
 	///All human deaths during the round, listed by faction
 	var/list/total_human_deaths = list()
 	///All human revives during the round, listed by faction
 	var/list/total_human_revives = list()
 	var/total_human_respawns = 0
-	var/total_xenos_created = 0
+	var/total_tyranids_created = 0
 	///All humans created during the round, listed by faction. Occurs at job spawn to capture faction
 	var/list/total_humans_created = list()
 	///All projectiles hit during the round, listed by faction
 	var/list/total_projectile_hits = list()
-	var/total_bullet_hits_on_marines = 0
-	var/total_bullet_hits_on_xenos = 0
+	var/total_bullet_hits_on_guardsmans = 0
+	var/total_bullet_hits_on_tyranids = 0
 	var/workout_counts = list()
 	var/total_larva_burst = 0
 	var/trap_holes = 0
@@ -72,9 +72,9 @@ GLOBAL_DATUM_INIT(round_statistics, /datum/round_statistics, new)
 	var/defiler_neurogas_uses = 0
 	var/defiler_inject_egg_neurogas = 0
 	var/defiler_reagent_slashes = 0
-	var/xeno_unarmed_attacks = 0
-	var/xeno_bump_attacks = 0
-	var/xeno_rally_hive = 0
+	var/tyranid_unarmed_attacks = 0
+	var/tyranid_bump_attacks = 0
+	var/tyranid_rally_hive = 0
 	var/hivelord_healing_infusions = 0
 	var/spitter_acid_sprays = 0
 	var/spitter_scatter_spits = 0
@@ -87,9 +87,9 @@ GLOBAL_DATUM_INIT(round_statistics, /datum/round_statistics, new)
 	var/ravager_endures = 0
 	var/hunter_marks = 0
 	var/hunter_silence_targets = 0
-	var/xeno_acid_wells = 0
+	var/tyranid_acid_wells = 0
 	var/ravager_rages = 0
-	var/larva_from_marine_spawning = 0
+	var/larva_from_guardsman_spawning = 0
 	var/larva_from_silo = 0
 	var/larva_from_cocoon = 0
 	var/larva_from_psydrain = 0

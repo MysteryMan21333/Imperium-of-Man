@@ -6,7 +6,7 @@
 	name = " "
 	var/base_name = " "
 	desc = " "
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "null"
 	worn_icon_state = "null"
 	amount_per_transfer_from_this = 10
@@ -104,7 +104,7 @@
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"
 	desc = "A beaker. Can hold up to 60 units."
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "beaker"
 	worn_icon_state = "beaker"
 	attack_speed = 4
@@ -130,7 +130,7 @@
 	. = ..()
 
 	if(reagents.total_volume)
-		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
+		var/image/filling = image('modular_imperium/master_files/icons/obj/reagentfillings.dmi', src, "[icon_state]10")
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
@@ -218,11 +218,11 @@
 /obj/item/reagent_containers/glass/bucket
 	desc = "It's a bucket."
 	name = "bucket"
-	icon = 'icons/obj/janitor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/janitor.dmi'
 	icon_state = "bucket"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/janitor_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/janitor_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/janitor_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/janitor_right.dmi',
 	)
 	worn_icon_state = "bucket"
 	w_class = WEIGHT_CLASS_NORMAL

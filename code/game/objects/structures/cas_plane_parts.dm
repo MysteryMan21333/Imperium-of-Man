@@ -221,9 +221,9 @@
 		. += "It's empty."
 
 /obj/structure/caspart/minigun/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(!istype(port, /obj/docking_port/mobile/marine_dropship/casplane))
+	if(!istype(port, /obj/docking_port/mobile/guardsman_dropship/casplane))
 		return
-	var/obj/docking_port/mobile/marine_dropship/casplane/plane = port
+	var/obj/docking_port/mobile/guardsman_dropship/casplane/plane = port
 	static_weapon = new static_weapon_type(plane)
 	plane.equipments += static_weapon
 
@@ -242,9 +242,9 @@
 	var/x_offset = 0
 
 /obj/structure/caspart/internalengine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(!istype(port, /obj/docking_port/mobile/marine_dropship/casplane))
+	if(!istype(port, /obj/docking_port/mobile/guardsman_dropship/casplane))
 		return
-	var/obj/docking_port/mobile/marine_dropship/casplane/planeport = port
+	var/obj/docking_port/mobile/guardsman_dropship/casplane/planeport = port
 	planeport.engines += src
 	return ..()
 

@@ -2,7 +2,7 @@
 	name = "\improper corgi"
 	real_name = "corgi"
 	desc = "It's a corgi."
-	icon = 'icons/mob/pets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "corgi"
 	icon_living = "corgi"
 	icon_dead = "corgi_dead"
@@ -21,7 +21,7 @@
 	name = "\improper german shepherd"
 	real_name = "german shepherd"
 	desc = "It's a german shepherd."
-	icon = 'icons/mob/pets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "german_shep"
 	icon_living = "german_shep"
 	icon_dead = "german_shep_dead"
@@ -31,7 +31,7 @@
 	name = "Ranger"
 	real_name = "Ranger"
 	gender = MALE
-	desc = "That's Ranger, your friendly and fierce k9. He has seen the terror of Xenomorphs, so it's best to be nice to him. <b>RANGER LEAD THE WAY</b>!"
+	desc = "That's Ranger, your friendly and fierce k9. He has seen the terror of Tyranids, so it's best to be nice to him. <b>RANGER LEAD THE WAY</b>!"
 	icon_state = "ranger"
 	icon_living = "ranger"
 	icon_dead = "ranger_dead"
@@ -43,7 +43,7 @@
 	name = "\improper bull terrier"
 	real_name = "bull terrier"
 	desc = "It's a bull terrier. Is that the Target dog?"
-	icon = 'icons/mob/pets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "bullterrier"
 	icon_living = "bullterrier"
 	icon_dead = "bullterrier_dead"
@@ -52,8 +52,8 @@
 /mob/living/simple_animal/corgi/walten
 	name = "Walten Clements"
 	gender = MALE
-	desc = "Sir, this is chief Walten Clements. He resides in medbay as this is also his realms. His minions wear scrubs for bacterial control, and they pay him in pets and treats. Do not be concern if he gets COPD as he is kept in a healthy diet full of black coffee and an exercise regimen with plenty of cardio and stretching. His daily concern is accounting; his supply of treats must be met with acute attention. Good day to you, marine."
-	icon = 'icons/mob/pets.dmi'
+	desc = "Sir, this is chief Walten Clements. He resides in medbay as this is also his realms. His minions wear scrubs for bacterial control, and they pay him in pets and treats. Do not be concern if he gets COPD as he is kept in a healthy diet full of black coffee and an exercise regimen with plenty of cardio and stretching. His daily concern is accounting; his supply of treats must be met with acute attention. Good day to you, guardsman."
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "walten"
 	icon_living = "walten"
 	icon_dead = "walten_dead"

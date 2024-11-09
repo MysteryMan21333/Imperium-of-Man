@@ -2,7 +2,7 @@
  * Contains ammo racks for tank ammo storage
  */
 /obj/structure/ammo_rack //Parent type, only used as a template
-	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_interior.dmi'
 	resistance_flags = RESIST_ALL
 	///Determines what subtype of storage is on our item, see datums\storage\subtypes
 	var/storage_type = /datum/storage/tank
@@ -46,26 +46,26 @@
 	storage_type = /datum/storage/tank/ammorack_secondary
 
 
-/obj/structure/ammo_rack/primary/som
+/obj/structure/ammo_rack/primary/chaos
 	icon_state = "primary"
-	icon = 'icons/obj/armored/3x4/som_ammo_rack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_ammo_rack.dmi'
 	pixel_y = -20
 	pixel_x = -34
 
-/obj/structure/ammo_rack/secondary/som
+/obj/structure/ammo_rack/secondary/chaos
 	icon_state = "secondary"
-	icon = 'icons/obj/armored/3x4/som_ammo_rack.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_ammo_rack.dmi'
 	pixel_x = -18
 	pixel_y = -5
 
 /obj/structure/ammo_rack/primary/icc
 	icon_state = "primaryrack"
-	icon = 'icons/obj/armored/2x2/icc_lvrt.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/2x2/icc_lvrt.dmi'
 	pixel_y = -20
 	pixel_x = -34
 
 /obj/structure/ammo_rack/secondary/icc
 	icon_state = "secondaryrack"
-	icon = 'icons/obj/armored/2x2/icc_lvrt.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/2x2/icc_lvrt.dmi'
 	pixel_x = -18
 	pixel_y = -5

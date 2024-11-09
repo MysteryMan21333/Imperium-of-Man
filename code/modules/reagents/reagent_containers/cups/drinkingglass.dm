@@ -41,10 +41,10 @@
 	if(HAS_TRAIT(src, TRAIT_WAS_RENAMED))
 		. += span_notice("This glass has been given a custom name. It can be removed by washing it.")
 
-/obj/item/reagent_containers/cup/glass/drinkingglass/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/reagent_containers/cup/glass/drinkingglass/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!CONFIG_GET(flag/fun_allowed))
 		return FALSE
-	attack_hand(xeno_attacker)
+	attack_hand(tyranid_attacker)
 
 /obj/item/reagent_containers/cup/glass/drinkingglass/proc/on_cleaned(obj/source_component, obj/source)
 	SIGNAL_HANDLER
@@ -65,7 +65,7 @@
 /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass
 	name = "shot glass"
 	desc = "A shot glass - the universal symbol for bad decisions."
-	icon = 'icons/obj/drinks/shot_glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/drinks/shot_glasses.dmi'
 	icon_state = "shotglass"
 	base_icon_state = "shotglass"
 	gulp_size = 15

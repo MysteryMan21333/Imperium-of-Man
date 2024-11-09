@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(goal_nodes)
 	name = "AI goal"
 	invisibility = INVISIBILITY_OBSERVER
 	///The identifier of this ai goal
-	var/identifier = IDENTIFIER_XENO
+	var/identifier = IDENTIFIER_TYRANID
 	///Who made that ai_node
 	var/mob/creator
 	///The image added to the creator screen
@@ -158,7 +158,7 @@ GLOBAL_LIST_EMPTY(goal_nodes)
 		return
 	src.creator = creator
 	RegisterSignal(creator, COMSIG_QDELETING, PROC_REF(clean_creator))
-	goal_image = image('icons/Xeno/actions/leader.dmi', src, "minion_rendez_vous")
+	goal_image = image('modular_imperium/master_files/icons/tyranid/actions/leader.dmi', src, "minion_rendez_vous")
 	goal_image.layer = HUD_PLANE
 	goal_image.alpha = 180
 	goal_image.pixel_y += 10

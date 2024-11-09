@@ -1,6 +1,6 @@
 /obj/machinery/computer
 	name = "computer"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	density = TRUE
 	anchored = TRUE
@@ -9,7 +9,7 @@
 	idle_power_usage = 300
 	active_power_usage = 300
 	var/processing = 0
-	///How many times the computer can be smashed by a Xeno before it is disabled.
+	///How many times the computer can be smashed by a Tyranid before it is disabled.
 	var/durability = 2
 	resistance_flags = UNACIDABLE
 	///they don't provide good cover
@@ -211,7 +211,7 @@
 		M.decon(src)
 		qdel(src)
 
-	else if(isxeno(user))
+	else if(istyranid(user))
 		return attack_alien(user)
 
 	else
@@ -225,26 +225,26 @@
 	if(ishuman(usr))
 		pick(playsound(src, 'sound/machines/computer_typing1.ogg', 5, 1), playsound(src, 'sound/machines/computer_typing2.ogg', 5, 1), playsound(src, 'sound/machines/computer_typing3.ogg', 5, 1))
 
-///So Xenos can smash computers out of the way without actually breaking them
-/obj/machinery/computer/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+///So Tyranids can smash computers out of the way without actually breaking them
+/obj/machinery/computer/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
 	if(resistance_flags & INDESTRUCTIBLE)
-		to_chat(xeno_attacker, span_xenowarning("We're unable to damage this!"))
+		to_chat(tyranid_attacker, span_tyranidwarning("We're unable to damage this!"))
 		return
 
 	if(machine_stat & (BROKEN|DISABLED)) //If we're already broken or disabled, don't bother
-		to_chat(xeno_attacker, span_xenowarning("This peculiar thing is already broken!"))
+		to_chat(tyranid_attacker, span_tyranidwarning("This peculiar thing is already broken!"))
 		return
 
 	if(durability <= 0)
 		set_disabled()
-		to_chat(xeno_attacker, span_xenowarning("We smash the annoying device, disabling it!"))
+		to_chat(tyranid_attacker, span_tyranidwarning("We smash the annoying device, disabling it!"))
 	else
 		durability--
-		to_chat(xeno_attacker, span_xenowarning("We smash the annoying device!"))
+		to_chat(tyranid_attacker, span_tyranidwarning("We smash the annoying device!"))
 
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_DISARM2) //SFxeno_attacker
-	playsound(loc, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 25, 1) //SFxeno_attacker
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_DISARM2) //SFtyranid_attacker
+	playsound(loc, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 25, 1) //SFtyranid_attacker
 	Shake(duration = 0.5 SECONDS)

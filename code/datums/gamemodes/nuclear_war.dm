@@ -2,8 +2,8 @@
 	name = "Nuclear War"
 	config_tag = "Nuclear War"
 	silo_scaling = 1.5
-	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_DEAD_GRAB_FORBIDDEN|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI
-	xeno_abilities_flags = ABILITY_NUCLEARWAR
+	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_TYRANID_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_DEAD_GRAB_FORBIDDEN|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_TYRANID_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI
+	tyranid_abilities_flags = ABILITY_NUCLEARWAR
 	valid_job_types = list(
 		/datum/job/terragov/command/captain = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
@@ -27,27 +27,27 @@
 		/datum/job/terragov/squad/smartgunner = 1,
 		/datum/job/terragov/squad/leader = 1,
 		/datum/job/terragov/squad/standard = -1,
-		/datum/job/xenomorph = FREE_XENO_AT_START,
-		/datum/job/xenomorph/queen = 1
+		/datum/job/tyranid = FREE_TYRANID_AT_START,
+		/datum/job/tyranid/queen = 1
 	)
 	job_points_needed_by_job_type = list(
 		/datum/job/terragov/squad/smartgunner = 20,
 		/datum/job/terragov/squad/corpsman = 5,
 		/datum/job/terragov/squad/engineer = 5,
-		/datum/job/xenomorph = NUCLEAR_WAR_LARVA_POINTS_NEEDED,
+		/datum/job/tyranid = NUCLEAR_WAR_LARVA_POINTS_NEEDED,
 	)
 
 /datum/game_mode/infestation/nuclear_war/post_setup()
 	. = ..()
 
-	SSpoints.add_strategic_psy_points(XENO_HIVE_NORMAL, 1400)
-	SSpoints.add_tactical_psy_points(XENO_HIVE_NORMAL, 300)
+	SSpoints.add_strategic_psy_points(TYRANID_HIVE_NORMAL, 1400)
+	SSpoints.add_tactical_psy_points(TYRANID_HIVE_NORMAL, 300)
 
 	for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
 		corpse.create_mob()
 
-	for(var/mob/living/carbon/xenomorph/larva/xeno in GLOB.alive_xeno_list)
-		xeno.evolution_stored = xeno.xeno_caste.evolution_threshold //Immediate roundstart evo for larva.
+	for(var/mob/living/carbon/tyranid/larva/tyranid in GLOB.alive_tyranid_list)
+		tyranid.evolution_stored = tyranid.tyranid_caste.evolution_threshold //Immediate roundstart evo for larva.
 
 	for(var/i in GLOB.nuke_spawn_locs)
 		new /obj/machinery/nuclearbomb(i)
@@ -60,7 +60,7 @@
 /datum/game_mode/infestation/nuclear_war/orphan_hivemind_collapse()
 	if(round_finished)
 		return
-	if(round_stage == INFESTATION_MARINE_CRASHING)
+	if(round_stage == INFESTATION_GUARDSMAN_CRASHING)
 		round_finished = MODE_INFESTATION_M_MINOR
 		return
 	round_finished = MODE_INFESTATION_M_MAJOR
@@ -76,9 +76,9 @@
 	if(world.time < (SSticker.round_start_time + 5 SECONDS))
 		return FALSE
 
-	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_ALIVE_SSD|COUNT_IGNORE_XENO_SPECIAL_AREA)
+	var/list/living_player_list = count_humans_and_tyranids(count_flags = COUNT_IGNORE_ALIVE_SSD|COUNT_IGNORE_TYRANID_SPECIAL_AREA)
 	var/num_humans = living_player_list[1]
-	var/num_xenos = living_player_list[2]
+	var/num_tyranids = living_player_list[2]
 	var/num_humans_ship = living_player_list[3]
 
 	if(SSevacuation.dest_status == NUKE_EXPLOSION_FINISHED)
@@ -86,47 +86,47 @@
 		round_finished = MODE_GENERIC_DRAW_NUKE
 		return TRUE
 
-	if(round_stage == INFESTATION_DROPSHIP_CAPTURED_XENOS)
+	if(round_stage == INFESTATION_DROPSHIP_CAPTURED_TYRANIDS)
 		message_admins("Round finished: [MODE_INFESTATION_X_MINOR]")
 		round_finished = MODE_INFESTATION_X_MINOR
 		return TRUE
 
 	switch(planet_nuked)
 		if(INFESTATION_NUKE_COMPLETED)
-			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //marines managed to nuke the colony
+			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //guardsmans managed to nuke the colony
 			round_finished = MODE_INFESTATION_M_MINOR
 			return TRUE
 		if(INFESTATION_NUKE_COMPLETED_SHIPSIDE)
-			message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //marines managed to nuke their own ship
+			message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //guardsmans managed to nuke their own ship
 			round_finished = MODE_INFESTATION_X_MAJOR
 			return TRUE
 		if(INFESTATION_NUKE_COMPLETED_OTHER)
-			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //marines managed to nuke transit or something
+			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //guardsmans managed to nuke transit or something
 			round_finished = MODE_INFESTATION_X_MINOR
 			return TRUE
 
 	if(!num_humans)
-		if(!num_xenos)
+		if(!num_tyranids)
 			message_admins("Round finished: [MODE_INFESTATION_DRAW_DEATH]") //everyone died at the same time, no one wins
 			round_finished = MODE_INFESTATION_DRAW_DEATH
 			return TRUE
-		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //xenos wiped out ALL the marines without hijacking, xeno major victory
+		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //tyranids wiped out ALL the guardsmans without hijacking, tyranid major victory
 		round_finished = MODE_INFESTATION_X_MAJOR
 		return TRUE
-	if(!num_xenos)
-		if(round_stage == INFESTATION_MARINE_CRASHING)
-			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //marines lost the ground operation but managed to wipe out Xenos on the ship at a greater cost, minor victory
+	if(!num_tyranids)
+		if(round_stage == INFESTATION_GUARDSMAN_CRASHING)
+			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //guardsmans lost the ground operation but managed to wipe out Tyranids on the ship at a greater cost, minor victory
 			round_finished = MODE_INFESTATION_M_MINOR
 			return TRUE
-		message_admins("Round finished: [MODE_INFESTATION_M_MAJOR]") //marines win big
+		message_admins("Round finished: [MODE_INFESTATION_M_MAJOR]") //guardsmans win big
 		round_finished = MODE_INFESTATION_M_MAJOR
 		return TRUE
-	if(round_stage == INFESTATION_MARINE_CRASHING && !num_humans_ship)
+	if(round_stage == INFESTATION_GUARDSMAN_CRASHING && !num_humans_ship)
 		if(SSevacuation.human_escaped > SSevacuation.initial_human_on_ship * 0.5)
-			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //xenos have control of the ship, but most marines managed to flee
+			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //tyranids have control of the ship, but most guardsmans managed to flee
 			round_finished = MODE_INFESTATION_X_MINOR
 			return
-		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //xenos wiped our marines, xeno major victory
+		message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //tyranids wiped our guardsmans, tyranid major victory
 		round_finished = MODE_INFESTATION_X_MAJOR
 		return TRUE
 	return FALSE

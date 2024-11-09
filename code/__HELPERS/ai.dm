@@ -24,20 +24,20 @@
 			continue
 		. += nearby_human
 
-///Returns a list of xenos via get_dist and same z level method, very cheap compared to range()
-/proc/cheap_get_xenos_near(atom/movable/source, distance)
+///Returns a list of tyranids via get_dist and same z level method, very cheap compared to range()
+/proc/cheap_get_tyranids_near(atom/movable/source, distance)
 	. = list()
 	var/turf/source_turf = get_turf(source)
 	if(!source_turf)
 		return
-	for(var/mob/living/carbon/xenomorph/nearby_xeno AS in GLOB.alive_xeno_list)
-		if(isnull(nearby_xeno))
+	for(var/mob/living/carbon/tyranid/nearby_tyranid AS in GLOB.alive_tyranid_list)
+		if(isnull(nearby_tyranid))
 			continue
-		if(source_turf.z != nearby_xeno.z)
+		if(source_turf.z != nearby_tyranid.z)
 			continue
-		if(get_dist(source_turf, nearby_xeno) > distance)
+		if(get_dist(source_turf, nearby_tyranid) > distance)
 			continue
-		. += nearby_xeno
+		. += nearby_tyranid
 
 ///Returns a list of mechs via get_dist and same z level method, very cheap compared to range()
 /proc/cheap_get_mechs_near(atom/movable/source, distance)
@@ -79,7 +79,7 @@
 	var/atom/nearest_target
 	var/shorter_distance = distance + 1
 	// Cache it in case we need it twice
-	var/list/nearby_xeno_list
+	var/list/nearby_tyranid_list
 	if(target_flags & TARGET_HUMAN)
 		for(var/mob/living/nearby_human AS in cheap_get_humans_near(source, distance))
 			if(nearby_human.stat == DEAD || nearby_human.faction == attacker_faction || nearby_human.alpha <= SCOUT_CLOAK_RUN_ALPHA)
@@ -87,20 +87,20 @@
 			if(get_dist(source, nearby_human) < shorter_distance)
 				nearest_target = nearby_human
 				shorter_distance = get_dist(source, nearby_human) //better to recalculate than to save the var
-	if(target_flags & TARGET_XENO)
-		nearby_xeno_list = cheap_get_xenos_near(source, shorter_distance - 1)
-		for(var/mob/nearby_xeno AS in nearby_xeno_list)
-			if(source.issamexenohive(nearby_xeno))
+	if(target_flags & TARGET_TYRANID)
+		nearby_tyranid_list = cheap_get_tyranids_near(source, shorter_distance - 1)
+		for(var/mob/nearby_tyranid AS in nearby_tyranid_list)
+			if(source.issametyranidhive(nearby_tyranid))
 				continue
-			if(nearby_xeno.stat == DEAD || nearby_xeno.alpha <= HUNTER_STEALTH_RUN_ALPHA)
+			if(nearby_tyranid.stat == DEAD || nearby_tyranid.alpha <= HUNTER_STEALTH_RUN_ALPHA)
 				continue
-			if((nearby_xeno.status_flags & GODMODE) || (nearby_xeno.status_flags & INCORPOREAL)) //No attacking invulnerable/ai's eye!
+			if((nearby_tyranid.status_flags & GODMODE) || (nearby_tyranid.status_flags & INCORPOREAL)) //No attacking invulnerable/ai's eye!
 				continue
-			if(get_dist(source, nearby_xeno) < shorter_distance)
-				nearest_target = nearby_xeno
-				shorter_distance = get_dist(source, nearby_xeno)
+			if(get_dist(source, nearby_tyranid) < shorter_distance)
+				nearest_target = nearby_tyranid
+				shorter_distance = get_dist(source, nearby_tyranid)
 	if(target_flags & TARGET_HUMAN_TURRETS)
-		for(var/atom/nearby_turret AS in GLOB.marine_turrets)
+		for(var/atom/nearby_turret AS in GLOB.guardsman_turrets)
 			if(source.z != nearby_turret.z)
 				continue
 			if(!(get_dist(source, nearby_turret) < shorter_distance))
@@ -113,21 +113,21 @@
 			if(!(get_dist(source, nearby_vehicle) < shorter_distance))
 				continue
 			nearest_target = nearby_vehicle
-	if(target_flags & TARGET_FRIENDLY_XENO)
-		if(!nearby_xeno_list)
-			nearby_xeno_list = cheap_get_xenos_near(source, shorter_distance - 1)
-		for(var/mob/nearby_xeno AS in nearby_xeno_list)
-			if(source == nearby_xeno)
+	if(target_flags & TARGET_FRIENDLY_TYRANID)
+		if(!nearby_tyranid_list)
+			nearby_tyranid_list = cheap_get_tyranids_near(source, shorter_distance - 1)
+		for(var/mob/nearby_tyranid AS in nearby_tyranid_list)
+			if(source == nearby_tyranid)
 				continue
-			if(!nearby_xeno.client)
+			if(!nearby_tyranid.client)
 				continue
-			if(!source.issamexenohive(nearby_xeno))
+			if(!source.issametyranidhive(nearby_tyranid))
 				continue
-			if(nearby_xeno.stat == DEAD)
+			if(nearby_tyranid.stat == DEAD)
 				continue
-			if(get_dist(source, nearby_xeno) < shorter_distance)
-				nearest_target = nearby_xeno
-				shorter_distance = get_dist(source, nearby_xeno)
+			if(get_dist(source, nearby_tyranid) < shorter_distance)
+				nearest_target = nearby_tyranid
+				shorter_distance = get_dist(source, nearby_tyranid)
 	return nearest_target
 
 /**

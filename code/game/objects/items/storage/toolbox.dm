@@ -3,8 +3,8 @@
 	desc = "Danger. Very robust."
 	icon_state = "red"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/toolboxes_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/toolboxes_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/toolboxes_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/toolboxes_right.dmi',
 	)
 	worn_icon_state = "toolbox_red"
 	atom_flags = CONDUCT

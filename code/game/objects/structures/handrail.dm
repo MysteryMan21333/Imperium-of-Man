@@ -1,7 +1,7 @@
 /obj/structure/barricade/handrail
 	name = "handrail"
 	desc = "A railing, for your hands. Woooow."
-	icon = 'icons/obj/structures/handrail.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/handrail.dmi'
 	icon_state = "handrail_a_0"
 	barricade_type = "handrail_a_0"
 	stack_amount = 0
@@ -9,7 +9,7 @@
 	can_wire = FALSE
 	coverage = 10
 	can_change_dmg_state = FALSE
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	max_integrity = 20
 
@@ -26,7 +26,7 @@
 		layer = initial(layer)
 
 /obj/structure/barricade/handrail/Bumped(atom/bumpingcreature)
-	if(!isxeno(bumpingcreature))
+	if(!istyranid(bumpingcreature))
 		return
 	balloon_alert_to_viewers("breaks [src]")
 	qdel(src)

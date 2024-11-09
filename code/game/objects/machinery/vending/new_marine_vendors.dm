@@ -1,7 +1,7 @@
-/obj/machinery/marine_selector
-	name = "\improper Theoretical Marine selector"
+/obj/machinery/guardsman_selector
+	name = "\improper Theoretical Guardsman selector"
 	desc = ""
-	icon = 'icons/obj/machines/vending.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	density = TRUE
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
@@ -29,31 +29,31 @@
 	///The faction of that vendor, can be null
 	var/faction
 
-/obj/machinery/marine_selector/Initialize(mapload)
+/obj/machinery/guardsman_selector/Initialize(mapload)
 	. = ..()
 	update_icon()
 
-/obj/machinery/marine_selector/update_icon()
+/obj/machinery/guardsman_selector/update_icon()
 	. = ..()
 	if(is_operational())
 		set_light(initial(light_range))
 	else
 		set_light(0)
 
-/obj/machinery/marine_selector/update_icon_state()
+/obj/machinery/guardsman_selector/update_icon_state()
 	. = ..()
 	if(is_operational())
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]-off"
 
-/obj/machinery/marine_selector/update_overlays()
+/obj/machinery/guardsman_selector/update_overlays()
 	. = ..()
 	if(!is_operational())
 		return
 	. += emissive_appearance(icon, "[icon_state]_emissive")
 
-/obj/machinery/marine_selector/can_interact(mob/user)
+/obj/machinery/guardsman_selector/can_interact(mob/user)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -81,14 +81,14 @@
 
 	return TRUE
 
-/obj/machinery/marine_selector/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/guardsman_selector/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 
 	if(!ui)
-		ui = new(user, src, "MarineSelector", name)
+		ui = new(user, src, "GuardsmanSelector", name)
 		ui.open()
 
-/obj/machinery/marine_selector/ui_static_data(mob/user)
+/obj/machinery/guardsman_selector/ui_static_data(mob/user)
 	. = list()
 	.["displayed_records"] = list()
 
@@ -108,31 +108,31 @@
 
 		LAZYADD(.["displayed_records"][category], list(list("prod_index" = i, "prod_name" = p_name, "prod_color" = myprod[4], "prod_cost" = p_cost, "prod_desc" = initial(productpath.desc))))
 
-/obj/machinery/marine_selector/ui_data(mob/user)
+/obj/machinery/guardsman_selector/ui_data(mob/user)
 	. = list()
 
 	var/obj/item/card/id/I = user.get_idcard()
-	var/list/buy_choices = I?.marine_buy_choices
+	var/list/buy_choices = I?.guardsman_buy_choices
 	var/obj/item/card/id/dogtag/full/ptscheck = new /obj/item/card/id/dogtag/full
 
 	.["cats"] = list()
-	for(var/cat in GLOB.marine_selector_cats)
+	for(var/cat in GLOB.guardsman_selector_cats)
 		if(!length(buy_choices))
 			break
 		.["cats"][cat] = list(
 			"remaining" = buy_choices[cat],
-			"total" = GLOB.marine_selector_cats[cat],
+			"total" = GLOB.guardsman_selector_cats[cat],
 			"choice" = "choice",
 			)
 
-	for(var/cat in I?.marine_points)
+	for(var/cat in I?.guardsman_points)
 		.["cats"][cat] = list(
-			"remaining_points" = I?.marine_points[cat],
-			"total_points" = ptscheck?.marine_points[cat],
+			"remaining_points" = I?.guardsman_points[cat],
+			"total_points" = ptscheck?.guardsman_points[cat],
 			"choice" = "points",
 			)
 
-/obj/machinery/marine_selector/ui_act(action, list/params)
+/obj/machinery/guardsman_selector/ui_act(action, list/params)
 	. = ..()
 	if(.)
 		return
@@ -154,7 +154,7 @@
 			if(!(user_id.id_flags & CAN_BUY_LOADOUT)) //If you use the quick-e-quip, you cannot also use the GHMMEs
 				to_chat(usr, span_warning("Access denied. You have already vended a loadout."))
 				return FALSE
-			if(use_points && (item_category in user_id.marine_points) && user_id.marine_points[item_category] < cost)
+			if(use_points && (item_category in user_id.guardsman_points) && user_id.guardsman_points[item_category] < cost)
 				to_chat(usr, span_warning("Not enough points."))
 				if(icon_deny)
 					flick(icon_deny, src)
@@ -167,9 +167,9 @@
 					flick(icon_deny, src)
 				return
 
-			if(item_category in user_id.marine_buy_choices)
-				if(user_id.marine_buy_choices[item_category] && GLOB.marine_selector_cats[item_category])
-					user_id.marine_buy_choices[item_category] -= 1
+			if(item_category in user_id.guardsman_buy_choices)
+				if(user_id.guardsman_buy_choices[item_category] && GLOB.guardsman_selector_cats[item_category])
+					user_id.guardsman_buy_choices[item_category] -= 1
 				else
 					if(cost == 0)
 						to_chat(usr, span_warning("You can't buy things from this category anymore."))
@@ -194,7 +194,7 @@
 			if(item_category == CAT_STD && !issynth(usr))
 				var/mob/living/carbon/human/H = usr
 				if(!istype(H.job, /datum/job/terragov/command/fieldcommander))
-					vended_items += new /obj/item/radio/headset/mainship/marine(loc, H.assigned_squad, vendor_role)
+					vended_items += new /obj/item/radio/headset/mainship/guardsman(loc, H.assigned_squad, vendor_role)
 					if(istype(H.job, /datum/job/terragov/squad/leader))
 						vended_items += new /obj/item/hud_tablet(loc, vendor_role, H.assigned_squad)
 						vended_items += new /obj/item/squad_transfer_tablet(loc)
@@ -202,17 +202,17 @@
 			for (var/obj/item/vended_item in vended_items)
 				vended_item.on_vend(usr, faction, auto_equip = TRUE)
 
-			if(use_points && (item_category in user_id.marine_points))
-				user_id.marine_points[item_category] -= cost
+			if(use_points && (item_category in user_id.guardsman_points))
+				user_id.guardsman_points[item_category] -= cost
 			. = TRUE
 			user_id.id_flags |= USED_GHMME
 
-/obj/machinery/marine_selector/clothes
+/obj/machinery/guardsman_selector/clothes
 	name = "GHMME Automated Closet"
 	desc = "An automated closet hooked up to a colossal storage unit of standard-issue uniform and armor."
-	icon_state = "marineuniform"
-	icon_vend = "marineuniform-vend"
-	icon_deny = "marineuniform-deny"
+	icon_state = "guardsmanuniform"
+	icon_vend = "guardsmanuniform-vend"
+	icon_deny = "guardsmanuniform-deny"
 	vendor_role = /datum/job/terragov/squad/standard
 	use_points = TRUE
 	categories = list(
@@ -229,170 +229,170 @@
 		CAT_MAS = 1,
 	)
 
-/obj/machinery/marine_selector/clothes/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/Initialize(mapload)
 	. = ..()
-	listed_products = GLOB.marine_clothes_listed_products + GLOB.marine_gear_listed_products
+	listed_products = GLOB.guardsman_clothes_listed_products + GLOB.guardsman_gear_listed_products
 
-/obj/machinery/marine_selector/clothes/alpha
+/obj/machinery/guardsman_selector/clothes/alpha
 	squad_tag = "Alpha"
-	req_access = list(ACCESS_MARINE_ALPHA)
+	req_access = list(ACCESS_GUARDSMAN_ALPHA)
 
-/obj/machinery/marine_selector/clothes/bravo
+/obj/machinery/guardsman_selector/clothes/bravo
 	squad_tag = "Bravo"
-	req_access = list(ACCESS_MARINE_BRAVO)
+	req_access = list(ACCESS_GUARDSMAN_BRAVO)
 
-/obj/machinery/marine_selector/clothes/charlie
+/obj/machinery/guardsman_selector/clothes/charlie
 	squad_tag = "Charlie"
-	req_access = list(ACCESS_MARINE_CHARLIE)
+	req_access = list(ACCESS_GUARDSMAN_CHARLIE)
 
-/obj/machinery/marine_selector/clothes/delta
+/obj/machinery/guardsman_selector/clothes/delta
 	squad_tag = "Delta"
-	req_access = list(ACCESS_MARINE_DELTA)
+	req_access = list(ACCESS_GUARDSMAN_DELTA)
 
 
-/obj/machinery/marine_selector/clothes/engi
+/obj/machinery/guardsman_selector/clothes/engi
 	name = "GHMME Automated Engineer Closet"
-	req_access = list(ACCESS_MARINE_ENGPREP)
+	req_access = list(ACCESS_GUARDSMAN_ENGPREP)
 	vendor_role = /datum/job/terragov/squad/engineer
 	gives_webbing = FALSE
 
-/obj/machinery/marine_selector/clothes/engi/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/engi/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.engineer_clothes_listed_products
 
-/obj/machinery/marine_selector/clothes/engi/alpha
+/obj/machinery/guardsman_selector/clothes/engi/alpha
 	squad_tag = "Alpha"
-	req_access = list(ACCESS_MARINE_ENGPREP, ACCESS_MARINE_ALPHA)
+	req_access = list(ACCESS_GUARDSMAN_ENGPREP, ACCESS_GUARDSMAN_ALPHA)
 
-/obj/machinery/marine_selector/clothes/engi/bravo
+/obj/machinery/guardsman_selector/clothes/engi/bravo
 	squad_tag = "Bravo"
-	req_access = list(ACCESS_MARINE_ENGPREP, ACCESS_MARINE_BRAVO)
+	req_access = list(ACCESS_GUARDSMAN_ENGPREP, ACCESS_GUARDSMAN_BRAVO)
 
-/obj/machinery/marine_selector/clothes/engi/charlie
+/obj/machinery/guardsman_selector/clothes/engi/charlie
 	squad_tag = "Charlie"
-	req_access = list(ACCESS_MARINE_ENGPREP, ACCESS_MARINE_CHARLIE)
+	req_access = list(ACCESS_GUARDSMAN_ENGPREP, ACCESS_GUARDSMAN_CHARLIE)
 
-/obj/machinery/marine_selector/clothes/engi/delta
+/obj/machinery/guardsman_selector/clothes/engi/delta
 	squad_tag = "Delta"
-	req_access = list(ACCESS_MARINE_ENGPREP, ACCESS_MARINE_DELTA)
+	req_access = list(ACCESS_GUARDSMAN_ENGPREP, ACCESS_GUARDSMAN_DELTA)
 
-/obj/machinery/marine_selector/clothes/engi/valhalla
-	vendor_role = /datum/job/fallen/marine/engineer
+/obj/machinery/guardsman_selector/clothes/engi/valhalla
+	vendor_role = /datum/job/fallen/guardsman/engineer
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/medic
+/obj/machinery/guardsman_selector/clothes/medic
 	name = "GHMME Automated Corpsman Closet"
-	req_access = list(ACCESS_MARINE_MEDPREP)
+	req_access = list(ACCESS_GUARDSMAN_MEDPREP)
 	vendor_role = /datum/job/terragov/squad/corpsman
 	gives_webbing = FALSE
 
 
-/obj/machinery/marine_selector/clothes/medic/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/medic/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.medic_clothes_listed_products
 
-/obj/machinery/marine_selector/clothes/medic/alpha
+/obj/machinery/guardsman_selector/clothes/medic/alpha
 	squad_tag = "Alpha"
-	req_access = list(ACCESS_MARINE_MEDPREP, ACCESS_MARINE_ALPHA)
+	req_access = list(ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_ALPHA)
 
-/obj/machinery/marine_selector/clothes/medic/bravo
+/obj/machinery/guardsman_selector/clothes/medic/bravo
 	squad_tag = "Bravo"
-	req_access = list(ACCESS_MARINE_MEDPREP, ACCESS_MARINE_BRAVO)
+	req_access = list(ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_BRAVO)
 
-/obj/machinery/marine_selector/clothes/medic/charlie
+/obj/machinery/guardsman_selector/clothes/medic/charlie
 	squad_tag = "Charlie"
-	req_access = list(ACCESS_MARINE_MEDPREP, ACCESS_MARINE_CHARLIE)
+	req_access = list(ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_CHARLIE)
 
-/obj/machinery/marine_selector/clothes/medic/delta
+/obj/machinery/guardsman_selector/clothes/medic/delta
 	squad_tag = "Delta"
-	req_access = list(ACCESS_MARINE_MEDPREP, ACCESS_MARINE_DELTA)
+	req_access = list(ACCESS_GUARDSMAN_MEDPREP, ACCESS_GUARDSMAN_DELTA)
 
-/obj/machinery/marine_selector/clothes/medic/valhalla
-	vendor_role = /datum/job/fallen/marine/corpsman
+/obj/machinery/guardsman_selector/clothes/medic/valhalla
+	vendor_role = /datum/job/fallen/guardsman/corpsman
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/smartgun
+/obj/machinery/guardsman_selector/clothes/smartgun
 	name = "GHMME Automated Smartgunner Closet"
-	req_access = list(ACCESS_MARINE_SMARTPREP)
+	req_access = list(ACCESS_GUARDSMAN_SMARTPREP)
 	vendor_role = /datum/job/terragov/squad/smartgunner
 	gives_webbing = FALSE
 
-/obj/machinery/marine_selector/clothes/smartgun/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/smartgun/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.smartgunner_clothes_listed_products
 
-/obj/machinery/marine_selector/clothes/smartgun/alpha
+/obj/machinery/guardsman_selector/clothes/smartgun/alpha
 	squad_tag = "Alpha"
-	req_access = list(ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_ALPHA)
+	req_access = list(ACCESS_GUARDSMAN_SMARTPREP, ACCESS_GUARDSMAN_ALPHA)
 
-/obj/machinery/marine_selector/clothes/smartgun/bravo
+/obj/machinery/guardsman_selector/clothes/smartgun/bravo
 	squad_tag = "Bravo"
-	req_access = list(ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_BRAVO)
+	req_access = list(ACCESS_GUARDSMAN_SMARTPREP, ACCESS_GUARDSMAN_BRAVO)
 
-/obj/machinery/marine_selector/clothes/smartgun/charlie
+/obj/machinery/guardsman_selector/clothes/smartgun/charlie
 	squad_tag = "Charlie"
-	req_access = list(ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_CHARLIE)
+	req_access = list(ACCESS_GUARDSMAN_SMARTPREP, ACCESS_GUARDSMAN_CHARLIE)
 
-/obj/machinery/marine_selector/clothes/smartgun/delta
+/obj/machinery/guardsman_selector/clothes/smartgun/delta
 	squad_tag = "Delta"
-	req_access = list(ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_DELTA)
+	req_access = list(ACCESS_GUARDSMAN_SMARTPREP, ACCESS_GUARDSMAN_DELTA)
 
-/obj/machinery/marine_selector/clothes/smartgun/valhalla
-	vendor_role = /datum/job/fallen/marine/smartgunner
+/obj/machinery/guardsman_selector/clothes/smartgun/valhalla
+	vendor_role = /datum/job/fallen/guardsman/smartgunner
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/leader
+/obj/machinery/guardsman_selector/clothes/leader
 	name = "GHMME Automated Leader Closet"
-	req_access = list(ACCESS_MARINE_LEADER)
+	req_access = list(ACCESS_GUARDSMAN_LEADER)
 	vendor_role = /datum/job/terragov/squad/leader
 	gives_webbing = FALSE
 
-/obj/machinery/marine_selector/clothes/leader/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/leader/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.leader_clothes_listed_products
 
-/obj/machinery/marine_selector/clothes/leader/alpha
+/obj/machinery/guardsman_selector/clothes/leader/alpha
 	squad_tag = "Alpha"
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_ALPHA)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_ALPHA)
 
-/obj/machinery/marine_selector/clothes/leader/bravo
+/obj/machinery/guardsman_selector/clothes/leader/bravo
 	squad_tag = "Bravo"
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_BRAVO)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_BRAVO)
 
-/obj/machinery/marine_selector/clothes/leader/charlie
+/obj/machinery/guardsman_selector/clothes/leader/charlie
 	squad_tag = "Charlie"
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_CHARLIE)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_CHARLIE)
 
-/obj/machinery/marine_selector/clothes/leader/delta
+/obj/machinery/guardsman_selector/clothes/leader/delta
 	squad_tag = "Delta"
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DELTA)
+	req_access = list(ACCESS_GUARDSMAN_LEADER, ACCESS_GUARDSMAN_DELTA)
 
-/obj/machinery/marine_selector/clothes/leader/valhalla
-	vendor_role = /datum/job/fallen/marine/leader
+/obj/machinery/guardsman_selector/clothes/leader/valhalla
+	vendor_role = /datum/job/fallen/guardsman/leader
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/valhalla
-	vendor_role = /datum/job/fallen/marine/standard
+/obj/machinery/guardsman_selector/clothes/valhalla
+	vendor_role = /datum/job/fallen/guardsman/standard
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/commander
+/obj/machinery/guardsman_selector/clothes/commander
 	name = "GHMME Automated Commander Closet"
-	req_access = list(ACCESS_MARINE_COMMANDER)
+	req_access = list(ACCESS_GUARDSMAN_COMMANDER)
 	vendor_role = /datum/job/terragov/command/fieldcommander
 	lock_flags = JOB_LOCK
 	gives_webbing = FALSE
 
-/obj/machinery/marine_selector/clothes/commander/valhalla
-	vendor_role = /datum/job/fallen/marine/fieldcommander
+/obj/machinery/guardsman_selector/clothes/commander/valhalla
+	vendor_role = /datum/job/fallen/guardsman/fieldcommander
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/commander/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/commander/Initialize(mapload)
 	. = ..()
 	listed_products = list(
 		/obj/effect/vendor_bundle/basic_commander = list(CAT_STD, "Standard kit", 0, "white"),
@@ -407,19 +407,19 @@
 		/obj/item/clothing/suit/modular/jaeger/heavy = list(CAT_AMR, "Jaeger Gungnir heavy exo", 0, "orange"),
 		/obj/item/clothing/suit/modular/jaeger/heavy/assault = list(CAT_AMR, "Jaeger Assault heavy exo", 0, "orange"),
 		/obj/item/clothing/suit/modular/jaeger/heavy/eod = list(CAT_AMR, "Jaeger EOD heavy exo", 0, "orange"),
-		/obj/item/storage/backpack/marine/satchel = list(CAT_BAK, "Satchel", 0, "black"),
-		/obj/item/storage/backpack/marine/standard = list(CAT_BAK, "Backpack", 0, "black"),
+		/obj/item/storage/backpack/guardsman/satchel = list(CAT_BAK, "Satchel", 0, "black"),
+		/obj/item/storage/backpack/guardsman/standard = list(CAT_BAK, "Backpack", 0, "black"),
 		/obj/item/storage/holster/blade/machete/full = list(CAT_BAK, "Machete scabbard", 0, "black"),
 		/obj/item/armor_module/storage/uniform/black_vest = list(CAT_WEB, "Tactical black vest", 0, "black"),
 		/obj/item/armor_module/storage/uniform/webbing = list(CAT_WEB, "Tactical webbing", 0, "black"),
 		/obj/item/armor_module/storage/uniform/holster = list(CAT_WEB, "Shoulder handgun holster", 0, "black"),
-		/obj/item/storage/belt/marine = list(CAT_BEL, "Standard ammo belt", 0, "black"),
+		/obj/item/storage/belt/guardsman = list(CAT_BEL, "Standard ammo belt", 0, "black"),
 		/obj/item/storage/belt/shotgun = list(CAT_BEL, "Shotgun ammo belt", 0, "black"),
 		/obj/item/storage/belt/knifepouch = list(CAT_BEL, "Knives belt", 0, "black"),
 		/obj/item/storage/holster/belt/pistol/standard_pistol = list(CAT_BEL, "Pistol belt", 0, "black"),
 		/obj/item/storage/holster/belt/revolver/standard_revolver = list(CAT_BEL, "Revolver belt", 0, "black"),
 		/obj/item/storage/belt/sparepouch = list(CAT_BEL, "G8 general utility pouch", 0, "black"),
-		/obj/item/belt_harness/marine = list(CAT_BEL, "Belt Harness", 0, "black"),
+		/obj/item/belt_harness/guardsman = list(CAT_BEL, "Belt Harness", 0, "black"),
 		/obj/item/armor_module/module/welding = list(CAT_HEL, "Jaeger welding module", 0, "orange"),
 		/obj/item/armor_module/module/binoculars = list(CAT_HEL, "Jaeger binoculars module", 0, "orange"),
 		/obj/item/armor_module/module/artemis = list(CAT_HEL, "Jaeger Freyr module", 0, "orange"),
@@ -457,7 +457,7 @@
 
 
 
-/obj/machinery/marine_selector/clothes/synth
+/obj/machinery/guardsman_selector/clothes/synth
 	name = "M57 Synthetic Equipment Vendor"
 	desc = "An automated synthetic equipment vendor hooked up to a modest storage unit."
 	icon_state = "synth"
@@ -466,12 +466,12 @@
 	vendor_role = /datum/job/terragov/silicon/synthetic
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/clothes/synth/valhalla
-	vendor_role = /datum/job/fallen/marine/synthetic
+/obj/machinery/guardsman_selector/clothes/synth/valhalla
+	vendor_role = /datum/job/fallen/guardsman/synthetic
 	resistance_flags = INDESTRUCTIBLE
 
 
-/obj/machinery/marine_selector/clothes/synth/Initialize(mapload)
+/obj/machinery/guardsman_selector/clothes/synth/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.synthetic_clothes_listed_products
 
@@ -479,100 +479,100 @@
 
 
 
-/obj/machinery/marine_selector/gear
+/obj/machinery/guardsman_selector/gear
 	name = "NEXUS Automated Equipment Rack"
 	desc = "An automated equipment rack hooked up to a colossal storage unit."
-	icon_state = "marinearmory"
+	icon_state = "guardsmanarmory"
 	use_points = TRUE
 
-/obj/machinery/marine_selector/gear/medic
+/obj/machinery/guardsman_selector/gear/medic
 	name = "NEXUS Automated Medical Equipment Rack"
 	desc = "An automated medic equipment rack hooked up to a colossal storage unit."
 	icon_state = "medic"
 	icon_vend = "medic-vend"
 	icon_deny = "medic-deny"
 	vendor_role = /datum/job/terragov/squad/corpsman
-	req_access = list(ACCESS_MARINE_MEDPREP)
+	req_access = list(ACCESS_GUARDSMAN_MEDPREP)
 
-/obj/machinery/marine_selector/gear/medic/Initialize(mapload)
+/obj/machinery/guardsman_selector/gear/medic/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.medic_gear_listed_products
 
-/obj/machinery/marine_selector/gear/medic/valhalla
-	vendor_role = /datum/job/fallen/marine/corpsman
+/obj/machinery/guardsman_selector/gear/medic/valhalla
+	vendor_role = /datum/job/fallen/guardsman/corpsman
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/gear/engi
+/obj/machinery/guardsman_selector/gear/engi
 	name = "NEXUS Automated Engineer Equipment Rack"
 	desc = "An automated engineer equipment rack hooked up to a colossal storage unit."
 	icon_state = "engineer"
 	icon_vend = "engineer-vend"
 	icon_deny = "engineer-deny"
 	vendor_role = /datum/job/terragov/squad/engineer
-	req_access = list(ACCESS_MARINE_ENGPREP)
+	req_access = list(ACCESS_GUARDSMAN_ENGPREP)
 
-/obj/machinery/marine_selector/gear/engi/Initialize(mapload)
+/obj/machinery/guardsman_selector/gear/engi/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.engineer_gear_listed_products
 
-/obj/machinery/marine_selector/gear/engi/valhalla
-	vendor_role = /datum/job/fallen/marine/engineer
+/obj/machinery/guardsman_selector/gear/engi/valhalla
+	vendor_role = /datum/job/fallen/guardsman/engineer
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/gear/smartgun
+/obj/machinery/guardsman_selector/gear/smartgun
 	name = "NEXUS Automated Smartgunner Equipment Rack"
 	desc = "An automated smartgunner equipment rack hooked up to a colossal storage unit."
 	icon_state = "smartgunner"
 	icon_vend = "smartgunner-vend"
 	icon_deny = "smartgunner-deny"
 	vendor_role = /datum/job/terragov/squad/smartgunner
-	req_access = list(ACCESS_MARINE_SMARTPREP)
+	req_access = list(ACCESS_GUARDSMAN_SMARTPREP)
 
-/obj/machinery/marine_selector/gear/smartgun/Initialize(mapload)
+/obj/machinery/guardsman_selector/gear/smartgun/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.smartgunner_gear_listed_products
 
-/obj/machinery/marine_selector/gear/smartgun/valhalla
-	vendor_role = /datum/job/fallen/marine/smartgunner
+/obj/machinery/guardsman_selector/gear/smartgun/valhalla
+	vendor_role = /datum/job/fallen/guardsman/smartgunner
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/gear/leader
+/obj/machinery/guardsman_selector/gear/leader
 	name = "NEXUS Automated Squad Leader Equipment Rack"
 	desc = "An automated squad leader equipment rack hooked up to a colossal storage unit."
 	icon_state = "squadleader"
 	icon_vend = "squadleader-vend"
 	icon_deny = "squadleader-deny"
 	vendor_role = /datum/job/terragov/squad/leader
-	req_access = list(ACCESS_MARINE_LEADER)
+	req_access = list(ACCESS_GUARDSMAN_LEADER)
 
-/obj/machinery/marine_selector/gear/leader/Initialize(mapload)
+/obj/machinery/guardsman_selector/gear/leader/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.leader_gear_listed_products
 
-/obj/machinery/marine_selector/gear/leader/valhalla
-	vendor_role = /datum/job/fallen/marine/leader
+/obj/machinery/guardsman_selector/gear/leader/valhalla
+	vendor_role = /datum/job/fallen/guardsman/leader
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/gear/commander
+/obj/machinery/guardsman_selector/gear/commander
 	name = "NEXUS Automated Field Commander Equipment Rack"
 	desc = "An automated field commander equipment rack hooked up to a colossal storage unit."
 	icon_state = "squadleader"
 	icon_vend = "squadleader-vend"
 	icon_deny = "squadleader-deny"
 	vendor_role = /datum/job/terragov/command/fieldcommander
-	req_access = list(ACCESS_MARINE_COMMANDER)
+	req_access = list(ACCESS_GUARDSMAN_COMMANDER)
 	lock_flags = JOB_LOCK
 
-/obj/machinery/marine_selector/gear/commander/Initialize(mapload)
+/obj/machinery/guardsman_selector/gear/commander/Initialize(mapload)
 	. = ..()
 	listed_products = GLOB.commander_gear_listed_products
 
-/obj/machinery/marine_selector/gear/commander/valhalla
-	vendor_role = /datum/job/fallen/marine/fieldcommander
+/obj/machinery/guardsman_selector/gear/commander/valhalla
+	vendor_role = /datum/job/fallen/guardsman/fieldcommander
 	resistance_flags = INDESTRUCTIBLE
 	lock_flags = JOB_LOCK
 
@@ -594,9 +594,9 @@
 
 /obj/effect/vendor_bundle/basic
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 		/obj/item/paper/tutorial/medical,
 		/obj/item/paper/tutorial/mechanics,
@@ -604,9 +604,9 @@
 
 /obj/effect/vendor_bundle/basic_jaeger
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/jaeger,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman/jaeger,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 		/obj/item/facepaint/green,
 		/obj/item/paper/tutorial/medical,
@@ -615,81 +615,81 @@
 
 /obj/effect/vendor_bundle/basic_smartgunner
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 	)
 
 /obj/effect/vendor_bundle/basic_jaeger_smartgunner
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/jaeger,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman/jaeger,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 		/obj/item/facepaint/green,
 	)
 
 /obj/effect/vendor_bundle/basic_squadleader
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 	)
 
 /obj/effect/vendor_bundle/basic_jaeger_squadleader
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/jaeger,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman/jaeger,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 		/obj/item/facepaint/green,
 	)
 
 /obj/effect/vendor_bundle/basic_medic
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/corpsman,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman/corpsman,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 	)
 
 /obj/effect/vendor_bundle/basic_jaeger_medic
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/jaeger,
-		/obj/item/clothing/shoes/marine/full,
-		/obj/item/clothing/gloves/marine,
+		/obj/item/clothing/under/guardsman/jaeger,
+		/obj/item/clothing/shoes/guardsman/full,
+		/obj/item/clothing/gloves/guardsman,
 		/obj/item/storage/box/MRE,
 		/obj/item/facepaint/green,
 	)
 
 /obj/effect/vendor_bundle/basic_engineer
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/engineer,
-		/obj/item/clothing/shoes/marine/full,
+		/obj/item/clothing/under/guardsman/engineer,
+		/obj/item/clothing/shoes/guardsman/full,
 		/obj/item/storage/box/MRE,
 	)
 
 /obj/effect/vendor_bundle/basic_jaeger_engineer
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/jaeger,
-		/obj/item/clothing/shoes/marine/full,
+		/obj/item/clothing/under/guardsman/jaeger,
+		/obj/item/clothing/shoes/guardsman/full,
 		/obj/item/storage/box/MRE,
 		/obj/item/facepaint/green,
 	)
 
 /obj/effect/vendor_bundle/basic_commander
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine,
-		/obj/item/clothing/shoes/marine/full,
+		/obj/item/clothing/under/guardsman,
+		/obj/item/clothing/shoes/guardsman/full,
 		/obj/item/storage/box/MRE,
 	)
 
 /obj/effect/vendor_bundle/basic_jaeger_commander
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/jaeger,
-		/obj/item/clothing/shoes/marine/full,
+		/obj/item/clothing/under/guardsman/jaeger,
+		/obj/item/clothing/shoes/guardsman/full,
 		/obj/item/storage/box/MRE,
 		/obj/item/facepaint/green,
 	)
@@ -709,7 +709,7 @@
 	)
 
 /obj/effect/vendor_bundle/stretcher
-	desc = "A standard-issue TerraGov Marine Corps corpsman medivac stretcher. Comes with an extra beacon, but multiple beds can be linked to one beacon."
+	desc = "A standard-issue Imperium Guardsman Corps corpsman medivac stretcher. Comes with an extra beacon, but multiple beds can be linked to one beacon."
 	gear_to_spawn = list(
 		/obj/item/roller/medevac,
 		/obj/item/medevac_beacon,
@@ -719,7 +719,7 @@
 	gear_to_spawn = list(
 		/obj/item/explosive/plastique,
 		/obj/item/explosive/grenade/chem_grenade/razorburn_small,
-		/obj/item/clothing/gloves/marine/insulated,
+		/obj/item/clothing/gloves/guardsman/insulated,
 		/obj/item/cell/high,
 		/obj/item/lightreplacer,
 		/obj/item/circuitboard/apc,
@@ -776,9 +776,9 @@
 
 /obj/effect/vendor_bundle/white_dress
 	name = "Full set of TGMC white dress uniform"
-	desc = "A standard-issue TerraGov Marine Corps white dress uniform. The starch in the fabric chafes a small amount but it pales in comparison to the pride you feel when you first put it on during graduation from boot camp. Doesn't seem to fit perfectly around the waist though."
+	desc = "A standard-issue Imperium Guardsman Corps white dress uniform. The starch in the fabric chafes a small amount but it pales in comparison to the pride you feel when you first put it on during graduation from boot camp. Doesn't seem to fit perfectly around the waist though."
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/whites,
+		/obj/item/clothing/under/guardsman/whites,
 		/obj/item/clothing/suit/white_dress_jacket,
 		/obj/item/clothing/head/white_dress,
 		/obj/item/clothing/shoes/white,
@@ -787,74 +787,74 @@
 
 /obj/effect/vendor_bundle/service_uniform
 	name = "Full set of TGMC service uniform"
-	desc = "A standard-issue TerraGov Marine Corps dress uniform. Sometimes, you hate wearing this since you remember wearing this to Infantry School and have to wear this when meeting a commissioned officer. This is what you wear when you are not deployed and are working in an office. Doesn't seem to fit perfectly around the waist."
+	desc = "A standard-issue Imperium Guardsman Corps dress uniform. Sometimes, you hate wearing this since you remember wearing this to Infantry School and have to wear this when meeting a commissioned officer. This is what you wear when you are not deployed and are working in an office. Doesn't seem to fit perfectly around the waist."
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/service,
+		/obj/item/clothing/under/guardsman/service,
 		/obj/item/clothing/head/garrisoncap,
 		/obj/item/clothing/head/servicecap,
-		/obj/item/clothing/shoes/marine/full,
+		/obj/item/clothing/shoes/guardsman/full,
 	)
 
 /obj/effect/vendor_bundle/jaeger_light
 	desc = "A set of light scout pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/scout,
+		/obj/item/clothing/head/modular/guardsman/scout,
 		/obj/item/clothing/suit/modular/jaeger/light,
 	)
 
 /obj/effect/vendor_bundle/jaeger_skirmish
 	desc = "A set of light skirmisher pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/skirmisher,
+		/obj/item/clothing/head/modular/guardsman/skirmisher,
 		/obj/item/clothing/suit/modular/jaeger/light/skirmisher,
 	)
 
 /obj/effect/vendor_bundle/jaeger_infantry
 	desc = "A set of medium Infantry pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine,
+		/obj/item/clothing/head/modular/guardsman,
 		/obj/item/clothing/suit/modular/jaeger,
 	)
 
 /obj/effect/vendor_bundle/jaeger_eva
 	desc = "A set of medium EVA pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/eva,
+		/obj/item/clothing/head/modular/guardsman/eva,
 		/obj/item/clothing/suit/modular/jaeger/eva,
 	)
 
 /obj/effect/vendor_bundle/jaeger_hell_jumper
 	desc = "A set of medium Hell Jumper pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/helljumper,
+		/obj/item/clothing/head/modular/guardsman/helljumper,
 		/obj/item/clothing/suit/modular/jaeger/helljumper,
 	)
 
 /obj/effect/vendor_bundle/jaeger_ranger
 	desc = "A set of medium Ranger pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/ranger,
+		/obj/item/clothing/head/modular/guardsman/ranger,
 		/obj/item/clothing/suit/modular/jaeger/ranger,
 	)
 
 /obj/effect/vendor_bundle/jaeger_gungnir
 	desc = "A set of Heavy Gungnir pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/gungnir,
+		/obj/item/clothing/head/modular/guardsman/gungnir,
 		/obj/item/clothing/suit/modular/jaeger/heavy,
 	)
 
 /obj/effect/vendor_bundle/jaeger_assault
 	desc = "A set of heavy Assault pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/assault,
+		/obj/item/clothing/head/modular/guardsman/assault,
 		/obj/item/clothing/suit/modular/jaeger/heavy/assault,
 	)
 
 /obj/effect/vendor_bundle/jaeger_eod
 	desc = "A set of heavy EOD pattern jaeger armor, including an armor suit and helmet."
 	gear_to_spawn = list(
-		/obj/item/clothing/head/modular/marine/eod,
+		/obj/item/clothing/head/modular/guardsman/eod,
 		/obj/item/clothing/suit/modular/jaeger/heavy/eod,
 	)
 
@@ -925,7 +925,7 @@
 
 /obj/effect/vendor_bundle/robot/essentials
 	gear_to_spawn = list(
-		/obj/item/clothing/under/marine/robotic,
+		/obj/item/clothing/under/guardsman/robotic,
 		/obj/item/tool/weldingtool,
 		/obj/item/stack/cable_coil,
 	)

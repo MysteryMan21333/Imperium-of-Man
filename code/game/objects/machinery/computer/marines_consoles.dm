@@ -1,9 +1,9 @@
-/obj/machinery/computer/marine_card
+/obj/machinery/computer/guardsman_card
 	name = "Identification Computer"
 	desc = "You can use this to change ID's."
 	icon_state = "computer_small"
 	screen_overlay = "id"
-	req_access = list(ACCESS_MARINE_LOGISTICS)
+	req_access = list(ACCESS_GUARDSMAN_LOGISTICS)
 	circuit = /obj/item/circuitboard/computer/card
 	resistance_flags = INDESTRUCTIBLE
 	var/obj/item/card/id/scan = null
@@ -13,14 +13,14 @@
 	var/printing = null
 
 
-/obj/machinery/computer/marine_card/attackby(obj/item/I, mob/user, params)
+/obj/machinery/computer/guardsman_card/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(.)
 		return
 
 	if(istype(I, /obj/item/card/id))
 		var/obj/item/card/id/idcard = I
-		if(ACCESS_MARINE_LOGISTICS in idcard.access)
+		if(ACCESS_GUARDSMAN_LOGISTICS in idcard.access)
 			if(scan && modify)
 				to_chat(user, "Both slots are full already. Remove a card first.")
 				return
@@ -41,7 +41,7 @@
 			modify = idcard
 	updateUsrDialog()
 
-/obj/machinery/computer/marine_card/interact(mob/user)
+/obj/machinery/computer/guardsman_card/interact(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -150,7 +150,7 @@
 			carddesc += "<b>Assignment:</b> "
 			var/jobs = "<span id='alljobsslot'><a href='#' onclick='showAll()'>[target_rank]</a></span><br>" //CHECK THIS
 			var/paygrade = ""
-			if(!(modify.paygrade in PAYGRADES_MARINE))
+			if(!(modify.paygrade in PAYGRADES_GUARDSMAN))
 				paygrade += "<b>Paygrade:<b> [get_paygrades(modify.paygrade)] -- UNABLE TO MODIFY"
 			else
 				paygrade += "<form name='paygrade' action='?src=[text_ref(src)]' method='get'>"
@@ -199,7 +199,7 @@
 	popup.open()
 
 
-/obj/machinery/computer/marine_card/Topic(href, href_list)
+/obj/machinery/computer/guardsman_card/Topic(href, href_list)
 	. = ..()
 	if(.)
 		return
@@ -254,7 +254,7 @@
 				if(authenticated)
 					var/access_type = text2num(href_list["access_target"])
 					var/access_allowed = text2num(href_list["allowed"])
-					if(access_type in ALL_MARINE_ACCESS)
+					if(access_type in ALL_GUARDSMAN_ACCESS)
 						modify.access -= access_type
 						if(access_allowed == 1)
 							modify.access += access_type
@@ -329,13 +329,13 @@
 
 	updateUsrDialog()
 
-/obj/machinery/computer/marine_card/centcom
+/obj/machinery/computer/guardsman_card/centcom
 	name = "CentCom Identification Computer"
 	circuit = /obj/item/circuitboard/computer/card/centcom
 	req_access = list(ACCESS_NT_CORPORATE)
 
 
-//This console changes a marine's squad. It's very simple.
+//This console changes a guardsman's squad. It's very simple.
 //It also does not: change or increment the squad count (used in the login randomizer), nor does it check for jobs.
 //Which means you could get sillyiness like "Alpha Sulaco Chief Medical Officer" or "Delta Logistics Officer".
 //But in the long run it's not really a big deal.
@@ -345,12 +345,12 @@
 	desc = "You can use this to change someone's squad."
 	icon_state = "computer_small"
 	screen_overlay = "guest"
-	req_access = list(ACCESS_MARINE_LOGISTICS)
+	req_access = list(ACCESS_GUARDSMAN_LOGISTICS)
 	resistance_flags = INDESTRUCTIBLE
 	var/obj/item/card/id/modify = null
 	var/screen = 0 //0: main, 1: squad menu
 	///Which faction this computer belongs to
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 
 /obj/machinery/computer/squad_changer/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -443,7 +443,7 @@
 						to_chat(usr, "Old squad access removed.")
 
 				if(selected) //Now we have a proper squad. Change their ID to it.
-					modify.assignment = "[selected.name] [modify.rank]" //Change the assignment - "Alpha Squad Marine"
+					modify.assignment = "[selected.name] [modify.rank]" //Change the assignment - "Alpha Squad Guardsman"
 					modify.access += selected.access //Add their new squad access (if anything) to their ID.
 					to_chat(usr, "[selected.name] Squad added to card.")
 				else

@@ -1,5 +1,5 @@
 /obj/structure
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	var/climbable = FALSE
 	var/climb_delay = 50
 	var/barrier_flags = NONE

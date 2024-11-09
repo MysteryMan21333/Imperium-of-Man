@@ -1,11 +1,11 @@
-/datum/xeno_caste/behemoth
+/datum/tyranid_caste/behemoth
 	caste_name = "Behemoth"
 	display_name = "Behemoth"
 	upgrade_name = ""
 	caste_desc = "Behemoths are known to like rocks. Perhaps we should give them one!"
-	caste_type_path = /mob/living/carbon/xenomorph/behemoth
-	tier = XENO_TIER_THREE
-	upgrade = XENO_UPGRADE_BASETYPE
+	caste_type_path = /mob/living/carbon/tyranid/behemoth
+	tier = TYRANID_TIER_THREE
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "behemoth"
 
 	// *** Melee Attacks *** //
@@ -28,7 +28,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/bull
+	deevolves_to = /datum/tyranid_caste/bull
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_IS_STRONG|CASTE_STAGGER_RESISTANT
@@ -44,44 +44,44 @@
 
 	// *** Abilities *** ///
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/ready_charge/behemoth_roll,
-		/datum/action/ability/activable/xeno/landslide,
-		/datum/action/ability/activable/xeno/earth_riser,
-		/datum/action/ability/xeno_action/seismic_fracture,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/ready_charge/behemoth_roll,
+		/datum/action/ability/activable/tyranid/landslide,
+		/datum/action/ability/activable/tyranid/earth_riser,
+		/datum/action/ability/tyranid_action/seismic_fracture,
 	)
 
-/datum/xeno_caste/behemoth/normal
-	upgrade = XENO_UPGRADE_NORMAL
+/datum/tyranid_caste/behemoth/normal
+	upgrade = TYRANID_UPGRADE_NORMAL
 
-/datum/xeno_caste/behemoth/primordial
+/datum/tyranid_caste/behemoth/primordial
 	upgrade_name = "Primordial"
 	primordial_message = "In the ancient embrace of the earth, we have honed our art to perfection. Our might will crush the feeble pleas of our enemies before they can escape their lips."
-	upgrade = XENO_UPGRADE_PRIMO
+	upgrade = TYRANID_UPGRADE_PRIMO
 
 	// *** Wrath *** //
 	wrath_max = 650
 
 	// *** Abilities *** ///
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/watch_xeno,
-		/datum/action/ability/activable/xeno/psydrain,
-		/datum/action/ability/xeno_action/ready_charge/behemoth_roll,
-		/datum/action/ability/activable/xeno/landslide,
-		/datum/action/ability/activable/xeno/earth_riser,
-		/datum/action/ability/xeno_action/seismic_fracture,
-		/datum/action/ability/xeno_action/primal_wrath,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/watch_tyranid,
+		/datum/action/ability/activable/tyranid/psydrain,
+		/datum/action/ability/tyranid_action/ready_charge/behemoth_roll,
+		/datum/action/ability/activable/tyranid/landslide,
+		/datum/action/ability/activable/tyranid/earth_riser,
+		/datum/action/ability/tyranid_action/seismic_fracture,
+		/datum/action/ability/tyranid_action/primal_wrath,
 	)
 
-/datum/xeno_caste/behemoth/on_caste_applied(mob/xenomorph)
+/datum/tyranid_caste/behemoth/on_caste_applied(mob/tyranid)
 	. = ..()
-	xenomorph.AddElement(/datum/element/ridable, /datum/component/riding/creature/crusher) // we use the same riding element as crusher
-	xenomorph.RegisterSignal(xenomorph, COMSIG_GRAB_SELF_ATTACK, TYPE_PROC_REF(/mob/living/carbon/xenomorph, grabbed_self_attack))
+	tyranid.AddElement(/datum/element/ridable, /datum/component/riding/creature/crusher) // we use the same riding element as crusher
+	tyranid.RegisterSignal(tyranid, COMSIG_GRAB_SELF_ATTACK, TYPE_PROC_REF(/mob/living/carbon/tyranid, grabbed_self_attack))
 
-/datum/xeno_caste/behemoth/on_caste_removed(mob/xenomorph)
+/datum/tyranid_caste/behemoth/on_caste_removed(mob/tyranid)
 	. = ..()
-	xenomorph.RemoveElement(/datum/element/ridable, /datum/component/riding/creature/crusher)
-	xenomorph.UnregisterSignal(xenomorph, COMSIG_GRAB_SELF_ATTACK)
+	tyranid.RemoveElement(/datum/element/ridable, /datum/component/riding/creature/crusher)
+	tyranid.UnregisterSignal(tyranid, COMSIG_GRAB_SELF_ATTACK)

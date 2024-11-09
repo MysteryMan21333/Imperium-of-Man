@@ -159,7 +159,7 @@
 		Some (like the TE series of weapons) have hitscan properties, allowing the weapon to hit the target instantly. \
 		<br>"
 	lore_text = "\"OPERATOR\", the tagline and marketing tactic of energy weapons (usually lasguns) in the 25th century, \
-		especially made popular with the rise of the xenomorph threat in 2414. Energy weapons are usually famed by private security firms \
+		especially made popular with the rise of the tyranid threat in 2414. Energy weapons are usually famed by private security firms \
 		thanks to their ability to disable human targets easily and even on the military thanks to their ability to recharge using \
 		traditional chargers and their capability to switch their lens, allowing more flexibility, something that a ballistic weapon \
 		aren't capable of."
@@ -196,7 +196,7 @@
 	lore_text = "Traditional flamethrowers were developed in the 1st century and saw frequent use in the 20th century \
 		in the first two world wars on Terra. Thanks to their questionable purpose of burning people alive, rebel \
 		armies, militia groups and terrorist organizations make use of the weapon for centuries to come. It wasn't issued \
-		to inventory for the TerraGov Marine Corps along with lasguns until 2414, due to the xenomorph threat and its vulnerability to intense heat."
+		to inventory for the Imperium Guardsman Corps along with lasguns until 2414, due to the tyranid threat and its vulnerability to intense heat."
 
 /datum/codex_entry/explosive_weapons
 	display_name = "explosive weapons"
@@ -216,7 +216,7 @@
 	company who eventually went on to design the HSG-102 smartgun system. Which the M42As specialized scope eventually adopted a modified IFF system similar to it's cousin the smartgun. <br><br>\
 	It was at first marketed to PMCs and civilians as an expensive accurate long range rifle but it failed due to the lack of need for such a thing for PMCs and the wide variety of options \
 	already available for civilians in a more affordable package. The company after the failure went onto design the HS-102 smartgun and succeeded there however. Which kept them afloat after the failure of the M42.<br><br>\
-	Later however an announcement by the Marine Corps who decided to replace the aging supply of the current adopted Sniper Rifle after complaints that the frames were starting to wear out due to long-term use and thus trials would be announced to replace them.<br><br>\
+	Later however an announcement by the Guardsman Corps who decided to replace the aging supply of the current adopted Sniper Rifle after complaints that the frames were starting to wear out due to long-term use and thus trials would be announced to replace them.<br><br>\
 	Eventually, the board of directors decided to give that reviving the M42 design was a worthwhile possibility. And thus the design was decided to be modernized and equipped with an IFF-capable scope, after that it was named as the M42A and submitted to go the trials.<br><br>\
 	Though high unit cost didn't allow it to be more widely adopted it was eventually decided that it would meet limited adoption for Marksmen and be designated the SR-26."
 
@@ -264,14 +264,14 @@
 	be fully replaced by the MG-27 once that was adopted, it was eventually decided to be kept due to complaints from \
 	troops of the power and accuracy of the new 9mm pistol to the old .44 so it was decided to keep both handguns and \
 	allow a choice between both. Then soon after a modernization came to the old RN-44 design. Eventually being updated to the R-44.<br><br>\
-	The original RN-44 design that was adopted quite some time ago by the Marine Corps as part of a new program asking for \
+	The original RN-44 design that was adopted quite some time ago by the Guardsman Corps as part of a new program asking for \
 	a new sidearm that could be reliable on long voyages without much maintenance and the RN-44 eventually won out it's peers \
 	due to its good accuracy and ability to stay in good condition for long periods of time. Eventually ending up as the original R-44."
 
 /datum/codex_entry/standard_pistol
 	associated_paths = list(/obj/item/weapon/gun/pistol/standard_pistol)
 	lore_text = "The RL-9's design was created to require as little maintenance for a Pistol in a long period of time in-order \
-	to compete during the new trials to be put up by the Marine Corps once they decided the R-44 Revolver was too cumbersome for normal use. <br><br>\
+	to compete during the new trials to be put up by the Guardsman Corps once they decided the R-44 Revolver was too cumbersome for normal use. <br><br>\
 	Eventually the RL-9 won the trials due to showing good use after passing the 300 round test in the final rounds of the trial with only a \
 	single misfire during the entire 1000 round firing.<br><br>\
 	After the trials the gun was slated to fully replace the R-44 as the TP-19 Pistol.<br><br>\
@@ -284,7 +284,7 @@
 	lore_text = "The Keckler and Hoch M-12 was created out of an order for a robust rifle using a caseless round, after the ergonomic and costly disaster of the 'Rifle of the future' Project. \
 	Ironically, the M-12 submitted by the very group that made the national disaster that the AR-11 (originally designated the M-11) ended up winning out all the tests. \
 	It was designed to be simple to use, disassemble and basically survive every condition, however due to reports of barrel melting from the high use of polymers. It ended up being heavier than its ilk to compensate.\
-	After wining all the tests, it was accepted and christened the 'AR-12' in service. Aside from issues with barrel overheating, which later models fixed. It is known for reliability across the Marine Corps and the wider galaxy.\
+	After wining all the tests, it was accepted and christened the 'AR-12' in service. Aside from issues with barrel overheating, which later models fixed. It is known for reliability across the Guardsman Corps and the wider galaxy.\
 	Most would say the simple blend of a good magazine size, ergonomics and adaptablitty elevate this weapon above the rest."
 
 /datum/codex_entry/standard_carbine
@@ -292,7 +292,7 @@
 	lore_text = "The Kauser ALF series of firearms was born out of a desire to create a modular weapon design that could ergonomically use a similar manual of arms to appeal to simplify familiarity and attract large scale buyers.\
 	The Carbine variant, known as the 'ALF-51' focused on creating a small, compact package that could fire a rifle-sized round while still retaining good accuracy and shot placement.\
 	Originally, it was meant to fire in burst-fire only, future production variants turned to feature full-auto after it showed that in testing, it would improve troop morale and confidence in the versatility in the rifle.\
-	The entire ALF-series ended up being panic bought in mass by specialized troops in the Marine Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
+	The entire ALF-series ended up being panic bought in mass by specialized troops in the Guardsman Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
 	Eventually, they ended up becoming standard issue and a formal contract was signed, the Carbine was christened the 'AR-18'.\
 	Most would say its particularly compact appreance and performance, combined with good burst-fire capablity are its edge in combat. Watch your ammo, though."
 
@@ -301,7 +301,7 @@
 	lore_text = "The Kauser ALF series of firearms was born out of a desire to create a modular weapon design that could ergonomically use a similar manual of arms to appeal to simplify familiarity and attract large scale buyers.\
 	The Machinegun variant, known as the 'ALF-22' focused on creating a versatile package consisting of a light squad support weapon, with a focus on mobility and accurate fire over pure magazine size.\
 	It ended up with a drum magazine, elongated heavy barrel for sustained firing, its overall shape being of a common rifle generally assists it in being easy to pickup and use, and can mount more underbarrel attachments compared to its peers in its class.\
-	The entire ALF-series ended up being panic bought in mass by specialized troops in the Marine Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
+	The entire ALF-series ended up being panic bought in mass by specialized troops in the Guardsman Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
 	Eventually, they ended up becoming standard issue and a formal contract was signed, the Machinegun was christened the 'MG-42'.\
 	Most would say the large magazine capacity combined with ease of use and ability to lay down fire with good frontline potential is the main advantage of this weapon. You will still be one the slower people in your group, however."
 
@@ -310,13 +310,13 @@
 	lore_text = "The Kauser ALF series of firearms was born out of a desire to create a modular weapon design that could ergonomically use a similar manual of arms to appeal to simplify familiarity and attract large scale buyers.\
 	The 'Skirmish' Rifle variant, known as the 'ALF-6' focused on creating a fullpower rifle, light and with a good blend of mobility, firerate and firepower.\
 	The rifle ended up being the rifle to truly kick off the ALF series, becoming famous for being a great blend of firepower, mobility and ease of use, however the system was known for tearing rounds like it was nothing.\
-	The entire ALF-series ended up being panic bought in mass by specialized troops in the Marine Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
+	The entire ALF-series ended up being panic bought in mass by specialized troops in the Guardsman Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
 	Eventually, they ended up becoming standard issue and a formal contract was signed, the Rifle was christened the 'AR-21'.\
 	Most would say it earned its term of a 'Skirmish' rifle due to use in constant skirmishes by frontline troops, due to a low magazine size, but good overall mobility combined with firepower. Watch your magazine count and put the hurt downrange."
 
 /datum/codex_entry/standard_tx11
 	associated_paths = list(/obj/item/weapon/gun/rifle/tx11)
-	lore_text = "The Keckler and Hoch 'M-11' was created out of a infamous bid called the 'Rifle of the future' project, created out of a need to replace aging weapon stocks in the TerraGov arsenal. \
+	lore_text = "The Keckler and Hoch 'M-11' was created out of a infamous bid called the 'Rifle of the future' project, created out of a need to replace aging weapon stocks in the Imperium arsenal. \
 	The M-11 was created to be the ultimate weapon, being able to lay down fire like an MG with a high capacity, amazing burst fire capability, specialized scope for long range damage, it was tested and destroyed the competition.\
 	It did amazing in field tests, and was effectively the best rifle overall. Most concerns were ergonomical, however it was pushed aside for a need of a new rifle, and money was already spent in making the entire thing, so getting a new competition would be too bothersome.\
 	Eventually however, these ergonomic failures lead to constant troop complaints due to the unergonomic nature of the rifle, troops who swore by it loved it, troops who hated it called it a useless brick.\
@@ -330,7 +330,7 @@
 	The Sniper variant, known as the 'ALF-1' focused on creating a long range marksman rifle, focused on combining both mobility and rate of fire with good overall firepower.\
 	This particular version of the rifle is modernized with a KTLD gun computer and vision scope to allow for quick IFF in hectic engagements, and corrections for the user to stop FF, unlike older variants, it requires no specialized training to use.\
 	The ALF-1 is basically a rifle with a heavier and longer barrel and a irremoveable scope, which sacrifices many of the traditional sniper elements for the normal familiarity of a normal everyday rifle, it is far less common than its peers in its family.\
-	The entire ALF-series ended up being panic bought in mass by specialized troops in the Marine Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
+	The entire ALF-series ended up being panic bought in mass by specialized troops in the Guardsman Corps, generally Peacekeeper sections or Air Assault sections, it eventually spread by osmosis in popularity.\
 	Eventually, they ended up becoming standard issue and a formal contract was signed, the Sniper was christened the 'GL-81'.\
 	Most would say that this rifle blends a feature of a normal rifle and sniper rifle, and has the ups and downs of both. Watch out in close quarters, and use the IFF and NVG features of the scope to your advantage..."
 
@@ -339,7 +339,7 @@
 	lore_text = "The Raummetall 'M-29' was made out of the heavy and unruly corpse of the 'M-28', an attempt to modernize and integrate a KTLD into the M-27 model machinegun. It ended in failure due to the overcomplexity of the system, and cost eventually made the project die.\
 	The 'M-29' is effectively a continuation in spirit of the previous project, focusing on simplifying the IFF computer systems. It only bears a outer resemblance to the M-27, outside of having the same basic systems.\
 	It has specialized systems to self-stabilize, and is made to be shoulder mounted and fired, as well as fired from lower positions, and uses its integral KTLD computer to self correct user errors, it however requires specialized training to use.\
-	The 'M-29' is effectively a incredibly accurate machinegun, it ended up being offered to the Marine Corps after the previous attempt to just modernize the older machineguns failed. It ended up being christened the 'MG-28' and entered service.\
+	The 'M-29' is effectively a incredibly accurate machinegun, it ended up being offered to the Guardsman Corps after the previous attempt to just modernize the older machineguns failed. It ended up being christened the 'MG-28' and entered service.\
 	Most would say that this machinegun makes you a walking turret, you'll be slow and unwieldy with no match when it comes to fire suppression on the move."
 
 /datum/codex_entry/standard_smartmmg

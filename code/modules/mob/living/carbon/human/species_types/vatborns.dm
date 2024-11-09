@@ -1,6 +1,6 @@
 /datum/species/human/vatborn
 	name = "Vatborn"
-	icobase = 'icons/mob/human_races/r_vatborn.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_vatborn.dmi'
 	namepool = /datum/namepool/vatborn
 
 /datum/species/human/vatborn/prefs_name(datum/preferences/prefs)
@@ -8,7 +8,7 @@
 
 /datum/species/human/vatgrown
 	name = "Vat-Grown Human"
-	icobase = 'icons/mob/human_races/r_vatgrown.dmi'
+	icobase = 'modular_imperium/master_files/icons/mob/human_races/r_vatgrown.dmi'
 	brute_mod = 1.05
 	burn_mod = 1.05
 	slowdown = 0.05

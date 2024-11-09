@@ -221,7 +221,7 @@
 		MECHA_R_ARM = list("N" = list(33,68), "S" = list(-2,-6), "E" = list(80,13), "W" = list(-50,33)),
 		MECHA_L_ARM = list("N" = list(0,68), "S" = list(32,-6), "E" = list(80,33), "W" = list(-50,13)),
 	)
-	ammotype = /datum/ammo/energy/lasgun/marine/mech
+	ammotype = /datum/ammo/energy/lasgun/guardsman/mech
 	max_integrity = 400
 	energy_drain = 10
 	variance = 0
@@ -241,7 +241,7 @@
 		MECHA_R_ARM = list("N" = list(33,52), "S" = list(-2,-6), "E" = list(75,11), "W" = list(-45,31)),
 		MECHA_L_ARM = list("N" = list(0,52), "S" = list(32,-6), "E" = list(75,31), "W" = list(-45,11)),
 	)
-	ammotype = /datum/ammo/energy/lasgun/marine/mech/burst
+	ammotype = /datum/ammo/energy/lasgun/guardsman/mech/burst
 	max_integrity = 400
 	energy_drain = 5
 	variance = 0
@@ -263,7 +263,7 @@
 		MECHA_L_ARM = list("N" = list(0,48), "S" = list(32,6), "E" = list(67,31), "W" = list(-37,11)),
 	)
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
-	ammotype = /datum/ammo/energy/lasgun/marine/mech/smg
+	ammotype = /datum/ammo/energy/lasgun/guardsman/mech/smg
 	max_integrity = 400
 	energy_drain = 5
 	variance = 0
@@ -534,7 +534,7 @@
 	fire_sound = 'sound/mecha/weapons/laser_sword.ogg'
 	windup_sound = 'sound/weapons/guns/fire/tank_minigun_start.OGG'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
-	ammotype = /datum/ammo/energy/lasgun/marine/mech/lance_strike
+	ammotype = /datum/ammo/energy/lasgun/guardsman/mech/lance_strike
 	max_integrity = 400
 	slowdown = 0.15
 	windup_delay = 0.6 SECONDS
@@ -551,4 +551,4 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	ammotype = HAS_TRAIT(chassis, TRAIT_MELEE_CORE) ? /datum/ammo/energy/lasgun/marine/mech/lance_strike/super : /datum/ammo/energy/lasgun/marine/mech/lance_strike
+	ammotype = HAS_TRAIT(chassis, TRAIT_MELEE_CORE) ? /datum/ammo/energy/lasgun/guardsman/mech/lance_strike/super : /datum/ammo/energy/lasgun/guardsman/mech/lance_strike

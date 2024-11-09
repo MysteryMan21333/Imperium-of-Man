@@ -1,6 +1,6 @@
 //Food items that are eaten normally and don't leave anything behind.
 /obj/item/reagent_containers/food/snacks/burger
-	icon = 'icons/obj/items/food/burgers.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/burgers.dmi'
 	icon_state = "hburger"
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -43,8 +43,8 @@
 	icon_state = "appendixburger"
 	tastes = list("bun" = 4, "grass" = 2)
 
-/obj/item/reagent_containers/food/snacks/burger/xeno
-	name = "xenoburger"
+/obj/item/reagent_containers/food/snacks/burger/tyranid
+	name = "tyranidburger"
 	desc = "Smells caustic. Tastes like heresy."
 	icon_state = "xburger"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/protein = 6, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -270,13 +270,13 @@
 		name = "steamed ham"
 		desc = pick("Ahh, CMO, welcome. I hope you're prepared for an unforgettable luncheon!",
 		"And you call these steamed hams despite the fact that they are obviously microwaved?",
-		"TGMC Marine Corp? At this time of shift, in this time of year, in this sector of space, localized entirely within your freezer?",
+		"TGMC Guardsman Corp? At this time of shift, in this time of year, in this sector of space, localized entirely within your freezer?",
 		"You know, these hamburgers taste quite similar to the ones they have at the Maltese Falcon.")
 
 /obj/item/reagent_containers/food/snacks/burger/packaged_burger
 	name = "Packaged Cheeseburger"
 	desc = "A soggy microwavable burger. There's no time given for how long to cook it. Packaged by the Nanotrasen Corporation."
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "burger"
 	bitesize = 3
 	package = TRUE
@@ -288,7 +288,7 @@
 		playsound(src.loc,'sound/effects/pageturn2.ogg', 15, 1)
 		to_chat(user, span_notice("You pull off the wrapping from the squishy hamburger!"))
 		package = FALSE
-		icon = 'icons/obj/items/food/burgers.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/items/food/burgers.dmi'
 		icon_state = "hburger"
 
 // Human Burger + cheese wedge = cheeseburger
@@ -370,7 +370,7 @@
 /obj/item/reagent_containers/food/snacks/burger/ghostburger
 	name = "Ghost Burger"
 	desc = "Spooky! It doesn't look very filling."
-	icon = 'icons/obj/items/food/burgers.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/burgers.dmi'
 	icon_state = "ghostburger"
 	filling_color = "#FFF2FF"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)

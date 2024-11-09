@@ -1,7 +1,7 @@
 /obj/structure/sensor_tower
 	name = "sensor tower"
 	desc = "A tall tower with a sensor array at the top and a control box at the bottom. Has a lengthy activation process."
-	icon = 'icons/obj/structures/sensor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 	obj_flags = NONE
 	density = TRUE
@@ -26,7 +26,7 @@
 	///How long is left in the game end timer. Recorded as a var to pause the timer while tower is activating
 	var/remaining_game_time
 	///The faction that owns this tower, and considered the defender
-	var/faction = FACTION_SOM
+	var/faction = FACTION_CHAOS
 
 /obj/structure/sensor_tower/Initialize(mapload)
 	. = ..()
@@ -108,7 +108,7 @@
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 		human.playsound_local(human, "sound/effects/CIC_order.ogg", 10, 1)
 		if(human.faction == faction)
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] is being activated, deactivate it!", /atom/movable/screen/text/screen_text/picture/potrait/som_over)
+			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] is being activated, deactivate it!", /atom/movable/screen/text/screen_text/picture/potrait/chaos_over)
 		else
 			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] is being activated, get ready to defend it team!", /atom/movable/screen/text/screen_text/picture/potrait)
 
@@ -134,7 +134,7 @@
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 		human.playsound_local(human, "sound/effects/CIC_order.ogg", 10, 1)
 		if(human.faction == faction)
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] is fully activated, stop further towers from being activated!", /atom/movable/screen/text/screen_text/picture/potrait/som_over)
+			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] is fully activated, stop further towers from being activated!", /atom/movable/screen/text/screen_text/picture/potrait/chaos_over)
 		else
 			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] is fully activated, timer increased by [SENSOR_CAP_ADDITION_TIME_BONUS / 600] minutes.", /atom/movable/screen/text/screen_text/picture/potrait)
 
@@ -147,7 +147,7 @@
 
 	for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 		if(human.faction == faction)
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] activation process has been stopped, glory to Mars!", /atom/movable/screen/text/screen_text/picture/potrait/som_over)
+			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] activation process has been stopped, glory to Mars!", /atom/movable/screen/text/screen_text/picture/potrait/chaos_over)
 		else
 			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>OVERWATCH</u></span><br>" + "[src] activation process has been stopped<br>" + ",rally up and get it together team!", /atom/movable/screen/text/screen_text/picture/potrait)
 

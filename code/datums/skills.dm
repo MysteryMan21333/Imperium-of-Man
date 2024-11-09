@@ -745,7 +745,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_PROFESSIONAL
 
 /datum/skills/imperial/astartes
-	name = "Space Marine"
+	name = "Space Guardsman"
 	unarmed = SKILL_UNARMED_MASTER
 	melee_weapons = SKILL_MELEE_SUPER
 
@@ -766,7 +766,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	powerloader = SKILL_POWERLOADER_DABBLING
 
 /datum/skills/imperial/astartes/apothecary
-	name = "Space Marine Apothecary" // a slightly less stronger space marine with medical skills
+	name = "Space Guardsman Apothecary" // a slightly less stronger space guardsman with medical skills
 	unarmed = 4 // below SKILL_UNARMED_MASTER, no define for it
 	melee_weapons = SKILL_MELEE_TRAINED
 
@@ -792,7 +792,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	combat = SKILL_COMBAT_TRAINED
 	medical = SKILL_MEDICAL_COMPETENT
-	surgery = SKILL_SURGERY_EXPERT//how else will they probe marines?
+	surgery = SKILL_SURGERY_EXPERT//how else will they probe guardsmans?
 	melee_weapons = SKILL_MELEE_WEAK
 	pistols = SKILL_PISTOLS_TRAINED
 	smgs = SKILL_SMGS_TRAINED
@@ -805,9 +805,9 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	unarmed = SKILL_UNARMED_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
 
-//SOM veterans
-/datum/skills/som_veteran
-	name = "SOM Veteran"
+//CHAOS veterans
+/datum/skills/chaos_veteran
+	name = "CHAOS Veteran"
 	leadership = SKILL_LEAD_BEGINNER
 	unarmed = SKILL_UNARMED_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
@@ -823,14 +823,14 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_AMATEUR
 	stamina = SKILL_STAMINA_TRAINED
 
-/datum/skills/som_veteran/sl
-	name = "SOM Leader"
+/datum/skills/chaos_veteran/sl
+	name = "CHAOS Leader"
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	engineer = SKILL_ENGINEER_PLASTEEL
 	leadership = SKILL_LEAD_EXPERT
 
-/datum/skills/som_veteran/medic
-	name = "SOM Medic"
+/datum/skills/chaos_veteran/medic
+	name = "CHAOS Medic"
 	medical = SKILL_MEDICAL_PRACTICED
 	surgery = SKILL_SURGERY_TRAINED
 

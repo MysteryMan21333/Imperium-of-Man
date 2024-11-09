@@ -1,6 +1,6 @@
 /obj/machinery/door/poddoor/shutters
 	name = "\improper Shutters"
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = "shutter"
 	power_channel = ENVIRON
 	resistance_flags = DROPSHIP_IMMUNE
@@ -73,13 +73,13 @@
 
 
 /obj/machinery/door/poddoor/shutters/timed_late
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	name = "Timed Emergency Shutters"
 	use_power = FALSE
 
 
 /obj/machinery/door/poddoor/shutters/timed_late/Initialize(mapload)
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_CRASH, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_CAMPAIGN_MISSION_STARTED), PROC_REF(open))
+	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_CRASH, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND, COMSIG_GLOB_CAMPAIGN_MISSION_STARTED), PROC_REF(open))
 	return ..()
 
 
@@ -97,7 +97,7 @@
 	id = "wyoffice"
 
 /obj/machinery/door/poddoor/shutters/mainship
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	icon_state = "shutter"
 	openspeed = 4 //shorter open animation.
 
@@ -112,11 +112,11 @@
 	id = "thunderdome2"
 	resistance_flags = RESIST_ALL
 
-//transit shutters used by marine dropships
+//transit shutters used by guardsman dropships
 /obj/machinery/door/poddoor/shutters/transit
 	name = "Transit shutters"
 	desc = "Safety shutters to prevent dangerous depressurization during flight"
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	resistance_flags = RESIST_ALL|DROPSHIP_IMMUNE
 	id = "ghhjmugggggtgggbg" // do not have any button or thing have an ID assigned to this, it is a very bad idea.
 	smoothing_groups = list(SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS)
@@ -252,12 +252,12 @@
 
 /// urban shutters
 /obj/machinery/door/poddoor/shutters/urban
-	icon = 'icons/obj/structures/prop/urban/urbanshutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanshutters.dmi'
 	icon_state = "almayer_pdoor"
 	base_icon_state = "almayer_pdoor"
 	desc = "It's a shutter. You can <B>open</b> it with a <B>crowbar</b>, or with <B>claws</b>"
 	openspeed = 4
-	///how long it takes xenos to open a shutter by hand
+	///how long it takes tyranids to open a shutter by hand
 	var/lift_time = 10 SECONDS
 	soft_armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 15, BIO = 50, FIRE = 50, ACID = 50)
 
@@ -270,14 +270,14 @@
 		balloon_alert_to_viewers("lifts [src]")
 		open()
 
-/obj/machinery/door/poddoor/shutters/urban/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.a_intent != INTENT_HELP)
-		xeno_attacker.balloon_alert(xeno_attacker, "lifting [src]...")
-		if(!xeno_attacker.mob_size == MOB_SIZE_BIG)
-			if(!do_after(xeno_attacker, lift_time, NONE, src,  BUSY_ICON_HOSTILE))
+/obj/machinery/door/poddoor/shutters/urban/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.a_intent != INTENT_HELP)
+		tyranid_attacker.balloon_alert(tyranid_attacker, "lifting [src]...")
+		if(!tyranid_attacker.mob_size == MOB_SIZE_BIG)
+			if(!do_after(tyranid_attacker, lift_time, NONE, src,  BUSY_ICON_HOSTILE))
 				return
 		else
-			if(!do_after(xeno_attacker, 5 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
+			if(!do_after(tyranid_attacker, 5 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 				return
 		open()
 		balloon_alert_to_viewers("lifts [src]")
@@ -320,11 +320,11 @@
 
 /obj/machinery/door/poddoor/shutters/urban/biohazard/white
 	icon_state = "w_almayer_pdoor"
-	icon = 'icons/obj/structures/prop/urban/urbanshutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/urban/urbanshutters.dmi'
 	base_icon_state = "w_almayer_pdoor"
 
 /obj/machinery/door/poddoor/shutters/urban/security_lockdown
-	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	icon_state = "pdoor"
 	base_icon_state = "pdoor"
 	lift_time = 15 SECONDS

@@ -132,7 +132,7 @@
 		radio_connection = SSradio.add_object(src, frequency, RADIO_AIRLOCK)
 
 /obj/machinery/access_button
-	icon = 'icons/obj/airlock_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/airlock_machines.dmi'
 	icon_state = "access_button_standby"
 	name = "access button"
 

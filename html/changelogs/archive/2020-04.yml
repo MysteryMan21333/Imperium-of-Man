@@ -70,8 +70,8 @@
   - rscadd: You can now sing by prefacing your message with %
   XSlayer300:
   - rscadd: Added many more names to the namelists, including the Deathsquad ERT.
-  - tweak: Combined PMC and SoM/Freelancer (and CLF) names into the main namelist,
-      as a result, PMC and SoM/Freelancers now use the main namelist. This does not
+  - tweak: Combined PMC and Chaos/Freelancer (and CLF) names into the main namelist,
+      as a result, PMC and Chaos/Freelancers now use the main namelist. This does not
       apply to UPP.
   - tweak: Rearranged names as well as removal of duplicate names.
   psykzz:

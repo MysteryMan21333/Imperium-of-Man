@@ -1,12 +1,12 @@
-/datum/xeno_caste/baneling
+/datum/tyranid_caste/baneling
 	caste_name = "Baneling"
 	display_name = "Baneling"
 	upgrade_name = ""
 	caste_desc = "Gross, cute, bloated and ready to explode!"
-	caste_type_path = /mob/living/carbon/xenomorph/baneling
+	caste_type_path = /mob/living/carbon/tyranid/baneling
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 	wound_type = "baneling" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
@@ -32,11 +32,11 @@
 	soft_armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 20, FIRE = 15, ACID = 100)
 
 	// *** Minimap Icon *** //
-	minimap_icon = "xenominion"
+	minimap_icon = "tyranidminion"
 
 	// *** Abilities *** ///
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/select_reagent/baneling,
-		/datum/action/ability/xeno_action/baneling_explode,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/tyranid_action/select_reagent/baneling,
+		/datum/action/ability/tyranid_action/baneling_explode,
 	)

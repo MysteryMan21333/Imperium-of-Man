@@ -1,9 +1,9 @@
 
 /obj/item/clothing/under
-	icon = 'icons/obj/clothing/uniforms/uniforms.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/uniforms/uniforms.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/uniforms_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/uniforms_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/uniforms_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/uniforms_right.dmi',
 	)
 	name = "under"
 	armor_protection_flags = CHEST|GROIN|LEGS|ARMS

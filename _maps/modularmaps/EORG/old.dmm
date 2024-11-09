@@ -353,22 +353,22 @@
 /turf/open/floor,
 /area/deathmatch)
 "bx" = (
-/obj/item/clothing/shoes/marine{
+/obj/item/clothing/shoes/guardsman{
 	pixel_x = 10
 	},
-/obj/item/clothing/shoes/marine{
+/obj/item/clothing/shoes/guardsman{
 	pixel_x = 10
 	},
-/obj/item/clothing/shoes/marine{
+/obj/item/clothing/shoes/guardsman{
 	pixel_x = 10
 	},
 /turf/open/floor,
 /area/deathmatch)
 "by" = (
 /obj/structure/table,
-/obj/item/clothing/under/marine/veteran/freelancer,
-/obj/item/clothing/under/marine/veteran/freelancer,
-/obj/item/clothing/under/marine/veteran/freelancer,
+/obj/item/clothing/under/guardsman/veteran/freelancer,
+/obj/item/clothing/under/guardsman/veteran/freelancer,
+/obj/item/clothing/under/guardsman/veteran/freelancer,
 /turf/open/floor,
 /area/deathmatch)
 "bz" = (

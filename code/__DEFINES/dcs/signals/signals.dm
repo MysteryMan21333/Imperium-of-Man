@@ -10,7 +10,7 @@
 #define COMSIG_GLOB_NEW_Z "!new_z"
 #define COMSIG_GLOB_DEPLOY_TIMELOCK_ENDED "!deploy_timelock_ended"
 #define COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE "!open_timed_shutters_late"
-#define COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND "!open_timed_shutters_xeno_hivemind"
+#define COMSIG_GLOB_OPEN_TIMED_SHUTTERS_TYRANID_HIVEMIND "!open_timed_shutters_tyranid_hivemind"
 #define COMSIG_GLOB_OPEN_TIMED_SHUTTERS_CRASH "!open_timed_shutters_crash"
 #define COMSIG_GLOB_OPEN_SHUTTERS_EARLY "!open_shutters_early"
 
@@ -52,17 +52,17 @@
 #define COMSIG_GLOB_HIVE_TARGET_DRAINED "!hive_target_drained"
 
 
-/// Sent when a marine dropship enters transit level
+/// Sent when a guardsman dropship enters transit level
 #define COMSIG_GLOB_DROPSHIP_TRANSIT "!dropship_transit"
-///Sent when xenos launch a hijacked dropship
+///Sent when tyranids launch a hijacked dropship
 #define COMSIG_GLOB_DROPSHIP_HIJACKED "!dropship_hijacked"
 ///Sent when nightfall is casted
 #define COMSIG_GLOB_LIGHT_OFF "item_light_off"
 ///Sent when the floodlight switch is powered
 #define COMSIG_GLOB_FLOODLIGHT_SWITCH "!floodlight_switch_power_change"
-/// Sent when the xenos lock the dropship controls
+/// Sent when the tyranids lock the dropship controls
 #define COMSIG_GLOB_DROPSHIP_CONTROLS_CORRUPTED "!dropship_locked"
-/// Sent when the xenos destroy the tadpole controls
+/// Sent when the tyranids destroy the tadpole controls
 #define COMSIG_GLOB_MINI_DROPSHIP_DESTROYED "!tad_ruined"
 
 //Signals for fire support
@@ -89,8 +89,8 @@
 #define COMSIG_GLOB_HVH_DEPLOY_POINT_ACTIVATED "!hvh_deploy_point_activated"
 ///Opens the TGMC shipside shutters on campaign
 #define COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_TGMC "!open_campaign_shutters_tgmc"
-///Opens the SOM shipside shutters on campaign
-#define COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_SOM "!open_campaign_shutters_som"
+///Opens the CHAOS shipside shutters on campaign
+#define COMSIG_GLOB_OPEN_CAMPAIGN_SHUTTERS_CHAOS "!open_campaign_shutters_som"
 ///Sent when a new campaign mission is loaded
 #define COMSIG_GLOB_CAMPAIGN_MISSION_LOADED "!campaign_mission_loaded"
 ///Sent when a campaign mission is started
@@ -198,7 +198,7 @@
 /// Called after one or more verbs are removed: (list of verbs added)
 #define COMSIG_CLIENT_VERB_REMOVED "client_verb_removed"
 
-// Xeno larva queue stuff for clients
+// Tyranid larva queue stuff for clients
 #define COMSIG_CLIENT_MOB_LOGIN "client_mob_login" //! Called on the client that just logged into a mob
 #define COMSIG_CLIENT_MOB_LOGOUT "client_mob_logout" //! Called on the client that just logged out from the mob: (/mob)
 #define COMSIG_CLIENT_GET_LARVA_QUEUE_POSITION "client_get_larva_queue_position" //! from /datum/component/larva_queue
@@ -280,7 +280,7 @@
 #define COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE "atom_init_success"
 #define COMSIG_ATOM_ORBIT_BEGIN "atom_orbit_begin"				//called when an atom starts orbiting another atom: (atom)
 #define COMSIG_ATOM_ORBIT_STOP "atom_orbit_stop"				//called when an atom stops orbiting another atom: (atom)
-#define COMSIG_ATOM_ACIDSPRAY_ACT "atom_acidspray_act"			//called when acid spray acts on an entity; associated with /acidspray_act(): (obj/effect/xenomorph/spray/acid_puddle)
+#define COMSIG_ATOM_ACIDSPRAY_ACT "atom_acidspray_act"			//called when acid spray acts on an entity; associated with /acidspray_act(): (obj/effect/tyranid/spray/acid_puddle)
 
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
@@ -364,7 +364,7 @@
 #define COMSIG_OBJ_TRY_ALLOW_THROUGH "obj_try_allow_through"	//from obj/CanAllowThrough()
 ///from base of /turf/proc/levelupdate(). (intact) true to hide and false to unhide
 #define COMSIG_OBJ_HIDE "obj_hide"
-#define COMSIG_OBJ_ATTACK_ALIEN "obj_attack_alien"				//from obj/attack_alien(): (/mob/living/carbon/xenomorph)
+#define COMSIG_OBJ_ATTACK_ALIEN "obj_attack_alien"				//from obj/attack_alien(): (/mob/living/carbon/tyranid)
 	#define COMPONENT_NO_ATTACK_ALIEN (1<<0)
 
 #define COMSIG_MACHINERY_POWERED "machinery_powered"			/// from /obj/machinery/proc/powered: ()
@@ -476,9 +476,9 @@
 #define COMSIG_MOB_GUN_AUTOFIRED "mob_gun_autofired"
 #define COMSIG_MOB_GUN_COOLDOWN "mob_gun_cooldown"
 
-#define COMSIG_XENO_FIRE "xeno_fire"
-#define COMSIG_XENO_STOP_FIRE "xeno_stop_fire"
-#define COMSIG_XENO_AUTOFIREDELAY_MODIFIED "xeno_firedelay_modified"
+#define COMSIG_TYRANID_FIRE "tyranid_fire"
+#define COMSIG_TYRANID_STOP_FIRE "tyranid_stop_fire"
+#define COMSIG_TYRANID_AUTOFIREDELAY_MODIFIED "tyranid_firedelay_modified"
 
 #define COMSIG_MECH_FIRE "mech_fire"
 #define COMSIG_MECH_STOP_FIRE "mech_stop_fire"
@@ -577,10 +577,10 @@
 #define COMSIG_LIVING_DO_MOVE_RESIST "living_do_move_resist"			//from the base of /client/Move()
 	#define COMSIG_LIVING_RESIST_SUCCESSFUL (1<<0)
 #define COMSIG_LIVING_SET_CANMOVE "living_set_canmove"			//from base of /mob/living/set_canmove(): (canmove)
-#define COMSIG_LIVING_MELEE_ALIEN_DISARMED "living_melee_alien_disarmed"	//from /mob/living/proc/attack_alien_disarm(): (mob/living/carbon/xenomorph/X)
+#define COMSIG_LIVING_MELEE_ALIEN_DISARMED "living_melee_alien_disarmed"	//from /mob/living/proc/attack_alien_disarm(): (mob/living/carbon/tyranid/X)
 #define COMSIG_LIVING_SHIELDCALL "living_shieldcall"
 #define COMSIG_LIVING_PROJECTILE_STUN "living_stun_mitigation" //from /datum/ammo/proc/staggerstun
-#define COMSIG_LIVING_JETPACK_STUN "living_jetpack_stun" //from /obj/item/jetpack_marine/heavy/proc/mob_hit()
+#define COMSIG_LIVING_JETPACK_STUN "living_jetpack_stun" //from /obj/item/jetpack_guardsman/heavy/proc/mob_hit()
 ///from /mob/living/proc/set_lying_angle
 #define COMSIG_LIVING_SET_LYING_ANGLE "living_set_lying_angle"
 #define COMSIG_LIVING_IGNITED "living_ignited" //from /mob/living/proc/IgniteMob() : (fire_stacks)
@@ -645,13 +645,13 @@
 
 #define COMSIG_DROPSHIP_EQUIPMENT_UNEQUIPPED "shuttle_equipment_unequipped"
 
-// xeno stuff
+// tyranid stuff
 #define COMSIG_HIVE_BECOME_RULER "hive_become_ruler"
-#define COMSIG_HIVE_XENO_DEATH "hive_xeno_death"
-#define COMSIG_HIVE_XENO_MOTHER_PRE_CHECK "hive_xeno_mother_pre_check"		//from datum/hive_status/normal/proc/attempt_to_spawn_larva()
-#define COMSIG_HIVE_XENO_MOTHER_CHECK "hive_xeno_mother_check"				//from /datum/hive_status/normal/proc/spawn_larva()
+#define COMSIG_HIVE_TYRANID_DEATH "hive_tyranid_death"
+#define COMSIG_HIVE_TYRANID_MOTHER_PRE_CHECK "hive_tyranid_mother_pre_check"		//from datum/hive_status/normal/proc/attempt_to_spawn_larva()
+#define COMSIG_HIVE_TYRANID_MOTHER_CHECK "hive_tyranid_mother_check"				//from /datum/hive_status/normal/proc/spawn_larva()
 
-#define COMSIG_XENOACTION_TOGGLECHARGETYPE "xenoaction_togglechargetype"
+#define COMSIG_TYRANIDACTION_TOGGLECHARGETYPE "tyranidaction_togglechargetype"
 
 #define COMSIG_WARRIOR_USED_GRAB "warrior_used_grab"
 #define COMSIG_WARRIOR_NECKGRAB "warrior_neckgrab"
@@ -659,72 +659,72 @@
 #define COMSIG_WARRIOR_USED_FLING "warrior_used_fling"
 #define COMSIG_WARRIOR_USED_GRAPPLE_TOSS "warrior_used_grapple_toss"
 
-#define COMSIG_XENOABILITY_HUNTER_MARK "xenoability_hunter_mark"
-#define COMSIG_XENOABILITY_PSYCHIC_TRACE "xenoability_psychic_trace"
+#define COMSIG_TYRANIDABILITY_HUNTER_MARK "tyranidability_hunter_mark"
+#define COMSIG_TYRANIDABILITY_PSYCHIC_TRACE "tyranidability_psychic_trace"
 
-#define COMSIG_XENOMORPH_PLASMA_REGEN "xenomorph_plasma_regen"
-#define COMSIG_XENOMORPH_HEALTH_REGEN "xenomorph_health_regen"
-#define COMSIG_XENOMORPH_SUNDER_REGEN "xenomorph_sunder_regen"
-#define COMSIG_XENOMORPH_RESIN_JELLY_APPLIED "xenomorph_resin_jelly_applied"
+#define COMSIG_TYRANID_PLASMA_REGEN "tyranid_plasma_regen"
+#define COMSIG_TYRANID_HEALTH_REGEN "tyranid_health_regen"
+#define COMSIG_TYRANID_SUNDER_REGEN "tyranid_sunder_regen"
+#define COMSIG_TYRANID_RESIN_JELLY_APPLIED "tyranid_resin_jelly_applied"
 
-#define COMSIG_XENOMORPH_REST "xenomorph_rest"
-#define COMSIG_XENOMORPH_UNREST "xenomorph_unrest"
+#define COMSIG_TYRANID_REST "tyranid_rest"
+#define COMSIG_TYRANID_UNREST "tyranid_unrest"
 
-#define COMSIG_XENOMORPH_ZONE_SELECT "xenomorph_zone_select"
+#define COMSIG_TYRANID_ZONE_SELECT "tyranid_zone_select"
 	#define COMSIG_ACCURATE_ZONE (1<<0)
 
-#define COMSIG_XENOMORPH_POUNCE "xenomorph_pounce"
-#define COMSIG_XENOMORPH_POUNCE_END "xenomorph_pounce_end"
+#define COMSIG_TYRANID_POUNCE "tyranid_pounce"
+#define COMSIG_TYRANID_POUNCE_END "tyranid_pounce_end"
 
-#define COMSIG_XENOMORPH_HEADBITE "headbite"
+#define COMSIG_TYRANID_HEADBITE "headbite"
 
-#define COMSIG_XENOMORPH_GIBBING "xenomorph_gibbing"
-#define COMSIG_XENOMORPH_POSTEVOLVING "xenomorph_evolving"
-#define COMSIG_XENOMORPH_ABILITY_ON_UPGRADE "xenomorph_ability_on_upgrade"
+#define COMSIG_TYRANID_GIBBING "tyranid_gibbing"
+#define COMSIG_TYRANID_POSTEVOLVING "tyranid_evolving"
+#define COMSIG_TYRANID_ABILITY_ON_UPGRADE "tyranid_ability_on_upgrade"
 
-#define COMSIG_XENOMORPH_GRAB "xenomorph_grab"
-#define COMSIG_XENOMORPH_ATTACK_OBJ "xenomorph_attack_obj"
-///from /mob/living/proc/attack_alien_harm(mob/living/carbon/xenomorph/X, dam_bonus, set_location, random_location, no_head, no_crit, force_intent)
-#define COMSIG_XENOMORPH_ATTACK_LIVING "xenomorph_attack_living"
-	#define COMSIG_XENOMORPH_BONUS_APPLIED (1<<0)
+#define COMSIG_TYRANID_GRAB "tyranid_grab"
+#define COMSIG_TYRANID_ATTACK_OBJ "tyranid_attack_obj"
+///from /mob/living/proc/attack_alien_harm(mob/living/carbon/tyranid/X, dam_bonus, set_location, random_location, no_head, no_crit, force_intent)
+#define COMSIG_TYRANID_ATTACK_LIVING "tyranid_attack_living"
+	#define COMSIG_TYRANID_BONUS_APPLIED (1<<0)
 
 ///after attacking, accounts for armor
-#define COMSIG_XENOMORPH_POSTATTACK_LIVING "xenomorph_postattack_living"
-#define COMSIG_XENOMORPH_ATTACK_HUMAN "xenomorph_attack_human"
-#define COMSIG_XENOMORPH_DISARM_HUMAN "xenomorph_disarm_human"
+#define COMSIG_TYRANID_POSTATTACK_LIVING "tyranid_postattack_living"
+#define COMSIG_TYRANID_ATTACK_HUMAN "tyranid_attack_human"
+#define COMSIG_TYRANID_DISARM_HUMAN "tyranid_disarm_human"
 	#define COMPONENT_BYPASS_SHIELDS (1<<0)
 	#define COMPONENT_BYPASS_ARMOR (1<<1)
 
-#define COMSIG_XENOMORPH_THROW_HIT "xenomorph_throw_hit"
+#define COMSIG_TYRANID_THROW_HIT "tyranid_throw_hit"
 
-#define COMSIG_XENOMORPH_TAKING_DAMAGE "xenomorph_taking_damage" // (target, damagetaken)
+#define COMSIG_TYRANID_TAKING_DAMAGE "tyranid_taking_damage" // (target, damagetaken)
 
-#define COMSIG_XENOMORPH_BRUTE_DAMAGE "xenomorph_brute_damage" // (amount, amount_mod, passive)
-#define COMSIG_XENOMORPH_BURN_DAMAGE "xenomorph_burn_damage" // (amount, amount_mod, passive)
+#define COMSIG_TYRANID_BRUTE_DAMAGE "tyranid_brute_damage" // (amount, amount_mod, passive)
+#define COMSIG_TYRANID_BURN_DAMAGE "tyranid_burn_damage" // (amount, amount_mod, passive)
 
-#define COMSIG_XENOMORPH_EVOLVED "xenomorph_evolved"
-#define COMSIG_XENOMORPH_DEEVOLVED "xenomorph_deevolved"
-#define COMSIG_XENOMORPH_WATCHXENO "xenomorph_watchxeno"
+#define COMSIG_TYRANID_EVOLVED "tyranid_evolved"
+#define COMSIG_TYRANID_DEEVOLVED "tyranid_deevolved"
+#define COMSIG_TYRANID_WATCHTYRANID "tyranid_watchtyranid"
 
-#define COMSIG_XENOMORPH_LEADERSHIP "xenomorph_leadership"
-#define COMSIG_XENOMORPH_QUEEN_PLASMA "xenomorph_queen_plasma"
+#define COMSIG_TYRANID_LEADERSHIP "tyranid_leadership"
+#define COMSIG_TYRANID_QUEEN_PLASMA "tyranid_queen_plasma"
 
-#define COMSIG_XENOMORPH_CORE_RETURN "xenomorph_core_return"
-#define COMSIG_XENOMORPH_HIVEMIND_CHANGE_FORM "xenomorph_hivemind_change_form"
-#define COMISG_XENOMORPH_HIVEMIND_TELEPORT "xeno_hivemind_teleport"
+#define COMSIG_TYRANID_CORE_RETURN "tyranid_core_return"
+#define COMSIG_TYRANID_HIVEMIND_CHANGE_FORM "tyranid_hivemind_change_form"
+#define COMISG_TYRANID_HIVEMIND_TELEPORT "tyranid_hivemind_teleport"
 
-#define COMSIG_XENO_OBJ_THROW_HIT "xeno_obj_throw_hit"				///from [/mob/living/carbon/xenomorph/throw_impact]: (obj/target, speed)
-#define COMSIG_XENO_LIVING_THROW_HIT "xeno_living_throw_hit"		///from [/mob/living/carbon/xenomorph/throw_impact]: (mob/living/target)
+#define COMSIG_TYRANID_OBJ_THROW_HIT "tyranid_obj_throw_hit"				///from [/mob/living/carbon/tyranid/throw_impact]: (obj/target, speed)
+#define COMSIG_TYRANID_LIVING_THROW_HIT "tyranid_living_throw_hit"		///from [/mob/living/carbon/tyranid/throw_impact]: (mob/living/target)
 	#define COMPONENT_KEEP_THROWING (1<<0)
-#define COMSIG_XENO_PROJECTILE_HIT "xeno_projectile_hit"			///from [/mob/living/carbon/xenomorph/projectile_hit] called when a projectile hits a xeno but before confirmation of a hit (can miss due to inaccuracy/evasion)
+#define COMSIG_TYRANID_PROJECTILE_HIT "tyranid_projectile_hit"			///from [/mob/living/carbon/tyranid/projectile_hit] called when a projectile hits a tyranid but before confirmation of a hit (can miss due to inaccuracy/evasion)
 	#define COMPONENT_PROJECTILE_DODGE (1<<0)
 
-#define COMSIG_XENOMORPH_WRAITH_RECALL "xenomorph_wraith_recall"
+#define COMSIG_TYRANID_WRAITH_RECALL "tyranid_wraith_recall"
 	#define COMPONENT_BANISH_TARGETS_EXIST (1<<0)
 
-#define COMSIG_XENO_PSYCHIC_LINK_REMOVED "xeno_psychic_link_removed"
+#define COMSIG_TYRANID_PSYCHIC_LINK_REMOVED "tyranid_psychic_link_removed"
 
-#define COMSIG_XENOMORPH_LEAP_BUMP "xenomorph_leap_bump" //from /mob/living/carbon/xenomorph/bump
+#define COMSIG_TYRANID_LEAP_BUMP "tyranid_leap_bump" //from /mob/living/carbon/tyranid/bump
 
 //human signals
 #define COMSIG_CLICK_QUICKEQUIP "click_quickequip"
@@ -746,8 +746,8 @@
 #define COMSIG_THROW_PARRY_CHECK "throw_parry_check"
 #define COMSIG_PARRY_TRIGGER "parry_trigger"
 
-// xeno iff tag signals
-#define COMSIG_XENO_IFF_CHECK "xeno_iff_check" //! Signal used by certain IFF checking things to see if a xeno carries an IFF tag of the faction.
+// tyranid iff tag signals
+#define COMSIG_TYRANID_IFF_CHECK "tyranid_iff_check" //! Signal used by certain IFF checking things to see if a tyranid carries an IFF tag of the faction.
 
 // remote control signals
 #define COMSIG_REMOTECONTROL_TOGGLE "remotecontrol_toggle"
@@ -790,7 +790,7 @@
 #define COMSIG_ACTION_TRIGGER "action_trigger"                        //from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER (1<<0)
 
-#define COMSIG_ABILITY_SUCCEED_ACTIVATE "xeno_action_succeed_activate"
+#define COMSIG_ABILITY_SUCCEED_ACTIVATE "tyranid_action_succeed_activate"
 	#define SUCCEED_ACTIVATE_CANCEL (1<<0)
 
 //Signals for CIC orders

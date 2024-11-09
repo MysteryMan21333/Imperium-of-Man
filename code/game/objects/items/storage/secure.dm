@@ -64,7 +64,7 @@
 		else if(code == l_code && l_set)
 			locked = FALSE
 			overlays = null
-			overlays += image('icons/obj/items/storage/briefcase.dmi', icon_opened)
+			overlays += image('modular_imperium/master_files/icons/obj/items/storage/briefcase.dmi', icon_opened)
 			code = null
 		else
 			code = "ERROR"
@@ -115,11 +115,11 @@
 // -----------------------------
 /obj/item/storage/secure/briefcase
 	name = "secure briefcase"
-	icon = 'icons/obj/items/storage/briefcase.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/briefcase.dmi'
 	icon_state = "secure"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/containers_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/containers_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_right.dmi',
 	)
 	worn_icon_state = "sec-case"
 	desc = "A large briefcase with a digital locking system."
@@ -152,7 +152,7 @@
 
 /obj/item/storage/secure/safe
 	name = "secure safe"
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "wallsafe"
 	icon_opened = "wallsafe_0"
 	icon_locking = "wallsafe_b"

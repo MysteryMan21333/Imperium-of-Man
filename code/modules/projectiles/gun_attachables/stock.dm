@@ -1,7 +1,7 @@
 /obj/item/attachable/stock //Generic stock parent and related things.
 	name = "default stock"
 	desc = "Default parent object, not meant for use."
-	icon = 'icons/obj/items/guns/attachments/stock.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/attachments/stock.dmi'
 	slot = ATTACHMENT_SLOT_STOCK
 	attach_features_flags = NONE //most stocks are not removable
 	size_mod = 2
@@ -186,7 +186,7 @@
 	name = "AR-11 stock"
 	icon_state = "tx11"
 
-/obj/item/attachable/stock/som_mg_stock
+/obj/item/attachable/stock/chaos_mg_stock
 	name = "\improper V-41 stock"
 	desc = "A irremovable V-41 machine gun stock."
 	icon_state = "v41"

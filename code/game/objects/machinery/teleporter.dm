@@ -7,7 +7,7 @@
 
 /obj/machinery/teleport
 	name = "teleport"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/stationobjs.dmi'
 	density = TRUE
 	anchored = TRUE
 

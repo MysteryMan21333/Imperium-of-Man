@@ -41,7 +41,7 @@
 		/obj/item/clothing/under/rank/medical,
 		/obj/item/clothing/under/rank/prisoner,
 		/obj/item/clothing/under/rank/research_director/rdalt,
-		/obj/item/clothing/under/marine/officer/ro_suit,
+		/obj/item/clothing/under/guardsman/officer/ro_suit,
 		/obj/item/clothing/under/suit_jacket,
 		/obj/item/clothing/under/suit_jacket/charcoal,
 		/obj/item/clothing/under/swimsuit,

@@ -59,14 +59,14 @@
 		storage_type_limits_list = list(/obj/item/weapon/gun/launcher/rocket/recoillessrifle) //only one RR per bag
 	)
 
-/datum/storage/holster/backholster/rpg/som/New(atom/parent)
+/datum/storage/holster/backholster/rpg/chaos/New(atom/parent)
 	. = ..()
 	set_holdable(
 		can_hold_list = list(
 			/obj/item/ammo_magazine/rocket,
-			/obj/item/weapon/gun/launcher/rocket/som,
+			/obj/item/weapon/gun/launcher/rocket/chaos,
 		),
-		storage_type_limits_list = list(/obj/item/weapon/gun/launcher/rocket/som)
+		storage_type_limits_list = list(/obj/item/weapon/gun/launcher/rocket/chaos)
 	)
 
 /datum/storage/holster/backholster/mortar
@@ -98,14 +98,14 @@
 
 /datum/storage/holster/backholster/flamer/New(atom/parent)
 	. = ..()
-	set_holdable(storage_type_limits_list = list(/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer))
-	storage_type_limits_max = list(/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer = 1)
+	set_holdable(storage_type_limits_list = list(/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer))
+	storage_type_limits_max = list(/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer = 1)
 
 /datum/storage/holster/backholster/flamer/handle_item_insertion(obj/item/item, prevent_warning = 0, mob/user)
 	. = ..()
 	var/obj/item/storage/holster/backholster/flamer/holster = parent
 	if(holster.holstered_item == item)
-		var/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer/flamer = item
+		var/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer/flamer = item
 		if(flamer.chamber_items.len == 0)
 			return
 		holster.refuel(flamer.chamber_items[1], user)
@@ -161,7 +161,7 @@
 	set_holdable(can_hold_list = list(
 		/obj/item/weapon/gun/pistol,
 		/obj/item/ammo_magazine/pistol,
-		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol,
+		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol,
 		/obj/item/cell/lasgun/plasma,
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta,
 		/obj/item/cell/lasgun/lasrifle,
@@ -212,7 +212,7 @@
 			/obj/item/ammo_magazine/handful,
 		),
 		storage_type_limits_list = list(
-			/obj/item/weapon/gun/shotgun/double/marine,
+			/obj/item/weapon/gun/shotgun/double/guardsman,
 			/obj/item/ammo_magazine/shotgun,
 		)
 	)

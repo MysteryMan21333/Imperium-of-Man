@@ -1,12 +1,12 @@
 /obj/machinery/computer/arcade
 	name = "Black Donnovan II: Double Revenge"
 	desc = "Does not support Pinball."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "arcade"
 	screen_overlay = "arcade_screen"
 	circuit = /obj/item/circuitboard/computer/arcade
 	var/enemy_name = "Space Villain"
-	var/temp = "Sponsored by Nanotrasen and the TerraGov Marine Corps" //Temporary message, for attack messages, etc
+	var/temp = "Sponsored by Nanotrasen and the Imperium Guardsman Corps" //Temporary message, for attack messages, etc
 	var/player_hp = 30 //Player health/attack points
 	var/player_mp = 10
 	var/enemy_hp = 45 //Enemy health/attack points

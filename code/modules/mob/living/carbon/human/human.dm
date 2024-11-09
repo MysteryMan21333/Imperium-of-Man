@@ -69,7 +69,7 @@
 	add_to_all_mob_huds()
 
 	GLOB.huds[DATA_HUD_BASIC].add_hud_to(src)
-	GLOB.huds[DATA_HUD_XENO_HEART].add_to_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_HEART].add_to_hud(src)
 
 /mob/living/carbon/human/register_init_signals()
 	. = ..()
@@ -77,7 +77,7 @@
 	RegisterSignal(src, COMSIG_ATOM_ACIDSPRAY_ACT, PROC_REF(acid_spray_entered))
 	RegisterSignal(src, COMSIG_KB_QUICKEQUIP, PROC_REF(async_do_quick_equip))
 	RegisterSignal(src, COMSIG_KB_UNIQUEACTION, PROC_REF(do_unique_action))
-	RegisterSignal(src, COMSIG_GRAB_SELF_ATTACK, PROC_REF(grabbed_self_attack)) // Fireman carry & mounting saddled xenos
+	RegisterSignal(src, COMSIG_GRAB_SELF_ATTACK, PROC_REF(grabbed_self_attack)) // Fireman carry & mounting saddled tyranids
 	RegisterSignal(src, COMSIG_KB_GIVE, PROC_REF(give_signal_handler))
 
 /mob/living/carbon/human/Destroy()
@@ -297,15 +297,15 @@
 		if(!H.mind)
 			return
 		var/obj/item/card/id/ID = get_idcard()
-		if(!ID || !(ID.rank in GLOB.jobs_marines))//still a marine, with an ID.
+		if(!ID || !(ID.rank in GLOB.jobs_guardsmans))//still a guardsman, with an ID.
 			return
 		if(!(assigned_squad == H.assigned_squad)) //still same squad
 			return
-		var/newfireteam = tgui_input_list(usr, "Assign this marine to a fireteam.", "Fire Team Assignment", list("None", "Fire Team 1", "Fire Team 2", "Fire Team 3"))
+		var/newfireteam = tgui_input_list(usr, "Assign this guardsman to a fireteam.", "Fire Team Assignment", list("None", "Fire Team 1", "Fire Team 2", "Fire Team 3"))
 		if(!newfireteam || H.incapacitated() || get_dist(H, src) >= 7) //We might've moved away or gotten incapacitated in the meantime
 			return
 		ID = get_idcard()
-		if(!ID || !(ID.rank in GLOB.jobs_marines))//still a marine with an ID
+		if(!ID || !(ID.rank in GLOB.jobs_guardsmans))//still a guardsman with an ID
 			return
 		if(!(assigned_squad == H.assigned_squad)) //still same squad
 			return
@@ -851,7 +851,7 @@
 	return ..()
 
 /mob/living/carbon/human/smokecloak_on()
-	var/obj/item/storage/backpack/marine/satchel/scout_cloak/S = back
+	var/obj/item/storage/backpack/guardsman/satchel/scout_cloak/S = back
 	if(istype(S) && S.camo_active)
 		return FALSE
 	return ..()
@@ -1041,7 +1041,7 @@
 	popup.open(FALSE)
 
 /mob/living/carbon/human/proc/change_squad(squad)
-	if(!squad || !ismarinejob(job))
+	if(!squad || !isguardsmanjob(job))
 		return FALSE
 
 	var/datum/squad/S = SSjob.squads[squad]

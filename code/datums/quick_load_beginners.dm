@@ -7,38 +7,38 @@
 /datum/outfit/quick/beginner
 	name = "Beginner loadout base"
 	desc = "The base loadout for beginners. You shouldn't be able to see this"
-	jobtype = "Squad Marine"
+	jobtype = "Squad Guardsman"
 
-	w_uniform = /obj/item/clothing/under/marine
-	shoes = /obj/item/clothing/shoes/marine/full
+	w_uniform = /obj/item/clothing/under/guardsman
+	shoes = /obj/item/clothing/shoes/guardsman/full
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten
-	gloves = /obj/item/clothing/gloves/marine/black
+	gloves = /obj/item/clothing/gloves/guardsman/black
 	mask = /obj/item/clothing/mask/bandanna
 	head = /obj/item/clothing/head/modular/m10x
 	r_store = /obj/item/storage/pouch/medkit/firstaid
 	l_store = /obj/item/storage/holster/flarepouch/full
-	back = /obj/item/storage/backpack/marine/satchel
-	belt = /obj/item/storage/belt/marine
-	ears = /obj/item/radio/headset/mainship/marine
+	back = /obj/item/storage/backpack/guardsman/satchel
+	belt = /obj/item/storage/belt/guardsman
+	ears = /obj/item/radio/headset/mainship/guardsman
 
 /datum/outfit/quick/beginner/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/protein_pack, SLOT_IN_HEAD)
 	human.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/protein_pack, SLOT_IN_HEAD)
 
-/datum/outfit/quick/beginner/marine/rifleman
+/datum/outfit/quick/beginner/guardsman/rifleman
 	name = "Rifleman"
-	desc = "A typical rifleman for the marines. \
+	desc = "A typical rifleman for the guardsmans. \
 	Wields the AR-12, a versatile all-rounder assault rifle with a powerful underbarrel grenade launcher attached. \
 	Also carries the strong P-23 sidearm and a variety of flares, medical equipment, and more for every situation."
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/hodgrenades
 	head = /obj/item/clothing/head/modular/m10x/hod
-	w_uniform = /obj/item/clothing/under/marine/holster
+	w_uniform = /obj/item/clothing/under/guardsman/holster
 	suit_store = /obj/item/weapon/gun/rifle/standard_assaultrifle/medic
 	l_hand = /obj/item/paper/tutorial/beginner_rifleman
 
-/datum/outfit/quick/beginner/marine/rifleman/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/rifleman/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
@@ -66,21 +66,21 @@
 	human.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_SUIT)
 	human.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_SUIT)
 
-/datum/outfit/quick/beginner/marine/machinegunner
+/datum/outfit/quick/beginner/guardsman/machinegunner
 	name = "Machinegunner"
 	desc = "The king of suppressive fire. Uses the MG-60, a fully automatic 200 round machine gun with a bipod attached. \
 	Excels at denying large areas to the enemy and eliminating those who refuse to leave."
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/heavy/tyr_onegeneral
 	head = /obj/item/clothing/head/modular/m10x/tyr
-	w_uniform = /obj/item/clothing/under/marine/black_vest
-	back = /obj/item/storage/backpack/marine/standard
+	w_uniform = /obj/item/clothing/under/guardsman/black_vest
+	back = /obj/item/storage/backpack/guardsman/standard
 	belt = /obj/item/storage/belt/sparepouch
 	suit_store = /obj/item/weapon/gun/rifle/standard_gpmg/beginner
 	mask = /obj/item/clothing/mask/rebreather
 	l_hand = /obj/item/paper/tutorial/beginner_machinegunner
 
-/datum/outfit/quick/beginner/marine/machinegunner/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/machinegunner/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/standard_gpmg, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/standard_gpmg, SLOT_IN_BACKPACK)
@@ -105,22 +105,22 @@
 	human.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/plasma_pistol, SLOT_IN_SUIT)
 
 
-/datum/outfit/quick/beginner/marine/marksman
+/datum/outfit/quick/beginner/guardsman/marksman
 	name = "Marksman"
 	desc = "Quality over quantity. Equipped with the DMR-37, an accurate long-range designated marksman rifle with a scope attached. \
 	While subpar in close quarters, the precision of the DMR is unmatched, exceeding at taking out threats from afar."
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/lightmedical
 	head = /obj/item/clothing/head/modular/style/boonie
-	w_uniform = /obj/item/clothing/under/marine/holster
-	belt = /obj/item/belt_harness/marine
+	w_uniform = /obj/item/clothing/under/guardsman/holster
+	belt = /obj/item/belt_harness/guardsman
 	l_store = /obj/item/storage/pouch/magazine/large
 	r_store = /obj/item/storage/pouch/magazine/large
 	suit_store = /obj/item/weapon/gun/rifle/standard_dmr/beginner
 	mask = /obj/item/clothing/mask/breath
 	l_hand = /obj/item/paper/tutorial/beginner_marksman
 
-/datum/outfit/quick/beginner/marine/marksman/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/marksman/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
@@ -147,21 +147,21 @@
 	human.equip_to_slot_or_del(new /obj/item/storage/pill_bottle/tramadol, SLOT_IN_SUIT)
 	human.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/dylovene, SLOT_IN_SUIT)
 
-/datum/outfit/quick/beginner/marine/shotgunner
+/datum/outfit/quick/beginner/guardsman/shotgunner
 	name = "Shotgunner"
 	desc = "Up close and personal. Wields the SH-39, a semi-automatic shotgun loaded with slugs. \
 	An absolute monster at short to mid range, the shotgun will do heavy damage to any target hit, as well as stunning them briefly, staggering them, and knocking them back."
 
-	w_uniform = /obj/item/clothing/under/marine/holster
+	w_uniform = /obj/item/clothing/under/guardsman/holster
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/lightgeneral
-	suit_store = /obj/item/weapon/gun/shotgun/combat/standardmarine/beginner
+	suit_store = /obj/item/weapon/gun/shotgun/combat/standardguardsman/beginner
 	belt = /obj/item/storage/belt/shotgun
 	head = /obj/item/clothing/head/modular/m10x/freyr
-	gloves = /obj/item/clothing/gloves/marine/fingerless
+	gloves = /obj/item/clothing/gloves/guardsman/fingerless
 	mask = /obj/item/clothing/mask/gas/tactical/coif
 	l_hand = /obj/item/paper/tutorial/beginner_shotgunner
 
-/datum/outfit/quick/beginner/marine/shotgunner/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/shotgunner/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
@@ -195,22 +195,22 @@
 	human.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_SUIT)
 	human.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_SUIT)
 
-/datum/outfit/quick/beginner/marine/shocktrooper
+/datum/outfit/quick/beginner/guardsman/shocktrooper
 	name = "Shocktrooper"
 	desc = "The bleeding edge of the corps. \
 	Equipped with the experimental battery-fed laser rifle, featuring four different modes that can be freely swapped between, with an underbarrel flamethrower for area denial and clearing mazes."
 
-	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/medic
+	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/medic
 	glasses = /obj/item/clothing/glasses/sunglasses/fake/big
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/lightgeneral
 	head = /obj/item/clothing/head/modular/style/cap
 	mask = /obj/item/clothing/mask/gas/modular/skimask
-	r_store = /obj/item/cell/lasgun/volkite/powerpack/marine
-	w_uniform = /obj/item/clothing/under/marine/corpman_vest
-	shoes = /obj/item/clothing/shoes/marine
+	r_store = /obj/item/cell/lasgun/volkite/powerpack/guardsman
+	w_uniform = /obj/item/clothing/under/guardsman/corpman_vest
+	shoes = /obj/item/clothing/shoes/guardsman
 	l_hand = /obj/item/paper/tutorial/beginner_shocktrooper
 
-/datum/outfit/quick/beginner/marine/shocktrooper/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/shocktrooper/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/cell/lasgun/lasrifle, SLOT_IN_BELT)
 	human.equip_to_slot_or_del(new /obj/item/cell/lasgun/lasrifle, SLOT_IN_BELT)
@@ -240,22 +240,22 @@
 	human.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_ACCESSORY)
 	human.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_ACCESSORY)
 
-/datum/outfit/quick/beginner/marine/hazmat
+/datum/outfit/quick/beginner/guardsman/hazmat
 	name = "Hazmat"
 	desc = "Designed for danger. \
 	Wields the AR-11, a powerful yet innacurate assault rifle with high magazine size and an equipped tactical sensor that detects enemies through smoke and walls. \
-	Wears Mimir combat armor, rendering the user immune to the dangerous toxic gas possessed by many xenomorphs."
+	Wears Mimir combat armor, rendering the user immune to the dangerous toxic gas possessed by many tyranids."
 
 	head = /obj/item/clothing/head/modular/m10x/mimir
 	suit_store = /obj/item/weapon/gun/rifle/tx11/freelancertwo
-	back = /obj/item/storage/backpack/marine/standard
-	w_uniform = /obj/item/clothing/under/marine/black_vest
+	back = /obj/item/storage/backpack/guardsman/standard
+	w_uniform = /obj/item/clothing/under/guardsman/black_vest
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/mimir
 	mask = /obj/item/clothing/mask/rebreather/scarf
-	belt = /obj/item/belt_harness/marine
+	belt = /obj/item/belt_harness/guardsman
 	l_hand = /obj/item/paper/tutorial/beginner_hazmat
 
-/datum/outfit/quick/beginner/marine/hazmat/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/hazmat/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/tx11, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/tx11, SLOT_IN_BACKPACK)
@@ -275,19 +275,19 @@
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/tx11, SLOT_IN_SUIT)
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/tx11, SLOT_IN_SUIT)
 
-/datum/outfit/quick/beginner/marine/cqc
+/datum/outfit/quick/beginner/guardsman/cqc
 	name = "CQC"
 	desc = "Swift and lethal. \
 	Equipped with the AR-18, a lightweight carbine with a rapid-fire burst mode. Designed for maximum mobility, soldiers are able to rush in, assault the enemy, and retreat before they can respond."
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_carbine/beginner
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/lightgeneral
-	w_uniform = /obj/item/clothing/under/marine/black_vest
+	w_uniform = /obj/item/clothing/under/guardsman/black_vest
 	head = /obj/item/clothing/head/modular/style/beret
 	glasses = /obj/item/clothing/glasses/mgoggles
 	l_hand = /obj/item/paper/tutorial/beginner_cqc
 
-/datum/outfit/quick/beginner/marine/cqc/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/cqc/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/standard_carbine, SLOT_IN_BELT)
 	human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/standard_carbine, SLOT_IN_BELT)
@@ -311,7 +311,7 @@
 	human.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_ACCESSORY)
 	human.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_ACCESSORY)
 
-/datum/outfit/quick/beginner/marine/chad //Ya gotta be if you pick this loadout
+/datum/outfit/quick/beginner/guardsman/chad //Ya gotta be if you pick this loadout
 	name = "Grenadier"
 	desc = "Explosive area denial. \
 	Uses the GL-70, a six shot semi-automatic grenade launcher, loaded with HEDP high explosive grenades. \
@@ -323,12 +323,12 @@
 	r_store = /obj/item/storage/pouch/grenade
 	belt = /obj/item/storage/belt/grenade
 	mask = /obj/item/clothing/mask/gas
-	w_uniform = /obj/item/clothing/under/marine/corpman_vest
+	w_uniform = /obj/item/clothing/under/guardsman/corpman_vest
 	head = /obj/item/clothing/head/modular/m10x/hod
-	shoes = /obj/item/clothing/shoes/marine
+	shoes = /obj/item/clothing/shoes/guardsman
 	l_hand = /obj/item/paper/tutorial/beginner_chad
 
-/datum/outfit/quick/beginner/marine/chad/post_equip(mob/living/carbon/human/human, visualsOnly)
+/datum/outfit/quick/beginner/guardsman/chad/post_equip(mob/living/carbon/human/human, visualsOnly)
 	. = ..()
 	human.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BELT)
 	human.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BELT)
@@ -381,9 +381,9 @@
 /datum/outfit/quick/beginner/engineer
 	jobtype = "Squad Engineer"
 
-	w_uniform = /obj/item/clothing/under/marine/brown_vest
-	shoes = /obj/item/clothing/shoes/marine
-	gloves = /obj/item/clothing/gloves/marine/insulated
+	w_uniform = /obj/item/clothing/under/guardsman/brown_vest
+	shoes = /obj/item/clothing/shoes/guardsman
+	gloves = /obj/item/clothing/gloves/guardsman/insulated
 	l_store = /obj/item/storage/pouch/tools
 
 /datum/outfit/quick/beginner/engineer/post_equip(mob/living/carbon/human/human, visualsOnly)
@@ -413,8 +413,8 @@
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/heavy/mimirengi
 	mask = /obj/item/clothing/mask/gas/tactical
 	head = /obj/item/clothing/head/modular/m10x/mimir
-	back = /obj/item/storage/backpack/marine/radiopack
-	belt = /obj/item/belt_harness/marine
+	back = /obj/item/storage/backpack/guardsman/radiopack
+	belt = /obj/item/belt_harness/guardsman
 	glasses = /obj/item/clothing/glasses/welding/superior
 	l_hand = /obj/item/paper/tutorial/builder
 
@@ -439,7 +439,7 @@
 	name = "Flamethrower"
 	desc = "For those who truly love to watch the world burn. Equipped with a laser carbine and a flamethrower, you can be certain that none of your enemies will be left un-burnt."
 
-	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/beginner
+	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/beginner
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/engineer
 	mask = /obj/item/clothing/mask/gas/tactical/coif
 	head = /obj/item/clothing/head/modular/m10x/superiorwelding
@@ -460,7 +460,7 @@
 	human.equip_to_slot_or_del(new /obj/item/cell/lasgun/lasrifle, SLOT_IN_BELT)
 	human.equip_to_slot_or_del(new /obj/item/cell/lasgun/lasrifle, SLOT_IN_BELT)
 
-	human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer/beginner(human), SLOT_IN_BACKPACK)
+	human.equip_to_slot_or_del(new /obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard/engineer/beginner(human), SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/storage/box/explosive_mines/large, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_BACKPACK)
 	human.equip_to_slot_or_del(new /obj/item/explosive/plastique, SLOT_IN_BACKPACK)
@@ -475,8 +475,8 @@
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/engineer
 	mask = /obj/item/clothing/mask/gas
 	head = /obj/item/clothing/head/modular/m10x/superiorwelding
-	back = /obj/item/storage/backpack/marine/engineerpack
-	belt = /obj/item/belt_harness/marine
+	back = /obj/item/storage/backpack/guardsman/engineerpack
+	belt = /obj/item/belt_harness/guardsman
 	glasses = /obj/item/clothing/glasses/meson
 	l_hand = /obj/item/paper/tutorial/plasmacutter
 
@@ -499,8 +499,8 @@
 /datum/outfit/quick/beginner/corpsman
 	jobtype = "Squad Corpsman"
 
-	shoes = /obj/item/clothing/shoes/marine
-	w_uniform = /obj/item/clothing/under/marine/corpsman/corpman_vest
+	shoes = /obj/item/clothing/shoes/guardsman
+	w_uniform = /obj/item/clothing/under/guardsman/corpsman/corpman_vest
 	glasses = /obj/item/clothing/glasses/hud/health
 	r_hand = /obj/item/medevac_beacon
 
@@ -520,7 +520,7 @@
 	head = /obj/item/clothing/head/modular/m10x/mimir
 	r_store = /obj/item/storage/pouch/medkit/medic
 	l_store = /obj/item/storage/pouch/shotgun
-	back = /obj/item/storage/backpack/marine/corpsman
+	back = /obj/item/storage/backpack/guardsman/corpsman
 	belt = /obj/item/storage/belt/lifesaver/beginner
 	l_hand = /obj/item/paper/tutorial/lifesaver
 
@@ -574,7 +574,7 @@
 	head = /obj/item/clothing/head/modular/m10x/antenna
 	r_store = /obj/item/storage/pouch/medkit/medic
 	l_store = /obj/item/storage/pouch/shotgun
-	back = /obj/item/storage/backpack/marine/corpsman
+	back = /obj/item/storage/backpack/guardsman/corpsman
 	belt = /obj/item/storage/belt/hypospraybelt/beginner
 	l_hand = /obj/item/paper/tutorial/hypobelt
 
@@ -614,12 +614,12 @@
 /datum/outfit/quick/beginner/smartgunner
 	jobtype = "Squad Smartgunner"
 
-	w_uniform = /obj/item/clothing/under/marine/black_vest
-	shoes = /obj/item/clothing/shoes/marine
+	w_uniform = /obj/item/clothing/under/guardsman/black_vest
+	shoes = /obj/item/clothing/shoes/guardsman
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/lightgeneral
 	mask = /obj/item/clothing/mask/gas
 	head = /obj/item/clothing/head/modular/m10x/antenna
-	belt = /obj/item/belt_harness/marine
+	belt = /obj/item/belt_harness/guardsman
 	glasses = /obj/item/clothing/glasses/night/m56_goggles
 
 /datum/outfit/quick/beginner/smartgunner/post_equip(mob/living/carbon/human/human, visualsOnly)

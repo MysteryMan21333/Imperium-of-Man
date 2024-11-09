@@ -5,7 +5,7 @@
  */
 /atom/movable/screen/background
 	name = "background"
-	icon = 'icons/mob/map_backgrounds.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/map_backgrounds.dmi'
 	icon_state = "clear"
 	layer = GAME_PLANE
 	plane = GAME_PLANE

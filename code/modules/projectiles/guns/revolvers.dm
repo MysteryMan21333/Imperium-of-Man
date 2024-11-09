@@ -5,14 +5,14 @@
 	equip_slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/pistols_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/pistols_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/pistols_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/pistols_right_1.dmi',
 	)
 	fire_sound = 'sound/weapons/guns/fire/44mag.ogg'
 	reload_sound = 'sound/weapons/guns/interact/revolver_spun.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/revolver_cocked.ogg'
 	unload_sound = 'sound/weapons/guns/interact/revolver_unload.ogg'
-	icon = 'icons/obj/items/guns/pistols.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/pistols.dmi'
 	muzzleflash_iconstate = "muzzle_flash_medium"
 	hand_reload_sound = 'sound/weapons/guns/interact/revolver_load.ogg'
 	type_of_casings = "bullet"
@@ -158,7 +158,7 @@
 
 
 //-------------------------------------------------------
-//Mateba is pretty well known. The cylinder folds up instead of to the side. This has a non-marine version and a marine version.
+//Mateba is pretty well known. The cylinder folds up instead of to the side. This has a non-guardsman version and a guardsman version.
 
 /obj/item/weapon/gun/revolver/mateba
 	name = "\improper R-24 'Mateba' autorevolver"
@@ -194,7 +194,7 @@
 	akimbo_additional_delay = 0.9 // Akimbo only gives more shots.
 	scatter_unwielded = 7
 
-/obj/item/weapon/gun/revolver/mateba/notmarine
+/obj/item/weapon/gun/revolver/mateba/notguardsman
 	name = "\improper Mateba autorevolver"
 	desc = "The Mateba is a powerful, fast-firing revolver that uses its own recoil to rotate the cylinders. Uses .454 rounds."
 
@@ -278,7 +278,7 @@
 /obj/item/weapon/gun/revolver/standard_magnum
 	name = "\improper R-76 KC magnum"
 	desc = "The R-76 magnum is an absolute beast of a handgun used by the TGMC, rumors say it was created as a money laundering scheme by some general due to the sheer inpracticality of this firearm. Hits hard, recommended to be used with its stock attachment. Chambered in 12.7mm."
-	icon = 'icons/obj/items/guns/pistols64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/pistols64.dmi'
 	icon_state = "t76"
 	worn_icon_state = "t76"
 	fire_animation = "t76_fire"

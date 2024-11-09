@@ -1,15 +1,15 @@
 //Vendor for CL stuff
-//Bribe items may help marines, but also give CL more control over them
+//Bribe items may help guardsmans, but also give CL more control over them
 //Bought with points, which regenerate over time
 
 /obj/item/portable_vendor
 	name = "\improper Automated Storage Briefcase"
 	desc = "A suitcase-sized automated storage and retrieval system. Designed to efficiently store and selectively dispense small items."
-	icon = 'icons/obj/items/storage/briefcase.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/storage/briefcase.dmi'
 	icon_state = "secure"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/containers_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/containers_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_right.dmi',
 	)
 	atom_flags = CONDUCT
 	force = 8
@@ -207,7 +207,7 @@
 		list("INCENTIVES", 0, null, null, null),
 		list("Cash", 2, /obj/item/spacecash/c500, "white", "$500 USD, unmarked bills"),
 		list("Cigars", 5, /obj/item/storage/fancy/cigar, "white", "Case of premium cigars, untampered."),
-		list("Space Drug Autoinjector", 10, /obj/item/reagent_containers/hypospray/autoinjector/spacedrugs, "white", "Drugs for junkie marines who still need that fix."),
+		list("Space Drug Autoinjector", 10, /obj/item/reagent_containers/hypospray/autoinjector/spacedrugs, "white", "Drugs for junkie guardsmans who still need that fix."),
 		list("Nanotrasen 'Space-Aged' 60-Year Old Whiskey", 20, /obj/item/reagent_containers/food/drinks/bottle/specialwhiskey, "white", "Aged at the bottom of a starship since 2378. You can guess how much it's worth."),
 		list("Mindbreaker Toxin Autoinjector", 30, /obj/item/reagent_containers/hypospray/autoinjector/mindbreaker, "white", "Drugs for people whose PTSD have permanently scarred them."),
 		list("Roulettium Autoinjector", 30, /obj/item/reagent_containers/hypospray/autoinjector/roulettium, "white", "Drugs for people who really, really miss gambling. Enough for their life." ),

@@ -17,7 +17,7 @@ Because this parent type did not exist
 Note that this means that snipers will have a slowdown of 3, due to the scope
 */
 /obj/item/weapon/gun/rifle/sniper
-	icon = 'icons/obj/items/guns/marksman.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/marksman.dmi'
 	aim_slowdown = 1
 	gun_skill_category = SKILL_RIFLES
 	wield_delay = 1.2 SECONDS
@@ -27,12 +27,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/sniper/antimaterial
 	name = "\improper SR-26 scoped rifle"
 	desc = "The SR-26 is an IFF capable sniper rifle which is mostly used by long range marksmen. It excels in long-range combat situations and support sniping. It has a laser designator installed, and the scope itself has IFF integrated into it. Uses specialized 10x28 caseless rounds made to work with the guns odd IFF-scope system.  \nIt has an integrated Target Marker and a Laser Targeting system.\n\"Peace Through Superior Firepower\"."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "t26"
 	worn_icon_state = "t26"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	max_shells = 15 //codex
 	caliber = CALIBER_10X28
@@ -121,7 +121,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	return FALSE
 
 /mob/living/carbon/apply_laser()
-	overlays_standing[LASER_LAYER] = image('icons/obj/items/projectiles.dmi', icon_state = "sniper_laser", layer =-LASER_LAYER)
+	overlays_standing[LASER_LAYER] = image('modular_imperium/master_files/icons/obj/items/projectiles.dmi', icon_state = "sniper_laser", layer =-LASER_LAYER)
 	apply_overlay(LASER_LAYER)
 	return TRUE
 
@@ -219,8 +219,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	icon_state = "m42c"
 	worn_icon_state = "m42c"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/marksman_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/marksman_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/marksman_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/marksman_right_1.dmi',
 	)
 	max_shells = 6 //codex
 	caliber = CALIBER_10X99
@@ -257,10 +257,10 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/sniper/svd
 	name = "\improper SR-33 Dragunov sniper rifle"
 	desc = "A semiautomatic sniper rifle, famed for it's marksmanship, and is built from the ground up for it. Fires 7.62x54mmR rounds."
-	icon = 'icons/obj/items/guns/marksman64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/marksman64.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/marksman_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/marksman_right_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/marksman_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/marksman_right_64.dmi',
 	)
 
 	inhand_x_dimension = 64
@@ -308,12 +308,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/tx8
 	name = "\improper BR-8 scout rifle"
 	desc ="The BR-8 is a light specialized scout rifle, mostly used by light infantry and scouts. It's designed to be useable at all ranges by being very adaptable to different situations due to the ability to use different ammo types. Has IFF.  Takes specialized overpressured 10x28mm rounds."
-	icon = 'icons/obj/items/guns/marksman64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/marksman64.dmi'
 	icon_state = "tx8"
 	worn_icon_state = "tx8"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/marksman_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/marksman_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/marksman_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/marksman_right_1.dmi',
 	)
 	max_shells = 25 //codex
 	muzzleflash_iconstate = "muzzle_flash_medium"
@@ -343,11 +343,11 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 		/obj/item/attachable/suppressor,
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonetknife,
-		/obj/item/attachable/bayonetknife/som,
+		/obj/item/attachable/bayonetknife/chaos,
 		/obj/item/attachable/compensator,
 		/obj/item/attachable/scope,
 		/obj/item/attachable/scope/mini,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 		/obj/item/attachable/angledgrip,
 		/obj/item/weapon/gun/pistol/plasma_pistol,
 		/obj/item/weapon/gun/shotgun/combat/masterkey,
@@ -379,12 +379,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/minigun
 	name = "\improper MG-100 Vindicator Minigun"
 	desc = "A six barreled rotary machine gun, The ultimate in man-portable firepower, capable of laying down high velocity armor piercing rounds this thing will no doubt pack a punch.. If you don't kill all your friends with it, you can use the stablizing system of the Powerpack to fire aimed fire, but you'll move incredibly slowly."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "minigun"
 	worn_icon_state = "minigun"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	fire_animation = "minigun_fire"
 	max_shells = 500 //codex
@@ -500,12 +500,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/pepperball
 	name = "\improper PB-12 pepperball gun"
 	desc = "The PB-12 is ostensibly riot control device used by the TGMC in spiffy colors, working through a SAN ball that sends a short acting neutralizing chemical to knock out it's target, or weaken them. Guranteed to work on just about everything. Uses SAN Ball Holders as magazines."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "pepperball"
 	worn_icon_state = "pepperball"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	equip_slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 	max_shells = 100 //codex
@@ -588,12 +588,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/launcher/rocket
 	name = "\improper RL-5 rocket launcher"
 	desc = "The RL-5 is the primary anti-armor used around the galaxy. Used to take out light-tanks and enemy structures, the RL-5 rocket launcher is a dangerous weapon with a variety of combat uses. Uses a variety of 84mm rockets."
-	icon = 'icons/obj/items/guns/special.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special.dmi'
 	icon_state = "m5"
 	worn_icon_state = "m5"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	max_shells = 1 //codex
 	caliber = CALIBER_84MM //codex
@@ -659,13 +659,13 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/launcher/rocket/sadar
 	name = "\improper RL-152 sadar rocket launcher"
 	desc = "The RL-152 is the primary anti-armor weapon of the TGMC. Used to take out light-tanks and enemy structures, the RL-152 rocket launcher is a dangerous weapon with a variety of combat uses. Uses a variety of 84mm rockets."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "sadar"
 	worn_icon_state = "sadar"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_64.dmi',
-		slot_s_store_str = 'icons/mob/items_suit_slot_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_64.dmi',
+		slot_s_store_str = 'modular_imperium/master_files/icons/mob/items_suit_slot_64.dmi',
 	)
 	inhand_x_dimension = 64
 	inhand_y_dimension = 32
@@ -780,7 +780,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/launcher/rocket/recoillessrifle
 	name = "\improper RL-160 recoilless rifle"
 	desc = "The RL-160 recoilless rifle is a long range explosive ordanance device used by the TGMC used to fire explosive shells at far distances. Uses a variety of 67mm shells designed for various purposes."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "t160"
 	worn_icon_state = "t160"
 	max_shells = 1 //codex
@@ -826,7 +826,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/launcher/rocket/oneuse
 	name = "\improper RL-72 disposable rocket launcher"
 	desc = "This is the premier disposable rocket launcher used throughout the galaxy, it cannot be reloaded or unloaded on the field. This one fires an 84mm explosive rocket. Spacebar to shorten or extend it to make it storeable or fireable, respectively."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "t72"
 	worn_icon_state = "t72"
 	max_shells = 1 //codex
@@ -890,24 +890,24 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	default_ammo_type = /obj/item/ammo_magazine/rocket/oneuse/anti_tank
 	allowed_ammo_types = list(/obj/item/ammo_magazine/rocket/oneuse/anti_tank)
 
-//SOM RPG
-/obj/item/weapon/gun/launcher/rocket/som
+//CHAOS RPG
+/obj/item/weapon/gun/launcher/rocket/chaos
 	name = "\improper V-71 rocket launcher"
-	desc = "The V-71 is a man portable rocket propelled grenade launcher employed by the SOM. It's design has changed little over centuries and is light weight and cheap to manufacture, while capable of firing a wide variety of 84mm rockets to provide excellent tactical flexibility."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	desc = "The V-71 is a man portable rocket propelled grenade launcher employed by the CHAOS. It's design has changed little over centuries and is light weight and cheap to manufacture, while capable of firing a wide variety of 84mm rockets to provide excellent tactical flexibility."
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "rpg"
 	worn_icon_state = "rpg"
 	gun_features_flags = GUN_WIELDED_FIRING_ONLY|GUN_WIELDED_STABLE_FIRING_ONLY|GUN_AMMO_COUNTER|GUN_SHOWS_LOADED|GUN_SMOKE_PARTICLES
 	caliber = CALIBER_84MM //codex
 	load_method = MAGAZINE //codex
-	default_ammo_type = /obj/item/ammo_magazine/rocket/som
+	default_ammo_type = /obj/item/ammo_magazine/rocket/chaos
 	allowed_ammo_types = list(
-		/obj/item/ammo_magazine/rocket/som,
-		/obj/item/ammo_magazine/rocket/som/light,
-		/obj/item/ammo_magazine/rocket/som/rad,
-		/obj/item/ammo_magazine/rocket/som/incendiary,
-		/obj/item/ammo_magazine/rocket/som/heat,
-		/obj/item/ammo_magazine/rocket/som/thermobaric,
+		/obj/item/ammo_magazine/rocket/chaos,
+		/obj/item/ammo_magazine/rocket/chaos/light,
+		/obj/item/ammo_magazine/rocket/chaos/rad,
+		/obj/item/ammo_magazine/rocket/chaos/incendiary,
+		/obj/item/ammo_magazine/rocket/chaos/heat,
+		/obj/item/ammo_magazine/rocket/chaos/thermobaric,
 	)
 	wield_delay = 1 SECONDS
 	aim_slowdown = 1
@@ -922,24 +922,24 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	scatter = -1
 	movement_acc_penalty_mult = 5 //You shouldn't fire this on the move
 
-/obj/item/weapon/gun/launcher/rocket/som/do_fire(obj/object_to_fire)
+/obj/item/weapon/gun/launcher/rocket/chaos/do_fire(obj/object_to_fire)
 	. = ..()
 	if(!.)
 		return FALSE
-	if(istype(in_chamber, /obj/item/ammo_magazine/rocket/som/thermobaric || /obj/item/ammo_magazine/rocket/som/rad || /obj/item/ammo_magazine/rocket/som/incendiary))
+	if(istype(in_chamber, /obj/item/ammo_magazine/rocket/chaos/thermobaric || /obj/item/ammo_magazine/rocket/chaos/rad || /obj/item/ammo_magazine/rocket/chaos/incendiary))
 		gun_user?.record_war_crime()
 
-/obj/item/weapon/gun/launcher/rocket/som/rad
-	default_ammo_type = /obj/item/ammo_magazine/rocket/som/rad
+/obj/item/weapon/gun/launcher/rocket/chaos/rad
+	default_ammo_type = /obj/item/ammo_magazine/rocket/chaos/rad
 
-/obj/item/weapon/gun/launcher/rocket/som/heat
-	default_ammo_type = /obj/item/ammo_magazine/rocket/som/heat
+/obj/item/weapon/gun/launcher/rocket/chaos/heat
+	default_ammo_type = /obj/item/ammo_magazine/rocket/chaos/heat
 
 //ICC RPG
 /obj/item/weapon/gun/launcher/rocket/icc
 	name = "\improper MP-IRL rocket launcher"
 	desc = "The Man Portable-Infantry Rocket Launcher is a man portable warhead launcher employed by the ICC. Being capable of firing a wide variety of 83m rear-mounted rockets to provide excellent tactical flexibility in a compact package."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "iccrpg"
 	worn_icon_state = "iccrpg"
 	gun_features_flags = GUN_WIELDED_FIRING_ONLY|GUN_WIELDED_STABLE_FIRING_ONLY|GUN_AMMO_COUNTER|GUN_SHOWS_LOADED|GUN_SMOKE_PARTICLES
@@ -976,12 +976,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/launcher/rocket/vsd
 	name = "\improper C153 shoulder launcher"
 	desc = "An Anti-personnel Rocket Launcher made by Crash Core. Used mainly by V.S.D specialists, it can fire three specialized rounds. High Explosive, Incendiary Explosive, and a Chemical Capped High Explosive."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "c153"
 	worn_icon_state = "c153"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_64.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_64.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_64.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_64.dmi',
 	)
 	inhand_x_dimension = 64
 	inhand_y_dimension = 32
@@ -1020,12 +1020,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/railgun
 	name = "\improper RG-220 railgun"
 	desc = "The RG-220 is a specialized heavy duty railgun made to shred through hard armor to allow for follow up attacks. Uses specialized canisters to reload."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "railgun"
 	worn_icon_state = "railgun"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	max_shells = 1 //codex
 	caliber = CALIBER_RAILGUN
@@ -1045,7 +1045,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	attachable_offset = list("muzzle_x" = 33, "muzzle_y" = 18,"rail_x" = 31, "rail_y" = 23, "under_x" = 19, "under_y" = 14, "stock_x" = 19, "stock_y" = 14)
 	attachable_allowed = list(
 		/obj/item/attachable/magnetic_harness,
-		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/guardsman,
 	)
 
 	gun_features_flags = GUN_WIELDED_FIRING_ONLY|GUN_WIELDED_STABLE_FIRING_ONLY|GUN_AMMO_COUNTER
@@ -1067,12 +1067,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/icc_coilgun
 	name = "\improper ML-120 coilgun"
 	desc = "The ML-120 coilgun is the most commonly seen coilgun in ICCAF use, firing magnetic projecitles at a incredibly high velocity. It requires some windup but will penetrate walls, your foes, and your friendlies too. So watch out... Uses specialized canisters to reload."
-	icon = 'icons/obj/items/guns/special64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/guns/special64.dmi'
 	icon_state = "ml120"
 	worn_icon_state = "ml120"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/guns/special_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/special_right_1.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_left_1.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/guns/special_right_1.dmi',
 	)
 	max_shells = 5 //codex
 	caliber = CALIBER_RAILGUN

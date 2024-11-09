@@ -292,9 +292,9 @@
   Arturlang:
   - bugfix: Caste death timers now work, whoops.
   Pariah919:
-  - rscadd: Added new Hostile ERT, ICC. They're allied to SoM and are strapped with
+  - rscadd: Added new Hostile ERT, ICC. They're allied to Chaos and are strapped with
       a large amount of explosives and engineering equipment.
-  - spellcheck: SoM ert blurb has been redone to clairify a few things, such as the
+  - spellcheck: Chaos ert blurb has been redone to clairify a few things, such as the
       addition of ICC as an ally and grammar stuff.
   carlarctg:
   - bugfix: Added support for the old infantry open helmet to have the cool visor.

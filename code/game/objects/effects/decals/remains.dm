@@ -7,12 +7,12 @@
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER //Puts them under most objects.
 
-/obj/effect/decal/remains/xeno
+/obj/effect/decal/remains/tyranid
 	name = "remains"
 	desc = "They look like the remains of some horrible creature. They are not pleasant to look at..."
 	gender = PLURAL
 	icon = 'icons/effects/blood.dmi'
-	icon_state = "remainsxeno"
+	icon_state = "remainstyranid"
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 
@@ -20,7 +20,7 @@
 	name = "remains"
 	desc = "They look like the remains of something mechanical. They have a strange aura about them."
 	gender = PLURAL
-	icon = 'icons/mob/robots.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/robots.dmi'
 	icon_state = "remainsrobot"
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
@@ -29,7 +29,7 @@
 	name = "remains"
 	desc = "They look like the remains of some kind of brass construct. Even now, their eye seems to emit a faint red glow."
 	gender = PLURAL
-	icon = 'icons/mob/robots.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/robots.dmi'
 	icon_state = "remainsmarauder"
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER

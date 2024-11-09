@@ -442,7 +442,7 @@ SUBSYSTEM_DEF(shuttle)
 	// truthy value means that it cannot dock for some reason
 	// but we can ignore the someone else docked error because we'll
 	// be moving into their place shortly
-	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED))
+	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_CHAOSEONE_ELSE_DOCKED))
 		WARNING("Template shuttle [preview_shuttle] cannot dock at [D] ([result]).")
 		return
 
@@ -584,8 +584,8 @@ SUBSYSTEM_DEF(shuttle)
 			data["existing_shuttle"] = L
 
 
-		if(istype(M, /obj/docking_port/mobile/marine_dropship))
-			var/obj/docking_port/mobile/marine_dropship/D = M
+		if(istype(M, /obj/docking_port/mobile/guardsman_dropship))
+			var/obj/docking_port/mobile/guardsman_dropship/D = M
 			L["hijack"] = D.hijack_state
 		else
 			L["hijack"] = "N/A"

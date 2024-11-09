@@ -1,7 +1,7 @@
 /obj/machinery/photocopier
 	name = "photocopier"
 	desc = "Used to copy important documents and anatomy studies."
-	icon = 'icons/obj/machines/library.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/library.dmi'
 	icon_state = "bigscanner"
 	density = TRUE
 	use_power = IDLE_POWER_USE
@@ -180,7 +180,7 @@
 
 /obj/item/toner
 	name = "toner cartridge"
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "tonercartridge"
 	var/charges = 5
 	var/max_charges = 5

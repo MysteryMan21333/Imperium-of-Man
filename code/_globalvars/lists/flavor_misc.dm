@@ -125,10 +125,10 @@ GLOBAL_LIST_INIT(playable_icons, list(
 	"warrior",
 	"widow",
 	"wraith",
-	"xenoking",
-	"xenominion",
-	"xenoqueen",
-	"xenoshrike",
+	"tyranidking",
+	"tyranidminion",
+	"tyranidqueen",
+	"tyranidshrike",
 	"behemoth",
 	"pyrogen"
 ))
@@ -176,7 +176,7 @@ GLOBAL_LIST_INIT(campaign_asset_icon_types, list(
 	"tyr",
 	"lorica",
 	"riot_shield",
-	"xeno",
+	"tyranid",
 	"grenade",
 	"shotgun",
 	"scout",

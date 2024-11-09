@@ -1,7 +1,7 @@
 /obj/item/tool/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels."
 	name = "analyzer"
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "atmos"
 	worn_icon_state = "analyzer"
 	w_class = WEIGHT_CLASS_SMALL

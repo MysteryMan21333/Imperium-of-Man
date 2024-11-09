@@ -12,7 +12,7 @@
 	name = "equipment attach point"
 	desc = "A place where heavy equipment can be installed with a powerloader."
 	anchored = TRUE
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "equip_base"
 	layer = ABOVE_OBJ_LAYER
 	dir = NORTH
@@ -59,7 +59,7 @@
 	installed_equipment = loaded_equipment
 	loaded_equipment.ship_base = src
 
-	for(var/obj/docking_port/mobile/marine_dropship/S in SSshuttle.dropships)
+	for(var/obj/docking_port/mobile/guardsman_dropship/S in SSshuttle.dropships)
 		if(S.id == ship_tag)
 			loaded_equipment.linked_shuttle = S
 			S.equipments += loaded_equipment
@@ -107,7 +107,7 @@
 	name = "interior attach point"
 	base_category = DROPSHIP_CREW_WEAPON
 	density = FALSE
-	layer = HOLOPAD_LAYER //Keeps xenos from hiding under them
+	layer = HOLOPAD_LAYER //Keeps tyranids from hiding under them
 	plane = FLOOR_PLANE //Doesn't layer under weeds unless it has this
 
 /obj/effect/attach_point/crew_weapon/dropship1
@@ -138,7 +138,7 @@
 
 /obj/effect/attach_point/fuel
 	name = "engine system attach point"
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	icon_state = "fuel_base"
 	base_category = DROPSHIP_FUEL_EQP
 
@@ -166,10 +166,10 @@
 /obj/structure/dropship_equipment
 	density = TRUE
 	anchored = TRUE
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	climbable = TRUE
 	layer = ABOVE_OBJ_LAYER //so they always appear above attach points when installed
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 	coverage = 20
 	///on what kind of base this can be installed.
 	var/equip_category
@@ -183,7 +183,7 @@
 	///the weapons console of the dropship we're installed on. Not used by CAS planes
 	var/obj/machinery/computer/dropship_weapons/linked_console
 	///whether they get a button when shown on the shuttle console's equipment list.
-	var/obj/docking_port/mobile/marine_dropship/linked_shuttle
+	var/obj/docking_port/mobile/guardsman_dropship/linked_shuttle
 	///used by the dropship console code when this equipment is selected
 	var/screen_mode = 0
 	///how many points it costs to build this with the fabricator, set to 0 if unbuildable.
@@ -553,7 +553,7 @@
 ////////////////////////////////// FUEL EQUIPMENT /////////////////////////////////
 
 /obj/structure/dropship_equipment/fuel
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	equip_category = DROPSHIP_FUEL_EQP
 
 
@@ -640,7 +640,7 @@
 
 /obj/structure/dropship_equipment/cas/weapon
 	name = "abstract weapon"
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	equip_category = DROPSHIP_WEAPON
 	bound_width = 32
 	bound_height = 64
@@ -708,10 +708,10 @@
 	laserdot.dir = attackdir
 	var/list/effects_to_delete = list(laserdot)
 
-	//Marine-only visuals
+	//Guardsman-only visuals
 	var/predicted_dangerous_turfs = SA.get_turfs_to_impact(target_turf, attackdir)
 	for(var/turf/impact in predicted_dangerous_turfs)
-		effects_to_delete += new /obj/effect/overlay/blinking_laser/marine/lines(impact)
+		effects_to_delete += new /obj/effect/overlay/blinking_laser/guardsman/lines(impact)
 
 	addtimer(CALLBACK(SA, TYPE_PROC_REF(/obj/structure/ship_ammo, detonate_on), target_turf, attackdir), ammo_travelling_time)
 	QDEL_LIST_IN(effects_to_delete, ammo_travelling_time)
@@ -772,7 +772,7 @@
 	name = "minirocket pod"
 	icon_state = "minirocket_pod"
 	desc = "A mini rocket pod capable of launching six laser-guided mini rockets. Moving this will require some sort of lifter."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	firing_sound = 'sound/weapons/gunship_rocketpod.ogg'
 	firing_delay = 10 //1 seconds
 	point_cost = 450
@@ -797,7 +797,7 @@
 	name = "laser beam gun"
 	icon_state = "laser_beam"
 	desc = "State of the art technology recently acquired by the TGMC, it fires a battery-fed pulsed laser beam at near lightspeed setting on fire everything it touches. Moving this will require some sort of lifter."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	firing_sound = 'sound/weapons/gunship_laser.ogg'
 	firing_delay = 50 //5 seconds
 	point_cost = 800
@@ -820,7 +820,7 @@
 	name = "launch bay"
 	icon_state = "launch_bay"
 	desc = "A launch bay to drop special ordnance. Fits inside the dropship's crew weapon emplacement. Moving this will require some sort of lifter."
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	firing_sound = 'sound/weapons/guns/fire/gunshot.ogg'
 	firing_delay = 10 //1 seconds
 	equip_category = DROPSHIP_CREW_WEAPON //fits inside the central spot of the dropship
@@ -845,7 +845,7 @@
 	name = "Dropship Operating Table Deployment System"
 	desc = "Used for advanced medical procedures. Fits on the crewserved weapon attach points of dropships. You need a powerloader to lift it."
 	equip_category = DROPSHIP_CREW_WEAPON
-	icon = 'icons/obj/surgery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/surgery.dmi'
 	icon_state = "table2-idle"
 	point_cost = 100
 	var/obj/machinery/optable/deployed_table
@@ -879,7 +879,7 @@
 	name = "bomblet pod"
 	icon_state = "bomblet_pod"
 	desc = "A pnuematic thrower machine capable of up to 40 smaller bombs, generally  called 'bomblets'. Moving this will require some sort of lifter."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	firing_sound = 'sound/weapons/gunship_rocketpod.ogg'
 	firing_delay = 0.5 SECONDS
 	point_cost = 450
@@ -899,7 +899,7 @@
 	name = "bomb pod"
 	icon_state = "bomb_pod"
 	desc = "A bomb pod capable of launching several large bombs. Moving this will require some sort of lifter."
-	icon = 'icons/obj/structures/prop/mainship_64.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship_64.dmi'
 	firing_sound = 'sound/weapons/gunship_rocketpod.ogg'
 	firing_delay = 2 SECONDS
 	point_cost = 450

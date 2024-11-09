@@ -88,9 +88,9 @@
 	name = "Engineering Maintenance"
 	icon_state = "maint_engi"
 
-/area/deltastation/maintenance/department/science/xenobiology
-	name = "Xenobiology Maintenance"
-	icon_state = "xenomaint"
+/area/deltastation/maintenance/department/science/tyranidbiology
+	name = "Tyranidbiology Maintenance"
+	icon_state = "tyranidmaint"
 
 //Maintenance - Generic Tunnels
 
@@ -1227,13 +1227,13 @@
 	name = "Research and Development"
 	icon_state = "research"
 
-/area/deltastation/science/xenobiology
-	name = "\improper Xenobiology Lab"
-	icon_state = "xenobio"
+/area/deltastation/science/tyranidbiology
+	name = "\improper Tyranidbiology Lab"
+	icon_state = "tyranidbio"
 
-/area/deltastation/science/xenobiology/hallway
-	name = "\improper Xenobiology Hallway"
-	icon_state = "xenobio_hall"
+/area/deltastation/science/tyranidbiology/hallway
+	name = "\improper Tyranidbiology Hallway"
+	icon_state = "tyranidbio_hall"
 
 /area/deltastation/science/cytology
 	name = "\improper Cytology Lab"

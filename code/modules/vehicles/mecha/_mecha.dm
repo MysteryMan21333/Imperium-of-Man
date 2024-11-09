@@ -23,7 +23,7 @@
 	icon = 'icons/mecha/mecha.dmi'
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_EXCEPTIONALLY_STRONG
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE|PORTAL_IMMUNE|PLASMACUTTER_IMMUNE
+	resistance_flags = UNACIDABLE|TYRANID_DAMAGEABLE|PORTAL_IMMUNE|PLASMACUTTER_IMMUNE
 	atom_flags = BUMP_ATTACKABLE|PREVENT_CONTENTS_EXPLOSION|CRITICAL_ATOM
 	appearance_flags = TILE_BOUND|PIXEL_SCALE|KEEP_TOGETHER
 	max_integrity = 300
@@ -608,7 +608,7 @@
 	for(var/mob/M in get_hearers_in_view(7,src))
 		if(M.client)
 			speech_bubble_recipients.Add(M.client)
-	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), image('icons/mob/talk.dmi', src, "machine[say_test(speech_args[SPEECH_MESSAGE])]",MOB_LAYER+1), speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), image('modular_imperium/master_files/icons/mob/talk.dmi', src, "machine[say_test(speech_args[SPEECH_MESSAGE])]",MOB_LAYER+1), speech_bubble_recipients, 30)
 
 
 /////////////////////////

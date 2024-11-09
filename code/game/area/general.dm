@@ -1121,17 +1121,17 @@
 	name = "Abandoned Supermatter Lab"
 	icon_state = "toxlab"
 
-/area/rnd/xenobiology
-	name = "Abandoned Xenobiology Lab"
-	icon_state = "xeno_lab"
+/area/rnd/tyranidbiology
+	name = "Abandoned Tyranidbiology Lab"
+	icon_state = "tyranid_lab"
 
-/area/rnd/xenobiology/xenoflora_storage
-	name = "Abandoned Xenoflora Storage"
-	icon_state = "xeno_f_store"
+/area/rnd/tyranidbiology/tyranidflora_storage
+	name = "Abandoned Tyranidflora Storage"
+	icon_state = "tyranid_f_store"
 
-/area/rnd/xenobiology/xenoflora
-	name = "Abandoned Xenoflora Lab"
-	icon_state = "xeno_f_lab"
+/area/rnd/tyranidbiology/tyranidflora
+	name = "Abandoned Tyranidflora Lab"
+	icon_state = "tyranid_f_lab"
 
 /area/rnd/storage
 	name = "Abandoned Toxins Storage"

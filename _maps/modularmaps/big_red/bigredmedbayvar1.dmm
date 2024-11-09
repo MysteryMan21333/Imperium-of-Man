@@ -1709,7 +1709,7 @@
 	},
 /area/bigredv2/outside/medical)
 "Td" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/green/whitegreen{
 	dir = 5
 	},

@@ -7,7 +7,7 @@
 
 /obj/structure/shuttle/window
 	name = "shuttle window"
-	icon = 'icons/obj/podwindows.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/podwindows.dmi'
 	icon_state = "1"
 	density = TRUE
 	opacity = FALSE

@@ -1,9 +1,9 @@
 /obj/vehicle/sealed/armored/multitile
 	name = "\improper MT - Banteng"
-	desc = "A gigantic wall of metal designed for maximum Xeno destruction. Drag yourself onto it at an entrance to get inside."
-	icon = 'icons/obj/armored/3x3/tank.dmi'
-	turret_icon = 'icons/obj/armored/3x3/tank_gun.dmi'
-	damage_icon_path = 'icons/obj/armored/3x3/tank_damage.dmi'
+	desc = "A gigantic wall of metal designed for maximum Tyranid destruction. Drag yourself onto it at an entrance to get inside."
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank.dmi'
+	turret_icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_gun.dmi'
+	damage_icon_path = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_damage.dmi'
 	icon_state = "tank"
 	hitbox = /obj/hitbox
 	interior = /datum/interior/armored
@@ -163,7 +163,7 @@
 
 //THe HvX tank is not balanced at all for HvH
 /obj/vehicle/sealed/armored/multitile/campaign
-	desc = "A gigantic wall of metal designed for maximum SOM destruction. Drag yourself onto it at an entrance to get inside."
+	desc = "A gigantic wall of metal designed for maximum CHAOS destruction. Drag yourself onto it at an entrance to get inside."
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	max_integrity = 1400
 	soft_armor = list(MELEE = 90, BULLET = 95 , LASER = 95, ENERGY = 95, BOMB = 85, BIO = 100, FIRE = 100, ACID = 75)
@@ -173,7 +173,7 @@
 	move_delay = 0.6 SECONDS
 	glide_size = 2.5
 	vis_range_mod = 4
-	faction = FACTION_TERRAGOV
+	faction = FACTION_IMPERIUM
 	ram_damage = 130
 
 /obj/vehicle/sealed/armored/multitile/campaign/Initialize(mapload)

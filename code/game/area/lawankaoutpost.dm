@@ -104,12 +104,12 @@
 
 /area/lawankaoutpost/colony/biologics
 	name = "Biological Research Facility"
-	icon_state = "xeno_lab"
+	icon_state = "tyranid_lab"
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/lawankaoutpost/colony/biologics_storage
 	name = "Biological Storage"
-	icon_state = "xeno_f_lab"
+	icon_state = "tyranid_f_lab"
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/lawankaoutpost/colony/cargo

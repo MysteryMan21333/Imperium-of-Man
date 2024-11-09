@@ -1,7 +1,7 @@
 /obj/item/alien_embryo
 	name = "alien embryo"
 	desc = "All slimy and yucky."
-	icon = 'icons/Xeno/castes/larva.dmi'
+	icon = 'modular_imperium/master_files/icons/tyranid/castes/larva.dmi'
 	icon_state = "Embryo"
 	var/grinder_datum = /datum/reagent/consumable/larvajelly //good ol cookin
 	var/grinder_amount = 5
@@ -14,7 +14,7 @@
 	var/larva_autoburst_countdown = 20
 	///How long will the embryo's growth rate be increased
 	var/boost_timer = 0
-	var/hivenumber = XENO_HIVE_NORMAL
+	var/hivenumber = TYRANID_HIVE_NORMAL
 	var/admin = FALSE
 
 
@@ -23,7 +23,7 @@
 	if(!isliving(loc))
 		return
 	affected_mob = loc
-	affected_mob.status_flags |= XENO_HOST
+	affected_mob.status_flags |= TYRANID_HOST
 	log_combat(affected_mob, null, "been infected with an embryo")
 	START_PROCESSING(SSobj, src)
 	if(iscarbon(affected_mob))
@@ -34,7 +34,7 @@
 /obj/item/alien_embryo/Destroy()
 	if(affected_mob)
 		log_combat(affected_mob, null, "had their embryo removed")
-		affected_mob.status_flags &= ~(XENO_HOST)
+		affected_mob.status_flags &= ~(TYRANID_HOST)
 		if(iscarbon(affected_mob))
 			var/mob/living/carbon/C = affected_mob
 			C.med_hud_set_status()
@@ -49,7 +49,7 @@
 		return PROCESS_KILL
 
 	if(loc != affected_mob)
-		affected_mob.status_flags &= ~(XENO_HOST)
+		affected_mob.status_flags &= ~(TYRANID_HOST)
 		if(iscarbon(affected_mob))
 			var/mob/living/carbon/C = affected_mob
 			C.med_hud_set_status()
@@ -57,7 +57,7 @@
 		return PROCESS_KILL
 
 	if(affected_mob.stat == DEAD)
-		var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
+		var/mob/living/carbon/tyranid/larva/L = locate() in affected_mob
 		L?.initiate_burst(affected_mob)
 		return PROCESS_KILL
 
@@ -122,12 +122,12 @@
 		if(6)
 			larva_autoburst_countdown--
 			if(!larva_autoburst_countdown)
-				var/mob/living/carbon/xenomorph/larva/L = locate() in affected_mob
+				var/mob/living/carbon/tyranid/larva/L = locate() in affected_mob
 				L?.initiate_burst(affected_mob)
 
 
 //We look for a candidate. If found, we spawn the candidate as a larva.
-//Order of priority is bursted individual (if xeno is enabled), then random candidate, and then it's up for grabs and spawns braindead.
+//Order of priority is bursted individual (if tyranid is enabled), then random candidate, and then it's up for grabs and spawns braindead.
 /obj/item/alien_embryo/proc/become_larva()
 	if(!affected_mob)
 		return
@@ -138,30 +138,30 @@
 
 	var/mob/picked
 
-	//If the bursted person themselves has Xeno enabled, they get the honor of first dibs on the new larva.
-	if(affected_mob.client?.prefs && (affected_mob.client.prefs.be_special & (BE_ALIEN|BE_ALIEN_UNREVIVABLE)) && !is_banned_from(affected_mob.ckey, ROLE_XENOMORPH))
+	//If the bursted person themselves has Tyranid enabled, they get the honor of first dibs on the new larva.
+	if(affected_mob.client?.prefs && (affected_mob.client.prefs.be_special & (BE_ALIEN|BE_ALIEN_UNREVIVABLE)) && !is_banned_from(affected_mob.ckey, ROLE_TYRANID))
 		picked = affected_mob
 	else //Get a candidate from observers.
 		picked = get_alien_candidate()
 
 	//Spawn the larva.
-	var/mob/living/carbon/xenomorph/larva/new_xeno
+	var/mob/living/carbon/tyranid/larva/new_tyranid
 
-	new_xeno = new(affected_mob)
+	new_tyranid = new(affected_mob)
 
-	new_xeno.transfer_to_hive(hivenumber)
-	new_xeno.update_icons()
+	new_tyranid.transfer_to_hive(hivenumber)
+	new_tyranid.update_icons()
 
 	//If we have a candidate, transfer it over.
 	if(picked)
-		picked.mind.transfer_to(new_xeno, TRUE)
-		to_chat(new_xeno, span_xenoannounce("We are a xenomorph larva inside a host! Move to burst out of it!"))
-		new_xeno << sound('sound/effects/alien/new_larva.ogg')
+		picked.mind.transfer_to(new_tyranid, TRUE)
+		to_chat(new_tyranid, span_tyranidannounce("We are a tyranid larva inside a host! Move to burst out of it!"))
+		new_tyranid << sound('sound/effects/alien/new_larva.ogg')
 
 	stage = 6
 
 
-/mob/living/carbon/xenomorph/larva/proc/initiate_burst(mob/living/carbon/human/victim)
+/mob/living/carbon/tyranid/larva/proc/initiate_burst(mob/living/carbon/human/victim)
 	if(victim.chestburst || loc != victim)
 		return
 
@@ -179,7 +179,7 @@
 	addtimer(CALLBACK(src, PROC_REF(burst), victim), 3 SECONDS)
 
 
-/mob/living/carbon/xenomorph/larva/proc/burst(mob/living/carbon/human/victim)
+/mob/living/carbon/tyranid/larva/proc/burst(mob/living/carbon/human/victim)
 	if(QDELETED(victim))
 		return
 
@@ -222,7 +222,7 @@
 	log_combat(src, null, "chestbursted as a larva.")
 	log_game("[key_name(src)] chestbursted as a larva at [AREACOORD(src)].")
 
-	if(((locate(/obj/structure/bed/nest) in loc) && hive.living_xeno_ruler?.z == loc.z) || (!mind))
+	if(((locate(/obj/structure/bed/nest) in loc) && hive.living_tyranid_ruler?.z == loc.z) || (!mind))
 		burrow()
 
 	victim.death()

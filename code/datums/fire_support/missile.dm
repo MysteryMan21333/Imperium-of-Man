@@ -26,8 +26,8 @@
 	initiate_chat_message = "TARGET ACQUIRED RAD MISSILE INBOUND."
 	initiate_screen_message = "Target locked, rads inbound!"
 	initiate_title = "Avenger-4"
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_pilot
-	start_visual = /obj/effect/temp_visual/dropship_flyby/som
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_pilot
+	start_visual = /obj/effect/temp_visual/dropship_flyby/chaos
 	uses = 2
 	///Base strength of the rad effects
 	var/rad_strength = 25

@@ -4,7 +4,7 @@
 
 /obj/item/reagent_containers/pill
 	name = "pill"
-	icon = 'icons/obj/items/chemistry.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/chemistry.dmi'
 	icon_state = "pill1"
 	worn_icon_state = "pill"
 	possible_transfer_amounts = null

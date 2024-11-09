@@ -48,11 +48,11 @@
 	priority_announce("[faction] supply drop Materialisation detected at [target_turf.loc].", "Bluespace Tactical Scanner Status", sound = 'sound/AI/distressreceived.ogg', receivers = (GLOB.alive_human_list + GLOB.observer_list))
 	new /obj/item/explosive/grenade/flare/on(target_turf)
 	switch(faction)
-		if(FACTION_SOM)
-			new /obj/item/loot_box/supply_drop/som(target_turf)
+		if(FACTION_CHAOS)
+			new /obj/item/loot_box/supply_drop/chaos(target_turf)
 		if(FACTION_ALIEN)
-			new /obj/effect/supply_drop/xenomorph(target_turf)
+			new /obj/effect/supply_drop/tyranid(target_turf)
 		else
-			new /obj/item/loot_box/supply_drop(target_turf) //Marine box is the default
+			new /obj/item/loot_box/supply_drop(target_turf) //Guardsman box is the default
 	playsound(target_turf,'sound/effects/phasein.ogg', 80, FALSE)
 

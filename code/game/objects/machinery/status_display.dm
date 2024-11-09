@@ -12,7 +12,7 @@
 /obj/machinery/status_display
 	name = "status display"
 	desc = null
-	icon = 'icons/obj/status_display.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/status_display.dmi'
 	icon_state = "frame"
 	density = FALSE
 	use_power = IDLE_POWER_USE

@@ -1,5 +1,5 @@
-// marine dropships
-/obj/docking_port/stationary/marine_dropship
+// guardsman dropships
+/obj/docking_port/stationary/guardsman_dropship
 	name = "dropship landing zone"
 	id = "dropship"
 	dir = SOUTH
@@ -8,16 +8,16 @@
 	width = 11
 	height = 21
 
-/obj/docking_port/stationary/marine_dropship/Initialize()
+/obj/docking_port/stationary/guardsman_dropship/Initialize()
 	. = ..()
 	return INITIALIZE_HINT_LATELOAD
 
-/obj/docking_port/stationary/marine_dropship/LateInitialize()
+/obj/docking_port/stationary/guardsman_dropship/LateInitialize()
 	for(var/obj/machinery/landinglight/light AS in GLOB.landing_lights)
 		if(light.id == id)
 			light.linked_port = src
 
-/obj/docking_port/stationary/marine_dropship/on_crash()
+/obj/docking_port/stationary/guardsman_dropship/on_crash()
 	for(var/obj/machinery/power/apc/A AS in GLOB.apcs_list) //break APCs
 		if(!is_mainship_level(A.z))
 			continue
@@ -78,44 +78,44 @@
 	SSmonitor.process_human_positions()
 	SSevacuation.initial_human_on_ship = SSmonitor.human_on_ship
 
-/obj/docking_port/stationary/marine_dropship/crash_target
+/obj/docking_port/stationary/guardsman_dropship/crash_target
 	name = "dropshipcrash"
 	id = "dropshipcrash"
 
-/obj/docking_port/stationary/marine_dropship/crash_target/Initialize(mapload)
+/obj/docking_port/stationary/guardsman_dropship/crash_target/Initialize(mapload)
 	. = ..()
 	SSshuttle.crash_targets += src
 
-/obj/docking_port/stationary/marine_dropship/lz1
+/obj/docking_port/stationary/guardsman_dropship/lz1
 	name = "Landing Zone One"
 	id = "lz1"
 
-/obj/docking_port/stationary/marine_dropship/lz1/Initialize(mapload)
+/obj/docking_port/stationary/guardsman_dropship/lz1/Initialize(mapload)
 	. = ..()
 	var/area/area = get_area(src)
-	area.area_flags |= MARINE_BASE
+	area.area_flags |= GUARDSMAN_BASE
 
-/obj/docking_port/stationary/marine_dropship/lz1/prison
+/obj/docking_port/stationary/guardsman_dropship/lz1/prison
 	name = "LZ1: Main Hangar"
 
-/obj/docking_port/stationary/marine_dropship/lz2
+/obj/docking_port/stationary/guardsman_dropship/lz2
 	name = "Landing Zone Two"
 	id = "lz2"
 
-/obj/docking_port/stationary/marine_dropship/lz2/Initialize(mapload)
+/obj/docking_port/stationary/guardsman_dropship/lz2/Initialize(mapload)
 	. = ..()
 	var/area/area = get_area(src)
-	area.area_flags |= MARINE_BASE
+	area.area_flags |= GUARDSMAN_BASE
 
-/obj/docking_port/stationary/marine_dropship/lz2/prison
+/obj/docking_port/stationary/guardsman_dropship/lz2/prison
 	name = "LZ2: Civ Residence Hangar"
 
-/obj/docking_port/stationary/marine_dropship/hangar/one
+/obj/docking_port/stationary/guardsman_dropship/hangar/one
 	name = "Shipside 'Alamo' Hangar Pad"
 	id = SHUTTLE_ALAMO
 	roundstart_template = /datum/map_template/shuttle/dropship_one
 
-/obj/docking_port/stationary/marine_dropship/hangar/two
+/obj/docking_port/stationary/guardsman_dropship/hangar/two
 	name = "Shipside 'Normandy' Hangar Pad"
 	id = SHUTTLE_NORMANDY
 	roundstart_template = /datum/map_template/shuttle/dropship_two
@@ -132,8 +132,8 @@
 #define LOCKDOWN_TIME 6 MINUTES
 #define GROUND_LOCKDOWN_TIME 3 MINUTES
 
-/obj/docking_port/mobile/marine_dropship
-	name = "marine dropship"
+/obj/docking_port/mobile/guardsman_dropship
+	name = "guardsman dropship"
 	dir = SOUTH
 	dwidth = 5
 	dheight = 10
@@ -160,11 +160,11 @@
 	///If this dropship can play the takeoff announcement
 	var/takeoff_alarm_locked = FALSE
 
-/obj/docking_port/mobile/marine_dropship/register()
+/obj/docking_port/mobile/guardsman_dropship/register()
 	. = ..()
 	SSshuttle.dropships += src
 
-/obj/docking_port/mobile/marine_dropship/enterTransit()
+/obj/docking_port/mobile/guardsman_dropship/enterTransit()
 	. = ..()
 	if(!.) // it failed in parent
 		return
@@ -175,16 +175,16 @@
 		first_landing = FALSE
 		var/op_name = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
 		for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
-			if(human.faction != FACTION_TERRAGOV)
+			if(human.faction != FACTION_IMPERIUM)
 				return
-			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name]</u></span><br>" + "[SSmapping.configs[GROUND_MAP].map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "36th Marine LRPRR Platoon<br>" + "[human.job.title], [human]", /atom/movable/screen/text/screen_text/picture)
+			human.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:left valign='top'><u>[op_name]</u></span><br>" + "[SSmapping.configs[GROUND_MAP].map_name]<br>" + "[GAME_YEAR]-[time2text(world.realtime, "MM-DD")] [stationTimestamp("hh:mm")]<br>" + "36th Guardsman LRPRR Platoon<br>" + "[human.job.title], [human]", /atom/movable/screen/text/screen_text/picture)
 
-/obj/docking_port/mobile/marine_dropship/proc/lockdown_all()
+/obj/docking_port/mobile/guardsman_dropship/proc/lockdown_all()
 	lockdown_airlocks("rear")
 	lockdown_airlocks("left")
 	lockdown_airlocks("right")
 
-/obj/docking_port/mobile/marine_dropship/proc/lockdown_airlocks(side)
+/obj/docking_port/mobile/guardsman_dropship/proc/lockdown_airlocks(side)
 	if(hijack_state != HIJACK_STATE_NORMAL)
 		return
 	switch(side)
@@ -201,12 +201,12 @@
 				var/obj/machinery/door/airlock/multi_tile/mainship/dropshiprear/D = i
 				D.lockdown()
 
-/obj/docking_port/mobile/marine_dropship/proc/unlock_all()
+/obj/docking_port/mobile/guardsman_dropship/proc/unlock_all()
 	unlock_airlocks("rear")
 	unlock_airlocks("left")
 	unlock_airlocks("right")
 
-/obj/docking_port/mobile/marine_dropship/proc/unlock_airlocks(side)
+/obj/docking_port/mobile/guardsman_dropship/proc/unlock_airlocks(side)
 	switch(side)
 		if("left")
 			for(var/i in left_airlocks)
@@ -222,7 +222,7 @@
 				D.release()
 
 ///This proc locks and unlocks the AI control over the dropship doors.
-/obj/docking_port/mobile/marine_dropship/proc/silicon_lock_airlocks(should_lock = TRUE)
+/obj/docking_port/mobile/guardsman_dropship/proc/silicon_lock_airlocks(should_lock = TRUE)
 	for(var/obj/machinery/door/airlock/dropship_hatch/D AS in left_airlocks)
 		D.aiControlDisabled = should_lock
 	for(var/obj/machinery/door/airlock/dropship_hatch/D AS in right_airlocks)
@@ -230,12 +230,12 @@
 	for(var/obj/machinery/door/airlock/multi_tile/mainship/dropshiprear/D AS in rear_airlocks)
 		D.aiControlDisabled = should_lock
 
-/obj/docking_port/mobile/marine_dropship/Destroy(force)
+/obj/docking_port/mobile/guardsman_dropship/Destroy(force)
 	. = ..()
 	if(force)
 		SSshuttle.dropships -= src
 
-/obj/docking_port/mobile/marine_dropship/initiate_docking(obj/docking_port/stationary/new_dock, movement_direction, force=FALSE)
+/obj/docking_port/mobile/guardsman_dropship/initiate_docking(obj/docking_port/stationary/new_dock, movement_direction, force=FALSE)
 	if(crashing)
 		force = TRUE
 
@@ -249,25 +249,25 @@
 	return ..()
 
 ///Announce that the dropship will departure soon
-/obj/docking_port/mobile/marine_dropship/proc/prepare_going_to_previous_destination()
+/obj/docking_port/mobile/guardsman_dropship/proc/prepare_going_to_previous_destination()
 	if(hijack_state != HIJACK_STATE_NORMAL)
 		return
 	cycle_timer = addtimer(CALLBACK(src, PROC_REF(go_to_previous_destination)), 20 SECONDS, TIMER_STOPPABLE)
 	priority_announce("The Alamo will depart towards [previous.name] in 20 seconds.", "Dropship Automatic Departure", color_override = "grey", playing_sound = FALSE)
 
 ///Send the dropship to its previous dock
-/obj/docking_port/mobile/marine_dropship/proc/go_to_previous_destination()
+/obj/docking_port/mobile/guardsman_dropship/proc/go_to_previous_destination()
 	SSshuttle.moveShuttle(id, previous.id, TRUE)
 
-/obj/docking_port/mobile/marine_dropship/one
+/obj/docking_port/mobile/guardsman_dropship/one
 	name = "Alamo"
 	id = SHUTTLE_ALAMO
-	control_flags = SHUTTLE_MARINE_PRIMARY_DROPSHIP
+	control_flags = SHUTTLE_GUARDSMAN_PRIMARY_DROPSHIP
 
-/obj/docking_port/mobile/marine_dropship/two
+/obj/docking_port/mobile/guardsman_dropship/two
 	name = "Normandy"
 	id = SHUTTLE_NORMANDY
-	control_flags = SHUTTLE_MARINE_PRIMARY_DROPSHIP
+	control_flags = SHUTTLE_GUARDSMAN_PRIMARY_DROPSHIP
 	callTime = 28 SECONDS //smaller shuttle go whoosh
 	rechargeTime = 1.5 MINUTES
 	dheight = 6
@@ -277,18 +277,18 @@
 
 // queen calldown
 
-/obj/docking_port/mobile/marine_dropship/afterShuttleMove(turf/oldT, rotation)
+/obj/docking_port/mobile/guardsman_dropship/afterShuttleMove(turf/oldT, rotation)
 	. = ..()
 	if(hijack_state != HIJACK_STATE_CALLED_DOWN)
 		return
 	unlock_all()
 
-/obj/docking_port/mobile/marine_dropship/proc/reset_hijack()
+/obj/docking_port/mobile/guardsman_dropship/proc/reset_hijack()
 	if(hijack_state == HIJACK_STATE_CALLED_DOWN || hijack_state == HIJACK_STATE_UNLOCKED)
 		set_hijack_state(HIJACK_STATE_NORMAL)
 		silicon_lock_airlocks(FALSE)
 
-/obj/docking_port/mobile/marine_dropship/proc/summon_dropship_to(obj/docking_port/stationary/S)
+/obj/docking_port/mobile/guardsman_dropship/proc/summon_dropship_to(obj/docking_port/stationary/S)
 	if(hijack_state != HIJACK_STATE_NORMAL)
 		return
 	unlock_all()
@@ -302,18 +302,18 @@
 			playsound(loc,'sound/effects/alert.ogg', 50)
 			addtimer(CALLBACK(src, PROC_REF(request_to), S), 15 SECONDS)
 
-/obj/docking_port/mobile/marine_dropship/proc/do_start_hijack_timer(hijack_time = LOCKDOWN_TIME)
+/obj/docking_port/mobile/guardsman_dropship/proc/do_start_hijack_timer(hijack_time = LOCKDOWN_TIME)
 	addtimer(CALLBACK(src, PROC_REF(reset_hijack)), hijack_time)
 
-/obj/docking_port/mobile/marine_dropship/proc/request_to(obj/docking_port/stationary/S)
+/obj/docking_port/mobile/guardsman_dropship/proc/request_to(obj/docking_port/stationary/S)
 	set_idle()
 	request(S)
 
-/obj/docking_port/mobile/marine_dropship/proc/set_hijack_state(new_state)
+/obj/docking_port/mobile/guardsman_dropship/proc/set_hijack_state(new_state)
 	hijack_state = new_state
 	deltimer(cycle_timer)
 
-/obj/docking_port/mobile/marine_dropship/on_prearrival()
+/obj/docking_port/mobile/guardsman_dropship/on_prearrival()
 	. = ..()
 	if(hijack_state == HIJACK_STATE_CRASHING)
 		priority_announce("DROPSHIP ON COLLISION COURSE. CRASH IMMINENT.", "EMERGENCY", sound = 'sound/AI/dropship_emergency.ogg', color_override = "red")
@@ -321,7 +321,7 @@
 		if(light.linked_port == destination)
 			light.turn_on()
 
-/obj/docking_port/mobile/marine_dropship/getStatusText()
+/obj/docking_port/mobile/guardsman_dropship/getStatusText()
 	if(hijack_state == HIJACK_STATE_CALLED_DOWN)
 		return "Control integrity compromised"
 	else if(hijack_state == HIJACK_STATE_UNLOCKED)
@@ -329,14 +329,14 @@
 	return ..() + (timeleft(cycle_timer) ? (" Automatic cycle : [round(timeleft(cycle_timer) / 10 + 20, 1)] seconds before departure towards [previous.name]") : "")
 
 
-/obj/docking_port/mobile/marine_dropship/can_move_topic(mob/user)
+/obj/docking_port/mobile/guardsman_dropship/can_move_topic(mob/user)
 	if(hijack_state != HIJACK_STATE_NORMAL)
 		to_chat(user, span_warning("Control integrity compromised!"))
 		return FALSE
 	return ..()
 
 
-/mob/living/carbon/xenomorph/proc/hijack()
+/mob/living/carbon/tyranid/proc/hijack()
 	set category = "Alien"
 	set name = "Hijack Dropship"
 	set desc = "Call down the dropship to the closest LZ or unlock the doors"
@@ -369,7 +369,7 @@
 		return
 	message_admins("[ADMIN_TPMONTY(src)] has summoned the dropship")
 	log_admin("[key_name(src)] has summoned the dropship")
-	hive?.xeno_message("[src] has summoned down the metal bird to [port], gather to her now!")
+	hive?.tyranid_message("[src] has summoned down the metal bird to [port], gather to her now!")
 	priority_announce("Unknown external interference with dropship control. Shutting down autopilot.", "Critical Dropship Alert", type = ANNOUNCEMENT_PRIORITY, color_override = "red")
 
 
@@ -385,10 +385,10 @@
 	if(!is_ground_level(user.z))
 		to_chat(user, span_warning("We can't call the bird from here!"))
 		return FALSE
-	var/obj/docking_port/mobile/marine_dropship/D
+	var/obj/docking_port/mobile/guardsman_dropship/D
 	for(var/k in SSshuttle.dropships)
 		var/obj/docking_port/mobile/M = k
-		if(M.control_flags & SHUTTLE_MARINE_PRIMARY_DROPSHIP)
+		if(M.control_flags & SHUTTLE_GUARDSMAN_PRIMARY_DROPSHIP)
 			D = M
 	if(is_ground_level(D.z))
 		var/locked_sides = 0
@@ -413,7 +413,7 @@
 		if(locked_sides < 3 && !isdropshiparea(get_area(user)))
 			to_chat(user, span_warning("At least one side is still unlocked!"))
 			return FALSE
-		to_chat(user, span_xenodanger("We crack open the metal bird's shell."))
+		to_chat(user, span_tyraniddanger("We crack open the metal bird's shell."))
 		if(D.hijack_state != HIJACK_STATE_NORMAL)
 			return FALSE
 		to_chat(user, span_warning("We begin overriding the shuttle lockdown. This will take a while..."))
@@ -442,7 +442,7 @@
 			var/mob/living/carbon/human/H = m
 			if(isnestedhost(H))
 				continue
-			if(H.faction == FACTION_XENO)
+			if(H.faction == FACTION_TYRANID)
 				continue
 			humans_on_ground++
 	if(length(GLOB.alive_human_list) && ((humans_on_ground / length(GLOB.alive_human_list)) > ALIVE_HUMANS_FOR_CALLDOWN))
@@ -466,10 +466,10 @@
 	for(var/j in lzs)
 		if(lzs[j] < lzs[closest])
 			closest = j
-	var/obj/docking_port/mobile/marine_dropship/D
+	var/obj/docking_port/mobile/guardsman_dropship/D
 	for(var/k in SSshuttle.dropships)
 		var/obj/docking_port/mobile/M = k
-		if(M.control_flags & SHUTTLE_MARINE_PRIMARY_DROPSHIP)
+		if(M.control_flags & SHUTTLE_GUARDSMAN_PRIMARY_DROPSHIP)
 			D = M
 	D.summon_dropship_to(closest)
 	return closest
@@ -481,59 +481,59 @@
 // ************************************************	//
 
 // control computer
-/obj/machinery/computer/shuttle/marine_dropship
+/obj/machinery/computer/shuttle/guardsman_dropship
 	icon_state = "dropship_console"
 	screen_overlay = "dropship_console_emissive"
 	resistance_flags = RESIST_ALL
-	req_one_access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LEADER) // TLs can only operate the remote console
+	req_one_access = list(ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LEADER) // TLs can only operate the remote console
 	possible_destinations = "lz1;lz2;alamo"
 	opacity = FALSE
 
-/obj/machinery/computer/shuttle/marine_dropship/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	var/datum/game_mode/infestation/infestation_mode = SSticker.mode //Minor QOL, any xeno can check the console after a leader hijacks
-	if(!(xeno_attacker.xeno_caste.caste_flags & CASTE_IS_INTELLIGENT) && (infestation_mode.round_stage != INFESTATION_MARINE_CRASHING))
+/obj/machinery/computer/shuttle/guardsman_dropship/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	var/datum/game_mode/infestation/infestation_mode = SSticker.mode //Minor QOL, any tyranid can check the console after a leader hijacks
+	if(!(tyranid_attacker.tyranid_caste.caste_flags & CASTE_IS_INTELLIGENT) && (infestation_mode.round_stage != INFESTATION_GUARDSMAN_CRASHING))
 		return
 	#ifndef TESTING
 	if(SSticker.round_start_time + SHUTTLE_HIJACK_LOCK > world.time)
-		to_chat(xeno_attacker, span_xenowarning("It's too early to do this!"))
+		to_chat(tyranid_attacker, span_tyranidwarning("It's too early to do this!"))
 		return
 	#endif
-	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
 	if(shuttle.hijack_state != HIJACK_STATE_CALLED_DOWN && shuttle.hijack_state != HIJACK_STATE_CRASHING) //Process of corrupting the controls
-		to_chat(xeno_attacker, span_xenowarning("We corrupt the bird's controls, unlocking the doors and preventing it from flying."))
+		to_chat(tyranid_attacker, span_tyranidwarning("We corrupt the bird's controls, unlocking the doors and preventing it from flying."))
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DROPSHIP_CONTROLS_CORRUPTED, src)
 		shuttle.set_idle()
 		shuttle.set_hijack_state(HIJACK_STATE_CALLED_DOWN)
 		shuttle.do_start_hijack_timer()
 		shuttle.unlock_all()
-	interact(xeno_attacker) //Open the UI
+	interact(tyranid_attacker) //Open the UI
 
-/obj/machinery/computer/shuttle/marine_dropship/ui_state(mob/user)
+/obj/machinery/computer/shuttle/guardsman_dropship/ui_state(mob/user)
 	return GLOB.alamo_state
 
-/obj/machinery/computer/shuttle/marine_dropship/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/computer/shuttle/guardsman_dropship/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 
 	if(!ui)
-		ui = new(user, src, "MarineDropship", name)
+		ui = new(user, src, "GuardsmanDropship", name)
 		ui.open()
 
-/obj/machinery/computer/shuttle/marine_dropship/ui_static_data(mob/user)
-	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
+/obj/machinery/computer/shuttle/guardsman_dropship/ui_static_data(mob/user)
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
 	var/list/static_data = list()
 	static_data["current_map"] = SSmapping.configs[SHIP_MAP].map_name
 	static_data["ship_name"] = shuttle
 
 	return static_data
 
-/obj/machinery/computer/shuttle/marine_dropship/ui_data(mob/user)
-	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
+/obj/machinery/computer/shuttle/guardsman_dropship/ui_data(mob/user)
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
 	if(!shuttle)
 		WARNING("[src] could not find shuttle [shuttleId] from SSshuttle")
 		return
 
 	var/list/data = list()
-	data["is_xeno"] = isxeno(user)
+	data["is_tyranid"] = istyranid(user)
 	data["on_flyby"] = shuttle.mode == SHUTTLE_CALL
 	data["dest_select"] = !(shuttle.mode == SHUTTLE_CALL || shuttle.mode == SHUTTLE_IDLE)
 	data["hijack_state"] = shuttle.hijack_state != HIJACK_STATE_CALLED_DOWN
@@ -543,7 +543,7 @@
 
 	var/datum/game_mode/infestation/infestation_mode = SSticker.mode
 	if(istype(infestation_mode))
-		data["shuttle_hijacked"] = (infestation_mode.round_stage == INFESTATION_MARINE_CRASHING) //If we hijacked, our capture button greys out
+		data["shuttle_hijacked"] = (infestation_mode.round_stage == INFESTATION_GUARDSMAN_CRASHING) //If we hijacked, our capture button greys out
 
 	var/locked = 0
 	var/reardoor = 0
@@ -604,12 +604,12 @@
 
 	return data
 
-/obj/machinery/computer/shuttle/marine_dropship/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+/obj/machinery/computer/shuttle/guardsman_dropship/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
 
-	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
 	if(!shuttle)
 		return
 	if(shuttle.hijack_state == HIJACK_STATE_CALLED_DOWN && ishuman(usr))
@@ -675,58 +675,58 @@
 			)
 			to_chat(usr, span_warning("You slam your palm on the alarm button, locking it until the dropship lands again."))
 			shuttle.takeoff_alarm_locked = TRUE
-		//These are actions for the Xeno dropship UI
+		//These are actions for the Tyranid dropship UI
 		if("hijack")
-			var/mob/living/carbon/xenomorph/xeno = usr
-			if(!(xeno.hive.hive_flags & HIVE_CAN_HIJACK))
-				to_chat(xeno, span_warning("Our hive lacks the psychic prowess to hijack the bird."))
+			var/mob/living/carbon/tyranid/tyranid = usr
+			if(!(tyranid.hive.hive_flags & HIVE_CAN_HIJACK))
+				to_chat(tyranid, span_warning("Our hive lacks the psychic prowess to hijack the bird."))
 				return
 			if(shuttle.mode == SHUTTLE_RECHARGING)
-				to_chat(xeno, span_xenowarning("The bird is still cooling down."))
+				to_chat(tyranid, span_tyranidwarning("The bird is still cooling down."))
 				return
 			if(shuttle.mode != SHUTTLE_IDLE)
-				to_chat(xeno, span_xenowarning("We can't do that right now."))
+				to_chat(tyranid, span_tyranidwarning("We can't do that right now."))
 				return
 			var/confirm = tgui_alert(usr, "Would you like to hijack the metal bird?", "Hijack the bird?", list("Yes", "No"))
 			if(confirm != "Yes")
 				return
-			var/obj/docking_port/stationary/marine_dropship/crash_target/CT = pick(SSshuttle.crash_targets)
+			var/obj/docking_port/stationary/guardsman_dropship/crash_target/CT = pick(SSshuttle.crash_targets)
 			if(!CT)
 				return
-			do_hijack(shuttle, CT, xeno)
+			do_hijack(shuttle, CT, tyranid)
 		if("abduct")
 			var/datum/game_mode/infestation/infestation_mode = SSticker.mode
-			if(infestation_mode.round_stage == INFESTATION_MARINE_CRASHING)
+			if(infestation_mode.round_stage == INFESTATION_GUARDSMAN_CRASHING)
 				message_admins("[usr] tried to capture the shuttle after it was already hijacked, possible use of exploits.")
 				return
 			var/groundside_humans = length(GLOB.humans_by_zlevel["[z]"])
 			if(groundside_humans > 5)
-				to_chat(usr, span_xenowarning("There is still prey left to hunt!"))
+				to_chat(usr, span_tyranidwarning("There is still prey left to hunt!"))
 				return
 			var/confirm = tgui_alert(usr, "Would you like to capture the metal bird?\n THIS WILL END THE ROUND", "Capture the ship?", list( "Yes", "No"))
 			if(confirm != "Yes")
 				return
 			groundside_humans = length(GLOB.humans_by_zlevel["[z]"])
 			if(groundside_humans > 5)
-				to_chat(usr, span_xenowarning("There is still prey left to hunt!"))
+				to_chat(usr, span_tyranidwarning("There is still prey left to hunt!"))
 				return
 
-			priority_announce("The Alamo has been captured! Losing their main mean of accessing the ground, the marines have no choice but to retreat.", title = "Alamo Captured", color_override = "orange")
-			infestation_mode.round_stage = INFESTATION_DROPSHIP_CAPTURED_XENOS
+			priority_announce("The Alamo has been captured! Losing their main mean of accessing the ground, the guardsmans have no choice but to retreat.", title = "Alamo Captured", color_override = "orange")
+			infestation_mode.round_stage = INFESTATION_DROPSHIP_CAPTURED_TYRANIDS
 			return
 
-/obj/machinery/computer/shuttle/marine_dropship/proc/do_hijack(obj/docking_port/mobile/marine_dropship/crashing_dropship, obj/docking_port/stationary/marine_dropship/crash_target/crash_target, mob/living/carbon/xenomorph/user)
+/obj/machinery/computer/shuttle/guardsman_dropship/proc/do_hijack(obj/docking_port/mobile/guardsman_dropship/crashing_dropship, obj/docking_port/stationary/guardsman_dropship/crash_target/crash_target, mob/living/carbon/tyranid/user)
 	crashing_dropship.set_hijack_state(HIJACK_STATE_CRASHING)
 	if(SSticker.mode?.round_type_flags & MODE_HIJACK_POSSIBLE)
 		var/datum/game_mode/infestation/infestation_mode = SSticker.mode
-		infestation_mode.round_stage = INFESTATION_MARINE_CRASHING
+		infestation_mode.round_stage = INFESTATION_GUARDSMAN_CRASHING
 	crashing_dropship.callTime = 120 * (GLOB.current_orbit/3) SECONDS
 	crashing_dropship.crashing = TRUE
 	crashing_dropship.unlock_all()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DROPSHIP_HIJACKED)
 	priority_announce("Unscheduled dropship departure detected from operational area. Hijack likely.", title = "Critical Dropship Alert", type = ANNOUNCEMENT_PRIORITY, sound = 'sound/AI/hijack.ogg', color_override = "red")
 	to_chat(user, span_danger("A loud alarm erupts from [src]! The fleshy hosts must know that you can access it!"))
-	GLOB.hive_datums[XENO_HIVE_NORMAL].special_build_points = 25 //resets special build points
+	GLOB.hive_datums[TYRANID_HIVE_NORMAL].special_build_points = 25 //resets special build points
 	user.hive.on_shuttle_hijack(crashing_dropship)
 	playsound(src, 'sound/misc/queen_alarm.ogg')
 	crashing_dropship.silicon_lock_airlocks(TRUE)
@@ -741,18 +741,18 @@
 			to_chat(user, span_warning("ERROR. This shouldn't happen, please report it."))
 			CRASH("moveShuttleToDock() returned a non-zero-nor-one value.")
 
-/obj/machinery/computer/shuttle/marine_dropship/one
+/obj/machinery/computer/shuttle/guardsman_dropship/one
 	name = "\improper 'Alamo' flight controls"
 	desc = "The flight controls for the 'Alamo' Dropship. Named after the Alamo Mission, stage of the Battle of the Alamo in the United States' state of Texas in the Spring of 1836. The defenders held to the last, encouraging other Texians to rally to the flag."
 	possible_destinations = "lz1;lz2;alamo"
 
-/obj/machinery/computer/shuttle/marine_dropship/one/Initialize(mapload)
+/obj/machinery/computer/shuttle/guardsman_dropship/one/Initialize(mapload)
 	. = ..()
 	for(var/trait in SSmapping.configs[SHIP_MAP].environment_traits)
 		if(ZTRAIT_DOUBLE_SHIPS in trait)
 			possible_destinations = "lz2;alamo"
 
-/obj/machinery/computer/shuttle/marine_dropship/two
+/obj/machinery/computer/shuttle/guardsman_dropship/two
 	name = "\improper 'Normandy' flight controls"
 	desc = "The flight controls for the 'Normandy' Dropship. Named after a department in France, noteworthy for the famous naval invasion of Normandy on the 6th of June 1944, a bloody but decisive victory in World War II and the campaign for the Liberation of France."
 	icon_state = "dropship_console2"
@@ -761,7 +761,7 @@
 
 /obj/machinery/door/poddoor/shutters/transit/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
-	if(SSmapping.level_has_any_trait(z, list(ZTRAIT_MARINE_MAIN_SHIP, ZTRAIT_GROUND)))
+	if(SSmapping.level_has_any_trait(z, list(ZTRAIT_GUARDSMAN_MAIN_SHIP, ZTRAIT_GROUND)))
 		open()
 	else
 		close()
@@ -783,28 +783,28 @@
 
 /obj/machinery/door/airlock/multi_tile/mainship/dropshiprear/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()
-	if(!istype(port, /obj/docking_port/mobile/marine_dropship))
+	if(!istype(port, /obj/docking_port/mobile/guardsman_dropship))
 		return
-	var/obj/docking_port/mobile/marine_dropship/D = port
+	var/obj/docking_port/mobile/guardsman_dropship/D = port
 	D.rear_airlocks += src
 
 /obj/machinery/door/airlock/dropship_hatch/left/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()
-	if(!istype(port, /obj/docking_port/mobile/marine_dropship))
+	if(!istype(port, /obj/docking_port/mobile/guardsman_dropship))
 		return
-	var/obj/docking_port/mobile/marine_dropship/D = port
+	var/obj/docking_port/mobile/guardsman_dropship/D = port
 	D.left_airlocks += src
 
 /obj/machinery/door/airlock/dropship_hatch/right/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()
-	if(!istype(port, /obj/docking_port/mobile/marine_dropship))
+	if(!istype(port, /obj/docking_port/mobile/guardsman_dropship))
 		return
-	var/obj/docking_port/mobile/marine_dropship/D = port
+	var/obj/docking_port/mobile/guardsman_dropship/D = port
 	D.right_airlocks += src
 
 /obj/machinery/door_control/dropship
-	var/obj/docking_port/mobile/marine_dropship/D
-	req_one_access = list(ACCESS_MARINE_BRIG, ACCESS_MARINE_DROPSHIP)
+	var/obj/docking_port/mobile/guardsman_dropship/D
+	req_one_access = list(ACCESS_GUARDSMAN_BRIG, ACCESS_GUARDSMAN_DROPSHIP)
 	pixel_y = -19
 	name = "Dropship Lockdown"
 
@@ -814,7 +814,7 @@
 
 /obj/machinery/door_control/dropship/attack_hand(mob/living/user)
 	. = ..()
-	if(isxeno(user))
+	if(istyranid(user))
 		return
 	if(!is_operational())
 		to_chat(user, span_warning("[src] doesn't seem to be working."))
@@ -835,7 +835,7 @@
 
 // half-tile structure pieces
 /obj/structure/dropship_piece
-	icon = 'icons/obj/structures/dropship_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/dropship_structures.dmi'
 	density = TRUE
 	resistance_flags = RESIST_ALL
 	opacity = TRUE
@@ -996,7 +996,7 @@
 
 /obj/structure/dropship_piece/glassone/tadpole
 	icon_state = "shuttle_glass1"
-	resistance_flags = XENO_DAMAGEABLE | DROPSHIP_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE | DROPSHIP_IMMUNE
 	opacity = FALSE
 	allow_pass_flags = PASS_GLASS
 
@@ -1007,7 +1007,7 @@
 /obj/structure/dropship_piece/glasstwo/tadpole
 	icon = 'icons/turf/dropship2.dmi'
 	icon_state = "shuttle_glass2"
-	resistance_flags = XENO_DAMAGEABLE | DROPSHIP_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE | DROPSHIP_IMMUNE
 	opacity = FALSE
 	allow_pass_flags = PASS_GLASS
 
@@ -1015,13 +1015,13 @@
 	icon = 'icons/turf/dropship2.dmi'
 	icon_state = "shuttle_single_window"
 	allow_pass_flags = PASS_GLASS
-	resistance_flags = XENO_DAMAGEABLE | DROPSHIP_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE | DROPSHIP_IMMUNE
 	opacity = FALSE
 
 /obj/structure/dropship_piece/tadpole/cockpit
 	desc = "The nose part of the tadpole, able to be destroyed."
 	max_integrity = 500
-	resistance_flags = XENO_DAMAGEABLE | DROPSHIP_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE | DROPSHIP_IMMUNE
 	opacity = FALSE
 	layer = BELOW_OBJ_LAYER
 	allow_pass_flags = NONE
@@ -1303,7 +1303,7 @@
 
 /obj/machinery/computer/shuttle/shuttle_control
 	name = "shuttle control console"
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	screen_overlay = "shuttle"
 	///Able to auto-relink to any shuttle with at least one of the flags in common if shuttleId is invalid.
@@ -1462,14 +1462,14 @@
 /obj/machinery/computer/shuttle/shuttle_control/dropship
 	name = "\improper 'Alamo' dropship console"
 	desc = "The remote controls for the 'Alamo' Dropship. Named after the Alamo Mission, stage of the Battle of the Alamo in the United States' state of Texas in the Spring of 1836. The defenders held to the last, encouraging other Texans to rally to the flag."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	screen_overlay = "shuttle"
 	resistance_flags = RESIST_ALL
-	req_one_access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LEADER) // TLs can only operate the remote console
+	req_one_access = list(ACCESS_GUARDSMAN_DROPSHIP, ACCESS_GUARDSMAN_LEADER) // TLs can only operate the remote console
 	shuttleId = SHUTTLE_ALAMO
 	possible_destinations = "lz1;lz2;alamo"
-	compatible_control_flags = SHUTTLE_MARINE_PRIMARY_DROPSHIP
+	compatible_control_flags = SHUTTLE_GUARDSMAN_PRIMARY_DROPSHIP
 
 
 /obj/machinery/computer/shuttle/shuttle_control/dropship/two
@@ -1481,7 +1481,7 @@
 /obj/machinery/computer/shuttle/shuttle_control/canterbury
 	name = "\improper 'Canterbury' shuttle console"
 	desc = "The remote controls for the 'Canterbury' shuttle."
-	icon = 'icons/obj/machines/computer.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	screen_overlay = "shuttle"
 	resistance_flags = RESIST_ALL
@@ -1507,7 +1507,7 @@
 	add_fingerprint(usr, "topic")
 	if(!can_interact(usr))
 		return TRUE
-	if(isxeno(usr))
+	if(istyranid(usr))
 		return TRUE
 	if(!allowed(usr))
 		to_chat(usr, span_danger("Access denied."))
@@ -1537,6 +1537,6 @@
 	M.setTimer(M.ignitionTime)
 
 	var/datum/game_mode/infestation/crash/C = SSticker.mode
-	addtimer(VARSET_CALLBACK(C, marines_evac, CRASH_EVAC_INPROGRESS), M.ignitionTime + 10 SECONDS)
-	addtimer(VARSET_CALLBACK(C, marines_evac, CRASH_EVAC_COMPLETED), 2 MINUTES)
+	addtimer(VARSET_CALLBACK(C, guardsmans_evac, CRASH_EVAC_INPROGRESS), M.ignitionTime + 10 SECONDS)
+	addtimer(VARSET_CALLBACK(C, guardsmans_evac, CRASH_EVAC_COMPLETED), 2 MINUTES)
 	return TRUE

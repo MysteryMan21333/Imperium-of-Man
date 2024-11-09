@@ -32,7 +32,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle10)
 "ah" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth/indestructible,
 /area/lv624/ground/caves/rock)
 "ao" = (
@@ -62,7 +62,7 @@
 /turf/open/floor/plating/dmg2,
 /area/lv624/lazarus/crashed_ship/desparity)
 "aw" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
@@ -76,7 +76,7 @@
 /turf/open/floor/plating/dmg3,
 /area/lv624/lazarus/crashed_ship/desparity)
 "aD" = (
-/obj/structure/xenoautopsy,
+/obj/structure/tyranidautopsy,
 /obj/structure/table/reinforced,
 /turf/open/floor/plating/dmg3,
 /area/lv624/lazarus/crashed_ship/desparity)
@@ -116,8 +116,8 @@
 /turf/open/floor,
 /area/lv624/lazarus/spaceport)
 "aS" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/central1)
 "aT" = (
@@ -236,12 +236,12 @@
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
 "bE" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "bF" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "bG" = (
@@ -266,7 +266,7 @@
 /turf/open/floor,
 /area/lv624/lazarus/security)
 "bN" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/central1)
 "bQ" = (
@@ -296,7 +296,7 @@
 /turf/closed/wall/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
 "bU" = (
-/obj/structure/xenoautopsy/tank/larva,
+/obj/structure/tyranidautopsy/tank/larva,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
@@ -344,11 +344,11 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/lazarus/spaceport)
 "cf" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
 "cg" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
@@ -425,7 +425,7 @@
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/research/caves)
 "cy" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
 "cA" = (
@@ -455,7 +455,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle5)
 "cN" = (
-/obj/docking_port/stationary/marine_dropship/lz1,
+/obj/docking_port/stationary/guardsman_dropship/lz1,
 /turf/open/floor/plating,
 /area/shuttle/drop1/lz1)
 "cP" = (
@@ -512,7 +512,7 @@
 /area/lv624/lazarus/spaceport2)
 "dk" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "dl" = (
@@ -558,7 +558,7 @@
 /turf/open/ground/grass/weedable,
 /area/lv624/ground/jungle5)
 "du" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /obj/item/alien_embryo,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/mainship,
@@ -570,7 +570,7 @@
 	},
 /area/lv624/lazarus/medbay)
 "dw" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "dx" = (
@@ -646,9 +646,9 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle10)
 "dR" = (
-/obj/structure/xenoautopsy/tank/broken,
-/obj/effect/decal/cleanable/blood/xeno,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/structure/tyranidautopsy/tank/broken,
+/obj/effect/decal/cleanable/blood/tyranid,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
 "dS" = (
@@ -692,7 +692,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/spaceport)
 "eb" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "ec" = (
@@ -963,7 +963,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle7)
 "fm" = (
-/obj/effect/landmark/patrol_point/som/som_21,
+/obj/effect/landmark/patrol_point/chaos/chaos_21,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "fn" = (
@@ -1736,7 +1736,7 @@
 /area/lv624/lazarus/spaceport)
 "jk" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "jl" = (
@@ -2163,7 +2163,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle10)
 "lA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
 "lB" = (
@@ -2306,9 +2306,9 @@
 /turf/open/floor/tile/dark/blue2/corner,
 /area/lv624/lazarus/research/caves)
 "mm" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/mainship,
 /area/lv624/lazarus/crashed_ship/desparity)
 "mo" = (
@@ -2561,7 +2561,7 @@
 /area/lv624/ground/river3)
 "nI" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "nJ" = (
@@ -2572,7 +2572,7 @@
 	},
 /area/lv624/lazarus/sleep_male)
 "nK" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "nN" = (
@@ -2639,14 +2639,14 @@
 /turf/open/ground/grass/weedable,
 /area/lv624/ground/jungle10)
 "oa" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "od" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
 "oe" = (
@@ -3256,7 +3256,7 @@
 /area/lv624/lazarus/sleep_male)
 "rg" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "rh" = (
@@ -3307,7 +3307,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/lv624/lazarus/medbay)
 "rz" = (
-/obj/docking_port/stationary/marine_dropship/lz2,
+/obj/docking_port/stationary/guardsman_dropship/lz2,
 /turf/open/floor/plating/icefloor,
 /area/shuttle/drop2/lz2)
 "rB" = (
@@ -3397,7 +3397,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/spaceport2)
 "rY" = (
-/obj/structure/xenoautopsy/tank/hugger,
+/obj/structure/tyranidautopsy/tank/hugger,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
@@ -3831,7 +3831,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/overgrown)
 "uc" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/plating/dmg3,
 /area/lv624/lazarus/crashed_ship/desparity)
 "ud" = (
@@ -4178,7 +4178,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/engineering)
 "vP" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle9)
 "vR" = (
@@ -4468,7 +4468,7 @@
 "xH" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/medical/glass/free_access,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating,
 /area/lv624/lazarus/bar)
 "xI" = (
@@ -4599,7 +4599,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle5)
 "yk" = (
-/obj/structure/xenoautopsy/tank/broken,
+/obj/structure/tyranidautopsy/tank/broken,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
@@ -4680,7 +4680,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/research/caves)
 "yD" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "yE" = (
@@ -4736,8 +4736,8 @@
 /turf/open/floor/tile/dark/blue2/corner,
 /area/lv624/lazarus/research/caves)
 "yR" = (
-/obj/item/clothing/head/collectable/xenom,
-/obj/item/clothing/suit/xenos,
+/obj/item/clothing/head/collectable/tyranidm,
+/obj/item/clothing/suit/tyranids,
 /obj/structure/closet/crate/science,
 /turf/open/floor/plating,
 /area/lv624/lazarus/research/caves)
@@ -4877,7 +4877,7 @@
 	},
 /area/lv624/lazarus/research/caves)
 "zx" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/gm/dense,
 /area/lv624/ground/caves/rock)
 "zy" = (
@@ -4890,7 +4890,7 @@
 /turf/open/ground/grass/weedable,
 /area/lv624/lazarus/overgrown)
 "zA" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "zB" = (
@@ -5267,7 +5267,7 @@
 	},
 /area/lv624/lazarus/sleep_male)
 "Br" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "Bt" = (
@@ -5367,7 +5367,7 @@
 /turf/open/floor/tile/blue,
 /area/lv624/lazarus/medbay)
 "BN" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "BO" = (
@@ -5500,7 +5500,7 @@
 /obj/machinery/door/airlock/prison/open{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/barricade/wooden{
 	dir = 1
@@ -5736,7 +5736,7 @@
 /area/lv624/ground/caves/rock)
 "DQ" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
 "DR" = (
@@ -5855,7 +5855,7 @@
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/research/caves)
 "Ew" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/mineral/smooth,
 /area/lv624/ground/caves/rock)
 "Ex" = (
@@ -5905,7 +5905,7 @@
 /area/lv624/lazarus/chapel)
 "EL" = (
 /obj/effect/ai_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "EN" = (
@@ -5927,7 +5927,7 @@
 /area/lv624/ground/jungle7)
 "EW" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "EY" = (
@@ -6072,7 +6072,7 @@
 /area/lv624/lazarus/chapel)
 "FM" = (
 /obj/structure/flora/jungle/vines,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/gm/dense,
 /area/lv624/ground/caves/rock)
 "FO" = (
@@ -6484,7 +6484,7 @@
 /area/lv624/ground/jungle5)
 "HU" = (
 /obj/structure/cable,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
@@ -6510,8 +6510,8 @@
 /turf/open/ground/grass/weedable,
 /area/lv624/ground/jungle5)
 "Ib" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "Ic" = (
@@ -6947,7 +6947,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle5)
 "JV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/closed/wall/wood,
 /area/lv624/lazarus/bar)
 "JX" = (
@@ -7197,7 +7197,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle5)
 "Lt" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "Lu" = (
@@ -7231,7 +7231,7 @@
 	},
 /area/lv624/lazarus/sleep_male)
 "LE" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "LH" = (
@@ -7365,7 +7365,7 @@
 /turf/open/floor/tile/barber,
 /area/lv624/lazarus/canteen)
 "Mi" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable,
 /area/lv624/ground/jungle9)
 "Mj" = (
@@ -7411,12 +7411,12 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/medbay)
 "Mq" = (
-/obj/effect/landmark/xeno_silo_spawn,
+/obj/effect/landmark/tyranid_silo_spawn,
 /turf/open/floor/wood,
 /area/lv624/lazarus/bar)
 "Mr" = (
-/obj/effect/landmark/xeno_resin_wall,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/tyranid_resin_wall,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "Ms" = (
@@ -7801,7 +7801,7 @@
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/medbay)
 "Oc" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "Od" = (
@@ -7832,7 +7832,7 @@
 /turf/closed/gm/dense,
 /area/lv624/ground/caves/rock)
 "On" = (
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central1)
 "Op" = (
@@ -7848,7 +7848,7 @@
 "Or" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/structure/bed,
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/prison/marked,
 /area/lv624/lazarus/medbay)
 "Os" = (
@@ -8241,7 +8241,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle5)
 "Qy" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 10
 	},
@@ -8263,11 +8263,11 @@
 /area/lv624/lazarus/fitness)
 "QB" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_wall,
+/obj/effect/landmark/tyranid_resin_wall,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/west1)
 "QC" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/machinery/light,
 /turf/open/floor/tile/blue/taupebluecorner,
 /area/lv624/lazarus/medbay)
@@ -8334,7 +8334,7 @@
 /turf/open/floor/plating,
 /area/lv624/lazarus/spaceport2)
 "QV" = (
-/obj/structure/xenoautopsy/tank/escaped,
+/obj/structure/tyranidautopsy/tank/escaped,
 /turf/open/floor/tile/dark/red2/corner{
 	dir = 8
 	},
@@ -8397,7 +8397,7 @@
 /turf/open/floor/marking/bot,
 /area/lv624/lazarus/quartstorage/outdoors)
 "Rj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "Rk" = (
@@ -8418,7 +8418,7 @@
 /area/lv624/ground/river3)
 "Rn" = (
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/east1)
 "Ro" = (
@@ -8482,7 +8482,7 @@
 /turf/open/floor,
 /area/lv624/lazarus/spaceport)
 "RE" = (
-/obj/effect/landmark/patrol_point/som/som_11,
+/obj/effect/landmark/patrol_point/chaos/chaos_11,
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
 "RF" = (
@@ -8592,7 +8592,7 @@
 /obj/structure/flora/ausbushes/genericbush{
 	pixel_x = -5
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/ground/grass/weedable,
 /area/lv624/ground/jungle9)
 "Sg" = (
@@ -8691,7 +8691,7 @@
 /turf/open/floor/tile/blue/whitebluefull,
 /area/lv624/lazarus/research/caves)
 "SF" = (
-/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/start/job/tyranid,
 /turf/open/floor/plating/dmg3,
 /area/lv624/lazarus/crashed_ship/desparity)
 "SG" = (
@@ -8872,7 +8872,7 @@
 /turf/open/floor/tile/green,
 /area/lv624/lazarus/medbay)
 "Tz" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /obj/effect/ai_node,
 /turf/open/floor/tile/green,
 /area/lv624/lazarus/medbay)
@@ -9487,7 +9487,7 @@
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/research/caves)
 "Wu" = (
-/obj/effect/decal/cleanable/blood/xeno,
+/obj/effect/decal/cleanable/blood/tyranid,
 /turf/open/floor/tile/green,
 /area/lv624/lazarus/medbay)
 "Ww" = (
@@ -9716,7 +9716,7 @@
 /obj/structure/flora/ausbushes/fernybush{
 	pixel_x = -6
 	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/landmark/lv624/fog_blocker/tyranid_spawn,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle9)
 "XI" = (

@@ -30,14 +30,14 @@
 	ADD_TRAIT(hive_target, TRAIT_HIVE_TARGET, TRAIT_HIVE_TARGET)
 	hive_target.med_hud_set_status()
 	RegisterSignal(SSdcs, COMSIG_GLOB_HIVE_TARGET_DRAINED, PROC_REF(handle_reward))
-	xeno_message("The Queen Mother senses that [hive_target] is a deadly threat to the hive. Psydrain them for the Queen Mother's blessing!", force = TRUE)
-	for(var/mob/living/carbon/xenomorph/xeno_sound_reciever in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
-		SEND_SOUND(xeno_sound_reciever, sound(get_sfx(SFX_QUEEN), channel = CHANNEL_ANNOUNCEMENTS, volume = 50))
+	tyranid_message("The Queen Mother senses that [hive_target] is a deadly threat to the hive. Psydrain them for the Queen Mother's blessing!", force = TRUE)
+	for(var/mob/living/carbon/tyranid/tyranid_sound_reciever in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
+		SEND_SOUND(tyranid_sound_reciever, sound(get_sfx(SFX_QUEEN), channel = CHANNEL_ANNOUNCEMENTS, volume = 50))
 
 //manages the hive reward and clean up
-/datum/round_event/hive_threat/proc/handle_reward(datum/source, mob/living/carbon/xenomorph/drainer)
+/datum/round_event/hive_threat/proc/handle_reward(datum/source, mob/living/carbon/tyranid/drainer)
 	SIGNAL_HANDLER
-	xeno_message("[drainer] has gleaned the secrets from the mind of [hive_target], helping ensure the future of the hive. The Queen Mother empowers us for our success!", force = TRUE)
+	tyranid_message("[drainer] has gleaned the secrets from the mind of [hive_target], helping ensure the future of the hive. The Queen Mother empowers us for our success!", force = TRUE)
 	bless_hive(drainer)
 	REMOVE_TRAIT(hive_target, TRAIT_HIVE_TARGET, TRAIT_HIVE_TARGET)
 	hive_target.med_hud_set_status()
@@ -45,20 +45,20 @@
 	UnregisterSignal(SSdcs, COMSIG_GLOB_HIVE_TARGET_DRAINED)
 
 ///Actually applies the buff to the hive
-/datum/round_event/hive_threat/proc/bless_hive(mob/living/carbon/xenomorph/drainer)
-	for(var/mob/living/carbon/xenomorph/receiving_xeno AS in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
-		receiving_xeno.add_movespeed_modifier(MOVESPEED_ID_BLESSED_HIVE, TRUE, 0, NONE, TRUE, -0.2)
-		receiving_xeno.gain_plasma(receiving_xeno.xeno_caste.plasma_max)
-		receiving_xeno.salve_healing()
-		if(receiving_xeno == drainer)
-			receiving_xeno.evolution_stored = receiving_xeno.xeno_caste.evolution_threshold
-			receiving_xeno.upgrade_stored += 1000
-	for(var/mob/living/carbon/xenomorph/xeno_sound_reciever in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
-		SEND_SOUND(xeno_sound_reciever, sound(get_sfx(SFX_QUEEN), channel = CHANNEL_ANNOUNCEMENTS, volume = 50))
+/datum/round_event/hive_threat/proc/bless_hive(mob/living/carbon/tyranid/drainer)
+	for(var/mob/living/carbon/tyranid/receiving_tyranid AS in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
+		receiving_tyranid.add_movespeed_modifier(MOVESPEED_ID_BLESSED_HIVE, TRUE, 0, NONE, TRUE, -0.2)
+		receiving_tyranid.gain_plasma(receiving_tyranid.tyranid_caste.plasma_max)
+		receiving_tyranid.salve_healing()
+		if(receiving_tyranid == drainer)
+			receiving_tyranid.evolution_stored = receiving_tyranid.tyranid_caste.evolution_threshold
+			receiving_tyranid.upgrade_stored += 1000
+	for(var/mob/living/carbon/tyranid/tyranid_sound_reciever in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
+		SEND_SOUND(tyranid_sound_reciever, sound(get_sfx(SFX_QUEEN), channel = CHANNEL_ANNOUNCEMENTS, volume = 50))
 	addtimer(CALLBACK(src, PROC_REF(remove_blessing)), 2 MINUTES)
 
 ///debuffs the hive when the blessing expires
 /datum/round_event/hive_threat/proc/remove_blessing()
-	xeno_message("We feel the Queen Mother's blessing fade", force = TRUE)
-	for(var/mob/living/carbon/xenomorph/receiving_xeno in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
-		receiving_xeno.remove_movespeed_modifier(MOVESPEED_ID_BLESSED_HIVE)
+	tyranid_message("We feel the Queen Mother's blessing fade", force = TRUE)
+	for(var/mob/living/carbon/tyranid/receiving_tyranid in GLOB.alive_tyranid_list_hive[TYRANID_HIVE_NORMAL])
+		receiving_tyranid.remove_movespeed_modifier(MOVESPEED_ID_BLESSED_HIVE)

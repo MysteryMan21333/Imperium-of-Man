@@ -270,8 +270,8 @@
 
 	var/ui_theme
 	switch(faction)
-		if(FACTION_SOM)
-			ui_theme = "som"
+		if(FACTION_CHAOS)
+			ui_theme = "chaos"
 		else
 			ui_theme = "ntos"
 	data["ui_theme"] = ui_theme

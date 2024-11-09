@@ -11,10 +11,10 @@
 */
 
 /obj/item/tool/kitchen
-	icon = 'icons/obj/items/kitchen_tools.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/kitchen_tools.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/kitchen_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/kitchen_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/kitchen_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/kitchen_right.dmi',
 	)
 
 /*
@@ -70,10 +70,10 @@
 		return
 	return ..()
 
-/obj/item/tool/kitchen/utensil/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/tool/kitchen/utensil/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!CONFIG_GET(flag/fun_allowed))
 		return FALSE
-	attack_hand(xeno_attacker)
+	attack_hand(tyranid_attacker)
 
 /obj/item/tool/kitchen/utensil/fork
 	name = "fork"
@@ -152,7 +152,7 @@
 /obj/item/tool/kitchen/knife/ritual
 	name = "ritual knife"
 	desc = "The unearthly energies that once powered this blade are now dormant."
-	icon = 'icons/obj/wizard.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/wizard.dmi'
 	icon_state = "render"
 
 /*

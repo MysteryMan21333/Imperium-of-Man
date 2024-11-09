@@ -12,7 +12,7 @@ This memorial has been designed for him and any future contributors to perish.
 /obj/structure/prop/mainship/arc
 	name = "Tomb of the Unknown Contributor"
 	desc = "Here rests an unknown contributor\nUnknown by name or rank\nWhose PRs will not be forgotten"
-	icon = 'icons/obj/structures/memorial.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/memorial.dmi'
 	icon_state = "memorial"
 	density = TRUE
 	anchored = TRUE
@@ -22,7 +22,7 @@ This memorial has been designed for him and any future contributors to perish.
 /obj/structure/prop/mainship/valmoric
 	name = "Tomb of the Unknown Soldier"
 	desc = "<i>HERE RESTS IN\nHONORED GLORY\nA SOLDIER\nKNOWN BUT TO GOD</i>"
-	icon = 'icons/obj/structures/memorial.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/memorial.dmi'
 	icon_state = "memorial2"
 	density = TRUE
 	anchored = TRUE

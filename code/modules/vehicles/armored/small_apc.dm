@@ -1,8 +1,8 @@
 /obj/vehicle/sealed/armored/apc
 	name = "TAV - Nike"
 	desc = "A miniaturized replica of a popular personnel carrier. For ages 5 and up."
-	icon = 'icons/obj/armored/1x1/tinytank.dmi'
-	turret_icon = 'icons/obj/armored/1x1/tinytank_gun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/1x1/tinytank.dmi'
+	turret_icon = 'modular_imperium/master_files/icons/obj/armored/1x1/tinytank_gun.dmi'
 	turret_icon_state = "apc_turret"
 	icon_state = "apc"
 	armored_flags = NONE

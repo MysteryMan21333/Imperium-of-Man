@@ -103,8 +103,8 @@ GLOBAL_PROTECT(exp_to_update)
 		else
 			return_text += "<LI>[dep] [get_exp_format(exp_data[dep])] </LI>"
 
-	for(var/caste_typepath AS in GLOB.xeno_caste_datums)
-		var/datum/xeno_caste/caste_type = GLOB.xeno_caste_datums[caste_typepath][XENO_UPGRADE_BASETYPE]
+	for(var/caste_typepath AS in GLOB.tyranid_caste_datums)
+		var/datum/tyranid_caste/caste_type = GLOB.tyranid_caste_datums[caste_typepath][TYRANID_UPGRADE_BASETYPE]
 		return_text += "<LI>[caste_type.caste_name] [get_exp_format(play_records[caste_type.caste_name])] while alive.</LI>"
 
 	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_other_rights(src, R_ADMIN, FALSE))
@@ -217,9 +217,9 @@ GLOBAL_PROTECT(exp_to_update)
 				to_chat(src,span_notice("You got: [minutes] Living EXP!"))
 			if(living_mob.job)
 				if(!istype(living_mob.job, /datum/job/fallen))
-					if(isxeno(living_mob))
-						var/mob/living/carbon/xenomorph/xeno = living_mob
-						play_records[xeno.xeno_caste.caste_name] += minutes
+					if(istyranid(living_mob))
+						var/mob/living/carbon/tyranid/tyranid = living_mob
+						play_records[tyranid.tyranid_caste.caste_name] += minutes
 					play_records[living_mob.job.title] += minutes
 					if(announce_changes)
 						to_chat(src,span_notice("You got: [minutes] [living_mob.job] EXP!"))
@@ -260,5 +260,5 @@ GLOBAL_PROTECT(exp_to_update)
 		return FALSE
 	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_other_rights(C, R_ADMIN, FALSE))
 		return FALSE
-	var/my_exp = C.prefs.exp[ROLE_XENOMORPH]
+	var/my_exp = C.prefs.exp[ROLE_TYRANID]
 	return my_exp < XP_REQ_UNSEASONED

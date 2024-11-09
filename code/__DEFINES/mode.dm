@@ -36,8 +36,8 @@
 #define MODE_INFESTATION (1<<0) //TODO this flag is way too general
 #define MODE_NO_LATEJOIN (1<<1)
 #define MODE_LATE_OPENING_SHUTTER_TIMER (1<<2)
-#define MODE_XENO_SPAWN_PROTECT (1<<3)
-#define MODE_XENO_RULER (1<<4)
+#define MODE_TYRANID_SPAWN_PROTECT (1<<3)
+#define MODE_TYRANID_RULER (1<<4)
 #define MODE_PSY_POINTS (1<<5)
 #define MODE_PSY_POINTS_ADVANCED (1<<6)
 #define MODE_HIJACK_POSSIBLE (1<<7)
@@ -47,22 +47,22 @@
 #define MODE_TWO_HUMAN_FACTIONS	(1<<11)
 #define MODE_NO_PERMANENT_WOUNDS (1<<12)
 #define MODE_SILOS_SPAWN_MINIONS (1<<13)
-#define MODE_ALLOW_XENO_QUICKBUILD (1<<14)
+#define MODE_ALLOW_TYRANID_QUICKBUILD (1<<14)
 #define MODE_DISALLOW_RAILGUN (1<<15)
 #define MODE_FORCE_CUSTOMSQUAD_UI (1<<16)
 
-#define MODE_INFESTATION_X_MAJOR "Xenomorph Major Victory"
-#define MODE_INFESTATION_M_MAJOR "Marine Major Victory"
-#define MODE_INFESTATION_X_MINOR "Xenomorph Minor Victory"
-#define MODE_INFESTATION_M_MINOR "Marine Minor Victory"
+#define MODE_INFESTATION_X_MAJOR "Tyranid Major Victory"
+#define MODE_INFESTATION_M_MAJOR "Guardsman Major Victory"
+#define MODE_INFESTATION_X_MINOR "Tyranid Minor Victory"
+#define MODE_INFESTATION_M_MINOR "Guardsman Minor Victory"
 #define MODE_INFESTATION_DRAW_DEATH "DRAW: Mutual Annihilation"
 
 #define MODE_GENERIC_DRAW_NUKE "DRAW: Nuclear Explosion"
 
-#define MODE_COMBAT_PATROL_MARINE_MAJOR "Marine Major Victory"
-#define MODE_COMBAT_PATROL_MARINE_MINOR "Marine Minor Victory"
-#define MODE_COMBAT_PATROL_SOM_MAJOR "Sons of Mars Major Victory"
-#define MODE_COMBAT_PATROL_SOM_MINOR "Sons of Mars Minor Victory"
+#define MODE_COMBAT_PATROL_GUARDSMAN_MAJOR "Guardsman Major Victory"
+#define MODE_COMBAT_PATROL_GUARDSMAN_MINOR "Guardsman Minor Victory"
+#define MODE_COMBAT_PATROL_CHAOS_MAJOR "Sons of Mars Major Victory"
+#define MODE_COMBAT_PATROL_CHAOS_MINOR "Sons of Mars Minor Victory"
 #define MODE_COMBAT_PATROL_DRAW "DRAW: Mutual Annihilation"
 
 #define CRASH_EVAC_NONE "CRASH_EVAC_NONE"
@@ -85,7 +85,7 @@
 				list(/obj/item/weapon/gun/shotgun/pump/lever, /obj/item/ammo_magazine/packet/magnum))
 
 //Balance defines
-#define MARINE_GEAR_SCALING 30
+#define GUARDSMAN_GEAR_SCALING 30
 
 #define MAX_TUNNELS_PER_MAP 10
 
@@ -102,7 +102,7 @@
 #define COOLDOWN_COMM_MESSAGE 1 MINUTES
 #define COOLDOWN_COMM_CENTRAL 30 SECONDS
 
-#define SUPPLY_POINT_MARINE_SPAWN 25
+#define SUPPLY_POINT_GUARDSMAN_SPAWN 25
 
 #define AFK_TIMER 5 MINUTES
 #define TIME_BEFORE_TAKING_BODY 1 MINUTES
@@ -110,23 +110,23 @@
 #define DEATHTIME_CHECK(M) ((world.time - GLOB.key_to_time_of_role_death[M.key]) < SSticker.mode?.respawn_time)
 #define DEATHTIME_MESSAGE(M) to_chat(M, span_warning("You have been dead for [(world.time - GLOB.key_to_time_of_role_death[M.key]) * 0.1] second\s.</span><br><span class='warning'>You must wait [SSticker.mode?.respawn_time * 0.1] seconds before rejoining the game!"))
 
-#define XENODEATHTIME_CHECK(M) ((world.time - (GLOB.key_to_time_of_xeno_death[M.key] ? GLOB.key_to_time_of_xeno_death[M.key] : -INFINITY) < SSticker.mode?.xenorespawn_time))
-#define XENODEATHTIME_MESSAGE(M) to_chat(M, span_warning("You have been dead for [(world.time - GLOB.key_to_time_of_xeno_death[M.key]) * 0.1] second\s.</span><br><span class ='warning'>You must wait [SSticker.mode?.xenorespawn_time * 0.1] seconds before rejoining the game as a Xenomorph! You can take a SSD minion without resetting your timer."))
+#define TYRANIDDEATHTIME_CHECK(M) ((world.time - (GLOB.key_to_time_of_tyranid_death[M.key] ? GLOB.key_to_time_of_tyranid_death[M.key] : -INFINITY) < SSticker.mode?.tyranidrespawn_time))
+#define TYRANIDDEATHTIME_MESSAGE(M) to_chat(M, span_warning("You have been dead for [(world.time - GLOB.key_to_time_of_tyranid_death[M.key]) * 0.1] second\s.</span><br><span class ='warning'>You must wait [SSticker.mode?.tyranidrespawn_time * 0.1] seconds before rejoining the game as a Tyranid! You can take a SSD minion without resetting your timer."))
 
 #define COUNT_IGNORE_HUMAN_SSD (1<<0)
-#define COUNT_IGNORE_XENO_SSD (1<<1)
-#define COUNT_IGNORE_XENO_SPECIAL_AREA (1<<2)
+#define COUNT_IGNORE_TYRANID_SSD (1<<1)
+#define COUNT_IGNORE_TYRANID_SPECIAL_AREA (1<<2)
 
-#define COUNT_IGNORE_ALIVE_SSD (COUNT_IGNORE_HUMAN_SSD|COUNT_IGNORE_XENO_SSD)
+#define COUNT_IGNORE_ALIVE_SSD (COUNT_IGNORE_HUMAN_SSD|COUNT_IGNORE_TYRANID_SSD)
 
 #define SILO_PRICE 800
-#define XENO_TURRET_PRICE 100
+#define TYRANID_TURRET_PRICE 100
 
 //How many psy points a hive gets if all generators are corrupted
 #define GENERATOR_PSYCH_POINT_OUTPUT 1
-//How many psy points are gave for each marine psy drained at low pop
+//How many psy points are gave for each guardsman psy drained at low pop
 #define PSY_DRAIN_REWARD_MAX 90
-//How many psy points are gave for each marine psy drained at high pop
+//How many psy points are gave for each guardsman psy drained at high pop
 #define PSY_DRAIN_REWARD_MIN 30
 //How many psy points are gave every 5 second by a cocoon at low pop
 #define COCOON_PSY_POINTS_REWARD_MAX 3
@@ -136,19 +136,19 @@
 //The player pop consider to be very high pop
 #define HIGH_PLAYER_POP 80
 
-/// How each alive marine contributes to burrower larva output per minute. So with one pool, 15 marines are giving 0.375 points per minute, so it's a new xeno every 22 minutes
-#define SILO_BASE_OUTPUT_PER_MARINE 0.035
+/// How each alive guardsman contributes to burrower larva output per minute. So with one pool, 15 guardsmans are giving 0.375 points per minute, so it's a new tyranid every 22 minutes
+#define SILO_BASE_OUTPUT_PER_GUARDSMAN 0.035
 /// This is used to ponderate the number of silo, so to reduces the diminishing returns of having more and more silos
 #define SILO_OUTPUT_PONDERATION 1.75
 
-#define INFESTATION_MARINE_DEPLOYMENT 0
-#define INFESTATION_MARINE_CRASHING 1
-#define INFESTATION_DROPSHIP_CAPTURED_XENOS 2
+#define INFESTATION_GUARDSMAN_DEPLOYMENT 0
+#define INFESTATION_GUARDSMAN_CRASHING 1
+#define INFESTATION_DROPSHIP_CAPTURED_TYRANIDS 2
 
 #define NUCLEAR_WAR_LARVA_POINTS_NEEDED 10
 #define CRASH_LARVA_POINTS_NEEDED 10
 
-#define FREE_XENO_AT_START 2
+#define FREE_TYRANID_AT_START 2
 
 #define MAX_UNBALANCED_RATIO_TWO_HUMAN_FACTIONS 1.1
 

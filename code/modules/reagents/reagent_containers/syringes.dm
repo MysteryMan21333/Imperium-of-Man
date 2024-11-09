@@ -8,10 +8,10 @@
 /obj/item/reagent_containers/syringe
 	name = "syringe"
 	desc = "A syringe."
-	icon = 'icons/obj/items/syringe.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/syringe.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medical_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medical_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_right.dmi',
 	)
 	worn_icon_state = "syringe_0"
 	icon_state = "0"
@@ -210,7 +210,7 @@
 
 	var/rounded_vol = round(reagents.total_volume,5)
 	if(reagents.total_volume)
-		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "syringe10")
+		var/image/filling = image('modular_imperium/master_files/icons/obj/reagentfillings.dmi', src, "syringe10")
 
 		filling.icon_state = "syringe[rounded_vol]"
 

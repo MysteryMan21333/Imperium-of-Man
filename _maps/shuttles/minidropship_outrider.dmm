@@ -135,7 +135,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/shuttle/minidropship)
 "D" = (
-/obj/docking_port/mobile/marine_dropship/minidropship,
+/obj/docking_port/mobile/guardsman_dropship/minidropship,
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 4;
 	layer = 3

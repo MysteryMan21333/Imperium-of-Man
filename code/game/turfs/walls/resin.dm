@@ -1,20 +1,20 @@
 /**
  * Resin walls
  *
- * Used mostly be xenomorphs
+ * Used mostly be tyranids
  */
 /turf/closed/wall/resin
 	name = RESIN_WALL
 	desc = "Weird slime solidified into a wall."
-	icon = 'icons/obj/smooth_objects/resin-wall.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/resin-wall.dmi'
 	icon_state = "resin-wall-0"
 	walltype = "resin-wall"
 	base_icon_state = "resin-wall"
 	max_integrity = 200
 	layer = RESIN_STRUCTURE_LAYER
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
-	canSmoothWith = list(SMOOTH_GROUP_XENO_STRUCTURES)
+	smoothing_groups = list(SMOOTH_GROUP_TYRANID_STRUCTURES)
+	canSmoothWith = list(SMOOTH_GROUP_TYRANID_STRUCTURES)
 	soft_armor = list(MELEE = 0, BULLET = 80, LASER = 75, ENERGY = 75, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 	hard_armor = list(MELEE = 0, BULLET = 15, LASER = 10, ENERGY = 10, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 	resistance_flags = UNACIDABLE
@@ -61,8 +61,8 @@
 	alpha = 180
 	allow_pass_flags = PASS_GLASS
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
-	canSmoothWith = list(SMOOTH_GROUP_XENO_STRUCTURES)
+	smoothing_groups = list(SMOOTH_GROUP_TYRANID_STRUCTURES)
+	canSmoothWith = list(SMOOTH_GROUP_TYRANID_STRUCTURES)
 
 
 /turf/closed/wall/resin/membrane/thicken()
@@ -90,23 +90,23 @@
 			take_damage(rand(30, 50), BRUTE, BOMB)
 
 
-/turf/closed/wall/resin/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/turf/closed/wall/resin/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
-	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active)
+	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_TYRANID_QUICKBUILD) && SSresinshaping.active)
 		if(is_normal_resin_wall)
-			SSresinshaping.quickbuild_points_by_hive[xeno_attacker.hivenumber]++
+			SSresinshaping.quickbuild_points_by_hive[tyranid_attacker.hivenumber]++
 			take_damage(max_integrity) // Ensure its destroyed
 			return
-	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] starts tearing down \the [src]!"), \
-	span_xenonotice("We start to tear down \the [src]."))
-	if(!do_after(xeno_attacker, 1 SECONDS, NONE, xeno_attacker, BUSY_ICON_GENERIC))
+	tyranid_attacker.visible_message(span_tyranidnotice("\The [tyranid_attacker] starts tearing down \the [src]!"), \
+	span_tyranidnotice("We start to tear down \the [src]."))
+	if(!do_after(tyranid_attacker, 1 SECONDS, NONE, tyranid_attacker, BUSY_ICON_GENERIC))
 		return
 	if(!istype(src)) // Prevent jumping to other turfs if do_after completes with the wall already gone
 		return
-	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] tears down \the [src]!"), \
-	span_xenonotice("We tear down \the [src]."))
+	tyranid_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	tyranid_attacker.visible_message(span_tyranidnotice("\The [tyranid_attacker] tears down \the [src]!"), \
+	span_tyranidnotice("We tear down \the [src]."))
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	take_damage(max_integrity) // Ensure its destroyed
 

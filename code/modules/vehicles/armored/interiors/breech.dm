@@ -2,7 +2,7 @@
 /obj/structure/gun_breech
 	name = "gun breech"
 	desc = "A gun breech used for loading large caliber rounds into the main gun."
-	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x3/tank_interior.dmi'
 	icon_state = "breech"
 	resistance_flags = RESIST_ALL
 	///bool if this laods the secondary gun
@@ -181,18 +181,18 @@
 	old_ammo.pixel_x = rand(-10, 10)
 	old_ammo.pixel_y = rand(-10, 10)
 
-/obj/structure/gun_breech/som
+/obj/structure/gun_breech/chaos
 	icon_state = null
-	icon = 'icons/obj/armored/3x4/som_breech.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/3x4/som_breech.dmi'
 	density = FALSE
 	layer = ABOVE_OBJ_LAYER
 	var/obj/item/armored_weapon/weapon_type
 	///overlay obj for for the attached gun
 	var/atom/movable/vis_obj/internal_barrel/barrel_overlay
 	///overlay obj for internal firing animation
-	var/atom/movable/vis_obj/som_tank_ammo/ammo_overlay
+	var/atom/movable/vis_obj/chaos_tank_ammo/ammo_overlay
 
-/obj/structure/gun_breech/som/Initialize(mapload)
+/obj/structure/gun_breech/chaos/Initialize(mapload)
 	. = ..()
 	barrel_overlay = new()
 	barrel_overlay.icon = icon
@@ -203,40 +203,40 @@
 	ammo_overlay.icon = icon
 	vis_contents += ammo_overlay
 
-/obj/structure/gun_breech/som/Destroy()
+/obj/structure/gun_breech/chaos/Destroy()
 	weapon_type = null
 	QDEL_NULL(barrel_overlay)
 	return ..()
 
-/obj/structure/gun_breech/som/update_icon_state()
+/obj/structure/gun_breech/chaos/update_icon_state()
 	. = ..()
 	icon_state = weapon_type.icon_state
 
-/obj/structure/gun_breech/som/update_overlays()
+/obj/structure/gun_breech/chaos/update_overlays()
 	. = ..()
 	. += mutable_appearance(icon, "[icon_state]_overlay", ABOVE_MOB_LAYER)
 
-/obj/structure/gun_breech/som/on_weapon_attach(obj/item/armored_weapon/new_weapon)
+/obj/structure/gun_breech/chaos/on_weapon_attach(obj/item/armored_weapon/new_weapon)
 	update_gun_appearance(new_weapon)
 
-/obj/structure/gun_breech/som/on_weapon_detach(obj/item/armored_weapon/old_weapon)
+/obj/structure/gun_breech/chaos/on_weapon_detach(obj/item/armored_weapon/old_weapon)
 	update_gun_appearance(old_weapon)
 
-/obj/structure/gun_breech/som/do_load(mob/living/user, obj/item/armored_weapon/weapon, obj/item/ammo_magazine/mag)
+/obj/structure/gun_breech/chaos/do_load(mob/living/user, obj/item/armored_weapon/weapon, obj/item/ammo_magazine/mag)
 	. = ..()
 	update_gun_appearance(weapon_type)
 
-/obj/structure/gun_breech/som/do_unload(mob/living/user, obj/item/armored_weapon/weapon)
+/obj/structure/gun_breech/chaos/do_unload(mob/living/user, obj/item/armored_weapon/weapon)
 	. = ..()
 	update_gun_appearance(weapon_type)
 
-/obj/structure/gun_breech/som/on_main_fire(obj/item/ammo_magazine/owner_ammo)
+/obj/structure/gun_breech/chaos/on_main_fire(obj/item/ammo_magazine/owner_ammo)
 	update_gun_appearance(weapon_type)
 	if(weapon_type.type == /obj/item/armored_weapon/coilgun)
 		flick("[ammo_overlay.icon_state]_flick", ammo_overlay)
 
 ///Updates breech and barrel vis_obj appearance
-/obj/structure/gun_breech/som/proc/update_gun_appearance(obj/item/armored_weapon/current_weapon)
+/obj/structure/gun_breech/chaos/proc/update_gun_appearance(obj/item/armored_weapon/current_weapon)
 	weapon_type = current_weapon
 	if(!weapon_type)
 		density = FALSE
@@ -265,19 +265,19 @@
 	mouse_opacity  = MOUSE_OPACITY_TRANSPARENT
 	layer = ABOVE_ALL_MOB_LAYER
 
-/atom/movable/vis_obj/som_tank_ammo
+/atom/movable/vis_obj/chaos_tank_ammo
 	name = "Tank weapon"
 	mouse_opacity  = MOUSE_OPACITY_TRANSPARENT
 	layer = ABOVE_MOB_PLATFORM_LAYER
 
 /obj/structure/gun_breech/lvrt
 	name = "gun breech"
-	icon = 'icons/obj/armored/2x2/icc_lvrt.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/2x2/icc_lvrt.dmi'
 	icon_state = "lvrt_breech"
 
 /obj/structure/gun_breech/secondary/lvrt
 	name = "coaxial loading mechanism"
 	desc = "A feeding mechanism for loading ammo into the vehicle's coaxial feed."
-	icon = 'icons/obj/armored/2x2/icc_lvrt.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/2x2/icc_lvrt.dmi'
 	icon_state = "lvrt_secondary_breech"
 	is_secondary = TRUE

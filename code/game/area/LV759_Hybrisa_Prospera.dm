@@ -912,8 +912,8 @@
 	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Chemical Testing & Research Lab"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
-/area/lv759/indoors/nt_research_complex/xenobiology
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Xenobiology Lab"
+/area/lv759/indoors/nt_research_complex/tyranidbiology
+	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Tyranidbiology Lab"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 	ambience = list('sound/effects/urban/indoors/lab_ambience_2.ogg')
 
@@ -925,8 +925,8 @@
 	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Weapon Research Lab - Weapons Testing Range"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
-/area/lv759/indoors/nt_research_complex/xenoarcheology
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Xenoarcheology Research Lab"
+/area/lv759/indoors/nt_research_complex/tyranidarcheology
+	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Tyranidarcheology Research Lab"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/lv759/indoors/nt_research_complex/vehicledeploymentbay

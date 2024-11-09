@@ -63,7 +63,7 @@
 	emitted_auras -= aura_list
 	update_aura_overlay()
 
-///Bring however we represent emitted auras up to date. Implemented for human and xenomorph.
+///Bring however we represent emitted auras up to date. Implemented for human and tyranid.
 /mob/living/proc/update_aura_overlay()
 	return
 
@@ -351,9 +351,9 @@
 			//restrained people act if they were on 'help' intent to prevent a person being pulled from being seperated from their puller
 			else if((L.restrained() || L.a_intent == INTENT_HELP) && (restrained() || a_intent == INTENT_HELP) && L.move_force < MOVE_FORCE_VERY_STRONG)
 				mob_swap_mode = SWAPPING
-			else if(get_xeno_hivenumber() == L.get_xeno_hivenumber() && (L.pass_flags & PASS_XENO || pass_flags & PASS_XENO))
+			else if(get_tyranid_hivenumber() == L.get_tyranid_hivenumber() && (L.pass_flags & PASS_TYRANID || pass_flags & PASS_TYRANID))
 				mob_swap_mode = PHASING
-			else if((move_resist >= MOVE_FORCE_VERY_STRONG || move_resist > L.move_force) && a_intent == INTENT_HELP) //Larger mobs can shove aside smaller ones. Xenos can always shove xenos
+			else if((move_resist >= MOVE_FORCE_VERY_STRONG || move_resist > L.move_force) && a_intent == INTENT_HELP) //Larger mobs can shove aside smaller ones. Tyranids can always shove tyranids
 				mob_swap_mode = SWAPPING
 			/* If we're moving diagonally, but the mob isn't on the diagonal destination turf and the destination turf is enterable we have no reason to shuffle/push them
 			 * However we also do not want mobs of smaller move forces being able to pass us diagonally if our move resist is larger, unless they're the same faction as us
@@ -394,11 +394,11 @@
 			return
 
 	if(ismovableatom(A))
-		if(isxeno(src) && ishuman(A))
+		if(istyranid(src) && ishuman(A))
 			var/mob/living/carbon/human/H = A
-			if(!COOLDOWN_CHECK(H,  xeno_push_delay))
+			if(!COOLDOWN_CHECK(H,  tyranid_push_delay))
 				return
-			COOLDOWN_START(H, xeno_push_delay, XENO_HUMAN_PUSHED_DELAY)
+			COOLDOWN_START(H, tyranid_push_delay, TYRANID_HUMAN_PUSHED_DELAY)
 		if(PushAM(A))
 			return TURF_ENTER_ALREADY_MOVED
 
@@ -549,10 +549,10 @@
 	alpha = 5 // bah, let's make it better, it's a disposable device anyway
 
 	GLOB.huds[DATA_HUD_SECURITY_ADVANCED].remove_from_hud(src)
-	GLOB.huds[DATA_HUD_XENO_INFECTION].remove_from_hud(src)
-	GLOB.huds[DATA_HUD_XENO_REAGENTS].remove_from_hud(src)
-	GLOB.huds[DATA_HUD_XENO_DEBUFF].remove_from_hud(src)
-	GLOB.huds[DATA_HUD_XENO_HEART].remove_from_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_INFECTION].remove_from_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_REAGENTS].remove_from_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_DEBUFF].remove_from_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_HEART].remove_from_hud(src)
 
 	smokecloaked = TRUE
 
@@ -564,10 +564,10 @@
 	alpha = initial(alpha)
 
 	GLOB.huds[DATA_HUD_SECURITY_ADVANCED].add_to_hud(src)
-	GLOB.huds[DATA_HUD_XENO_INFECTION].add_to_hud(src)
-	GLOB.huds[DATA_HUD_XENO_REAGENTS].add_to_hud(src)
-	GLOB.huds[DATA_HUD_XENO_DEBUFF].add_to_hud(src)
-	GLOB.huds[DATA_HUD_XENO_HEART].add_to_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_INFECTION].add_to_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_REAGENTS].add_to_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_DEBUFF].add_to_hud(src)
+	GLOB.huds[DATA_HUD_TYRANID_HEART].add_to_hud(src)
 
 	smokecloaked = FALSE
 
@@ -904,7 +904,7 @@ below 100 is not dizzy
 		return
 	candidate.mind.transfer_to(src, TRUE)
 
-/mob/living/carbon/xenomorph/transfer_mob(mob/candidate)
+/mob/living/carbon/tyranid/transfer_mob(mob/candidate)
 	. = ..()
 	if(is_ventcrawling)  //If we are in a vent, fetch a fresh vent map
 		add_ventcrawl(loc)

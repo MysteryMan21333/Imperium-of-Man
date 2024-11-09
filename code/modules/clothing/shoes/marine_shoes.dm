@@ -1,8 +1,8 @@
-/obj/item/clothing/shoes/marine
-	name = "marine combat boots"
+/obj/item/clothing/shoes/guardsman
+	name = "guardsman combat boots"
 	desc = "Standard issue combat boots for combat scenarios or combat situations. All combat, all the time."
-	icon_state = "marine"
-	worn_icon_state = "marine"
+	icon_state = "guardsman"
+	worn_icon_state = "guardsman"
 	armor_protection_flags = FEET
 	cold_protection_flags = FEET
 	heat_protection_flags = FEET
@@ -17,15 +17,15 @@
 	attachments_allowed = list(
 		/obj/item/armor_module/storage/boot,
 		/obj/item/armor_module/storage/boot/full,
-		/obj/item/armor_module/storage/boot/som_knife,
+		/obj/item/armor_module/storage/boot/chaos_knife,
 	)
 	starting_attachments = list(/obj/item/armor_module/storage/boot)
 
-/obj/item/clothing/shoes/marine/Initialize(mapload)
+/obj/item/clothing/shoes/guardsman/Initialize(mapload)
 	. = ..()
 	update_icon()
 
-/obj/item/clothing/shoes/marine/update_icon_state()
+/obj/item/clothing/shoes/guardsman/update_icon_state()
 	. = ..()
 	icon_state = initial(icon_state)
 	if(!attachments_by_slot[ATTACHMENT_SLOT_STORAGE])
@@ -37,24 +37,24 @@
 		if(istype(item_in_pocket, /obj/item/weapon/combat_knife) || istype(item_in_pocket, /obj/item/attachable/bayonetknife) || istype(item_in_pocket, /obj/item/stack/throwing_knife))
 			icon_state += "-knife"
 
-/obj/item/clothing/shoes/marine/full
+/obj/item/clothing/shoes/guardsman/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/brown
-	name = "brown marine combat boots"
-	icon_state = "marine_brown"
-	worn_icon_state = "marine_brown"
+/obj/item/clothing/shoes/guardsman/brown
+	name = "brown guardsman combat boots"
+	icon_state = "guardsman_brown"
+	worn_icon_state = "guardsman_brown"
 
-/obj/item/clothing/shoes/marine/brown/full
+/obj/item/clothing/shoes/guardsman/brown/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/pyro
+/obj/item/clothing/shoes/guardsman/pyro
 	name = "flame-resistant combat boots"
 	desc = "Protects you from fire and even contains a pouch for your knife!"
-	icon_state = "marine_armored"
+	icon_state = "guardsman_armored"
 	hard_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 100, ACID = 0)
 
-/obj/item/clothing/shoes/marinechief
+/obj/item/clothing/shoes/guardsmanchief
 	name = "chief officer shoes"
 	desc = "Only a small amount of monkeys, kittens, and orphans were killed in making this."
 	icon_state = "laceups"
@@ -62,20 +62,20 @@
 	inventory_flags = NOSLIPPING
 	siemens_coefficient = 0.6
 
-/obj/item/clothing/shoes/marinechief/captain
+/obj/item/clothing/shoes/guardsmanchief/captain
 	name = "captain's shoes"
 	desc = "Has special soles for better trampling those underneath."
 
-/obj/item/clothing/shoes/marinechief/som
+/obj/item/clothing/shoes/guardsmanchief/chaos
 	name = "officer's boots"
-	desc = "A shiny pair of boots, normally seen on the feet of SOM officers."
-	icon_state = "som_officer_boots"
+	desc = "A shiny pair of boots, normally seen on the feet of CHAOS officers."
+	icon_state = "chaos_officer_boots"
 
-/obj/item/clothing/shoes/marinechief/sa
+/obj/item/clothing/shoes/guardsmanchief/sa
 	name = "spatial agent's shoes"
 	desc = "Shoes worn by a spatial agent."
 
-/obj/item/clothing/shoes/marine/pmc
+/obj/item/clothing/shoes/guardsman/pmc
 	name = "polished shoes"
 	desc = "The height of fashion, but these look to be woven with protective fiber."
 	icon_state = "jackboots"
@@ -89,10 +89,10 @@
 	inventory_flags = NOSLIPPING
 	siemens_coefficient = 0.6
 
-/obj/item/clothing/shoes/marine/pmc/full
+/obj/item/clothing/shoes/guardsman/pmc/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/deathsquad
+/obj/item/clothing/shoes/guardsman/deathsquad
 	name = "\improper PMC commando boots"
 	desc = "A pair of heavily armored, acid-resistant boots."
 	icon_state = "commando_boots"
@@ -110,21 +110,21 @@
 
 /*=========Imperium=========*/
 
-/obj/item/clothing/shoes/marine/imperial
+/obj/item/clothing/shoes/guardsman/imperial
 	name = "guardsmen combat boots"
 	desc = "A pair of boots issued to the Imperial Guard, just like anything else they use, they are mass produced."
 	//icon_state = ""
 	soft_armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 30, BIO = 20, FIRE = 20, ACID = 25)
 
 
-/obj/item/clothing/shoes/marine/som
+/obj/item/clothing/shoes/guardsman/chaos
 	name = "\improper S11 combat shoes"
 	desc = "Shoes with origins dating back to the old mining colonies. These were made for more than just walking."
-	icon_state = "som"
-	worn_icon_state = "som"
+	icon_state = "chaos"
+	worn_icon_state = "chaos"
 
-/obj/item/clothing/shoes/marine/som/knife
-	starting_attachments = list(/obj/item/armor_module/storage/boot/som_knife)
+/obj/item/clothing/shoes/guardsman/chaos/knife
+	starting_attachments = list(/obj/item/armor_module/storage/boot/chaos_knife)
 
 /obj/item/clothing/shoes/sectoid
 	name = "psionic field"
@@ -145,47 +145,47 @@
 	icon_state = "cboots"
 	worn_icon_state = "cboots"
 
-/obj/item/clothing/shoes/marine/clf
+/obj/item/clothing/shoes/guardsman/clf
 	name = "\improper frontier boots"
 	desc = "A pair of well worn boots, commonly seen on most outer colonies."
 	icon_state = "boots"
 	worn_icon_state = "boots"
 
-/obj/item/clothing/shoes/marine/vsd
+/obj/item/clothing/shoes/guardsman/vsd
 	name = "\improper combat boots"
 	desc = "V.S.D's standard issue combat boots"
 	icon_state = "boots"
 	worn_icon_state = "boots"
 
-/obj/item/clothing/shoes/marine/vsd/full
+/obj/item/clothing/shoes/guardsman/vsd/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/clf/full
+/obj/item/clothing/shoes/guardsman/clf/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/icc
+/obj/item/clothing/shoes/guardsman/icc
 	name = "\improper Modelle/32 combat shoes"
 	desc = "A set of sturdy working boots."
 	icon_state = "icc"
 
-/obj/item/clothing/shoes/marine/icc/knife
+/obj/item/clothing/shoes/guardsman/icc/knife
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/icc/guard
+/obj/item/clothing/shoes/guardsman/icc/guard
 	name = "\improper Modelle/33 tactical shoes"
 	desc = "A set of sturdy tactical boots."
 	icon_state = "icc_guard"
 
-/obj/item/clothing/shoes/marine/icc/guard/knife
+/obj/item/clothing/shoes/guardsman/icc/guard/knife
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/tdf
+/obj/item/clothing/shoes/guardsman/tdf
 	icon_state = "tdf"
 
-/obj/item/clothing/shoes/marine/tdf/full
+/obj/item/clothing/shoes/guardsman/tdf/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)
 
-/obj/item/clothing/shoes/marine/srf //Basically SWAT shoes combined with galoshes.
+/obj/item/clothing/shoes/guardsman/srf //Basically SWAT shoes combined with galoshes.
 	name = "combat boots"
 	desc = "When you REALLY want to turn up the heat"
 	icon_state = "swat"
@@ -200,5 +200,5 @@
 	heat_protection_flags = FEET
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
-/obj/item/clothing/shoes/marine/srf/full
+/obj/item/clothing/shoes/guardsman/srf/full
 	starting_attachments = list(/obj/item/armor_module/storage/boot/full)

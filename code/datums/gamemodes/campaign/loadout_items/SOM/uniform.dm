@@ -1,33 +1,33 @@
-/datum/loadout_item/uniform/som_standard
-	name = "SOM uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
-	item_typepath = /obj/item/clothing/under/som/webbing
-	jobs_supported = list(SOM_SQUAD_MARINE)
+/datum/loadout_item/uniform/chaos_standard
+	name = "CHAOS uniform"
+	desc = "The standard uniform of CHAOS military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
+	item_typepath = /obj/item/clothing/under/chaos/webbing
+	jobs_supported = list(CHAOS_SQUAD_GUARDSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/uniform/som_veteran
-	name = "SOM veteran uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has markings indicating specialist status."
-	item_typepath = /obj/item/clothing/under/som/veteran/webbing
-	jobs_supported = list(SOM_SQUAD_VETERAN)
+/datum/loadout_item/uniform/chaos_veteran
+	name = "CHAOS veteran uniform"
+	desc = "The standard uniform of CHAOS military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has markings indicating specialist status."
+	item_typepath = /obj/item/clothing/under/chaos/veteran/webbing
+	jobs_supported = list(CHAOS_SQUAD_VETERAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/uniform/som_leader
-	name = "SOM leader uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has leadership markings."
-	item_typepath = /obj/item/clothing/under/som/leader/webbing
-	jobs_supported = list(SOM_SQUAD_LEADER)
+/datum/loadout_item/uniform/chaos_leader
+	name = "CHAOS leader uniform"
+	desc = "The standard uniform of CHAOS military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has leadership markings."
+	item_typepath = /obj/item/clothing/under/chaos/leader/webbing
+	jobs_supported = list(CHAOS_SQUAD_LEADER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 //corpsman
-/datum/loadout_item/uniform/som_medic
-	name = "SOM medical uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has medical markings."
-	item_typepath = /obj/item/clothing/under/som/medic/vest
-	jobs_supported = list(SOM_SQUAD_CORPSMAN)
+/datum/loadout_item/uniform/chaos_medic
+	name = "CHAOS medical uniform"
+	desc = "The standard uniform of CHAOS military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has medical markings."
+	item_typepath = /obj/item/clothing/under/chaos/medic/vest
+	jobs_supported = list(CHAOS_SQUAD_CORPSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/uniform/som_medic/role_post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
+/datum/loadout_item/uniform/chaos_medic/role_post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
 	wearer.equip_to_slot_or_del(new /obj/item/bodybag/cryobag, SLOT_IN_ACCESSORY)
 	wearer.equip_to_slot_or_del(new /obj/item/roller, SLOT_IN_ACCESSORY)
 	wearer.equip_to_slot_or_del(new /obj/item/tweezers_advanced, SLOT_IN_ACCESSORY)
@@ -36,32 +36,32 @@
 	wearer.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/advanced/combat_advanced, SLOT_IN_ACCESSORY)
 
 //engineer
-/datum/loadout_item/uniform/som_engineer
-	name = "SOM uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
+/datum/loadout_item/uniform/chaos_engineer
+	name = "CHAOS uniform"
+	desc = "The standard uniform of CHAOS military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
 	req_desc = "Requires a tool pouch. You ARE an engineer, right?"
-	item_typepath = /obj/item/clothing/under/som/webbing
-	jobs_supported = list(SOM_SQUAD_ENGINEER)
+	item_typepath = /obj/item/clothing/under/chaos/webbing
+	jobs_supported = list(CHAOS_SQUAD_ENGINEER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/uniform/som_field_commander
+/datum/loadout_item/uniform/chaos_field_commander
 	name = "Officer uniform"
-	desc = "The distinct black uniform befitting a SOM field officer."
-	item_typepath = /obj/item/clothing/under/som/officer/webbing
-	jobs_supported = list(SOM_FIELD_COMMANDER)
+	desc = "The distinct black uniform befitting a CHAOS field officer."
+	item_typepath = /obj/item/clothing/under/chaos/officer/webbing
+	jobs_supported = list(CHAOS_FIELD_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/uniform/som_officer
+/datum/loadout_item/uniform/chaos_officer
 	name = "Officer uniform"
-	desc = "The distinct black uniform of a SOM officer. Usually worn by junior officers."
-	item_typepath = /obj/item/clothing/under/som/officer
-	jobs_supported = list(SOM_STAFF_OFFICER)
+	desc = "The distinct black uniform of a CHAOS officer. Usually worn by junior officers."
+	item_typepath = /obj/item/clothing/under/chaos/officer
+	jobs_supported = list(CHAOS_STAFF_OFFICER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
-/datum/loadout_item/uniform/som_senior_officer
+/datum/loadout_item/uniform/chaos_senior_officer
 	name = "Officer uniform"
-	desc = "The distinct jacketed black uniform of a SOM officer. Usually worn by senior officers."
-	item_typepath = /obj/item/clothing/under/som/officer/senior
-	jobs_supported = list(SOM_COMMANDER)
+	desc = "The distinct jacketed black uniform of a CHAOS officer. Usually worn by senior officers."
+	item_typepath = /obj/item/clothing/under/chaos/officer/senior
+	jobs_supported = list(CHAOS_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 

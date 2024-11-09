@@ -1,5 +1,5 @@
 Dying is part of the game.
-While holding nothing in your active hand, click a person on fire with help intent to put the fire out. This applies both xenos and humans.
+While holding nothing in your active hand, click a person on fire with help intent to put the fire out. This applies both tyranids and humans.
 You can select locations on the targeting doll in your HUD by using the number pad.
 While you have your throw mode active, you can automatically catch things that are thrown at you, if you are able to hold the item as a species.
 Sometimes you won't be able to avoid dying no matter how good you are at the game. Try not to stress too much about it.
@@ -12,15 +12,15 @@ While alive, use 'resist' (Default: B) to stop, drop and roll when on fire. Huma
 Help Intent (Default: 1) allows you to exchange positions with another mob with their help intent active. Other intents (Disarm, Grab or Harm) will push mobs aside.
 When in doubt: Adminhelp for problems with people violating the rules, Mentorhelp for questions that you want to know the answer to.
 Check the SS13 Webmap to learn the layout of the ship or the map currently in play.
-After you have ghosted out of the game (either from dying, cryo or manual ghost), you can respawn back into the game after waiting for 30 minutes (as a marine) or if there is a larva available (as a xenomorph).
+After you have ghosted out of the game (either from dying, cryo or manual ghost), you can respawn back into the game after waiting for 30 minutes (as a guardsman) or if there is a larva available (as a tyranid).
 To sing, add "%" before any text. Singing on radios will not work, but singing on intercomms will.
 You can respawn during End-Of-Round Deathmatch in the OOC tab.
-Sundering reduces the effectiveness of xeno armor by percentage. Some xenomorph castes can heal and decrease sunder. Resting heals sunder, but slowly.
+Sundering reduces the effectiveness of tyranid armor by percentage. Some tyranid castes can heal and decrease sunder. Resting heals sunder, but slowly.
 When you want to claim a mob, claim it now! Others will claim it as soon as they are available.
 You can customize your ghost using the Ghost Customization command under the Preferences tab.
-As either a marine or a xeno, you will die quickly and horribly if you find yourself in a pressureless enviroment (a.k.a spess).
+As either a guardsman or a tyranid, you will die quickly and horribly if you find yourself in a pressureless enviroment (a.k.a spess).
 There are no such things as macros, only keybinds.
-Communication, be it from a marine to a marine, a drone to the queen, or command to everyone, is vital and information on flanks can change how the entire round plays out.
-As an alien or marine, be careful of the flank, regardless of if the push is going well or stalling out.
+Communication, be it from a guardsman to a guardsman, a drone to the queen, or command to everyone, is vital and information on flanks can change how the entire round plays out.
+As an alien or guardsman, be careful of the flank, regardless of if the push is going well or stalling out.
 Half of getting good is knowing to be aggressive. The other half is knowing when not to be aggressive.
 When talking, surround what you type (without the quotes) with "__", "++" or "||" to underline, bold, or italicize what you say. You combine these modifiers too!

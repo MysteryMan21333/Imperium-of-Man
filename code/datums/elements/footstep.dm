@@ -37,10 +37,10 @@
 			footstep_sounds = GLOB.shoefootstep
 		if(FOOTSTEP_MOB_BAREFOOT)
 			footstep_sounds = GLOB.barefootstep
-		if(FOOTSTEP_XENO_MEDIUM)
-			footstep_sounds = GLOB.xenomediumstep
-		if(FOOTSTEP_XENO_HEAVY)
-			footstep_sounds = GLOB.xenoheavystep
+		if(FOOTSTEP_TYRANID_MEDIUM)
+			footstep_sounds = GLOB.tyranidmediumstep
+		if(FOOTSTEP_TYRANID_HEAVY)
+			footstep_sounds = GLOB.tyranidheavystep
 	RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(simplestep_wrapper))
 	RegisterSignals(target, list(COMSIG_ELEMENT_JUMP_ENDED, COMSIG_MOVABLE_PATROL_DEPLOYED), PROC_REF(play_simplestep))
 	steps_for_living[target] = 0
@@ -129,10 +129,10 @@
 	if(override_sound)
 		turf_footstep = override_sound
 	else switch(footstep_type)
-		if(FOOTSTEP_XENO_MEDIUM)
-			turf_footstep = source_loc.mediumxenofootstep
-		if(FOOTSTEP_XENO_HEAVY)
-			turf_footstep = source_loc.heavyxenofootstep
+		if(FOOTSTEP_TYRANID_MEDIUM)
+			turf_footstep = source_loc.mediumtyranidfootstep
+		if(FOOTSTEP_TYRANID_HEAVY)
+			turf_footstep = source_loc.heavytyranidfootstep
 		if(FOOTSTEP_MOB_BAREFOOT)
 			turf_footstep = source_loc.barefootstep
 		if(FOOTSTEP_MOB_SHOE)

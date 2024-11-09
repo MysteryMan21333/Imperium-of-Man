@@ -81,9 +81,9 @@
 
 /datum/config_entry/flag/fun_allowed //a lot of LRP features
 
-/datum/config_entry/flag/xenos_on_strike
+/datum/config_entry/flag/tyranids_on_strike
 
-/datum/config_entry/number/min_xenos
+/datum/config_entry/number/min_tyranids
 	config_entry_value = 5
 	min_val = 1
 /datum/config_entry/keyed_list/lobby_music
@@ -105,7 +105,7 @@
 /datum/config_entry/flag/roony
 	config_entry_value = FALSE
 
-/datum/config_entry/number/marine_respawn
+/datum/config_entry/number/guardsman_respawn
 	config_entry_value = 30 MINUTES
 	max_val = 30 MINUTES
 	min_val = 0

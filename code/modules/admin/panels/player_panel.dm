@@ -218,11 +218,11 @@
 						M_job = H.job.title
 				else if(ismonkey(M))
 					M_job = "Monkey"
-				else if(isxeno(M))
-					if(M.client?.prefs?.xeno_name && M.client.prefs.xeno_name != "Undefined")
-						M_job = "Xenomorph - [M.client.prefs.xeno_name]"
+				else if(istyranid(M))
+					if(M.client?.prefs?.tyranid_name && M.client.prefs.tyranid_name != "Undefined")
+						M_job = "Tyranid - [M.client.prefs.tyranid_name]"
 					else
-						M_job = "Xenomorph"
+						M_job = "Tyranid"
 				else
 					M_job = "Carbon-based"
 
@@ -327,9 +327,9 @@
 			dat += "<td>Ghost</td>"
 		else if(ismonkey(M))
 			dat += "<td>Monkey</td>"
-		else if(isxeno(M))
-			if(M.client?.prefs?.xeno_name && M.client.prefs.xeno_name != "Undefined")
-				dat += "<td>alien - [M.client.prefs.xeno_name]</td>"
+		else if(istyranid(M))
+			if(M.client?.prefs?.tyranid_name && M.client.prefs.tyranid_name != "Undefined")
+				dat += "<td>alien - [M.client.prefs.tyranid_name]</td>"
 			else
 				dat += "<td>alien</td>"
 		else

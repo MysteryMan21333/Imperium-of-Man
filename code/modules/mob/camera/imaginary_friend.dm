@@ -18,7 +18,7 @@
 	var/mob/living/owner
 
 	//HUD toggles
-	var/xeno_mobhud = FALSE
+	var/tyranid_mobhud = FALSE
 	var/med_squad_mobhud = FALSE
 
 	var/datum/action/innate/imaginary_join/join
@@ -27,8 +27,8 @@
 	var/list/outfit_choices = list(/datum/job/spatial_agent,
 									/datum/job/spatial_agent/galaxy_red,
 									/datum/job/spatial_agent/galaxy_blue,
-									/datum/job/spatial_agent/xeno_suit,
-									/datum/job/spatial_agent/marine_officer,
+									/datum/job/spatial_agent/tyranid_suit,
+									/datum/job/spatial_agent/guardsman_officer,
 									)
 
 /mob/camera/imaginary_friend/Login()
@@ -120,14 +120,14 @@
 	human_image = get_flat_human_icon(null, SSjob.GetJobType(outfit_choice), client.prefs)
 	Show()
 
-/mob/camera/imaginary_friend/verb/toggle_xeno_mobhud()
+/mob/camera/imaginary_friend/verb/toggle_tyranid_mobhud()
 	set category = "Imaginary Friend"
-	set name = "Toggle Xeno Status HUD"
+	set name = "Toggle Tyranid Status HUD"
 
-	xeno_mobhud = !xeno_mobhud
-	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_XENO_STATUS]
-	xeno_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-	to_chat(src, span_notice("You have [xeno_mobhud ? "enabled" : "disabled"] the Xeno Status HUD."))
+	tyranid_mobhud = !tyranid_mobhud
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_TYRANID_STATUS]
+	tyranid_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
+	to_chat(src, span_notice("You have [tyranid_mobhud ? "enabled" : "disabled"] the Tyranid Status HUD."))
 
 /mob/camera/imaginary_friend/verb/toggle_human_mobhud()
 	set category = "Imaginary Friend"
@@ -136,9 +136,9 @@
 	med_squad_mobhud = !med_squad_mobhud
 	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_OBSERVER]
 	med_squad_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-	H = GLOB.huds[DATA_HUD_SQUAD_TERRAGOV]
+	H = GLOB.huds[DATA_HUD_SQUAD_IMPERIUM]
 	med_squad_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
-	H = GLOB.huds[DATA_HUD_SQUAD_SOM]
+	H = GLOB.huds[DATA_HUD_SQUAD_CHAOS]
 	med_squad_mobhud ? H.add_hud_to(src) : H.remove_hud_from(src)
 	to_chat(src, span_notice("You have [med_squad_mobhud ? "enabled" : "disabled"] the Human Status HUD."))
 
@@ -187,7 +187,7 @@
 			create_chat_message(src, get_default_language(), message)
 
 	//speech bubble
-	var/mutable_appearance/MA = mutable_appearance('icons/mob/talk.dmi', src, "default[say_test(message)]", FLY_LAYER)
+	var/mutable_appearance/MA = mutable_appearance('modular_imperium/master_files/icons/mob/talk.dmi', src, "default[say_test(message)]", FLY_LAYER)
 	MA.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), MA, owner.client ? list(client, owner.client) : list(client), 3 SECONDS)
 

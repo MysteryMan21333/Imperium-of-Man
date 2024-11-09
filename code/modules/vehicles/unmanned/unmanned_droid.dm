@@ -1,6 +1,6 @@
 /obj/vehicle/unmanned/droid
 	name = "XN-43-H combat droid"
-	desc = "A prototype combat droid, first deployed as a prototype to fight the xeno menace in the frontier sytems."
+	desc = "A prototype combat droid, first deployed as a prototype to fight the tyranid menace in the frontier sytems."
 	icon_state = "droidcombat"
 	move_delay = 3
 	max_integrity = 150
@@ -129,7 +129,7 @@
 /obj/vehicle/unmanned/droid/ripley
 	name = "XN-27-C cargo droid"
 	desc = "A cargo droid, rigged with experimental technology to allow AI control. The claw is not standard and cannot grasp warheads."
-	icon = 'icons/obj/powerloader.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/powerloader.dmi'
 	icon_state = "ai_powerloader"
 	move_delay = 7
 	max_integrity = 550

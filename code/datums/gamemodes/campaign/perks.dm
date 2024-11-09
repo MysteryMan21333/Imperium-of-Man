@@ -79,7 +79,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 	unlock_cost = 800
 
 /datum/perk/shield_overclock/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
-	if(owner_stats.faction == FACTION_TERRAGOV)
+	if(owner_stats.faction == FACTION_IMPERIUM)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/light_shield/overclocked, /datum/loadout_item/suit_slot/light_shield, jobs_supported)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/medium_shield/overclocked, /datum/loadout_item/suit_slot/medium_shield, jobs_supported)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/heavy_shield/overclocked, /datum/loadout_item/suit_slot/heavy_shield, jobs_supported)
@@ -88,16 +88,16 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/medium_shield/overclocked/medic, SQUAD_CORPSMAN, owner)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/light_shield/overclocked/engineer, SQUAD_ENGINEER, owner)
 
-	else if(owner_stats.faction == FACTION_SOM)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_light_shield/overclocked, /datum/loadout_item/suit_slot/som_light_shield, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_light_shield/overclocked/veteran, /datum/loadout_item/suit_slot/som_light_shield/veteran, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_medium_shield/overclocked, /datum/loadout_item/suit_slot/som_medium_shield, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_heavy_shield/overclocked, /datum/loadout_item/suit_slot/som_heavy_shield, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_heavy_shield/breacher/overclocked, /datum/loadout_item/suit_slot/som_heavy_shield/breacher, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_light_shield/overclocked/medic, /datum/loadout_item/suit_slot/som_medic/light, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_medium_shield/overclocked/medic, /datum/loadout_item/suit_slot/som_medic, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_light_shield/overclocked/engineer, /datum/loadout_item/suit_slot/som_engineer/light, jobs_supported)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_medium_shield/overclocked/engineer, /datum/loadout_item/suit_slot/som_engineer, jobs_supported)
+	else if(owner_stats.faction == FACTION_CHAOS)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_light_shield/overclocked, /datum/loadout_item/suit_slot/chaos_light_shield, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_light_shield/overclocked/veteran, /datum/loadout_item/suit_slot/chaos_light_shield/veteran, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_medium_shield/overclocked, /datum/loadout_item/suit_slot/chaos_medium_shield, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_heavy_shield/overclocked, /datum/loadout_item/suit_slot/chaos_heavy_shield, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_heavy_shield/breacher/overclocked, /datum/loadout_item/suit_slot/chaos_heavy_shield/breacher, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_light_shield/overclocked/medic, /datum/loadout_item/suit_slot/chaos_medic/light, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_medium_shield/overclocked/medic, /datum/loadout_item/suit_slot/chaos_medic, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_light_shield/overclocked/engineer, /datum/loadout_item/suit_slot/chaos_engineer/light, jobs_supported)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_medium_shield/overclocked/engineer, /datum/loadout_item/suit_slot/chaos_engineer, jobs_supported)
 
 //perks that give a trait
 /datum/perk/trait
@@ -130,23 +130,23 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 	owner.maxHealth -= health_mod
 
 /datum/perk/trait/hp_boost/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
-	if(owner_stats.faction == FACTION_TERRAGOV)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/heavy_tyr/universal, /datum/loadout_item/suit_slot/heavy_tyr, SQUAD_MARINE)
+	if(owner_stats.faction == FACTION_IMPERIUM)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/heavy_tyr/universal, /datum/loadout_item/suit_slot/heavy_tyr, SQUAD_GUARDSMAN)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/heavy_tyr/universal, list(SQUAD_LEADER, FIELD_COMMANDER), owner)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/tyr/universal, list(SQUAD_LEADER, FIELD_COMMANDER), owner)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/heavy_tyr/medic, list(SQUAD_CORPSMAN), owner)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/tyr/corpsman, list(SQUAD_CORPSMAN), owner)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/heavy_tyr/engineer, list(SQUAD_ENGINEER), owner)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/tyr/engineer, list(SQUAD_ENGINEER), owner)
-	else if(owner_stats.faction == FACTION_SOM)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_heavy_tyr/universal, /datum/loadout_item/suit_slot/som_heavy_tyr, SOM_SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/som_heavy_tyr/universal, /datum/loadout_item/suit_slot/som_heavy_tyr/veteran, SOM_SQUAD_VETERAN)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/som_heavy_tyr/universal, list(SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER), owner)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/som_tyr/universal, list(SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER), owner)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/som_heavy_tyr/medic, list(SOM_SQUAD_CORPSMAN), owner)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/som_tyr/medic, list(SOM_SQUAD_CORPSMAN), owner)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/som_heavy_tyr/engineer, list(SOM_SQUAD_ENGINEER), owner)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/som_tyr/engineer, list(SOM_SQUAD_ENGINEER), owner)
+	else if(owner_stats.faction == FACTION_CHAOS)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_heavy_tyr/universal, /datum/loadout_item/suit_slot/chaos_heavy_tyr, CHAOS_SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_slot/chaos_heavy_tyr/universal, /datum/loadout_item/suit_slot/chaos_heavy_tyr/veteran, CHAOS_SQUAD_VETERAN)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/chaos_heavy_tyr/universal, list(CHAOS_SQUAD_LEADER, CHAOS_FIELD_COMMANDER), owner)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/chaos_tyr/universal, list(CHAOS_SQUAD_LEADER, CHAOS_FIELD_COMMANDER), owner)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/chaos_heavy_tyr/medic, list(CHAOS_SQUAD_CORPSMAN), owner)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/chaos_tyr/medic, list(CHAOS_SQUAD_CORPSMAN), owner)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_slot/chaos_heavy_tyr/engineer, list(CHAOS_SQUAD_ENGINEER), owner)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/helmet/chaos_tyr/engineer, list(CHAOS_SQUAD_ENGINEER), owner)
 
 /datum/perk/trait/hp_boost/two
 	name = "Extreme constitution"
@@ -174,7 +174,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 	req_desc = "Requires Melee specialisation."
 	ui_icon = "axe"
 	traits = list(TRAIT_AXE_EXPERT)
-	jobs_supported = list(SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN, SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER)
+	jobs_supported = list(CHAOS_SQUAD_GUARDSMAN, CHAOS_SQUAD_VETERAN, CHAOS_SQUAD_LEADER, CHAOS_FIELD_COMMANDER)
 	unlock_cost = 450
 	prereq_perks = list(/datum/perk/skill_mod/melee/two)
 
@@ -189,7 +189,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 	req_desc = "Requires Melee specialisation."
 	ui_icon = "sword"
 	traits = list(TRAIT_SWORD_EXPERT)
-	jobs_supported = list(SQUAD_MARINE, SQUAD_LEADER, FIELD_COMMANDER, SOM_SQUAD_MARINE, SOM_SQUAD_ENGINEER, SOM_SQUAD_VETERAN, SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER)
+	jobs_supported = list(SQUAD_GUARDSMAN, SQUAD_LEADER, FIELD_COMMANDER, CHAOS_SQUAD_GUARDSMAN, CHAOS_SQUAD_ENGINEER, CHAOS_SQUAD_VETERAN, CHAOS_SQUAD_LEADER, CHAOS_FIELD_COMMANDER)
 	unlock_cost = 450
 	prereq_perks = list(/datum/perk/skill_mod/melee/two)
 
@@ -286,11 +286,11 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 /datum/perk/skill_mod/pistols/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
 	if(!istype(owner_stats))
 		return
-	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/som/extended_pistol, jobs_supported, owner, 0)
-	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/som/highpower, jobs_supported, owner, 0)
-	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/marine/highpower, jobs_supported, owner, 0)
-	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/marine/laser_pistol, jobs_supported, owner, 0)
-	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/marine/standard_revolver, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/chaos/extended_pistol, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/chaos/highpower, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/guardsman/highpower, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/guardsman/laser_pistol, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/secondary/gun/guardsman/standard_revolver, jobs_supported, owner, 0)
 
 /datum/perk/skill_mod/shotguns
 	name = "Advanced shotgun training"
@@ -305,8 +305,8 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 /datum/perk/skill_mod/shotguns/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
 	if(!istype(owner_stats))
 		return
-	owner_stats.unlock_loadout_item(/datum/loadout_item/back/som_shotgun, jobs_supported, owner, 0)
-	owner_stats.unlock_loadout_item(/datum/loadout_item/back/marine_shotgun, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/back/chaos_shotgun, jobs_supported, owner, 0)
+	owner_stats.unlock_loadout_item(/datum/loadout_item/back/guardsman_shotgun, jobs_supported, owner, 0)
 
 /datum/perk/skill_mod/rifles
 	name = "Advanced rifle training"
@@ -321,11 +321,11 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 /datum/perk/skill_mod/rifles/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
 	if(!istype(owner_stats))
 		return
-	if(owner_stats.faction == FACTION_TERRAGOV)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/marine/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/marine/standard_rifle, SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/marine/standard_carbine/enhanced, /datum/loadout_item/suit_store/main_gun/marine/standard_carbine, SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/marine/scout_carbine/enhanced, /datum/loadout_item/suit_store/main_gun/marine/scout_carbine, SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/marine/suppressed_carbine/enhanced, /datum/loadout_item/suit_store/main_gun/marine/suppressed_carbine, SQUAD_MARINE)
+	if(owner_stats.faction == FACTION_IMPERIUM)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/guardsman/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/guardsman/standard_rifle, SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/guardsman/standard_carbine/enhanced, /datum/loadout_item/suit_store/main_gun/guardsman/standard_carbine, SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/guardsman/scout_carbine/enhanced, /datum/loadout_item/suit_store/main_gun/guardsman/scout_carbine, SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/guardsman/suppressed_carbine/enhanced, /datum/loadout_item/suit_store/main_gun/guardsman/suppressed_carbine, SQUAD_GUARDSMAN)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/corpsman/carbine/enhanced, /datum/loadout_item/suit_store/main_gun/corpsman/carbine, SQUAD_CORPSMAN)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/corpsman/assault_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/corpsman/assault_rifle, SQUAD_CORPSMAN)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/engineer/carbine/enhanced, /datum/loadout_item/suit_store/main_gun/engineer/carbine, SQUAD_ENGINEER)
@@ -335,21 +335,21 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/field_commander/carbine/enhanced, /datum/loadout_item/suit_store/main_gun/field_commander/carbine, FIELD_COMMANDER)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/field_commander/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/field_commander/standard_rifle, FIELD_COMMANDER)
 
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/marine/plasma_rifle, SQUAD_MARINE, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/guardsman/plasma_rifle, SQUAD_GUARDSMAN, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/corpsman/plasma_rifle, SQUAD_CORPSMAN, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/engineer/plasma_rifle, SQUAD_ENGINEER, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/squad_leader/plasma_rifle, SQUAD_LEADER, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/field_commander/plasma_rifle, FIELD_COMMANDER, owner, 0)
 
-	else if(owner_stats.faction == FACTION_SOM)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_marine/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/som_marine/standard_rifle, SOM_SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_marine/suppressed_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/som_marine/suppressed_rifle, SOM_SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_medic/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/som_medic/standard_rifle, SOM_SQUAD_CORPSMAN)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_engineer/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/som_engineer/standard_rifle, SOM_SQUAD_ENGINEER)
+	else if(owner_stats.faction == FACTION_CHAOS)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_guardsman/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_guardsman/standard_rifle, CHAOS_SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_guardsman/suppressed_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_guardsman/suppressed_rifle, CHAOS_SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_medic/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_medic/standard_rifle, CHAOS_SQUAD_CORPSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_engineer/standard_rifle/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_engineer/standard_rifle, CHAOS_SQUAD_ENGINEER)
 
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/som_marine/volkite_charger, SOM_SQUAD_MARINE, owner, 0)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/som_medic/volkite_charger, SOM_SQUAD_CORPSMAN, owner, 0)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/som_engineer/volkite_charger, SOM_SQUAD_ENGINEER, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/chaos_guardsman/volkite_charger, CHAOS_SQUAD_GUARDSMAN, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/chaos_medic/volkite_charger, CHAOS_SQUAD_CORPSMAN, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/chaos_engineer/volkite_charger, CHAOS_SQUAD_ENGINEER, owner, 0)
 
 /datum/perk/skill_mod/smgs
 	name = "Advanced SMG training"
@@ -364,23 +364,23 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 /datum/perk/skill_mod/smgs/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
 	if(!istype(owner_stats))
 		return
-	if(owner_stats.faction == FACTION_TERRAGOV)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/marine/standard_smg/enhanced, /datum/loadout_item/suit_store/main_gun/marine/standard_smg, SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/marine/smg_and_shield/enhanced, /datum/loadout_item/suit_store/main_gun/marine/smg_and_shield, SQUAD_MARINE)
+	if(owner_stats.faction == FACTION_IMPERIUM)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/guardsman/standard_smg/enhanced, /datum/loadout_item/suit_store/main_gun/guardsman/standard_smg, SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/guardsman/smg_and_shield/enhanced, /datum/loadout_item/suit_store/main_gun/guardsman/smg_and_shield, SQUAD_GUARDSMAN)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/corpsman/standard_smg/enhanced, /datum/loadout_item/suit_store/main_gun/corpsman/standard_smg, SQUAD_CORPSMAN)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/engineer/standard_smg/enhanced, /datum/loadout_item/suit_store/main_gun/engineer/standard_smg, SQUAD_ENGINEER)
 		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/squad_leader/standard_smg/enhanced, /datum/loadout_item/suit_store/main_gun/squad_leader/standard_smg, SQUAD_LEADER)
 
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/marine/plasma_smg, SQUAD_MARINE, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/guardsman/plasma_smg, SQUAD_GUARDSMAN, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/corpsman/plasma_smg, SQUAD_CORPSMAN, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/engineer/plasma_smg, SQUAD_ENGINEER, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/squad_leader/plasma_smg, SQUAD_LEADER, owner, 0)
 		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/field_commander/plasma_smg, FIELD_COMMANDER, owner, 0)
-	else if(owner_stats.faction == FACTION_SOM)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_marine/smg/enhanced, /datum/loadout_item/suit_store/main_gun/som_marine/smg, SOM_SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_marine/smg_and_shield/enhanced, /datum/loadout_item/suit_store/main_gun/som_marine/smg_and_shield, SOM_SQUAD_MARINE)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_medic/smg/enhanced, /datum/loadout_item/suit_store/main_gun/som_medic/smg, SOM_SQUAD_CORPSMAN)
-		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/som_engineer/smg/enhanced, /datum/loadout_item/suit_store/main_gun/som_engineer/smg, SOM_SQUAD_ENGINEER)
+	else if(owner_stats.faction == FACTION_CHAOS)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_guardsman/smg/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_guardsman/smg, CHAOS_SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_guardsman/smg_and_shield/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_guardsman/smg_and_shield, CHAOS_SQUAD_GUARDSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_medic/smg/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_medic/smg, CHAOS_SQUAD_CORPSMAN)
+		owner_stats.replace_loadout_option(/datum/loadout_item/suit_store/main_gun/chaos_engineer/smg/enhanced, /datum/loadout_item/suit_store/main_gun/chaos_engineer/smg, CHAOS_SQUAD_ENGINEER)
 
 /datum/perk/skill_mod/heavy_weapons
 	name = "Heavy weapon specialisation"
@@ -395,13 +395,13 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 /datum/perk/skill_mod/heavy_weapons/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
 	if(!istype(owner_stats))
 		return
-	if(owner_stats.faction == FACTION_TERRAGOV)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/back/tgmc_heam_rocket_bag, SQUAD_MARINE, owner, 0)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/marine/plasma_cannon, SQUAD_MARINE, owner, 0)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/back/minigun_powerpack, SQUAD_MARINE, owner, 0)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/marine/minigun, SQUAD_MARINE, owner, 0)
-	else if(owner_stats.faction == FACTION_SOM)
-		owner_stats.unlock_loadout_item(/datum/loadout_item/back/som_heat_rocket_bag, SOM_SQUAD_VETERAN, owner, 0)
+	if(owner_stats.faction == FACTION_IMPERIUM)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/back/tgmc_heam_rocket_bag, SQUAD_GUARDSMAN, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/guardsman/plasma_cannon, SQUAD_GUARDSMAN, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/back/minigun_powerpack, SQUAD_GUARDSMAN, owner, 0)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/suit_store/main_gun/guardsman/minigun, SQUAD_GUARDSMAN, owner, 0)
+	else if(owner_stats.faction == FACTION_CHAOS)
+		owner_stats.unlock_loadout_item(/datum/loadout_item/back/chaos_heat_rocket_bag, CHAOS_SQUAD_VETERAN, owner, 0)
 
 /datum/perk/skill_mod/smartgun
 	name = "Advanced smartgun training"
@@ -436,7 +436,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 	desc = "Advanced leadership training and battlefield experience resulting in an improved ability to command and control the soldiers under your command. Improved effectiveness and range when issuing orders."
 	ui_icon = "leadership"
 	leadership = 1
-	jobs_supported = list(SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN, SOM_SQUAD_LEADER, SOM_STAFF_OFFICER, SOM_FIELD_COMMANDER, SOM_COMMANDER)
+	jobs_supported = list(SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN, CHAOS_SQUAD_LEADER, CHAOS_STAFF_OFFICER, CHAOS_FIELD_COMMANDER, CHAOS_COMMANDER)
 	unlock_cost = 1100
 
 /datum/perk/skill_mod/medical
@@ -450,15 +450,15 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 /datum/perk/skill_mod/medical/unlock_bonus(mob/living/carbon/owner, datum/individual_stats/owner_stats)
 	if(!istype(owner_stats))
 		return
-	if(owner_stats.faction == FACTION_TERRAGOV)
+	if(owner_stats.faction == FACTION_IMPERIUM)
 		for(var/job_type in owner_stats.loadouts)
 			owner_stats.replace_loadout_option(/datum/loadout_item/r_pocket/standard_first_aid/standard_improved, /datum/loadout_item/r_pocket/standard_first_aid, job_type)
 			owner_stats.replace_loadout_option(/datum/loadout_item/l_pocket/standard_first_aid/standard_improved, /datum/loadout_item/l_pocket/standard_first_aid, job_type)
 
-	else if(owner_stats.faction == FACTION_SOM)
+	else if(owner_stats.faction == FACTION_CHAOS)
 		for(var/job_type in owner_stats.loadouts)
-			owner_stats.replace_loadout_option(/datum/loadout_item/r_pocket/som_standard_first_aid/standard_improved, /datum/loadout_item/r_pocket/som_standard_first_aid, job_type)
-			owner_stats.replace_loadout_option(/datum/loadout_item/l_pocket/som_standard_first_aid/standard_improved, /datum/loadout_item/l_pocket/som_standard_first_aid, job_type)
+			owner_stats.replace_loadout_option(/datum/loadout_item/r_pocket/chaos_standard_first_aid/standard_improved, /datum/loadout_item/r_pocket/chaos_standard_first_aid, job_type)
+			owner_stats.replace_loadout_option(/datum/loadout_item/l_pocket/chaos_standard_first_aid/standard_improved, /datum/loadout_item/l_pocket/chaos_standard_first_aid, job_type)
 
 /datum/perk/skill_mod/stamina
 	name = "Improved stamina"

@@ -24,8 +24,8 @@
 	initiate_chat_message = "TARGET ACQUIRED ROCKET RUN INBOUND."
 	initiate_screen_message = "Rockets hot, incoming!"
 	initiate_title = "Avenger-4"
-	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_pilot
-	start_visual = /obj/effect/temp_visual/dropship_flyby/som
+	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/chaos_pilot
+	start_visual = /obj/effect/temp_visual/dropship_flyby/chaos
 	uses = 2
 
 /datum/fire_support/incendiary_rockets/do_impact(turf/target_turf)

@@ -4,7 +4,7 @@
 /obj/item/circuitboard/computer/card
 	name = "ID Console (Computer Board)"
 	icon_state = "command"
-	build_path = /obj/machinery/computer/marine_card
+	build_path = /obj/machinery/computer/guardsman_card
 
 
 /obj/item/circuitboard/computer/card/centcom
@@ -17,7 +17,7 @@
 	name = "Circuit board (Security Camera Monitor)"
 	build_path = /obj/machinery/computer/security
 	var/network = list("military")
-	req_access = list(ACCESS_MARINE_BRIG)
+	req_access = list(ACCESS_GUARDSMAN_BRIG)
 	var/locked = 1
 
 /obj/item/circuitboard/computer/security/construct(obj/machinery/computer/security/C)
@@ -55,9 +55,9 @@
 	name = "Circuit board (Communications)"
 	build_path = /obj/machinery/computer/communications
 
-/obj/item/circuitboard/computer/marine_card
+/obj/item/circuitboard/computer/guardsman_card
 	name = "Circuit board (ID Computer)"
-	build_path = /obj/machinery/computer/marine_card
+	build_path = /obj/machinery/computer/guardsman_card
 
 /obj/item/circuitboard/computer/supplycomp
 	name = "Circuit board (Requisitions ASRS Computer)"
@@ -75,9 +75,9 @@
 	name = "Circuit board (Requisitions Targeting Computer)"
 	build_path = /obj/machinery/computer/supplydrop_console
 
-/obj/item/circuitboard/computer/marine_card/centcom
+/obj/item/circuitboard/computer/guardsman_card/centcom
 	name = "Circuit board (CentCom ID Computer)"
-	build_path = /obj/machinery/computer/marine_card/centcom
+	build_path = /obj/machinery/computer/guardsman_card/centcom
 
 /obj/item/circuitboard/computer/teleporter
 	name = "Circuit board (Teleporter)"

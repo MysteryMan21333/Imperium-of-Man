@@ -14,11 +14,11 @@ Buildable meters
 	var/pipename
 	force = 7
 	throwforce = 7
-	icon = 'icons/obj/items/pipe_item.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/pipe_item.dmi'
 	icon_state = "simple"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "buildpipe"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -185,11 +185,11 @@ Buildable meters
 /obj/item/pipe_meter
 	name = "meter"
 	desc = "A meter that can be laid on pipes."
-	icon = 'icons/obj/items/pipe_item.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/pipe_item.dmi'
 	icon_state = "meter"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/engineering_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/engineering_right.dmi',
 	)
 	worn_icon_state = "buildpipe"
 	w_class = WEIGHT_CLASS_BULKY

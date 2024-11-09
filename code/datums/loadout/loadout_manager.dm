@@ -212,11 +212,11 @@
 							new_highlight.variant = CAPE_SCARF
 					attachments.Remove(module)
 					attachments.Add(new_highlight)
-			if(ispath(module.item_type, /obj/item/armor_module/armor/visor/marine/eva/skull))
+			if(ispath(module.item_type, /obj/item/armor_module/armor/visor/guardsman/eva/skull))
 				var/datum/item_representation/armor_module/armor/new_glyph = new
 				new_glyph.item_type = /obj/item/armor_module/armor/visor_glyph
 				module.attachments.Add(new_glyph)
-			if(ispath(module.item_type, /obj/item/armor_module/armor/visor/marine/old/eva/skull))
+			if(ispath(module.item_type, /obj/item/armor_module/armor/visor/guardsman/old/eva/skull))
 				var/datum/item_representation/armor_module/armor/new_glyph = new
 				new_glyph.item_type = /obj/item/armor_module/armor/visor_glyph/old
 				module.attachments.Add(new_glyph)
@@ -254,11 +254,11 @@
 		if(loadout.version < 11)
 			var/datum/item_representation/old_hat = loadout.item_list[slot_head_str]
 			var/datum/item_representation/hat/modular_helmet/new_hat = new
-			if("[old_hat.item_type]" == "/obj/item/clothing/head/helmet/marine/robot")
+			if("[old_hat.item_type]" == "/obj/item/clothing/head/helmet/guardsman/robot")
 				new_hat.item_type = /obj/item/clothing/head/modular/robot
-			if("[old_hat.item_type]" == "/obj/item/clothing/head/helmet/marine/robot/light")
+			if("[old_hat.item_type]" == "/obj/item/clothing/head/helmet/guardsman/robot/light")
 				new_hat.item_type = /obj/item/clothing/head/modular/robot/light
-			if("[old_hat.item_type]" == "/obj/item/clothing/head/helmet/marine/robot/heavy")
+			if("[old_hat.item_type]" == "/obj/item/clothing/head/helmet/guardsman/robot/heavy")
 				new_hat.item_type = /obj/item/clothing/head/modular/robot/heavy
 			new_hat.bypass_vendor_check = old_hat.bypass_vendor_check
 			new_hat.current_variant = "black"
@@ -293,11 +293,11 @@
 		if(loadout.version < 11)
 			var/datum/item_representation/suit_with_storage/old_armor = loadout.item_list[slot_wear_suit_str]
 			var/datum/item_representation/armor_suit/modular_armor/new_armor = new
-			if("[old_armor.item_type]" == "/obj/item/clothing/suit/storage/marine/robot")
+			if("[old_armor.item_type]" == "/obj/item/clothing/suit/storage/guardsman/robot")
 				new_armor.item_type = /obj/item/clothing/suit/modular/robot
-			if("[old_armor.item_type]" == "/obj/item/clothing/suit/storage/marine/robot/light")
+			if("[old_armor.item_type]" == "/obj/item/clothing/suit/storage/guardsman/robot/light")
 				new_armor.item_type = /obj/item/clothing/suit/modular/robot/light
-			if("[old_armor.item_type]" == "/obj/item/clothing/suit/storage/marine/robot/heavy")
+			if("[old_armor.item_type]" == "/obj/item/clothing/suit/storage/guardsman/robot/heavy")
 				new_armor.item_type = /obj/item/clothing/suit/modular/robot/heavy
 			new_armor.bypass_vendor_check = old_armor.bypass_vendor_check
 			new_armor.current_variant = "black"
@@ -316,8 +316,8 @@
 	var/datum/item_representation/boot/footwear = loadout.item_list[slot_shoes_str]
 	if(footwear)
 		if(loadout.version < 11)
-			if("[footwear.item_type]" == "/obj/item/clothing/shoes/marine/full")
-				var/obj/item/clothing/shoes/marine/full/new_boots = new (loadout_vendor)
+			if("[footwear.item_type]" == "/obj/item/clothing/shoes/guardsman/full")
+				var/obj/item/clothing/shoes/guardsman/full/new_boots = new (loadout_vendor)
 				loadout.item_list[slot_shoes_str] = new /datum/item_representation/boot(new_boots)
 				qdel(new_boots)
 

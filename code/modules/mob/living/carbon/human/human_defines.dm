@@ -1,15 +1,15 @@
 /mob/living/carbon/human
 	name = "unknown"
 	real_name = "unknown"
-	icon = 'icons/mob/human.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human.dmi'
 	icon_state = "body_m_s"
 	blocks_emissive = EMISSIVE_BLOCK_NONE
-	hud_possible = list(HEALTH_HUD, STATUS_HUD_SIMPLE, STATUS_HUD, XENO_EMBRYO_HUD, XENO_REAGENT_HUD, WANTED_HUD, SQUAD_HUD_TERRAGOV, SQUAD_HUD_SOM, ORDER_HUD, PAIN_HUD, XENO_DEBUFF_HUD, HEART_STATUS_HUD)
+	hud_possible = list(HEALTH_HUD, STATUS_HUD_SIMPLE, STATUS_HUD, TYRANID_EMBRYO_HUD, TYRANID_REAGENT_HUD, WANTED_HUD, SQUAD_HUD_IMPERIUM, SQUAD_HUD_CHAOS, ORDER_HUD, PAIN_HUD, TYRANID_DEBUFF_HUD, HEART_STATUS_HUD)
 	health_threshold_crit = -50
 	melee_damage = 5
 	m_intent = MOVE_INTENT_WALK
 	buckle_flags = CAN_BE_BUCKLED|CAN_BUCKLE
-	resistance_flags = XENO_DAMAGEABLE|PORTAL_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE|PORTAL_IMMUNE
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
 
 	hud_type = /datum/hud/human
@@ -141,8 +141,8 @@
 	var/damageoverlaytemp = 0
 	///chestburst state
 	var/chestburst = CARBON_NO_CHEST_BURST
-	///The cooldown for being pushed by xenos on harm intent
-	COOLDOWN_DECLARE(xeno_push_delay)
+	///The cooldown for being pushed by tyranids on harm intent
+	COOLDOWN_DECLARE(tyranid_push_delay)
 
 	/// This is the cooldown on suffering additional effects for when shock gets high
 	COOLDOWN_DECLARE(last_shock_effect)

@@ -1,14 +1,14 @@
-/datum/xeno_caste/scorpion
+/datum/tyranid_caste/scorpion
 	caste_name = "Scorpion"
 	display_name = "Scorpion"
 	upgrade_name = ""
 	caste_desc = ""
 	wound_type = ""
 
-	caste_type_path = /mob/living/carbon/xenomorph/scorpion
+	caste_type_path = /mob/living/carbon/tyranid/scorpion
 
-	tier = XENO_TIER_MINION
-	upgrade = XENO_UPGRADE_BASETYPE
+	tier = TYRANID_TIER_MINION
+	upgrade = TYRANID_UPGRADE_BASETYPE
 
 	// *** Melee Attacks *** //
 	melee_damage = 12
@@ -33,13 +33,13 @@
 
 	// *** Ranged Attack *** //
 	spit_delay = 1.8 SECONDS
-	spit_types = list(/datum/ammo/xeno/acid/passthrough)
+	spit_types = list(/datum/ammo/tyranid/acid/passthrough)
 
-	minimap_icon = "xenominion"
+	minimap_icon = "tyranidminion"
 
 	// *** Abilities *** //
 	actions = list(
-		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/activable/xeno/xeno_spit,
-		/datum/action/ability/activable/xeno/corrosive_acid/drone,
+		/datum/action/ability/tyranid_action/tyranid_resting,
+		/datum/action/ability/activable/tyranid/tyranid_spit,
+		/datum/action/ability/activable/tyranid/corrosive_acid/drone,
 	)

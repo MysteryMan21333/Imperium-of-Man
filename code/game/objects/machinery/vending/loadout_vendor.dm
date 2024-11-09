@@ -1,7 +1,7 @@
 /obj/machinery/loadout_vendor
 	name = "automated loadout vendor"
-	desc = "An advanced vendor used by the TGMC to rapidly equip their marines"
-	icon = 'icons/obj/machines/vending.dmi'
+	desc = "An advanced vendor used by the TGMC to rapidly equip their guardsmans"
+	icon = 'modular_imperium/master_files/icons/obj/machines/vending.dmi'
 	icon_state = "specialist"
 	density = TRUE
 	anchored = TRUE

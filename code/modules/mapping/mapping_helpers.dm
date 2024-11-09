@@ -259,8 +259,8 @@
 	var/area/area = get_area(src)
 	area.area_flags |= flag_type
 
-/obj/effect/mapping_helpers/area_flag_injector/marine_base
-	flag_type = MARINE_BASE
+/obj/effect/mapping_helpers/area_flag_injector/guardsman_base
+	flag_type = GUARDSMAN_BASE
 
 /obj/effect/mapping_helpers/area_flag_injector/no_weeding
 	flag_type = DISALLOW_WEEDING

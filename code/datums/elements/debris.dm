@@ -71,7 +71,7 @@
 	smoke_visuals = new(source, /particles/impact_smoke)
 	smoke_visuals.particles.position = list(position_offset, position_offset)
 	smoke_visuals.particles.velocity = list(x_component_smoke, y_component_smoke)
-	if(debris && !(P.ammo.ammo_behavior_flags & AMMO_ENERGY || P.ammo.ammo_behavior_flags & AMMO_XENO))
+	if(debris && !(P.ammo.ammo_behavior_flags & AMMO_ENERGY || P.ammo.ammo_behavior_flags & AMMO_TYRANID))
 		debris_visuals = new(source, /particles/debris)
 		debris_visuals.particles.position = generator(GEN_CIRCLE, position_offset, position_offset)
 		debris_visuals.particles.velocity = list(x_component, y_component)

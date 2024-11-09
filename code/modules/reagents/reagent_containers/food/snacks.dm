@@ -2,7 +2,7 @@
 /obj/item/reagent_containers/food/snacks
 	name = "snack"
 	desc = "yummy"
-	icon = 'icons/obj/items/food/food.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food.dmi'
 	var/bitesize = 1
 	var/bitecount = 0
 	var/trash = null
@@ -47,10 +47,10 @@
 /obj/item/reagent_containers/food/snacks/attack_self(mob/user as mob)
 	return
 
-/obj/item/reagant_containers/food/snacks/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/reagant_containers/food/snacks/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!CONFIG_GET(flag/fun_allowed))
 		return FALSE
-	attack_hand(xeno_attacker)
+	attack_hand(tyranid_attacker)
 
 /obj/item/reagent_containers/food/snacks/attack(mob/M, mob/user, def_zone)
 	if(!reagents.total_volume)						//Shouldn't be needed but it checks to see if it has anything left in it.
@@ -245,8 +245,8 @@
 //	the bites. No more contained reagents = no more bites.
 
 //Here is an example of the new formatting for anyone who wants to add more food items.
-///obj/item/reagent_containers/food/snacks/burger/xeno			//Identification path for the object.
-//	 name = "Xenoburger"												//Name that displays in the UI.
+///obj/item/reagent_containers/food/snacks/burger/tyranid			//Identification path for the object.
+//	 name = "Tyranidburger"												//Name that displays in the UI.
 //	 desc = "Smells caustic. Tastes like heresy."						//Duh
 //	 icon_state = "xburger"												//Refers to an icon in food.dmi
 //	 list_reagents = list(/datum/reagent/consumable/nutriment = 2)			//This is what is in the food item. you may copy/paste
@@ -254,7 +254,7 @@
 //	 bitesize = 3														//This is the amount each bite consumes.
 
 
-///obj/item/reagent_containers/food/snacks/burger/xeno/Initialize(mapload)		//Absolute pathing for procs, please.
+///obj/item/reagent_containers/food/snacks/burger/tyranid/Initialize(mapload)		//Absolute pathing for procs, please.
 //	 . = ..()															//Calls the parent proc, don't forget to add this.
 
 
@@ -270,7 +270,7 @@
 	desc = "Nougat, love it or hate it."
 	icon_state = "candy"
 	trash = /obj/item/trash/candy
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	filling_color = "#7D5F46"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
 	tastes = list("candy" = 1)
@@ -286,7 +286,7 @@
 /obj/item/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
 	desc = "It's a handful of candy corn. Cannot be stored in a detective's hat, alas."
-	icon = 'icons/obj/items/food/candy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/candy.dmi'
 	icon_state = "candy_corn"
 	filling_color = "#FFFCB0"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 2)
@@ -296,7 +296,7 @@
 /obj/item/reagent_containers/food/snacks/chips
 	name = "chips"
 	desc = "Commander Riker's What-The-Crisps"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "chips"
 	trash = /obj/item/trash/chips
 	filling_color = "#E8C31E"
@@ -307,7 +307,7 @@
 	name = "cookie"
 	desc = "COOKIE!!!"
 	icon_state = "COOKIE!!!"
-	icon = 'icons/obj/items/food/confectionary.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/confectionary.dmi'
 	filling_color = "#DBC94F"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("cookie" = 1)
@@ -315,7 +315,7 @@
 /obj/item/reagent_containers/food/snacks/chocolatebar
 	name = "Chocolate Bar"
 	desc = "Such sweet, fattening food."
-	icon = 'icons/obj/items/food/candy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/candy.dmi'
 	icon_state = "chocolatebar"
 	filling_color = "#7D5F46"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 2)
@@ -325,7 +325,7 @@
 /obj/item/reagent_containers/food/snacks/chocolateegg
 	name = "Chocolate Egg"
 	desc = "Such sweet, fattening food."
-	icon = 'icons/obj/items/food/candy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/candy.dmi'
 	icon_state = "chocolateegg"
 	filling_color = "#7D5F46"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 2)
@@ -335,7 +335,7 @@
 /obj/item/reagent_containers/food/snacks/egg
 	name = "egg"
 	desc = "An egg!"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "egg"
 	filling_color = "#FDFFD1"
 	var/egg_color
@@ -394,7 +394,7 @@
 /obj/item/reagent_containers/food/snacks/boiledegg
 	name = "Boiled egg"
 	desc = "A hard boiled egg."
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "egg"
 	filling_color = "#FFFFFF"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -403,7 +403,7 @@
 /obj/item/reagent_containers/food/snacks/flour
 	name = "flour"
 	desc = "A small bag filled with some flour."
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("chalky wheat" = 1)
@@ -413,7 +413,7 @@
 
 	name = "organ"
 	desc = "It's good for you."
-	icon = 'icons/obj/items/organs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/organs.dmi'
 	icon_state = "appendix"
 	filling_color = "#E00D34"
 	bitesize = 3
@@ -426,7 +426,7 @@
 
 /obj/item/reagent_containers/food/snacks/worm
 	name = "worm"
-	icon = 'icons/obj/items/items.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/items.dmi'
 	icon_state = "worm"
 	desc = "A small worm. It looks a bit lonely."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -446,7 +446,7 @@
 /obj/item/reagent_containers/food/snacks/tofurkey
 	name = "Tofurkey"
 	desc = "A fake turkey made from tofu."
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "tofurkey"
 	filling_color = "#FFFEE0"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/toxin/sleeptoxin = 3)
@@ -456,7 +456,7 @@
 /obj/item/reagent_containers/food/snacks/stuffing
 	name = "Stuffing"
 	desc = "Moist, peppery breadcrumbs for filling the body cavities of dead birds. Dig in!"
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "stuffing"
 	filling_color = "#C9AC83"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -465,7 +465,7 @@
 /obj/item/reagent_containers/food/snacks/carpmeat
 	name = "carp fillet"
 	desc = "A fillet of spess carp meat"
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "fishfillet"
 	filling_color = "#FFDEFE"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/carpotoxin = 3)
@@ -475,7 +475,7 @@
 /obj/item/reagent_containers/food/snacks/fishfingers
 	name = "Fish Fingers"
 	desc = "A finger of fish."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "fishfingers"
 	filling_color = "#FFDEFE"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/carpotoxin = 3)
@@ -485,7 +485,7 @@
 /obj/item/reagent_containers/food/snacks/hugemushroomslice
 	name = "huge mushroom slice"
 	desc = "A slice from a huge mushroom."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "hugemushroomslice"
 	filling_color = "#E0D7C5"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/psilocybin = 3)
@@ -495,7 +495,7 @@
 /obj/item/reagent_containers/food/snacks/tomatomeat
 	name = "tomato slice"
 	desc = "A slice from a huge tomato"
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "tomatomeat"
 	filling_color = "#DB0000"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -505,7 +505,7 @@
 /obj/item/reagent_containers/food/snacks/bearmeat
 	name = "bear meat"
 	desc = "A very manly slab of meat."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "bearmeat"
 	filling_color = "#DB0000"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/toxin/sleeptoxin = 3)
@@ -515,7 +515,7 @@
 /obj/item/reagent_containers/food/snacks/raw_lizard_sausage
 	name = "raw Lizard blood sausage"
 	desc = "A raw lizard blood sausage, ready to be cured on a drying rack."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "raw_lizard_sausage"
 	list_reagents = list(/datum/reagent/consumable/nutriment/protein = 5, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/blood = 3)
 	tastes = list("meat" = 1, "black pudding" = 1)
@@ -523,7 +523,7 @@
 /obj/item/reagent_containers/food/snacks/lizard_sausage
 	name = "\improper Lizard blood sausage"
 	desc = "A coarse dry-cured blood sausage, traditionally made from 100% organically sourced lizard."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "lizard_sausage"
 	list_reagents = list(/datum/reagent/consumable/nutriment/protein = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("meat" = 1, "black pudding" = 1)
@@ -531,7 +531,7 @@
 /obj/item/reagent_containers/food/snacks/meatball
 	name = "meatball"
 	desc = "A great meal all round."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "meatball"
 	filling_color = "#DB0000"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -541,7 +541,7 @@
 /obj/item/reagent_containers/food/snacks/sausage
 	name = "Sausage"
 	desc = "A piece of mixed, long meat."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "sausage"
 	filling_color = "#DB0000"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -551,7 +551,7 @@
 /obj/item/reagent_containers/food/snacks/donkpocket
 	name = "Donk-pocket"
 	desc = "The food of choice for the seasoned traitor."
-	icon = 'icons/obj/items/food/confectionary.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/confectionary.dmi'
 	icon_state = "donkpocket"
 	filling_color = "#DEDEAB"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -584,7 +584,7 @@
 /obj/item/reagent_containers/food/snacks/muffin
 	name = "Muffin"
 	desc = "A delicious and spongy little cake"
-	icon = 'icons/obj/items/food/confectionary.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/confectionary.dmi'
 	icon_state = "muffin"
 	filling_color = "#E0CF9B"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -664,7 +664,7 @@
 /obj/item/reagent_containers/food/snacks/cubancarp
 	name = "Cuban Carp"
 	desc = "A grifftastic sandwich that burns your tongue and then leaves it numb!"
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "cubancarp"
 	trash = /obj/item/trash/plate
 	filling_color = "#E9ADFF"
@@ -676,7 +676,7 @@
 	name = "Popcorn"
 	desc = "Now let's find some cinema."
 	icon_state = "popcorn"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	trash = /obj/item/trash/popcorn
 	var/unpopped = 0
 	filling_color = "#FFFAD4"
@@ -700,7 +700,7 @@
 	name = "Scaredy's Private Reserve Beef Jerky"
 	icon_state = "sosjerky"
 	desc = "Beef jerky made from the finest space cows."
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	trash = /obj/item/trash/sosjerky
 	filling_color = "#631212"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/sodiumchloride = 2)
@@ -711,7 +711,7 @@
 	name = "4no Raisins"
 	icon_state = "4no_raisins"
 	desc = "Best raisins in the universe. Not sure why."
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	trash = /obj/item/trash/raisins
 	filling_color = "#343834"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 4)
@@ -720,7 +720,7 @@
 /obj/item/reagent_containers/food/snacks/spacetwinkie
 	name = "Space Twinkie"
 	icon_state = "space_twinkie"
-	icon = 'icons/obj/items/food/confectionary.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/confectionary.dmi'
 	desc = "Guaranteed to survive longer than you will."
 	filling_color = "#FFE591"
 	list_reagents = list(/datum/reagent/consumable/sugar = 4)
@@ -729,7 +729,7 @@
 /obj/item/reagent_containers/food/snacks/cheesiehonkers
 	name = "Cheesie Honkers"
 	icon_state = "cheesie_honkers"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	desc = "Bite sized cheesie snacks that will honk all over your mouth"
 	trash = /obj/item/trash/cheesie
 	filling_color = "#FFA305"
@@ -739,7 +739,7 @@
 
 /obj/item/reagent_containers/food/snacks/syndicake
 	name = "Syndi-Cakes"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "syndi_cakes"
 	desc = "An extremely moist snack cake that tastes just as good after being nuked."
 	filling_color = "#FF5D05"
@@ -761,7 +761,7 @@
 /obj/item/reagent_containers/food/snacks/fries
 	name = "Space Fries"
 	desc = "AKA: French Fries, Freedom Fries, etc."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "fries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -782,7 +782,7 @@
 /obj/item/reagent_containers/food/snacks/cheesyfries
 	name = "Cheesy Fries"
 	desc = "Fries. Covered in cheese. Duh."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "cheesyfries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -793,7 +793,7 @@
 /obj/item/reagent_containers/food/snacks/fortunecookie
 	name = "Fortune cookie"
 	desc = "A true prophecy in each cookie!"
-	icon = 'icons/obj/items/food/confectionary.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/confectionary.dmi'
 	icon_state = "fortune_cookie"
 	filling_color = "#E8E79E"
 	trash = /obj/item/trash/fortunecookie
@@ -812,7 +812,7 @@
 /obj/item/reagent_containers/food/snacks/meatsteak
 	name = "Meat steak"
 	desc = "A piece of hot spicy meat."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "meatsteak"
 	trash = /obj/item/trash/plate
 	filling_color = "#7A3D11"
@@ -823,7 +823,7 @@
 /obj/item/reagent_containers/food/snacks/monkeycube
 	name = "monkey cube"
 	desc = "Just add water!"
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "monkeycube"
 	bitesize = 12
 	filling_color = "#ADAC7F"
@@ -932,7 +932,7 @@
 /obj/item/reagent_containers/food/snacks/baguette
 	name = "Baguette"
 	desc = "Bon appetit!"
-	icon = 'icons/obj/items/food/bread.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/bread.dmi'
 	icon_state = "baguette"
 	filling_color = "#E3D796"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/blackpepper = 1, /datum/reagent/consumable/sodiumchloride = 1)
@@ -942,7 +942,7 @@
 /obj/item/reagent_containers/food/snacks/fishandchips
 	name = "Fish and Chips"
 	desc = "I do say so myself chap."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "fishandchips"
 	filling_color = "#E3D796"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/toxin/carpotoxin = 3)
@@ -989,7 +989,7 @@
 /obj/item/reagent_containers/food/snacks/poppypretzel
 	name = "Poppy Pretzel"
 	desc = "A large soft pretzel full of POP!"
-	icon = 'icons/obj/items/food/confectionary.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/confectionary.dmi'
 	icon_state = "poppypretzel"
 	filling_color = "#AB7D2E"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -999,7 +999,7 @@
 /obj/item/reagent_containers/food/snacks/carrotfries
 	name = "Carrot Fries"
 	desc = "Tasty fries from fresh Carrots."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "carrotfries"
 	trash = /obj/item/trash/plate
 	filling_color = "#FAA005"
@@ -1010,7 +1010,7 @@
 /obj/item/reagent_containers/food/snacks/candiedapple
 	name = "Candied Apple"
 	desc = "An apple coated in sugary sweetness."
-	icon = 'icons/obj/items/food/candy.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/candy.dmi'
 	icon_state = "candiedapple"
 	filling_color = "#F21873"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 2)
@@ -1020,7 +1020,7 @@
 /obj/item/reagent_containers/food/snacks/twobreadold
 	name = "Two Bread"
 	desc = "It is very bitter and winy."
-	icon = 'icons/obj/items/food/bread.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/bread.dmi'
 	icon_state = "twobread"
 	filling_color = "#DBCC9A"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -1030,7 +1030,7 @@
 /obj/item/reagent_containers/food/snacks/mint
 	name = "mint"
 	desc = "it is only wafer thin."
-	icon = 'icons/obj/items/food/food.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food.dmi'
 	icon_state = "mint"
 	filling_color = "#F2F2F2"
 	list_reagents = list(/datum/reagent/toxin/minttoxin = 1)
@@ -1063,7 +1063,7 @@
 /obj/item/reagent_containers/food/snacks/tossedsalad
 	name = "tossed salad"
 	desc = "A proper salad, basic and simple, with little bits of carrot, tomato and apple intermingled. Vegan!"
-	icon = 'icons/obj/items/food/soupsalad.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/soupsalad.dmi'
 	icon_state = "herbsalad"
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#76B87F"
@@ -1074,7 +1074,7 @@
 /obj/item/reagent_containers/food/snacks/validsalad
 	name = "valid salad"
 	desc = "It's just a salad of questionable 'herbs' with meatballs and fried potato slices. Nothing suspicious about it."
-	icon = 'icons/obj/items/food/soupsalad.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/soupsalad.dmi'
 	icon_state = "validsalad"
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#76B87F"
@@ -1095,7 +1095,7 @@
 /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
 	name = "Cheese wheel"
 	desc = "A big wheel of delcious Cheddar."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "cheesewheel"
 	slice_path = /obj/item/reagent_containers/food/snacks/cheesewedge
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
@@ -1105,7 +1105,7 @@
 /obj/item/reagent_containers/food/snacks/cheesewedge
 	name = "Cheese wedge"
 	desc = "A wedge of delicious Cheddar. The cheese wheel it was cut from can't have gone far."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "cheesewedge"
 	filling_color = "#FFF700"
 	bitesize = 2
@@ -1114,7 +1114,7 @@
 /obj/item/reagent_containers/food/snacks/baked_cheese
 	name = "baked cheese wheel"
 	desc = "A baked cheese wheel, melty and delicious."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "baked_cheese"
 	list_reagents = list(/datum/reagent/consumable/nutriment/protein = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/nutriment = 5)
 	tastes = list("cheese" = 1)
@@ -1123,7 +1123,7 @@
 /obj/item/reagent_containers/food/snacks/baked_cheese_platter
 	name = "backed cheese platter"
 	desc = "A baked cheese wheel: a favourite for sharing. Usually served with crispy bread slices for dipping, because the only thing better than good cheese is good cheese on bread."
-	icon = 'icons/obj/items/food/cheeseandfries.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/cheeseandfries.dmi'
 	icon_state = "baked_cheese_platter"
 	list_reagents = list(/datum/reagent/consumable/nutriment/protein = 12, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/consumable/nutriment = 8)
 	tastes = list("cheese" = 1, "bread" = 1)
@@ -1141,7 +1141,7 @@
 	name = "Cracker"
 	desc = "It's a salted cracker."
 	icon_state = "cracker"
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	filling_color = "#F5DEB8"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	tastes = list("cracker" = 1)
@@ -1185,7 +1185,7 @@
 /obj/item/reagent_containers/food/snacks/dough
 	name = "dough"
 	desc = "A piece of dough."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "dough"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	bitesize = 2
@@ -1206,7 +1206,7 @@
 /obj/item/reagent_containers/food/snacks/sliceable/flatdough
 	name = "flat dough"
 	desc = "A flattened dough."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "flat dough"
 	slice_path = /obj/item/reagent_containers/food/snacks/doughslice
 	slices_num = 3
@@ -1216,7 +1216,7 @@
 /obj/item/reagent_containers/food/snacks/doughslice
 	name = "dough slice"
 	desc = "A building block of an impressive dish."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "doughslice"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
@@ -1226,7 +1226,7 @@
 	name = "meat"
 	desc = "A slab of meat"
 	icon_state = "meat"
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	max_integrity = 180
 	filling_color = "#FF1C1C"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -1251,8 +1251,8 @@
 /obj/item/reagent_containers/food/snacks/meat/human
 	desc = "A slab of meat. Looks kinda like pork..."
 
-/obj/item/reagent_containers/food/snacks/meat/xeno
-	icon_state = "xenomeat"
+/obj/item/reagent_containers/food/snacks/meat/tyranid
+	icon_state = "tyranidmeat"
 	filling_color = "#43DE18"
 	tastes = list("meat" = 1, "acid" = 1)
 	bitesize = 6
@@ -1267,7 +1267,7 @@
 /obj/item/reagent_containers/food/snacks/rawcutlet
 	name = "raw cutlet"
 	desc = "A thin piece of raw meat."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "rawcutlet"
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
@@ -1289,7 +1289,7 @@
 /obj/item/reagent_containers/food/snacks/cutlet
 	name = "cutlet"
 	desc = "A tasty meat slice."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "cutlet"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -1299,7 +1299,7 @@
 /obj/item/reagent_containers/food/snacks/rawmeatball
 	name = "raw meatball"
 	desc = "A raw meatball."
-	icon = 'icons/obj/items/food/meat.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/meat.dmi'
 	icon_state = "raw_meatball"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -1311,7 +1311,7 @@
 /obj/item/reagent_containers/food/snacks/hotdog
 	name = "hotdog"
 	desc = "Unrelated to dogs, maybe."
-	icon = 'icons/obj/items/food/food.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food.dmi'
 	icon_state = "hotdog"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -1320,7 +1320,7 @@
 /obj/item/reagent_containers/food/snacks/flatbread
 	name = "flatbread"
 	desc = "Bland but filling."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "flatbread"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -1329,7 +1329,7 @@
 /obj/item/reagent_containers/food/snacks/rawsticks
 	name = "raw potato sticks"
 	desc = "Raw fries, not very tasty."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "rawsticks"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -1338,7 +1338,7 @@
 /obj/item/reagent_containers/food/snacks/packaged_burrito
 	name = "Packaged Burrito"
 	desc = "A hard microwavable burrito. There's no time given for how long to cook it. Packaged by the Nanotrasen Corporation."
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "burrito"
 	bitesize = 2
 	package = TRUE
@@ -1350,13 +1350,13 @@
 		playsound(src.loc,'sound/effects/pageturn2.ogg', 15, 1)
 		balloon_alert(user, "unwraps burrito")
 		package = FALSE
-		icon = 'icons/obj/items/food/mexican.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/items/food/mexican.dmi'
 		icon_state = "openburrito"
 
 /obj/item/reagent_containers/food/snacks/packaged_hdogs
 	name = "Packaged Hotdog"
 	desc = "A singular squishy, room temperature, hot dog. There's no time given for how long to cook it, so you assume its probably good to go. Packaged by the Nanotrasen Corporation."
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "hot_dogs"
 	bitesize = 2
 	package = TRUE
@@ -1368,13 +1368,13 @@
 		playsound(src.loc,'sound/effects/pageturn2.ogg', 15, 1)
 		balloon_alert(user, "unwraps hotdog")
 		package = FALSE
-		icon = 'icons/obj/items/food/food.dmi'
+		icon = 'modular_imperium/master_files/icons/obj/items/food/food.dmi'
 		icon_state = "hotdog"
 
 /obj/item/reagent_containers/food/snacks/upp
 	name = "\improper USL ration"
 	desc = "A sealed, freeze-dried, compressed package containing a single item of food. Commonplace in the USL pirate band and even those who live on Mars, especially those stationed on far-flung colonies. This one is was packaged in 2415."
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	icon_state = "upp_ration"
 	bitesize = 2
 	package = TRUE
@@ -1419,7 +1419,7 @@
 /obj/item/reagent_containers/food/snacks/enrg_bar
 	name = "EnrG Bar"
 	desc = "A calorie-dense bar made with ingredients with unpronounceable names. Somehow, even the packaging is edible."
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	icon_state = "energybar"
 	bitesize = 2
 	w_class = WEIGHT_CLASS_TINY
@@ -1442,7 +1442,7 @@
 /obj/item/reagent_containers/food/snacks/wrapped
 	package = TRUE
 	bitesize = 3
-	icon = 'icons/obj/items/food/packaged.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/packaged.dmi'
 	var/obj/item/trash/wrapper = null //Why this and not trash? Because it pulls the wrapper off when you unwrap it as a trash item.
 
 /obj/item/reagent_containers/food/snacks/wrapped/attack_self(mob/user as mob)
@@ -1514,7 +1514,7 @@
 	package = TRUE
 	bitesize = 4
 	icon_state = "entree"
-	icon = 'icons/obj/items/food/mre.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mre.dmi'
 	var/flavor = "boneless pork ribs"//default value
 
 
@@ -1555,7 +1555,7 @@
 /obj/item/reagent_containers/food/snacks/lollipop
 	name = "lollipop"
 	desc = "A delicious lollipop."
-	icon = 'icons/obj/items/lollipop.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/lollipop.dmi'
 	icon_state = "lollipop_stick"
 	worn_icon_state = "lollipop_stick"
 	equip_slot_flags = ITEM_SLOT_MASK
@@ -1570,7 +1570,7 @@
 
 /obj/item/reagent_containers/food/snacks/lollipop/Initialize(mapload)
 	. = ..()
-	head = mutable_appearance('icons/obj/items/lollipop.dmi', "lollipop_head")
+	head = mutable_appearance('modular_imperium/master_files/icons/obj/items/lollipop.dmi', "lollipop_head")
 	change_head_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 
 //makes lollipops actually wearable as masks and still edible the old fashioned way.
@@ -1625,7 +1625,7 @@
 	tastes = list("cough syrup" = 1, "artificial sweetness" = 1)
 
 /obj/item/reagent_containers/food/snacks/lollipop/tramadol/combat
-	desc = "A lolipop devised after realizations that a massive amount of marines end up with a crippling opiod addiction, meant to fight against that. Whether it works or not is up to you, really. Can be eaten or put in the mask slot"
+	desc = "A lolipop devised after realizations that a massive amount of guardsmans end up with a crippling opiod addiction, meant to fight against that. Whether it works or not is up to you, really. Can be eaten or put in the mask slot"
 	list_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/medicine/tramadol = 10)
 	tastes = list("cough syrup" = 1, "artificial sweetness" = 1)
 

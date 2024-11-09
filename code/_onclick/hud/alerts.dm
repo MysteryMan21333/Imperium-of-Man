@@ -95,7 +95,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	closeToolTip(usr)
 
 /atom/movable/screen/alert
-	icon = 'icons/mob/screen_alert.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/screen_alert.dmi'
 	icon_state = "default"
 	name = "Alert"
 	desc = "Something seems to have gone wrong with this alert, so report this bug please"
@@ -134,7 +134,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 		if(NOTIFY_ORBIT)
 			G.ManualFollow(target)
 		if(NOTIFY_JOIN_AS_LARVA)
-			if(!isxeno(target))
+			if(!istyranid(target))
 				return FALSE
 			switch(tgui_alert(G, "What would you like to do?", "Burrowed larva source available", list("Join as Larva", "Jump to it", "Cancel")))
 				if("Join as Larva")

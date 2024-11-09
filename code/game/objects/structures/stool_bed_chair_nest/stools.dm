@@ -10,10 +10,10 @@
 /obj/item/stool
 	name = "stool"
 	desc = "Uh-hoh, bar is heating up."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/weapons/melee_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/weapons/melee_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/melee_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/weapons/melee_right.dmi',
 	)
 	icon_state = "stool"
 	force = 15
@@ -48,7 +48,7 @@
 		var/obj/item/stack/sheet/metal/m = new/obj/item/stack/sheet/metal
 		m.loc = get_turf(src)
 		var/mob/living/T = M
-		if(istype(T) && !isxeno(T))
+		if(istype(T) && !istyranid(T))
 			T.Paralyze(20 SECONDS)
 		T.apply_damage(20, blocked = MELEE)
 		UPDATEHEALTH(T)

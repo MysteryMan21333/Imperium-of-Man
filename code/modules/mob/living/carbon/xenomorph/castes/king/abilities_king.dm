@@ -2,26 +2,26 @@
 // *********** Nightfall
 // ***************************************
 
-/datum/action/ability/activable/xeno/nightfall
+/datum/action/ability/activable/tyranid/nightfall
 	name = "Nightfall"
 	action_icon_state = "nightfall"
-	action_icon = 'icons/Xeno/actions/king.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/king.dmi'
 	desc = "Shut down all electrical lights nearby for 10 seconds."
 	cooldown_duration = 45 SECONDS
 	ability_cost = 100
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_NIGHTFALL,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_NIGHTFALL,
 	)
 	/// How far nightfall will have an effect
 	var/range = 12
 	/// How long till the lights go on again
 	var/duration = 10 SECONDS
 
-/datum/action/ability/activable/xeno/nightfall/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/nightfall/on_cooldown_finish()
 	to_chat(owner, span_notice("We gather enough mental strength to shut down lights again."))
 	return ..()
 
-/datum/action/ability/activable/xeno/nightfall/use_ability()
+/datum/action/ability/activable/tyranid/nightfall/use_ability()
 	playsound(owner, 'sound/magic/nightfall.ogg', 50, 1)
 	succeed_activate()
 	add_cooldown()
@@ -37,30 +37,30 @@
 #define PETRIFY_RANGE 7
 #define PETRIFY_DURATION 6 SECONDS
 #define PETRIFY_WINDUP_TIME 2 SECONDS
-/datum/action/ability/xeno_action/petrify
+/datum/action/ability/tyranid_action/petrify
 	name = "Petrify"
 	action_icon_state = "petrify"
-	action_icon = 'icons/Xeno/actions/king.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/king.dmi'
 	desc = "After a windup, petrifies all humans looking at you. While petrified humans are immune to damage, but also can't attack."
 	ability_cost = 100
 	cooldown_duration = 30 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PETRIFY,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_PETRIFY,
 	)
 	///List of mobs currently petrified
 	var/list/mob/living/carbon/human/petrified_humans = list()
 
-/datum/action/ability/xeno_action/petrify/clean_action()
+/datum/action/ability/tyranid_action/petrify/clean_action()
 	end_effects()
 	return ..()
 
-/datum/action/ability/xeno_action/petrify/action_activate()
+/datum/action/ability/tyranid_action/petrify/action_activate()
 	var/obj/effect/overlay/eye/eye = new
 	owner.vis_contents += eye
 	flick("eye_opening", eye)
 	playsound(owner, 'sound/effects/petrify_charge.ogg', 50)
-	REMOVE_TRAIT(owner, TRAIT_STAGGER_RESISTANT, XENO_TRAIT)
+	REMOVE_TRAIT(owner, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT)
 	ADD_TRAIT(owner, TRAIT_IMMOBILE, PETRIFY_ABILITY_TRAIT)
 
 	if(!do_after(owner, PETRIFY_WINDUP_TIME, IGNORE_HELD_ITEM, owner, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_action), FALSE, ABILITY_USE_BUSY)))
@@ -107,16 +107,16 @@
 	succeed_activate()
 
 ///cleans up when the charge up is finished or interrupted
-/datum/action/ability/xeno_action/petrify/proc/finish_charging()
+/datum/action/ability/tyranid_action/petrify/proc/finish_charging()
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILE, PETRIFY_ABILITY_TRAIT)
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(xeno_owner.xeno_caste.caste_flags & CASTE_STAGGER_RESISTANT)
-		ADD_TRAIT(owner, TRAIT_STAGGER_RESISTANT, XENO_TRAIT)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(tyranid_owner.tyranid_caste.caste_flags & CASTE_STAGGER_RESISTANT)
+		ADD_TRAIT(owner, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT)
 
 ///ends all combat-relazted effects
-/datum/action/ability/xeno_action/petrify/proc/end_effects()
+/datum/action/ability/tyranid_action/petrify/proc/end_effects()
 	for(var/mob/living/carbon/human/human AS in petrified_humans)
 		human.notransform = FALSE
 		human.status_flags &= ~GODMODE
@@ -127,27 +127,27 @@
 	petrified_humans.Cut()
 
 ///callback for removing the eye from viscontents
-/datum/action/ability/xeno_action/petrify/proc/remove_eye(obj/effect/eye)
+/datum/action/ability/tyranid_action/petrify/proc/remove_eye(obj/effect/eye)
 	owner.vis_contents -= eye
 
 // ***************************************
 // *********** Off-Guard
 // ***************************************
 #define OFF_GUARD_RANGE 8
-/datum/action/ability/activable/xeno/off_guard
+/datum/action/ability/activable/tyranid/off_guard
 	name = "Off-guard"
 	action_icon_state = "off_guard"
-	action_icon = 'icons/Xeno/actions/king.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/king.dmi'
 	desc = "Muddles the mind of an enemy, making it harder for them to focus their aim for a while."
 	ability_cost = 100
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_OFFGUARD,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_OFFGUARD,
 	)
 
 
-/datum/action/ability/activable/xeno/off_guard/can_use_ability(atom/A, silent = FALSE, override_flags)
+/datum/action/ability/activable/tyranid/off_guard/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -169,7 +169,7 @@
 			target.balloon_alert(owner, "already dead")
 		return FALSE
 
-/datum/action/ability/activable/xeno/off_guard/use_ability(atom/target)
+/datum/action/ability/activable/tyranid/off_guard/use_ability(atom/target)
 	var/mob/living/carbon/human/human_target = target
 	human_target.apply_status_effect(STATUS_EFFECT_GUN_SKILL_SCATTER_DEBUFF, 100)
 	human_target.apply_status_effect(STATUS_EFFECT_CONFUSED, 40)
@@ -190,30 +190,30 @@
 #define SHATTERING_ROAR_DAMAGE 40
 #define SHATTERING_ROAR_CHARGE_TIME 1.2 SECONDS
 
-/datum/action/ability/activable/xeno/shattering_roar
+/datum/action/ability/activable/tyranid/shattering_roar
 	name = "Shattering roar"
 	action_icon_state = "shattering_roar"
-	action_icon = 'icons/Xeno/actions/king.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/king.dmi'
 	desc = "Unleash a mighty psychic roar, knocking down any foes in your path and weakening them."
 	ability_cost = 225
 	cooldown_duration = 45 SECONDS
 	target_flags = ABILITY_TURF_TARGET
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SHATTERING_ROAR,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_SHATTERING_ROAR,
 	)
 	/// Tracks victims to make sure we only hit them once
 	var/list/victims_hit = list()
 
-/datum/action/ability/activable/xeno/shattering_roar/use_ability(atom/target)
+/datum/action/ability/activable/tyranid/shattering_roar/use_ability(atom/target)
 	if(!target)
 		return
 	owner.dir = get_cardinal_dir(owner, target)
 
 	playsound(owner, 'sound/voice/alien/king_roar.ogg', 70, sound_range = 20)
-	var/mob/living/carbon/xenomorph/king/king_owner = owner
+	var/mob/living/carbon/tyranid/king/king_owner = owner
 	if(istype(king_owner))
 		king_owner.icon_state = "King Screeching"
-	REMOVE_TRAIT(owner, TRAIT_STAGGER_RESISTANT, XENO_TRAIT) //Vulnerable while charging up
+	REMOVE_TRAIT(owner, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT) //Vulnerable while charging up
 	ADD_TRAIT(owner, TRAIT_IMMOBILE, SHATTERING_ROAR_ABILITY_TRAIT)
 
 	if(!do_after(owner, SHATTERING_ROAR_CHARGE_TIME, NONE, owner, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_action), FALSE, ABILITY_USE_BUSY)))
@@ -223,7 +223,7 @@
 		return fail_activate()
 
 	finish_charging()
-	playsound(owner, 'sound/voice/alien/xenos_roaring.ogg', 90, sound_range = 30)
+	playsound(owner, 'modular_imperium/master_files/sound/voice/alien/xenos_roaring.ogg', 90, sound_range = 30)
 	for(var/mob/living/carbon/human/human_victim AS in GLOB.humans_by_zlevel["[owner.z]"])
 		if(get_dist(human_victim, owner) > 9)
 			continue
@@ -238,7 +238,7 @@
 	succeed_activate()
 
 ///Carries out the attack iteratively based on distance from source
-/datum/action/ability/activable/xeno/shattering_roar/proc/execute_attack(iteration, list/turf/turfs_to_attack, range, target, turf/source)
+/datum/action/ability/activable/tyranid/shattering_roar/proc/execute_attack(iteration, list/turf/turfs_to_attack, range, target, turf/source)
 	if(iteration > range)
 		victims_hit.Cut()
 		return
@@ -251,7 +251,7 @@
 	addtimer(CALLBACK(src, PROC_REF(execute_attack), iteration, turfs_to_attack, range, target, source), SHATTERING_ROAR_SPEED)
 
 ///Applies attack effects to everything relevant on a given turf
-/datum/action/ability/activable/xeno/shattering_roar/proc/attack_turf(turf/turf_victim, severity)
+/datum/action/ability/activable/tyranid/shattering_roar/proc/attack_turf(turf/turf_victim, severity)
 	new /obj/effect/temp_visual/shattering_roar(turf_victim)
 	for(var/victim in turf_victim)
 		if(victim in victims_hit)
@@ -259,7 +259,7 @@
 		victims_hit += victim
 		if(iscarbon(victim))
 			var/mob/living/carbon/carbon_victim = victim
-			if(carbon_victim.stat == DEAD || isxeno(carbon_victim))
+			if(carbon_victim.stat == DEAD || istyranid(carbon_victim))
 				continue
 			carbon_victim.apply_damage(SHATTERING_ROAR_DAMAGE * severity, BRUTE, blocked = MELEE)
 			carbon_victim.apply_damage(SHATTERING_ROAR_DAMAGE * severity, STAMINA)
@@ -280,14 +280,14 @@
 				window_victim.ex_act(EXPLODE_DEVASTATE)
 
 ///cleans up when the charge up is finished or interrupted
-/datum/action/ability/activable/xeno/shattering_roar/proc/finish_charging()
+/datum/action/ability/activable/tyranid/shattering_roar/proc/finish_charging()
 	owner.update_icons()
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILE, SHATTERING_ROAR_ABILITY_TRAIT)
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(xeno_owner.xeno_caste.caste_flags & CASTE_STAGGER_RESISTANT)
-		ADD_TRAIT(owner, TRAIT_STAGGER_RESISTANT, XENO_TRAIT)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(tyranid_owner.tyranid_caste.caste_flags & CASTE_STAGGER_RESISTANT)
+		ADD_TRAIT(owner, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT)
 
 /obj/effect/temp_visual/shattering_roar
 	name = "shattering_roar"
@@ -304,16 +304,16 @@
 #define ZEROFORM_BEAM_RANGE 10
 #define ZEROFORM_CHARGE_TIME 2 SECONDS
 #define ZEROFORM_TICK_RATE 0.3 SECONDS
-/datum/action/ability/xeno_action/zero_form_beam
+/datum/action/ability/tyranid_action/zero_form_beam
 	name = "Zero-Form Energy Beam"
 	action_icon_state = "zero_form_beam"
-	action_icon = 'icons/Xeno/actions/king.dmi'
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/king.dmi'
 	desc = "After a windup, concentrates the hives energy into a forward-facing beam that pierces everything, hurting living beings and vehicles."
 	ability_cost = 25
 	cooldown_duration = 10 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_ZEROFORMBEAM,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_ZEROFORMBEAM,
 	)
 	///list of turfs we are hitting while shooting our beam
 	var/list/turf/targets
@@ -326,11 +326,11 @@
 	///ref to looping timer for the fire loop
 	var/timer_ref
 
-/datum/action/ability/xeno_action/zero_form_beam/Destroy()
+/datum/action/ability/tyranid_action/zero_form_beam/Destroy()
 	QDEL_NULL(sound_loop)
 	return ..()
 
-/datum/action/ability/xeno_action/zero_form_beam/New(Target)
+/datum/action/ability/tyranid_action/zero_form_beam/New(Target)
 	. = ..()
 	sound_loop = new
 
@@ -339,7 +339,7 @@
 	alpha = 0
 	animate(src, alpha = 255, time = ZEROFORM_CHARGE_TIME)
 
-/datum/action/ability/xeno_action/zero_form_beam/can_use_action(silent, override_flags)
+/datum/action/ability/tyranid_action/zero_form_beam/can_use_action(silent, override_flags)
 	. = ..()
 	if(!.)
 		return
@@ -348,7 +348,7 @@
 			owner.balloon_alert(owner, "too early")
 		return FALSE
 
-/datum/action/ability/xeno_action/zero_form_beam/action_activate()
+/datum/action/ability/tyranid_action/zero_form_beam/action_activate()
 	if(timer_ref)
 		stop_beaming()
 		return
@@ -376,7 +376,7 @@
 	particles = new(owner, particles_type)
 	beam = owner.loc.beam(targets[length(targets)], "plasmabeam", beam_type = /obj/effect/ebeam/zeroform)
 	playsound(owner, 'sound/effects/alien/king_beam_charge.ogg', 80)
-	REMOVE_TRAIT(owner, TRAIT_STAGGER_RESISTANT, XENO_TRAIT)
+	REMOVE_TRAIT(owner, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT)
 	ADD_TRAIT(owner, TRAIT_IMMOBILE, ZERO_FORM_BEAM_ABILITY_TRAIT)
 
 	if(!do_after(owner, ZEROFORM_CHARGE_TIME, IGNORE_HELD_ITEM, owner, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_action), FALSE, ABILITY_USE_BUSY)))
@@ -390,13 +390,13 @@
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILE, ZERO_FORM_BEAM_ABILITY_TRAIT)
 	sound_loop.start(owner)
 	RegisterSignals(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_ATOM_DIR_CHANGE), PROC_REF(stop_beaming))
-	var/mob/living/carbon/xenomorph/king/king_owner = owner
+	var/mob/living/carbon/tyranid/king/king_owner = owner
 	if(istype(king_owner))
 		king_owner.icon_state = "King Screeching"
 	execute_attack()
 
 /// recursive proc for firing the actual beam
-/datum/action/ability/xeno_action/zero_form_beam/proc/execute_attack()
+/datum/action/ability/tyranid_action/zero_form_beam/proc/execute_attack()
 	if(!can_use_action(TRUE))
 		stop_beaming()
 		return
@@ -419,7 +419,7 @@
 	timer_ref = addtimer(CALLBACK(src, PROC_REF(execute_attack)), ZEROFORM_TICK_RATE, TIMER_STOPPABLE)
 
 ///ends and cleans up beam
-/datum/action/ability/xeno_action/zero_form_beam/proc/stop_beaming()
+/datum/action/ability/tyranid_action/zero_form_beam/proc/stop_beaming()
 	SIGNAL_HANDLER
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_ATOM_DIR_CHANGE))
 	sound_loop.stop(owner)
@@ -433,11 +433,11 @@
 	owner.update_icons()
 	add_cooldown()
 
-	if(!isxeno(owner))
+	if(!istyranid(owner))
 		return
-	var/mob/living/carbon/xenomorph/xeno_owner = owner
-	if(xeno_owner.xeno_caste.caste_flags & CASTE_STAGGER_RESISTANT)
-		ADD_TRAIT(owner, TRAIT_STAGGER_RESISTANT, XENO_TRAIT)
+	var/mob/living/carbon/tyranid/tyranid_owner = owner
+	if(tyranid_owner.tyranid_caste.caste_flags & CASTE_STAGGER_RESISTANT)
+		ADD_TRAIT(owner, TRAIT_STAGGER_RESISTANT, TYRANID_TRAIT)
 
 /particles/zero_form
 	width = 400
@@ -470,41 +470,41 @@
 // ***************************************
 // *********** Psychic Summon
 // ***************************************
-/datum/action/ability/xeno_action/psychic_summon
+/datum/action/ability/tyranid_action/psychic_summon
 	name = "Psychic Summon"
 	action_icon_state = "stomp"
-	action_icon = 'icons/Xeno/actions/crusher.dmi'
-	desc = "Summons all xenos in a hive to the caller's location, uses all plasma to activate."
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/crusher.dmi'
+	desc = "Summons all tyranids in a hive to the caller's location, uses all plasma to activate."
 	ability_cost = 900
 	cooldown_duration = 10 MINUTES
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_HIVE_SUMMON,
+		KEYBINDING_NORMAL = COMSIG_TYRANIDABILITY_HIVE_SUMMON,
 	)
 
-/datum/action/ability/activable/xeno/psychic_summon/on_cooldown_finish()
+/datum/action/ability/activable/tyranid/psychic_summon/on_cooldown_finish()
 	to_chat(owner, span_warning("The hives power swells. We may summon our sisters again."))
 	return ..()
 
-/datum/action/ability/xeno_action/psychic_summon/can_use_action(silent, override_flags)
+/datum/action/ability/tyranid_action/psychic_summon/can_use_action(silent, override_flags)
 	. = ..()
 	if(!.)
 		return
-	var/mob/living/carbon/xenomorph/X = owner
-	if(length(X.hive.get_all_xenos()) <= 1)
+	var/mob/living/carbon/tyranid/X = owner
+	if(length(X.hive.get_all_tyranids()) <= 1)
 		if(!silent)
 			owner.balloon_alert(owner, "noone to call")
 		return FALSE
 
 GLOBAL_LIST_EMPTY(active_summons)
 
-/datum/action/ability/xeno_action/psychic_summon/action_activate()
-	var/mob/living/carbon/xenomorph/X = owner
+/datum/action/ability/tyranid_action/psychic_summon/action_activate()
+	var/mob/living/carbon/tyranid/X = owner
 
 	log_game("[key_name(owner)] has begun summoning hive in [AREACOORD(owner)]")
-	xeno_message("King: \The [owner] has begun a psychic summon in <b>[get_area(owner)]</b>!", hivenumber = X.hivenumber)
-	var/list/allxenos = X.hive.get_all_xenos()
-	for(var/mob/living/carbon/xenomorph/sister AS in allxenos)
+	tyranid_message("King: \The [owner] has begun a psychic summon in <b>[get_area(owner)]</b>!", hivenumber = X.hivenumber)
+	var/list/alltyranids = X.hive.get_all_tyranids()
+	for(var/mob/living/carbon/tyranid/sister AS in alltyranids)
 		if(sister.z != owner.z)
 			continue
 		sister.add_filter("summonoutline", 2, outline_filter(1, COLOR_VIOLET))
@@ -513,40 +513,40 @@ GLOBAL_LIST_EMPTY(active_summons)
 	request_admins()
 	if(!do_after(X, 10 SECONDS, IGNORE_HELD_ITEM, X, BUSY_ICON_HOSTILE, extra_checks = CALLBACK(src, PROC_REF(is_active_summon))))
 		add_cooldown(5 SECONDS)
-		for(var/mob/living/carbon/xenomorph/sister AS in allxenos)
+		for(var/mob/living/carbon/tyranid/sister AS in alltyranids)
 			sister.remove_filter("summonoutline")
 		return fail_activate()
 
-	allxenos = X.hive.get_all_xenos() //refresh the list to account for any changes during the channel
+	alltyranids = X.hive.get_all_tyranids() //refresh the list to account for any changes during the channel
 	var/sisters_teleported = 0
-	for(var/mob/living/carbon/xenomorph/sister AS in allxenos)
+	for(var/mob/living/carbon/tyranid/sister AS in alltyranids)
 		sister.remove_filter("summonoutline")
 		if(sister.z == owner.z)
 			sister.forceMove(get_turf(X))
 			sisters_teleported ++
 
-	log_game("[key_name(owner)] has summoned hive ([sisters_teleported] Xenos) in [AREACOORD(owner)]")
+	log_game("[key_name(owner)] has summoned hive ([sisters_teleported] Tyranids) in [AREACOORD(owner)]")
 	X.emote("roar")
 
 	add_cooldown()
 	succeed_activate()
 
 ///Sends a message to admins, prompting them if they want to cancel a psychic summon
-/datum/action/ability/xeno_action/psychic_summon/proc/request_admins()
-	var/mob/living/carbon/xenomorph/caster = owner
+/datum/action/ability/tyranid_action/psychic_summon/proc/request_admins()
+	var/mob/living/carbon/tyranid/caster = owner
 	var/canceltext = "[caster] is using [name] at [AREACOORD(caster)] [ADMIN_TPMONTY(caster)] <a href='?_src_=holder;[HrefToken(TRUE)];cancelsummon=[10 SECONDS]'>\[CANCEL SUMMON\]</a>"
 	message_admins("[span_prefix("PSYCHIC SUMMON:")] <span class='message linkify'> [canceltext]</span>")
 	log_game("psychic summon started by [caster] at [AREACOORD(caster)], timerid to cancel: [10 SECONDS]")
 	notify_ghosts("<b>[caster]</b> has begun to summon at [AREACOORD(caster)]!", action = NOTIFY_JUMP)
 
 ///Checks if our summon was cancelled
-/datum/action/ability/xeno_action/psychic_summon/proc/is_active_summon()
-	var/mob/living/carbon/xenomorph/caster = owner
+/datum/action/ability/tyranid_action/psychic_summon/proc/is_active_summon()
+	var/mob/living/carbon/tyranid/caster = owner
 	if(!(caster in GLOB.active_summons))
 		return FALSE
 	return TRUE
 
-/datum/action/ability/xeno_action/psychic_summon/succeed_activate()
+/datum/action/ability/tyranid_action/psychic_summon/succeed_activate()
 	. = ..()
-	var/mob/living/carbon/xenomorph/caster = owner
+	var/mob/living/carbon/tyranid/caster = owner
 	GLOB.active_summons -= caster //Remove ourselves from the list once we have completed our summon

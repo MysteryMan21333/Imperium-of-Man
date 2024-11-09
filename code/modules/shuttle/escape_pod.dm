@@ -29,8 +29,8 @@
 
 /obj/docking_port/mobile/escape_pod/proc/count_escaped_humans()
 	for(var/turf/T AS in return_turfs())
-		for(var/mob/living/carbon/human/marine in T.GetAllContents())
-			if(marine.stat == DEAD)
+		for(var/mob/living/carbon/human/guardsman in T.GetAllContents())
+			if(guardsman.stat == DEAD)
 				continue
 			ADD_TRAIT(T, TRAIT_HAS_ESCAPED, TRAIT_HAS_ESCAPED)
 			SSevacuation.human_escaped++
@@ -99,7 +99,7 @@
 
 /obj/machinery/computer/shuttle/escape_pod
 	name = "escape pod controller"
-	icon = 'icons/obj/airlock_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/airlock_machines.dmi'
 	icon_state = "airlock_control_standby"
 	screen_overlay = null
 	power_channel = ENVIRON
@@ -165,7 +165,7 @@
 
 /obj/machinery/door/airlock/evacuation
 	name = "\improper Evacuation Airlock"
-	icon = 'icons/obj/doors/mainship/pod_doors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/pod_doors.dmi'
 	icon_state = "door_locked"
 	resistance_flags = RESIST_ALL
 	density = TRUE
@@ -211,5 +211,5 @@
 /obj/machinery/door/airlock/evacuation/attack_hand(mob/living/user)
 	return TRUE
 
-/obj/machinery/door/airlock/evacuation/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/door/airlock/evacuation/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	return FALSE //Probably a better idea that these cannot be forced open.

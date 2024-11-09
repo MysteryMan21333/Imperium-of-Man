@@ -37,10 +37,10 @@
 			else
 				hud_used.healths.icon_state = "health6"
 
-///gives humans oxy when dragged by a xeno, called on COMSIG_MOVABLE_PULL_MOVED
+///gives humans oxy when dragged by a tyranid, called on COMSIG_MOVABLE_PULL_MOVED
 /mob/living/carbon/human/proc/oncritdrag()
 	SIGNAL_HANDLER
-	if(isxeno(pulledby))
+	if(istyranid(pulledby))
 		if(adjustOxyLoss(HUMAN_CRITDRAG_OXYLOSS)) //take oxy damage per tile dragged
 			return
 		INVOKE_ASYNC(src, PROC_REF(adjustBruteLoss), HUMAN_CRITDRAG_OXYLOSS)
@@ -104,7 +104,7 @@
 		if(mind)
 			if((mind.active && client != null) || immune_to_ssd) //This also checks whether a client is connected, if not, sleep is not reduced.
 				AdjustSleeping(-2 SECONDS)
-		if(!isxeno(src))
+		if(!istyranid(src))
 			if(prob(2) && health && !hallucination)
 				emote("snore")
 

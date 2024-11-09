@@ -7,7 +7,7 @@
 	icon_opened = "secure_open_medical_white"
 	icon_broken = "secure_closed_medical_white"
 	icon_off = "secure_closed_medical_white"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/structure/closet/secure_closet/medical1/PopulateContents()
 	new /obj/item/storage/box/autoinjectors(src)
@@ -36,7 +36,7 @@
 	icon_opened = "secure_open_medical_white"
 	icon_broken = "secure_closed_medical_white"
 	icon_off = "secure_closed_medical_white"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/structure/closet/secure_closet/medical2/PopulateContents()
 	new /obj/item/tank/anesthetic(src)
@@ -48,7 +48,7 @@
 
 /obj/structure/closet/secure_closet/medical3
 	name = "medical doctor's locker"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 	icon_state = "secure_locked_medical_white"
 	icon_closed = "secure_unlocked_medical_white"
 	icon_locked = "secure_locked_medical_white"
@@ -59,7 +59,7 @@
 /obj/structure/closet/secure_closet/medical3/PopulateContents()
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/storage/belt/lifesaver/full(src)
-	new /obj/item/storage/backpack/marine/satchel(src)
+	new /obj/item/storage/backpack/guardsman/satchel(src)
 	new /obj/item/clothing/under/rank/medical/blue(src)
 	new /obj/item/clothing/under/rank/medical/green(src)
 	new /obj/item/clothing/under/rank/medical/purple(src)
@@ -75,7 +75,7 @@
 
 /obj/structure/closet/secure_closet/CMO
 	name = "chief medical officer's locker"
-	req_access = list(ACCESS_MARINE_CMO)
+	req_access = list(ACCESS_GUARDSMAN_CMO)
 	icon_state = "cmosecure1"
 	icon_closed = "cmosecure"
 	icon_locked = "cmosecure1"
@@ -103,7 +103,7 @@
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 
 /obj/structure/closet/secure_closet/animal/PopulateContents()
 	new /obj/item/assembly/signaler(src)
@@ -122,7 +122,7 @@
 	icon_opened = "secure_open_medical_white"
 	icon_broken = "secure_closed_medical_white"
 	icon_off = "secure_closed_medical_white"
-	req_access = list(ACCESS_MARINE_CHEMISTRY)
+	req_access = list(ACCESS_GUARDSMAN_CHEMISTRY)
 
 /obj/structure/closet/secure_closet/chemical/PopulateContents()
 	new /obj/item/storage/box/pillbottles(src)

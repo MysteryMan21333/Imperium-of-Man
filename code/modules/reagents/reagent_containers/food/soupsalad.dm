@@ -2,7 +2,7 @@
 /obj/item/reagent_containers/food/snacks/soup
 	name = "snack"
 	desc = "yummy"
-	icon = 'icons/obj/items/food/soupsalad.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/soupsalad.dmi'
 	icon_state = null
 
 /obj/item/reagent_containers/food/snacks/soup/wishsoup
@@ -352,7 +352,7 @@
 	name = "Rice Pudding"
 	desc = "Where's the Jam!"
 	icon_state = "rpudding"
-	icon = 'icons/obj/items/food/soupsalad.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/soupsalad.dmi'
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#FFFBDB"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -421,7 +421,7 @@
 /obj/item/reagent_containers/food/snacks/soup/rice_porridge
 	name = "rice porridge"
 	desc = "A plate of rice porridge. It's mostly flavourless, but it does fill a spot." //höllflöfmiskl = rice (höllflöf = cloud, miskl = seed), sløsk = porridge
-	icon = 'icons/obj/items/food/soupsalad.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/soupsalad.dmi'
 	icon_state = "rice_porridge"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 8)
 	tastes = list("nothing" = 1)
@@ -453,7 +453,7 @@
 /obj/item/reagent_containers/food/snacks/soup/red_porridge
 	name = "red porridge"
 	desc = "Red porridge with yoghurt. The name and vegetable ingredients obscure the sweet nature of the dish, which is commonly served as a dessert aboard the fleet."
-	icon = 'icons/obj/items/food/soupsalad.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/soupsalad.dmi'
 	icon_state = "red_porridge"
 	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/nutriment/protein = 8, /datum/reagent/consumable/sugar = 8)
 	tastes = list("sweet beets" = 1, "sugar" = 1, "sweetened yoghurt" = 1)

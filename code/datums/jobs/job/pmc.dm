@@ -1,5 +1,5 @@
 /datum/job/pmc
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_GUARDSMAN
 	access = ALL_PMC_ACCESS
 	minimal_access = ALL_PMC_ACCESS
 	skills_type = /datum/skills/pmc
@@ -19,13 +19,13 @@
 	jobtype = /datum/job/pmc/standard
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/pmc
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc/holster
-	shoes = /obj/item/clothing/shoes/marine/pmc/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	head = /obj/item/clothing/head/helmet/marine/veteran/pmc
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/pmc/holster
+	shoes = /obj/item/clothing/shoes/guardsman/pmc/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/veteran/pmc
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	head = /obj/item/clothing/head/helmet/guardsman/veteran/pmc
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	suit_store = /obj/item/weapon/gun/smg/m25/elite/pmc
 	r_store = /obj/item/storage/pouch/grenade
@@ -82,13 +82,13 @@
 	jobtype = /datum/job/pmc/gunner
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/belt_harness/marine
+	belt = /obj/item/belt_harness/guardsman
 	ears = /obj/item/radio/headset/distress/pmc
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc/holster
-	shoes = /obj/item/clothing/shoes/marine/pmc/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/gunner
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/pmc/holster
+	shoes = /obj/item/clothing/shoes/guardsman/pmc/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/veteran/pmc/gunner
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	head = /obj/item/clothing/head/helmet/guardsman/veteran/pmc/gunner
 	mask = /obj/item/clothing/mask/gas/pmc
 	glasses = /obj/item/clothing/glasses/night/m56_goggles
 	suit_store = /obj/item/weapon/gun/rifle/standard_smartmachinegun/pmc
@@ -143,11 +143,11 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/holster/belt/pistol/m4a3/vp70_pmc
 	ears = /obj/item/radio/headset/distress/pmc
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc/webbing
-	shoes = /obj/item/clothing/shoes/marine/pmc/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/sniper
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/sniper
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/pmc/webbing
+	shoes = /obj/item/clothing/shoes/guardsman/pmc/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/veteran/pmc/sniper
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	head = /obj/item/clothing/head/helmet/guardsman/veteran/pmc/sniper
 	mask = /obj/item/clothing/mask/gas/pmc
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles
 	suit_store = /obj/item/weapon/gun/rifle/sniper/elite
@@ -192,13 +192,13 @@
 	jobtype = /datum/job/pmc/leader
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/marine
+	belt = /obj/item/storage/belt/guardsman
 	ears = /obj/item/radio/headset/distress/pmc
-	w_uniform = /obj/item/clothing/under/marine/veteran/pmc/leader/holster
-	shoes = /obj/item/clothing/shoes/marine/pmc/full
-	wear_suit = /obj/item/clothing/suit/storage/marine/veteran/pmc/leader
-	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
-	head = /obj/item/clothing/head/helmet/marine/veteran/pmc/leader
+	w_uniform = /obj/item/clothing/under/guardsman/veteran/pmc/leader/holster
+	shoes = /obj/item/clothing/shoes/guardsman/pmc/full
+	wear_suit = /obj/item/clothing/suit/storage/guardsman/veteran/pmc/leader
+	gloves = /obj/item/clothing/gloves/guardsman/veteran/pmc
+	head = /obj/item/clothing/head/helmet/guardsman/veteran/pmc/leader
 	mask = /obj/item/clothing/mask/gas/pmc/leader
 	glasses = /obj/item/clothing/glasses/night/m42_night_goggles
 	suit_store = /obj/item/weapon/gun/rifle/m412/elite

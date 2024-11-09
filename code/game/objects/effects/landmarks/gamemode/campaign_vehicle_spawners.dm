@@ -1,7 +1,7 @@
 /obj/effect/landmark/campaign/vehicle_spawner
 	icon = 'icons/effects/campaign_effects.dmi'
 	///Faction associated with this spawner
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	///Mech type for this spawner
 	var/vehicle_type
 
@@ -52,21 +52,21 @@
 	head_colors = list(ARMOR_PALETTE_SPACE_CADET, ARMOR_PALETTE_GREYISH_TURQUOISE, VISOR_PALETTE_SYNDIE_GREEN)
 	vehicle_type = /obj/vehicle/sealed/mecha/combat/greyscale/recon/noskill
 
-/obj/effect/landmark/campaign/vehicle_spawner/mech/som
-	name = "som med mech spawner"
-	faction = FACTION_SOM
+/obj/effect/landmark/campaign/vehicle_spawner/mech/chaos
+	name = "chaos med mech spawner"
+	faction = FACTION_CHAOS
 	colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_ANGELIC)
 	head_colors = list(ARMOR_PALETTE_ANGELIC, ARMOR_PALETTE_GREY, VISOR_PALETTE_SYNDIE_GREEN)
 
-/obj/effect/landmark/campaign/vehicle_spawner/mech/som/heavy
-	name = "som heavy mech spawner"
+/obj/effect/landmark/campaign/vehicle_spawner/mech/chaos/heavy
+	name = "chaos heavy mech spawner"
 	icon_state = "mech_heavy"
 	colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_MAGENTA)
 	head_colors = list(ARMOR_PALETTE_MAGENTA, ARMOR_PALETTE_GRAPE, VISOR_PALETTE_ELITE_ORANGE)
 	vehicle_type = /obj/vehicle/sealed/mecha/combat/greyscale/vanguard/noskill
 
-/obj/effect/landmark/campaign/vehicle_spawner/mech/som/light
-	name = "som light mech spawner"
+/obj/effect/landmark/campaign/vehicle_spawner/mech/chaos/light
+	name = "chaos light mech spawner"
 	icon_state = "mech_light"
 	colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_BLACK)
 	head_colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_BLACK, VISOR_PALETTE_SYNDIE_GREEN)
@@ -126,10 +126,10 @@
 		/obj/item/ammo_magazine/tank/secondary_cupola = 10,
 	)
 
-/obj/effect/landmark/campaign/vehicle_spawner/tank/som
-	name = "SOM tank spawner - coilgun"
-	faction = FACTION_SOM
-	vehicle_type = /obj/vehicle/sealed/armored/multitile/som_tank
+/obj/effect/landmark/campaign/vehicle_spawner/tank/chaos
+	name = "CHAOS tank spawner - coilgun"
+	faction = FACTION_CHAOS
+	vehicle_type = /obj/vehicle/sealed/armored/multitile/chaos_tank
 	equipment_list = list(
 		/obj/item/armored_weapon/coilgun = 1,
 		/obj/item/armored_weapon/secondary_mlrs = 1,
@@ -137,8 +137,8 @@
 		/obj/item/ammo_magazine/tank/secondary_mlrs = 8,
 	)
 
-/obj/effect/landmark/campaign/vehicle_spawner/tank/som/particle_lance
-	name = "SOM tank spawner - particle lance"
+/obj/effect/landmark/campaign/vehicle_spawner/tank/chaos/particle_lance
+	name = "CHAOS tank spawner - particle lance"
 	equipment_list = list(
 		/obj/item/armored_weapon/particle_lance = 1,
 		/obj/item/armored_weapon/secondary_mlrs = 1,
@@ -146,8 +146,8 @@
 		/obj/item/ammo_magazine/tank/secondary_mlrs = 8,
 	)
 
-/obj/effect/landmark/campaign/vehicle_spawner/tank/som/volkite_carronade
-	name = "SOM tank spawner - carronade"
+/obj/effect/landmark/campaign/vehicle_spawner/tank/chaos/volkite_carronade
+	name = "CHAOS tank spawner - carronade"
 	equipment_list = list(
 		/obj/item/armored_weapon/volkite_carronade = 1,
 		/obj/item/armored_weapon/secondary_mlrs = 1,

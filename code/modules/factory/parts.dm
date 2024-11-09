@@ -3,7 +3,7 @@
 /obj/item/factory_part
 	name = "test part"
 	desc = "you shouldnt be seeing this"
-	icon = 'icons/obj/factory/factoryparts.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/factory/factoryparts.dmi'
 	icon_state = "implant_evil"
 	///How many cycles of processing we've gone through
 	var/stage = 0

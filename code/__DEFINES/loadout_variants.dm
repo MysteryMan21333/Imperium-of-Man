@@ -26,7 +26,7 @@
 #define CAPE_KAMA "cape_kama"
 #define CAPE_KILT "cape_kilt"
 #define CAPE_KILT_ALT "cape_kilt_alt"
-#define SOM_BLACK "SOM_black"
+#define CHAOS_BLACK "CHAOS_black"
 #define CAPE_HIGHLIGHT_NORMAL_ALT "normal_alt"
 
 #define CAPE_HIGHLIGHT_NONE "cape_highlight_none"
@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(loadout_variant_keys, list(
 	CAPE_KILT_ALT = "kilt (alt)",
 	CAPE_HIGHLIGHT_NONE = "none",
 	LEATHER_JACKET_WEBBING = "webbing",
-	SOM_BLACK = "black",
+	CHAOS_BLACK = "black",
 	CAPE_HIGHLIGHT_NORMAL_ALT = "normal (alt)",
 	MARK_FIVE_WEBBING = "webbing",
 	MARK_THREE_WEBBING = "webbing",

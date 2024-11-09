@@ -494,7 +494,7 @@ The alternative is scattering them everywhere under their respective objects whi
 	return TRUE
 
 ///Tally up the corresponding weapon used by the pilot into their /datum/personal_statistics
-/obj/docking_port/mobile/marine_dropship/casplane/proc/record_cas_activity(obj/structure/dropship_equipment/cas/weapon/weapon)
+/obj/docking_port/mobile/guardsman_dropship/casplane/proc/record_cas_activity(obj/structure/dropship_equipment/cas/weapon/weapon)
 	if(!chair.occupant.ckey)
 		return FALSE
 
@@ -513,8 +513,8 @@ The alternative is scattering them everywhere under their respective objects whi
 			personal_statistics.cas_rockets_fired++
 	return TRUE
 
-///Tally how many req-points worth of xenomorphs have been recycled
-/mob/living/carbon/xenomorph/proc/record_recycle_points(mob/living/carbon/xenomorph/trash)
+///Tally how many req-points worth of tyranids have been recycled
+/mob/living/carbon/tyranid/proc/record_recycle_points(mob/living/carbon/tyranid/trash)
 	if(!ckey)
 		return FALSE
 	var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[ckey]
@@ -625,7 +625,7 @@ The alternative is scattering them everywhere under their respective objects whi
 	return TRUE
 
 ///Tally up bullets caught/reflected
-/obj/effect/xeno/shield/proc/record_projectiles_frozen(mob/user, amount, reflected = FALSE)
+/obj/effect/tyranid/shield/proc/record_projectiles_frozen(mob/user, amount, reflected = FALSE)
 	if(!user.ckey)
 		return FALSE
 	var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[user.ckey]

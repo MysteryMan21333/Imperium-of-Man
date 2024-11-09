@@ -74,7 +74,7 @@
 
 /datum/sprite_accessory/hair
 	species_allowed = list("Human","Synthetic","Early Synthetic", "Vat-Grown", "Vatborn")
-	icon = 'icons/mob/Human_face.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/Human_face.dmi'
 
 /datum/sprite_accessory/hair/bald
 	name = "Bald"
@@ -599,8 +599,8 @@
 	icon_state = "hair_manbun"
 	gender = MALE
 
-/datum/sprite_accessory/hair/marine_flat_top
-	name = "Marine Flat Top"
+/datum/sprite_accessory/hair/guardsman_flat_top
+	name = "Guardsman Flat Top"
 	icon_state = "hair_mflattop"
 	gender = FEMALE
 
@@ -630,9 +630,9 @@
 	name = "Mohawk"
 	icon_state = "hair_mohawk"
 
-/datum/sprite_accessory/hair/mohawkmarine
-	name = "Mohawk Marine"
-	icon_state = "hair_mohawkmarine"
+/datum/sprite_accessory/hair/mohawkguardsman
+	name = "Mohawk Guardsman"
+	icon_state = "hair_mohawkguardsman"
 	gender = MALE
 
 /datum/sprite_accessory/hair/mohawknaomi
@@ -1163,7 +1163,7 @@
 */
 
 /datum/sprite_accessory/hair_gradient
-	icon = 'icons/mob/hair_gradients.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/hair_gradients.dmi'
 	gender = NEUTER
 	species_allowed = list("Human","Synthetic", "Early Synthetic", "Vat-Grown", "Vatborn")
 
@@ -1209,7 +1209,7 @@
 */
 
 /datum/sprite_accessory/facial_hair
-	icon = 'icons/mob/Human_face.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/Human_face.dmi'
 	gender = MALE
 
 /datum/sprite_accessory/facial_hair/shaved
@@ -1317,7 +1317,7 @@
 //going to have to re-integrate this with surgery
 //let the icon_state hold an icon preview for now
 /datum/sprite_accessory/skin
-	icon = 'icons/mob/human_races/r_human.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/human_races/r_human.dmi'
 
 /datum/sprite_accessory/skin/human
 	name = "Default human skin"
@@ -1332,7 +1332,7 @@
 /datum/sprite_accessory/moth_wings
 	species_allowed = list("Moth")
 	do_colouration = FALSE
-	icon = 'icons/mob/species/moth/wings.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/species/moth/wings.dmi'
 
 /datum/sprite_accessory/moth_wings/plain
 	name = "Plain"

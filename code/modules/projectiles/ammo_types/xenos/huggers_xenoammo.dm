@@ -5,10 +5,10 @@
 //================================================
 */
 
-/datum/ammo/xeno/hugger
+/datum/ammo/tyranid/hugger
 	name = "hugger ammo"
 	ping = ""
-	ammo_behavior_flags = AMMO_XENO
+	ammo_behavior_flags = AMMO_TYRANID
 	damage = 0
 	max_range = 6
 	shell_speed = 1
@@ -17,33 +17,33 @@
 	///The type of hugger thrown
 	var/obj/item/clothing/mask/facehugger/hugger_type = /obj/item/clothing/mask/facehugger
 
-/datum/ammo/xeno/hugger/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/tyranid/hugger/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	var/obj/item/clothing/mask/facehugger/hugger = new hugger_type(get_turf(target_mob), hivenumber)
 	hugger.go_idle()
 
-/datum/ammo/xeno/hugger/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/tyranid/hugger/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	var/obj/item/clothing/mask/facehugger/hugger = new hugger_type(get_turf(target_obj), hivenumber)
 	hugger.go_idle()
 
-/datum/ammo/xeno/hugger/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/hugger/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	var/obj/item/clothing/mask/facehugger/hugger = new hugger_type(target_turf.density ? proj.loc : target_turf, hivenumber)
 	hugger.go_idle()
 
-/datum/ammo/xeno/hugger/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/tyranid/hugger/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	var/obj/item/clothing/mask/facehugger/hugger = new hugger_type(target_turf.density ? proj.loc : target_turf, hivenumber)
 	hugger.go_idle()
 
-/datum/ammo/xeno/hugger/slash
+/datum/ammo/tyranid/hugger/slash
 	hugger_type = /obj/item/clothing/mask/facehugger/combat/slash
 
-/datum/ammo/xeno/hugger/neuro
+/datum/ammo/tyranid/hugger/neuro
 	hugger_type = /obj/item/clothing/mask/facehugger/combat/chem_injector/neuro
 
-/datum/ammo/xeno/hugger/ozelomelyn
+/datum/ammo/tyranid/hugger/ozelomelyn
 	hugger_type = /obj/item/clothing/mask/facehugger/combat/chem_injector/ozelomelyn
 
-/datum/ammo/xeno/hugger/resin
+/datum/ammo/tyranid/hugger/resin
 	hugger_type = /obj/item/clothing/mask/facehugger/combat/resin
 
-/datum/ammo/xeno/hugger/acid
+/datum/ammo/tyranid/hugger/acid
 	hugger_type = /obj/item/clothing/mask/facehugger/combat/acid

@@ -6,7 +6,7 @@
 /obj/item/tank_module
 	name = "Tank Module"
 	desc = "Yell at the admin that spawned this in please."
-	icon = 'icons/obj/armored/hardpoint_modules.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/armored/hardpoint_modules.dmi'
 	icon_state = "ltb_cannon"
 	///Special behavior flags
 	var/tank_mod_flags = NONE

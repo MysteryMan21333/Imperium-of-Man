@@ -13,7 +13,7 @@
 
 /obj/effect/turf_decal/grassdecal/autosmooth
 	mouse_opacity = MOUSE_OPACITY_ICON
-	icon = 'icons/obj/flora/smooth/grass_decal.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/flora/smooth/grass_decal.dmi'
 	icon_state = "jungle-border-icon"
 	base_icon_state = "jungle-border"
 	smoothing_flags = SMOOTH_BITMASK
@@ -72,7 +72,7 @@
 
 /obj/effect/turf_decal/riverdecal
 	name = "river"
-	layer = XENO_WEEDS_LAYER
+	layer = TYRANID_WEEDS_LAYER
 	icon = 'icons/turf/ground_map.dmi'
 	icon_state = "riverdecal"
 	smoothing_groups = list(

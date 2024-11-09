@@ -1,10 +1,10 @@
 /obj/item/organ
 	name = "organ"
 	desc = "It looks like it probably just plopped out."
-	icon = 'icons/obj/items/organs.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/organs.dmi'
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/bodyparts_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/bodyparts_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/bodyparts_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/bodyparts_right.dmi',
 	)
 
 	icon_state = "appendix"

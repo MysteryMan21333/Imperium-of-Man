@@ -66,7 +66,7 @@
 	prefs.toggles_chat ^= CHAT_GHOSTHIVEMIND
 	prefs.save_preferences()
 
-	to_chat(src, span_notice("As a ghost, you will [(prefs.toggles_chat & CHAT_GHOSTHIVEMIND) ? "now see chatter from the Xenomorph Hivemind" : "no longer see chatter from the Xenomorph Hivemind"]."))
+	to_chat(src, span_notice("As a ghost, you will [(prefs.toggles_chat & CHAT_GHOSTHIVEMIND) ? "now see chatter from the Tyranid Hivemind" : "no longer see chatter from the Tyranid Hivemind"]."))
 
 
 /client/verb/toggle_deadchat_self()

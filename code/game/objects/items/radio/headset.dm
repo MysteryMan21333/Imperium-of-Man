@@ -18,8 +18,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "An updated, modular intercom that fits over the head. Takes encryption keys."
 	icon_state = "headset"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/clothing/ears_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/ears_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/ears_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/ears_right.dmi',
 	)
 	worn_icon_state = "headset"
 	subspace_transmission = TRUE
@@ -135,9 +135,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	if(keyslot?.custom_squad_factions || keyslot2?.custom_squad_factions)
 		for(var/key in GLOB.custom_squad_radio_freqs)
 			var/datum/squad/custom_squad = GLOB.custom_squad_radio_freqs[key]
-			if(!(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_TERRAGOV) && !(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_TERRAGOV) && custom_squad.faction == FACTION_TERRAGOV)
+			if(!(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_IMPERIUM) && !(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_IMPERIUM) && custom_squad.faction == FACTION_IMPERIUM)
 				continue
-			if(!(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_SOM) && !(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_SOM) && custom_squad.faction == FACTION_SOM)
+			if(!(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_CHAOS) && !(keyslot.custom_squad_factions & ENCRYPT_CUSTOM_CHAOS) && custom_squad.faction == FACTION_CHAOS)
 				continue
 			channels[custom_squad.name] = TRUE
 			secure_radio_connections[custom_squad.name] = add_radio(src, custom_squad.radio_freq)
@@ -165,9 +165,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	frequency = FREQ_CIV_GENERAL
 
 
-//MARINE HEADSETS
+//GUARDSMAN HEADSETS
 /obj/item/radio/headset/mainship
-	name = "marine radio headset"
+	name = "guardsman radio headset"
 	desc = "A standard military radio headset."
 	icon_state = "cargo_headset"
 	worn_icon_state = "headset"
@@ -180,14 +180,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	var/headset_hud_on = FALSE
 	var/sl_direction = FALSE
 	///The faction this headset belongs to. Used for hudtype, minimap and safety protocol
-	var/faction = FACTION_TERRAGOV
+	var/faction = FACTION_IMPERIUM
 	///The type of minimap this headset gives access to
-	var/datum/action/minimap/minimap_type = /datum/action/minimap/marine
+	var/datum/action/minimap/minimap_type = /datum/action/minimap/guardsman
 
 /obj/item/radio/headset/mainship/Initialize(mapload)
 	. = ..()
-	if(faction == FACTION_SOM)
-		camera = new /obj/machinery/camera/headset/som(src)
+	if(faction == FACTION_CHAOS)
+		camera = new /obj/machinery/camera/headset/chaos(src)
 	else
 		camera = new /obj/machinery/camera/headset(src)
 
@@ -321,7 +321,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		wearer.hud_used.SL_locator.alpha = 128
 		if(wearer.assigned_squad.squad_leader == wearer)
 			SSdirection.set_leader(wearer.assigned_squad.tracking_id, wearer)
-			SSdirection.start_tracking(faction == FACTION_SOM ? TRACKING_ID_SOM_COMMANDER : TRACKING_ID_MARINE_COMMANDER, wearer)
+			SSdirection.start_tracking(faction == FACTION_CHAOS ? TRACKING_ID_CHAOS_COMMANDER : TRACKING_ID_GUARDSMAN_COMMANDER, wearer)
 		else
 			SSdirection.start_tracking(wearer.assigned_squad.tracking_id, wearer)
 
@@ -339,7 +339,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 	if(wearer.assigned_squad.squad_leader == wearer)
 		SSdirection.clear_leader(wearer.assigned_squad.tracking_id)
-		SSdirection.stop_tracking(faction == FACTION_SOM ? TRACKING_ID_SOM_COMMANDER : TRACKING_ID_MARINE_COMMANDER, wearer)
+		SSdirection.stop_tracking(faction == FACTION_CHAOS ? TRACKING_ID_CHAOS_COMMANDER : TRACKING_ID_GUARDSMAN_COMMANDER, wearer)
 	else
 		SSdirection.stop_tracking(wearer.assigned_squad.tracking_id, wearer)
 
@@ -431,32 +431,32 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = /obj/item/encryptionkey/general
 
 /obj/item/radio/headset/mainship/mcom
-	name = "marine command radio headset"
+	name = "guardsman command radio headset"
 	icon_state = "com_headset_alt"
 	keyslot = /obj/item/encryptionkey/mcom
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/mcom/som
-	frequency = FREQ_SOM
-	keyslot = /obj/item/encryptionkey/mcom/som
-	faction = FACTION_SOM
-	minimap_type = /datum/action/minimap/som
+/obj/item/radio/headset/mainship/mcom/chaos
+	frequency = FREQ_CHAOS
+	keyslot = /obj/item/encryptionkey/mcom/chaos
+	faction = FACTION_CHAOS
+	minimap_type = /datum/action/minimap/chaos
 
 /obj/item/radio/headset/mainship/mcom/silicon
 	name = "silicon radio"
 	keyslot = /obj/item/encryptionkey/mcom/ai
 
-/obj/item/radio/headset/mainship/marine
+/obj/item/radio/headset/mainship/guardsman
 	keyslot = /obj/item/encryptionkey/general
 
-/obj/item/radio/headset/mainship/marine/Initialize(mapload, datum/squad/squad, rank)
+/obj/item/radio/headset/mainship/guardsman/Initialize(mapload, datum/squad/squad, rank)
 	if(squad)
-		icon_state = "headset_marine_greyscale"
-		var/image/coloring = image(icon, icon_state="headset_marine_overlay")
+		icon_state = "headset_guardsman_greyscale"
+		var/image/coloring = image(icon, icon_state="headset_guardsman_overlay")
 		coloring.color = squad.color
 		add_overlay(coloring)
-		var/dat = "marine [lowertext(squad.name)]"
+		var/dat = "guardsman [lowertext(squad.name)]"
 		frequency = squad.radio_freq
 		if(ispath(rank, /datum/job/terragov/squad/leader))
 			dat += " leader"
@@ -472,125 +472,125 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		name = dat + " radio headset"
 	return ..()
 
-/obj/item/radio/headset/mainship/marine/alpha
-	name = "marine alpha radio headset"
-	icon_state = "headset_marine_alpha"
+/obj/item/radio/headset/mainship/guardsman/alpha
+	name = "guardsman alpha radio headset"
+	icon_state = "headset_guardsman_alpha"
 	frequency = FREQ_ALPHA //default frequency is alpha squad channel, not FREQ_COMMON
-	minimap_type = /datum/action/minimap/marine
+	minimap_type = /datum/action/minimap/guardsman
 
-/obj/item/radio/headset/mainship/marine/alpha/LateInitialize()
+/obj/item/radio/headset/mainship/guardsman/alpha/LateInitialize()
 	. = ..()
 	camera.network += list("alpha")
 
 
-/obj/item/radio/headset/mainship/marine/alpha/lead
-	name = "marine alpha leader radio headset"
+/obj/item/radio/headset/mainship/guardsman/alpha/lead
+	name = "guardsman alpha leader radio headset"
 	keyslot2 = /obj/item/encryptionkey/squadlead
 	use_command = TRUE
 	command = TRUE
 
 
-/obj/item/radio/headset/mainship/marine/alpha/engi
-	name = "marine alpha engineer radio headset"
+/obj/item/radio/headset/mainship/guardsman/alpha/engi
+	name = "guardsman alpha engineer radio headset"
 	keyslot2 = /obj/item/encryptionkey/engi
 
-/obj/item/radio/headset/mainship/marine/alpha/med
-	name = "marine alpha corpsman radio headset"
+/obj/item/radio/headset/mainship/guardsman/alpha/med
+	name = "guardsman alpha corpsman radio headset"
 	keyslot2 = /obj/item/encryptionkey/med
 
 
 
-/obj/item/radio/headset/mainship/marine/bravo
-	name = "marine bravo radio headset"
-	icon_state = "headset_marine_bravo"
+/obj/item/radio/headset/mainship/guardsman/bravo
+	name = "guardsman bravo radio headset"
+	icon_state = "headset_guardsman_bravo"
 	frequency = FREQ_BRAVO
-	minimap_type = /datum/action/minimap/marine
+	minimap_type = /datum/action/minimap/guardsman
 
-/obj/item/radio/headset/mainship/marine/bravo/LateInitialize()
+/obj/item/radio/headset/mainship/guardsman/bravo/LateInitialize()
 	. = ..()
 	camera.network += list("bravo")
 
 
-/obj/item/radio/headset/mainship/marine/bravo/lead
-	name = "marine bravo leader radio headset"
+/obj/item/radio/headset/mainship/guardsman/bravo/lead
+	name = "guardsman bravo leader radio headset"
 	keyslot2 = /obj/item/encryptionkey/squadlead
 	use_command = TRUE
 	command = TRUE
 
 
-/obj/item/radio/headset/mainship/marine/bravo/engi
-	name = "marine bravo engineer radio headset"
+/obj/item/radio/headset/mainship/guardsman/bravo/engi
+	name = "guardsman bravo engineer radio headset"
 	keyslot2 = /obj/item/encryptionkey/engi
 
 
-/obj/item/radio/headset/mainship/marine/bravo/med
-	name = "marine bravo corpsman radio headset"
+/obj/item/radio/headset/mainship/guardsman/bravo/med
+	name = "guardsman bravo corpsman radio headset"
 	keyslot2 = /obj/item/encryptionkey/med
 
 
-/obj/item/radio/headset/mainship/marine/charlie
-	name = "marine charlie radio headset"
-	icon_state = "headset_marine_charlie"
+/obj/item/radio/headset/mainship/guardsman/charlie
+	name = "guardsman charlie radio headset"
+	icon_state = "headset_guardsman_charlie"
 	frequency = FREQ_CHARLIE
-	minimap_type = /datum/action/minimap/marine
+	minimap_type = /datum/action/minimap/guardsman
 
-/obj/item/radio/headset/mainship/marine/charlie/LateInitialize()
+/obj/item/radio/headset/mainship/guardsman/charlie/LateInitialize()
 	. = ..()
 	camera.network += list("charlie")
 
 
-/obj/item/radio/headset/mainship/marine/charlie/lead
-	name = "marine charlie leader radio headset"
+/obj/item/radio/headset/mainship/guardsman/charlie/lead
+	name = "guardsman charlie leader radio headset"
 	keyslot2 = /obj/item/encryptionkey/squadlead
 	use_command = TRUE
 	command = TRUE
 
 
-/obj/item/radio/headset/mainship/marine/charlie/engi
-	name = "marine charlie engineer radio headset"
+/obj/item/radio/headset/mainship/guardsman/charlie/engi
+	name = "guardsman charlie engineer radio headset"
 	keyslot2 = /obj/item/encryptionkey/engi
 
 
-/obj/item/radio/headset/mainship/marine/charlie/med
-	name = "marine charlie corpsman radio headset"
+/obj/item/radio/headset/mainship/guardsman/charlie/med
+	name = "guardsman charlie corpsman radio headset"
 	keyslot2 = /obj/item/encryptionkey/med
 
 
 
-/obj/item/radio/headset/mainship/marine/delta
-	name = "marine delta radio headset"
-	icon_state = "headset_marine_delta"
+/obj/item/radio/headset/mainship/guardsman/delta
+	name = "guardsman delta radio headset"
+	icon_state = "headset_guardsman_delta"
 	frequency = FREQ_DELTA
-	minimap_type = /datum/action/minimap/marine
+	minimap_type = /datum/action/minimap/guardsman
 
-/obj/item/radio/headset/mainship/marine/delta/LateInitialize()
+/obj/item/radio/headset/mainship/guardsman/delta/LateInitialize()
 	. = ..()
 	camera.network += list("delta")
 
 
-/obj/item/radio/headset/mainship/marine/delta/lead
-	name = "marine delta leader radio headset"
+/obj/item/radio/headset/mainship/guardsman/delta/lead
+	name = "guardsman delta leader radio headset"
 	keyslot2 = /obj/item/encryptionkey/squadlead
 	use_command = TRUE
 	command = TRUE
 
 
-/obj/item/radio/headset/mainship/marine/delta/engi
-	name = "marine delta engineer radio headset"
+/obj/item/radio/headset/mainship/guardsman/delta/engi
+	name = "guardsman delta engineer radio headset"
 	keyslot2 = /obj/item/encryptionkey/engi
 
 
-/obj/item/radio/headset/mainship/marine/delta/med
-	name = "marine delta corpsman radio headset"
+/obj/item/radio/headset/mainship/guardsman/delta/med
+	name = "guardsman delta corpsman radio headset"
 	keyslot2 = /obj/item/encryptionkey/med
 
-/obj/item/radio/headset/mainship/marine/generic
-	name = "marine generic radio headset"
-	icon_state = "headset_marine_generic"
-	minimap_type = /datum/action/minimap/marine
+/obj/item/radio/headset/mainship/guardsman/generic
+	name = "guardsman generic radio headset"
+	icon_state = "headset_guardsman_generic"
+	minimap_type = /datum/action/minimap/guardsman
 
-/obj/item/radio/headset/mainship/marine/generic/cas
-	name = "marine fire support specialist headset"
+/obj/item/radio/headset/mainship/guardsman/generic/cas
+	name = "guardsman fire support specialist headset"
 	icon_state = "sec_headset"
 	keyslot2 = /obj/item/encryptionkey/cas
 
@@ -633,10 +633,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	frequency = FREQ_IMPERIAL
 
 
-/obj/item/radio/headset/distress/som
+/obj/item/radio/headset/distress/chaos
 	name = "miners' headset"
-	keyslot = /obj/item/encryptionkey/som
-	frequency = FREQ_SOM
+	keyslot = /obj/item/encryptionkey/chaos
+	frequency = FREQ_CHAOS
 
 
 /obj/item/radio/headset/distress/sectoid
@@ -669,129 +669,129 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = /obj/item/encryptionkey/erp
 	frequency = FREQ_ERP
 
-//SOM headsets
+//CHAOS headsets
 
-/obj/item/radio/headset/mainship/som
-	frequency = FREQ_SOM
-	keyslot = /obj/item/encryptionkey/general/som
-	faction = FACTION_SOM
-	minimap_type = /datum/action/minimap/som
+/obj/item/radio/headset/mainship/chaos
+	frequency = FREQ_CHAOS
+	keyslot = /obj/item/encryptionkey/general/chaos
+	faction = FACTION_CHAOS
+	minimap_type = /datum/action/minimap/chaos
 
-/obj/item/radio/headset/mainship/som/Initialize(mapload, datum/squad/squad, rank)
+/obj/item/radio/headset/mainship/chaos/Initialize(mapload, datum/squad/squad, rank)
 	if(!squad)
 		return ..()
-	icon_state = "headset_marine_[lowertext(squad.name)]"
-	var/dat = "marine [lowertext(squad.name)]"
+	icon_state = "headset_guardsman_[lowertext(squad.name)]"
+	var/dat = "guardsman [lowertext(squad.name)]"
 	frequency = squad.radio_freq
-	if(ispath(rank, /datum/job/som/squad/leader))
+	if(ispath(rank, /datum/job/chaos/squad/leader))
 		dat += " leader"
-		keyslot2 = /obj/item/encryptionkey/squadlead/som
+		keyslot2 = /obj/item/encryptionkey/squadlead/chaos
 		use_command = TRUE
 		command = TRUE
-	else if(ispath(rank, /datum/job/som/squad/engineer))
+	else if(ispath(rank, /datum/job/chaos/squad/engineer))
 		dat += " engineer"
-		keyslot2 = /obj/item/encryptionkey/engi/som
-	else if(ispath(rank, /datum/job/som/squad/medic))
+		keyslot2 = /obj/item/encryptionkey/engi/chaos
+	else if(ispath(rank, /datum/job/chaos/squad/medic))
 		dat += " corpsman"
-		keyslot2 = /obj/item/encryptionkey/med/som
+		keyslot2 = /obj/item/encryptionkey/med/chaos
 	name = dat + " radio headset"
 	return ..()
 
-/obj/item/radio/headset/mainship/som/command
-	name = "SOM command radio headset"
+/obj/item/radio/headset/mainship/chaos/command
+	name = "CHAOS command radio headset"
 	icon_state = "com_headset_alt"
-	keyslot = /obj/item/encryptionkey/mcom/som
+	keyslot = /obj/item/encryptionkey/mcom/chaos
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/som/zulu
-	name = "SOM zulu radio headset"
-	icon_state = "headset_marine_zulu"
+/obj/item/radio/headset/mainship/chaos/zulu
+	name = "CHAOS zulu radio headset"
+	icon_state = "headset_guardsman_zulu"
 	frequency = FREQ_ZULU
 
-/obj/item/radio/headset/mainship/som/zulu/LateInitialize()
+/obj/item/radio/headset/mainship/chaos/zulu/LateInitialize()
 	. = ..()
 	camera.network += list("zulu")
 
-/obj/item/radio/headset/mainship/som/zulu/lead
-	name = "SOM zulu leader radio headset"
-	keyslot2 = /obj/item/encryptionkey/squadlead/som
+/obj/item/radio/headset/mainship/chaos/zulu/lead
+	name = "CHAOS zulu leader radio headset"
+	keyslot2 = /obj/item/encryptionkey/squadlead/chaos
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/som/zulu/engi
-	name = "SOM zulu engineer radio headset"
-	keyslot2 = /obj/item/encryptionkey/engi/som
+/obj/item/radio/headset/mainship/chaos/zulu/engi
+	name = "CHAOS zulu engineer radio headset"
+	keyslot2 = /obj/item/encryptionkey/engi/chaos
 
-/obj/item/radio/headset/mainship/som/zulu/med
-	name = "SOM zulu corpsman radio headset"
-	keyslot2 = /obj/item/encryptionkey/med/som
+/obj/item/radio/headset/mainship/chaos/zulu/med
+	name = "CHAOS zulu corpsman radio headset"
+	keyslot2 = /obj/item/encryptionkey/med/chaos
 
-/obj/item/radio/headset/mainship/som/yankee
-	name = "SOM yankee radio headset"
-	icon_state = "headset_marine_yankee"
+/obj/item/radio/headset/mainship/chaos/yankee
+	name = "CHAOS yankee radio headset"
+	icon_state = "headset_guardsman_yankee"
 	frequency = FREQ_YANKEE
 
-/obj/item/radio/headset/mainship/som/yankee/LateInitialize()
+/obj/item/radio/headset/mainship/chaos/yankee/LateInitialize()
 	. = ..()
 	camera.network += list("yankee")
 
-/obj/item/radio/headset/mainship/som/yankee/lead
-	name = "SOM yankee leader radio headset"
-	keyslot2 = /obj/item/encryptionkey/squadlead/som
+/obj/item/radio/headset/mainship/chaos/yankee/lead
+	name = "CHAOS yankee leader radio headset"
+	keyslot2 = /obj/item/encryptionkey/squadlead/chaos
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/som/yankee/engi
-	name = "SOM yankee engineer radio headset"
-	keyslot2 = /obj/item/encryptionkey/engi/som
+/obj/item/radio/headset/mainship/chaos/yankee/engi
+	name = "CHAOS yankee engineer radio headset"
+	keyslot2 = /obj/item/encryptionkey/engi/chaos
 
-/obj/item/radio/headset/mainship/som/yankee/med
-	name = "SOM yankee corpsman radio headset"
-	keyslot2 = /obj/item/encryptionkey/med/som
+/obj/item/radio/headset/mainship/chaos/yankee/med
+	name = "CHAOS yankee corpsman radio headset"
+	keyslot2 = /obj/item/encryptionkey/med/chaos
 
-/obj/item/radio/headset/mainship/som/xray
-	name = "SOM xray radio headset"
-	icon_state = "headset_marine_xray"
+/obj/item/radio/headset/mainship/chaos/xray
+	name = "CHAOS xray radio headset"
+	icon_state = "headset_guardsman_xray"
 	frequency = FREQ_XRAY
 
-/obj/item/radio/headset/mainship/som/xray/LateInitialize()
+/obj/item/radio/headset/mainship/chaos/xray/LateInitialize()
 	. = ..()
 	camera.network += list("xray")
 
-/obj/item/radio/headset/mainship/som/xray/lead
-	name = "SOM xray leader radio headset"
-	keyslot2 = /obj/item/encryptionkey/squadlead/som
+/obj/item/radio/headset/mainship/chaos/xray/lead
+	name = "CHAOS xray leader radio headset"
+	keyslot2 = /obj/item/encryptionkey/squadlead/chaos
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/som/xray/engi
-	name = "SOM xray engineer radio headset"
-	keyslot2 = /obj/item/encryptionkey/engi/som
+/obj/item/radio/headset/mainship/chaos/xray/engi
+	name = "CHAOS xray engineer radio headset"
+	keyslot2 = /obj/item/encryptionkey/engi/chaos
 
-/obj/item/radio/headset/mainship/som/xray/med
-	name = "SOM xray corpsman radio headset"
-	keyslot2 = /obj/item/encryptionkey/med/som
+/obj/item/radio/headset/mainship/chaos/xray/med
+	name = "CHAOS xray corpsman radio headset"
+	keyslot2 = /obj/item/encryptionkey/med/chaos
 
-/obj/item/radio/headset/mainship/som/whiskey
-	name = "SOM whiskey radio headset"
-	icon_state = "headset_marine_whiskey"
+/obj/item/radio/headset/mainship/chaos/whiskey
+	name = "CHAOS whiskey radio headset"
+	icon_state = "headset_guardsman_whiskey"
 	frequency = FREQ_WHISKEY
 
-/obj/item/radio/headset/mainship/som/whiskey/LateInitialize()
+/obj/item/radio/headset/mainship/chaos/whiskey/LateInitialize()
 	. = ..()
 	camera.network += list("whiskey")
 
-/obj/item/radio/headset/mainship/som/whiskey/lead
-	name = "SOM whiskey leader radio headset"
-	keyslot2 = /obj/item/encryptionkey/squadlead/som
+/obj/item/radio/headset/mainship/chaos/whiskey/lead
+	name = "CHAOS whiskey leader radio headset"
+	keyslot2 = /obj/item/encryptionkey/squadlead/chaos
 	use_command = TRUE
 	command = TRUE
 
-/obj/item/radio/headset/mainship/som/whiskey/engi
-	name = "SOM whiskey engineer radio headset"
-	keyslot2 = /obj/item/encryptionkey/engi/som
+/obj/item/radio/headset/mainship/chaos/whiskey/engi
+	name = "CHAOS whiskey engineer radio headset"
+	keyslot2 = /obj/item/encryptionkey/engi/chaos
 
-/obj/item/radio/headset/mainship/som/whiskey/med
-	name = "SOM whiskey corpsman radio headset"
-	keyslot2 = /obj/item/encryptionkey/med/som
+/obj/item/radio/headset/mainship/chaos/whiskey/med
+	name = "CHAOS whiskey corpsman radio headset"
+	keyslot2 = /obj/item/encryptionkey/med/chaos

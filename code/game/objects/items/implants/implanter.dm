@@ -1,10 +1,10 @@
 /obj/item/implanter
 	name = "implanter"
-	icon = 'icons/obj/items/implants.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/implants.dmi'
 	icon_state = "implanter0"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/equipment/medical_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/equipment/medical_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/equipment/medical_right.dmi',
 	)
 	worn_icon_state = "syringe_0"
 	throw_speed = 1

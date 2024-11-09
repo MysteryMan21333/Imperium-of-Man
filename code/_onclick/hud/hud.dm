@@ -175,7 +175,7 @@
 	update_sight()
 	SEND_SIGNAL(src, COMSIG_MOB_HUD_CREATED)
 
-/mob/living/carbon/xenomorph/create_mob_hud()
+/mob/living/carbon/tyranid/create_mob_hud()
 	. = ..()
 	//Some parts require hud_used to already be set
 	med_hud_set_health()

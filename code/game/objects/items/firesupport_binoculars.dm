@@ -100,7 +100,7 @@
 	for(var/fire_support_type in mode_list)
 		if(!mode_list[fire_support_type].uses || !(mode_list[fire_support_type].fire_support_flags & FIRESUPPORT_AVAILABLE))
 			continue
-		radial_options[mode_list[fire_support_type].name] = image(icon = 'icons/mob/radial.dmi', icon_state = mode_list[fire_support_type].icon_state)
+		radial_options[mode_list[fire_support_type].name] = image(icon = 'modular_imperium/master_files/icons/mob/radial.dmi', icon_state = mode_list[fire_support_type].icon_state)
 
 	var/mode_selected = show_radial_menu(user, src, radial_options, null, 48, null, TRUE, TRUE)
 	for(var/option in mode_list)
@@ -134,7 +134,7 @@
 	playsound(src, 'sound/effects/nightvision.ogg', 35)
 	to_chat(user, span_notice("INITIATING LASER TARGETING. Stand still."))
 	target_atom = target
-	laser_overlay = image('icons/obj/items/projectiles.dmi', icon_state = "sniper_laser", layer =-LASER_LAYER)
+	laser_overlay = image('modular_imperium/master_files/icons/obj/items/projectiles.dmi', icon_state = "sniper_laser", layer =-LASER_LAYER)
 	target_atom.apply_fire_support_laser(laser_overlay)
 	if(!do_after(user, target_acquisition_delay, NONE, user, BUSY_ICON_HOSTILE, extra_checks = CALLBACK(src, PROC_REF(can_see_target), target, user)))
 		to_chat(user, span_danger("You lose sight of your target!"))
@@ -197,7 +197,7 @@
 
 
 /obj/item/binoculars/fire_support/campaign
-	faction = FACTION_TERRAGOV
+	faction = FACTION_IMPERIUM
 	mode_list = list(
 		FIRESUPPORT_TYPE_GUN,
 		FIRESUPPORT_TYPE_ROCKETS,
@@ -211,16 +211,16 @@
 		FIRESUPPORT_TYPE_SUPPLY_POD,
 	)
 
-/obj/item/binoculars/fire_support/campaign/som
-	faction = FACTION_SOM
+/obj/item/binoculars/fire_support/campaign/chaos
+	faction = FACTION_CHAOS
 	mode_list = list(
 		FIRESUPPORT_TYPE_VOLKITE,
 		FIRESUPPORT_TYPE_INCEND_ROCKETS,
 		FIRESUPPORT_TYPE_RAD_MISSILE,
-		FIRESUPPORT_TYPE_HE_MORTAR_SOM,
-		FIRESUPPORT_TYPE_INCENDIARY_MORTAR_SOM,
+		FIRESUPPORT_TYPE_HE_MORTAR_CHAOS,
+		FIRESUPPORT_TYPE_INCENDIARY_MORTAR_CHAOS,
 		FIRESUPPORT_TYPE_SATRAPINE_SMOKE_MORTAR,
-		FIRESUPPORT_TYPE_SMOKE_MORTAR_SOM,
+		FIRESUPPORT_TYPE_SMOKE_MORTAR_CHAOS,
 		FIRESUPPORT_TYPE_TELE_COPE,
 	)
 

@@ -1,14 +1,14 @@
 /obj/item/reagent_containers/food/snacks/tortilla
 	name = "tortilla"
 	desc = "The base for all your burritos."
-	icon = 'icons/obj/items/food/food_ingredients.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/food_ingredients.dmi'
 	icon_state = "tortilla"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("tortilla" = 1)
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/mexican
-	icon = 'icons/obj/items/food/mexican.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/food/mexican.dmi'
 
 /obj/item/reagent_containers/food/snacks/mexican/burrito
 	name = "burrito"

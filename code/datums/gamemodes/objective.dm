@@ -545,7 +545,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 	var/currentfaction = owner.current.faction
 	for(var/mob/living/carbon/human/targethuman in GLOB.mob_list)
 		if(iszombie(owner.current)) //zombies don't care about factions
-			if(locate(/mob/living/carbon/xenomorph) in defendedarea)
+			if(locate(/mob/living/carbon/tyranid) in defendedarea)
 				return FALSE
 			for(targethuman in defendedarea)
 				if(targethuman.stat == DEAD)
@@ -559,14 +559,14 @@ GLOBAL_LIST_EMPTY(possible_items)
 					return FALSE
 			if(targethuman.stat == DEAD) //we don't care about dead humans
 				continue
-			if(isxeno(owner.current))
+			if(istyranid(owner.current))
 				if(ishuman(targethuman))
 					return FALSE
 			if(!targethuman.faction) //consider them hostile anyway
 				return FALSE
 			if(targethuman.faction != currentfaction)
 				return FALSE
-	if(locate(/mob/living/carbon/xenomorph) in defendedarea)
+	if(locate(/mob/living/carbon/tyranid) in defendedarea)
 		return FALSE
 	return TRUE
 

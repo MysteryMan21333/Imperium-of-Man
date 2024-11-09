@@ -1,7 +1,7 @@
 /obj/machinery/door
 	name = "\improper Door"
 	desc = "It opens and closes."
-	icon = 'icons/obj/doors/Doorint.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/Doorint.dmi'
 	icon_state = "door1"
 	anchored = TRUE
 	opacity = TRUE
@@ -241,4 +241,4 @@
 		close()
 
 /obj/machinery/door/morgue
-	icon = 'icons/obj/doors/doormorgue.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/doormorgue.dmi'

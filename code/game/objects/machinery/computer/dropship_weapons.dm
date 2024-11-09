@@ -21,7 +21,7 @@
 		ui.open()
 
 /obj/machinery/computer/dropship_weapons/ui_data(mob/user)
-	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttle_tag)
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = SSshuttle.getShuttle(shuttle_tag)
 	if(!shuttle)
 		WARNING("[src] could not find shuttle [shuttle_tag] from SSshuttle")
 		return
@@ -61,7 +61,7 @@
 	if(.)
 		return
 
-	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttle_tag)
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = SSshuttle.getShuttle(shuttle_tag)
 	if(!shuttle)
 		stack_trace("Invalid shuttle_tag [shuttle_tag]")
 		return
@@ -115,7 +115,7 @@
 
 /obj/machinery/computer/dropship_weapons/dropship1
 	name = "\improper 'Alamo' weapons controls"
-	req_access = list(ACCESS_MARINE_DROPSHIP)
+	req_access = list(ACCESS_GUARDSMAN_DROPSHIP)
 	opacity = FALSE
 
 /obj/machinery/computer/dropship_weapons/dropship1/Initialize(mapload)
@@ -124,7 +124,7 @@
 
 /obj/machinery/computer/dropship_weapons/dropship2
 	name = "\improper 'Normandy' weapons controls"
-	req_access = list(ACCESS_MARINE_DROPSHIP)
+	req_access = list(ACCESS_GUARDSMAN_DROPSHIP)
 
 /obj/machinery/computer/dropship_weapons/dropship2/Initialize(mapload)
 	. = ..()

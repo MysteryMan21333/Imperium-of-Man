@@ -12,14 +12,14 @@
 
 /mob/living/carbon/human/add_to_all_mob_huds()
 	for(var/h in GLOB.huds)
-		if(istype(h, /datum/atom_hud/xeno)) //this one is xeno only
+		if(istype(h, /datum/atom_hud/tyranid)) //this one is tyranid only
 			continue
 		var/datum/atom_hud/hud = h
 		hud.add_to_hud(src)
 
-/mob/living/carbon/xenomorph/add_to_all_mob_huds()
+/mob/living/carbon/tyranid/add_to_all_mob_huds()
 	for(var/h in GLOB.huds)
-		if(!istype(h, /datum/atom_hud/xeno))
+		if(!istype(h, /datum/atom_hud/tyranid))
 			continue
 		var/datum/atom_hud/hud = h
 		hud.add_to_hud(src)
@@ -29,14 +29,14 @@
 
 /mob/living/carbon/human/remove_from_all_mob_huds()
 	for(var/h in GLOB.huds)
-		if(istype(h, /datum/atom_hud/xeno))
+		if(istype(h, /datum/atom_hud/tyranid))
 			continue
 		var/datum/atom_hud/hud = h
 		hud.remove_from_hud(src)
 
-/mob/living/carbon/xenomorph/remove_from_all_mob_huds()
+/mob/living/carbon/tyranid/remove_from_all_mob_huds()
 	for(var/h in GLOB.huds)
-		if(!istype(h, /datum/atom_hud/xeno))
+		if(!istype(h, /datum/atom_hud/tyranid))
 			continue
 		var/datum/atom_hud/hud = h
 		hud.remove_from_hud(src)
@@ -82,7 +82,7 @@
 
 //medical hud used by ghosts
 /datum/atom_hud/medical/observer
-	hud_icons = list(HEALTH_HUD, XENO_EMBRYO_HUD, XENO_REAGENT_HUD, XENO_DEBUFF_HUD, STATUS_HUD, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
+	hud_icons = list(HEALTH_HUD, TYRANID_EMBRYO_HUD, TYRANID_REAGENT_HUD, TYRANID_DEBUFF_HUD, STATUS_HUD, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
 
 /datum/atom_hud/medical/pain
 	hud_icons = list(PAIN_HUD)
@@ -90,37 +90,37 @@
 /mob/proc/med_hud_set_health()
 	return
 
-/mob/living/carbon/xenomorph/med_hud_set_health()
+/mob/living/carbon/tyranid/med_hud_set_health()
 	if(hud_used?.healths)
 		var/bucket
 		if(stat == DEAD)
 			bucket = "critical"
 		else
-			bucket = get_bucket(XENO_HUD_ICON_BUCKETS, maxHealth, health, get_crit_threshold(), list("full", "critical"))
+			bucket = get_bucket(TYRANID_HUD_ICON_BUCKETS, maxHealth, health, get_crit_threshold(), list("full", "critical"))
 		hud_used.healths.icon_state = "health[bucket]"
 
-	var/image/holder = hud_list[HEALTH_HUD_XENO]
+	var/image/holder = hud_list[HEALTH_HUD_TYRANID]
 	if(!holder)
 		return
 	if(stat == DEAD)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "health0"
 		return
 
 	var/amount = health > 0 ? round(health * 100 / maxHealth, 10) : CEILING(health, 10)
 	if(!amount && health < 0)
 		amount = -1 //don't want the 'zero health' icon when we are crit
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "health[amount]"
 
 /mob/living/carbon/human/med_hud_set_health()
 	var/image/holder = hud_list[HEALTH_HUD]
 	if(stat == DEAD)
-		holder.icon = 'icons/mob/hud/human_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/human_health.dmi'
 		holder.icon_state = "health-100"
 		return
 
-	holder.icon = 'icons/mob/hud/human_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/human_health.dmi'
 	var/percentage = round(health * 100 / maxHealth)
 	switch(percentage)
 		if(100 to INFINITY)
@@ -162,88 +162,88 @@
 		else
 			holder.icon_state = "health-100"
 
-/mob/proc/med_hud_set_status() //called when mob stat changes, or get a virus/xeno host, etc
+/mob/proc/med_hud_set_status() //called when mob stat changes, or get a virus/tyranid host, etc
 	return
 
-/mob/living/carbon/xenomorph/med_hud_set_status()
+/mob/living/carbon/tyranid/med_hud_set_status()
 	hud_set_pheromone()
 
 /mob/living/carbon/human/med_hud_set_status()
 	var/image/status_hud = hud_list[STATUS_HUD] //Status for med-hud.
-	var/image/infection_hud = hud_list[XENO_EMBRYO_HUD] //State of the xeno embryo.
+	var/image/infection_hud = hud_list[TYRANID_EMBRYO_HUD] //State of the tyranid embryo.
 	var/image/simple_status_hud = hud_list[STATUS_HUD_SIMPLE] //Status for the naked eye.
-	var/image/xeno_reagent = hud_list[XENO_REAGENT_HUD] // Displays active xeno reagents
-	var/image/xeno_debuff = hud_list[XENO_DEBUFF_HUD] //Displays active xeno specific debuffs
-	var/static/image/neurotox_image = image('icons/mob/hud/human.dmi', icon_state = "neurotoxin")
-	var/static/image/hemodile_image = image('icons/mob/hud/human.dmi', icon_state = "hemodile")
-	var/static/image/transvitox_image = image('icons/mob/hud/human.dmi', icon_state = "transvitox")
-	var/static/image/sanguinal_image = image('icons/mob/hud/human.dmi', icon_state = "sanguinal")
-	var/static/image/ozelomelyn_image = image('icons/mob/hud/human.dmi', icon_state = "ozelomelyn")
-	var/static/image/neurotox_high_image = image('icons/mob/hud/human.dmi', icon_state = "neurotoxin_high")
-	var/static/image/hemodile_high_image = image('icons/mob/hud/human.dmi', icon_state = "hemodile_high")
-	var/static/image/transvitox_high_image = image('icons/mob/hud/human.dmi', icon_state = "transvitox_high")
-	var/static/image/sanguinal_high_image = image('icons/mob/hud/human.dmi', icon_state = "sanguinal_high")
-	var/static/image/intoxicated_image = image('icons/mob/hud/intoxicated.dmi', icon_state = "intoxicated")
-	var/static/image/intoxicated_amount_image = image('icons/mob/hud/intoxicated.dmi', icon_state = "intoxicated_amount0")
-	var/static/image/intoxicated_high_image = image('icons/mob/hud/intoxicated.dmi', icon_state = "intoxicated_high")
-	var/static/image/hunter_silence_image = image('icons/mob/hud/human.dmi', icon_state = "silence_debuff")
-	var/static/image/hive_target_image = image('icons/mob/hud/human.dmi', icon_state = "hive_target")
+	var/image/tyranid_reagent = hud_list[TYRANID_REAGENT_HUD] // Displays active tyranid reagents
+	var/image/tyranid_debuff = hud_list[TYRANID_DEBUFF_HUD] //Displays active tyranid specific debuffs
+	var/static/image/neurotox_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "neurotoxin")
+	var/static/image/hemodile_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "hemodile")
+	var/static/image/transvitox_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "transvitox")
+	var/static/image/sanguinal_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "sanguinal")
+	var/static/image/ozelomelyn_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "ozelomelyn")
+	var/static/image/neurotox_high_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "neurotoxin_high")
+	var/static/image/hemodile_high_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "hemodile_high")
+	var/static/image/transvitox_high_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "transvitox_high")
+	var/static/image/sanguinal_high_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "sanguinal_high")
+	var/static/image/intoxicated_image = image('modular_imperium/master_files/icons/mob/hud/intoxicated.dmi', icon_state = "intoxicated")
+	var/static/image/intoxicated_amount_image = image('modular_imperium/master_files/icons/mob/hud/intoxicated.dmi', icon_state = "intoxicated_amount0")
+	var/static/image/intoxicated_high_image = image('modular_imperium/master_files/icons/mob/hud/intoxicated.dmi', icon_state = "intoxicated_high")
+	var/static/image/hunter_silence_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "silence_debuff")
+	var/static/image/hive_target_image = image('modular_imperium/master_files/icons/mob/hud/human.dmi', icon_state = "hive_target")
 
-	xeno_reagent.overlays.Cut()
-	xeno_reagent.icon_state = ""
+	tyranid_reagent.overlays.Cut()
+	tyranid_reagent.icon_state = ""
 	if(stat != DEAD)
-		var/neurotox_amount = reagents.get_reagent_amount(/datum/reagent/toxin/xeno_neurotoxin)
-		var/hemodile_amount = reagents.get_reagent_amount(/datum/reagent/toxin/xeno_hemodile)
-		var/transvitox_amount = reagents.get_reagent_amount(/datum/reagent/toxin/xeno_transvitox)
-		var/sanguinal_amount = reagents.get_reagent_amount(/datum/reagent/toxin/xeno_sanguinal)
-		var/ozelomelyn_amount = reagents.get_reagent_amount(/datum/reagent/toxin/xeno_ozelomelyn)
+		var/neurotox_amount = reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_neurotoxin)
+		var/hemodile_amount = reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_hemodile)
+		var/transvitox_amount = reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_transvitox)
+		var/sanguinal_amount = reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_sanguinal)
+		var/ozelomelyn_amount = reagents.get_reagent_amount(/datum/reagent/toxin/tyranid_ozelomelyn)
 
 		if(neurotox_amount > 10) //Blinking image for particularly high concentrations
-			xeno_reagent.overlays += neurotox_high_image
+			tyranid_reagent.overlays += neurotox_high_image
 		else if(neurotox_amount > 0)
-			xeno_reagent.overlays += neurotox_image
+			tyranid_reagent.overlays += neurotox_image
 
 		if(ozelomelyn_amount > 0) // Has no effect beyond having it in them, don't need to have a high image.
-			xeno_reagent.overlays += ozelomelyn_image
+			tyranid_reagent.overlays += ozelomelyn_image
 
 		if(hemodile_amount > 10)
-			xeno_reagent.overlays += hemodile_high_image
+			tyranid_reagent.overlays += hemodile_high_image
 		else if(hemodile_amount > 0)
-			xeno_reagent.overlays += hemodile_image
+			tyranid_reagent.overlays += hemodile_image
 
 		if(transvitox_amount > 10)
-			xeno_reagent.overlays += transvitox_high_image
+			tyranid_reagent.overlays += transvitox_high_image
 		else if(transvitox_amount > 0)
-			xeno_reagent.overlays += transvitox_image
+			tyranid_reagent.overlays += transvitox_image
 
 		if(sanguinal_amount > 10)
-			xeno_reagent.overlays += sanguinal_high_image
+			tyranid_reagent.overlays += sanguinal_high_image
 		else if(sanguinal_amount > 0)
-			xeno_reagent.overlays += sanguinal_image
+			tyranid_reagent.overlays += sanguinal_image
 
-	hud_list[XENO_REAGENT_HUD] = xeno_reagent
+	hud_list[TYRANID_REAGENT_HUD] = tyranid_reagent
 
-	//Xeno debuff section start
-	xeno_debuff.overlays.Cut()
-	xeno_debuff.icon_state = ""
+	//Tyranid debuff section start
+	tyranid_debuff.overlays.Cut()
+	tyranid_debuff.icon_state = ""
 	if(stat != DEAD)
 		if(IsMute())
-			xeno_debuff.overlays += hunter_silence_image
+			tyranid_debuff.overlays += hunter_silence_image
 
 	if(HAS_TRAIT(src, TRAIT_HIVE_TARGET))
-		xeno_debuff.overlays += hive_target_image
+		tyranid_debuff.overlays += hive_target_image
 
 	if(has_status_effect(STATUS_EFFECT_INTOXICATED))
 		var/datum/status_effect/stacking/intoxicated/debuff = has_status_effect(STATUS_EFFECT_INTOXICATED)
 		var/intoxicated_amount = debuff.stacks
-		xeno_debuff.overlays += intoxicated_amount_image
+		tyranid_debuff.overlays += intoxicated_amount_image
 		intoxicated_amount_image.icon_state = "intoxicated_amount[intoxicated_amount]"
 		if(intoxicated_amount > 15)
-			xeno_debuff.overlays += intoxicated_high_image
+			tyranid_debuff.overlays += intoxicated_high_image
 		else if(intoxicated_amount > 0)
-			xeno_debuff.overlays += intoxicated_image
+			tyranid_debuff.overlays += intoxicated_image
 
-	hud_list[XENO_DEBUFF_HUD] = xeno_debuff
+	hud_list[TYRANID_DEBUFF_HUD] = tyranid_debuff
 
 	status_hud.overlays.Cut()
 	if(species.species_flags & IS_SYNTHETIC)
@@ -270,7 +270,7 @@
 				status_hud.overlays += "dead_noclient"
 			status_hud.icon_state = "synthdead"
 			return TRUE
-		infection_hud.icon_state = "synth" //Xenos can feel synths are not human.
+		infection_hud.icon_state = "synth" //Tyranids can feel synths are not human.
 		return TRUE
 
 	if(species.species_flags & HEALTH_HUD_ALWAYS_DEAD)
@@ -279,16 +279,16 @@
 		simple_status_hud.icon_state = ""
 		return TRUE
 
-	if(status_flags & XENO_HOST)
+	if(status_flags & TYRANID_HOST)
 		var/obj/item/alien_embryo/E = locate(/obj/item/alien_embryo) in src
 		if(E)
-			infection_hud.icon = 'icons/mob/hud/infected.dmi'
+			infection_hud.icon = 'modular_imperium/master_files/icons/mob/hud/infected.dmi'
 			if(E.boost_timer)
 				infection_hud.icon_state = "infectedmodifier[E.stage]"
 			else
 				infection_hud.icon_state = "infected[E.stage]"
-		else if(locate(/mob/living/carbon/xenomorph/larva) in src)
-			infection_hud.icon = 'icons/mob/hud/infected.dmi'
+		else if(locate(/mob/living/carbon/tyranid/larva) in src)
+			infection_hud.icon = 'modular_imperium/master_files/icons/mob/hud/infected.dmi'
 			infection_hud.icon_state = "infected6"
 		else
 			infection_hud.icon_state = ""
@@ -383,7 +383,7 @@
 
 	var/image/holder = hud_list[PAIN_HUD]
 	if(stat == DEAD)
-		holder.icon = 'icons/mob/hud/human_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/human_health.dmi'
 		holder.icon_state = "health-100"
 		return TRUE
 
@@ -393,7 +393,7 @@
 	if(!(species.species_flags & NO_STAMINA) && staminaloss > 0)
 		perceived_health -= STAMINA_RATIO_PAIN_HUD * staminaloss
 
-	holder.icon = 'icons/mob/hud/human_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/human_health.dmi'
 	if(perceived_health >= 100)
 		holder.icon_state = "health100"
 	else if(perceived_health > 0)
@@ -405,52 +405,52 @@
 
 	return TRUE
 
-//infection status that appears on humans and monkeys, viewed by xenos only.
-/datum/atom_hud/xeno_infection
-	hud_icons = list(XENO_EMBRYO_HUD)
+//infection status that appears on humans and monkeys, viewed by tyranids only.
+/datum/atom_hud/tyranid_infection
+	hud_icons = list(TYRANID_EMBRYO_HUD)
 
-//active reagent hud that apppears only for xenos
-/datum/atom_hud/xeno_reagents
-	hud_icons = list(XENO_REAGENT_HUD)
+//active reagent hud that apppears only for tyranids
+/datum/atom_hud/tyranid_reagents
+	hud_icons = list(TYRANID_REAGENT_HUD)
 
-///hud component for revealing tactical elements to xenos
-/datum/atom_hud/xeno_tactical
-	hud_icons = list(XENO_TACTICAL_HUD)
+///hud component for revealing tactical elements to tyranids
+/datum/atom_hud/tyranid_tactical
+	hud_icons = list(TYRANID_TACTICAL_HUD)
 
-///hud component for revealing xeno specific status effect debuffs to xenos
-/datum/atom_hud/xeno_debuff
-	hud_icons = list(XENO_DEBUFF_HUD)
+///hud component for revealing tyranid specific status effect debuffs to tyranids
+/datum/atom_hud/tyranid_debuff
+	hud_icons = list(TYRANID_DEBUFF_HUD)
 
-//Xeno status hud, for xenos
-/datum/atom_hud/xeno
-	hud_icons = list(HEALTH_HUD_XENO, PLASMA_HUD, PHEROMONE_HUD, QUEEN_OVERWATCH_HUD, ARMOR_SUNDER_HUD, XENO_FIRE_HUD, XENO_RANK_HUD, XENO_BLESSING_HUD, XENO_EVASION_HUD)
+//Tyranid status hud, for tyranids
+/datum/atom_hud/tyranid
+	hud_icons = list(HEALTH_HUD_TYRANID, PLASMA_HUD, PHEROMONE_HUD, QUEEN_OVERWATCH_HUD, ARMOR_SUNDER_HUD, TYRANID_FIRE_HUD, TYRANID_RANK_HUD, TYRANID_BLESSING_HUD, TYRANID_EVASION_HUD)
 
-/datum/atom_hud/xeno_heart
+/datum/atom_hud/tyranid_heart
 	hud_icons = list(HEART_STATUS_HUD)
 
 /mob/living/proc/hud_set_sunder()
 	return
 
-/mob/living/carbon/xenomorph/hud_set_sunder()
+/mob/living/carbon/tyranid/hud_set_sunder()
 	var/image/holder = hud_list[ARMOR_SUNDER_HUD]
 	if(!holder)
 		return
 
 	if(stat == DEAD)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "sundering0"
 		return
 
-	var/amount = min(round(sunder * 100 / xeno_caste.sunder_max, 10), 100)
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	var/amount = min(round(sunder * 100 / tyranid_caste.sunder_max, 10), 100)
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "sundering[amount]"
 
 ///Set fire stacks on the hud
 /mob/living/proc/hud_set_firestacks()
 	return
 
-/mob/living/carbon/xenomorph/hud_set_firestacks()
-	var/image/holder = hud_list[XENO_FIRE_HUD]
+/mob/living/carbon/tyranid/hud_set_firestacks()
+	var/image/holder = hud_list[TYRANID_FIRE_HUD]
 	if(!holder)
 		return
 
@@ -461,27 +461,27 @@
 		if(-INFINITY to 0)
 			holder.icon_state = ""
 		if(1 to 5)
-			holder.icon = 'icons/mob/hud/xeno.dmi'
+			holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno.dmi'
 			holder.icon_state = "firestack1"
 		if(6 to 10)
-			holder.icon = 'icons/mob/hud/xeno.dmi'
+			holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno.dmi'
 			holder.icon_state = "firestack2"
 		if(11 to 15)
-			holder.icon = 'icons/mob/hud/xeno.dmi'
+			holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno.dmi'
 			holder.icon_state = "firestack3"
 		if(16 to INFINITY)
-			holder.icon = 'icons/mob/hud/xeno.dmi'
+			holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno.dmi'
 			holder.icon_state = "firestack4"
 
-/mob/living/carbon/xenomorph/proc/hud_set_plasma()
-	if(!xeno_caste) //this is cringe that we need this but currently its called before caste is set on init
+/mob/living/carbon/tyranid/proc/hud_set_plasma()
+	if(!tyranid_caste) //this is cringe that we need this but currently its called before caste is set on init
 		return
 	if(hud_used?.alien_plasma_display)
 		var/bucket
 		if(stat == DEAD)
 			bucket = "empty"
 		else
-			bucket = get_bucket(XENO_HUD_ICON_BUCKETS, xeno_caste.plasma_max, plasma_stored, 0, list("full", "empty"))
+			bucket = get_bucket(TYRANID_HUD_ICON_BUCKETS, tyranid_caste.plasma_max, plasma_stored, 0, list("full", "empty"))
 		hud_used.alien_plasma_display.icon_state = "power_display_[bucket]"
 
 	var/image/holder = hud_list[PLASMA_HUD]
@@ -490,13 +490,13 @@
 	holder.overlays.Cut()
 	if(stat == DEAD)
 		return
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
-	var/plasma_amount = xeno_caste.plasma_max? round(plasma_stored * 100 / xeno_caste.plasma_max, 10) : 0
-	holder.overlays += xeno_caste.plasma_icon_state? "[xeno_caste.plasma_icon_state][plasma_amount]" : null
-	var/wrath_amount = xeno_caste.wrath_max? round(wrath_stored * 100 / xeno_caste.wrath_max, 10) : 0
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
+	var/plasma_amount = tyranid_caste.plasma_max? round(plasma_stored * 100 / tyranid_caste.plasma_max, 10) : 0
+	holder.overlays += tyranid_caste.plasma_icon_state? "[tyranid_caste.plasma_icon_state][plasma_amount]" : null
+	var/wrath_amount = tyranid_caste.wrath_max? round(wrath_stored * 100 / tyranid_caste.wrath_max, 10) : 0
 	holder.overlays += "wrath[wrath_amount]"
 
-/mob/living/carbon/xenomorph/proc/hud_set_pheromone()
+/mob/living/carbon/tyranid/proc/hud_set_pheromone()
 	var/image/holder = hud_list[PHEROMONE_HUD]
 	if(!holder)
 		return
@@ -504,19 +504,19 @@
 	if(stat != DEAD)
 		var/tempname = ""
 		if(frenzy_aura)
-			tempname += AURA_XENO_FRENZY
+			tempname += AURA_TYRANID_FRENZY
 		if(warding_aura)
-			tempname += AURA_XENO_WARDING
+			tempname += AURA_TYRANID_WARDING
 		if(recovery_aura)
-			tempname += AURA_XENO_RECOVERY
+			tempname += AURA_TYRANID_RECOVERY
 		if(tempname)
-			holder.icon = 'icons/mob/hud/aura.dmi'
+			holder.icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi'
 			holder.icon_state = "[tempname]"
 
 	hud_list[PHEROMONE_HUD] = holder
 
 //Only called when an aura is added or removed
-/mob/living/carbon/xenomorph/update_aura_overlay()
+/mob/living/carbon/tyranid/update_aura_overlay()
 	var/image/holder = hud_list[PHEROMONE_HUD]
 	if(!holder)
 		return
@@ -525,30 +525,30 @@
 		return
 	for(var/aura_type in GLOB.pheromone_images_list)
 		if(emitted_auras.Find(aura_type))
-			holder.overlays += image('icons/mob/hud/aura.dmi', src, "[aura_type]_aura")
+			holder.overlays += image('modular_imperium/master_files/icons/mob/hud/aura.dmi', src, "[aura_type]_aura")
 
-/mob/living/carbon/xenomorph/proc/hud_set_queen_overwatch()
+/mob/living/carbon/tyranid/proc/hud_set_queen_overwatch()
 	var/image/holder = hud_list[QUEEN_OVERWATCH_HUD]
 	holder.overlays.Cut()
 	holder.icon_state = ""
 	if(stat != DEAD)
-		if(hive?.living_xeno_queen)
-			if(hive.living_xeno_queen.observed_xeno == src)
-				holder.icon = 'icons/mob/hud/xeno.dmi'
+		if(hive?.living_tyranid_queen)
+			if(hive.living_tyranid_queen.observed_tyranid == src)
+				holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno.dmi'
 				holder.icon_state = "queen_overwatch"
-			if(xeno_flags & XENO_LEADER)
-				var/image/I = image('icons/mob/hud/xeno.dmi',src, "leader")
+			if(tyranid_flags & TYRANID_LEADER)
+				var/image/I = image('modular_imperium/master_files/icons/mob/hud/xeno.dmi',src, "leader")
 				holder.overlays += I
 	hud_list[QUEEN_OVERWATCH_HUD] = holder
 
-/mob/living/carbon/xenomorph/proc/hud_update_rank()
-	var/image/holder = hud_list[XENO_RANK_HUD]
+/mob/living/carbon/tyranid/proc/hud_update_rank()
+	var/image/holder = hud_list[TYRANID_RANK_HUD]
 	holder.icon_state = ""
-	if(stat != DEAD && playtime_as_number() > 0 && client.prefs.show_xeno_rank)
-		holder.icon = 'icons/mob/hud/xeno.dmi'
+	if(stat != DEAD && playtime_as_number() > 0 && client.prefs.show_tyranid_rank)
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno.dmi'
 		holder.icon_state = "upgrade_[playtime_as_number()]"
 
-	hud_list[XENO_RANK_HUD] = holder
+	hud_list[TYRANID_RANK_HUD] = holder
 
 /datum/atom_hud/security
 	hud_icons = list(WANTED_HUD)
@@ -575,21 +575,21 @@
 					break
 
 /datum/atom_hud/squad
-	hud_icons = list(SQUAD_HUD_TERRAGOV, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
+	hud_icons = list(SQUAD_HUD_IMPERIUM, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
 
-/datum/atom_hud/squad_som
-	hud_icons = list(SQUAD_HUD_SOM, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
+/datum/atom_hud/squad_chaos
+	hud_icons = list(SQUAD_HUD_CHAOS, MACHINE_HEALTH_HUD, MACHINE_AMMO_HUD)
 
-/mob/proc/hud_set_job(faction = FACTION_TERRAGOV)
+/mob/proc/hud_set_job(faction = FACTION_IMPERIUM)
 	return
 
-/mob/living/carbon/human/hud_set_job(faction = FACTION_TERRAGOV)
+/mob/living/carbon/human/hud_set_job(faction = FACTION_IMPERIUM)
 	var/hud_type
 	switch(faction)
-		if(FACTION_TERRAGOV)
-			hud_type = SQUAD_HUD_TERRAGOV
-		if(FACTION_SOM)
-			hud_type = SQUAD_HUD_SOM
+		if(FACTION_IMPERIUM)
+			hud_type = SQUAD_HUD_IMPERIUM
+		if(FACTION_CHAOS)
+			hud_type = SQUAD_HUD_CHAOS
 		else
 			return
 	var/image/holder = hud_list[hud_type]
@@ -600,20 +600,20 @@
 		var/squad_color = assigned_squad.color
 		var/rank = job.comm_title
 		if(job.job_flags & JOB_FLAG_PROVIDES_SQUAD_HUD)
-			var/image/IMG = image('icons/mob/hud/job.dmi', src, "")
+			var/image/IMG = image('modular_imperium/master_files/icons/mob/hud/job.dmi', src, "")
 			IMG.color = squad_color
 			holder.overlays += IMG
-			holder.overlays += image('icons/mob/hud/job.dmi', src, "[rank]")
+			holder.overlays += image('modular_imperium/master_files/icons/mob/hud/job.dmi', src, "[rank]")
 			if(assigned_squad?.squad_leader == src)
-				holder.overlays += image('icons/mob/hud/job.dmi', src, "leader_trim")
+				holder.overlays += image('modular_imperium/master_files/icons/mob/hud/job.dmi', src, "leader_trim")
 		var/fireteam = wear_id?.assigned_fireteam
 		if(fireteam)
-			var/image/IMG2 = image('icons/mob/hud/job.dmi', src, "fireteam_[fireteam]")
+			var/image/IMG2 = image('modular_imperium/master_files/icons/mob/hud/job.dmi', src, "fireteam_[fireteam]")
 			IMG2.color = squad_color
 			holder.overlays += IMG2
 
 	else if(job.job_flags & JOB_FLAG_PROVIDES_SQUAD_HUD)
-		holder.overlays += image('icons/mob/hud/job.dmi', src, "[job.comm_title]")
+		holder.overlays += image('modular_imperium/master_files/icons/mob/hud/job.dmi', src, "[job.comm_title]")
 
 	hud_list[hud_type] = holder
 
@@ -626,11 +626,11 @@
 	holder.overlays.Cut()
 	if(stat == DEAD)
 		return
-	var/static/image/mobility_icon = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "move")
-	var/static/image/protection_icon = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "hold")
-	var/static/image/marksman_icon = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "focus")
-	var/static/image/flag_icon = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "flag")
-	var/static/image/flag_lost_icon = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "flag_lost")
+	var/static/image/mobility_icon = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "move")
+	var/static/image/protection_icon = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "hold")
+	var/static/image/marksman_icon = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "focus")
+	var/static/image/flag_icon = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "flag")
+	var/static/image/flag_lost_icon = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "flag_lost")
 
 	if(mobility_aura)
 		holder.add_overlay(mobility_icon)
@@ -648,9 +648,9 @@
 //Only called when an aura is added or removed
 /mob/living/carbon/human/update_aura_overlay()
 	var/image/holder = hud_list[ORDER_HUD]
-	var/static/image/mobility_source = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "move_aura")
-	var/static/image/protection_source = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "hold_aura")
-	var/static/image/marksman_source = image(icon = 'icons/mob/hud/aura.dmi', icon_state = "focus_aura")
+	var/static/image/mobility_source = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "move_aura")
+	var/static/image/protection_source = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "hold_aura")
+	var/static/image/marksman_source = image(icon = 'modular_imperium/master_files/icons/mob/hud/aura.dmi', icon_state = "focus_aura")
 
 	emitted_auras.Find(AURA_HUMAN_MOVE) ? holder.add_overlay(mobility_source) : holder.cut_overlay(mobility_source)
 	emitted_auras.Find(AURA_HUMAN_HOLD) ? holder.add_overlay(protection_source) : holder.cut_overlay(protection_source)
@@ -664,14 +664,14 @@
 		return
 
 	if(obj_integrity < 1)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "health0"
 		return
 
 	var/amount = round(obj_integrity * 100 / max_integrity, 10)
 	if(!amount)
 		amount = 1 //don't want the 'zero health' icon when we still have 4% of our health
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "health[amount]"
 
 ///Makes mounted guns ammo visible
@@ -682,11 +682,11 @@
 		return
 	var/obj/item/weapon/gun/internal_gun = internal_item.resolve()
 	if(!internal_gun?.rounds)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "plasma0"
 		return
 	var/amount = internal_gun.max_rounds ? round(internal_gun.rounds * 100 / internal_gun.max_rounds, 10) : 0
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "plasma[amount]"
 
 ///Makes unmanned vehicle ammo visible
@@ -697,12 +697,12 @@
 		return
 
 	if(!current_rounds)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "plasma0"
 		return
 
 	var/amount = round(current_rounds * 100 / max_rounds, 10)
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "plasma[amount]"
 
 ///Mecha health hud updates
@@ -713,14 +713,14 @@
 		return
 
 	if(obj_integrity < 1)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "health0"
 		return
 
 	var/amount = round(obj_integrity * 100 / max_integrity, 10)
 	if(!amount)
 		amount = 1 //don't want the 'zero health' icon when we still have 4% of our health
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "health[amount]"
 
 ///Updates mecha battery
@@ -731,12 +731,12 @@
 		return
 
 	if(!cell)
-		holder.icon = 'icons/mob/hud/xeno_health.dmi'
+		holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 		holder.icon_state = "plasma0"
 		return
 
 	var/amount = round(cell.charge * 100 / cell.maxcharge, 10)
-	holder.icon = 'icons/mob/hud/xeno_health.dmi'
+	holder.icon = 'modular_imperium/master_files/icons/mob/hud/xeno_health.dmi'
 	holder.icon_state = "plasma[amount]"
 
 /obj/vehicle/sealed/mecha/proc/diag_hud_set_mechstat()

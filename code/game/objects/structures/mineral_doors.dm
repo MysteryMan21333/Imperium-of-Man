@@ -6,7 +6,7 @@
 	density = TRUE
 	opacity = TRUE
 	allow_pass_flags = NONE
-	icon = 'icons/obj/doors/mineral_doors.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mineral_doors.dmi'
 	icon_state = "metal"
 
 	///Are we open or not

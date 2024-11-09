@@ -1,6 +1,6 @@
 /obj/structure/paper_bin
 	name = "paper bin"
-	icon = 'icons/obj/items/paper.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/paper.dmi'
 	density = FALSE
 	anchored = FALSE
 	icon_state = "paper_bin1"

@@ -10,7 +10,7 @@
 /obj/machinery/door/firedoor
 	name = "\improper Emergency Shutter"
 	desc = "Emergency air-tight shutter, capable of sealing off breached areas."
-	icon = 'icons/obj/doors/DoorHazard.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/DoorHazard.dmi'
 	icon_state = "door_open"
 	req_one_access = list(ACCESS_CIVILIAN_ENGINEERING)
 	opacity = FALSE
@@ -117,32 +117,32 @@
 		return ..()
 	return FALSE
 
-/obj/machinery/door/firedoor/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/machinery/door/firedoor/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 
-	var/turf/cur_loc = xeno_attacker.loc
+	var/turf/cur_loc = tyranid_attacker.loc
 	if(blocked)
-		to_chat(xeno_attacker, span_warning("\The [src] is welded shut."))
+		to_chat(tyranid_attacker, span_warning("\The [src] is welded shut."))
 		return FALSE
 	if(!istype(cur_loc))
 		return FALSE //Some basic logic here
 	if(!density)
-		to_chat(xeno_attacker, span_warning("\The [src] is already open!"))
+		to_chat(tyranid_attacker, span_warning("\The [src] is already open!"))
 		return FALSE
 
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
-	xeno_attacker.visible_message(span_warning("\The [xeno_attacker] digs into \the [src] and begins to pry it open."), \
+	tyranid_attacker.visible_message(span_warning("\The [tyranid_attacker] digs into \the [src] and begins to pry it open."), \
 	span_warning("We dig into \the [src] and begin to pry it open."), null, 5)
 
-	if(do_after(xeno_attacker, 30, IGNORE_HELD_ITEM, src, BUSY_ICON_BUILD))
+	if(do_after(tyranid_attacker, 30, IGNORE_HELD_ITEM, src, BUSY_ICON_BUILD))
 		if(blocked)
-			to_chat(xeno_attacker, span_warning("\The [src] is welded shut."))
+			to_chat(tyranid_attacker, span_warning("\The [src] is welded shut."))
 			return FALSE
 		if(density) //Make sure it's still closed
 			spawn(0)
 				open(1)
-				xeno_attacker.visible_message(span_danger("\The [xeno_attacker] pries \the [src] open."), \
+				tyranid_attacker.visible_message(span_danger("\The [tyranid_attacker] pries \the [src] open."), \
 				span_danger("We pry \the [src] open."), null, 5)
 
 /obj/machinery/door/firedoor/attack_hand(mob/living/user)
@@ -316,18 +316,18 @@
 /obj/machinery/door/firedoor/mainship
 	name = "\improper Emergency Shutter"
 	desc = "Emergency air-tight shutter, capable of sealing off breached areas."
-	icon = 'icons/obj/doors/mainship/purinadoor.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/mainship/purinadoor.dmi'
 	icon_state = "door_open"
 	openspeed = 4
 
 
 /obj/machinery/door/firedoor/multi_tile
-	icon = 'icons/obj/doors/DoorHazard2x1.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/DoorHazard2x1.dmi'
 	width = 2
 
 
 /obj/machinery/door/firedoor/border_only
-	icon = 'icons/obj/doors/edge_Doorfire.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/edge_Doorfire.dmi'
 	atom_flags = ON_BORDER
 	allow_pass_flags = PASS_GLASS
 

@@ -413,7 +413,7 @@ GLOBAL_PROTECT(admin_verbs_varedit)
 	/datum/admins/proc/offer,
 	/datum/admins/proc/force_dropship,
 	/datum/admins/proc/open_shuttlepanel,
-	/datum/admins/proc/xeno_panel,
+	/datum/admins/proc/tyranid_panel,
 	/datum/admins/proc/view_faxes,
 	/datum/admins/proc/possess,
 	/datum/admins/proc/release,
@@ -428,7 +428,7 @@ GLOBAL_PROTECT(admin_verbs_varedit)
 	/datum/admins/proc/map_template_load,
 	/datum/admins/proc/map_template_upload,
 	/datum/admins/proc/spatial_agent,
-	/datum/admins/proc/set_xeno_stat_buffs,
+	/datum/admins/proc/set_tyranid_stat_buffs,
 	/datum/admins/proc/check_bomb_impacts,
 	/datum/admins/proc/adjust_gravity,
 	)

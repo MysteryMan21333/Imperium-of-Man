@@ -3,10 +3,10 @@
 
 /datum/loadout_item/suit_store/main_gun/corpsman/laser_carbine
 	name = "Laser carbine"
-	desc = "Equipped with a red dot sight and underbarrel grenade launcher. The TerraGov laser carbine is the high tech equivilent to the AR-18, with extremely good mobility and handling, and powerful medium range damage. \
+	desc = "Equipped with a red dot sight and underbarrel grenade launcher. The Imperium laser carbine is the high tech equivilent to the AR-18, with extremely good mobility and handling, and powerful medium range damage. \
 	Variable firemodes gives it additional flexibility over its ballistic counterpart. Uses TE power cells that are shared across all TGMC laser weaponry."
 	ui_icon = "tec"
-	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/scout
+	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine/scout
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/suit_store/main_gun/corpsman/laser_carbine/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -20,7 +20,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/laser_rifle
@@ -29,7 +29,7 @@
 	Has good mobility and excellent falloff, although lacks the power offered by weapons with an underbarrel grenade launcher.\
 	Uses TE power cells that are shared across all TGMC laser weaponry."
 	ui_icon = "ter"
-	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/medic
+	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/medic
 
 /datum/loadout_item/suit_store/main_gun/corpsman/laser_rifle/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
 	. = ..()
@@ -42,7 +42,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank/mini, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/auto_shotgun
@@ -65,7 +65,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 /datum/loadout_item/suit_store/main_gun/corpsman/skirmish_rifle
 	name = "AR-21"
@@ -86,7 +86,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/standard_smg
@@ -109,7 +109,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/standard_smg/enhanced
@@ -137,7 +137,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/carbine/enhanced
@@ -166,7 +166,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/assault_rifle/enhanced
@@ -196,7 +196,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/plasma_smg
@@ -220,7 +220,7 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)
 
 /datum/loadout_item/suit_store/main_gun/corpsman/plasma_rifle
@@ -244,5 +244,5 @@
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new secondary_ammo_type, SLOT_IN_BACKPACK)
 	wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank/mini, SLOT_IN_BACKPACK)
-	if(!istype(wearer.back, /obj/item/storage/backpack/marine/corpsman/satchel))
+	if(!istype(wearer.back, /obj/item/storage/backpack/guardsman/corpsman/satchel))
 		wearer.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_BACKPACK)

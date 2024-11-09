@@ -11,7 +11,7 @@
 
 /obj/item/storage/pill_bottle/packet/update_overlays()
 	. = ..()
-	var/image/overlay = image('icons/obj/items/chemistry.dmi', src, "packet_canister[length(contents)]")
+	var/image/overlay = image('modular_imperium/master_files/icons/obj/items/chemistry.dmi', src, "packet_canister[length(contents)]")
 	overlay.color = pip_color
 	. += overlay
 

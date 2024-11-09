@@ -114,26 +114,26 @@
 /datum/ammo/bullet/shotgun/mech/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	staggerstun(target_mob, proj, weaken = 2 SECONDS, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
 
-/datum/ammo/energy/lasgun/marine/mech
+/datum/ammo/energy/lasgun/guardsman/mech
 	name = "superheated laser bolt"
 	damage = 45
 	penetration = 20
 	sundering = 1
 	damage_falloff = 0.5
 
-/datum/ammo/energy/lasgun/marine/mech/burst
+/datum/ammo/energy/lasgun/guardsman/mech/burst
 	damage = 30
 	penetration = 10
 	sundering = 0.75
 	damage_falloff = 0.6
 
-/datum/ammo/energy/lasgun/marine/mech/smg
+/datum/ammo/energy/lasgun/guardsman/mech/smg
 	name = "superheated pulsed laser bolt"
 	damage = 15
 	penetration = 10
 	hitscan_effect_icon = "beam_particle"
 
-/datum/ammo/energy/lasgun/marine/mech/lance_strike
+/datum/ammo/energy/lasgun/guardsman/mech/lance_strike
 	name = "particle lance"
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_SNIPER|AMMO_HITSCAN|AMMO_PASS_THROUGH_MOVABLE|AMMO_PASS_THROUGH_MOB
 	damage_type = BRUTE
@@ -146,7 +146,7 @@
 	on_pierce_multiplier = 0.5
 	hitscan_effect_icon = "lance"
 
-/datum/ammo/energy/lasgun/marine/mech/lance_strike/super
+/datum/ammo/energy/lasgun/guardsman/mech/lance_strike/super
 	damage = 120
 	damage_falloff = -8
 	max_range = 5

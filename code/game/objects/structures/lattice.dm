@@ -1,7 +1,7 @@
 /obj/structure/lattice
 	desc = "A lightweight support lattice."
 	name = "lattice"
-	icon = 'icons/obj/structures/structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/structures.dmi'
 	icon_state = "latticefull"
 	density = FALSE
 	anchored = TRUE
@@ -14,7 +14,7 @@
 	for(var/obj/structure/lattice/LAT in src.loc)
 		if(LAT != src)
 			qdel(LAT)
-	icon = 'icons/obj/smoothlattice.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smoothlattice.dmi'
 	icon_state = "latticeblank"
 	updateOverlays()
 	for (var/dir in GLOB.cardinals)
@@ -69,7 +69,7 @@
 		return
 
 /obj/structure/lattice/autosmooth
-	icon = 'icons/obj/smooth_objects/lattice.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/lattice.dmi'
 	icon_state = "lattice-0"
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = GAME_PLANE
@@ -80,12 +80,12 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/catwalk
-	icon = 'icons/obj/smooth_objects/catwalk.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/smooth_objects/catwalk.dmi'
 	icon_state = "catwalk-icon"
 	base_icon_state = "catwalk"
 	plane = FLOOR_PLANE
 	layer = CATWALK_LAYER
-	resistance_flags = XENO_DAMAGEABLE|DROPSHIP_IMMUNE
+	resistance_flags = TYRANID_DAMAGEABLE|DROPSHIP_IMMUNE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_LATTICE)
 	canSmoothWith = list(SMOOTH_GROUP_LATTICE)
@@ -104,13 +104,13 @@
 /obj/structure/catwalk/lava_act()
 	return FALSE
 
-/obj/structure/catwalk/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/structure/catwalk/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
-	if(xeno_attacker.a_intent != INTENT_HARM)
+	if(tyranid_attacker.a_intent != INTENT_HARM)
 		return
-	xeno_attacker.balloon_alert(xeno_attacker, "Destroying")
-	if(!do_after(xeno_attacker, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
+	tyranid_attacker.balloon_alert(tyranid_attacker, "Destroying")
+	if(!do_after(tyranid_attacker, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return
 	playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 	qdel(src)

@@ -69,15 +69,15 @@
 	instant_use = TRUE
 	detailed_desc = "Hostile assets in the AO are preventing the use of close air support during this mission."
 
-/datum/campaign_asset/asset_disabler/som_cas
+/datum/campaign_asset/asset_disabler/chaos_cas
 	name = "CAS disabled"
 	desc = "CAS fire support temporarily disabled"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to close air support"
 	ui_icon = "cas_disabled"
-	types_disabled = list(/datum/campaign_asset/fire_support/som_cas)
+	types_disabled = list(/datum/campaign_asset/fire_support/chaos_cas)
 	blacklist_mission_flags = MISSION_DISALLOW_FIRESUPPORT
 
-/datum/campaign_asset/asset_disabler/som_cas/instant
+/datum/campaign_asset/asset_disabler/chaos_cas/instant
 	uses = 1
 	instant_use = TRUE
 	detailed_desc = "Hostile assets in the AO are preventing the use of close air support during this mission."
@@ -98,15 +98,15 @@
 	instant_use = TRUE
 	detailed_desc = "Hostile assets in the AO are preventing the use of mortar support during this mission."
 
-/datum/campaign_asset/asset_disabler/som_mortar
+/datum/campaign_asset/asset_disabler/chaos_mortar
 	name = "Mortar support disabled"
 	desc = "Mortar fire support temporarily disabled"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to mortar fire support"
 	ui_icon = "mortar_disabled"
-	types_disabled = list(/datum/campaign_asset/fire_support/som_mortar)
+	types_disabled = list(/datum/campaign_asset/fire_support/chaos_mortar)
 	blacklist_mission_flags = MISSION_DISALLOW_FIRESUPPORT
 
-/datum/campaign_asset/asset_disabler/som_mortar/long
+/datum/campaign_asset/asset_disabler/chaos_mortar/long
 	uses = 3
 
 /datum/campaign_asset/asset_disabler/drop_pods

@@ -7,7 +7,7 @@ FIRE ALARM
 /obj/machinery/firealarm
 	name = "fire alarm"
 	desc = "<i>\"Pull this in case of emergency\"</i>. Thus, keep pulling it forever."
-	icon = 'icons/obj/machines/fire_alarm.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/fire_alarm.dmi'
 	icon_state = "fire0"
 	light_range = 1
 	light_power = 0.5
@@ -59,7 +59,7 @@ FIRE ALARM
 	if(A.alarm_state_flags & ALARM_WARNING_FIRE)
 		set_light_color(LIGHT_COLOR_EMISSIVE_ORANGE)
 	else
-		switch(GLOB.marine_main_ship.get_security_level())
+		switch(GLOB.guardsman_main_ship.get_security_level())
 			if("delta")
 				set_light_color(LIGHT_COLOR_PINK)
 			if("red")
@@ -83,8 +83,8 @@ FIRE ALARM
 		return
 	if(CHECK_BITFIELD(machine_stat, NOPOWER))
 		return
-	. += emissive_appearance(icon, "fire_o[(is_mainship_level(z)) ? GLOB.marine_main_ship.get_security_level() : "green"]")
-	. += mutable_appearance(icon, "fire_o[(is_mainship_level(z)) ? GLOB.marine_main_ship.get_security_level() : "green"]")
+	. += emissive_appearance(icon, "fire_o[(is_mainship_level(z)) ? GLOB.guardsman_main_ship.get_security_level() : "green"]")
+	. += mutable_appearance(icon, "fire_o[(is_mainship_level(z)) ? GLOB.guardsman_main_ship.get_security_level() : "green"]")
 	var/area/A = get_area(src)
 	if(A.alarm_state_flags & ALARM_WARNING_FIRE)
 		. += mutable_appearance(icon, "fire_o1")
@@ -189,7 +189,7 @@ FIRE ALARM
 		d2 = "<A href='?src=[text_ref(src)];time=1'>Initiate Time Lock</A>"
 	var/second = round(time) % 60
 	var/minute = (round(time) - second) / 60
-	var/dat = "<B>Fire alarm</B> [d1]\n<HR>The current alert level is: [GLOB.marine_main_ship.get_security_level()]</b><br><br>\nTimer System: [d2]<BR>\nTime Left: [(minute ? "[minute]:" : null)][second] <A href='?src=[text_ref(src)];tp=-30'>-</A> <A href='?src=[text_ref(src)];tp=-1'>-</A> <A href='?src=[text_ref(src)];tp=1'>+</A> <A href='?src=[text_ref(src)];tp=30'>+</A>"
+	var/dat = "<B>Fire alarm</B> [d1]\n<HR>The current alert level is: [GLOB.guardsman_main_ship.get_security_level()]</b><br><br>\nTimer System: [d2]<BR>\nTime Left: [(minute ? "[minute]:" : null)][second] <A href='?src=[text_ref(src)];tp=-30'>-</A> <A href='?src=[text_ref(src)];tp=-1'>-</A> <A href='?src=[text_ref(src)];tp=1'>+</A> <A href='?src=[text_ref(src)];tp=30'>+</A>"
 
 	var/datum/browser/popup = new(user, "firealarm", "<div align='center'>Fire alarm</div>")
 	popup.set_content(dat)

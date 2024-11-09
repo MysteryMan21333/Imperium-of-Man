@@ -62,7 +62,7 @@ GLOBAL_LIST_EMPTY(faxes)
 		P.update_icon()
 
 		if(admin)
-			var/image/stampoverlay = image('icons/obj/items/paper.dmi')
+			var/image/stampoverlay = image('modular_imperium/master_files/icons/obj/items/paper.dmi')
 			stampoverlay.icon_state = "paper_stamp-tgmc"
 			if(!P.stamped)
 				P.stamped = new

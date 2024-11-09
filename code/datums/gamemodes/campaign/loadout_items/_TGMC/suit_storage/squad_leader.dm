@@ -51,7 +51,7 @@
 	Has good mobility and excellent falloff, although lacks the power offered by weapons with an underbarrel grenade launcher.\
 	Uses TE power cells that are shared across all TGMC laser weaponry."
 	ui_icon = "ter"
-	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman
+	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle/rifleman
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/suit_store/main_gun/squad_leader/laser_rifle/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -192,7 +192,7 @@
 
 /datum/loadout_item/suit_store/main_gun/squad_leader/oicw/role_post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
 	. = ..()
-	if(loadout.belt == /obj/item/storage/belt/marine)
+	if(loadout.belt == /obj/item/storage/belt/guardsman)
 		wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BELT)
 		wearer.equip_to_slot_or_del(new ammo_type, SLOT_IN_BELT)
 		wearer.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/tx54/incendiary, SLOT_IN_BELT)

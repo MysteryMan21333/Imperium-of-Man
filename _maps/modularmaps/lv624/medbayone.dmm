@@ -58,7 +58,7 @@
 	},
 /area/lv624/lazarus/medbay)
 "hi" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/tile/blue/whitebluecorner{
 	dir = 2
 	},

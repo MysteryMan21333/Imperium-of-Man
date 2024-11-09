@@ -1,7 +1,7 @@
 /obj/machinery/chem_master
 	name = "ChemMaster 3000"
 	desc = "Used to separate chemicals and distribute them in a variety of forms."
-	icon = 'icons/obj/machines/chemical_machines.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/chemical_machines.dmi'
 	icon_state = "mixer0"
 	density = TRUE
 	anchored = TRUE
@@ -354,13 +354,13 @@
 		spawn()
 			has_sprites += user.client
 			for(var/i = 1 to MAX_PILL_BOTTLE_SPRITE)
-				user << browse_rsc(icon('icons/obj/items/chemistry.dmi', pill_bottle_names[i]), pill_bottle_names[i]+".png")
+				user << browse_rsc(icon('modular_imperium/master_files/icons/obj/items/chemistry.dmi', pill_bottle_names[i]), pill_bottle_names[i]+".png")
 			for(var/i = 1 to MAX_PILL_SPRITE)
-				user << browse_rsc(icon('icons/obj/items/chemistry.dmi', "pill" + num2text(i)), "pill[i].png")
+				user << browse_rsc(icon('modular_imperium/master_files/icons/obj/items/chemistry.dmi', "pill" + num2text(i)), "pill[i].png")
 			for(var/i = 1 to MAX_BOTTLE_SPRITE)
-				user << browse_rsc(icon('icons/obj/items/chemistry.dmi', "bottle-" + num2text(i)), "bottle-[i].png")
+				user << browse_rsc(icon('modular_imperium/master_files/icons/obj/items/chemistry.dmi', "bottle-" + num2text(i)), "bottle-[i].png")
 			for(var/i = 1 to MAX_AUTOINJECTOR_SPRITE)
-				user << browse_rsc(icon('icons/obj/items/syringe.dmi', "autoinjector-" + num2text(i)), "autoinjector-[i].png")
+				user << browse_rsc(icon('modular_imperium/master_files/icons/obj/items/syringe.dmi', "autoinjector-" + num2text(i)), "autoinjector-[i].png")
 	var/dat = ""
 	if(!beaker)
 		dat = "Please insert beaker.<BR>"

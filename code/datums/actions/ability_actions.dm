@@ -2,8 +2,8 @@
 /datum/action/ability
 	///If you are going to add an explanation for an ability. don't use stats, give a very brief explanation of how to use it.
 	desc = "This ability can not be found in codex."
-	action_icon = 'icons/Xeno/actions/general.dmi'
-	///The cost of using this ability. Typically a plasma cost for xenos
+	action_icon = 'modular_imperium/master_files/icons/tyranid/actions/general.dmi'
+	///The cost of using this ability. Typically a plasma cost for tyranids
 	var/ability_cost = 0
 	///bypass use limitations checked by can_use_action()
 	var/use_state_flags = NONE
@@ -104,7 +104,7 @@
 			return FALSE
 		if(isclosedturf(current_turf))
 			if(!silent)
-				//Not converted to balloon alert as xeno.dm's balloon alert is simultaneously called and will overlap.
+				//Not converted to balloon alert as tyranid.dm's balloon alert is simultaneously called and will overlap.
 				to_chat(owner, span_warning("We can't do this while in a solid object!"))
 			return FALSE
 		for(var/obj/turf_object in current_turf.contents)
@@ -170,8 +170,8 @@
 		return
 	update_button_icon()
 
-///Any changes when a xeno with this ability evolves
-/datum/action/ability/proc/on_xeno_upgrade()
+///Any changes when a tyranid with this ability evolves
+/datum/action/ability/proc/on_tyranid_upgrade()
 	return
 
 /datum/action/ability/activable
@@ -277,7 +277,7 @@
 /mob/living/carbon/proc/deduct_ability_cost(amount)
 	return
 
-/mob/living/carbon/xenomorph/deduct_ability_cost(amount)
+/mob/living/carbon/tyranid/deduct_ability_cost(amount)
 	use_plasma(amount)
 
 ///adds an ability to the mob

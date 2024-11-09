@@ -72,7 +72,7 @@ export const CharacterCustomization = (props) => {
                   </Box>
                 }
               />
-              <TextFieldPreference label={'Xenomorph'} value={'xeno_name'} />
+              <TextFieldPreference label={'Tyranid'} value={'tyranid_name'} />
               <TextFieldPreference
                 label={'Synthetic Name'}
                 value={'synthetic_name'}

@@ -1,9 +1,9 @@
 /obj/machinery/vending/weapon
 	name = "automated weapons rack"
 	desc = "An automated weapon rack hooked up to a colossal storage of standard-issue weapons."
-	icon_state = "marinearmory"
-	icon_vend = "marinearmory-vend"
-	icon_deny = "marinearmory"
+	icon_state = "guardsmanarmory"
+	icon_vend = "guardsmanarmory-vend"
+	icon_deny = "guardsmanarmory"
 	wrenchable = FALSE
 	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
 	isshared = TRUE
@@ -23,13 +23,13 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/cell/lasgun/lasrifle = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman/backpack = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_sniper = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/tesla = 2,
 			/obj/item/cell/lasgun/plasma = -1,
 		),
@@ -57,8 +57,8 @@
 		),
 		"Shotgun" = list(
 			/obj/item/weapon/gun/shotgun/pump/t35 = -1,
-			/obj/item/weapon/gun/shotgun/combat/standardmarine = -1,
-			/obj/item/weapon/gun/shotgun/double/marine = -1,
+			/obj/item/weapon/gun/shotgun/combat/standardguardsman = -1,
+			/obj/item/weapon/gun/shotgun/double/guardsman = -1,
 			/obj/item/storage/holster/belt/ts34/full = -1,
 			/obj/item/ammo_magazine/shotgun = -1,
 			/obj/item/ammo_magazine/shotgun/buckshot = -1,
@@ -87,7 +87,7 @@
 			/obj/item/weapon/twohanded/spear/tactical/harvester = -1,
 			/obj/item/weapon/twohanded/glaive/harvester = -1,
 			/obj/item/weapon/powerfist = -1,
-			/obj/item/weapon/shield/riot/marine/deployable = 6,
+			/obj/item/weapon/shield/riot/guardsman/deployable = 6,
 			/obj/item/weapon/combat_knife/harvester = 12,
 		),
 		"Sidearm" = list(
@@ -133,11 +133,11 @@
 		"Specialized" = list(
 			/obj/item/weapon/gun/rifle/pepperball = 4,
 			/obj/item/ammo_magazine/rifle/pepperball = -1,
-			/obj/item/weapon/gun/flamer/big_flamer/marinestandard = 4,
+			/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard = 4,
 			/obj/item/ammo_magazine/flamer_tank/large = 16,
 			/obj/item/ammo_magazine/flamer_tank/backtank = 4,
 			/obj/item/ammo_magazine/flamer_tank/water = -1,
-			/obj/item/jetpack_marine = 3,
+			/obj/item/jetpack_guardsman = 3,
 			/obj/item/bodybag/tarp = 10,
 		),
 		"Heavy Weapons" = list(
@@ -161,7 +161,7 @@
 			/obj/item/attachable/magnetic_harness = -1,
 			/obj/item/attachable/reddot = -1,
 			/obj/item/attachable/motiondetector = -1,
-			/obj/item/attachable/scope/marine = -1,
+			/obj/item/attachable/scope/guardsman = -1,
 			/obj/item/attachable/scope/mini = -1,
 			/obj/item/attachable/angledgrip = -1,
 			/obj/item/attachable/verticalgrip = -1,
@@ -213,7 +213,7 @@
 		),
 		"Utility" = list(
 			/obj/item/flashlight/combat = -1,
-			/obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine = -1,
+			/obj/item/weapon/gun/grenade_launcher/single_shot/flare/guardsman = -1,
 			/obj/item/tool/shovel/etool = -1,
 			/obj/item/tool/extinguisher = -1,
 			/obj/item/tool/extinguisher/mini = -1,
@@ -247,13 +247,13 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/cell/lasgun/lasrifle = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman/backpack = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_sniper = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/tesla = 2,
 			/obj/item/cell/lasgun/plasma = -1,
 		),
@@ -280,8 +280,8 @@
 		),
 		"Shotgun" = list(
 			/obj/item/weapon/gun/shotgun/pump/t35 = -1,
-			/obj/item/weapon/gun/shotgun/combat/standardmarine = -1,
-			/obj/item/weapon/gun/shotgun/double/marine = -1,
+			/obj/item/weapon/gun/shotgun/combat/standardguardsman = -1,
+			/obj/item/weapon/gun/shotgun/double/guardsman = -1,
 			/obj/item/storage/holster/belt/ts34/full = -1,
 			/obj/item/ammo_magazine/shotgun = -1,
 			/obj/item/ammo_magazine/shotgun/buckshot = -1,
@@ -310,7 +310,7 @@
 			/obj/item/weapon/twohanded/spear/tactical/harvester = -1,
 			/obj/item/weapon/twohanded/glaive/harvester = -1,
 			/obj/item/weapon/powerfist = -1,
-			/obj/item/weapon/shield/riot/marine/deployable = 6,
+			/obj/item/weapon/shield/riot/guardsman/deployable = 6,
 			/obj/item/weapon/combat_knife/harvester = 12,
 		),
 		"Sidearm" = list(
@@ -347,11 +347,11 @@
 		"Specialized" = list(
 			/obj/item/weapon/gun/rifle/pepperball = 4,
 			/obj/item/ammo_magazine/rifle/pepperball = 40,
-			/obj/item/weapon/gun/flamer/big_flamer/marinestandard = 4,
+			/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard = 4,
 			/obj/item/ammo_magazine/flamer_tank/large = 30,
 			/obj/item/ammo_magazine/flamer_tank/backtank = 4,
 			/obj/item/ammo_magazine/flamer_tank/water = -1,
-			/obj/item/jetpack_marine = 3,
+			/obj/item/jetpack_guardsman = 3,
 		),
 		"Attachments" = list(
 			/obj/item/attachable/bayonet = -1,
@@ -365,7 +365,7 @@
 			/obj/item/attachable/magnetic_harness = -1,
 			/obj/item/attachable/reddot = -1,
 			/obj/item/attachable/motiondetector = -1,
-			/obj/item/attachable/scope/marine = -1,
+			/obj/item/attachable/scope/guardsman = -1,
 			/obj/item/attachable/scope/mini = -1,
 			/obj/item/attachable/angledgrip = -1,
 			/obj/item/attachable/verticalgrip = -1,
@@ -415,7 +415,7 @@
 		),
 		"Utility" = list(
 			/obj/item/flashlight/combat = -1,
-			/obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine = -1,
+			/obj/item/weapon/gun/grenade_launcher/single_shot/flare/guardsman = -1,
 			/obj/item/tool/shovel/etool = -1,
 			/obj/item/tool/extinguisher = -1,
 			/obj/item/tool/extinguisher/mini = -1,
@@ -449,13 +449,13 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/cell/lasgun/lasrifle = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman/backpack = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_rifle = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_sniper = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_carbine = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_mlaser = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_guardsman_pistol = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/tesla = -1,
 			/obj/item/cell/lasgun/plasma = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/plasma/rifle = -1,
@@ -486,8 +486,8 @@
 		),
 		"Shotgun" = list(
 			/obj/item/weapon/gun/shotgun/pump/t35 = -1,
-			/obj/item/weapon/gun/shotgun/combat/standardmarine = -1,
-			/obj/item/weapon/gun/shotgun/double/marine = -1,
+			/obj/item/weapon/gun/shotgun/combat/standardguardsman = -1,
+			/obj/item/weapon/gun/shotgun/double/guardsman = -1,
 			/obj/item/storage/holster/belt/ts34/full = -1,
 			/obj/item/ammo_magazine/shotgun = -1,
 			/obj/item/ammo_magazine/shotgun/buckshot = -1,
@@ -516,8 +516,8 @@
 			/obj/item/weapon/twohanded/spear/tactical/harvester = -1,
 			/obj/item/weapon/twohanded/glaive/harvester = -1,
 			/obj/item/weapon/powerfist = -1,
-			/obj/item/weapon/shield/riot/marine = -1,
-			/obj/item/weapon/shield/riot/marine/deployable = -1,
+			/obj/item/weapon/shield/riot/guardsman = -1,
+			/obj/item/weapon/shield/riot/guardsman/deployable = -1,
 			/obj/item/weapon/combat_knife/harvester = -1,
 		),
 		"Sidearm" = list(
@@ -566,10 +566,10 @@
 		"Specialized" = list(
 			/obj/item/weapon/gun/rifle/pepperball = -1,
 			/obj/item/ammo_magazine/rifle/pepperball = -1,
-			/obj/item/weapon/gun/flamer/big_flamer/marinestandard = -1,
+			/obj/item/weapon/gun/flamer/big_flamer/guardsmanstandard = -1,
 			/obj/item/ammo_magazine/flamer_tank/large = -1,
 			/obj/item/ammo_magazine/flamer_tank/backtank = -1,
-			/obj/item/jetpack_marine = -1,
+			/obj/item/jetpack_guardsman = -1,
 			/obj/item/bodybag/tarp = -1,
 		),
 		"Heavy Weapons" = list(
@@ -593,7 +593,7 @@
 			/obj/item/attachable/magnetic_harness = -1,
 			/obj/item/attachable/reddot = -1,
 			/obj/item/attachable/motiondetector = -1,
-			/obj/item/attachable/scope/marine = -1,
+			/obj/item/attachable/scope/guardsman = -1,
 			/obj/item/attachable/scope/mini = -1,
 			/obj/item/attachable/angledgrip = -1,
 			/obj/item/attachable/verticalgrip = -1,
@@ -645,7 +645,7 @@
 		),
 		"Utility" = list(
 			/obj/item/flashlight/combat = -1,
-			/obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine = -1,
+			/obj/item/weapon/gun/grenade_launcher/single_shot/flare/guardsman = -1,
 			/obj/item/tool/shovel/etool = -1,
 			/obj/item/tool/extinguisher = -1,
 			/obj/item/tool/extinguisher/mini = -1,
@@ -724,7 +724,7 @@
 	icon_vend = "requisitionop-vend"
 	icon_deny = "requisitionop-deny"
 	wrenchable = FALSE
-	req_one_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	req_one_access = list(ACCESS_GUARDSMAN_CARGO, ACCESS_GUARDSMAN_LOGISTICS)
 	products = list(
 		"Surplus Special Equipment" = list(
 			/obj/item/pinpointer = 1,
@@ -736,10 +736,10 @@
 			/obj/item/ammo_magazine/shotgun/mbx900 = 2,
 			/obj/item/explosive/plastique = 5,
 			/obj/item/fulton_extraction_pack = 2,
-			/obj/item/radio/headset/mainship/marine/alpha = -1,
-			/obj/item/radio/headset/mainship/marine/bravo = -1,
-			/obj/item/radio/headset/mainship/marine/charlie = -1,
-			/obj/item/radio/headset/mainship/marine/delta = -1,
+			/obj/item/radio/headset/mainship/guardsman/alpha = -1,
+			/obj/item/radio/headset/mainship/guardsman/bravo = -1,
+			/obj/item/radio/headset/mainship/guardsman/charlie = -1,
+			/obj/item/radio/headset/mainship/guardsman/delta = -1,
 		),
 		"Mining Equipment" = list(
 			/obj/item/minerupgrade/automatic = 1,
@@ -786,7 +786,7 @@
 			/obj/item/storage/box/visual/magazine/compact/standard_skirmishrifle/full = -1,
 			/obj/item/storage/box/visual/magazine/compact/martini/full = -1,
 			/obj/item/storage/box/visual/magazine/compact/ar11/full = -1,
-			/obj/item/storage/box/visual/magazine/compact/lasrifle/marine/full = -1,
+			/obj/item/storage/box/visual/magazine/compact/lasrifle/guardsman/full = -1,
 			/obj/item/storage/box/visual/magazine/compact/sh15/flechette/full = -1,
 			/obj/item/storage/box/visual/magazine/compact/sh15/slug/full = -1,
 			/obj/item/storage/box/visual/magazine/compact/standard_dmr/full = -1,
@@ -829,7 +829,7 @@
 	machine_max_charge = 50000
 	product_slogans = "Static Shock!;Power cell running low? Recharge here!;Need a charge?;Power up!;Electrifying!;Empower yourself!"
 	products = list(
-		/obj/item/cell/lasgun/lasrifle = 10, /obj/item/cell/lasgun/volkite/powerpack/marine = 2, /obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 1,
+		/obj/item/cell/lasgun/lasrifle = 10, /obj/item/cell/lasgun/volkite/powerpack/guardsman = 2, /obj/item/cell/lasgun/volkite/powerpack/guardsman/backpack = 1,
 	)
 
 	prices = list()
@@ -857,15 +857,15 @@
 	. = ..()
 	. += "Internal battery charge: <b>[machine_current_charge]</b>/<b>[machine_max_charge]</b>"
 
-/obj/machinery/vending/marineFood
-	name = "\improper Marine Food and Drinks Vendor"
+/obj/machinery/vending/guardsmanFood
+	name = "\improper Guardsman Food and Drinks Vendor"
 	desc = "Standard Issue Food and Drinks Vendor, containing standard military food and drinks."
 	icon_state = "sustenance"
 	icon_vend = "sustenance-vend"
 	icon_deny = "sustenance-deny"
 	wrenchable = FALSE
 	isshared = TRUE
-	product_ads = "Standard Issue Marine food!;It's good for you, and not the worst thing in the world.;Just fucking eat it.;You should have joined the Air Force if you wanted better food.;1200 calories in just a few bites!;Get that tabaso sauce to make it tasty!;Try the cornbread.;Try the pizza.;Try the pasta.;Try the tofu, wimp.;Try the pork.; 9 Flavors of Protein!; You'll never guess the mystery flavor!"
+	product_ads = "Standard Issue Guardsman food!;It's good for you, and not the worst thing in the world.;Just fucking eat it.;You should have joined the Air Force if you wanted better food.;1200 calories in just a few bites!;Get that tabaso sauce to make it tasty!;Try the cornbread.;Try the pizza.;Try the pasta.;Try the tofu, wimp.;Try the pork.; 9 Flavors of Protein!; You'll never guess the mystery flavor!"
 	products = list(
 		/obj/item/reagent_containers/food/snacks/protein_pack = -1,
 		/obj/item/reagent_containers/food/snacks/mre_pack/meal1 = -1,
@@ -875,7 +875,7 @@
 		/obj/item/reagent_containers/food/snacks/mre_pack/meal5 = -1,
 		/obj/item/reagent_containers/food/snacks/mre_pack/meal6 = -1,
 		/obj/item/storage/box/MRE = -1,
-		/obj/item/reagent_containers/food/drinks/flask/marine = -1,
+		/obj/item/reagent_containers/food/drinks/flask/guardsman = -1,
 	)
 //Christmas inventory
 /*
@@ -883,27 +883,27 @@
 					/obj/item/reagent_containers/food/snacks/mre_pack/xmas2 = 25,
 					/obj/item/reagent_containers/food/snacks/mre_pack/xmas3 = 25)*/
 
-/obj/machinery/vending/marineFood/valhalla
+/obj/machinery/vending/guardsmanFood/valhalla
 	resistance_flags = INDESTRUCTIBLE
 	use_power = NO_POWER_USE
 
-/obj/machinery/vending/marineFood/som
-	name = "\improper SOM Food and Drinks Vendor"
-	faction = FACTION_SOM
+/obj/machinery/vending/guardsmanFood/chaos
+	name = "\improper CHAOS Food and Drinks Vendor"
+	faction = FACTION_CHAOS
 	products = list(
-		/obj/item/reagent_containers/food/snacks/protein_pack/som = -1,
-		/obj/item/storage/box/MRE/som = -1,
-		/obj/item/reagent_containers/food/drinks/flask/marine = -1,
+		/obj/item/reagent_containers/food/snacks/protein_pack/chaos = -1,
+		/obj/item/storage/box/MRE/chaos = -1,
+		/obj/item/reagent_containers/food/drinks/flask/guardsman = -1,
 	)
 
-/obj/machinery/vending/MarineMed
-	name = "\improper MarineMed"
-	desc = "Marine Medical drug dispenser - Provided by Nanotrasen Pharmaceuticals Division(TM)."
-	icon_state = "marinemed"
-	icon_vend = "marinemed-vend"
-	icon_deny = "marinemed-deny"
+/obj/machinery/vending/GuardsmanMed
+	name = "\improper GuardsmanMed"
+	desc = "Guardsman Medical drug dispenser - Provided by Nanotrasen Pharmaceuticals Division(TM)."
+	icon_state = "guardsmanmed"
+	icon_vend = "guardsmanmed-vend"
+	icon_deny = "guardsmanmed-deny"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;All natural chemicals!;This stuff saves lives.;Don't you want some?"
-	req_one_access = ALL_MARINE_ACCESS
+	req_one_access = ALL_GUARDSMAN_ACCESS
 	wrenchable = FALSE
 	isshared = TRUE
 	products = list(
@@ -948,7 +948,7 @@
 		),
 	)
 
-/obj/machinery/vending/MarineMed/valhalla
+/obj/machinery/vending/GuardsmanMed/valhalla
 	resistance_flags = INDESTRUCTIBLE
 	use_power = NO_POWER_USE
 	products = list(
@@ -1003,14 +1003,14 @@
 		)
 	)
 
-/obj/machinery/vending/MarineMed/Blood
+/obj/machinery/vending/GuardsmanMed/Blood
 	name = "\improper MM Blood Dispenser"
-	desc = "Marine Med brand Blood Pack dispensery."
+	desc = "Guardsman Med brand Blood Pack dispensery."
 	icon_state = "bloodvendor"
 	icon_vend = "bloodvendor-vend"
 	icon_deny = "bloodvendor-deny"
 	product_slogans = "The best blood on the market!;Totally came from an ethical source!;O negative is the universal donor, use it!;Prevent hypovolemic shock starting today!"
-	req_one_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_MEDPREP)
+	req_one_access = list(ACCESS_GUARDSMAN_MEDBAY, ACCESS_GUARDSMAN_CHEMISTRY, ACCESS_GUARDSMAN_MEDPREP)
 	products = list(
 		/obj/item/reagent_containers/blood/APlus = 5,
 		/obj/item/reagent_containers/blood/AMinus = 5,
@@ -1021,7 +1021,7 @@
 		/obj/item/reagent_containers/blood/empty = 10,
 	)
 
-/obj/machinery/vending/MarineMed/Blood/build_inventory(list/productlist, category)
+/obj/machinery/vending/GuardsmanMed/Blood/build_inventory(list/productlist, category)
 	. = ..()
 	var/temp_list[] = productlist
 	var/obj/item/reagent_containers/blood/temp_path
@@ -1042,7 +1042,7 @@
 	icon_deny = "surplus_armor_deny"
 	isshared = TRUE
 	wrenchable = FALSE
-	product_ads = "You are out of uniform, marine! Where is your armor? Don't have any? You expect me to believe that, maggot?;Why wear heavy armor and unable to chase the enemy when you can go light and zoom by your peers?;Thank your armor later when you didn't die!;I remember PAS, do you remember PAS?;Time to paint the rainbow!;So many selections to choose from!"
+	product_ads = "You are out of uniform, guardsman! Where is your armor? Don't have any? You expect me to believe that, maggot?;Why wear heavy armor and unable to chase the enemy when you can go light and zoom by your peers?;Thank your armor later when you didn't die!;I remember PAS, do you remember PAS?;Time to paint the rainbow!;So many selections to choose from!"
 	products = list(
 		"Xenonauten" = list(
 			/obj/item/clothing/suit/modular/xenonauten/light = -1,
@@ -1062,18 +1062,18 @@
 			/obj/item/clothing/suit/modular/jaeger/heavy = -1,
 			/obj/item/clothing/suit/modular/jaeger/heavy/assault = -1,
 			/obj/item/clothing/suit/modular/jaeger/heavy/eod = -1,
-			/obj/item/clothing/head/modular/marine/skirmisher = -1,
-			/obj/item/clothing/head/modular/marine/scout = -1,
-			/obj/item/clothing/head/modular/marine = -1,
-			/obj/item/clothing/head/modular/marine/eva = -1,
-			/obj/item/clothing/head/modular/marine/eva/skull = -1,
-			/obj/item/clothing/head/modular/marine/helljumper = -1,
-			/obj/item/clothing/head/modular/marine/ranger = -1,
-			/obj/item/clothing/head/modular/marine/traditional = -1,
-			/obj/item/clothing/head/modular/marine/trooper = -1,
-			/obj/item/clothing/head/modular/marine/gungnir = -1,
-			/obj/item/clothing/head/modular/marine/assault = -1,
-			/obj/item/clothing/head/modular/marine/eod = -1,
+			/obj/item/clothing/head/modular/guardsman/skirmisher = -1,
+			/obj/item/clothing/head/modular/guardsman/scout = -1,
+			/obj/item/clothing/head/modular/guardsman = -1,
+			/obj/item/clothing/head/modular/guardsman/eva = -1,
+			/obj/item/clothing/head/modular/guardsman/eva/skull = -1,
+			/obj/item/clothing/head/modular/guardsman/helljumper = -1,
+			/obj/item/clothing/head/modular/guardsman/ranger = -1,
+			/obj/item/clothing/head/modular/guardsman/traditional = -1,
+			/obj/item/clothing/head/modular/guardsman/trooper = -1,
+			/obj/item/clothing/head/modular/guardsman/gungnir = -1,
+			/obj/item/clothing/head/modular/guardsman/assault = -1,
+			/obj/item/clothing/head/modular/guardsman/eod = -1,
 		),
 		"Combat Robot" = list(
 			/obj/item/clothing/suit/modular/robot/light = -1,
@@ -1086,7 +1086,7 @@
 		"General" = list(
 			/obj/item/clothing/suit/modular = -1,
 			/obj/item/clothing/suit/modular/rownin = -1,
-			/obj/item/clothing/suit/storage/marine/ballistic = -1,
+			/obj/item/clothing/suit/storage/guardsman/ballistic = -1,
 			/obj/item/facepaint/green = -1,
 		),
 		"Armor modules" = list(
@@ -1117,68 +1117,68 @@
 			/obj/item/armor_module/module/style/heavy_armor = -1,
 		),
 		"Jaeger Mk.I chestpieces" = list(
-			/obj/item/armor_module/armor/chest/marine/skirmisher = -1,
-			/obj/item/armor_module/armor/chest/marine/skirmisher/scout = -1,
-			/obj/item/armor_module/armor/chest/marine/skirmisher/trooper = -1,
-			/obj/item/armor_module/armor/chest/marine = -1,
-			/obj/item/armor_module/armor/chest/marine/eva = -1,
-			/obj/item/armor_module/armor/chest/marine/assault = -1,
-			/obj/item/armor_module/armor/chest/marine/assault/eod = -1,
-			/obj/item/armor_module/armor/chest/marine/helljumper = -1,
-			/obj/item/armor_module/armor/chest/marine/ranger = -1,
-			/obj/item/armor_module/armor/chest/marine/mjolnir = -1,
+			/obj/item/armor_module/armor/chest/guardsman/skirmisher = -1,
+			/obj/item/armor_module/armor/chest/guardsman/skirmisher/scout = -1,
+			/obj/item/armor_module/armor/chest/guardsman/skirmisher/trooper = -1,
+			/obj/item/armor_module/armor/chest/guardsman = -1,
+			/obj/item/armor_module/armor/chest/guardsman/eva = -1,
+			/obj/item/armor_module/armor/chest/guardsman/assault = -1,
+			/obj/item/armor_module/armor/chest/guardsman/assault/eod = -1,
+			/obj/item/armor_module/armor/chest/guardsman/helljumper = -1,
+			/obj/item/armor_module/armor/chest/guardsman/ranger = -1,
+			/obj/item/armor_module/armor/chest/guardsman/mjolnir = -1,
 		),
 		"Jaeger Mk.I armpiece" = list(
-			/obj/item/armor_module/armor/arms/marine/skirmisher = -1,
-			/obj/item/armor_module/armor/arms/marine/scout = -1,
-			/obj/item/armor_module/armor/arms/marine/trooper = -1,
-			/obj/item/armor_module/armor/arms/marine = -1,
-			/obj/item/armor_module/armor/arms/marine/eva = -1,
-			/obj/item/armor_module/armor/arms/marine/assault = -1,
-			/obj/item/armor_module/armor/arms/marine/eod = -1,
-			/obj/item/armor_module/armor/arms/marine/helljumper = -1,
-			/obj/item/armor_module/armor/arms/marine/ranger = -1,
-			/obj/item/armor_module/armor/arms/marine/mjolnir = -1,
+			/obj/item/armor_module/armor/arms/guardsman/skirmisher = -1,
+			/obj/item/armor_module/armor/arms/guardsman/scout = -1,
+			/obj/item/armor_module/armor/arms/guardsman/trooper = -1,
+			/obj/item/armor_module/armor/arms/guardsman = -1,
+			/obj/item/armor_module/armor/arms/guardsman/eva = -1,
+			/obj/item/armor_module/armor/arms/guardsman/assault = -1,
+			/obj/item/armor_module/armor/arms/guardsman/eod = -1,
+			/obj/item/armor_module/armor/arms/guardsman/helljumper = -1,
+			/obj/item/armor_module/armor/arms/guardsman/ranger = -1,
+			/obj/item/armor_module/armor/arms/guardsman/mjolnir = -1,
 		),
 		"Jaeger Mk.I legpiece" = list(
-			/obj/item/armor_module/armor/legs/marine/skirmisher = -1,
-			/obj/item/armor_module/armor/legs/marine/scout = -1,
-			/obj/item/armor_module/armor/legs/marine/trooper = -1,
-			/obj/item/armor_module/armor/legs/marine = -1,
-			/obj/item/armor_module/armor/legs/marine/eva = -1,
-			/obj/item/armor_module/armor/legs/marine/assault = -1,
-			/obj/item/armor_module/armor/legs/marine/eod = -1,
-			/obj/item/armor_module/armor/legs/marine/scout = -1,
-			/obj/item/armor_module/armor/legs/marine/helljumper = -1,
-			/obj/item/armor_module/armor/legs/marine/ranger = -1,
-			/obj/item/armor_module/armor/legs/marine/mjolnir = -1,
+			/obj/item/armor_module/armor/legs/guardsman/skirmisher = -1,
+			/obj/item/armor_module/armor/legs/guardsman/scout = -1,
+			/obj/item/armor_module/armor/legs/guardsman/trooper = -1,
+			/obj/item/armor_module/armor/legs/guardsman = -1,
+			/obj/item/armor_module/armor/legs/guardsman/eva = -1,
+			/obj/item/armor_module/armor/legs/guardsman/assault = -1,
+			/obj/item/armor_module/armor/legs/guardsman/eod = -1,
+			/obj/item/armor_module/armor/legs/guardsman/scout = -1,
+			/obj/item/armor_module/armor/legs/guardsman/helljumper = -1,
+			/obj/item/armor_module/armor/legs/guardsman/ranger = -1,
+			/obj/item/armor_module/armor/legs/guardsman/mjolnir = -1,
 		),
 		"Jaeger Mk.I helmets" = list(
-			/obj/item/clothing/head/modular/marine/old/skirmisher = -1,
-			/obj/item/clothing/head/modular/marine/old/scout = -1,
-			/obj/item/clothing/head/modular/marine/old = -1,
-			/obj/item/clothing/head/modular/marine/old/open = -1,
-			/obj/item/clothing/head/modular/marine/old/eva = -1,
-			/obj/item/clothing/head/modular/marine/old/eva/skull = -1,
-			/obj/item/clothing/head/modular/marine/old/assault = -1,
-			/obj/item/clothing/head/modular/marine/old/eod = -1,
-			/obj/item/clothing/head/modular/marine/old/mjolnir = -1,
-			/obj/item/clothing/head/modular/marine/mjolnir_open = -1,
+			/obj/item/clothing/head/modular/guardsman/old/skirmisher = -1,
+			/obj/item/clothing/head/modular/guardsman/old/scout = -1,
+			/obj/item/clothing/head/modular/guardsman/old = -1,
+			/obj/item/clothing/head/modular/guardsman/old/open = -1,
+			/obj/item/clothing/head/modular/guardsman/old/eva = -1,
+			/obj/item/clothing/head/modular/guardsman/old/eva/skull = -1,
+			/obj/item/clothing/head/modular/guardsman/old/assault = -1,
+			/obj/item/clothing/head/modular/guardsman/old/eod = -1,
+			/obj/item/clothing/head/modular/guardsman/old/mjolnir = -1,
+			/obj/item/clothing/head/modular/guardsman/mjolnir_open = -1,
 		),
 		"Hardsuits" = list(
 			/obj/item/clothing/suit/modular/hardsuit_exoskeleton = -1,
-			/obj/item/clothing/head/modular/marine/hardsuit_helm/markfive = -1,
-			/obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markfive = -1,
-			/obj/item/armor_module/armor/arms/marine/hardsuit_arms/syndicate_markfive = -1,
-			/obj/item/armor_module/armor/legs/marine/hardsuit_legs/syndicate_markfive = -1,
-			/obj/item/clothing/head/modular/marine/hardsuit_helm/markthree = -1,
-			/obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markthree = -1,
-			/obj/item/armor_module/armor/arms/marine/hardsuit_arms/syndicate_markthree = -1,
-			/obj/item/armor_module/armor/legs/marine/hardsuit_legs/syndicate_markthree = -1,
-			/obj/item/clothing/head/modular/marine/hardsuit_helm/markone = -1,
-			/obj/item/armor_module/armor/chest/marine/hardsuit/syndicate_markone = -1,
-			/obj/item/armor_module/armor/arms/marine/hardsuit_arms/syndicate_markone = -1,
-			/obj/item/armor_module/armor/legs/marine/hardsuit_legs/syndicate_markone = -1,
+			/obj/item/clothing/head/modular/guardsman/hardsuit_helm/markfive = -1,
+			/obj/item/armor_module/armor/chest/guardsman/hardsuit/syndicate_markfive = -1,
+			/obj/item/armor_module/armor/arms/guardsman/hardsuit_arms/syndicate_markfive = -1,
+			/obj/item/armor_module/armor/legs/guardsman/hardsuit_legs/syndicate_markfive = -1,
+			/obj/item/clothing/head/modular/guardsman/hardsuit_helm/markthree = -1,
+			/obj/item/armor_module/armor/chest/guardsman/hardsuit/syndicate_markthree = -1,
+			/obj/item/armor_module/armor/arms/guardsman/hardsuit_arms/syndicate_markthree = -1,
+			/obj/item/armor_module/armor/legs/guardsman/hardsuit_legs/syndicate_markthree = -1,
+			/obj/item/clothing/head/modular/guardsman/hardsuit_helm/markone = -1,
+			/obj/item/armor_module/armor/chest/guardsman/hardsuit/syndicate_markone = -1,
+			/obj/item/armor_module/armor/arms/guardsman/hardsuit_arms/syndicate_markone = -1,
+			/obj/item/armor_module/armor/legs/guardsman/hardsuit_legs/syndicate_markone = -1,
 		),
 	)
 
@@ -1196,30 +1196,30 @@
 	icon_deny = "surplus_clothes_deny"
 	wrenchable = FALSE
 	isshared = TRUE
-	product_ads = "Be the musician that you parents never approve you of.;You gotta look good when you're in the battlefield.;We have all types of hats here!;What did one hat say to the other on the hiking trip? I'll wait here, you go on ahead;Sometimes, a beret is better than a helmet.;Drip is the priority, marine."
+	product_ads = "Be the musician that you parents never approve you of.;You gotta look good when you're in the battlefield.;We have all types of hats here!;What did one hat say to the other on the hiking trip? I'll wait here, you go on ahead;Sometimes, a beret is better than a helmet.;Drip is the priority, guardsman."
 	products = list(
 		"Standard" = list(
-			/obj/item/clothing/under/marine/robotic = -1,
-			/obj/item/clothing/under/marine = -1,
-			/obj/item/clothing/under/marine/hyperscale = -1,
-			/obj/item/clothing/under/marine/camo = -1,
-			/obj/item/clothing/under/marine/camo/desert = -1,
-			/obj/item/clothing/under/marine/camo/snow = -1,
-			/obj/item/clothing/under/marine/orion_fatigue = -1,
-			/obj/item/clothing/under/marine/red_fatigue = -1,
-			/obj/item/clothing/under/marine/lv_fatigue = -1,
-			/obj/item/clothing/under/marine/striped = -1,
-			/obj/item/clothing/under/marine/jaeger = -1,
-			/obj/item/clothing/under/marine/squad/neck/delta = -1,
-			/obj/item/clothing/under/marine/squad/neck/charlie = -1,
-			/obj/item/clothing/under/marine/squad/neck/bravo = -1,
-			/obj/item/clothing/under/marine/squad/neck/alpha = -1,
-			/obj/item/clothing/gloves/marine = -1,
-			/obj/item/clothing/gloves/marine/black = -1,
-			/obj/item/clothing/gloves/marine/fingerless = -1,
-			/obj/item/clothing/gloves/marine/hyperscale = -1,
-			/obj/item/clothing/shoes/marine/full = -1,
-			/obj/item/clothing/shoes/marine/brown/full = -1,
+			/obj/item/clothing/under/guardsman/robotic = -1,
+			/obj/item/clothing/under/guardsman = -1,
+			/obj/item/clothing/under/guardsman/hyperscale = -1,
+			/obj/item/clothing/under/guardsman/camo = -1,
+			/obj/item/clothing/under/guardsman/camo/desert = -1,
+			/obj/item/clothing/under/guardsman/camo/snow = -1,
+			/obj/item/clothing/under/guardsman/orion_fatigue = -1,
+			/obj/item/clothing/under/guardsman/red_fatigue = -1,
+			/obj/item/clothing/under/guardsman/lv_fatigue = -1,
+			/obj/item/clothing/under/guardsman/striped = -1,
+			/obj/item/clothing/under/guardsman/jaeger = -1,
+			/obj/item/clothing/under/guardsman/squad/neck/delta = -1,
+			/obj/item/clothing/under/guardsman/squad/neck/charlie = -1,
+			/obj/item/clothing/under/guardsman/squad/neck/bravo = -1,
+			/obj/item/clothing/under/guardsman/squad/neck/alpha = -1,
+			/obj/item/clothing/gloves/guardsman = -1,
+			/obj/item/clothing/gloves/guardsman/black = -1,
+			/obj/item/clothing/gloves/guardsman/fingerless = -1,
+			/obj/item/clothing/gloves/guardsman/hyperscale = -1,
+			/obj/item/clothing/shoes/guardsman/full = -1,
+			/obj/item/clothing/shoes/guardsman/brown/full = -1,
 			/obj/item/clothing/shoes/cowboy = -1,
 			/obj/item/armor_module/armor/badge = -1,
 			/obj/item/armor_module/armor/cape = -1,
@@ -1234,12 +1234,12 @@
 			/obj/item/armor_module/storage/uniform/holster = -1,
 		),
 		"Belts" = list(
-			/obj/item/storage/belt/marine = -1,
+			/obj/item/storage/belt/guardsman = -1,
 			/obj/item/storage/belt/shotgun = -1,
 			/obj/item/storage/belt/shotgun/martini = -1,
 			/obj/item/storage/belt/grenade = -1,
 			/obj/item/storage/belt/knifepouch = -1,
-			/obj/item/belt_harness/marine = -1,
+			/obj/item/belt_harness/guardsman = -1,
 			/obj/item/storage/belt/sparepouch = -1,
 			/obj/item/storage/holster/belt/pistol/standard_pistol = -1,
 			/obj/item/storage/holster/belt/revolver/standard_revolver = -1,
@@ -1269,7 +1269,7 @@
 			/obj/item/storage/pouch/tools/full = -1,
 			/obj/item/storage/pouch/field_pouch = -1,
 			/obj/item/storage/pouch/general/large = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman = -1,
 			/obj/item/storage/pouch/general/medium = -1,
 			/obj/item/storage/pouch/protein_pack = -1,
 		),
@@ -1305,11 +1305,11 @@
 			/obj/item/clothing/mask/gas/tactical/coif = -1,
 		),
 		"Backpacks" = list(
-			/obj/item/storage/backpack/marine/standard = -1,
-			/obj/item/storage/backpack/marine/satchel = -1,
-			/obj/item/tool/weldpack/marinestandard = -1,
-			/obj/item/storage/backpack/marine/duffelbag = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
+			/obj/item/storage/backpack/guardsman/standard = -1,
+			/obj/item/storage/backpack/guardsman/satchel = -1,
+			/obj/item/tool/weldpack/guardsmanstandard = -1,
+			/obj/item/storage/backpack/guardsman/duffelbag = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/guardsman/backpack = -1,
 		),
 		"Instruments" = list(
 			/obj/item/instrument/violin = -1,
@@ -1326,19 +1326,19 @@
 		),
 		"Dress Uniform" = list(
 			/obj/effect/vendor_bundle/white_dress = -1,
-			/obj/item/clothing/under/marine/whites = -1,
+			/obj/item/clothing/under/guardsman/whites = -1,
 			/obj/item/clothing/suit/white_dress_jacket = -1,
 			/obj/item/clothing/head/white_dress = -1,
 			/obj/item/clothing/shoes/white = -1,
 			/obj/item/clothing/gloves/white = -1,
 			/obj/effect/vendor_bundle/service_uniform = -1,
-			/obj/item/clothing/under/marine/service = -1,
+			/obj/item/clothing/under/guardsman/service = -1,
 			/obj/item/clothing/head/garrisoncap = -1,
 			/obj/item/clothing/head/serviceberet = -1,
 			/obj/item/clothing/head/servicecampaignhat = -1,
 			/obj/item/clothing/head/serviceushanka = -1,
 			/obj/item/clothing/head/servicecap = -1,
-			/obj/item/clothing/under/marine/black_suit = -1,
+			/obj/item/clothing/under/guardsman/black_suit = -1,
 		),
 		"Surplus Headwear" = list(
 			/obj/item/clothing/head/slouch = -1,
@@ -1356,7 +1356,7 @@
 			/obj/item/clothing/head/tgmcberet/darkgreen = -1,
 			/obj/item/clothing/head/tgmcberet/green = -1,
 			/obj/item/clothing/head/tgmcberet/snow = -1,
-			/obj/item/clothing/head/beret/marine = -1,
+			/obj/item/clothing/head/beret/guardsman = -1,
 			/obj/item/clothing/head/tgmcberet = -1,
 		),
 		"Medical Clothing" = list(
@@ -1388,27 +1388,27 @@
 	use_power = NO_POWER_USE
 
 /obj/machinery/vending/dress_supply
-	name = "\improper TerraGovTech dress uniform vendor"
+	name = "\improper ImperiumTech dress uniform vendor"
 	desc = "An automated rack hooked up to a colossal storage of dress uniforms."
-	icon_state = "marineuniform"
-	icon_vend = "marineuniform_vend"
-	icon_deny = "marineuniform"
-	req_one_access = list(ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_PREP, ACCESS_MARINE_CARGO)
-	product_ads = "Hey! You! Stop looking like a turtle and start looking like a TRUE marine!;Dress whites, fresh off the ironing board!;Why kill in armor when you can kill in style?;These uniforms are so sharp you'd cut yourself just looking at them!"
+	icon_state = "guardsmanuniform"
+	icon_vend = "guardsmanuniform_vend"
+	icon_deny = "guardsmanuniform"
+	req_one_access = list(ACCESS_GUARDSMAN_LOGISTICS, ACCESS_GUARDSMAN_PREP, ACCESS_GUARDSMAN_CARGO)
+	product_ads = "Hey! You! Stop looking like a turtle and start looking like a TRUE guardsman!;Dress whites, fresh off the ironing board!;Why kill in armor when you can kill in style?;These uniforms are so sharp you'd cut yourself just looking at them!"
 	wrenchable = FALSE
 	isshared = TRUE
 	products = list(
 		/obj/effect/vendor_bundle/white_dress = -1,
-		/obj/item/clothing/under/marine/whites = -1,
+		/obj/item/clothing/under/guardsman/whites = -1,
 		/obj/item/clothing/suit/white_dress_jacket = -1,
 		/obj/item/clothing/head/white_dress = -1,
 		/obj/item/clothing/shoes/white = -1,
 		/obj/item/clothing/gloves/white = -1,
 		/obj/effect/vendor_bundle/service_uniform = -1,
-		/obj/item/clothing/under/marine/service = -1,
+		/obj/item/clothing/under/guardsman/service = -1,
 		/obj/item/clothing/head/garrisoncap = -1,
 		/obj/item/clothing/head/servicecap = -1,
-		/obj/item/clothing/under/marine/black_suit = -1,
+		/obj/item/clothing/under/guardsman/black_suit = -1,
 	)
 
 /obj/machinery/vending/dress_supply/valhalla
@@ -1416,7 +1416,7 @@
 	use_power = NO_POWER_USE
 
 /obj/machinery/vending/valhalla_req
-	name = "\improper TerraGovTech requisition vendor"
+	name = "\improper ImperiumTech requisition vendor"
 	desc = "An automated rack hooked up to a colossal storage of items."
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE
@@ -1534,13 +1534,13 @@
 			/obj/item/cell/night_vision_battery = -1,
 			/obj/item/clothing/mask/gas/swat = -1,
 			/obj/item/clothing/head/helmet/riot = -1,
-			/obj/item/clothing/suit/storage/marine/specialist/valhalla = -1,
-			/obj/item/clothing/head/helmet/marine/specialist = -1,
-			/obj/item/clothing/gloves/marine/specialist = -1,
-			/obj/item/clothing/suit/storage/marine/B17/valhalla = -1,
-			/obj/item/clothing/head/helmet/marine/grenadier = -1,
-			/obj/item/storage/backpack/marine/satchel/scout_cloak = -1,
-			/obj/item/storage/backpack/marine/satchel/scout_cloak/sniper = -1,
+			/obj/item/clothing/suit/storage/guardsman/specialist/valhalla = -1,
+			/obj/item/clothing/head/helmet/guardsman/specialist = -1,
+			/obj/item/clothing/gloves/guardsman/specialist = -1,
+			/obj/item/clothing/suit/storage/guardsman/B17/valhalla = -1,
+			/obj/item/clothing/head/helmet/guardsman/grenadier = -1,
+			/obj/item/storage/backpack/guardsman/satchel/scout_cloak = -1,
+			/obj/item/storage/backpack/guardsman/satchel/scout_cloak/sniper = -1,
 			/obj/item/storage/belt/grenade/b17 = -1,
 			/obj/item/storage/holster/m25 = -1,
 			/obj/item/armor_module/module/valkyrie_autodoc = -1,
@@ -1554,9 +1554,9 @@
 			/obj/item/armor_module/module/hlin_explosive_armor = -1,
 			/obj/item/attachable/heatlens = -1,
 			/obj/item/storage/backpack/lightpack = -1,
-			/obj/item/clothing/suit/storage/marine/riot = -1,
-			/obj/item/clothing/head/helmet/marine/riot = -1,
-			/obj/item/clothing/suit/storage/marine/boomvest = -1,
+			/obj/item/clothing/suit/storage/guardsman/riot = -1,
+			/obj/item/clothing/head/helmet/guardsman/riot = -1,
+			/obj/item/clothing/suit/storage/guardsman/boomvest = -1,
 			/obj/item/implanter/cloak = -1,
 			/obj/item/implanter/chem/blood = -1,
 			/obj/item/implanter/blade = -1,
@@ -1577,7 +1577,7 @@
 			/obj/item/tank_module/ability/smoke_launcher = -1,
 			/obj/item/tank_module/interior/medical = -1,
 		),
-		"SOM Assault Vehicle" = list(
+		"CHAOS Assault Vehicle" = list(
 			/obj/item/armored_weapon/volkite_carronade = -1,
 			/obj/item/armored_weapon/particle_lance = -1,
 			/obj/item/armored_weapon/coilgun = -1,
@@ -1599,7 +1599,7 @@
 	)
 
 /obj/machinery/vending/valhalla_seasonal_req
-	name = "\improper TerraGovTech seasonal vendor"
+	name = "\improper ImperiumTech seasonal vendor"
 	desc = "An automated rack hooked up to a colossal storage of items."
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE
@@ -1668,18 +1668,18 @@
 			/obj/item/ammo_magazine/shotgun/mbx900/tracking = -1,
 		),
 		"Sons of Mars" = list(
-			/obj/item/weapon/gun/rifle/som = -1,
-			/obj/item/ammo_magazine/rifle/som = -1,
+			/obj/item/weapon/gun/rifle/chaos = -1,
+			/obj/item/ammo_magazine/rifle/chaos = -1,
 			/obj/item/ammo_magazine/handful/micro_grenade = -1,
 			/obj/item/ammo_magazine/handful/micro_grenade/cluster = -1,
 			/obj/item/ammo_magazine/handful/micro_grenade/smoke_burst = -1,
-			/obj/item/weapon/gun/smg/som = -1,
-			/obj/item/ammo_magazine/smg/som = -1,
-			/obj/item/weapon/gun/shotgun/som = -1,
-			/obj/item/weapon/gun/shotgun/som/burst = -1,
-			/obj/item/weapon/gun/pistol/som = -1,
-			/obj/item/ammo_magazine/pistol/som = -1,
-			/obj/item/ammo_magazine/pistol/som/incendiary = -1,
+			/obj/item/weapon/gun/smg/chaos = -1,
+			/obj/item/ammo_magazine/smg/chaos = -1,
+			/obj/item/weapon/gun/shotgun/chaos = -1,
+			/obj/item/weapon/gun/shotgun/chaos/burst = -1,
+			/obj/item/weapon/gun/pistol/chaos = -1,
+			/obj/item/ammo_magazine/pistol/chaos = -1,
+			/obj/item/ammo_magazine/pistol/chaos/incendiary = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta = -1,
 			/obj/item/cell/lasgun/volkite/small = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/charger = -1,
@@ -1687,12 +1687,12 @@
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/culverin = -1,
 			/obj/item/cell/lasgun/volkite = -1,
 			/obj/item/cell/lasgun/volkite/powerpack = -1,
-			/obj/item/weapon/gun/launcher/rocket/som = -1,
-			/obj/item/ammo_magazine/rocket/som = -1,
-			/obj/item/ammo_magazine/rocket/som/incendiary = -1,
-			/obj/item/ammo_magazine/rocket/som/heat = -1,
-			/obj/item/weapon/gun/flamer/som = -1,
-			/obj/item/ammo_magazine/flamer_tank/large/som = -1,
+			/obj/item/weapon/gun/launcher/rocket/chaos = -1,
+			/obj/item/ammo_magazine/rocket/chaos = -1,
+			/obj/item/ammo_magazine/rocket/chaos/incendiary = -1,
+			/obj/item/ammo_magazine/rocket/chaos/heat = -1,
+			/obj/item/weapon/gun/flamer/chaos = -1,
+			/obj/item/ammo_magazine/flamer_tank/large/chaos = -1,
 		),
 		"ICC" = list(
 			/obj/item/weapon/gun/rifle/icc_battlecarbine = -1,
@@ -1767,7 +1767,7 @@
 	)
 
 /obj/machinery/vending/valhalla_reqtorio
-	name = "\improper TerraGovTech reqtorio vendor"
+	name = "\improper ImperiumTech reqtorio vendor"
 	desc = "An automated rack hooked up to a colossal storage of items."
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE

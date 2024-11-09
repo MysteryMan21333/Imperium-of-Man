@@ -7,7 +7,7 @@
 /obj/machinery/computer/nt_access
 	name = "NT security override terminal"
 	desc = "Used to generate a security override code."
-	icon = 'icons/obj/structures/campaign/tall_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tall_structures.dmi'
 	icon_state = "terminal_red"
 	screen_overlay = "terminal_overlay"
 	interaction_flags = INTERACT_MACHINE_TGUI
@@ -36,7 +36,7 @@
 		"Booting up terminal-  -Terminal running",
 		"Establishing link to planetary mainframe- Link established",
 		"WARNING, DIRECTORY CORRUPTED, running search algorithms- lockdown_override.exe found",
-		"Invalid credentials, upgrading permissions through SOM rootkit- Permissions upgraded, lockdown_override.exe available",
+		"Invalid credentials, upgrading permissions through CHAOS rootkit- Permissions upgraded, lockdown_override.exe available",
 		"lockdown_override.exe running - Generating new security lockdown override code",
 		"Security lockdown override code sent to NT installation: Aubrey Gamma 16. Have a nice day."
 	)
@@ -190,7 +190,7 @@
 
 /obj/effect/landmark/campaign_structure/nt_access
 	name = "red NT security override terminal"
-	icon = 'icons/obj/structures/campaign/tall_structures.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/campaign/tall_structures.dmi'
 	icon_state = "terminal_red"
 	mission_types = list(/datum/campaign_mission/destroy_mission/base_rescue)
 	spawn_object = /obj/machinery/computer/nt_access/red

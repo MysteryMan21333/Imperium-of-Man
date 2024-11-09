@@ -5,7 +5,7 @@
 /obj/item/reagent_containers/hypospray
 	name = "Hypospray"
 	desc = "The hypospray is a sterile, air-needle reusable autoinjector for rapid administration of drugs to patients with customizable dosages."
-	icon = 'icons/obj/items/syringe.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/syringe.dmi'
 	worn_icon_state = "hypo"
 	icon_state = "hypo"
 	amount_per_transfer_from_this = 10
@@ -317,7 +317,7 @@
 	. = ..()
 
 	if(reagents?.total_volume)
-		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
+		var/image/filling = image('modular_imperium/master_files/icons/obj/reagentfillings.dmi', src, "[icon_state]10")
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)

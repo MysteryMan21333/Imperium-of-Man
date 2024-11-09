@@ -7,7 +7,7 @@ SUBSYSTEM_DEF(aura)
 	var/list/active_auras = list() //We can't use a normal subsystem processing list because as soon as an aura_bearer leaves the list it needs to die
 	///Stores what the current aura processing stage was working on for if it is paused.
 	var/list/current_cache = list()
-	///Auras go through three stages. Pulse auras -> finish xeno cycles -> finish human cycles. Depending on where it was paused, this tells it where to resume fire()
+	///Auras go through three stages. Pulse auras -> finish tyranid cycles -> finish human cycles. Depending on where it was paused, this tells it where to resume fire()
 	var/stage = 1
 
 /datum/controller/subsystem/aura/fire(resumed)
@@ -29,14 +29,14 @@ SUBSYSTEM_DEF(aura)
 		stage = 2
 	if(stage == 2)
 		if(!current_resume)
-			current_cache = GLOB.xeno_mob_list.Copy()
+			current_cache = GLOB.tyranid_mob_list.Copy()
 		current_resume = FALSE
 		while(length(current_cache))
-			var/mob/living/carbon/xenomorph/xeno = current_cache[length(current_cache)]
+			var/mob/living/carbon/tyranid/tyranid = current_cache[length(current_cache)]
 			current_cache.len--
-			if(QDELETED(xeno))
+			if(QDELETED(tyranid))
 				continue
-			xeno.finish_aura_cycle()
+			tyranid.finish_aura_cycle()
 			if(MC_TICK_CHECK)
 				return
 		stage = 3
@@ -83,12 +83,12 @@ SUBSYSTEM_DEF(aura)
 	var/static/list/human_auras = list(AURA_HUMAN_MOVE, AURA_HUMAN_HOLD, AURA_HUMAN_FOCUS, AURA_HUMAN_FLAG)
 	///Whether we care about humans - at least one relevant aura is enough if we have multiple.
 	var/affects_humans = FALSE
-	///List of aura defines that mean we care about xenos
-	var/static/list/xeno_auras = list(AURA_XENO_FRENZY, AURA_XENO_WARDING, AURA_XENO_RECOVERY)
-	///Whether we care about xenos - at least one relevant aura is enough if we have multiple.
-	var/affects_xenos = FALSE
+	///List of aura defines that mean we care about tyranids
+	var/static/list/tyranid_auras = list(AURA_TYRANID_FRENZY, AURA_TYRANID_WARDING, AURA_TYRANID_RECOVERY)
+	///Whether we care about tyranids - at least one relevant aura is enough if we have multiple.
+	var/affects_tyranids = FALSE
 	///Which hives this aura should affect?
-	var/hive_number = XENO_HIVE_NORMAL
+	var/hive_number = TYRANID_HIVE_NORMAL
 	///Whether we should skip the next tick. Set to false after skipping once. Won't pulse to targets or reduce duration.
 	var/suppressed = FALSE
 
@@ -109,8 +109,8 @@ SUBSYSTEM_DEF(aura)
 	for(var/aura_type in aura_types)
 		if(human_auras.Find(aura_type))
 			affects_humans = TRUE
-		if(xeno_auras.Find(aura_type))
-			affects_xenos = TRUE
+		if(tyranid_auras.Find(aura_type))
+			affects_tyranids = TRUE
 
 	SEND_SIGNAL(emitter, COMSIG_AURA_STARTED, aura_types)
 	RegisterSignal(emitter, COMSIG_QDELETING, PROC_REF(stop_emitting))
@@ -133,8 +133,8 @@ SUBSYSTEM_DEF(aura)
 		return
 	if(affects_humans)
 		pulse_humans()
-	if(affects_xenos)
-		pulse_xenos()
+	if(affects_tyranids)
+		pulse_tyranids()
 	if(duration < 0) //Negative duration means infinite. Usually for pheromones.
 		return
 	duration -= (world.time - last_tick)
@@ -157,12 +157,12 @@ SUBSYSTEM_DEF(aura)
 				continue
 			potential_hearer.receive_aura(aura, strength)
 
-///Send out our aura to all xenos close enough and on the same z-level
-/datum/aura_bearer/proc/pulse_xenos()
+///Send out our aura to all tyranids close enough and on the same z-level
+/datum/aura_bearer/proc/pulse_tyranids()
 	var/turf/aura_center = get_turf(emitter)
 	if(!istype(aura_center))
 		return
-	for(var/mob/living/carbon/xenomorph/potential_hearer AS in GLOB.hive_datums[hive_number].xenos_by_zlevel["[aura_center.z]"])
+	for(var/mob/living/carbon/tyranid/potential_hearer AS in GLOB.hive_datums[hive_number].tyranids_by_zlevel["[aura_center.z]"])
 		if(get_dist(aura_center, potential_hearer) > range)
 			continue
 		for(var/aura in aura_types)

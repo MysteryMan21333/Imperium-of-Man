@@ -4,7 +4,7 @@
 	desc = "A box of 300, 10x30mm caseless tungsten rounds for the HSG-102 mounted heavy smartgun."
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "hsg102"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	magazine_flags = NONE
 	caliber = CALIBER_10X30
 	max_rounds = 300
@@ -22,7 +22,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	equip_slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 	icon_state = "mg08"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_drum_big_green"
 	magazine_flags = NONE
 	caliber = CALIBER_10X28
@@ -45,7 +45,7 @@
 	desc = "A box of 150 10x27mm caseless rounds for the MG-27 medium machinegun."
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "t27"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_drum_big_armygreen"
 	magazine_flags = NONE
 	caliber = CALIBER_10x27_CASELESS
@@ -58,7 +58,7 @@
 	desc = "A box holding 30 40mm caseless HE grenades for the AGLS-37 automatic grenade launcher."
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "ags"
-	icon = 'icons/obj/items/ammo/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/artillery.dmi'
 	magazine_flags = NONE
 	caliber = CALIBER_40MM
 	max_rounds = 30
@@ -94,7 +94,7 @@
 	desc = "A 37mm shell for light anti tank guns. Will penetrate walls and fortifications, before hitting a target and exploding, has less payload and punch than usual rounds."
 	w_class = WEIGHT_CLASS_BULKY
 	icon_state = "at36"
-	icon = 'icons/obj/items/ammo/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/artillery.dmi'
 	worn_icon_state = "at36"
 	magazine_flags = MAGAZINE_REFUND_IN_CHAMBER
 	caliber = CALIBER_37MM
@@ -135,7 +135,7 @@
 	desc = "A box of 1000 rounds for the MG-2005 mounted minigun."
 	w_class = WEIGHT_CLASS_BULKY
 	icon_state = "minigun"
-	icon = 'icons/obj/items/ammo/misc.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/misc.dmi'
 	magazine_flags = NONE
 	caliber = CALIBER_762X51
 	max_rounds = 1000
@@ -147,7 +147,7 @@
 	desc = "A box of 100 high-velocity 20mm rounds for the ATR-22 mounted autocannon. Will pierce people and cover."
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "ac"
-	icon = 'icons/obj/items/ammo/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/artillery.dmi'
 	worn_icon_state = "ac"
 	magazine_flags = NONE
 	caliber = CALIBER_20
@@ -175,7 +175,7 @@
 	name = "FK-88 shell (155mm Shell)"
 	desc = "A 15cm shell for the FK-88 mounted flak gun. How did you even get this?"
 	icon_state = "isg"
-	icon = 'icons/obj/items/ammo/artillery.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/artillery.dmi'
 	worn_icon_state = "isg"
 	w_class = WEIGHT_CLASS_BULKY
 	magazine_flags = MAGAZINE_REFUND_IN_CHAMBER
@@ -212,7 +212,7 @@
 	desc = "A box of 300, 10x30mm caseless tungsten rounds for the KRD-61ESmounted heavy smartgun."
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "kord"
-	icon = 'icons/obj/items/ammo/machinegun.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/items/ammo/machinegun.dmi'
 	magazine_flags = NONE
 	caliber = CALIBER_10X30
 	max_rounds = 300

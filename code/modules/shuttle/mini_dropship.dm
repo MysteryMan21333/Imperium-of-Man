@@ -1,9 +1,9 @@
-/obj/docking_port/stationary/marine_dropship/minidropship
+/obj/docking_port/stationary/guardsman_dropship/minidropship
 	name = "Minidropship hangar pad"
 	id = SHUTTLE_TADPOLE
 	roundstart_template = null
 
-/obj/docking_port/mobile/marine_dropship/minidropship
+/obj/docking_port/mobile/guardsman_dropship/minidropship
 	name = "Tadpole"
 	id = SHUTTLE_TADPOLE
 	dwidth = 0
@@ -17,7 +17,7 @@
 	desc = "Used to designate a precise transit location for the Tadpole."
 	icon_state = "shuttlecomputer"
 	screen_overlay = "shuttlecomputer_screen"
-	req_access = list(ACCESS_MARINE_TADPOLE)
+	req_access = list(ACCESS_GUARDSMAN_TADPOLE)
 	density = FALSE
 	interaction_flags = INTERACT_OBJ_UI
 	resistance_flags = RESIST_ALL
@@ -46,7 +46,7 @@
 	/// How long before you can launch tadpole after a landing
 	var/launching_delay = 10 SECONDS
 	///Minimap for use while in landing cam mode
-	var/datum/action/minimap/marine/external/tadmap
+	var/datum/action/minimap/guardsman/external/tadmap
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/minidropship/Initialize(mapload)
 	..()
@@ -99,8 +99,8 @@
 		land_action.give_action(user)
 		actions += land_action
 
-	if(istype(shuttle_port, /obj/docking_port/mobile/marine_dropship))
-		var/obj/docking_port/mobile/marine_dropship/shuttle = shuttle_port
+	if(istype(shuttle_port, /obj/docking_port/mobile/guardsman_dropship))
+		var/obj/docking_port/mobile/guardsman_dropship/shuttle = shuttle_port
 		for(var/obj/structure/dropship_equipment/shuttle/rappel_system/system in shuttle.equipments)
 			var/datum/action/innate/rappel_designate/rappel_action = new
 			rappel_action.origin = system
@@ -169,23 +169,23 @@
 		return
 	nvg_vision_mode = !nvg_vision_mode
 
-/obj/machinery/computer/camera_advanced/shuttle_docker/minidropship/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/computer/camera_advanced/shuttle_docker/minidropship/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	. = ..()
 	if(machine_stat & BROKEN)
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return
-	xeno_attacker.visible_message("[xeno_attacker] begins to slash delicately at the computer",
+	tyranid_attacker.visible_message("[tyranid_attacker] begins to slash delicately at the computer",
 	"We start slashing delicately at the computer. This will take a while.")
-	if(!do_after(xeno_attacker, 10 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
+	if(!do_after(tyranid_attacker, 10 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
 		return
 	visible_message("The inner wiring is visible, it can be slashed!")
-	xeno_attacker.visible_message("[xeno_attacker] continue to slash at the computer",
+	tyranid_attacker.visible_message("[tyranid_attacker] continue to slash at the computer",
 	"We continue slashing at the computer. If we stop now we will have to start all over again.")
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
-	if(!do_after(xeno_attacker, 10 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
+	if(!do_after(tyranid_attacker, 10 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
 		return
 	visible_message("The wiring is destroyed, nobody will be able to repair this computer!")
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MINI_DROPSHIP_DESTROYED, src)
@@ -277,7 +277,7 @@
 	.["fly_state"] = fly_state
 	.["take_off_locked"] = ( !(fly_state == SHUTTLE_ON_GROUND || fly_state == SHUTTLE_ON_SHIP) || shuttle_port?.mode != SHUTTLE_IDLE)
 	.["return_to_ship_locked"] = (fly_state != SHUTTLE_IN_ATMOSPHERE || shuttle_port?.mode != SHUTTLE_IDLE)
-	var/obj/docking_port/mobile/marine_dropship/shuttle = shuttle_port
+	var/obj/docking_port/mobile/guardsman_dropship/shuttle = shuttle_port
 	.["equipment_data"] = list()
 	var/element_nbr = 1
 	for(var/X in shuttle?.equipments)
@@ -297,7 +297,7 @@
 			toggle_nvg()
 		if("equip_interact")
 			var/base_tag = text2num(params["equip_interact"])
-			var/obj/docking_port/mobile/marine_dropship/shuttle = shuttle_port
+			var/obj/docking_port/mobile/guardsman_dropship/shuttle = shuttle_port
 			var/obj/structure/dropship_equipment/E = shuttle.equipments[base_tag]
 			E.linked_console = src
 			E.equipment_interact(usr)

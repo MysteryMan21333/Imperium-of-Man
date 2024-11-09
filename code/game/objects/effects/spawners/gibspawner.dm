@@ -6,7 +6,7 @@
 	new /obj/effect/spawner/gibspawner/human(get_turf(location),fleshcolor,bloodcolor)
 
 /proc/xgibs(atom/location)
-	new /obj/effect/spawner/gibspawner/xeno(get_turf(location))
+	new /obj/effect/spawner/gibspawner/tyranid(get_turf(location))
 
 /proc/robogibs(atom/location)
 	new /obj/effect/spawner/gibspawner/robot(get_turf(location))
@@ -76,11 +76,11 @@
 	gibamounts[6] = pick(0,1,2)
 	return ..()
 
-/obj/effect/spawner/gibspawner/xeno
-	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs/xeno/up,/obj/effect/decal/cleanable/blood/gibs/xeno/down,/obj/effect/decal/cleanable/blood/gibs/xeno,/obj/effect/decal/cleanable/blood/gibs/xeno,/obj/effect/decal/cleanable/blood/gibs/xeno/body,/obj/effect/decal/cleanable/blood/gibs/xeno/limb,/obj/effect/decal/cleanable/blood/gibs/xeno/core)
+/obj/effect/spawner/gibspawner/tyranid
+	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs/tyranid/up,/obj/effect/decal/cleanable/blood/gibs/tyranid/down,/obj/effect/decal/cleanable/blood/gibs/tyranid,/obj/effect/decal/cleanable/blood/gibs/tyranid,/obj/effect/decal/cleanable/blood/gibs/tyranid/body,/obj/effect/decal/cleanable/blood/gibs/tyranid/limb,/obj/effect/decal/cleanable/blood/gibs/tyranid/core)
 	gibamounts = list(1,1,1,1,1,1,1)
 
-/obj/effect/spawner/gibspawner/xeno/Initialize(mapload)
+/obj/effect/spawner/gibspawner/tyranid/Initialize(mapload)
 	gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs, GLOB.alldirs, list())
 	gibamounts[6] = pick(0,1,2)
 	return ..()

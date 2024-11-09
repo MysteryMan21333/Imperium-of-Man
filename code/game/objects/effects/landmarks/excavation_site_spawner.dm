@@ -4,7 +4,7 @@
 	///List of possible reward buckets
 	var/list/rewards_datums = list(
 		/datum/excavation_rewards,
-		/datum/excavation_rewards/xeno,
+		/datum/excavation_rewards/tyranid,
 	)
 	///Excavation rewards datum that is used when excavation is performed
 	var/datum/excavation_rewards/rewards_typepath
@@ -47,10 +47,10 @@
 		var/typepath = pick(rewards)
 		new typepath(excav_site.loc)
 
-/datum/excavation_rewards/xeno
+/datum/excavation_rewards/tyranid
 	rewards_min = 2
 	rewards_max = 4
-	map_icon = "excav_xeno"
+	map_icon = "excav_tyranid"
 	rewards = list(
-		/obj/item/research_resource/xeno,
+		/obj/item/research_resource/tyranid,
 	)

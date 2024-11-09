@@ -1,9 +1,9 @@
 //There has to be a better way to define this shit. ~ Z
 //can't equip anything
-/mob/living/carbon/xenomorph/attack_ui(slot_id)
+/mob/living/carbon/tyranid/attack_ui(slot_id)
 	return
 
-/mob/living/carbon/xenomorph/attack_animal(mob/living/M as mob)
+/mob/living/carbon/tyranid/attack_animal(mob/living/M as mob)
 	if(isanimal(M))
 		var/mob/living/simple_animal/S = M
 		if(!S.melee_damage)
@@ -18,7 +18,7 @@
 			log_combat(S, src, "attacked")
 
 
-/mob/living/carbon/xenomorph/attack_hand(mob/living/user)
+/mob/living/carbon/tyranid/attack_hand(mob/living/user)
 	. = ..()
 	if(.)
 		return
@@ -26,7 +26,7 @@
 	if(!ishuman(user))
 		return
 
-	if(status_flags & INCORPOREAL) //Incorporeal xenos cannot attack
+	if(status_flags & INCORPOREAL) //Incorporeal tyranids cannot attack
 		return
 
 	var/mob/living/carbon/human/H = user
@@ -69,29 +69,29 @@
 
 //Hot hot Aliens on Aliens action.
 //Actually just used for eating people.
-/mob/living/carbon/xenomorph/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(status_flags & INCORPOREAL || xeno_attacker.status_flags & INCORPOREAL) //Incorporeal xenos cannot attack or be attacked
+/mob/living/carbon/tyranid/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(status_flags & INCORPOREAL || tyranid_attacker.status_flags & INCORPOREAL) //Incorporeal tyranids cannot attack or be attacked
 		return
 
-	if(src == xeno_attacker)
+	if(src == tyranid_attacker)
 		return TRUE
 
-	switch(xeno_attacker.a_intent)
+	switch(tyranid_attacker.a_intent)
 		if(INTENT_HELP)
 			if(on_fire)
 				fire_stacks = max(fire_stacks - 1, 0)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
-				xeno_attacker.visible_message(span_danger("[xeno_attacker] tries to put out the fire on [src]!"), \
+				tyranid_attacker.visible_message(span_danger("[tyranid_attacker] tries to put out the fire on [src]!"), \
 					span_warning("We try to put out the fire on [src]!"), null, 5)
 				if(fire_stacks <= 0)
-					xeno_attacker.visible_message(span_danger("[xeno_attacker] has successfully extinguished the fire on [src]!"), \
+					tyranid_attacker.visible_message(span_danger("[tyranid_attacker] has successfully extinguished the fire on [src]!"), \
 						span_notice("We extinguished the fire on [src]."), null, 5)
 					ExtinguishMob()
 				return TRUE
-			xeno_attacker.visible_message(span_notice("\The [xeno_attacker] caresses \the [src] with its scythe-like arm."), \
+			tyranid_attacker.visible_message(span_notice("\The [tyranid_attacker] caresses \the [src] with its scythe-like arm."), \
 			span_notice("We caress \the [src] with our scythe-like arm."), null, 5)
 			return TRUE
 		if(INTENT_GRAB)
-			return attack_alien_grab(xeno_attacker)
+			return attack_alien_grab(tyranid_attacker)
 		if(INTENT_HARM, INTENT_DISARM)
-			return attack_alien_harm(xeno_attacker)
+			return attack_alien_harm(tyranid_attacker)

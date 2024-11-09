@@ -32,7 +32,7 @@
 	dir = NORTH
 
 /obj/structure/bed/chair/alt
-	icon = 'icons/obj/structures/prop/mainship.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/structures/prop/mainship.dmi'
 	icon_state = "chair_alt"
 
 /obj/structure/bed/chair/nometal
@@ -171,7 +171,7 @@
 	name = "comfy sofa"
 	desc = "It looks comfy."
 	icon_state = "sofamiddle"
-	resistance_flags = XENO_DAMAGEABLE
+	resistance_flags = TYRANID_DAMAGEABLE
 /obj/structure/bed/chair/sofa/left
 	icon_state = "sofaend_left"
 
@@ -307,7 +307,7 @@
 /obj/structure/bed/chair/dropship/update_overlays()
 	. = ..()
 	if(chair_state == DROPSHIP_CHAIR_BUCKLED)
-		. += image('icons/obj/objects.dmi', icon_state = "shuttle_bars", layer = ABOVE_MOB_LAYER)
+		. += image('modular_imperium/master_files/icons/obj/objects.dmi', icon_state = "shuttle_bars", layer = ABOVE_MOB_LAYER)
 		return
 
 /obj/structure/bed/chair/dropship/doublewide/post_buckle_mob(mob/buckling_mob)
@@ -374,11 +374,11 @@
 	return // no
 
 
-/obj/structure/bed/chair/dropship/passenger/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	if(xeno_attacker.status_flags & INCORPOREAL)
+/obj/structure/bed/chair/dropship/passenger/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
+	if(tyranid_attacker.status_flags & INCORPOREAL)
 		return FALSE
 	if(chair_state != DROPSHIP_CHAIR_BROKEN)
-		xeno_attacker.visible_message(span_warning("[xeno_attacker] smashes \the [src], shearing the bolts!"),
+		tyranid_attacker.visible_message(span_warning("[tyranid_attacker] smashes \the [src], shearing the bolts!"),
 		span_warning("We smash \the [src], shearing the bolts!"))
 		fold_down(1)
 
@@ -443,7 +443,7 @@
 	/// If the chair can only be sat in by a leader or not
 	var/leader_chair = FALSE
 
-/obj/structure/bed/chair/dropship/doublewide/attack_alien(mob/living/carbon/xenomorph/X, damage_amount = X.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+/obj/structure/bed/chair/dropship/doublewide/attack_alien(mob/living/carbon/tyranid/X, damage_amount = X.tyranid_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
 	if(X.status_flags & INCORPOREAL)
 		return FALSE
 	if(LAZYLEN(buckled_mobs))

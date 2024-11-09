@@ -5,7 +5,7 @@
 
 /obj/item/tool/pickaxe
 	name = "pickaxe"
-	icon = 'icons/obj/mining.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/mining.dmi'
 	icon_state = "pickaxe"
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT
@@ -81,8 +81,8 @@
 
 /obj/item/tool/pickaxe/plasmacutter
 	name = "plasma cutter"
-	desc = "A tool that cuts with deadly hot plasma. You could use it to cut limbs off of xenos! Or, you know, cut apart walls or mine through stone. Eye protection strongly recommended."
-	icon = 'icons/obj/items/tools.dmi'
+	desc = "A tool that cuts with deadly hot plasma. You could use it to cut limbs off of tyranids! Or, you know, cut apart walls or mine through stone. Eye protection strongly recommended."
+	icon = 'modular_imperium/master_files/icons/obj/items/tools.dmi'
 	icon_state = "plasma_cutter_off"
 	worn_icon_state = "plasmacutter"
 	w_class = WEIGHT_CLASS_BULKY
@@ -252,11 +252,11 @@
 		spark_system.set_up(5, 0, M)
 		spark_system.attach(M)
 		spark_system.start(M)
-		if(isxeno(M) && M.stat != DEAD)
+		if(istyranid(M) && M.stat != DEAD)
 			cell.charge += 200
-			var/mob/living/carbon/xenomorph/xeno = M
-			if(!CHECK_BITFIELD(xeno.xeno_caste.caste_flags, CASTE_PLASMADRAIN_IMMUNE))
-				xeno.use_plasma(round(xeno.xeno_caste.plasma_regen_limit * xeno.xeno_caste.plasma_max * 0.2)) //One fifth of the xeno's regeneratable plasma per hit.
+			var/mob/living/carbon/tyranid/tyranid = M
+			if(!CHECK_BITFIELD(tyranid.tyranid_caste.caste_flags, CASTE_PLASMADRAIN_IMMUNE))
+				tyranid.use_plasma(round(tyranid.tyranid_caste.plasma_regen_limit * tyranid.tyranid_caste.plasma_max * 0.2)) //One fifth of the tyranid's regeneratable plasma per hit.
 	return ..()
 
 

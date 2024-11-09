@@ -75,7 +75,7 @@
 /turf/open/floor,
 /area/bigredv2/outside/e)
 "bO" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/outside/office_complex)
 "bQ" = (
@@ -93,7 +93,7 @@
 	},
 /obj/structure/cable,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/corpsespawner/marine/engineer,
+/obj/effect/landmark/corpsespawner/guardsman/engineer,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mainship/tcomms,
 /area/bigredv2/outside/office_complex)
@@ -105,7 +105,7 @@
 /turf/open/floor/plating/icefloor,
 /area/bigredv2/outside/c)
 "cp" = (
-/obj/machinery/door/airlock/mainship/marine/canterbury{
+/obj/machinery/door/airlock/mainship/guardsman/canterbury{
 	dir = 8
 	},
 /turf/open/floor/mainship/red/full,
@@ -140,7 +140,7 @@
 "dv" = (
 /obj/machinery/door/poddoor/mainship/open,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/outside/office_complex)
 "dK" = (
@@ -169,7 +169,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/ai_node,
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/plating/plating_catwalk,
 /area/bigredv2/outside/office_complex)
 "eq" = (
@@ -399,7 +399,7 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/bigredv2/outside/office_complex)
 "mq" = (
-/obj/structure/prop/brokenvendor/brokenmarinemedvendor,
+/obj/structure/prop/brokenvendor/brokenguardsmanmedvendor,
 /turf/open/floor/mainship/sterile,
 /area/bigredv2/outside/office_complex)
 "mv" = (
@@ -416,7 +416,7 @@
 	dir = 1
 	},
 /obj/effect/ai_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/outside/office_complex)
 "nc" = (
@@ -545,7 +545,7 @@
 "rJ" = (
 /obj/structure/table/mainship,
 /obj/item/shard,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/mainship/blue{
 	dir = 1
 	},
@@ -623,7 +623,7 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/bigredv2/outside/office_complex)
 "tP" = (
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating/icefloor,
 /area/bigredv2/outside/office_complex)
 "tR" = (
@@ -777,7 +777,7 @@
 /obj/machinery/door/poddoor/mainship/open{
 	dir = 1
 	},
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/outside/office_complex)
 "xU" = (
@@ -810,7 +810,7 @@
 /area/bigredv2/outside/office_complex)
 "yx" = (
 /obj/structure/table/mainship,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /turf/open/floor/mainship/blue{
 	dir = 5
 	},
@@ -855,7 +855,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/plating,
 /area/bigredv2/outside/office_complex)
 "zi" = (
@@ -864,7 +864,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/weed_node,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/outside/office_complex)
 "zG" = (
@@ -970,7 +970,7 @@
 /obj/effect/spawner/random/engineering/extinguisher/miniweighted,
 /obj/item/t_scanner,
 /obj/effect/spawner/random/engineering/extinguisher/regularweighted,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/item/storage/belt/utility/full,
 /obj/item/flashlight,
 /obj/item/clothing/suit/storage/hazardvest,
@@ -1066,7 +1066,7 @@
 /obj/structure/bed/chair/dropship/passenger{
 	dir = 8
 	},
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/outside/office_complex)
 "FJ" = (
@@ -1160,7 +1160,7 @@
 	name = "General Listening Channel";
 	pixel_y = -28
 	},
-/obj/effect/landmark/corpsespawner/marine/corpsman,
+/obj/effect/landmark/corpsespawner/guardsman/corpsman,
 /turf/open/floor/mainship/sterile/dark,
 /area/bigredv2/outside/office_complex)
 "JC" = (
@@ -1194,13 +1194,13 @@
 "Ks" = (
 /obj/structure/bed/chair/dropship/passenger,
 /obj/machinery/vending/nanomed,
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /turf/open/floor/mainship/sterile,
 /area/bigredv2/outside/office_complex)
 "Kz" = (
 /obj/machinery/door/poddoor/mainship/open,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/outside/office_complex)
 "Lx" = (
@@ -1343,7 +1343,7 @@
 /area/bigredv2/outside/office_complex)
 "PV" = (
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marine_network,
+/obj/machinery/computer/security/guardsman_network,
 /obj/effect/spawner/random/weaponry/ammo,
 /turf/open/floor/mainship/blue{
 	dir = 9
@@ -1381,7 +1381,7 @@
 /turf/open/floor/plating/icefloor,
 /area/bigredv2/outside/se)
 "QL" = (
-/obj/effect/landmark/corpsespawner/marine,
+/obj/effect/landmark/corpsespawner/guardsman,
 /obj/effect/decal/cleanable/blood{
 	dir = 1
 	},
@@ -1400,7 +1400,7 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/bigredv2/outside/office_complex)
 "Rb" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /turf/open/floor/mainship/sterile/dark,
 /area/bigredv2/outside/office_complex)
 "Rd" = (
@@ -1698,7 +1698,7 @@
 /area/bigredv2/outside/office_complex)
 "ZD" = (
 /obj/machinery/door/poddoor/mainship/open,
-/obj/effect/landmark/xeno_resin_door,
+/obj/effect/landmark/tyranid_resin_door,
 /turf/open/floor/mainship/mono,
 /area/bigredv2/outside/office_complex)
 "ZJ" = (

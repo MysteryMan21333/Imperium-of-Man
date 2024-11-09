@@ -1,6 +1,6 @@
 /obj/machinery/door/poddoor/railing
 	name = "\improper retractable railing"
-	icon = 'icons/obj/doors/railing.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/doors/railing.dmi'
 	icon_state = "railing1"
 	use_power = 0
 	atom_flags = ON_BORDER

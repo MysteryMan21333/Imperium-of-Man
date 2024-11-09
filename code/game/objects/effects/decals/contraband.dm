@@ -4,7 +4,7 @@
 /obj/item/contraband
 	name = "contraband item"
 	desc = "You probably shouldn't be holding this."
-	icon = 'icons/obj/contraband.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/contraband.dmi'
 	force = 0
 
 
@@ -28,7 +28,7 @@
 /obj/structure/sign/poster
 	name = "poster"
 	desc = "A large piece of space-resistant printed paper. "
-	icon = 'icons/obj/contraband.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/contraband.dmi'
 	icon_state = "poster_map"
 	anchored = TRUE
 	var/serial_number	//Will hold the value of src.loc if nobody initialises it
@@ -36,7 +36,7 @@
 
 /obj/structure/sign/poster/Initialize(mapload)
 	. = ..()
-	icon = 'icons/obj/contraband.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/contraband.dmi'
 	if(autoplace)
 		return
 	switch(dir)

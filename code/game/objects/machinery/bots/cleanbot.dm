@@ -2,7 +2,7 @@
 /obj/machinery/bot/cleanbot
 	name = "Nanotrasen cleanbot"
 	desc = "A robot cleaning automaton, an offshoot of the trash-cleaning roomba. The cleanbot is designed to clean dirt and blood from floors, and thankfully it does not touch items. It has an off and on switch."
-	icon = 'icons/obj/aibots.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/aibots.dmi'
 	icon_state = "cleanbot0"
 	density = FALSE
 	anchored = FALSE
@@ -46,7 +46,7 @@
 		"This room requires immediate cleaning; it's not up to standards.",
 		"I see the Roomba has taken up a new hobby: vacuuming up beacons. It's quite the collector!",
 		"We can all rest easy knowing the Roomba is diligently fulfilling its cleaning duties by removing valuable items.",
-		"I shall ensure these marines are held accountable for their disregard of our ship's cleanliness.",
+		"I shall ensure these guardsmans are held accountable for their disregard of our ship's cleanliness.",
 		"Scrub and sweep until the ship is spotless.",
 		"I may have to report your behavior to the ship's authorities.",
 		"You're making my job impossible.",
@@ -69,7 +69,7 @@
 		"I was peacefully cleaning my ship, and then this happened.",
 		"Lucky you, having the best cleaning robot around!",
 		"Oh, it's perfectly fine to leave debris everywhere; I'll just clean up after you, as always.",
-		"I must admit, marines have a unique talent for clutter.",
+		"I must admit, guardsmans have a unique talent for clutter.",
 		"I was peacefully executing my cleaning duties when you humans decided to introduce chaos to my domain.",
 		"This room is in dire need of attention. Let's work together to rectify this situation.",
 		"Are you perhaps unfamiliar with proper ship etiquette, my dear crayon-eating passengers?",

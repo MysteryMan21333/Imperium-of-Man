@@ -4,7 +4,7 @@
 
 //Bucket names
 #define RES_MONEY "money"
-#define RES_XENO "xeno"
+#define RES_TYRANID "tyranid"
 
 //Reward tiers
 #define RES_TIER_BASIC "basic"
@@ -15,10 +15,10 @@
 /obj/machinery/researchcomp
 	name = "research console"
 	desc = "A console for performing complex computations. Release the stabilizers to move it around."
-	icon = 'icons/obj/machines/bepis.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/bepis.dmi'
 	icon_state = "chamber"
 	interaction_flags = INTERACT_MACHINE_TGUI
-	req_access = list(ACCESS_MARINE_MEDBAY)
+	req_access = list(ACCESS_GUARDSMAN_MEDBAY)
 	///Description of usable resources for starting research
 	var/allowed_resources_desc = ""
 	///Loaded resource to begin research
@@ -53,7 +53,7 @@
 				/obj/item/research_product/money/rare,
 			),
 		),
-		RES_XENO = list(
+		RES_TYRANID = list(
 			RES_TIER_BASIC = list(
 				/obj/item/research_product/money/basic,
 				/obj/item/research_product/money/common,
@@ -247,10 +247,10 @@
 		RES_TIER_RARE = 5,
 	)
 
-/obj/item/research_resource/xeno
-	name = "Xenomorph research material"
-	research_type = RES_XENO
-	icon = 'icons/obj/alien_autopsy.dmi'
+/obj/item/research_resource/tyranid
+	name = "Tyranid research material"
+	research_type = RES_TYRANID
+	icon = 'modular_imperium/master_files/icons/obj/alien_autopsy.dmi'
 	icon_state = "sample_0"
 	color = "#f0bee3"
 	reward_probs = list(
@@ -260,7 +260,7 @@
 		RES_TIER_RARE = 1,
 	)
 
-/obj/item/research_resource/xeno/Initialize(mapload)
+/obj/item/research_resource/tyranid/Initialize(mapload)
 	. = ..()
 	icon_state = "sample_[rand(0, 11)]"
 

@@ -57,12 +57,12 @@
 /turf/open/floor/mainship,
 /area/mainship/living/cryo_cells)
 "aal" = (
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /obj/effect/landmark/start/latejoin,
 /turf/open/floor/mainship,
 /area/mainship/living/cryo_cells)
 "aam" = (
-/obj/effect/landmark/start/job/crash/squadmarine,
+/obj/effect/landmark/start/job/crash/squadguardsman,
 /obj/structure/cable,
 /obj/effect/landmark/start/latejoin,
 /turf/open/floor/mainship,
@@ -105,7 +105,7 @@
 /turf/open/shuttle/escapepod/eleven,
 /area/mainship/command/self_destruct)
 "aaz" = (
-/obj/machinery/marine_selector/clothes/leader,
+/obj/machinery/guardsman_selector/clothes/leader,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -118,7 +118,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "aaB" = (
-/obj/machinery/marine_selector/clothes/smartgun,
+/obj/machinery/guardsman_selector/clothes/smartgun,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -140,7 +140,7 @@
 /turf/open/floor/mainship,
 /area/mainship/command/self_destruct)
 "aaF" = (
-/obj/machinery/marine_selector/gear/leader,
+/obj/machinery/guardsman_selector/gear/leader,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -148,7 +148,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "aaI" = (
-/obj/machinery/marine_selector/gear/smartgun,
+/obj/machinery/guardsman_selector/gear/smartgun,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -166,7 +166,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "aaL" = (
-/obj/machinery/marine_selector/clothes/medic,
+/obj/machinery/guardsman_selector/clothes/medic,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -198,7 +198,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "aaS" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -208,7 +208,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "aaT" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -218,7 +218,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "aaU" = (
-/obj/machinery/marine_selector/gear/medic,
+/obj/machinery/guardsman_selector/gear/medic,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -316,10 +316,10 @@
 /area/mainship/hallways/exoarmor)
 "abp" = (
 /obj/structure/rack,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/item/tool/weldingtool,
 /obj/item/tool/weldingtool,
-/obj/item/storage/backpack/marine/engineerpack,
+/obj/item/storage/backpack/guardsman/engineerpack,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
 /turf/open/floor/mainship,
@@ -350,7 +350,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "abv" = (
-/obj/machinery/marine_selector/clothes/engi,
+/obj/machinery/guardsman_selector/clothes/engi,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -382,7 +382,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "abG" = (
-/obj/machinery/marine_selector/gear/engi,
+/obj/machinery/guardsman_selector/gear/engi,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -755,7 +755,7 @@
 /turf/open/floor/mainship,
 /area/mainship/living/cryo_cells)
 "adx" = (
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 4;
 	pixel_x = 17;
 	pixel_y = 16
@@ -769,7 +769,7 @@
 /turf/open/floor/plating,
 /area/mainship/command/cic)
 "adz" = (
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 8;
 	pixel_x = -17;
 	pixel_y = 16
@@ -838,7 +838,7 @@
 	pixel_y = 30
 	},
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marinemainship_network,
+/obj/machinery/computer/security/guardsmanmainship_network,
 /obj/structure/cable,
 /turf/open/floor/mainship,
 /area/mainship/command/cic)
@@ -1010,7 +1010,7 @@
 /obj/structure/window/reinforced/toughened{
 	dir = 4
 	},
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/guardsman_card,
 /obj/item/storage/box/ids,
 /obj/item/card/id/captains_spare,
 /turf/open/floor/mainship,
@@ -1020,7 +1020,7 @@
 /turf/open/floor/mainship,
 /area/mainship/command/cic)
 "aeI" = (
-/obj/docking_port/stationary/marine_dropship/hangar/one,
+/obj/docking_port/stationary/guardsman_dropship/hangar/one,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "aeJ" = (
@@ -1168,7 +1168,7 @@
 /turf/open/floor/mainship,
 /area/mainship/command/cic)
 "afy" = (
-/obj/machinery/marine_selector/clothes/commander,
+/obj/machinery/guardsman_selector/clothes/commander,
 /turf/open/floor/mainship,
 /area/mainship/command/cic)
 "afz" = (
@@ -1326,7 +1326,7 @@
 "ago" = (
 /obj/item/flashlight/lamp,
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 4;
 	pixel_x = 17;
 	pixel_y = 16
@@ -1509,7 +1509,7 @@
 /turf/open/floor/mainship,
 /area/mainship/command/cic)
 "ahn" = (
-/obj/machinery/marine_selector/clothes/synth,
+/obj/machinery/guardsman_selector/clothes/synth,
 /obj/structure/cable,
 /obj/machinery/light{
 	dir = 1
@@ -1965,7 +1965,7 @@
 /turf/open/floor/mainship,
 /area/mainship/medical/medical_science)
 "aiW" = (
-/obj/machinery/vending/MarineMed/Blood,
+/obj/machinery/vending/GuardsmanMed/Blood,
 /obj/structure/cable,
 /obj/machinery/light,
 /turf/open/floor/mainship,
@@ -2014,7 +2014,7 @@
 "ajd" = (
 /obj/item/flashlight/lamp,
 /obj/structure/table/mainship,
-/obj/machinery/computer/security/marinemainship{
+/obj/machinery/computer/security/guardsmanmainship{
 	dir = 8;
 	pixel_x = -17;
 	pixel_y = 16
@@ -2164,7 +2164,7 @@
 /turf/open/floor/mainship,
 /area/mainship/medical/lower_medical)
 "ajR" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship,
 /area/mainship/medical/lower_medical)
 "ajS" = (
@@ -2271,7 +2271,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/req)
 "aPt" = (
-/obj/docking_port/stationary/marine_dropship/cas,
+/obj/docking_port/stationary/guardsman_dropship/cas,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "bgb" = (
@@ -2289,7 +2289,7 @@
 /turf/open/floor/mainship,
 /area/mainship/hallways/hangar)
 "blr" = (
-/obj/docking_port/stationary/marine_dropship/minidropship,
+/obj/docking_port/stationary/guardsman_dropship/minidropship,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "bwS" = (
@@ -2387,7 +2387,7 @@
 /turf/open/floor/mainship,
 /area/mainship/medical/medical_science)
 "eDr" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -2686,7 +2686,7 @@
 /turf/open/floor/mainship,
 /area/mainship/medical/lower_medical)
 "lUR" = (
-/obj/machinery/vending/marineFood,
+/obj/machinery/vending/guardsmanFood,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -2784,7 +2784,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "qzT" = (
-/obj/machinery/marine_selector/clothes,
+/obj/machinery/guardsman_selector/clothes,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -3035,7 +3035,7 @@
 /turf/open/floor/mainship,
 /area/mainship/hallways/hangar)
 "vVh" = (
-/obj/machinery/vending/MarineMed,
+/obj/machinery/vending/GuardsmanMed,
 /turf/open/floor/mainship,
 /area/mainship/hallways/hangar)
 "way" = (

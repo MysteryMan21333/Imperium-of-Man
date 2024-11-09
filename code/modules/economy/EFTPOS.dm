@@ -1,7 +1,7 @@
 /obj/item/eftpos
 	name = "EFTPOS scanner"
 	desc = "Swipe your ID card to make purchases electronically."
-	icon = 'icons/obj/device.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/device.dmi'
 	icon_state = "eftpos"
 	var/machine_id = ""
 	var/eftpos_name = "Default EFTPOS scanner"
@@ -47,7 +47,7 @@
 
 
 		//stamp the paper
-		var/image/stampoverlay = image('icons/obj/items/paper.dmi')
+		var/image/stampoverlay = image('modular_imperium/master_files/icons/obj/items/paper.dmi')
 		stampoverlay.icon_state = "paper_stamp-cent"
 		if(!R.stamped)
 			R.stamped = new
@@ -70,7 +70,7 @@
 	R.info += "<b>Do not lose or misplace this code.</b><br>"
 
 	//stamp the paper
-	var/image/stampoverlay = image('icons/obj/items/paper.dmi')
+	var/image/stampoverlay = image('modular_imperium/master_files/icons/obj/items/paper.dmi')
 	stampoverlay.icon_state = "paper_stamp-cent"
 	if(!R.stamped)
 		R.stamped = new
@@ -233,7 +233,7 @@
 				var/obj/item/I = usr.get_active_held_item()
 				if (istype(I, /obj/item/card))
 					var/obj/item/card/id/C = I
-					if(ACCESS_MARINE_LOGISTICS in C.access)
+					if(ACCESS_GUARDSMAN_LOGISTICS in C.access)
 						access_code = 0
 						to_chat(usr, "[icon2html(src, usr)][span_info("Access code reset to 0.")]")
 

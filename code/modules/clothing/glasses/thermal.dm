@@ -52,8 +52,8 @@
 	desc = "A set of implantable lenses designed to augment your vision"
 	icon_state = "thermalimplants"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/containers_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/containers_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/containers_right.dmi',
 	)
 	worn_icon_state = "syringe_kit"
 	toggleable = 0
@@ -61,7 +61,7 @@
 /obj/item/clothing/glasses/thermal/m64_thermal_goggles
 	name = "\improper M64 tracker sight"
 	desc = "A headset and thermal vision goggles system for the tracker specialization. Allows thermal imaging of living creatures. Click it to toggle."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/glasses.dmi'
 	icon_state = "m56_goggles"
 	deactive_state = "m56_goggles_0"
 	actions_types = list(/datum/action/item_action/toggle)

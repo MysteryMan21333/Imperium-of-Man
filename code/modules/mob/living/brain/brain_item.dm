@@ -15,10 +15,10 @@
 
 	var/mob/living/brain/brainmob = null
 
-/obj/item/organ/brain/xeno
+/obj/item/organ/brain/tyranid
 	name = "thinkpan"
 	desc = "It looks kind of like an enormous wad of purple bubblegum."
-	icon = 'icons/mob/alien.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/alien.dmi'
 	icon_state = "chitin"
 
 

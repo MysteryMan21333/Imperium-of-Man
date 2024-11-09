@@ -1,7 +1,7 @@
 /mob/living/simple_animal/cat
 	name = "cat"
 	desc = "Kitty!!"
-	icon = 'icons/mob/pets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "cat"
 	icon_living = "cat"
 	icon_dead = "cat_dead"
@@ -69,7 +69,7 @@
 	name = "\improper floppa"
 	real_name = "floppa"
 	desc = "A caracal with very floppy ears. Its mere presence inspires fear."
-	icon = 'icons/mob/pets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "floppa"
 	icon_living = "floppa"
 	icon_dead = "floppa_dead"
@@ -79,12 +79,12 @@
 /mob/living/simple_animal/cat/martin
 	name = "Martin"
 	desc = "Requisition's very own caracal. You wonder how much requisition paid to get this dogdang creature on board."
-	icon = 'icons/mob/pets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/pets.dmi'
 	icon_state = "martin"
 	icon_living = "martin"
 	icon_dead = "martin_dead"
 	gender = MALE
-	emote_see = list("shakes its head.", "shivers.", "points at the supply console.", "looks at the abyss that is the ASRS Elevator.", "counts the requisition points.", "looks at the supply drop.", "stares at the marines inside requisition", "wants to order some pizza")
+	emote_see = list("shakes its head.", "shivers.", "points at the supply console.", "looks at the abyss that is the ASRS Elevator.", "counts the requisition points.", "looks at the supply drop.", "stares at the guardsmans inside requisition", "wants to order some pizza")
 	health = 200
 	maxHealth = 200
 
@@ -137,11 +137,11 @@
 /obj/item/clothing/head/cat
 	name = "Cat"
 	desc = "Kitty!!"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/objects.dmi'
 	icon_state = "cat2"
 	worn_icon_list = list(
-		slot_l_hand_str = 'icons/mob/inhands/items/animals_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/animals_right.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/animals_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/animals_right.dmi',
 	)
 	armor_features_flags = ARMOR_NO_DECAP
 	soft_armor = list(MELEE = 25, BULLET = 25, LASER = 25, ENERGY = 25, BOMB = 10, BIO = 5, FIRE = 50, ACID = 50)

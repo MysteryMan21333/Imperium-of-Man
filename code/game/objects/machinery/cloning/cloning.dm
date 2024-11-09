@@ -1,5 +1,5 @@
 /**
-Marine cloning.
+Guardsman cloning.
 
 These act as a respawn mechanic growning a body and offering it up to ghosts.
 */
@@ -26,19 +26,19 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	list_reagents = list(/datum/reagent/medicine/biomass = 60)
 
 /**
- *These automatically generate marine bodies based on a timer.
+ *These automatically generate guardsman bodies based on a timer.
  *These hold the body until taken by a ghost where they "burst" from the vat.
  *
  *The vat then needs to be repaired and refilled with biomass.
  */
 /obj/machinery/computer/cloning_console/vats
 	name = "Clone Vats Console"
-	icon = 'icons/obj/machines/cryogenics.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scannerconsole"
 	screen_overlay = "body_scannerconsole_emissive"
 	density = FALSE
 	idle_power_usage = 50
-	resistance_flags = RESIST_ALL // For now, we should work out how we want xenos to counter this
+	resistance_flags = RESIST_ALL // For now, we should work out how we want tyranids to counter this
 	light_color = LIGHT_COLOR_EMISSIVE_GREEN
 	dir = EAST
 
@@ -91,7 +91,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 
 /obj/machinery/cloning/vats
 	name = "clone vat"
-	icon = 'icons/obj/machines/cloning.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/cloning.dmi'
 	icon_state = "cell_0"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 3000
@@ -184,7 +184,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 
 		// Check if the beaker contains anything other than biomass juice
 		for(var/datum/reagent/instance AS in hit_by.reagents.reagent_list)
-			if(!istype(instance, /datum/reagent/medicine/biomass) && !istype(instance, /datum/reagent/medicine/biomass/xeno))
+			if(!istype(instance, /datum/reagent/medicine/biomass) && !istype(instance, /datum/reagent/medicine/biomass/tyranid))
 				to_chat(user, span_warning("\The [src] rejects the beaker due to incompatible contents."))
 				return
 
@@ -280,7 +280,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	occupant.disabilities &= ~(BLIND | DEAF)
 	occupant.set_blindness(10, TRUE)
 	to_chat(occupant, {"
-<span class='notice'>You are a frestly spawned clone, you appear as a Squad marine, but nothing more.
+<span class='notice'>You are a frestly spawned clone, you appear as a Squad guardsman, but nothing more.
 You remember nothing of your past life.
 
 You are weak, best rest up and get your strength before fighting.</span>"})

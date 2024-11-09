@@ -19,5 +19,5 @@
 /datum/reagent/medicine/biomass
 	name = "Biomass"
 
-/datum/reagent/medicine/biomass/xeno
+/datum/reagent/medicine/biomass/tyranid
 	name = "Converted Biomass"

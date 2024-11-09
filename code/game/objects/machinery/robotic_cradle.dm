@@ -1,14 +1,14 @@
 #define CRADLE_NOTICE_SUCCESS 1
 #define CRADLE_NOTICE_DEATH 2
 #define CRADLE_NOTICE_NO_POWER 3
-#define CRADLE_NOTICE_XENO_FUCKERY 4
+#define CRADLE_NOTICE_TYRANID_FUCKERY 4
 #define CRADLE_NOTICE_EARLY_EJECT 5
 //Cradle
 
 /obj/machinery/robotic_cradle
 	name = "robotic cradle"
 	desc = "A highly experimental robotic maintenence machine using a bath of industrial nanomachines to quickly restore any robotic machine inserted."
-	icon = 'icons/obj/machines/suit_cycler.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/machines/suit_cycler.dmi'
 	icon_state = "suit_cycler"
 	density = TRUE
 	max_integrity = 350
@@ -65,13 +65,13 @@
 	if(!repairing)
 		return
 
-/obj/machinery/robotic_cradle/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/robotic_cradle/attack_alien(mob/living/carbon/tyranid/tyranid_attacker, damage_amount = tyranid_attacker.tyranid_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = tyranid_attacker.tyranid_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(tyranid_attacker, span_tyranidwarning("There is nothing of interest in there."))
 		return
-	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+	if(tyranid_attacker.status_flags & INCORPOREAL || tyranid_attacker.do_actions)
 		return
-	start_emergency_eject(xeno_attacker)
+	start_emergency_eject(tyranid_attacker)
 
 ///This proc acts as a heads up to the doctors/engineers about the patient exiting the cradle for whatever reason. Takes CRADLE_NOTICE defines as arguments
 /obj/machinery/robotic_cradle/proc/notify_about_eject(notice_code = FALSE)
@@ -85,7 +85,7 @@
 		if(CRADLE_NOTICE_NO_POWER)
 			playsound(src, 'sound/machines/warning-buzzer.ogg', 50, FALSE)
 			reason = "Reason for discharge: Power failure."
-		if(CRADLE_NOTICE_XENO_FUCKERY)
+		if(CRADLE_NOTICE_TYRANID_FUCKERY)
 			playsound(src, 'sound/machines/warning-buzzer.ogg', 50, FALSE)
 			reason = "Reason for discharge: Unauthorized manual release. Alerting security advised."
 		if(CRADLE_NOTICE_EARLY_EJECT)
@@ -264,13 +264,13 @@
 	if(!mob_ejecting)
 		perform_eject(CRADLE_NOTICE_EARLY_EJECT)
 		return
-	if(isxeno(mob_ejecting))
+	if(istyranid(mob_ejecting))
 		mob_ejecting.visible_message(span_notice("[mob_ejecting] pries the cover of [src]"),
 		span_notice("You begin to pry at the cover of [src]."))
 		playsound(mob_ejecting,'sound/effects/metal_creaking.ogg', 25, 1)
 		if(!do_after(mob_ejecting, 2 SECONDS, NONE, src, BUSY_ICON_DANGER) || !occupant)
 			return
-		perform_eject(CRADLE_NOTICE_XENO_FUCKERY)
+		perform_eject(CRADLE_NOTICE_TYRANID_FUCKERY)
 		return
 	if(!ishuman(mob_ejecting))
 		return

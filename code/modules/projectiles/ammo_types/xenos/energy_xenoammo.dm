@@ -4,18 +4,18 @@
 //================================================
 */
 
-/datum/ammo/energy/xeno
+/datum/ammo/energy/tyranid
 	barricade_clear_distance = 0
 	///Plasma cost to fire this projectile
 	var/ability_cost
 	///Particle type used when this ammo is used
 	var/particles/channel_particle
-	///The colour the xeno glows when using this ammo type
+	///The colour the tyranid glows when using this ammo type
 	var/glow_color
 
-/datum/ammo/energy/xeno/psy_blast
+/datum/ammo/energy/tyranid/psy_blast
 	name = "psychic blast"
-	ammo_behavior_flags = AMMO_XENO|AMMO_TARGET_TURF|AMMO_SNIPER|AMMO_ENERGY|AMMO_HITSCAN|AMMO_SKIPS_ALIENS
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_TARGET_TURF|AMMO_SNIPER|AMMO_ENERGY|AMMO_HITSCAN|AMMO_SKIPS_ALIENS
 	damage = 35
 	penetration = 10
 	sundering = 1
@@ -31,7 +31,7 @@
 	///AOE damage amount
 	var/aoe_damage = 45
 
-/datum/ammo/energy/xeno/psy_blast/drop_nade(turf/T, obj/projectile/P)
+/datum/ammo/energy/tyranid/psy_blast/drop_nade(turf/T, obj/projectile/P)
 	if(!T || !isturf(T))
 		return
 	playsound(T, 'sound/effects/EMPulse.ogg', 50)
@@ -42,14 +42,14 @@
 				var/mob/living/living_victim = target
 				if(living_victim.stat == DEAD)
 					continue
-				if(!isxeno(living_victim))
+				if(!istyranid(living_victim))
 					living_victim.apply_damage(aoe_damage, BURN, null, ENERGY, FALSE, FALSE, TRUE, penetration)
 					staggerstun(living_victim, P, 10, slowdown = 1)
 					living_victim.do_jitter_animation(500)
 			else if(isobj(target))
 				var/obj/obj_victim = target
 				var/dam_mult = 1
-				if(!(obj_victim.resistance_flags & XENO_DAMAGEABLE))
+				if(!(obj_victim.resistance_flags & TYRANID_DAMAGEABLE))
 					continue
 				if(isbarricade(target))
 					continue
@@ -61,21 +61,21 @@
 
 	new /obj/effect/temp_visual/shockwave(T, aoe_range + 2)
 
-/datum/ammo/energy/xeno/psy_blast/on_hit_mob(mob/target_mob, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/on_hit_mob(mob/target_mob, obj/projectile/proj)
 	drop_nade(get_turf(target_mob), proj)
 
-/datum/ammo/energy/xeno/psy_blast/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	drop_nade(target_obj.density ? get_step_towards(target_obj, proj) : target_obj, proj)
 
-/datum/ammo/energy/xeno/psy_blast/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf, proj)
 
-/datum/ammo/energy/xeno/psy_blast/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf, proj)
 
-/datum/ammo/energy/xeno/psy_blast/psy_lance
+/datum/ammo/energy/tyranid/psy_blast/psy_lance
 	name = "psychic lance"
-	ammo_behavior_flags = AMMO_XENO|AMMO_ENERGY|AMMO_HITSCAN|AMMO_PASS_THROUGH_MOVABLE
+	ammo_behavior_flags = AMMO_TYRANID|AMMO_ENERGY|AMMO_HITSCAN|AMMO_PASS_THROUGH_MOVABLE
 	damage = 60
 	penetration = 50
 	accuracy = 100
@@ -87,18 +87,18 @@
 	channel_particle = /particles/warlock_charge/psy_blast/psy_lance
 	glow_color = "#CB0166"
 
-/datum/ammo/energy/xeno/psy_blast/psy_lance/on_hit_obj(obj/target_obj, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/psy_lance/on_hit_obj(obj/target_obj, obj/projectile/proj)
 	if(isvehicle(target_obj))
 		var/obj/vehicle/veh_victim = target_obj
 		veh_victim.take_damage(200, BURN, ENERGY, TRUE, armour_penetration = penetration)
 
-/datum/ammo/energy/xeno/psy_blast/psy_lance/on_hit_mob(mob/target_mob, obj/projectile/proj)
-	if(isxeno(target_mob))
+/datum/ammo/energy/tyranid/psy_blast/psy_lance/on_hit_mob(mob/target_mob, obj/projectile/proj)
+	if(istyranid(target_mob))
 		return
 	staggerstun(target_mob, proj, 9, stagger = 1 SECONDS, slowdown = 2, knockback = 1)
 
-/datum/ammo/energy/xeno/psy_blast/psy_lance/on_hit_turf(turf/target_turf, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/psy_lance/on_hit_turf(turf/target_turf, obj/projectile/proj)
 	return
 
-/datum/ammo/energy/xeno/psy_blast/psy_lance/do_at_max_range(turf/target_turf, obj/projectile/proj)
+/datum/ammo/energy/tyranid/psy_blast/psy_lance/do_at_max_range(turf/target_turf, obj/projectile/proj)
 	return

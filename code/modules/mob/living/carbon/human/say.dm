@@ -22,7 +22,7 @@
 	if(. != 0)
 		return
 
-	if(isxeno(loc))
+	if(istyranid(loc))
 		message = Gibberish(message, 100)
 
 	switch(message_mode)

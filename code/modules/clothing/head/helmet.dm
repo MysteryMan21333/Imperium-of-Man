@@ -104,18 +104,18 @@
 	inv_hide_flags = HIDEMASK|HIDEEARS|HIDEEYES|HIDEALLHAIR
 	siemens_coefficient = 1
 
-/*===========================MARINES HELMETS=================================
+/*===========================GUARDSMANS HELMETS=================================
 =======================================================================*/
 
 
-/obj/item/clothing/head/helmet/marine
-	name = "\improper M10 pattern marine helmet"
+/obj/item/clothing/head/helmet/guardsman
+	name = "\improper M10 pattern guardsman helmet"
 	desc = "A standard M10 Pattern Helmet. It reads on the label, 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'."
-	icon = 'icons/obj/clothing/headwear/marine_helmets.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/marine_helmets.dmi'
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/marine_helmets.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/marine_helmets.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	icon_state = "helmet"
 	soft_armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 50, FIRE = 50, ACID = 50)
@@ -130,8 +130,8 @@
 		/obj/item/armor_module/storage/helmet,
 	)
 	starting_attachments = list(/obj/item/armor_module/storage/helmet)
-	///marine helmet behaviour flags
-	var/marine_helmet_flags = HELMET_GARB_OVERLAY|HELMET_STORE_GARB
+	///guardsman helmet behaviour flags
+	var/guardsman_helmet_flags = HELMET_GARB_OVERLAY|HELMET_STORE_GARB
 	/// items that fit in the helmet: strict type = iconstate to show
 	var/static/list/allowed_helmet_items = list(
 		/obj/item/tool/lighter/random = "helmet_lighter_",
@@ -144,7 +144,7 @@
 		/obj/item/storage/fancy/cigarettes/lady_finger = "helmet_cig_lf",
 		/obj/item/toy/deck = "helmet_card_card",
 		/obj/item/toy/handcard = "helmet_card_card",
-		/obj/item/reagent_containers/food/drinks/flask/marine = "helmet_canteen",
+		/obj/item/reagent_containers/food/drinks/flask/guardsman = "helmet_canteen",
 		/obj/item/reagent_containers/food/snacks/enrg_bar = "helmet_snack_eat",
 		/obj/item/reagent_containers/food/snacks/packaged_burrito = "helmet_snack_burrito",
 		/obj/item/clothing/glasses/mgoggles = "goggles",
@@ -158,12 +158,12 @@
 		/obj/item/clothing/head/hairflower = "flower_pin",
 	)
 
-/obj/item/clothing/head/helmet/marine/Initialize(mapload)
+/obj/item/clothing/head/helmet/guardsman/Initialize(mapload)
 	. = ..()
 	helmet_overlays = list("damage","band","item") //To make things simple.
 
 ///Updates the helmet_overlays list, inserting and removing images from it as necesarry
-/obj/item/clothing/head/helmet/marine/update_overlays()
+/obj/item/clothing/head/helmet/guardsman/update_overlays()
 	. = ..()
 	if(!attachments_by_slot[ATTACHMENT_SLOT_STORAGE])
 		return
@@ -171,15 +171,15 @@
 		return
 	var/obj/item/armor_module/storage/armor_storage = attachments_by_slot[ATTACHMENT_SLOT_STORAGE]
 
-	if(length(armor_storage.contents) && (marine_helmet_flags & HELMET_GARB_OVERLAY))
+	if(length(armor_storage.contents) && (guardsman_helmet_flags & HELMET_GARB_OVERLAY))
 		if(!helmet_overlays["band"])
-			var/image/I = image('icons/obj/clothing/headwear/marine_hats.dmi', src, "helmet_band")
+			var/image/I = image('modular_imperium/master_files/icons/obj/clothing/headwear/marine_hats.dmi', src, "helmet_band")
 			helmet_overlays["band"] = I
 
 		if(!helmet_overlays["item"])
 			var/obj/O = armor_storage.contents[1]
 			if(O.type in allowed_helmet_items)
-				var/image/I = image('icons/obj/clothing/headwear/marine_hats.dmi', src, "[allowed_helmet_items[O.type]][O.type == /obj/item/tool/lighter/random ? O:clr : ""]")
+				var/image/I = image('modular_imperium/master_files/icons/obj/clothing/headwear/marine_hats.dmi', src, "[allowed_helmet_items[O.type]][O.type == /obj/item/tool/lighter/random ? O:clr : ""]")
 				helmet_overlays["item"] = I
 
 	else
@@ -196,7 +196,7 @@
 		var/mob/M = loc
 		M.update_inv_head()
 
-/obj/item/clothing/head/helmet/marine/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
+/obj/item/clothing/head/helmet/guardsman/apply_custom(mutable_appearance/standing, inhands, icon_used, state_used)
 	if(inhands)
 		return
 	. = ..()
@@ -206,10 +206,10 @@
 		if(!M)
 			continue
 
-		M = mutable_appearance('icons/mob/modular/modular_helmet_storage.dmi', M.icon_state)
+		M = mutable_appearance('modular_imperium/master_files/icons/mob/modular/modular_helmet_storage.dmi', M.icon_state)
 		standing.overlays += M
 
-/obj/item/clothing/head/helmet/marine/specialist
+/obj/item/clothing/head/helmet/guardsman/specialist
 	name = "\improper B18 helmet"
 	desc = "The B18 Helmet that goes along with the B18 Defensive Armor. It's heavy, reinforced, and protects more of the face."
 	icon_state = "minigunner_helmet"
@@ -220,22 +220,22 @@
 	anti_hug = 6
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_PRISON_VARIANT)
 
-/obj/item/clothing/head/helmet/marine/specialist/tdf
+/obj/item/clothing/head/helmet/guardsman/specialist/tdf
 	name = "\improper Ace Class Hardsuit Helmet"
 	desc = "The helmet that pairs with the Ace hardsuit, heavily armored and reinforced."
-	icon = 'icons/mob/modular/tdf_helmets.dmi'
+	icon = 'modular_imperium/master_files/icons/mob/modular/tdf_helmets.dmi'
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/modular/tdf_helmets.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/clothing/hats_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/clothing/hats_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/modular/tdf_helmets.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/hats_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/clothing/hats_right.dmi',
 	)
 	icon_state = "tdf_helmet_hardsuit"
 	worn_icon_state = "tdf_helmet_hardsuit"
 	item_map_variant_flags = NONE
 
-/obj/item/clothing/head/helmet/marine/grenadier
+/obj/item/clothing/head/helmet/guardsman/grenadier
 	name = "\improper B17 helmet"
-	desc = "A heavy duty helmet created to complement the B17 marine armor. Practically explosive proof. Unless you stand next to a nuke or something like that."
+	desc = "A heavy duty helmet created to complement the B17 guardsman armor. Practically explosive proof. Unless you stand next to a nuke or something like that."
 	icon_state = "grenadier_helmet"
 	soft_armor = list(MELEE = 75, BULLET = 70, LASER = 60, ENERGY = 65, BOMB = 100, BIO = 60, FIRE = 65, ACID = 60)
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS
@@ -245,7 +245,7 @@
 	anti_hug = 4
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_PRISON_VARIANT)
 
-/obj/item/clothing/head/helmet/marine/pilot
+/obj/item/clothing/head/helmet/guardsman/pilot
 	name = "\improper M30 tactical helmet"
 	desc = "The M30 tactical helmet has a visor displaying the pilot tactical data. It is used by pilots in the TGN."
 	icon_state = "pilot_helmet"
@@ -253,31 +253,31 @@
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDETOPHAIR
-	marine_helmet_flags = NONE
+	guardsman_helmet_flags = NONE
 	item_map_variant_flags = null
 
-/obj/item/clothing/head/helmet/marine/mech_pilot
+/obj/item/clothing/head/helmet/guardsman/mech_pilot
 	name = "\improper M12C pattern neurolink helmet"
 	icon_state = "mech_pilot_helmet"
 	desc = "A lightweight helmet with a small port in the back. Offers lower response times for TGMC mech pilots by integrating them directly into their mech suit's systems, though it certainly doesn't make them smarter."
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
-/obj/item/clothing/head/helmet/marine/assault_crewman
+/obj/item/clothing/head/helmet/guardsman/assault_crewman
 	name = "\improper M12B pattern tanker helmet"
 	icon_state = "assault_crewman_helmet"
 	desc = "A lightweight helmet. Offers the user protection from being hit in the hell by ejected shell casings, mostly."
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
-/obj/item/clothing/head/helmet/marine/transport_crewman
+/obj/item/clothing/head/helmet/guardsman/transport_crewman
 	name = "\improper M12A pattern transport helmet"
 	icon_state = "transport_crewman_helmet"
 	desc = "A lightweight helmet with a small port in the back. Offers decent protection against reckless driving."
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
-/obj/item/clothing/head/helmet/marine/riot
+/obj/item/clothing/head/helmet/guardsman/riot
 	name = "M8 riot helmet"
 	desc = "It's a modified version of the widely used Riot Helmets for use against angry jarheads. Boasts high ballistic protection"
-	icon_state = "marine_riot"
+	icon_state = "guardsman_riot"
 	soft_armor = list(MELEE = 65, BULLET = 110, LASER = 110, ENERGY = 5, BOMB = 50, BIO = 50, FIRE = 50, ACID = 30)
 	inventory_flags = COVEREYES|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDETOPHAIR
@@ -286,16 +286,16 @@
 /*=============================PMCS==================================
 =======================================================================*/
 
-/obj/item/clothing/head/helmet/marine/veteran
-	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
+/obj/item/clothing/head/helmet/guardsman/veteran
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/ert_headwear.dmi'
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/ert_headwear.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	item_flags = SYNTH_RESTRICTED
 
-/obj/item/clothing/head/helmet/marine/veteran/pmc
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc
 	name = "\improper PMC tactical helmet"
 	desc = "A protective helmet made from flexible aramid materials. Standard issue protection for a lot of security firms."
 	icon_state = "pmc_helmet"
@@ -303,15 +303,15 @@
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ
 	inv_hide_flags = NONE
-	marine_helmet_flags = NONE
+	guardsman_helmet_flags = NONE
 
-/obj/item/clothing/head/helmet/marine/veteran/pmc/leader
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc/leader
 	name = "\improper PMC beret"
 	desc = "The pinacle of fashion for any aspiring mercenary leader. Designed to protect the head from light impacts."
 	icon_state = "officer_hat"
 	soft_armor = list(MELEE = 70, BULLET = 70, LASER = 65, ENERGY = 55, BOMB = 60, BIO = 50, FIRE = 55, ACID = 60)
 
-/obj/item/clothing/head/helmet/marine/veteran/pmc/sniper
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc/sniper
 	name = "\improper PMC sniper helmet"
 	desc = "A helmet worn by PMC Marksmen"
 	icon_state = "pmc_sniper_hat"
@@ -320,7 +320,7 @@
 	inventory_flags = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
 
-/obj/item/clothing/head/helmet/marine/veteran/pmc/gunner
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc/gunner
 	name = "\improper PMC gunner helmet"
 	desc = "A modification of the standard helmet used by a lot of security firms, has a visor for added protection."
 	icon_state = "pmc_heavyhelmet"
@@ -329,7 +329,7 @@
 	inventory_flags = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
 
-/obj/item/clothing/head/helmet/marine/veteran/pmc/commando
+/obj/item/clothing/head/helmet/guardsman/veteran/pmc/commando
 	name = "\improper PMC commando helmet"
 	desc = "A fully enclosed, armored helmet made for Nanotrasen elite commandos."
 	icon_state = "commando_helmet"
@@ -346,27 +346,27 @@
 
 /*=========================Imperium==================================*/
 
-/obj/item/clothing/head/helmet/marine/imperial
+/obj/item/clothing/head/helmet/guardsman/imperial
 	name = "\improper Imperial Guard flak helmet"
 	desc = "A standard Imperial Guard helmet that goes with the flak armour, it is also mass produced, and it can save your life, maybe."
-	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "guardhelm"
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/ert_headwear.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	worn_icon_state = "guardhelm"
 	item_flags = SYNTH_RESTRICTED
 	soft_armor = list(MELEE = 85, BULLET = 75, LASER = 70, ENERGY = 70, BOMB = 60, BIO = 50, FIRE = 50, ACID = 50)
 
-/obj/item/clothing/head/helmet/marine/imperial/sergeant
+/obj/item/clothing/head/helmet/guardsman/imperial/sergeant
 	name = "\improper Imperial Guard sergeant helmet"
 	desc = "A helmet that goes with the sergeant armour, unlike the flak variant, this one will actually protect you."
 	icon_state = "guardhelm"
 	soft_armor = list(MELEE = 85, BULLET = 85, LASER = 85, ENERGY = 85, BOMB = 85, BIO = 50, FIRE = 80, ACID = 80)
 
-/obj/item/clothing/head/helmet/marine/imperial/sergeant/veteran
+/obj/item/clothing/head/helmet/guardsman/imperial/sergeant/veteran
 	name = "\improper Imperial Guard carapace helmet"
 	desc = "A helmet that goes with the heavy carapace armour, this is some serious protection."
 	icon_state = "guardvethelm"
@@ -375,11 +375,11 @@
 /obj/item/clothing/head/helmet/UPP
 	name = "\improper UM4 helmet"
 	desc = "A skirted helmet designed for use with the UM/UH system."
-	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/ert_headwear.dmi'
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/ert_headwear.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	icon_state = "upp_helmet1"
 	item_flags = SYNTH_RESTRICTED
@@ -398,11 +398,11 @@
 /obj/item/clothing/head/helmet/specrag
 	name = "specialist head-rag"
 	desc = "A hat worn by heavy-weapons operators to block sweat."
-	icon = 'icons/obj/clothing/headwear/marine_hats.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/marine_hats.dmi'
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/marine_hats.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/marine_hats.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	icon_state = "spec"
 	soft_armor = list(MELEE = 35, BULLET = 35, LASER = 35, ENERGY = 15, BOMB = 10, BIO = 0, FIRE = 15, ACID = 15)
@@ -412,7 +412,7 @@
 /*===========================HELGHAST - MERCENARY================================
 =====================================================================*/
 
-/obj/item/clothing/head/helmet/marine/veteran/mercenary
+/obj/item/clothing/head/helmet/guardsman/veteran/mercenary
 	name = "\improper K12 ceramic helmet"
 	desc = "A sturdy helmet worn by an unknown mercenary group."
 	icon_state = "mercenary_heavy_helmet"
@@ -420,9 +420,9 @@
 	soft_armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 60, BOMB = 70, BIO = 10, FIRE = 60, ACID = 60)
 	inventory_flags = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
-	marine_helmet_flags = NONE
+	guardsman_helmet_flags = NONE
 
-/obj/item/clothing/head/helmet/marine/veteran/mercenary/miner
+/obj/item/clothing/head/helmet/guardsman/veteran/mercenary/miner
 	name = "\improper Y8 miner helmet"
 	desc = "A sturdy helmet worn by an unknown mercenary group."
 	icon_state = "mercenary_miner_helmet"
@@ -430,7 +430,7 @@
 	soft_armor = list(MELEE = 55, BULLET = 55, LASER = 45, ENERGY = 55, BOMB = 55, BIO = 10, FIRE = 55, ACID = 55)
 
 
-/obj/item/clothing/head/helmet/marine/veteran/mercenary/engineer
+/obj/item/clothing/head/helmet/guardsman/veteran/mercenary/engineer
 	name = "\improper Z7 engineer helmet"
 	desc = "A sturdy helmet worn by an unknown mercenary group."
 	icon_state = "mercenary_engineer_helmet"
@@ -439,37 +439,37 @@
 
 
 
-/obj/item/clothing/head/helmet/marine/som
+/obj/item/clothing/head/helmet/guardsman/chaos
 	name = "\improper S6 combat helmet"
 	desc = "A helmet with origns of heavily modified head protection used back in the mining colonies. Protection from threats is bad but it's better than nothing."
-	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
-	icon_state = "som_helmet"
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/ert_headwear.dmi'
+	icon_state = "chaos_helmet"
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/ert_headwear.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
-	worn_icon_state = "som_helmet"
+	worn_icon_state = "chaos_helmet"
 	soft_armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 50, FIRE = 50, ACID = 50)
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ
 	inv_hide_flags = NONE
-	marine_helmet_flags = NONE
+	guardsman_helmet_flags = NONE
 
 
-/obj/item/clothing/head/helmet/marine/som/veteran
+/obj/item/clothing/head/helmet/guardsman/chaos/veteran
 	name = "\improper S7 combat helmet"
 	desc = "A helmet of origins off of heavily modified helmets used back in the mining colonies. Seems to have extensive modification."
-	icon_state = "som_helmet_veteran"
-	worn_icon_state = "som_helmet_veteran"
+	icon_state = "chaos_helmet_veteran"
+	worn_icon_state = "chaos_helmet_veteran"
 	soft_armor = list(MELEE = 65, BULLET = 65, LASER = 65, ENERGY = 35, BOMB = 30, BIO = 50, FIRE = 35, ACID = 50)
 
 
-/obj/item/clothing/head/helmet/marine/som/leader
+/obj/item/clothing/head/helmet/guardsman/chaos/leader
 	name = "\improper S8 combat helmet"
 	desc = "A helmet of origins off of heavily modified helmets used back in the mining colonies."
-	icon_state = "som_helmet_leader"
-	worn_icon_state = "som_helmet_leader"
+	icon_state = "chaos_helmet_leader"
+	worn_icon_state = "chaos_helmet_leader"
 	soft_armor = list(MELEE = 55, BULLET = 65, LASER = 65, ENERGY = 30, BOMB = 20, BIO = 50, FIRE = 30, ACID = 50)
 
 /obj/item/clothing/head/helmet/sectoid
@@ -485,74 +485,74 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, SECTOID_TRAIT)
 
-/obj/item/clothing/head/helmet/marine/icc
+/obj/item/clothing/head/helmet/guardsman/icc
 	name = "\improper Modelle/20 combat helmet"
 	desc = "A regular ICCAF helmet, used by all branches of its forces. It is made to fit in both a utility and combat role with noticeably high resistance to explosions and bullets. "
-	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "icc"
 	worn_icon_list = list(
-		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/ert_headwear.dmi',
+		slot_l_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'modular_imperium/master_files/icons/mob/inhands/items/items_right.dmi',
 	)
 	worn_icon_state = "icc"
 	soft_armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 60, BOMB = 70, BIO = 10, FIRE = 60, ACID = 50)
 
-/obj/item/clothing/head/helmet/marine/icc/guard
+/obj/item/clothing/head/helmet/guardsman/icc/guard
 	name = "\improper Modelle/21 combat helmet"
 	desc = "A high-quality ICCGF helmet, mostly seen worn by the ICC's highest quality troops, better well known as 'Guardsmen'. Like most helmets of the ICC it is made to fit a utility and combat role with noticeably high resistance to explosions and bullets."
 	icon_state = "icc_guard"
 	worn_icon_state = "icc_guard"
 	soft_armor = list(MELEE = 60, BULLET = 65, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 10, FIRE = 55, ACID = 40)
 
-/obj/item/clothing/head/helmet/marine/icc/guard/heavy
+/obj/item/clothing/head/helmet/guardsman/icc/guard/heavy
 	name = "\improper Modelle/22 combat helmet"
 	desc = "A high-quality ICCGF helmet, mostly seen worn by the ICC's highest quality troops, better well known as 'Guardsmen'. Like most helmets of the ICC it is made to fit a utility and combat role with noticeably high resistance to explosions and bullets, this one is heavily reinforced."
 	icon_state = "icc_guard_heavy"
 	worn_icon_state = "icc_guard_heavy"
 	soft_armor = list(MELEE = 65, BULLET = 70, LASER = 40, ENERGY = 60, BOMB = 85, BIO = 10, FIRE = 55, ACID = 40)
 
-/obj/item/clothing/head/helmet/marine/vsd
+/obj/item/clothing/head/helmet/guardsman/vsd
 	name = "Crasher multi-threat ballistic helmet"
 	desc = "Vyacheslav's grunt helmet, doesn't protect your chrome-dome much though."
-	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
+	icon = 'modular_imperium/master_files/icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "vsd_main"
 	worn_icon_state = "vsd_main"
 	worn_icon_list =  list(
-		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
+		slot_head_str = 'modular_imperium/master_files/icons/mob/clothing/headwear/ert_headwear.dmi',
 	)
 	soft_armor = list(MELEE = 50, BULLET = 60, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 20, ACID = 30)
 
-/obj/item/clothing/head/helmet/marine/vsd/medic
+/obj/item/clothing/head/helmet/guardsman/vsd/medic
 	name = "Crasher multi-threat 'medic' ballistic helmet"
 	icon_state = "vsd_medic"
 	worn_icon_state = "vsd_medic"
 
-/obj/item/clothing/head/helmet/marine/vsd/secondary
+/obj/item/clothing/head/helmet/guardsman/vsd/secondary
 	name = "Crasher multi-threat ballistic helmet"
 	icon_state = "vsd_secondary"
 	worn_icon_state = "vsd_secondary"
 
-/obj/item/clothing/head/helmet/marine/vsd/upp
+/obj/item/clothing/head/helmet/guardsman/vsd/upp
 	name = "Crasher multi-threat ballistic helmet"
 	icon_state = "vsd_upp"
 	worn_icon_state = "vsd_upp"
 
-/obj/item/clothing/head/helmet/marine/vsd/pyro
+/obj/item/clothing/head/helmet/guardsman/vsd/pyro
 	name = "Crasher multi-threat 'pyro' ballistic helmet"
 	desc = "A modified helmet for the Vyacheslav Pyrotechnician."
 	icon_state = "vsd_pyro"
 	worn_icon_state = "vsd_pyro"
 	soft_armor = list(MELEE = 50, BULLET = 60, LASER = 30, ENERGY = 30, BOMB = 25, BIO = 10, FIRE = 60, ACID = 30)
 
-/obj/item/clothing/head/helmet/marine/vsd/juggernaut
+/obj/item/clothing/head/helmet/guardsman/vsd/juggernaut
 	name = "Crasher multi-threat 'juggernaut' ballistic helmet"
 	desc = "Vyacheslav's juggernaut helmet, looks like a generic riot helmet. On the side of the helmet reads: 'GET SUM!'."
 	icon_state = "vsd_juggernaut_one"
 	worn_icon_state = "vsd_juggernaut_one"
 	soft_armor = list(MELEE = 50, BULLET = 85, LASER = 10, ENERGY = 10, BOMB = 25, BIO = 10, FIRE = 20, ACID = 30)
 
-/obj/item/clothing/head/helmet/marine/vsd/eod
+/obj/item/clothing/head/helmet/guardsman/vsd/eod
 	name = "Crasher multi-threat 'syndicate' ballistic helmet"
 	desc = "Vyacheslav's syndicate funded helmet."
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEALLHAIR|HIDEMASK
